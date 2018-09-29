@@ -2,7 +2,7 @@
 
 **Discord bot** - Automatically convert times to your friends time zones!
 
-https://i.imgur.com/UqXDkJn.png
+<https://i.imgur.com/UqXDkJn.png>
 
 ## References
 

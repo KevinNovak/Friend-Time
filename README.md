@@ -2,6 +2,8 @@
 
 **Discord bot** - Automatically convert times to your friends time zones!
 
+https://i.imgur.com/UqXDkJn.png
+
 ## References
 
 * [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.

@@ -72,9 +72,6 @@ function processMessage(msg) {
 
     var message = '';
     for (var timezone of users.getActiveTimezones()) {
-        if (!validTimezone(timezone)) {
-            return;
-        }
         var time = predictedDateTime.tz(timezone).format(timeFormat);
         message += `**${timezone}**: ${time}\n`;
     }

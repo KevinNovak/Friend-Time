@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment-timezone');
 const users = require('./users');
 const config = require('./config.json');
+const lang = require('./lang.json');
 
 const client = new Discord.Client();
 
@@ -11,7 +12,7 @@ const timeFormat = 'h:mm a';
 
 client.on('ready', () => {
     var userTag = client.user.tag;
-    console.log(`Logged in as ${userTag}!`);
+    console.log(lang.log.login.replace('{USER_TAG}', userTag));
 });
 
 client.on('message', msg => {
@@ -30,15 +31,17 @@ function processMessage(msg) {
     var msgContent = msg.content;
     var userId = msg.author.id;
 
-    if (msgContent.startsWith('!register ')) {
+    if (msgContent.startsWith(`!${lang.cmd.register} `)) {
         var contents = msgContent.split(' ');
         var timezone = contents[1];
         if (!validTimezone(timezone)) {
-            msg.channel.send('Invalid timezone.');
+            msg.channel.send(lang.msg.invalidTimezone);
             return;
         }
         users.setTimezone(userId, timezone);
-        msg.channel.send(`Updated your timezone to **${timezone}**.`);
+        msg.channel.send(
+            lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone)
+        );
     }
 
     if (!messageContainsTime(msgContent)) {

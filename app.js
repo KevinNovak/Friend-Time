@@ -27,36 +27,28 @@ function validTimezone(timezone) {
     return moment.tz.names().includes(timezone);
 }
 
-function processMessage(msg) {
-    var msgContent = msg.content;
-    var userId = msg.author.id;
-
-    if (msgContent.startsWith(`!${lang.cmd.register}`)) {
-        var contents = msgContent.split(' ');
-        if (contents.length < 2) {
-            msg.channel.send(lang.msg.noTimezoneProvided);
-            return;
-        }
-
-        var timezone = contents[1];
-        if (!validTimezone(timezone)) {
-            msg.channel.send(lang.msg.invalidTimezone);
-            return;
-        }
-
-        users.setTimezone(userId, timezone);
-        msg.channel.send(
-            lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone)
-        );
-    }
-
-    if (!messageContainsTime(msgContent)) {
+function processRegister(msg) {
+    var contents = msg.content.split(' ');
+    if (contents.length < 2) {
+        msg.channel.send(lang.msg.noTimezoneProvided);
         return;
     }
 
-    var userTimezone = users.getTimezone(userId);
+    var timezone = contents[1];
+    if (!validTimezone(timezone)) {
+        msg.channel.send(lang.msg.invalidTimezone);
+        return;
+    }
+
+    users.setTimezone(msg.author.id, timezone);
+    msg.channel.send(lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone));
+}
+
+function processTime(msg) {
+    var userTimezone = users.getTimezone(msg.author.id);
 
     if (!userTimezone) {
+        // No timezone set for this user
         return;
     }
 
@@ -65,7 +57,7 @@ function processMessage(msg) {
     }
 
     var currentDay = moment.tz(userTimezone).format(dateFormat);
-    var match = timeRegex.exec(msgContent);
+    var match = timeRegex.exec(msg.content);
     var hour = match[1];
     var minutes = match[2] ? match[2] : ':00';
     var dayNight = match[3].toUpperCase();
@@ -82,6 +74,19 @@ function processMessage(msg) {
         message += `**${timezone}**: ${time}\n`;
     }
     msg.channel.send(message);
+}
+
+function processMessage(msg) {
+    var msgContent = msg.content;
+    if (msgContent.startsWith(`!${lang.cmd.register}`)) {
+        processRegister(msg);
+        return;
+    }
+
+    if (messageContainsTime(msgContent)) {
+        processTime(msg);
+        return;
+    }
 }
 
 client.login(config.token);

@@ -1,7 +1,8 @@
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const path = require('path');
 
-const usersFile = new FileSync('./data/users.json');
+const usersFile = new FileSync(path.join(__dirname, '../data/users.json'));
 const usersDb = low(usersFile);
 
 function getTimezone(userId) {

@@ -30,7 +30,7 @@ function processMessage(msg) {
     var msgContent = msg.content;
     var userId = msg.author.id;
 
-    if (msgContent.startsWith('register ')) {
+    if (msgContent.startsWith('!register ')) {
         var contents = msgContent.split(' ');
         var timezone = contents[1];
         if (!validTimezone(timezone)) {

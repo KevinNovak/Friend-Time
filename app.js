@@ -5,11 +5,9 @@ const config = require('./config/config.json');
 const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
-
-const timeRegex = new RegExp(config.timeRegex);
+const timeRegex = /\b([1-9]|1[0-2])(:\d{2})?\s*(a|p|am|pm)\b/i;
 const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
-const printedTimeFormat = 'h:mm a';
 const stringDelimiter = ' ';
 
 client.on('ready', () => {
@@ -72,7 +70,7 @@ function processTime(msg) {
 
     var message = '';
     for (var timezone of users.getActiveTimezones()) {
-        var time = predictedDateTime.tz(timezone).format(printedTimeFormat);
+        var time = predictedDateTime.tz(timezone).format(config.timeFormat);
         message += `**${timezone}**: ${time}\n`;
     }
     msg.channel.send(message);

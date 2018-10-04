@@ -4,6 +4,7 @@
     },
     "msg": {
         "invalidTimezone": "Invalid timezone.",
+        "noTimezoneProvided": "Please provide a timezone.",
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**."
     },
     "log": {

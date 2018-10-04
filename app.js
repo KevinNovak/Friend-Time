@@ -31,9 +31,10 @@ function processMessage(msg) {
     var msgContent = msg.content;
     var userId = msg.author.id;
 
-    if (msgContent.startsWith(`!${lang.cmd.register} `)) {
+    if (msgContent.startsWith(`!${lang.cmd.register}`)) {
         var contents = msgContent.split(' ');
         if (contents.length < 2) {
+            msg.channel.send(lang.msg.noTimezoneProvided);
             return;
         }
 

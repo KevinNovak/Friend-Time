@@ -28,13 +28,15 @@ function findTimezone(userTimezone) {
 }
 
 function processRegister(msg) {
-    var contents = msg.content.split(' ');
+    var delimiter = ' ';
+    var contents = msg.content.split(delimiter);
     if (contents.length < 2) {
         msg.channel.send(lang.msg.noTimezoneProvided);
         return;
     }
+    contents.shift();
 
-    var userTimezone = contents[1];
+    var userTimezone = contents.join(delimiter);
     var timezone = findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(lang.msg.invalidTimezone);

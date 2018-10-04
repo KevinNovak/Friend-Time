@@ -33,11 +33,16 @@ function processMessage(msg) {
 
     if (msgContent.startsWith(`!${lang.cmd.register} `)) {
         var contents = msgContent.split(' ');
+        if (contents.length < 2) {
+            return;
+        }
+
         var timezone = contents[1];
         if (!validTimezone(timezone)) {
             msg.channel.send(lang.msg.invalidTimezone);
             return;
         }
+
         users.setTimezone(userId, timezone);
         msg.channel.send(
             lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone)

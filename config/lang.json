@@ -8,6 +8,7 @@
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**."
     },
     "log": {
-        "login": "Logged in as {USER_TAG}!"
+        "login": "Logged in as {USER_TAG}!",
+        "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file."
     }
 }

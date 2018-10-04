@@ -90,7 +90,5 @@ function processMessage(msg) {
 }
 
 client.login(config.token).catch(error => {
-    console.error(
-        "Login failed. Please check that you've placed the correct discord bot token in the config file."
-    );
+    console.error(lang.log.loginFailed);
 });

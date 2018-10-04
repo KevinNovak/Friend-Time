@@ -52,10 +52,6 @@ function processTime(msg) {
         return;
     }
 
-    if (!validTimezone(userTimezone)) {
-        return;
-    }
-
     var currentDay = moment.tz(userTimezone).format(dateFormat);
     var match = timeRegex.exec(msg.content);
     var hour = match[1];

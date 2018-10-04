@@ -1,4 +1,4 @@
 {
-    "token": "YOUR_TOKEN",
+    "token": "<YOUR_DISCORD_BOT_TOKEN>",
     "timeFormat": "h:mm a"
 }

@@ -23,8 +23,8 @@ function messageContainsTime(msg) {
     return timeRegex.test(msg);
 }
 
-function validTimezone(timezone) {
-    return moment.tz.names().includes(timezone);
+function findTimezone(userTimezone) {
+    return moment.tz.zone(userTimezone);
 }
 
 function processRegister(msg) {
@@ -34,14 +34,17 @@ function processRegister(msg) {
         return;
     }
 
-    var timezone = contents[1];
-    if (!validTimezone(timezone)) {
+    var userTimezone = contents[1];
+    var timezone = findTimezone(userTimezone);
+    if (!timezone) {
         msg.channel.send(lang.msg.invalidTimezone);
         return;
     }
 
-    users.setTimezone(msg.author.id, timezone);
-    msg.channel.send(lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone));
+    users.setTimezone(msg.author.id, timezone.name);
+    msg.channel.send(
+        lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
+    );
 }
 
 function processTime(msg) {

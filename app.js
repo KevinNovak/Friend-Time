@@ -98,7 +98,7 @@ function processMessage(msg) {
         return;
     }
 
-    if (msgContent.startsWith(`!ft help`)) {
+    if (msgContent.startsWith(`!ft ${lang.cmd.help}`)) {
         processHelp(msg);
         return;
     }

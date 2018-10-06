@@ -1,5 +1,6 @@
 {
     "cmd": {
+        "help": "help",
         "register": "register"
     },
     "msg": {

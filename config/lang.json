@@ -2,17 +2,26 @@
     "cmd": {
         "prefix": "!ft",
         "help": "help",
+        "timezones": "timezones",
         "register": "register"
     },
     "msg": {
-        "invalidTimezone": "Invalid timezone.",
-        "noTimezoneProvided": "Please provide a timezone.",
-        "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
-        "convertedTime": "**{TIMEZONE}**: {TIME}",
         "help": [
             "**!ft help** - Show this help menu.",
+            "**!ft timezones** - View a map of available timezones.",
             "**!ft register <timezone>** - Register yourself to a timezone."
-        ]
+        ],
+        "timezones": [
+            "Please visit the following link and choose your timezone:",
+            "<http://kevalbhatt.github.io/timezone-picker/>",
+            "",
+            "Then enter **!ft register <timezone>** with your timezone.",
+            "For example: *!ft register America/New_York*"
+        ],
+        "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
+        "noTimezoneProvided": "Please provide a timezone.",
+        "invalidTimezone": "Invalid timezone.",
+        "convertedTime": "**{TIMEZONE}**: {TIME}"
     },
     "log": {
         "login": "Logged in as {USER_TAG}!",

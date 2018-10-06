@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const moment = require('moment-timezone');
-const users = require('./repositories/users');
+const timezoneUtils = require('./utils/timezoneUtils');
+const usersRepo = require('./repos/usersRepo');
 const config = require('./config/config.json');
 const lang = require('./config/lang.json');
 
@@ -31,10 +31,6 @@ function messageContainsTime(msg) {
     return timeRegex.test(msg);
 }
 
-function findTimezone(userTimezone) {
-    return moment.tz.zone(userTimezone);
-}
-
 function processRegister(msg) {
     var contents = msg.content.split(stringDelimiter);
     if (contents.length < 3) {
@@ -45,13 +41,13 @@ function processRegister(msg) {
     contents.shift();
 
     var userTimezone = contents.join(stringDelimiter);
-    var timezone = findTimezone(userTimezone);
+    var timezone = timezoneUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(lang.msg.invalidTimezone);
         return;
     }
 
-    users.setTimezone(msg.author.id, timezone.name);
+    usersRepo.setTimezone(msg.author.id, timezone.name);
     msg.channel.send(
         lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
     );
@@ -62,27 +58,30 @@ function processHelp(msg) {
 }
 
 function processTime(msg) {
-    var userTimezone = users.getTimezone(msg.author.id);
+    var userTimezone = usersRepo.getTimezone(msg.author.id);
 
     if (!userTimezone) {
         // No timezone set for this user
         return;
     }
 
-    var currentDay = moment.tz(userTimezone).format(internalDateFormat);
+    var currentDay = timezoneUtils.getTimeInTimezone(
+        userTimezone,
+        internalDateFormat
+    );
     var match = timeRegex.exec(msg.content);
     var hour = match[1];
     var minutes = match[2] ? match[2] : ':00';
     var dayNight = match[3].toUpperCase();
     var predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
-    var predictedDateTime = moment.tz(
+    var predictedDateTime = timezoneUtils.createTimeInTimezone(
         predictedDateTimeString,
         `${internalDateFormat} ${internalTimeFormat}`,
         userTimezone
     );
 
     var message = '';
-    for (var timezone of users.getActiveTimezones()) {
+    for (var timezone of usersRepo.getActiveTimezones()) {
         var time = predictedDateTime.tz(timezone).format(config.timeFormat);
         message += `${lang.msg.convertedTime
             .replace('{TIMEZONE}', timezone)

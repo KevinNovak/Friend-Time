@@ -18,6 +18,11 @@ client.on('message', msg => {
         return;
     }
 
+    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.timezones}`)) {
+        commandService.processTimezones(msg);
+        return;
+    }
+
     if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.help}`)) {
         commandService.processHelp(msg);
         return;

@@ -9,15 +9,23 @@ const internalTimeFormat = 'h:mm A';
 const stringDelimiter = ' ';
 
 var helpMessage = '';
+var timezonesMessage = '';
 
 function setup() {
     for (var message of lang.msg.help) {
         helpMessage += `${message}\n`;
     }
+    for (var message of lang.msg.timezones) {
+        timezonesMessage += `${message}\n`;
+    }
 }
 
 function processHelp(msg) {
     msg.channel.send(helpMessage);
+}
+
+function processTimezones(msg) {
+    msg.channel.send(timezonesMessage);
 }
 
 function processRegister(msg) {
@@ -26,10 +34,8 @@ function processRegister(msg) {
         msg.channel.send(lang.msg.noTimezoneProvided);
         return;
     }
-    contents.shift();
-    contents.shift();
 
-    var userTimezone = contents.join(stringDelimiter);
+    var userTimezone = contents[2];
     var timezone = timezoneUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(lang.msg.invalidTimezone);
@@ -84,6 +90,7 @@ function processTime(msg) {
 setup();
 module.exports = {
     processHelp,
+    processTimezones,
     processRegister,
     processTime
 };

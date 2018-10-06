@@ -1,5 +1,6 @@
 {
     "cmd": {
+        "prefix": "!ft",
         "help": "help",
         "register": "register"
     },

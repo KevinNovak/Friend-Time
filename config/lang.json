@@ -6,7 +6,11 @@
         "invalidTimezone": "Invalid timezone.",
         "noTimezoneProvided": "Please provide a timezone.",
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
-        "convertedTime": "**{TIMEZONE}**: {TIME}"
+        "convertedTime": "**{TIMEZONE}**: {TIME}",
+        "help": [
+            "**!ft help** - Show this help menu.",
+            "**!ft register <timezone>** - Register yourself to a timezone."
+        ]
     },
     "log": {
         "login": "Logged in as {USER_TAG}!",

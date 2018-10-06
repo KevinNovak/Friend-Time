@@ -71,7 +71,9 @@ function processTime(msg) {
     var message = '';
     for (var timezone of users.getActiveTimezones()) {
         var time = predictedDateTime.tz(timezone).format(config.timeFormat);
-        message += `**${timezone}**: ${time}\n`;
+        message += `${lang.msg.convertedTime
+            .replace('{TIMEZONE}', timezone)
+            .replace('{TIME}', time)}\n`;
     }
     msg.channel.send(message);
 }

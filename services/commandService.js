@@ -42,6 +42,25 @@ function processRegister(msg) {
     );
 }
 
+function predictTime(userTimezone, msg) {
+    var currentDay = timezoneUtils.getTimeInTimezone(
+        userTimezone,
+        internalDateFormat
+    );
+
+    var match = regexUtils.matchTime(msg);
+    var hour = match[1];
+    var minutes = match[2] ? match[2] : ':00';
+    var dayNight = match[3].toUpperCase();
+
+    var predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
+    return timezoneUtils.createTimeInTimezone(
+        predictedDateTimeString,
+        `${internalDateFormat} ${internalTimeFormat}`,
+        userTimezone
+    );
+}
+
 function processTime(msg) {
     var userTimezone = usersRepo.getTimezone(msg.author.id);
 
@@ -50,24 +69,11 @@ function processTime(msg) {
         return;
     }
 
-    var currentDay = timezoneUtils.getTimeInTimezone(
-        userTimezone,
-        internalDateFormat
-    );
-    var match = regexUtils.matchTime(msg.content);
-    var hour = match[1];
-    var minutes = match[2] ? match[2] : ':00';
-    var dayNight = match[3].toUpperCase();
-    var predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
-    var predictedDateTime = timezoneUtils.createTimeInTimezone(
-        predictedDateTimeString,
-        `${internalDateFormat} ${internalTimeFormat}`,
-        userTimezone
-    );
+    var predictedTime = predictTime(userTimezone, msg.content);
 
     var message = '';
     for (var timezone of usersRepo.getActiveTimezones()) {
-        var time = predictedDateTime.tz(timezone).format(config.timeFormat);
+        var time = predictedTime.tz(timezone).format(config.timeFormat);
         message += `${lang.msg.convertedTime
             .replace('{TIMEZONE}', timezone)
             .replace('{TIME}', time)}\n`;

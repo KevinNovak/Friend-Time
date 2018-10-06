@@ -93,12 +93,12 @@ function processTime(msg) {
 
 function processMessage(msg) {
     var msgContent = msg.content;
-    if (msgContent.startsWith(`!ft ${lang.cmd.register}`)) {
+    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.register}`)) {
         processRegister(msg);
         return;
     }
 
-    if (msgContent.startsWith(`!ft ${lang.cmd.help}`)) {
+    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.help}`)) {
         processHelp(msg);
         return;
     }

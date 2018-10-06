@@ -19,8 +19,16 @@
             "For example: *!ft register America/New_York*"
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
-        "noTimezoneProvided": "Please provide a timezone.",
-        "invalidTimezone": "Invalid timezone.",
+        "noTimezoneProvided": [
+            "Please provide a timezone.",
+            "",
+            "Type **!ft timezones** to view a map of available timezones."
+        ],
+        "invalidTimezone": [
+            "Invalid timezone.",
+            "",
+            "Type **!ft timezones** to view a map of available timezones."
+        ],
         "convertedTime": "**{TIMEZONE}**: {TIME}"
     },
     "log": {

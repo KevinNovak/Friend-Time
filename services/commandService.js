@@ -10,6 +10,8 @@ const stringDelimiter = ' ';
 
 var helpMessage = '';
 var timezonesMessage = '';
+var noTimezoneProvided = '';
+var invalidTimezone = '';
 
 function setup() {
     for (var message of lang.msg.help) {
@@ -17,6 +19,12 @@ function setup() {
     }
     for (var message of lang.msg.timezones) {
         timezonesMessage += `${message}\n`;
+    }
+    for (var message of lang.msg.noTimezoneProvided) {
+        noTimezoneProvided += `${message}\n`;
+    }
+    for (var message of lang.msg.invalidTimezone) {
+        invalidTimezone += `${message}\n`;
     }
 }
 
@@ -31,14 +39,14 @@ function processTimezones(msg) {
 function processRegister(msg) {
     var contents = msg.content.split(stringDelimiter);
     if (contents.length < 3) {
-        msg.channel.send(lang.msg.noTimezoneProvided);
+        msg.channel.send(noTimezoneProvided);
         return;
     }
 
     var userTimezone = contents[2];
     var timezone = timezoneUtils.findTimezone(userTimezone);
     if (!timezone) {
-        msg.channel.send(lang.msg.invalidTimezone);
+        msg.channel.send(invalidTimezone);
         return;
     }
 

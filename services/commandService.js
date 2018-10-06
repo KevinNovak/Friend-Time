@@ -8,45 +8,30 @@ const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
 const stringDelimiter = ' ';
 
-var helpMessage = '';
-var timezonesMessage = '';
-var noTimezoneProvided = '';
-var invalidTimezone = '';
-
-function setup() {
-    for (var message of lang.msg.help) {
-        helpMessage += `${message}\n`;
-    }
-    for (var message of lang.msg.timezones) {
-        timezonesMessage += `${message}\n`;
-    }
-    for (var message of lang.msg.noTimezoneProvided) {
-        noTimezoneProvided += `${message}\n`;
-    }
-    for (var message of lang.msg.invalidTimezone) {
-        invalidTimezone += `${message}\n`;
-    }
-}
+var helpMsg = lang.msg.help.join('\n');
+var timezonesMsg = lang.msg.timezones.join('\n');
+var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
+var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
 
 function processHelp(msg) {
-    msg.channel.send(helpMessage);
+    msg.channel.send(helpMsg);
 }
 
 function processTimezones(msg) {
-    msg.channel.send(timezonesMessage);
+    msg.channel.send(timezonesMsg);
 }
 
 function processRegister(msg) {
     var contents = msg.content.split(stringDelimiter);
     if (contents.length < 3) {
-        msg.channel.send(noTimezoneProvided);
+        msg.channel.send(noTimezoneProvidedMsg);
         return;
     }
 
     var userTimezone = contents[2];
     var timezone = timezoneUtils.findTimezone(userTimezone);
     if (!timezone) {
-        msg.channel.send(invalidTimezone);
+        msg.channel.send(invalidTimezoneMsg);
         return;
     }
 
@@ -95,7 +80,6 @@ function processTime(msg) {
     msg.channel.send(message);
 }
 
-setup();
 module.exports = {
     processHelp,
     processTimezones,

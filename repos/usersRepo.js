@@ -1,32 +1,44 @@
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-const path = require('path');
+const fileUtils = require('../utils/fileUtils');
 
-const usersFile = new FileSync(path.join(__dirname, '../data/users.json'));
-const usersDb = low(usersFile);
+const users = {};
 
-function getTimezone(userId) {
-    var user = usersDb.find({ id: userId }).value();
+function setup() {
+    // TODO: Dynamically get list of server ids
+    var serverIds = ['471091337459007488'];
+    for (var serverId of serverIds) {
+        var usersPath = fileUtils.getFullPath(`../data/${serverId}/users.json`);
+        fileUtils.createIfNotExists(usersPath, JSON.stringify([]));
+        var usersFile = new FileSync(usersPath);
+        var usersDb = low(usersFile);
+        users[serverId] = usersDb;
+    }
+}
+
+function getTimezone(serverId, userId) {
+    var user = users[serverId].find({ id: userId }).value();
     if (user) {
         return user.timezone;
     }
 }
 
-function getActiveTimezones() {
-    return new Set(usersDb.map(user => user.timezone).sort());
+function getActiveTimezones(serverId) {
+    return new Set(users[serverId].map(user => user.timezone).sort());
 }
 
-function setTimezone(userId, timezone) {
-    if (usersDb.find({ id: userId }).value()) {
-        usersDb
+function setTimezone(serverId, userId, timezone) {
+    if (users[serverId].find({ id: userId }).value()) {
+        users[serverId]
             .find({ id: userId })
             .assign({ timezone: timezone })
             .write();
     } else {
-        usersDb.push({ id: userId, timezone: timezone }).write();
+        users[serverId].push({ id: userId, timezone: timezone }).write();
     }
 }
 
+setup();
 module.exports = {
     getTimezone,
     getActiveTimezones,

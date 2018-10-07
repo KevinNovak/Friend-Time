@@ -6,7 +6,6 @@ const lang = require('../config/lang.json');
 
 const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
-const stringDelimiter = ' ';
 
 var helpMsg = lang.msg.help.join('\n');
 var timezonesMsg = lang.msg.timezones.join('\n');
@@ -21,14 +20,13 @@ function processTimezones(msg) {
     msg.channel.send(timezonesMsg);
 }
 
-function processRegister(msg) {
-    var contents = msg.content.split(stringDelimiter);
-    if (contents.length < 3) {
+function processRegister(msg, args) {
+    if (args.length < 3) {
         msg.channel.send(noTimezoneProvidedMsg);
         return;
     }
 
-    var userTimezone = contents[2];
+    var userTimezone = args[2];
     var timezone = timezoneUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(invalidTimezoneMsg);

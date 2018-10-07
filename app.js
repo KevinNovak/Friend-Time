@@ -30,7 +30,7 @@ client.on('message', msg => {
         }
 
         if (lang.cmd.register.includes(cmd)) {
-            commandService.processRegister(msg);
+            commandService.processRegister(msg, args);
             return;
         }
 

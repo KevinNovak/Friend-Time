@@ -38,8 +38,8 @@ client.on('message', msg => {
             return;
         }
 
-        if (lang.cmd.register.includes(cmd)) {
-            commandService.processRegister(msg, args);
+        if (lang.cmd.set.includes(cmd)) {
+            commandService.processSet(msg, args);
             return;
         }
     }

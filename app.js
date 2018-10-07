@@ -13,28 +13,31 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     var args = msg.content.split(' ');
-    if (!lang.cmd.prefix.includes(args[0])) {
+    if (!lang.cmd.prefix.includes(args[0].toLowerCase())) {
         return;
     }
 
-    if (args[1] == lang.cmd.help) {
-        commandService.processHelp(msg);
-        return;
-    }
+    if (args.length > 1) {
+        var cmd = args[1].toLowerCase();
+        if (lang.cmd.help.includes(cmd)) {
+            commandService.processHelp(msg);
+            return;
+        }
 
-    if (args[1] == lang.cmd.register) {
-        commandService.processRegister(msg);
-        return;
-    }
+        if (lang.cmd.timezones.includes(cmd)) {
+            commandService.processTimezones(msg);
+            return;
+        }
 
-    if (args[1] == lang.cmd.timezones) {
-        commandService.processTimezones(msg);
-        return;
-    }
+        if (lang.cmd.register.includes(cmd)) {
+            commandService.processRegister(msg);
+            return;
+        }
 
-    if (regexUtils.containsTime(args)) {
-        commandService.processTime(msg);
-        return;
+        if (regexUtils.containsTime(args)) {
+            commandService.processTime(msg);
+            return;
+        }
     }
 
     commandService.processHelp(msg);

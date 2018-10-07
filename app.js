@@ -12,26 +12,32 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    var msgContent = msg.content;
-    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.register}`)) {
-        commandService.processRegister(msg);
+    var args = msg.content.split(' ');
+    if (!lang.cmd.prefix.includes(args[0])) {
         return;
     }
 
-    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.timezones}`)) {
-        commandService.processTimezones(msg);
-        return;
-    }
-
-    if (msgContent.startsWith(`${lang.cmd.prefix} ${lang.cmd.help}`)) {
+    if (args[1] == lang.cmd.help) {
         commandService.processHelp(msg);
         return;
     }
 
-    if (regexUtils.containsTime(msgContent)) {
+    if (args[1] == lang.cmd.register) {
+        commandService.processRegister(msg);
+        return;
+    }
+
+    if (args[1] == lang.cmd.timezones) {
+        commandService.processTimezones(msg);
+        return;
+    }
+
+    if (regexUtils.containsTime(args)) {
         commandService.processTime(msg);
         return;
     }
+
+    commandService.processHelp(msg);
 });
 
 client.login(config.token).catch(error => {

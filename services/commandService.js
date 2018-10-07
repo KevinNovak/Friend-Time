@@ -8,7 +8,7 @@ const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
 
 var helpMsg = lang.msg.help.join('\n');
-var timezonesMsg = lang.msg.timezones.join('\n');
+var mapMsg = lang.msg.map.join('\n');
 var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
 var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
 var notRegisteredMsg = lang.msg.notRegistered.join('\n');
@@ -17,8 +17,8 @@ function processHelp(msg) {
     msg.channel.send(helpMsg);
 }
 
-function processTimezones(msg) {
-    msg.channel.send(timezonesMsg);
+function processMap(msg) {
+    msg.channel.send(mapMsg);
 }
 
 function processRegister(msg, args) {
@@ -85,7 +85,7 @@ function processTime(msg) {
 
 module.exports = {
     processHelp,
-    processTimezones,
+    processMap,
     processRegister,
     processTime
 };

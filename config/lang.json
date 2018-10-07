@@ -1,6 +1,13 @@
 {
     "cmd": {
-        "prefix": "!ft",
+        "prefix": [
+            "!ft",
+            "-ft",
+            "?ft",
+            "!friendtime",
+            "-friendtime",
+            "?friendtime"
+        ],
         "help": "help",
         "timezones": "timezones",
         "register": "register"

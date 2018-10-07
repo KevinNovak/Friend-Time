@@ -12,6 +12,11 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+    if (regexUtils.containsTime(msg.content)) {
+        commandService.processTime(msg);
+        return;
+    }
+
     var args = msg.content.split(' ');
     if (!lang.cmd.prefix.includes(args[0].toLowerCase())) {
         return;
@@ -31,11 +36,6 @@ client.on('message', msg => {
 
         if (lang.cmd.register.includes(cmd)) {
             commandService.processRegister(msg, args);
-            return;
-        }
-
-        if (regexUtils.containsTime(args)) {
-            commandService.processTime(msg);
             return;
         }
     }

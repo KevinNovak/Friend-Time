@@ -2,9 +2,11 @@
     "cmd": {
         "prefix": [
             "-ft",
+            "~ft",
             "!ft",
             "?ft",
             "-friendtime",
+            "~friendtime",
             "!friendtime",
             "?friendtime"
         ],

@@ -8,9 +8,23 @@ If you have a discord server with users across multiple countries and timezones 
 
 ## Commands
 
-* **\-ft help** \- Show the help menu.
-* **\-ft map** \- View a map of available timezones.
-* **\-ft set \<timezone\>** \- Set yourself to a timezone.
+* `-ft help` \- Show the help menu.
+* `-ft map` \- View a map of available timezones.
+* `-ft set <timezone>` \- Set yourself to a timezone.
+
+## Finding Your Timezone
+
+[Keval Bhatt](https://github.com/kevalbhatt) has created a handy map timezone picker:
+
+http://kevalbhatt.github.io/timezone-picker/
+
+Simply click your location on the map, and use the name displayed in the dropdown box as your timezone.
+
+You can then take your timezone name and run the **set** command like so:
+`-ft set America/New_York`
+
+Friend Time will then know your timezone and use this to automatically convert any times you mention in chat, as well as convert other users times to your timezone.
+
 
 ## References
 

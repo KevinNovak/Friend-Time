@@ -12,6 +12,10 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+    if (msg.author.bot) {
+        return;
+    }
+
     if (regexUtils.containsTime(msg.content)) {
         commandService.processTime(msg);
         return;

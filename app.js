@@ -33,8 +33,8 @@ client.on('message', msg => {
             return;
         }
 
-        if (lang.cmd.timezones.includes(cmd)) {
-            commandService.processTimezones(msg);
+        if (lang.cmd.map.includes(cmd)) {
+            commandService.processMap(msg);
             return;
         }
 

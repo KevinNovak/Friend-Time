@@ -1,47 +1,47 @@
 {
     "cmd": {
         "prefix": [
-            "!ft",
             "-ft",
+            "!ft",
             "?ft",
-            "!friendtime",
             "-friendtime",
+            "!friendtime",
             "?friendtime"
         ],
         "help": ["help", "?"],
-        "timezones": ["timezones", "timezone", "map"],
+        "map": ["map", "zones", "zone", "timezones", "timezone"],
         "register": ["register", "set", "save"]
     },
     "msg": {
         "help": [
-            "**!ft help** - Show this help menu.",
-            "**!ft timezones** - View a map of available timezones.",
-            "**!ft register <timezone>** - Register yourself to a timezone."
+            "**-ft help** - Show this help menu.",
+            "**-ft map** - View a map of available timezones.",
+            "**-ft register <timezone>** - Register yourself to a timezone."
         ],
-        "timezones": [
+        "map": [
             "Please visit the following link and choose your timezone:",
             "<http://kevalbhatt.github.io/timezone-picker/>",
             "",
-            "Then enter **!ft register <timezone>** with your timezone.",
-            "For example: *!ft register America/New_York*"
+            "Then enter **-ft register <timezone>** with your timezone.",
+            "For example: *-ft register America/New_York*"
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
         "noTimezoneProvided": [
             "Please provide a timezone.",
             "",
-            "Type **!ft timezones** to view a map of available timezones."
+            "Type **-ft map** to view a map of available timezones."
         ],
         "invalidTimezone": [
             "Invalid timezone.",
             "",
-            "Type **!ft timezones** to view a map of available timezones."
+            "Type **-ft map** to view a map of available timezones."
         ],
         "convertedTime": "**{TIMEZONE}**: {TIME}",
         "notRegistered": [
             "Hi {USERNAME}, it looks like you don't have a timezone set yet.",
             "",
-            "Please type **!ft timezones** to view a map of available timezones.",
-            "Then type **!ft register <timezone>** to set yourself to that timezone."
+            "Please type **-ft map** to view a map of available timezones.",
+            "Then type **-ft register <timezone>** to set yourself to that timezone."
         ]
     },
     "log": {

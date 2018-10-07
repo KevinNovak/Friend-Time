@@ -8,9 +8,9 @@
             "-friendtime",
             "?friendtime"
         ],
-        "help": "help",
-        "timezones": "timezones",
-        "register": "register"
+        "help": ["help", "?"],
+        "timezones": ["timezones", "timezone", "map"],
+        "register": ["register", "set", "save"]
     },
     "msg": {
         "help": [

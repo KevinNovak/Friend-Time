@@ -11,7 +11,7 @@ var helpMsg = lang.msg.help.join('\n');
 var mapMsg = lang.msg.map.join('\n');
 var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
 var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
-var notRegisteredMsg = lang.msg.notRegistered.join('\n');
+var timezoneNotSetMsg = lang.msg.timezoneNotSet.join('\n');
 
 function processHelp(msg) {
     msg.channel.send(helpMsg);
@@ -21,7 +21,7 @@ function processMap(msg) {
     msg.channel.send(mapMsg);
 }
 
-function processRegister(msg, args) {
+function processSet(msg, args) {
     if (args.length < 3) {
         msg.channel.send(noTimezoneProvidedMsg);
         return;
@@ -63,11 +63,11 @@ function processTime(msg) {
     var userTimezone = usersRepo.getTimezone(msg.author.id);
 
     if (!userTimezone) {
-        var notRegistered = notRegisteredMsg.replace(
+        var timezoneNotSet = timezoneNotSetMsg.replace(
             '{USERNAME}',
             msg.author.username
         );
-        msg.channel.send(notRegistered);
+        msg.channel.send(timezoneNotSet);
         return;
     }
 
@@ -86,6 +86,6 @@ function processTime(msg) {
 module.exports = {
     processHelp,
     processMap,
-    processRegister,
+    processSet,
     processTime
 };

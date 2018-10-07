@@ -10,20 +10,20 @@
         ],
         "help": ["help", "?"],
         "map": ["map", "zones", "zone", "timezones", "timezone"],
-        "register": ["register", "set", "save"]
+        "set": ["set", "save", "register"]
     },
     "msg": {
         "help": [
             "**-ft help** - Show this help menu.",
             "**-ft map** - View a map of available timezones.",
-            "**-ft register <timezone>** - Register yourself to a timezone."
+            "**-ft set <timezone>** - Set yourself to a timezone."
         ],
         "map": [
             "Please visit the following link and choose your timezone:",
             "<http://kevalbhatt.github.io/timezone-picker/>",
             "",
-            "Then enter **-ft register <timezone>** with your timezone.",
-            "For example: *-ft register America/New_York*"
+            "Then enter **-ft set <timezone>** with your timezone.",
+            "For example: *-ft set America/New_York*"
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
         "noTimezoneProvided": [
@@ -37,11 +37,11 @@
             "Type **-ft map** to view a map of available timezones."
         ],
         "convertedTime": "**{TIMEZONE}**: {TIME}",
-        "notRegistered": [
+        "timezoneNotSet": [
             "Hi {USERNAME}, it looks like you don't have a timezone set yet.",
             "",
             "Please type **-ft map** to view a map of available timezones.",
-            "Then type **-ft register <timezone>** to set yourself to that timezone."
+            "Then type **-ft set <timezone>** to set yourself to that timezone."
         ]
     },
     "log": {

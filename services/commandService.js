@@ -11,6 +11,7 @@ var helpMsg = lang.msg.help.join('\n');
 var timezonesMsg = lang.msg.timezones.join('\n');
 var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
 var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
+var notRegisteredMsg = lang.msg.notRegistered.join('\n');
 
 function processHelp(msg) {
     msg.channel.send(helpMsg);
@@ -62,7 +63,11 @@ function processTime(msg) {
     var userTimezone = usersRepo.getTimezone(msg.author.id);
 
     if (!userTimezone) {
-        // No timezone set for this user
+        var notRegistered = notRegisteredMsg.replace(
+            '{USERNAME}',
+            msg.author.username
+        );
+        msg.channel.send(notRegistered);
         return;
     }
 

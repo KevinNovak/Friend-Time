@@ -36,7 +36,13 @@
             "",
             "Type **!ft timezones** to view a map of available timezones."
         ],
-        "convertedTime": "**{TIMEZONE}**: {TIME}"
+        "convertedTime": "**{TIMEZONE}**: {TIME}",
+        "notRegistered": [
+            "Hi {USERNAME}, it looks like you don't have a timezone set yet.",
+            "",
+            "Please type **!ft timezones** to view a map of available timezones.",
+            "Then type **!ft register <timezone>** to set yourself to that timezone."
+        ]
     },
     "log": {
         "login": "Logged in as {USER_TAG}!",

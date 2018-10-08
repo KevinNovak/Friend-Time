@@ -30,6 +30,7 @@
   "dependencies": {
     "discord.js": "11.4.2",
     "lowdb": "1.0.0",
+    "mkdirp": "0.5.1",
     "moment-timezone": "0.5.21",
     "pm2": "^3.2.2"
   },

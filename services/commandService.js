@@ -34,7 +34,7 @@ function processSet(msg, args) {
         return;
     }
 
-    usersRepo.setTimezone(msg.author.id, timezone.name);
+    usersRepo.setTimezone(msg.guild.id, msg.author.id, timezone.name);
     msg.channel.send(
         lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
     );
@@ -60,7 +60,7 @@ function predictTime(userTimezone, msg) {
 }
 
 function processTime(msg) {
-    var userTimezone = usersRepo.getTimezone(msg.author.id);
+    var userTimezone = usersRepo.getTimezone(msg.guild.id, msg.author.id);
 
     if (!userTimezone) {
         var timezoneNotSet = timezoneNotSetMsg.replace(
@@ -74,7 +74,7 @@ function processTime(msg) {
     var predictedTime = predictTime(userTimezone, msg.content);
 
     var message = '';
-    for (var timezone of usersRepo.getActiveTimezones()) {
+    for (var timezone of usersRepo.getActiveTimezones(msg.guild.id)) {
         var time = predictedTime.tz(timezone).format(config.timeFormat);
         message += `${lang.msg.convertedTime
             .replace('{TIMEZONE}', timezone)

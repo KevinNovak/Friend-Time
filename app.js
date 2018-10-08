@@ -1,18 +1,34 @@
 const Discord = require('discord.js');
 const commandService = require('./services/commandService');
+const usersRepo = require('./repos/usersRepo');
 const regexUtils = require('./utils/regexUtils');
 const config = require('./config/config.json');
 const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
 
+var acceptMessages = false;
+
+function getConnectedServerIds() {
+    return client.guilds.keyArray();
+}
+
 client.on('ready', () => {
     var userTag = client.user.tag;
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
+
+    var serverIds = getConnectedServerIds();
+    console.log(
+        lang.log.connectedServers.replace('{SERVER_COUNT}', serverIds.length)
+    );
+
+    usersRepo.connectServers(serverIds);
+    acceptMessages = true;
+    console.log(lang.log.startupComplete);
 });
 
 client.on('message', msg => {
-    if (msg.author.bot) {
+    if (!acceptMessages || msg.author.bot) {
         return;
     }
 
@@ -45,6 +61,27 @@ client.on('message', msg => {
     }
 
     commandService.processHelp(msg);
+});
+
+client.on('guildCreate', guild => {
+    usersRepo.connectServer(guild.id);
+    var serverCount = getConnectedServerIds().length;
+    console.log(
+        lang.log.serverConnected
+            .replace('{SERVER_NAME}', guild.name)
+            .replace('{SERVER_ID}', guild.id)
+            .replace('{SERVER_COUNT}', serverCount)
+    );
+});
+
+client.on('guildDelete', guild => {
+    var serverCount = getConnectedServerIds().length;
+    console.log(
+        lang.log.serverDisconnected
+            .replace('{SERVER_NAME}', guild.name)
+            .replace('{SERVER_ID}', guild.id)
+            .replace('{SERVER_COUNT}', serverCount)
+    );
 });
 
 client.login(config.token).catch(error => {

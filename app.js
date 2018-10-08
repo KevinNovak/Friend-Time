@@ -9,11 +9,15 @@ const client = new Discord.Client();
 
 var acceptMessages = false;
 
+function getConnectedServerIds() {
+    return client.guilds.keyArray();
+}
+
 client.on('ready', () => {
     var userTag = client.user.tag;
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
 
-    var serverIds = client.guilds.keyArray();
+    var serverIds = getConnectedServerIds();
     console.log(
         lang.log.connectedServers.replace('{SERVER_COUNT}', serverIds.length)
     );
@@ -61,18 +65,22 @@ client.on('message', msg => {
 
 client.on('guildCreate', guild => {
     usersRepo.connectServer(guild.id);
+    var serverCount = getConnectedServerIds().length;
     console.log(
         lang.log.serverConnected
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
+            .replace('{SERVER_COUNT}', serverCount)
     );
 });
 
 client.on('guildDelete', guild => {
+    var serverCount = getConnectedServerIds().length;
     console.log(
         lang.log.serverDisconnected
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
+            .replace('{SERVER_COUNT}', serverCount)
     );
 });
 

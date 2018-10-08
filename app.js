@@ -68,6 +68,14 @@ client.on('guildCreate', guild => {
     );
 });
 
+client.on('guildDelete', guild => {
+    console.log(
+        lang.log.serverDisconnected
+            .replace('{SERVER_NAME}', guild.name)
+            .replace('{SERVER_ID}', guild.id)
+    );
+});
+
 client.login(config.token).catch(error => {
     console.error(lang.log.loginFailed);
 });

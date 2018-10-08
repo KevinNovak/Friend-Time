@@ -14,11 +14,13 @@ client.on('ready', () => {
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
 
     var serverIds = client.guilds.keyArray();
-    console.log(`Connected to ${serverIds.length} servers!`);
+    console.log(
+        lang.log.connectedServers.replace('{SERVER_COUNT}', serverIds.length)
+    );
 
     usersRepo.connectServers(serverIds);
     acceptMessages = true;
-    console.log('Startup complete.');
+    console.log(lang.log.startupComplete);
 });
 
 client.on('message', msg => {
@@ -59,7 +61,11 @@ client.on('message', msg => {
 
 client.on('guildCreate', guild => {
     usersRepo.connectServer(guild.id);
-    console.log(`"${guild.name}" (${guild.id}) connected!"`);
+    console.log(
+        lang.log.serverConnected
+            .replace('{SERVER_NAME}', guild.name)
+            .replace('{SERVER_ID}', guild.id)
+    );
 });
 
 client.login(config.token).catch(error => {

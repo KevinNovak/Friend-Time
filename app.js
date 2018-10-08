@@ -13,16 +13,29 @@ function getConnectedServerIds() {
     return client.guilds.keyArray();
 }
 
+function updateConnectedServers(serverCount) {
+    client.user.setPresence({
+        game: {
+            name: `time to ${serverCount} servers`,
+            type: 'STREAMING',
+            url: 'https://www.twitch.tv/monstercat'
+        }
+    });
+}
+
 client.on('ready', () => {
     var userTag = client.user.tag;
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
 
     var serverIds = getConnectedServerIds();
+    usersRepo.connectServers(serverIds);
+
+    var serverCount = serverIds.length;
+    updateConnectedServers(serverCount);
     console.log(
-        lang.log.connectedServers.replace('{SERVER_COUNT}', serverIds.length)
+        lang.log.connectedServers.replace('{SERVER_COUNT}', serverCount)
     );
 
-    usersRepo.connectServers(serverIds);
     acceptMessages = true;
     console.log(lang.log.startupComplete);
 });
@@ -66,6 +79,7 @@ client.on('message', msg => {
 client.on('guildCreate', guild => {
     usersRepo.connectServer(guild.id);
     var serverCount = getConnectedServerIds().length;
+    updateConnectedServers(serverCount);
     console.log(
         lang.log.serverConnected
             .replace('{SERVER_NAME}', guild.name)
@@ -76,6 +90,7 @@ client.on('guildCreate', guild => {
 
 client.on('guildDelete', guild => {
     var serverCount = getConnectedServerIds().length;
+    updateConnectedServers(serverCount);
     console.log(
         lang.log.serverDisconnected
             .replace('{SERVER_NAME}', guild.name)

@@ -10,7 +10,12 @@ function getFullPath(shortPath) {
 function createIfNotExists(filePath, data) {
     var folder = dirname(filePath);
     mkdirp.sync(folder);
-    fs.writeFileSync(filePath, data, { flag: 'wx' });
+    try {
+        fs.writeFileSync(filePath, data, { flag: 'wx' });
+    } catch (error) {
+        // File exists, this is fine
+        return;
+    }
 }
 
 module.exports = {

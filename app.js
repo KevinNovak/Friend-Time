@@ -57,6 +57,11 @@ client.on('message', msg => {
     commandService.processHelp(msg);
 });
 
+client.on('guildCreate', guild => {
+    usersRepo.connectServerData(guild.id);
+    console.log(`"${guild.name}" (${guild.id}) connected!"`);
+});
+
 client.login(config.token).catch(error => {
     console.error(lang.log.loginFailed);
 });

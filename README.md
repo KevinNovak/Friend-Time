@@ -16,7 +16,7 @@ If you have a discord server with users across multiple countries and timezones 
 
 [Keval Bhatt](https://github.com/kevalbhatt) has created a handy map timezone picker:
 
-http://kevalbhatt.github.io/timezone-picker/
+<http://kevalbhatt.github.io/timezone-picker/>
 
 Simply click your location on the map, and use the name displayed in the dropdown box as your timezone.
 

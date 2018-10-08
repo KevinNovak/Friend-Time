@@ -2,6 +2,7 @@
 *To-Do.txt
 .vscode/
 misc/
+data/
 *.local.json
 *.public.json
 

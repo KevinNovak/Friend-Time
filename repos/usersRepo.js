@@ -4,9 +4,7 @@ const fileUtils = require('../utils/fileUtils');
 
 const users = {};
 
-function setup() {
-    // TODO: Dynamically get list of server ids
-    var serverIds = ['471091337459007488'];
+function connectServerData(serverIds) {
     for (var serverId of serverIds) {
         var usersPath = fileUtils.getFullPath(`../data/${serverId}/users.json`);
         fileUtils.createIfNotExists(usersPath, JSON.stringify([]));
@@ -38,8 +36,8 @@ function setTimezone(serverId, userId, timezone) {
     }
 }
 
-setup();
 module.exports = {
+    connectServerData,
     getTimezone,
     getActiveTimezones,
     setTimezone

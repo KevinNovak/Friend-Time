@@ -1,18 +1,28 @@
 const Discord = require('discord.js');
 const commandService = require('./services/commandService');
+const usersRepo = require('./repos/usersRepo');
 const regexUtils = require('./utils/regexUtils');
 const config = require('./config/config.json');
 const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
 
+var acceptMessages = false;
+
 client.on('ready', () => {
     var userTag = client.user.tag;
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
+
+    var serverIds = client.guilds.keyArray();
+    console.log(`Connected to ${serverIds.length} servers!`);
+
+    usersRepo.connectServerData(serverIds);
+    acceptMessages = true;
+    console.log('Startup complete.');
 });
 
 client.on('message', msg => {
-    if (msg.author.bot) {
+    if (!acceptMessages || msg.author.bot) {
         return;
     }
 

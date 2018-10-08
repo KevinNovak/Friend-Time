@@ -47,7 +47,10 @@
         ]
     },
     "log": {
-        "login": "Logged in as {USER_TAG}!",
-        "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file."
+        "login": "Logged in as '{USER_TAG}'!",
+        "connectedServers": "Connected to {SERVER_COUNT} servers!",
+        "startupComplete": "Startup complete.",
+        "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file.",
+        "serverConnected": "'{SERVER_NAME}' ({SERVER_ID}) connected!"
     }
 }

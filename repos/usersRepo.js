@@ -4,13 +4,17 @@ const fileUtils = require('../utils/fileUtils');
 
 const users = {};
 
-function connectServerData(serverIds) {
+function connectServer(serverId) {
+    var usersPath = fileUtils.getFullPath(`../data/${serverId}/users.json`);
+    fileUtils.createIfNotExists(usersPath, JSON.stringify([]));
+    var usersFile = new FileSync(usersPath);
+    var usersDb = low(usersFile);
+    users[serverId] = usersDb;
+}
+
+function connectServers(serverIds) {
     for (var serverId of serverIds) {
-        var usersPath = fileUtils.getFullPath(`../data/${serverId}/users.json`);
-        fileUtils.createIfNotExists(usersPath, JSON.stringify([]));
-        var usersFile = new FileSync(usersPath);
-        var usersDb = low(usersFile);
-        users[serverId] = usersDb;
+        connectServer(serverId);
     }
 }
 
@@ -37,7 +41,8 @@ function setTimezone(serverId, userId, timezone) {
 }
 
 module.exports = {
-    connectServerData,
+    connectServer,
+    connectServers,
     getTimezone,
     getActiveTimezones,
     setTimezone

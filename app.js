@@ -16,7 +16,7 @@ client.on('ready', () => {
     var serverIds = client.guilds.keyArray();
     console.log(`Connected to ${serverIds.length} servers!`);
 
-    usersRepo.connectServerData(serverIds);
+    usersRepo.connectServers(serverIds);
     acceptMessages = true;
     console.log('Startup complete.');
 });
@@ -58,7 +58,7 @@ client.on('message', msg => {
 });
 
 client.on('guildCreate', guild => {
-    usersRepo.connectServerData(guild.id);
+    usersRepo.connectServer(guild.id);
     console.log(`"${guild.name}" (${guild.id}) connected!"`);
 });
 

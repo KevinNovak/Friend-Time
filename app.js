@@ -16,7 +16,7 @@ function getConnectedServerIds() {
 function updateConnectedServers(serverCount) {
     client.user.setPresence({
         game: {
-            name: `time to ${serverCount} servers`,
+            name: `time to ${serverCount.toLocaleString()} servers`,
             type: 'STREAMING',
             url: 'https://www.twitch.tv/monstercat'
         }

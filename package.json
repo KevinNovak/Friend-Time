@@ -36,5 +36,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
+  },
+  "homepage": "https://github.com/KevinNovak/Friend-Time#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KevinNovak/Friend-Time.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KevinNovak/Friend-Time/issues"
   }
 }

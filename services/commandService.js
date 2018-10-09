@@ -77,12 +77,20 @@ function processTime(msg) {
 
     var predictedTime = predictTime(userTimezone, msg.content);
 
+    var timezones = usersRepo
+        .getActiveTimezones(msg.guild.id)
+        .map(name => ({
+            name,
+            time: predictedTime.tz(name).format(config.timeFormat),
+            sortTime: parseInt(predictedTime.tz(name).format('ZZ'))
+        }))
+        .sort((a, b) => a.sortTime > b.sortTime);
+
     var message = '';
-    for (var timezone of usersRepo.getActiveTimezones(msg.guild.id)) {
-        var time = predictedTime.tz(timezone).format(config.timeFormat);
+    for (var timezone of timezones) {
         message += `${lang.msg.convertedTime
-            .replace('{TIMEZONE}', timezone)
-            .replace('{TIME}', time)}\n`;
+            .replace('{TIMEZONE}', timezone.name)
+            .replace('{TIME}', timezone.time)}\n`;
     }
     msg.channel.send(message);
 }

@@ -60,6 +60,10 @@ function predictTime(userTimezone, msg) {
 }
 
 function processTime(msg) {
+    if (msg.guild === null) {
+        return;
+    }
+
     var userTimezone = usersRepo.getTimezone(msg.guild.id, msg.author.id);
 
     if (!userTimezone) {

@@ -6,7 +6,7 @@
 
 **Discord bot** - Automatically convert times to your friends time zones!
 
-![Example usage](https://i.imgur.com/UqXDkJn.png)
+![Example usage](https://i.imgur.com/ixXwHAb.png)
 
 If you have a discord server with users across multiple countries and timezones then this is the bot for you! With Friend Time you can easily coordinate times between users. Friend Time will automatically convert any times mentioned in chat to the times of other users.
 

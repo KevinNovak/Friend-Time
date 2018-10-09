@@ -1,5 +1,7 @@
 # Friend Time
 
+[![Discord Bots](https://discordbots.org/api/widget/status/471091072546766849.svg)](https://discordbots.org/bot/471091072546766849)[![Discord Bots](https://discordbots.org/api/widget/upvotes/471091072546766849.svg)](https://discordbots.org/bot/471091072546766849)
+
 ## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=3072)
 
 **Discord bot** - Automatically convert times to your friends time zones!

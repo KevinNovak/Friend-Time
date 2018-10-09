@@ -26,7 +26,7 @@ function getTimezone(serverId, userId) {
 }
 
 function getActiveTimezones(serverId) {
-    return new Set(users[serverId].map(user => user.timezone).sort());
+    return [...new Set(users[serverId].map(user => user.timezone))];
 }
 
 function setTimezone(serverId, userId, timezone) {

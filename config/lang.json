@@ -28,6 +28,7 @@
             "For example: *-ft set America/New_York*"
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
+        "notAllowedInDm": "This command doesn't work in direct messages. Try again in a server channel.",
         "noTimezoneProvided": [
             "Please provide a timezone.",
             "",

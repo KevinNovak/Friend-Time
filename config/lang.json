@@ -53,6 +53,7 @@
         "startupComplete": "Startup complete.",
         "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file.",
         "serverConnected": "'{SERVER_NAME}' ({SERVER_ID}) connected! There are now {SERVER_COUNT} connected servers.",
-        "serverDisconnected": "'{SERVER_NAME}' ({SERVER_ID}) disconnected. There are now {SERVER_COUNT} connected servers."
+        "serverDisconnected": "'{SERVER_NAME}' ({SERVER_ID}) disconnected. There are now {SERVER_COUNT} connected servers.",
+        "userSetTimezone": "User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}' in '{SERVER_NAME}' ({SERVER_ID})."
     }
 }

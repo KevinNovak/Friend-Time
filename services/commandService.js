@@ -23,7 +23,7 @@ function processMap(msg) {
 
 function processSet(msg, args) {
     if (msg.guild === null) {
-        // TODO: Send user a message
+        msg.channel.send(lang.msg.notAllowedInDm);
         return;
     }
 

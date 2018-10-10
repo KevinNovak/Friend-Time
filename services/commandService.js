@@ -1,4 +1,4 @@
-const timezoneUtils = require('../utils/timezoneUtils');
+const timeUtils = require('../utils/timeUtils');
 const regexUtils = require('../utils/regexUtils');
 const usersRepo = require('../repos/usersRepo');
 const config = require('../config/config.json');
@@ -33,7 +33,7 @@ function processSet(msg, args) {
     }
 
     var userTimezone = args[2];
-    var timezone = timezoneUtils.findTimezone(userTimezone);
+    var timezone = timeUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(invalidTimezoneMsg);
         return;
@@ -54,7 +54,7 @@ function processSet(msg, args) {
 }
 
 function predictTime(userTimezone, msg) {
-    var currentDay = timezoneUtils.getTimeInTimezone(
+    var currentDay = timeUtils.getTimeInTimezone(
         userTimezone,
         internalDateFormat
     );
@@ -65,7 +65,7 @@ function predictTime(userTimezone, msg) {
     var dayNight = match[3].toUpperCase();
 
     var predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
-    return timezoneUtils.createTimeInTimezone(
+    return timeUtils.createTimeInTimezone(
         predictedDateTimeString,
         `${internalDateFormat} ${internalTimeFormat}`,
         userTimezone

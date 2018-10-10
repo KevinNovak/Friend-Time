@@ -43,6 +43,14 @@ function processSet(msg, args) {
     msg.channel.send(
         lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
     );
+    console.log(
+        lang.log.userSetTimezone
+            .replace('{USERNAME}', msg.author.username)
+            .replace('{USER_ID}', msg.author.id)
+            .replace('{TIMEZONE}', timezone.name)
+            .replace('{SERVER_NAME}', msg.guild.name)
+            .replace('{SERVER_ID}', msg.guild.id)
+    );
 }
 
 function predictTime(userTimezone, msg) {

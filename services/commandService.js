@@ -22,6 +22,11 @@ function processMap(msg) {
 }
 
 function processSet(msg, args) {
+    if (msg.guild === null) {
+        // TODO: Send user a message
+        return;
+    }
+
     if (args.length < 3) {
         msg.channel.send(noTimezoneProvidedMsg);
         return;

@@ -82,6 +82,8 @@ function processTime(msg) {
 
     var predictedTime = predictTime(userTimezone, msg.content);
 
+    // TODO: Refactor
+    // TODO: Safer way to sort by time
     var timezones = usersRepo
         .getActiveTimezones(msg.guild.id)
         .map(name => ({

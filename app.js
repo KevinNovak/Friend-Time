@@ -8,19 +8,6 @@ const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
 
-if (config.discordBotList.enabled) {
-    const dbl = new DBL(config.discordBotList.token, client);
-
-    dbl.on('posted', () => {
-        console.log('Server count posted to Discord Bot List!');
-    });
-
-    dbl.on('error', error => {
-        console.error('Failed to connect to Discord Bot List!');
-        console.error(error);
-    });
-}
-
 var acceptMessages = false;
 
 function getConnectedServerIds() {
@@ -117,3 +104,16 @@ client.login(config.token).catch(error => {
     console.error(lang.log.loginFailed);
     console.error(error);
 });
+
+if (config.discordBotList.enabled) {
+    const dbl = new DBL(config.discordBotList.token, client);
+
+    dbl.on('posted', () => {
+        console.log('Server count posted to Discord Bot List!');
+    });
+
+    dbl.on('error', error => {
+        console.error('Failed to connect to Discord Bot List!');
+        console.error(error);
+    });
+}

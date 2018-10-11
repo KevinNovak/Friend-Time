@@ -1,4 +1,8 @@
 {
     "token": "<YOUR_DISCORD_BOT_TOKEN>",
-    "timeFormat": "h:mm a"
+    "timeFormat": "h:mm a",
+    "discordBotList": {
+        "enabled": false,
+        "token": "<YOUR_DISCORD_BOT_LIST_TOKEN>"
+    }
 }

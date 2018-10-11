@@ -24,6 +24,10 @@ function updateConnectedServers(serverCount) {
     });
 }
 
+function canReply(msg) {
+    return msg.channel.permissionsFor(msg.guild.me).has('SEND_MESSAGES');
+}
+
 client.on('ready', () => {
     var userTag = client.user.tag;
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
@@ -42,7 +46,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (!acceptMessages || msg.author.bot) {
+    if (!acceptMessages || msg.author.bot || !canReply(msg)) {
         return;
     }
 

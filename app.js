@@ -100,6 +100,11 @@ client.on('guildDelete', guild => {
     );
 });
 
+client.on('error', error => {
+    console.error(lang.log.clientError);
+    console.error(error);
+});
+
 client.login(config.token).catch(error => {
     console.error(lang.log.loginFailed);
     console.error(error);

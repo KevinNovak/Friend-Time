@@ -51,6 +51,7 @@
         "login": "Logged in as '{USER_TAG}'!",
         "connectedServers": "Connected to {SERVER_COUNT} servers!",
         "startupComplete": "Startup complete.",
+        "clientError": "The discord client WebSocket encountered a connection error.",
         "dblServerCountPosted": "Server count posted to Discord Bot List!",
         "dblError": "An error occured with Discord Bot List.",
         "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file.",

@@ -32,7 +32,7 @@ function processSet(msg, args) {
         return;
     }
 
-    var userTimezone = args[2];
+    var userTimezone = args.slice(2).join(' ');
     var timezone = timeUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(invalidTimezoneMsg);

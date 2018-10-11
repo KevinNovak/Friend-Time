@@ -3,7 +3,10 @@ const moment = require('moment-timezone');
 var timezones = moment.tz.names().map(name => name.toLowerCase());
 
 function findTimezone(timezone) {
-    timezone = timezone.toLowerCase();
+    timezone = timezone
+        .split(' ')
+        .join('_')
+        .toLowerCase();
     if (timezones.includes(timezone)) {
         return moment.tz.zone(timezone);
     }

@@ -1,7 +1,17 @@
 const moment = require('moment-timezone');
 
+var timezones = moment.tz.names().map(name => name.toLowerCase());
+
 function findTimezone(timezone) {
-    return moment.tz.zone(timezone);
+    timezone = timezone.toLowerCase();
+    if (timezones.includes(timezone)) {
+        return moment.tz.zone(timezone);
+    }
+
+    var foundName = timezones.find(name => {
+        return name.includes(timezone);
+    });
+    return moment.tz.zone(foundName);
 }
 
 function getTimeInTimezone(timezone, format) {

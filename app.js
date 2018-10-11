@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const DBL = require('dblapi.js');
 const commandService = require('./services/commandService');
 const usersRepo = require('./repos/usersRepo');
 const regexUtils = require('./utils/regexUtils');
@@ -6,6 +7,19 @@ const config = require('./config/config.json');
 const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
+
+if (config.discordBotList.enabled) {
+    const dbl = new DBL(config.discordBotList.token, client);
+
+    dbl.on('posted', () => {
+        console.log('Server count posted to Discord Bot List!');
+    });
+
+    dbl.on('error', error => {
+        console.error('Failed to connect to Discord Bot List!');
+        console.error(error);
+    });
+}
 
 var acceptMessages = false;
 
@@ -101,4 +115,5 @@ client.on('guildDelete', guild => {
 
 client.login(config.token).catch(error => {
     console.error(lang.log.loginFailed);
+    console.error(error);
 });

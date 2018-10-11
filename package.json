@@ -28,6 +28,7 @@
   "author": "Kevin Novak",
   "license": "MIT",
   "dependencies": {
+    "dblapi.js": "2.2.0",
     "discord.js": "11.4.2",
     "lowdb": "1.0.0",
     "mkdirp": "0.5.1",

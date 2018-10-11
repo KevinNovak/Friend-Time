@@ -109,11 +109,11 @@ if (config.discordBotList.enabled) {
     const dbl = new DBL(config.discordBotList.token, client);
 
     dbl.on('posted', () => {
-        console.log('Server count posted to Discord Bot List!');
+        console.log(lang.log.dblServerCountPosted);
     });
 
     dbl.on('error', error => {
-        console.error('Failed to connect to Discord Bot List!');
+        console.error(lang.log.dblError);
         console.error(error);
     });
 }

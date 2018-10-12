@@ -25,7 +25,9 @@ function updateConnectedServers(serverCount) {
 }
 
 function canReply(msg) {
-    return msg.channel.permissionsFor(msg.guild.me).has('SEND_MESSAGES');
+    return msg.guild
+        ? msg.channel.permissionsFor(msg.guild.me).has('SEND_MESSAGES')
+        : true;
 }
 
 client.on('ready', () => {

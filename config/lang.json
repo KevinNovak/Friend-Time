@@ -18,14 +18,18 @@
         "help": [
             "**-ft help** - Show this help menu.",
             "**-ft map** - View a map of available timezones.",
-            "**-ft set <timezone>** - Set yourself to a timezone."
+            "**-ft set <timezone>** - Set yourself to a timezone.",
+            "",
+            "**Note**: For best results use a timezone in the format **<country>/<city>**. You can see a map of the available cities with **-ft map**. Using a timezone abbreviation like *EST* or *GMT* may have unintended results during daylight savings."
         ],
         "map": [
             "Please visit the following link and choose your timezone:",
             "<http://kevalbhatt.github.io/timezone-picker/>",
             "",
             "Then enter **-ft set <timezone>** with your timezone.",
-            "For example: *-ft set America/New_York*"
+            "For example: *-ft set America/New_York*",
+            "",
+            "**Note**: For best results use a timezone in the format **<country>/<city>**. Using a timezone abbreviation like *EST* or *GMT* may have unintended results during daylight savings."
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
         "notAllowedInDm": "This command doesn't work in direct messages. Try again in a server channel.",

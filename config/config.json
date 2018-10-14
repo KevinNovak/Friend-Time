@@ -1,6 +1,18 @@
 {
     "token": "<YOUR_DISCORD_BOT_TOKEN>",
     "timeFormat": "h:mm a",
+    "regions": [
+        "Africa",
+        "America",
+        "Antarctica",
+        "Arctic",
+        "Asia",
+        "Atlantic",
+        "Australia",
+        "Europe",
+        "Indian",
+        "Pacific"
+    ],
     "discordBotList": {
         "enabled": false,
         "token": "<YOUR_DISCORD_BOT_LIST_TOKEN>"

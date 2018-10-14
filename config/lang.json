@@ -20,7 +20,7 @@
             "**-ft map** - View a map of available timezones.",
             "**-ft set <timezone>** - Set yourself to a timezone.",
             "",
-            "**Note**: For best results use a timezone in the format **<country>/<city>**. You can see a map of the available cities with **-ft map**. Using a timezone abbreviation like *EST* or *GMT* may have unintended results during daylight savings."
+            "**Note**: Use a timezone in the format **<region>/<city>**. For example: *America/New_York*. You can see a map of the available cities with **-ft map**. Timezone abbreviations like *EST* or *GMT* will not work."
         ],
         "map": [
             "Please visit the following link and choose your timezone:",
@@ -29,7 +29,7 @@
             "Then enter **-ft set <timezone>** with your timezone.",
             "For example: *-ft set America/New_York*",
             "",
-            "**Note**: For best results use a timezone in the format **<country>/<city>**. Using a timezone abbreviation like *EST* or *GMT* may have unintended results during daylight savings."
+            "**Note**: Use a timezone in the format **<region>/<city>**. For example: *America/New_York*. You can see a map of the available cities with **-ft map**. Timezone abbreviations like *EST* or *GMT* will not work."
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
         "notAllowedInDm": "This command doesn't work in direct messages. Try again in a server channel.",

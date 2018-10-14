@@ -78,6 +78,11 @@ client.on('message', msg => {
             commandService.processSet(msg, args);
             return;
         }
+
+        if (lang.cmd.invite.includes(cmd)) {
+            commandService.processInvite(msg);
+            return;
+        }
     }
 
     commandService.processHelp(msg);

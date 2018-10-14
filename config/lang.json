@@ -12,15 +12,15 @@
         ],
         "help": ["help", "?"],
         "map": ["map", "zones", "zone", "timezones", "timezone"],
-        "set": ["set", "save", "register"]
+        "set": ["set", "save", "register"],
+        "invite": ["invite", "link"]
     },
     "msg": {
         "help": [
             "**-ft help** - Show this help menu.",
             "**-ft map** - View a map of available timezones.",
             "**-ft set <timezone>** - Set yourself to a timezone.",
-            "",
-            "**Note**: Use a timezone in the format **<region>/<city>**. For example: *America/New_York*. You can see a map of the available cities with **-ft map**. Timezone abbreviations like *EST* or *GMT* will not work."
+            "**-ft invite** - Invite Friend Time to your server."
         ],
         "map": [
             "Please visit the following link and choose your timezone:",
@@ -43,6 +43,10 @@
             "",
             "Type **-ft map** to view a map of available timezones."
         ],
+        "invite": [
+            "Please visit the following link to invite Friend Time to your Discord server:",
+            "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=3072>"
+        ],
         "convertedTime": "**{TIMEZONE}**: {TIME}",
         "timezoneNotSet": [
             "Hi {USERNAME}, it looks like you don't have a timezone set yet.",
@@ -55,10 +59,10 @@
         "login": "Logged in as '{USER_TAG}'!",
         "connectedServers": "Connected to {SERVER_COUNT} servers!",
         "startupComplete": "Startup complete.",
-        "clientError": "The discord client WebSocket encountered a connection error.",
+        "clientError": "The Discord client WebSocket encountered a connection error.",
         "dblServerCountPosted": "Server count posted to Discord Bot List!",
         "dblError": "An error occured with Discord Bot List.",
-        "loginFailed": "Login failed. Please check that you've placed the correct discord bot token in the config file.",
+        "loginFailed": "Login failed. Please check that you've placed the correct Discord bot token in the config file.",
         "serverConnected": "'{SERVER_NAME}' ({SERVER_ID}) connected! There are now {SERVER_COUNT} connected servers.",
         "serverDisconnected": "'{SERVER_NAME}' ({SERVER_ID}) disconnected. There are now {SERVER_COUNT} connected servers.",
         "userSetTimezone": "User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}' in '{SERVER_NAME}' ({SERVER_ID})."

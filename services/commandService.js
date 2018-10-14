@@ -9,6 +9,7 @@ const internalTimeFormat = 'h:mm A';
 
 var helpMsg = lang.msg.help.join('\n');
 var mapMsg = lang.msg.map.join('\n');
+var inviteMsg = lang.msg.invite.join('\n');
 var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
 var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
 var timezoneNotSetMsg = lang.msg.timezoneNotSet.join('\n');
@@ -51,6 +52,10 @@ function processSet(msg, args) {
             .replace('{SERVER_NAME}', msg.guild.name)
             .replace('{SERVER_ID}', msg.guild.id)
     );
+}
+
+function processInvite(msg) {
+    msg.channel.send(inviteMsg);
 }
 
 function predictTime(userTimezone, msg) {
@@ -114,5 +119,6 @@ module.exports = {
     processHelp,
     processMap,
     processSet,
+    processInvite,
     processTime
 };

@@ -77,6 +77,22 @@ function predictTime(userTimezone, msg) {
     );
 }
 
+function compareTimezones(a, b) {
+    if (a.sortTime > b.sortTime) {
+        return 1;
+    }
+    if (a.sortTime < b.sortTime) {
+        return -1;
+    }
+    if (a.name < b.name) {
+        return -1;
+    }
+    if (a.name > b.name) {
+        return 1;
+    }
+    return 0;
+}
+
 function processTime(msg) {
     if (msg.guild === null) {
         return;
@@ -104,7 +120,7 @@ function processTime(msg) {
             time: predictedTime.tz(name).format(config.timeFormat),
             sortTime: parseInt(predictedTime.tz(name).format('ZZ'))
         }))
-        .sort((a, b) => a.sortTime - b.sortTime);
+        .sort(compareTimezones);
 
     var message = '';
     for (var timezone of timezones) {

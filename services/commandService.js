@@ -78,10 +78,10 @@ function predictTime(userTimezone, msg) {
 }
 
 function compareTimezones(a, b) {
-    if (a.sortTime > b.sortTime) {
+    if (a.offset > b.offset) {
         return 1;
     }
-    if (a.sortTime < b.sortTime) {
+    if (a.offset < b.offset) {
         return -1;
     }
     if (a.name < b.name) {
@@ -118,7 +118,7 @@ function processTime(msg) {
         .map(name => ({
             name,
             time: predictedTime.tz(name).format(config.timeFormat),
-            sortTime: parseInt(predictedTime.tz(name).format('ZZ'))
+            offset: parseInt(predictedTime.tz(name).format('ZZ'))
         }))
         .sort(compareTimezones);
 

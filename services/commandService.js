@@ -104,7 +104,7 @@ function processTime(msg) {
             time: predictedTime.tz(name).format(config.timeFormat),
             sortTime: parseInt(predictedTime.tz(name).format('ZZ'))
         }))
-        .sort((a, b) => a.sortTime > b.sortTime);
+        .sort((a, b) => a.sortTime - b.sortTime);
 
     var message = '';
     for (var timezone of timezones) {

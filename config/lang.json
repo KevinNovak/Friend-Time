@@ -29,7 +29,7 @@
             "Then enter **-ft set <timezone>** with your timezone.",
             "For example: *-ft set America/New_York*",
             "",
-            "**Note**: Use a timezone in the format **<region>/<city>**. For example: *America/New_York*. You can see a map of the available cities with **-ft map**. Timezone abbreviations like *EST* or *GMT* will not work."
+            "**Note**: Use a timezone in the format **<region>/<city>**. For example: *America/New_York*. Timezone abbreviations like *EST* or *GMT* will not work."
         ],
         "updatedTimezone": "Updated your timezone to **{TIMEZONE}**.",
         "notAllowedInDm": "This command doesn't work in direct messages. Try again in a server channel.",

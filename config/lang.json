@@ -21,7 +21,8 @@
             "**-ft help** - Show this help menu.",
             "**-ft map** - View a map of available timezones.",
             "**-ft set <timezone>** - Set yourself to a timezone.",
-            "**-ft invite** - Invite Friend Time to your server."
+            "**-ft invite** - Invite Friend Time to your server.",
+            "**-ft now** - Friend-Time the current time."
         ],
         "map": [
             "Please visit the following link and choose your timezone:",

@@ -13,7 +13,8 @@
         "help": ["help", "?"],
         "map": ["map", "zones", "zone", "timezones", "timezone"],
         "set": ["set", "save", "register"],
-        "invite": ["invite", "link"]
+        "invite": ["invite", "link"],
+        "now": ["now", "time", "current"]
     },
     "msg": {
         "help": [

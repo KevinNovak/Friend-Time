@@ -93,7 +93,7 @@ function compareTimezones(a, b) {
     return 0;
 }
 
-function processTime(msg) {
+function processTimeMsg(msg) {
     if (msg.guild === null) {
         return;
     }
@@ -110,7 +110,22 @@ function processTime(msg) {
     }
 
     var predictedTime = predictTime(userTimezone, msg.content);
-
+    processTime(predictedTime,msg);
+}
+function processNow(msg) {
+    /* Converter from https://stackoverflow.com/a/8888498/7886229 */
+    var date = new Date;
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    var predictedTime = predictTime(timeUtils.getBotTimezone(), strTime);
+    processTime(predictedTime,msg);
+}
+function processTime(predictedTime,msg){
     // TODO: Refactor
     // TODO: Safer way to sort by time
     var timezones = usersRepo
@@ -130,11 +145,11 @@ function processTime(msg) {
     }
     msg.channel.send(message);
 }
-
 module.exports = {
     processHelp,
     processMap,
     processSet,
     processInvite,
-    processTime
+    processTimeMsg,
+    processNow,
 };

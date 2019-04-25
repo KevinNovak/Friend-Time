@@ -16,6 +16,7 @@ If you have a discord server with users across multiple countries and timezones 
 * `-ft map` \- View a map of available timezones.
 * `-ft set <timezone>` \- Set yourself to a timezone.
 * `-ft invite` \- Invite Friend Time to your server.
+* `-ft now` \- Friend-Time the current time..
 
 ## Finding Your Timezone
 

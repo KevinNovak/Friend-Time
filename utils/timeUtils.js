@@ -28,9 +28,12 @@ function getTimeInTimezone(timezone, format) {
 function createTimeInTimezone(time, format, timezone) {
     return moment.tz(time, format, timezone);
 }
-
+function getBotTimezone(){
+    return moment.tz.guess();
+}
 module.exports = {
     findTimezone,
     getTimeInTimezone,
-    createTimeInTimezone
+    createTimeInTimezone,
+    getBotTimezone
 };

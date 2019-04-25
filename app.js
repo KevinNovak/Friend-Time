@@ -83,6 +83,20 @@ client.on('message', msg => {
             commandService.processInvite(msg);
             return;
         }
+        
+        if (lang.cmd.now.includes(cmd)) {
+            /* Converter from https://stackoverflow.com/a/8888498/7886229 */
+            var date = new Date;
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            commandService.processTime(strTime);
+            return;
+        }
     }
 
     commandService.processHelp(msg);

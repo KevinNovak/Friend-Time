@@ -27,14 +27,14 @@
     "license": "MIT",
     "dependencies": {
         "dblapi.js": "2.3.0",
-        "discord.js": "11.4.2",
+        "discord.js": "11.5.1",
         "lowdb": "1.0.0",
         "mkdirp": "0.5.1",
-        "moment-timezone": "0.5.23",
-        "pm2": "^3.4.1"
+        "moment-timezone": "0.5.26",
+        "pm2": "^3.5.1"
     },
     "devDependencies": {
-        "nodemon": "^1.18.10"
+        "nodemon": "^1.19.1"
     },
     "homepage": "https://github.com/KevinNovak/Friend-Time#readme",
     "repository": {

@@ -3,7 +3,10 @@
         {
             "name": "friend-time",
             "script": "app.js",
-            "log_date_format": "YYYY-MM-DD HH:mm:ss"
+            "log_date_format": "YYYY-MM-DD HH:mm:ss",
+            "node_args": [
+                "--max_old_space_size=640"
+            ]
         }
     ]
 }

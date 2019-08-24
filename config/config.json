@@ -13,6 +13,12 @@
         "Indian",
         "Pacific"
     ],
+    "mysql": {
+        "host": "<MYSQL_HOST>",
+        "user": "<MYSQL_USER>",
+        "password": "<MYSQL_PASSWORD>",
+        "database": "<MYSQL_DATABASE_NAME>"
+    },
     "discordBotList": {
         "enabled": false,
         "token": "<YOUR_DISCORD_BOT_LIST_TOKEN>"

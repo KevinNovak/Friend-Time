@@ -1,56 +1,60 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const fileUtils = require('../utils/fileUtils');
+const mysql = require('mysql');
+const config = require('../config/config.json');
 
-const users = {};
+const connection = mysql.createConnection({
+    host: config.mysql.host,
+    user: config.mysql.user,
+    password: config.mysql.password,
+    database: config.mysql.database
+});
 
-function connectServer(serverId) {
-  var usersPath = fileUtils.getFullPath(`../data/${serverId}/users.json`);
-  fileUtils.createIfNotExists(usersPath, JSON.stringify([]));
-  var usersFile = new FileSync(usersPath);
-  var usersDb = low(usersFile);
-  users[serverId] = usersDb;
+connection.connect();
+
+function setTimezone(userId, timezone) {
+    let sql = `CALL UpsertMember("${userId}", "${timezone}")`;
+    connection.query(sql, function (error, results, fields) {
+        if (error) {
+            console.error(error);
+        }
+    });
 }
 
-function connectServers(serverIds) {
-  for (var serverId of serverIds) {
-    connectServer(serverId);
-  }
+async function getTimezone(userId) {
+    let sql = `CALL GetMemberTimeZone("${userId}")`;
+    return new Promise((resolve, reject) => {
+        connection.query(sql, function (error, results, fields) {
+            if (error) {
+                console.error(error);
+                reject(error);
+            }
+            let table = results[0];
+            if (table.length <= 0) {
+                resolve(undefined);
+            } else {
+                let timezone = table[0]['TimeZone'];
+                resolve(timezone);
+            }
+        });
+    })
 }
 
-function getTimezone(serverId, userId) {
-  var user = users[serverId].find({ id: userId }).value();
-  if (user) {
-    return user.timezone;
-  }
-}
-
-function getActiveTimezones(serverId, guildUsers) {
-  return [
-    // TODO: More efficient way to get active timezones
-    ...new Set(
-      users[serverId]
-        .filter(user => guildUsers.includes(user.id))
-        .map(user => user.timezone)
-    )
-  ];
-}
-
-function setTimezone(serverId, userId, timezone) {
-  if (users[serverId].find({ id: userId }).value()) {
-    users[serverId]
-      .find({ id: userId })
-      .assign({ timezone: timezone })
-      .write();
-  } else {
-    users[serverId].push({ id: userId, timezone: timezone }).write();
-  }
+async function getActiveTimezones(guildUsers) {
+    let memberDiscordIds = guildUsers.join(',');
+    let sql = `CALL GetDistinctTimeZonesByDiscordIds("${memberDiscordIds}")`;
+    return new Promise((resolve, reject) => {
+        connection.query(sql, function (error, results, fields) {
+            if (error) {
+                console.error(error);
+                reject(error);
+            }
+            let timezones = results[0].map(result => result['TimeZone']);
+            resolve(timezones);
+        });
+    })
 }
 
 module.exports = {
-  connectServer,
-  connectServers,
-  getTimezone,
-  getActiveTimezones,
-  setTimezone
+    setTimezone,
+    getTimezone,
+    getActiveTimezones
 };

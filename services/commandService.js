@@ -40,7 +40,8 @@ function processSet(msg, args) {
         return;
     }
 
-    usersRepo.setTimezone(msg.guild.id, msg.author.id, timezone.name);
+    usersRepo.setTimezone(msg.author.id, timezone.name);
+
     msg.channel.send(
         lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
     );
@@ -93,12 +94,12 @@ function compareTimezones(a, b) {
     return 0;
 }
 
-function processTime(msg) {
+async function processTime(msg) {
     if (msg.guild === null) {
         return;
     }
 
-    var userTimezone = usersRepo.getTimezone(msg.guild.id, msg.author.id);
+    var userTimezone = await usersRepo.getTimezone(msg.author.id);
 
     if (!userTimezone) {
         var timezoneNotSet = timezoneNotSetMsg.replace(
@@ -112,10 +113,9 @@ function processTime(msg) {
     var predictedTime = predictTime(userTimezone, msg.content);
 
     var guildUsers = msg.guild.members.keyArray();
-    // TODO: Refactor
-    // TODO: Safer way to sort by time
-    var timezones = usersRepo
-        .getActiveTimezones(msg.guild.id, guildUsers)
+
+    var activeTimezones = await usersRepo.getActiveTimezones(guildUsers);
+    var activeTimezoneData = activeTimezones
         .map(name => ({
             name,
             time: predictedTime.tz(name).format(config.timeFormat),
@@ -124,10 +124,10 @@ function processTime(msg) {
         .sort(compareTimezones);
 
     var message = '';
-    for (var timezone of timezones) {
+    for (var data of activeTimezoneData) {
         message += `${lang.msg.convertedTime
-            .replace('{TIMEZONE}', timezone.name)
-            .replace('{TIME}', timezone.time)}\n`;
+            .replace('{TIMEZONE}', data.name)
+            .replace('{TIME}', data.time)}\n`;
     }
     msg.channel.send(message);
 }

@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const DBL = require('dblapi.js');
 const commandService = require('./services/commandService');
-const usersRepo = require('./repos/usersRepo');
 const regexUtils = require('./utils/regexUtils');
 const config = require('./config/config.json');
 const lang = require('./config/lang.json');
@@ -35,8 +34,6 @@ client.on('ready', () => {
     console.log(lang.log.login.replace('{USER_TAG}', userTag));
 
     var serverIds = getConnectedServerIds();
-    usersRepo.connectServers(serverIds);
-
     var serverCount = serverIds.length;
     updateConnectedServers(serverCount);
     console.log(
@@ -89,7 +86,6 @@ client.on('message', msg => {
 });
 
 client.on('guildCreate', guild => {
-    usersRepo.connectServer(guild.id);
     var serverCount = getConnectedServerIds().length;
     updateConnectedServers(serverCount);
     console.log(

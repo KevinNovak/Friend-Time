@@ -14,7 +14,7 @@
         "Pacific"
     ],
     "mysql": {
-        "host": "<MYSQL_HOST>",
+        "host": "localhost",
         "user": "<MYSQL_USER>",
         "password": "<MYSQL_PASSWORD>",
         "database": "<MYSQL_DATABASE_NAME>"

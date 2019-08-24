@@ -22,7 +22,7 @@ function processMap(msg) {
     msg.channel.send(mapMsg);
 }
 
-function processSet(msg, args) {
+async function processSet(msg, args) {
     if (msg.guild === null) {
         msg.channel.send(lang.msg.notAllowedInDm);
         return;
@@ -40,7 +40,7 @@ function processSet(msg, args) {
         return;
     }
 
-    usersRepo.setTimezone(msg.author.id, timezone.name);
+    await usersRepo.setTimezone(msg.author.id, timezone.name);
 
     msg.channel.send(
         lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)

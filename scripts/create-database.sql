@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 24, 2019 at 03:34 PM
+-- Generation Time: Aug 24, 2019 at 05:24 PM
 -- Server version: 10.3.15-MariaDB-1
 -- PHP Version: 7.3.4-2
 
@@ -24,20 +24,19 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`kevin`@`localhost` PROCEDURE `GetDistinctTimeZonesByDiscordIds` (IN `DiscordIds` MEDIUMTEXT)  SELECT DISTINCT TimeZone
+CREATE DEFINER=`kevin`@`localhost` PROCEDURE `GetDistinctTimeZonesByDiscordIds` (IN `IN_DiscordIds` MEDIUMTEXT)  SELECT DISTINCT `TimeZone`
 FROM Member
-WHERE FIND_IN_SET(`DiscordId`, DiscordIds) > 0$$
+WHERE FIND_IN_SET(`DiscordId`, IN_DiscordIds) > 0$$
 
-CREATE DEFINER=`kevin`@`localhost` PROCEDURE `GetMemberTimeZone` (IN `DiscordId` VARCHAR(20))  SELECT TimeZone
+CREATE DEFINER=`kevin`@`localhost` PROCEDURE `GetMemberTimeZone` (IN `IN_DiscordId` VARCHAR(20))  SELECT `TimeZone`
 FROM Member
-WHERE `DiscordId` = DiscordId
-LIMIT 1$$
+WHERE `DiscordId` = IN_DiscordId$$
 
-CREATE DEFINER=`kevin`@`localhost` PROCEDURE `UpsertMember` (IN `DiscordId` VARCHAR(20), IN `TimeZone` VARCHAR(100))  BEGIN
+CREATE DEFINER=`kevin`@`localhost` PROCEDURE `UpsertMember` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
 
 INSERT INTO Member (`DiscordId`, `TimeZone`)
-VALUES (DiscordId, TimeZone)
-ON DUPLICATE KEY UPDATE `TimeZone` = TimeZone;
+VALUES (IN_DiscordId, IN_TimeZone)
+ON DUPLICATE KEY UPDATE `TimeZone` = IN_TimeZone;
 
 END$$
 

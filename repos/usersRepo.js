@@ -26,7 +26,9 @@ async function getTimezone(userId) {
             if (error) {
                 console.error(error);
                 reject(error);
+                return;
             }
+
             let table = results[0];
             if (table.length <= 0) {
                 resolve(undefined);
@@ -46,7 +48,9 @@ async function getActiveTimezones(guildUsers) {
             if (error) {
                 console.error(error);
                 reject(error);
+                return;
             }
+            
             let timezones = results[0].map(result => result['TimeZone']);
             resolve(timezones);
         });

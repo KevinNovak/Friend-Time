@@ -3,7 +3,8 @@ const config = require('../config/config.json');
 
 const procedures = {
     upsertMember: 'UpsertMember',
-    getMemberTimeZone: 'GetMemberTimeZone'
+    getMemberTimeZone: 'GetMemberTimeZone',
+    getDistinctTimeZonesByDiscordIds: 'GetDistinctTimeZonesByDiscordIds'
 }
 
 const connection = mysql.createConnection({
@@ -52,7 +53,7 @@ async function getTimezone(userId) {
 
 async function getActiveTimezones(guildUsers) {
     let memberDiscordIds = guildUsers.join(',');
-    let sql = `CALL GetDistinctTimeZonesByDiscordIds("${memberDiscordIds}")`;
+    let sql = `CALL ${getDistinctTimeZonesByDiscordIds}("${memberDiscordIds}")`;
     return new Promise((resolve, reject) => {
         connection.query(sql, function (error, results, fields) {
             if (error) {

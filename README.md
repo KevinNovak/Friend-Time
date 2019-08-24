@@ -37,4 +37,3 @@ Friend Time will then know your timezone and use this to automatically convert a
 
 * [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.
 * [Moment Timezone](https://momentjs.com/timezone/) - Parse and display dates in any timezone.
-* [Lowdb](https://github.com/typicode/lowdb) by [typicode](https://github.com/typicode) - A small local JSON database powered by Lodash.

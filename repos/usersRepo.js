@@ -53,7 +53,7 @@ async function getTimezone(userId) {
 
 async function getActiveTimezones(guildUsers) {
     let memberDiscordIds = guildUsers.join(',');
-    let sql = `CALL ${getDistinctTimeZonesByDiscordIds}("${memberDiscordIds}")`;
+    let sql = `CALL ${procedures.getDistinctTimeZonesByDiscordIds}("${memberDiscordIds}")`;
     return new Promise((resolve, reject) => {
         connection.query(sql, function (error, results, fields) {
             if (error) {

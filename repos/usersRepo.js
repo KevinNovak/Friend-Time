@@ -1,25 +1,25 @@
-const mysql = require('mysql');
-const config = require('../config/config.json');
+const _mysql = require('mysql');
+const _config = require('../config/config.json');
 
-const procedures = {
+const _procedures = {
     upsertMember: 'UpsertMember',
     getMemberTimeZone: 'GetMemberTimeZone',
     getDistinctTimeZonesByDiscordIds: 'GetDistinctTimeZonesByDiscordIds'
 }
 
-const connection = mysql.createConnection({
-    host: config.mysql.host,
-    user: config.mysql.user,
-    password: config.mysql.password,
-    database: config.mysql.database
+const _connection = _mysql.createConnection({
+    host: _config.mysql.host,
+    user: _config.mysql.user,
+    password: _config.mysql.password,
+    database: _config.mysql.database
 });
 
-connection.connect();
+_connection.connect();
 
 async function setTimezone(userId, timezone) {
-    let sql = `CALL ${procedures.upsertMember}("${userId}", "${timezone}")`;
+    let sql = `CALL ${_procedures.upsertMember}("${userId}", "${timezone}")`;
     return new Promise((resolve, reject) => {
-        connection.query(sql, function (error, results, fields) {
+        _connection.query(sql, function (error, results, fields) {
             if (error) {
                 console.error(error);
                 reject(error);
@@ -31,9 +31,9 @@ async function setTimezone(userId, timezone) {
 }
 
 async function getTimezone(userId) {
-    let sql = `CALL ${procedures.getMemberTimeZone}("${userId}")`;
+    let sql = `CALL ${_procedures.getMemberTimeZone}("${userId}")`;
     return new Promise((resolve, reject) => {
-        connection.query(sql, function (error, results, fields) {
+        _connection.query(sql, function (error, results, fields) {
             if (error) {
                 console.error(error);
                 reject(error);
@@ -53,9 +53,9 @@ async function getTimezone(userId) {
 
 async function getActiveTimezones(guildUsers) {
     let memberDiscordIds = guildUsers.join(',');
-    let sql = `CALL ${procedures.getDistinctTimeZonesByDiscordIds}("${memberDiscordIds}")`;
+    let sql = `CALL ${_procedures.getDistinctTimeZonesByDiscordIds}("${memberDiscordIds}")`;
     return new Promise((resolve, reject) => {
-        connection.query(sql, function (error, results, fields) {
+        _connection.query(sql, function (error, results, fields) {
             if (error) {
                 console.error(error);
                 reject(error);

@@ -1,7 +1,7 @@
 const moment = require('moment-timezone');
 const regions = require('../config/config.json').regions;
 
-var timezones = moment.tz
+let timezones = moment.tz
     .names()
     .filter(name => regions.some(region => name.startsWith(`${region}/`)))
     .map(name => name.toLowerCase());
@@ -15,7 +15,7 @@ function findTimezone(timezone) {
         return moment.tz.zone(timezone);
     }
 
-    var foundName = timezones.find(name => {
+    let foundName = timezones.find(name => {
         return name.includes(timezone);
     });
     return moment.tz.zone(foundName);

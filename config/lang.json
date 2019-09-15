@@ -56,15 +56,17 @@
         ]
     },
     "log": {
-        "login": "Logged in as '{USER_TAG}'!",
-        "connectedServers": "Connected to {SERVER_COUNT} servers!",
-        "startupComplete": "Startup complete.",
-        "clientError": "The Discord client WebSocket encountered a connection error.",
-        "dblServerCountPosted": "Server count posted to Discord Bot List!",
-        "dblError": "An error occured with Discord Bot List.",
-        "loginFailed": "Login failed. Please check that you've placed the correct Discord bot token in the config file.",
-        "serverConnected": "'{SERVER_NAME}' ({SERVER_ID}) connected! There are now {SERVER_COUNT} connected servers.",
-        "serverDisconnected": "'{SERVER_NAME}' ({SERVER_ID}) disconnected. There are now {SERVER_COUNT} connected servers.",
-        "userSetTimezone": "User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}' in '{SERVER_NAME}' ({SERVER_ID})."
+        "launchedShard": "Launched Shard {SHARD_ID}.",
+        "shardLogin": "[Shard {SHARD_ID}] Logged in as '{USER_TAG}'!",
+        "connectedServers": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!",
+        "connectedServersWhileSpawning": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
+        "startupComplete": "[Shard {SHARD_ID}] Startup complete.",
+        "clientError": "[Shard {SHARD_ID}] The Discord client WebSocket encountered a connection error.",
+        "dblServerCountPosted": "[Shard {SHARD_ID}] Server count posted to Discord Bot List!",
+        "dblError": "[Shard {SHARD_ID}] An error occured with Discord Bot List.",
+        "loginFailed": "[Shard {SHARD_ID}] Login failed. Please check that you've placed the correct Discord bot token in the config file.",
+        "serverConnected": "[Shard {SHARD_ID}] '{SERVER_NAME}' ({SERVER_ID}) connected!",
+        "serverDisconnected": "[Shard {SHARD_ID}] '{SERVER_NAME}' ({SERVER_ID}) disconnected.",
+        "userSetTimezone": "[Shard {SHARD_ID}] User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}' in '{SERVER_NAME}' ({SERVER_ID})."
     }
 }

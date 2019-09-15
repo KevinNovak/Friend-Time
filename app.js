@@ -1,10 +1,10 @@
 const { ShardingManager } = require('discord.js');
-const config = require('./config/config.json');
-const lang = require('./config/lang.json');
+const _config = require('./config/config.json');
+const _lang = require('./config/lang.json');
 
-let manager = new ShardingManager('./bot.js', { token: config.token });
+let _manager = new ShardingManager('./bot.js', { token: _config.token });
 
-manager.spawn();
-manager.on('launch', shard => {
-    return console.log(lang.log.launchedShard.replace('{SHARD_ID}', shard.id));
+_manager.spawn();
+_manager.on('launch', shard => {
+    return console.log(_lang.log.launchedShard.replace('{SHARD_ID}', shard.id));
 });

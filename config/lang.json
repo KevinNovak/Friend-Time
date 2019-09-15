@@ -58,7 +58,8 @@
     "log": {
         "launchedShard": "Launched Shard {SHARD_ID}.",
         "shardLogin": "[Shard {SHARD_ID}] Logged in as '{USER_TAG}'!",
-        "connectedServers": "Connected to {SERVER_COUNT} servers!",
+        "connectedServers": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!",
+        "connectedServersWhileSpawning": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
         "startupComplete": "[Shard {SHARD_ID}] Startup complete.",
         "clientError": "[Shard {SHARD_ID}] The Discord client WebSocket encountered a connection error.",
         "dblServerCountPosted": "[Shard {SHARD_ID}] Server count posted to Discord Bot List!",

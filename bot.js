@@ -16,7 +16,13 @@ async function updateConnectedServers() {
     } catch (error) {
         if (!error.message.includes('Still spawning shards')) {
             console.error(error);
+            return;
         }
+        console.log(
+            lang.log.connectedServersWhileSpawning
+                .replace('{SHARD_ID}', client.shard.id)
+                .replace('{SHARD_SERVER_COUNT}', client.guilds.size.toLocaleString())
+        );
         return;
     }
 
@@ -32,7 +38,9 @@ async function updateConnectedServers() {
 
     console.log(
         lang.log.connectedServers
-            .replace('{SERVER_COUNT}', serverCount)
+            .replace('{SHARD_ID}', client.shard.id)
+            .replace('{SHARD_SERVER_COUNT}', client.guilds.size.toLocaleString())
+            .replace('{TOTAL_SERVER_COUNT}', serverCount.toLocaleString())
     );
 }
 

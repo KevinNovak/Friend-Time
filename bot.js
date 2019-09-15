@@ -7,7 +7,7 @@ const lang = require('./config/lang.json');
 
 const client = new Discord.Client();
 
-var acceptMessages = false;
+let acceptMessages = false;
 
 async function updateConnectedServers() {
     let results = [];
@@ -43,7 +43,7 @@ function canReply(msg) {
 }
 
 client.on('ready', () => {
-    var userTag = client.user.tag;
+    let userTag = client.user.tag;
     console.log(
         lang.log.shardLogin
             .replace('{SHARD_ID}', client.shard.id)
@@ -69,13 +69,13 @@ client.on('message', msg => {
         return;
     }
 
-    var args = msg.content.split(' ');
+    let args = msg.content.split(' ');
     if (!lang.cmd.prefix.includes(args[0].toLowerCase())) {
         return;
     }
 
     if (args.length > 1) {
-        var cmd = args[1].toLowerCase();
+        let cmd = args[1].toLowerCase();
         if (lang.cmd.help.includes(cmd)) {
             commandService.processHelp(msg);
             return;

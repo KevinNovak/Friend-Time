@@ -7,12 +7,12 @@ const lang = require('../config/lang.json');
 const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
 
-var helpMsg = lang.msg.help.join('\n');
-var mapMsg = lang.msg.map.join('\n');
-var inviteMsg = lang.msg.invite.join('\n');
-var noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
-var invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
-var timezoneNotSetMsg = lang.msg.timezoneNotSet.join('\n');
+let helpMsg = lang.msg.help.join('\n');
+let mapMsg = lang.msg.map.join('\n');
+let inviteMsg = lang.msg.invite.join('\n');
+let noTimezoneProvidedMsg = lang.msg.noTimezoneProvided.join('\n');
+let invalidTimezoneMsg = lang.msg.invalidTimezone.join('\n');
+let timezoneNotSetMsg = lang.msg.timezoneNotSet.join('\n');
 
 function processHelp(msg) {
     msg.channel.send(helpMsg);
@@ -33,8 +33,8 @@ async function processSet(msg, args) {
         return;
     }
 
-    var userTimezone = args.slice(2).join(' ');
-    var timezone = timeUtils.findTimezone(userTimezone);
+    let userTimezone = args.slice(2).join(' ');
+    let timezone = timeUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(invalidTimezoneMsg);
         return;
@@ -60,17 +60,17 @@ function processInvite(msg) {
 }
 
 function predictTime(userTimezone, msg) {
-    var currentDay = timeUtils.getTimeInTimezone(
+    let currentDay = timeUtils.getTimeInTimezone(
         userTimezone,
         internalDateFormat
     );
 
-    var match = regexUtils.matchTime(msg);
-    var hour = match[1];
-    var minutes = match[2] ? match[2] : ':00';
-    var dayNight = match[3].toUpperCase();
+    let match = regexUtils.matchTime(msg);
+    let hour = match[1];
+    let minutes = match[2] ? match[2] : ':00';
+    let dayNight = match[3].toUpperCase();
 
-    var predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
+    let predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
     return timeUtils.createTimeInTimezone(
         predictedDateTimeString,
         `${internalDateFormat} ${internalTimeFormat}`,
@@ -99,10 +99,10 @@ async function processTime(msg) {
         return;
     }
 
-    var userTimezone = await usersRepo.getTimezone(msg.author.id);
+    let userTimezone = await usersRepo.getTimezone(msg.author.id);
 
     if (!userTimezone) {
-        var timezoneNotSet = timezoneNotSetMsg.replace(
+        let timezoneNotSet = timezoneNotSetMsg.replace(
             '{USERNAME}',
             msg.author.username
         );
@@ -110,12 +110,12 @@ async function processTime(msg) {
         return;
     }
 
-    var predictedTime = predictTime(userTimezone, msg.content);
+    let predictedTime = predictTime(userTimezone, msg.content);
 
-    var guildUsers = msg.guild.members.keyArray();
+    let guildUsers = msg.guild.members.keyArray();
 
-    var activeTimezones = await usersRepo.getActiveTimezones(guildUsers);
-    var activeTimezoneData = activeTimezones
+    let activeTimezones = await usersRepo.getActiveTimezones(guildUsers);
+    let activeTimezoneData = activeTimezones
         .map(name => ({
             name,
             time: predictedTime.tz(name).format(config.timeFormat),
@@ -123,8 +123,8 @@ async function processTime(msg) {
         }))
         .sort(compareTimezones);
 
-    var message = '';
-    for (var data of activeTimezoneData) {
+    let message = '';
+    for (let data of activeTimezoneData) {
         message += `${lang.msg.convertedTime
             .replace('{TIMEZONE}', data.name)
             .replace('{TIME}', data.time)}\n`;

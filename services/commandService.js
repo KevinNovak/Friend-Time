@@ -6,6 +6,7 @@ const lang = require('../config/lang.json');
 
 const internalDateFormat = 'YYYY-MM-DD';
 const internalTimeFormat = 'h:mm A';
+const maxMessageLength = 2000;
 
 let helpMsg = lang.msg.help.join('\n');
 let mapMsg = lang.msg.map.join('\n');
@@ -126,11 +127,18 @@ async function processTime(msg) {
 
     let message = '';
     for (let data of activeTimezoneData) {
-        message += `${lang.msg.convertedTime
+        let line = `${lang.msg.convertedTime
             .replace('{TIMEZONE}', data.name)
             .replace('{TIME}', data.time)}\n`;
+        if (message.length + line.length > maxMessageLength) {
+            msg.channel.send(message);
+            message = '';
+        }
+        message += line;
     }
-    msg.channel.send(message);
+    if (message.length > 1) {
+        msg.channel.send(message);
+    }
 }
 
 module.exports = {

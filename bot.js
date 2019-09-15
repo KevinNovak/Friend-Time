@@ -9,11 +9,19 @@ const client = new Discord.Client();
 
 var acceptMessages = false;
 
-function getConnectedServerIds() {
-    return client.guilds.keyArray();
-}
+async function updateConnectedServers() {
+    let results = [];
+    try {
+        results = await client.shard.fetchClientValues('guilds.size');
+    } catch (error) {
+        if (!error.message.includes('Still spawning shards')) {
+            console.error(error);
+        }
+        return;
+    }
 
-function updateConnectedServers(serverCount) {
+    let serverCount = results.reduce((prev, guildCount) => prev + guildCount, 0);
+
     client.user.setPresence({
         game: {
             name: `time to ${serverCount.toLocaleString()} servers`,
@@ -21,6 +29,11 @@ function updateConnectedServers(serverCount) {
             url: 'https://www.twitch.tv/monstercat'
         }
     });
+
+    console.log(
+        lang.log.connectedServers
+            .replace('{SERVER_COUNT}', serverCount)
+    );
 }
 
 function canReply(msg) {
@@ -31,17 +44,19 @@ function canReply(msg) {
 
 client.on('ready', () => {
     var userTag = client.user.tag;
-    console.log(lang.log.login.replace('{USER_TAG}', userTag));
-
-    var serverIds = getConnectedServerIds();
-    var serverCount = serverIds.length;
-    updateConnectedServers(serverCount);
     console.log(
-        lang.log.connectedServers.replace('{SERVER_COUNT}', serverCount)
+        lang.log.shardLogin
+            .replace('{SHARD_ID}', client.shard.id)
+            .replace('{USER_TAG}', userTag)
     );
 
+    updateConnectedServers();
+
     acceptMessages = true;
-    console.log(lang.log.startupComplete);
+    console.log(
+        lang.log.startupComplete
+            .replace('{SHARD_ID}', client.shard.id)
+    );
 });
 
 client.on('message', msg => {
@@ -86,34 +101,38 @@ client.on('message', msg => {
 });
 
 client.on('guildCreate', guild => {
-    var serverCount = getConnectedServerIds().length;
-    updateConnectedServers(serverCount);
+    updateConnectedServers();
     console.log(
         lang.log.serverConnected
+            .replace('{SHARD_ID}', client.shard.id)
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
-            .replace('{SERVER_COUNT}', serverCount)
     );
 });
 
 client.on('guildDelete', guild => {
-    var serverCount = getConnectedServerIds().length;
-    updateConnectedServers(serverCount);
+    updateConnectedServers();
     console.log(
         lang.log.serverDisconnected
+            .replace('{SHARD_ID}', client.shard.id)
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
-            .replace('{SERVER_COUNT}', serverCount)
     );
 });
 
 client.on('error', error => {
-    console.error(lang.log.clientError);
+    console.error(
+        lang.log.clientError
+            .replace('{SHARD_ID}', client.shard.id)
+    );
     console.error(error);
 });
 
 client.login(config.token).catch(error => {
-    console.error(lang.log.loginFailed);
+    console.error(
+        lang.log.loginFailed
+            .replace('{SHARD_ID}', client.shard.id)
+    );
     console.error(error);
 });
 
@@ -121,11 +140,17 @@ if (config.discordBotList.enabled) {
     const dbl = new DBL(config.discordBotList.token, client);
 
     dbl.on('posted', () => {
-        console.log(lang.log.dblServerCountPosted);
+        console.log(
+            lang.log.dblServerCountPosted
+                .replace('{SHARD_ID}', client.shard.id)
+        );
     });
 
     dbl.on('error', error => {
-        console.error(lang.log.dblError);
+        console.error(
+            lang.log.dblError
+                .replace('{SHARD_ID}', client.shard.id)
+        );
         console.error(error);
     });
 }

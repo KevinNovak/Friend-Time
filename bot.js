@@ -1,34 +1,34 @@
 const Discord = require('discord.js');
 const DBL = require('dblapi.js');
-const commandService = require('./services/commandService');
-const regexUtils = require('./utils/regexUtils');
-const config = require('./config/config.json');
-const lang = require('./config/lang.json');
+const _commandService = require('./services/commandService');
+const _regexUtils = require('./utils/regexUtils');
+const _config = require('./config/config.json');
+const _lang = require('./config/lang.json');
 
-const client = new Discord.Client();
+const _client = new Discord.Client();
 
-let acceptMessages = false;
+let _acceptMessages = false;
 
 async function updateConnectedServers() {
     let results = [];
     try {
-        results = await client.shard.fetchClientValues('guilds.size');
+        results = await _client.shard.fetchClientValues('guilds.size');
     } catch (error) {
         if (!error.message.includes('Still spawning shards')) {
             console.error(error);
             return;
         }
         console.log(
-            lang.log.connectedServersWhileSpawning
-                .replace('{SHARD_ID}', client.shard.id)
-                .replace('{SHARD_SERVER_COUNT}', client.guilds.size.toLocaleString())
+            _lang.log.connectedServersWhileSpawning
+                .replace('{SHARD_ID}', _client.shard.id)
+                .replace('{SHARD_SERVER_COUNT}', _client.guilds.size.toLocaleString())
         );
         return;
     }
 
     let serverCount = results.reduce((prev, guildCount) => prev + guildCount, 0);
 
-    client.user.setPresence({
+    _client.user.setPresence({
         game: {
             name: `time to ${serverCount.toLocaleString()} servers`,
             type: 'STREAMING',
@@ -37,9 +37,9 @@ async function updateConnectedServers() {
     });
 
     console.log(
-        lang.log.connectedServers
-            .replace('{SHARD_ID}', client.shard.id)
-            .replace('{SHARD_SERVER_COUNT}', client.guilds.size.toLocaleString())
+        _lang.log.connectedServers
+            .replace('{SHARD_ID}', _client.shard.id)
+            .replace('{SHARD_SERVER_COUNT}', _client.guilds.size.toLocaleString())
             .replace('{TOTAL_SERVER_COUNT}', serverCount.toLocaleString())
     );
 }
@@ -50,114 +50,114 @@ function canReply(msg) {
         : true;
 }
 
-client.on('ready', () => {
-    let userTag = client.user.tag;
+_client.on('ready', () => {
+    let userTag = _client.user.tag;
     console.log(
-        lang.log.shardLogin
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.shardLogin
+            .replace('{SHARD_ID}', _client.shard.id)
             .replace('{USER_TAG}', userTag)
     );
 
     updateConnectedServers();
 
-    acceptMessages = true;
+    _acceptMessages = true;
     console.log(
-        lang.log.startupComplete
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.startupComplete
+            .replace('{SHARD_ID}', _client.shard.id)
     );
 });
 
-client.on('message', msg => {
-    if (!acceptMessages || msg.author.bot || !canReply(msg)) {
+_client.on('message', msg => {
+    if (!_acceptMessages || msg.author.bot || !canReply(msg)) {
         return;
     }
 
-    if (regexUtils.containsTime(msg.content)) {
-        commandService.processTime(msg);
+    if (_regexUtils.containsTime(msg.content)) {
+        _commandService.processTime(msg);
         return;
     }
 
     let args = msg.content.split(' ');
-    if (!lang.cmd.prefix.includes(args[0].toLowerCase())) {
+    if (!_lang.cmd.prefix.includes(args[0].toLowerCase())) {
         return;
     }
 
     if (args.length > 1) {
         let cmd = args[1].toLowerCase();
-        if (lang.cmd.help.includes(cmd)) {
-            commandService.processHelp(msg);
+        if (_lang.cmd.help.includes(cmd)) {
+            _commandService.processHelp(msg);
             return;
         }
 
-        if (lang.cmd.map.includes(cmd)) {
-            commandService.processMap(msg);
+        if (_lang.cmd.map.includes(cmd)) {
+            _commandService.processMap(msg);
             return;
         }
 
-        if (lang.cmd.set.includes(cmd)) {
-            commandService.processSet(msg, args);
+        if (_lang.cmd.set.includes(cmd)) {
+            _commandService.processSet(msg, args);
             return;
         }
 
-        if (lang.cmd.invite.includes(cmd)) {
-            commandService.processInvite(msg);
+        if (_lang.cmd.invite.includes(cmd)) {
+            _commandService.processInvite(msg);
             return;
         }
     }
 
-    commandService.processHelp(msg);
+    _commandService.processHelp(msg);
 });
 
-client.on('guildCreate', guild => {
+_client.on('guildCreate', guild => {
     updateConnectedServers();
     console.log(
-        lang.log.serverConnected
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.serverConnected
+            .replace('{SHARD_ID}', _client.shard.id)
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
     );
 });
 
-client.on('guildDelete', guild => {
+_client.on('guildDelete', guild => {
     updateConnectedServers();
     console.log(
-        lang.log.serverDisconnected
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.serverDisconnected
+            .replace('{SHARD_ID}', _client.shard.id)
             .replace('{SERVER_NAME}', guild.name)
             .replace('{SERVER_ID}', guild.id)
     );
 });
 
-client.on('error', error => {
+_client.on('error', error => {
     console.error(
-        lang.log.clientError
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.clientError
+            .replace('{SHARD_ID}', _client.shard.id)
     );
     console.error(error);
 });
 
-client.login(config.token).catch(error => {
+_client.login(_config.token).catch(error => {
     console.error(
-        lang.log.loginFailed
-            .replace('{SHARD_ID}', client.shard.id)
+        _lang.log.loginFailed
+            .replace('{SHARD_ID}', _client.shard.id)
     );
     console.error(error);
 });
 
-if (config.discordBotList.enabled) {
-    const dbl = new DBL(config.discordBotList.token, client);
+if (_config.discordBotList.enabled) {
+    const dbl = new DBL(_config.discordBotList.token, _client);
 
     dbl.on('posted', () => {
         console.log(
-            lang.log.dblServerCountPosted
-                .replace('{SHARD_ID}', client.shard.id)
+            _lang.log.dblServerCountPosted
+                .replace('{SHARD_ID}', _client.shard.id)
         );
     });
 
     dbl.on('error', error => {
         console.error(
-            lang.log.dblError
-                .replace('{SHARD_ID}', client.shard.id)
+            _lang.log.dblError
+                .replace('{SHARD_ID}', _client.shard.id)
         );
         console.error(error);
     });

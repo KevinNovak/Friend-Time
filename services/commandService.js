@@ -47,6 +47,7 @@ async function processSet(msg, args) {
     );
     console.log(
         lang.log.userSetTimezone
+            .replace('{SHARD_ID}', msg.client.shard.id)
             .replace('{USERNAME}', msg.author.username)
             .replace('{USER_ID}', msg.author.id)
             .replace('{TIMEZONE}', timezone.name)

@@ -1,19 +1,19 @@
-const _timeUtils = require('../utils/timeUtils');
-const _regexUtils = require('../utils/regexUtils');
-const _usersRepo = require('../repos/usersRepo');
-const _config = require('../config/config.json');
-const _lang = require('../config/lang.json');
+const _timeUtils = require("../utils/timeUtils");
+const _regexUtils = require("../utils/regexUtils");
+const _usersRepo = require("../repos/usersRepo");
+const _config = require("../config/config.json");
+const _lang = require("../config/lang.json");
 
-const INTERNAL_DATE_FORMAT = 'YYYY-MM-DD';
-const INTERNAL_TIME_FORMAT = 'h:mm A';
+const INTERNAL_DATE_FORMAT = "YYYY-MM-DD";
+const INTERNAL_TIME_FORMAT = "h:mm A";
 const MAX_MESSAGE_LENGTH = 2000;
 
-let _helpMsg = _lang.msg.help.join('\n');
-let _mapMsg = _lang.msg.map.join('\n');
-let _inviteMsg = _lang.msg.invite.join('\n');
-let _noTimezoneProvidedMsg = _lang.msg.noTimezoneProvided.join('\n');
-let _invalidTimezoneMsg = _lang.msg.invalidTimezone.join('\n');
-let _timezoneNotSetMsg = _lang.msg.timezoneNotSet.join('\n');
+let _helpMsg = _lang.msg.help.join("\n");
+let _mapMsg = _lang.msg.map.join("\n");
+let _inviteMsg = _lang.msg.invite.join("\n");
+let _noTimezoneProvidedMsg = _lang.msg.noTimezoneProvided.join("\n");
+let _invalidTimezoneMsg = _lang.msg.invalidTimezone.join("\n");
+let _timezoneNotSetMsg = _lang.msg.timezoneNotSet.join("\n");
 
 function processHelp(msg) {
     msg.channel.send(_helpMsg);
@@ -34,7 +34,7 @@ async function processSet(msg, args) {
         return;
     }
 
-    let userTimezone = args.slice(2).join(' ');
+    let userTimezone = args.slice(2).join(" ");
     let timezone = _timeUtils.findTimezone(userTimezone);
     if (!timezone) {
         msg.channel.send(_invalidTimezoneMsg);
@@ -44,16 +44,16 @@ async function processSet(msg, args) {
     await _usersRepo.setTimezone(msg.author.id, timezone.name);
 
     msg.channel.send(
-        _lang.msg.updatedTimezone.replace('{TIMEZONE}', timezone.name)
+        _lang.msg.updatedTimezone.replace("{TIMEZONE}", timezone.name)
     );
     console.log(
         _lang.log.userSetTimezone
-            .replace('{SHARD_ID}', msg.client.shard.id)
-            .replace('{USERNAME}', msg.author.username)
-            .replace('{USER_ID}', msg.author.id)
-            .replace('{TIMEZONE}', timezone.name)
-            .replace('{SERVER_NAME}', msg.guild.name)
-            .replace('{SERVER_ID}', msg.guild.id)
+            .replace("{SHARD_ID}", msg.client.shard.id)
+            .replace("{USERNAME}", msg.author.username)
+            .replace("{USER_ID}", msg.author.id)
+            .replace("{TIMEZONE}", timezone.name)
+            .replace("{SERVER_NAME}", msg.guild.name)
+            .replace("{SERVER_ID}", msg.guild.id)
     );
 }
 
@@ -69,7 +69,7 @@ function predictTime(userTimezone, msg) {
 
     let match = _regexUtils.matchTime(msg);
     let hour = match[1];
-    let minutes = match[2] ? match[2] : ':00';
+    let minutes = match[2] ? match[2] : ":00";
     let dayNight = match[3].toUpperCase();
 
     let predictedDateTimeString = `${currentDay} ${hour}${minutes} ${dayNight}`;
@@ -105,7 +105,7 @@ async function processTime(msg) {
 
     if (!userTimezone) {
         let timezoneNotSet = _timezoneNotSetMsg.replace(
-            '{USERNAME}',
+            "{USERNAME}",
             msg.author.username
         );
         msg.channel.send(timezoneNotSet);
@@ -121,18 +121,18 @@ async function processTime(msg) {
         .map(name => ({
             name,
             time: predictedTime.tz(name).format(_config.timeFormat),
-            offset: parseInt(predictedTime.tz(name).format('ZZ'))
+            offset: parseInt(predictedTime.tz(name).format("ZZ"))
         }))
         .sort(compareTimezones);
 
-    let message = '';
+    let message = "";
     for (let data of activeTimezoneData) {
         let line = `${_lang.msg.convertedTime
-            .replace('{TIMEZONE}', data.name)
-            .replace('{TIME}', data.time)}\n`;
+            .replace("{TIMEZONE}", data.name)
+            .replace("{TIME}", data.time)}\n`;
         if (message.length + line.length > MAX_MESSAGE_LENGTH) {
             msg.channel.send(message);
-            message = '';
+            message = "";
         }
         message += line;
     }

@@ -1,5 +1,5 @@
-const _moment = require('moment-timezone');
-const _regions = require('../config/config.json').regions;
+const _moment = require("moment-timezone");
+const _regions = require("../config/config.json").regions;
 
 let timezones = _moment.tz
     .names()
@@ -8,8 +8,8 @@ let timezones = _moment.tz
 
 function findTimezone(timezone) {
     timezone = timezone
-        .split(' ')
-        .join('_')
+        .split(" ")
+        .join("_")
         .toLowerCase();
     if (timezones.includes(timezone)) {
         return _moment.tz.zone(timezone);

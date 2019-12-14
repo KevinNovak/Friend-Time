@@ -24,11 +24,6 @@ function processMap(msg) {
 }
 
 async function processSet(msg, args) {
-    if (msg.guild === null) {
-        msg.channel.send(_lang.msg.notAllowedInDm);
-        return;
-    }
-
     if (args.length < 3) {
         msg.channel.send(_noTimezoneProvidedMsg);
         return;
@@ -52,8 +47,6 @@ async function processSet(msg, args) {
             .replace("{USERNAME}", msg.author.username)
             .replace("{USER_ID}", msg.author.id)
             .replace("{TIMEZONE}", timezone.name)
-            .replace("{SERVER_NAME}", msg.guild.name)
-            .replace("{SERVER_ID}", msg.guild.id)
     );
 }
 

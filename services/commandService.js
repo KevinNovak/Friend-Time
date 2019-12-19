@@ -42,7 +42,7 @@ async function processSet(msg, args) {
         _lang.msg.updatedTimezone.replace("{TIMEZONE}", timezone.name)
     );
     console.log(
-        _lang.log.userSetTimezone
+        _lang.log.bot.userSetTimezone
             .replace("{SHARD_ID}", msg.client.shard.id)
             .replace("{USERNAME}", msg.author.username)
             .replace("{USER_ID}", msg.author.id)

@@ -55,21 +55,35 @@
         ]
     },
     "log": {
-        "launchedShard": "Launched Shard {SHARD_ID}.",
-        "shardLogin": "[Shard {SHARD_ID}] Logged in as '{USER_TAG}'!",
-        "connectedServers": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!",
-        "connectedServersWhileSpawning": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
-        "startupComplete": "[Shard {SHARD_ID}] Startup complete.",
-        "clientDisconnect": "[Shard {SHARD_ID}] The Discord client's WebSocket disconnected and will no longer attempt to reconnect.",
-        "clientReconnecting": "[Shard {SHARD_ID}] The Discord client is trying to reconnect to the WebSocket.",
-        "clientResume": "[Shard {SHARD_ID}] The Discord client's WebSocket resumed. {REPLAYED_EVENT_COUNT} events were replayed.",
-        "clientRateLimit": "[Shard {SHARD_ID}] The Discord client hit a rate limit while making a request.",
-        "clientError": "[Shard {SHARD_ID}] The Discord client WebSocket encountered a connection error.",
-        "dblServerCountPosted": "[Shard {SHARD_ID}] Server count posted to Discord Bot List!",
-        "dblError": "[Shard {SHARD_ID}] An error occured with Discord Bot List.",
-        "loginFailed": "[Shard {SHARD_ID}] Login failed. Please check that you've placed the correct Discord bot token in the config file.",
-        "serverConnected": "[Shard {SHARD_ID}] '{SERVER_NAME}' ({SERVER_ID}) connected!",
-        "serverDisconnected": "[Shard {SHARD_ID}] '{SERVER_NAME}' ({SERVER_ID}) disconnected.",
-        "userSetTimezone": "[Shard {SHARD_ID}] User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}'."
+        "events": {
+            "shardManager": {
+                "launch": "Launched Shard {SHARD_ID}."
+            },
+            "shard": {
+                "login": "[Shard {SHARD_ID}] Logged in as '{USER_TAG}'!",
+                "loginFailed": "[Shard {SHARD_ID}] Login failed. Please check that you've placed the correct Discord bot token in the config file.",
+                "startupComplete": "[Shard {SHARD_ID}] Startup complete.",
+                "disconnect": "[Shard {SHARD_ID}] The Discord client's WebSocket disconnected and will no longer attempt to reconnect.",
+                "reconnecting": "[Shard {SHARD_ID}] The Discord client is trying to reconnect to the WebSocket.",
+                "resume": "[Shard {SHARD_ID}] The Discord client's WebSocket resumed. {REPLAYED_EVENT_COUNT} events were replayed.",
+                "rateLimit": "[Shard {SHARD_ID}] The Discord client hit a rate limit while making a request.",
+                "error": "[Shard {SHARD_ID}] The Discord client WebSocket encountered a connection error."
+            },
+            "server": {
+                "connected": "[Shard {SHARD_ID}] Server '{SERVER_NAME}' ({SERVER_ID}) connected!",
+                "disconnected": "[Shard {SHARD_ID}] Server '{SERVER_NAME}' ({SERVER_ID}) disconnected."
+            },
+            "bot": {
+                "userSetTimezone": "[Shard {SHARD_ID}] User '{USERNAME}' ({USER_ID}) set their timezone to '{TIMEZONE}'."
+            },
+            "dbl": {
+                "serverCountPosted": "[Shard {SHARD_ID}] Server count posted to Discord Bot List!",
+                "error": "[Shard {SHARD_ID}] An error occured with Discord Bot List."
+            }
+        },
+        "info": {
+            "serverCount": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
+            "serverCountWithTotal": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!"
+        }
     }
 }

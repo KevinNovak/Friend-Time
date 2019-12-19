@@ -6,5 +6,7 @@ let _manager = new ShardingManager("./bot.js", { token: _config.token });
 
 _manager.spawn();
 _manager.on("launch", shard => {
-    return console.log(_lang.log.launchedShard.replace("{SHARD_ID}", shard.id));
+    return console.log(
+        _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
+    );
 });

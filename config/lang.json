@@ -57,6 +57,7 @@
     "log": {
         "events": {
             "shardManager": {
+                "start": "[Manager] Application started.",
                 "launch": "[Manager] Launched Shard {SHARD_ID}."
             },
             "shard": {

@@ -136,6 +136,33 @@ _client.on("guildDelete", guild => {
     );
 });
 
+_client.on("disconnect", event => {
+    console.error(
+        _lang.log.clientDisconnect.replace("{SHARD_ID}", _client.shard.id)
+    );
+});
+
+_client.on("reconnecting", () => {
+    console.log(
+        _lang.log.clientReconnecting.replace("{SHARD_ID}", _client.shard.id)
+    );
+});
+
+_client.on("resume", replayed => {
+    console.log(
+        _lang.log.clientResume
+            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{REPLAYED_EVENT_COUNT}", replayed)
+    );
+});
+
+_client.on("rateLimit", rateLimitInfo => {
+    console.error(
+        _lang.log.clientRateLimit.replace("{SHARD_ID}", _client.shard.id)
+    );
+    console.error(rateLimitInfo);
+});
+
 _client.on("error", error => {
     console.error(
         _lang.log.clientError.replace("{SHARD_ID}", _client.shard.id)

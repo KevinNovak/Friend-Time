@@ -57,7 +57,7 @@
     "log": {
         "events": {
             "shardManager": {
-                "launch": "Launched Shard {SHARD_ID}."
+                "launch": "[Manager] Launched Shard {SHARD_ID}."
             },
             "shard": {
                 "login": "[Shard {SHARD_ID}] Logged in as '{USER_TAG}'!",

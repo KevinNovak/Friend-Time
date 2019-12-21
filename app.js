@@ -1,14 +1,27 @@
-const { ShardingManager } = require("discord.js");
+const { ShardingManager, Util } = require("discord.js");
 const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 
-let _manager = new ShardingManager("./bot.js", { token: _config.token });
+const TOKEN = _config.token;
+const LOAD_PERCENTAGE = _config.performance.loadPercentage;
 
-_manager.on("launch", shard => {
-    return console.log(
-        _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
-    );
-});
+async function start() {
+    const recommendedShards = await Util.fetchRecommendedShards(TOKEN);
+    const shardCount = Math.ceil(recommendedShards * LOAD_PERCENTAGE);
 
-console.log(_lang.log.events.shardManager.start);
-_manager.spawn();
+    let _manager = new ShardingManager("./bot.js", {
+        token: TOKEN,
+        totalShards: shardCount
+    });
+
+    _manager.on("launch", shard => {
+        return console.log(
+            _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
+        );
+    });
+
+    console.log(_lang.log.events.shardManager.start);
+    _manager.spawn();
+}
+
+start();

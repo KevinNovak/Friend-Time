@@ -1,5 +1,11 @@
 {
     "token": "<YOUR_DISCORD_BOT_TOKEN>",
+    "mysql": {
+        "host": "localhost",
+        "user": "<MYSQL_USER>",
+        "password": "<MYSQL_PASSWORD>",
+        "database": "<MYSQL_DATABASE_NAME>"
+    },
     "timeFormat": "h:mm a",
     "regions": [
         "Africa",
@@ -13,11 +19,8 @@
         "Indian",
         "Pacific"
     ],
-    "mysql": {
-        "host": "localhost",
-        "user": "<MYSQL_USER>",
-        "password": "<MYSQL_PASSWORD>",
-        "database": "<MYSQL_DATABASE_NAME>"
+    "performance": {
+        "loadPercentage": 1.0
     },
     "discordBotList": {
         "enabled": false,

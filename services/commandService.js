@@ -1,6 +1,5 @@
 const _timeUtils = require("../utils/timeUtils");
 const _regexUtils = require("../utils/regexUtils");
-const _usersRepo = require("../repos/usersRepo");
 const _config = require("../config/config.json");
 const _lang = require("../config/lang.json");
 
@@ -14,6 +13,12 @@ let _inviteMsg = _lang.msg.invite.join("\n");
 let _noTimezoneProvidedMsg = _lang.msg.noTimezoneProvided.join("\n");
 let _invalidTimezoneMsg = _lang.msg.invalidTimezone.join("\n");
 let _timezoneNotSetMsg = _lang.msg.timezoneNotSet.join("\n");
+
+let _usersRepo;
+
+function CommandService(userRepo) {
+    _usersRepo = userRepo;
+}
 
 function processHelp(msg) {
     msg.channel.send(_helpMsg);
@@ -135,6 +140,7 @@ async function processTime(msg) {
 }
 
 module.exports = {
+    CommandService,
     processHelp,
     processMap,
     processSet,

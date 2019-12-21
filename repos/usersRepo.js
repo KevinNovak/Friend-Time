@@ -14,7 +14,17 @@ const _connection = _mysql.createConnection({
     database: _config.mysql.database
 });
 
-_connection.connect();
+async function connect() {
+    return new Promise((resolve, reject) => {
+        _connection.connect(error => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve();
+        });
+    });
+}
 
 async function setTimezone(userId, timezone) {
     let sql = `CALL ${_procedures.upsertMember}("${userId}", "${timezone}")`;
@@ -69,6 +79,7 @@ async function getActiveTimezones(guildUsers) {
 }
 
 module.exports = {
+    connect,
     setTimezone,
     getTimezone,
     getActiveTimezones

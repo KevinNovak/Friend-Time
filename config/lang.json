@@ -70,6 +70,10 @@
                 "rateLimit": "[Shard {SHARD_ID}] The Discord client hit a rate limit while making a request.",
                 "error": "[Shard {SHARD_ID}] The Discord client WebSocket encountered a connection error."
             },
+            "sql": {
+                "connected": "[Shard {SHARD_ID}] Connected to database.",
+                "connectError": "[Shard {SHARD_ID}] An error occured while connecting to database."
+            },
             "server": {
                 "connected": "[Shard {SHARD_ID}] Server '{SERVER_NAME}' ({SERVER_ID}) connected!",
                 "disconnected": "[Shard {SHARD_ID}] Server '{SERVER_NAME}' ({SERVER_ID}) disconnected."

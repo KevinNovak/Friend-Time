@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const DBL = require("dblapi.js");
 const _commandService = require("./services/commandService");
+const _usersRepo = require("./repos/usersRepo");
 const _regexUtils = require("./utils/regexUtils");
 const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
@@ -59,7 +60,7 @@ function canReply(msg) {
         : true;
 }
 
-_client.on("ready", () => {
+_client.on("ready", async () => {
     let userTag = _client.user.tag;
     console.log(
         _lang.log.events.shard.login
@@ -68,6 +69,26 @@ _client.on("ready", () => {
     );
 
     updateConnectedServers();
+
+    try {
+        await _usersRepo.connect();
+        console.log(
+            _lang.log.events.sql.connected.replace(
+                "{SHARD_ID}",
+                _client.shard.id
+            )
+        );
+    } catch (error) {
+        console.error(
+            _lang.log.events.sql.connectError.replace(
+                "{SHARD_ID}",
+                _client.shard.id
+            )
+        );
+        console.error(error);
+        return;
+    }
+    _commandService.CommandService(_usersRepo);
 
     _acceptMessages = true;
     console.log(

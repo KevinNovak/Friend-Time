@@ -11,7 +11,9 @@ async function start() {
 
     let totalShardCount = 0;
     try {
-        totalShardCount = await Util.fetchRecommendedShards(TOKEN, 2000);
+        totalShardCount = Math.ceil(
+            await Util.fetchRecommendedShards(TOKEN, 2000)
+        );
     } catch (error) {
         console.error(_lang.log.info.retrieveShardCountError);
         console.error(error);

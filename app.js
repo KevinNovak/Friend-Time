@@ -3,15 +3,22 @@ const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 
 const TOKEN = _config.token;
-const LOAD_PERCENTAGE = _config.performance.loadPercentage;
+const MACHINE_ID = _config.sharding.machineId;
+const MACHINE_COUNT = _config.sharding.machineCount;
 
 async function start() {
-    const recommendedShards = await Util.fetchRecommendedShards(TOKEN);
-    const shardCount = Math.ceil(recommendedShards * LOAD_PERCENTAGE);
+    const totalShardCount = await Util.fetchRecommendedShards(TOKEN);
+
+    let myShardIds = [];
+    for (let shardId = 0; shardId < totalShardCount; shardId++) {
+        if (shardId % MACHINE_COUNT == MACHINE_ID) {
+            myShardIds.push(shardId);
+        }
+    }
 
     let _manager = new ShardingManager("./bot.js", {
         token: TOKEN,
-        totalShards: shardCount
+        totalShards: totalShardCount
     });
 
     _manager.on("launch", shard => {
@@ -20,8 +27,11 @@ async function start() {
         );
     });
 
+    for (let shardId of myShardIds) {
+        await _manager.createShard(shardId);
+    }
+
     console.log(_lang.log.events.shardManager.start);
-    _manager.spawn();
 }
 
 start();

@@ -19,8 +19,9 @@
         "Indian",
         "Pacific"
     ],
-    "performance": {
-        "loadPercentage": 1.0
+    "sharding": {
+        "machineId": 0,
+        "machineCount": 3
     },
     "discordBotList": {
         "enabled": false,

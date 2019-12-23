@@ -18,6 +18,11 @@ async function start() {
         }
     }
 
+    if (myShardIds.length == 0) {
+        console.log(_lang.log.info.noShards);
+        return;
+    }
+
     let _manager = new ShardingManager("./bot.js", {
         token: TOKEN,
         totalShards: totalShardCount

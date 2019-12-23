@@ -8,7 +8,8 @@
     },
     "sharding": {
         "machineId": 0,
-        "machineCount": 1
+        "machineCount": 1,
+        "serversPerShard": 1000
     },
     "timeFormat": "h:mm a",
     "regions": [

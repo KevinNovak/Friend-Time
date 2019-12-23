@@ -9,7 +9,14 @@ const MACHINE_COUNT = _config.sharding.machineCount;
 async function start() {
     console.log(_lang.log.events.shardManager.start);
 
-    const totalShardCount = await Util.fetchRecommendedShards(TOKEN);
+    let totalShardCount = 0;
+    try {
+        totalShardCount = await Util.fetchRecommendedShards(TOKEN, 2000);
+    } catch (error) {
+        console.error(_lang.log.info.retrieveShardCountError);
+        console.error(error);
+        return;
+    }
 
     let myShardIds = [];
     for (let shardId = 0; shardId < totalShardCount; shardId++) {

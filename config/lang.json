@@ -87,9 +87,10 @@
             }
         },
         "info": {
+            "retrieveShardCountError": "[Manager] An error occured while retrieving recommended shard count.",
+            "noShards": "[Manager] No shards to spawn.",
             "serverCount": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
-            "serverCountWithTotal": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!",
-            "noShards": "[Manager] No shards to spawn."
+            "serverCountWithTotal": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!"
         }
     }
 }

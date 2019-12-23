@@ -3,6 +3,7 @@ const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 
 const TOKEN = _config.token;
+const SERVERS_PER_SHARD = _config.sharding.serversPerShard;
 const MACHINE_ID = _config.sharding.machineId;
 const MACHINE_COUNT = _config.sharding.machineCount;
 
@@ -11,7 +12,9 @@ async function start() {
 
     let totalShardCount = 0;
     try {
-        totalShardCount = await Util.fetchRecommendedShards(TOKEN, 2000);
+        totalShardCount = Math.ceil(
+            await Util.fetchRecommendedShards(TOKEN, SERVERS_PER_SHARD)
+        );
     } catch (error) {
         console.error(_lang.log.info.retrieveShardCountError);
         console.error(error);

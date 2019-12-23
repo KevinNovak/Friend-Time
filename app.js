@@ -1,14 +1,42 @@
-const { ShardingManager } = require("discord.js");
+const { ShardingManager, Util } = require("discord.js");
 const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 
-let _manager = new ShardingManager("./bot.js", { token: _config.token });
+const TOKEN = _config.token;
+const MACHINE_ID = _config.sharding.machineId;
+const MACHINE_COUNT = _config.sharding.machineCount;
 
-_manager.on("launch", shard => {
-    return console.log(
-        _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
-    );
-});
+async function start() {
+    console.log(_lang.log.events.shardManager.start);
 
-console.log(_lang.log.events.shardManager.start);
-_manager.spawn();
+    const totalShardCount = await Util.fetchRecommendedShards(TOKEN);
+
+    let myShardIds = [];
+    for (let shardId = 0; shardId < totalShardCount; shardId++) {
+        if (shardId % MACHINE_COUNT == MACHINE_ID) {
+            myShardIds.push(shardId);
+        }
+    }
+
+    if (myShardIds.length == 0) {
+        console.log(_lang.log.info.noShards);
+        return;
+    }
+
+    let _manager = new ShardingManager("./bot.js", {
+        token: TOKEN,
+        totalShards: totalShardCount
+    });
+
+    _manager.on("launch", shard => {
+        return console.log(
+            _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
+        );
+    });
+
+    for (let shardId of myShardIds) {
+        _manager.createShard(shardId);
+    }
+}
+
+start();

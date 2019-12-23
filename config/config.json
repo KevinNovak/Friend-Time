@@ -1,5 +1,15 @@
 {
     "token": "<YOUR_DISCORD_BOT_TOKEN>",
+    "mysql": {
+        "host": "localhost",
+        "user": "<MYSQL_USER>",
+        "password": "<MYSQL_PASSWORD>",
+        "database": "<MYSQL_DATABASE_NAME>"
+    },
+    "sharding": {
+        "machineId": 0,
+        "machineCount": 1
+    },
     "timeFormat": "h:mm a",
     "regions": [
         "Africa",
@@ -13,12 +23,6 @@
         "Indian",
         "Pacific"
     ],
-    "mysql": {
-        "host": "localhost",
-        "user": "<MYSQL_USER>",
-        "password": "<MYSQL_PASSWORD>",
-        "database": "<MYSQL_DATABASE_NAME>"
-    },
     "discordBotList": {
         "enabled": false,
         "token": "<YOUR_DISCORD_BOT_LIST_TOKEN>"

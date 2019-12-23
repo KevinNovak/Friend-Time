@@ -88,7 +88,8 @@
         },
         "info": {
             "serverCount": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers!",
-            "serverCountWithTotal": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!"
+            "serverCountWithTotal": "[Shard {SHARD_ID}] Connected to {SHARD_SERVER_COUNT} servers ({TOTAL_SERVER_COUNT} total)!",
+            "noShards": "[Manager] No shards to spawn."
         }
     }
 }

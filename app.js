@@ -7,7 +7,9 @@ const MACHINE_ID = _config.sharding.machineId;
 const MACHINE_COUNT = _config.sharding.machineCount;
 
 async function start() {
-    const totalShardCount = await Util.fetchRecommendedShards(TOKEN);
+    console.log(_lang.log.events.shardManager.start);
+
+    const totalShardCount = await Util.fetchRecommendedShards(TOKEN, 100);
 
     let myShardIds = [];
     for (let shardId = 0; shardId < totalShardCount; shardId++) {
@@ -28,10 +30,8 @@ async function start() {
     });
 
     for (let shardId of myShardIds) {
-        await _manager.createShard(shardId);
+        _manager.createShard(shardId);
     }
-
-    console.log(_lang.log.events.shardManager.start);
 }
 
 start();

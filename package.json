@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "start": "pm2 start process.json",
-        "dev": "node --experimental-worker app.js"
+        "dev": "node app.js"
     },
     "keywords": [
         "bot",

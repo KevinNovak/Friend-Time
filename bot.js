@@ -160,28 +160,22 @@ _client.on("guildDelete", guild => {
     );
 });
 
-_client.on("disconnect", event => {
+_client.on("shardDisconnect", (event, shardId) => {
     console.error(
-        _lang.log.events.shard.disconnect.replace(
-            "{SHARD_ID}",
-            _client.shard.id
-        )
+        _lang.log.events.shard.disconnect.replace("{SHARD_ID}", shardId)
     );
 });
 
-_client.on("reconnecting", () => {
+_client.on("shardReconnecting", shardId => {
     console.log(
-        _lang.log.events.shard.reconnecting.replace(
-            "{SHARD_ID}",
-            _client.shard.id
-        )
+        _lang.log.events.shard.reconnecting.replace("{SHARD_ID}", shardId)
     );
 });
 
-_client.on("resume", replayed => {
+_client.on("shardResume", (replayed, shardId) => {
     console.log(
         _lang.log.events.shard.resume
-            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{SHARD_ID}", shardId)
             .replace("{REPLAYED_EVENT_COUNT}", replayed)
     );
 });
@@ -193,10 +187,8 @@ _client.on("rateLimit", rateLimitInfo => {
     console.error(rateLimitInfo);
 });
 
-_client.on("error", error => {
-    console.error(
-        _lang.log.events.shard.error.replace("{SHARD_ID}", _client.shard.id)
-    );
+_client.on("shardError", (error, shardId) => {
+    console.error(_lang.log.events.shard.error.replace("{SHARD_ID}", shardId));
     console.error(error);
 });
 

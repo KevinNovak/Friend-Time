@@ -35,18 +35,24 @@ async function start() {
 
     let _manager = new ShardingManager("./bot.js", {
         token: TOKEN,
-        totalShards: totalShardCount
+        mode: "worker",
+        respawn: true,
+        totalShards: totalShardCount,
+        shardList: myShardIds
     });
 
-    _manager.on("launch", shard => {
+    _manager.on("shardCreate", shard => {
         return console.log(
             _lang.log.events.shardManager.launch.replace("{SHARD_ID}", shard.id)
         );
     });
 
-    for (let shardId of myShardIds) {
-        _manager.createShard(shardId);
-    }
+    // for (let shardId of myShardIds) {
+    //     _manager.createShard(shardId);
+    // }
+
+    // TODO: Test if spawn() creates only from shardList
+    _manager.spawn();
 }
 
 start();

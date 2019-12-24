@@ -8,6 +8,7 @@ const _lang = require("./config/lang.json");
 
 const _client = new Discord.Client();
 
+let _shardId = -1;
 let _acceptMessages = false;
 
 async function updateConnectedServers() {
@@ -21,7 +22,7 @@ async function updateConnectedServers() {
         }
         console.log(
             _lang.log.info.serverCount
-                .replace("{SHARD_ID}", _client.shard.id)
+                .replace("{SHARD_ID}", _shardId)
                 .replace(
                     "{SHARD_SERVER_COUNT}",
                     _client.guilds.size.toLocaleString()
@@ -45,7 +46,7 @@ async function updateConnectedServers() {
 
     console.log(
         _lang.log.info.serverCountWithTotal
-            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{SHARD_ID}", _shardId)
             .replace(
                 "{SHARD_SERVER_COUNT}",
                 _client.guilds.size.toLocaleString()
@@ -64,7 +65,7 @@ _client.on("ready", async () => {
     let userTag = _client.user.tag;
     console.log(
         _lang.log.events.shard.login
-            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{SHARD_ID}", _shardId)
             .replace("{USER_TAG}", userTag)
     );
 
@@ -73,17 +74,11 @@ _client.on("ready", async () => {
     try {
         await _usersRepo.connect();
         console.log(
-            _lang.log.events.sql.connected.replace(
-                "{SHARD_ID}",
-                _client.shard.id
-            )
+            _lang.log.events.sql.connected.replace("{SHARD_ID}", _shardId)
         );
     } catch (error) {
         console.error(
-            _lang.log.events.sql.connectError.replace(
-                "{SHARD_ID}",
-                _client.shard.id
-            )
+            _lang.log.events.sql.connectError.replace("{SHARD_ID}", _shardId)
         );
         console.error(error);
         return;
@@ -92,10 +87,7 @@ _client.on("ready", async () => {
 
     _acceptMessages = true;
     console.log(
-        _lang.log.events.shard.startupComplete.replace(
-            "{SHARD_ID}",
-            _client.shard.id
-        )
+        _lang.log.events.shard.startupComplete.replace("{SHARD_ID}", _shardId)
     );
 });
 
@@ -144,7 +136,7 @@ _client.on("guildCreate", guild => {
     updateConnectedServers();
     console.log(
         _lang.log.events.server.connected
-            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{SHARD_ID}", _shardId)
             .replace("{SERVER_NAME}", guild.name)
             .replace("{SERVER_ID}", guild.id)
     );
@@ -154,10 +146,14 @@ _client.on("guildDelete", guild => {
     updateConnectedServers();
     console.log(
         _lang.log.events.server.disconnected
-            .replace("{SHARD_ID}", _client.shard.id)
+            .replace("{SHARD_ID}", _shardId)
             .replace("{SERVER_NAME}", guild.name)
             .replace("{SERVER_ID}", guild.id)
     );
+});
+
+_client.on("shardReady", (shardId, unavailableGuilds) => {
+    _shardId = shardId;
 });
 
 _client.on("shardDisconnect", (event, shardId) => {
@@ -182,7 +178,7 @@ _client.on("shardResume", (replayed, shardId) => {
 
 _client.on("rateLimit", rateLimitInfo => {
     console.error(
-        _lang.log.events.shard.rateLimit.replace("{SHARD_ID}", _client.shard.id)
+        _lang.log.events.shard.rateLimit.replace("{SHARD_ID}", _shardId)
     );
     console.error(rateLimitInfo);
 });
@@ -194,10 +190,7 @@ _client.on("shardError", (error, shardId) => {
 
 _client.login(_config.token).catch(error => {
     console.error(
-        _lang.log.events.shard.loginFailed.replace(
-            "{SHARD_ID}",
-            _client.shard.id
-        )
+        _lang.log.events.shard.loginFailed.replace("{SHARD_ID}", _shardId)
     );
     console.error(error);
 });
@@ -209,14 +202,14 @@ if (_config.discordBotList.enabled) {
         console.log(
             _lang.log.events.dbl.serverCountPosted.replace(
                 "{SHARD_ID}",
-                _client.shard.id
+                _shardId
             )
         );
     });
 
     dbl.on("error", error => {
         console.error(
-            _lang.log.events.dbl.error.replace("{SHARD_ID}", _client.shard.id)
+            _lang.log.events.dbl.error.replace("{SHARD_ID}", _shardId)
         );
         console.error(error);
     });

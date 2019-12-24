@@ -47,11 +47,6 @@ async function start() {
         );
     });
 
-    // for (let shardId of myShardIds) {
-    //     _manager.createShard(shardId);
-    // }
-
-    // TODO: Test if spawn() creates only from shardList
     _manager.spawn();
 }
 

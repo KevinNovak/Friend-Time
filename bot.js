@@ -15,7 +15,7 @@ async function updateConnectedServers() {
     try {
         results = await _client.shard.fetchClientValues("guilds.size");
     } catch (error) {
-        if (!error.message.includes("Still spawning shards")) {
+        if (error.name != "SHARDING_IN_PROCESS") {
             console.error(error);
             return;
         }

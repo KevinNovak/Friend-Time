@@ -36,7 +36,7 @@ async function updateConnectedServers() {
     );
 
     _client.user.setPresence({
-        game: {
+        activity: {
             name: `time to ${serverCount.toLocaleString()} servers`,
             type: "STREAMING",
             url: "https://www.twitch.tv/monstercat"

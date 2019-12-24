@@ -48,7 +48,8 @@ async function processSet(msg, args) {
     );
     console.log(
         _lang.log.events.bot.userSetTimezone
-            .replace("{SHARD_ID}", msg.client.shard.id)
+            // PM's go to shard 0
+            .replace("{SHARD_ID}", msg.guild ? msg.guild.shard.id : 0)
             .replace("{USERNAME}", msg.author.username)
             .replace("{USER_ID}", msg.author.id)
             .replace("{TIMEZONE}", timezone.name)

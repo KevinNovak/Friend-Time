@@ -6,7 +6,16 @@ const _regexUtils = require("./utils/regexUtils");
 const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 
-const _client = new Discord.Client();
+const _client = new Discord.Client({
+    // Don't listen to the "TYPING_START" events, for better memory usage.
+    disabledEvents: ["TYPING_START"],
+    // Only cache X messages per channel.
+    messageCacheMaxSize: 20,
+    // Messages in the cache live for at most X seconds.
+    messageCacheLifetime: 120,
+    // Every X seconds messages older than lifetime will be removed from cache.
+    messageSweepInterval: 60
+});
 
 let _shardId = -1;
 let _acceptMessages = false;

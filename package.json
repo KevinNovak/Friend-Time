@@ -39,5 +39,8 @@
     },
     "bugs": {
         "url": "https://github.com/KevinNovak/Friend-Time/issues"
+    },
+    "engines": {
+        "node": ">=12.14.0"
     }
 }

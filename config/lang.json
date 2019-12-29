@@ -11,10 +11,11 @@
             "?friendtime"
         ],
         "help": ["help", "?"],
-        "map": ["map", "zones", "zone", "timezones", "timezone"],
-        "set": ["set", "save", "register"],
-        "invite": ["invite", "link"],
-        "support": ["support", "contact"]
+        "map": ["map", "m", "zones", "zone", "timezones", "timezone"],
+        "set": ["set", "s", "save", "register"],
+        "invite": ["invite", "i", "link"],
+        "support": ["support", "contact"],
+        "donate": ["donate", "d"]
     },
     "msg": {
         "help": [
@@ -22,7 +23,8 @@
             "**-ft map** - View a map of available timezones.",
             "**-ft set <timezone>** - Set yourself to a timezone.",
             "**-ft invite** - Invite Friend Time to your server.",
-            "**-ft support** - Get help or report an issue."
+            "**-ft support** - Get help or report an issue.",
+            "**-ft donate** - Donate to keep Friend Time running!"
         ],
         "map": [
             "Please visit the following link and choose your timezone:",
@@ -54,6 +56,15 @@
             "",
             "If you prefer, you can also submit a GitHub issue:",
             "<https://github.com/KevinNovak/Friend-Time/issues>"
+        ],
+        "donate": [
+            "Donate to help keep Friend Time running!",
+            "",
+            "I created Friend Time originally for my international group of friends to help us coordinates times to get together. I realized that this bot could help others as well, and so I opened it up for anyone to use. If you enjoy using Friend Time and are willing to contribute, I sincerely appreciate your support.",
+            "",
+            "PayPal donation link:",
+            "<https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC>",
+            "Donations via PayPal or credit/debit card are accepted at the above link. Thank you again for your support!"
         ],
         "convertedTime": "**{TIMEZONE}**: {TIME}",
         "timezoneNotSet": [

@@ -141,6 +141,11 @@ _client.on("message", msg => {
             _commandService.processSupport(msg);
             return;
         }
+
+        if (_lang.cmd.donate.includes(cmd)) {
+            _commandService.processDonate(msg);
+            return;
+        }
     }
 
     _commandService.processHelp(msg);

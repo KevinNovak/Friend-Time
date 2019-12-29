@@ -4,7 +4,7 @@
 
 ## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=3072)
 
-[Join Support Server](https://discord.gg/QMc9Qdk)
+[Join Support Server](https://discord.gg/QMc9Qdk) | [Donate with PayPal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 
 **Discord bot** - Automatically convert times to your friends time zones!
 

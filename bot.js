@@ -136,6 +136,11 @@ _client.on("message", msg => {
             _commandService.processInvite(msg);
             return;
         }
+
+        if (_lang.cmd.support.includes(cmd)) {
+            _commandService.processSupport(msg);
+            return;
+        }
     }
 
     _commandService.processHelp(msg);

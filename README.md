@@ -4,6 +4,8 @@
 
 ## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=3072)
 
+[Join Support Server](https://discord.gg/QMc9Qdk)
+
 **Discord bot** - Automatically convert times to your friends time zones!
 
 ![Example usage](https://i.imgur.com/SsuqDwR.png)

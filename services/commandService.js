@@ -10,6 +10,7 @@ const MAX_MESSAGE_LENGTH = 2000;
 let _helpMsg = _lang.msg.help.join("\n");
 let _mapMsg = _lang.msg.map.join("\n");
 let _inviteMsg = _lang.msg.invite.join("\n");
+let _supportMsg = _lang.msg.support.join("\n");
 let _noTimezoneProvidedMsg = _lang.msg.noTimezoneProvided.join("\n");
 let _invalidTimezoneMsg = _lang.msg.invalidTimezone.join("\n");
 let _timezoneNotSetMsg = _lang.msg.timezoneNotSet.join("\n");
@@ -58,6 +59,10 @@ async function processSet(msg, args) {
 
 function processInvite(msg) {
     msg.channel.send(_inviteMsg);
+}
+
+function processSupport(msg) {
+    msg.channel.send(_supportMsg);
 }
 
 function predictTime(userTimezone, msg) {
@@ -146,5 +151,6 @@ module.exports = {
     processMap,
     processSet,
     processInvite,
+    processSupport,
     processTime
 };

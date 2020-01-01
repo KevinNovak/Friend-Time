@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 23, 2019 at 04:43 AM
+-- Generation Time: Jan 01, 2020 at 08:08 PM
 -- Server version: 10.3.18-MariaDB-0+deb10u1
 -- PHP Version: 7.3.11-1~deb10u1
 
@@ -38,7 +38,7 @@ CREATE DEFINER=`kevin`@`localhost` PROCEDURE `UpsertMember` (IN `IN_DiscordId` V
 
 INSERT INTO Member (`DiscordId`, `TimeZone`)
 VALUES (IN_DiscordId, IN_TimeZone)
-ON DUPLICATE KEY UPDATE `TimeZone` = IN_TimeZone;
+ON DUPLICATE KEY UPDATE `TimeZone` = IN_TimeZone, `ModifiedTime` = current_timestamp();
 
 END$$
 

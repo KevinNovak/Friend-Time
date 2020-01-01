@@ -105,6 +105,11 @@ _client.on("message", msg => {
         return;
     }
 
+    if (msg.mentions.has(_client.user)) {
+        _commandService.processHelp(msg);
+        return;
+    }
+
     if (_regexUtils.containsTime(msg.content)) {
         _commandService.processTime(msg);
         return;

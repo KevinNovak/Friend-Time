@@ -105,7 +105,13 @@ _client.on("message", msg => {
         return;
     }
 
-    if (msg.mentions.has(_client.user)) {
+    if (
+        msg.mentions.has(_client.user, {
+            ignoreDirect: false,
+            ignoreRoles: true,
+            ignoreEveryone: true
+        })
+    ) {
         _commandService.processHelp(msg);
         return;
     }

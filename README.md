@@ -36,6 +36,10 @@ You can then take your timezone name and run the **set** command like so:
 
 Friend Time will then know your timezone and use this to automatically convert any times you mention in chat, as well as convert other users times to your timezone.
 
+## Running Locally
+
+If you'd like to run your own copy of Friend Time for development or personal reasons, see the [following guide](docs/running-locally.md).
+
 ## References
 
 * [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.

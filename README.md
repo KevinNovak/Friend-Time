@@ -18,6 +18,8 @@ If you have a discord server with users across multiple countries and timezones 
 * `-ft map` \- View a map of available timezones.
 * `-ft set <timezone>` \- Set yourself to a timezone.
 * `-ft invite` \- Invite Friend Time to your server.
+* `-ft support` \- Get help or report an issue.
+* `-ft donate` \- Donate to keep Friend Time running!
 
 ## Finding Your Timezone
 
@@ -33,7 +35,6 @@ You can then take your timezone name and run the **set** command like so:
 ![Setting your timezone](https://i.imgur.com/1SYDJHc.png)
 
 Friend Time will then know your timezone and use this to automatically convert any times you mention in chat, as well as convert other users times to your timezone.
-
 
 ## References
 

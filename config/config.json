@@ -2,9 +2,9 @@
     "token": "<YOUR_DISCORD_BOT_TOKEN>",
     "mysql": {
         "host": "localhost",
+        "database": "<MYSQL_DATABASE_NAME>",
         "user": "<MYSQL_USER>",
-        "password": "<MYSQL_PASSWORD>",
-        "database": "<MYSQL_DATABASE_NAME>"
+        "password": "<MYSQL_PASSWORD>"
     },
     "sharding": {
         "machineId": 0,

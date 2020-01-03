@@ -17,6 +17,8 @@ const _client = new Discord.Client({
     messageSweepInterval: 60
 });
 
+let _dbl;
+
 let _shardId = -1;
 let _shardMode = false;
 let _acceptMessages = false;
@@ -62,6 +64,20 @@ async function updateConnectedServers() {
             )
             .replace("{TOTAL_SERVER_COUNT}", serverCount.toLocaleString())
     );
+
+    if (_dbl) {
+        if (_shardMode) {
+            _dbl.postStats(_client.guilds.size, _shardId, _client.shard.count);
+        } else {
+            _dbl.postStats(_client.guilds.size);
+        }
+        console.log(
+            _lang.log.events.dbl.serverCountPosted.replace(
+                "{SHARD_ID}",
+                _shardId
+            )
+        );
+    }
 }
 
 function canReply(msg) {
@@ -228,21 +244,5 @@ _client.login(_config.token).catch(error => {
 });
 
 if (_config.discordBotList.enabled) {
-    const dbl = new DBL(_config.discordBotList.token, _client);
-
-    dbl.on("posted", () => {
-        console.log(
-            _lang.log.events.dbl.serverCountPosted.replace(
-                "{SHARD_ID}",
-                _shardId
-            )
-        );
-    });
-
-    dbl.on("error", error => {
-        console.error(
-            _lang.log.events.dbl.error.replace("{SHARD_ID}", _shardId)
-        );
-        console.error(error);
-    });
+    _dbl = new DBL(_config.discordBotList.token);
 }

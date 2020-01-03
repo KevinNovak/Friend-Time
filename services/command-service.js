@@ -1,5 +1,5 @@
-const _timeUtils = require("../utils/timeUtils");
-const _regexUtils = require("../utils/regexUtils");
+const _timeUtils = require("../utils/time-utils");
+const _regexUtils = require("../utils/regex-utils");
 const _config = require("../config/config.json");
 const _lang = require("../config/lang.json");
 

@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const DBL = require("dblapi.js");
-const _commandService = require("./services/commandService");
-const _usersRepo = require("./repos/usersRepo");
-const _regexUtils = require("./utils/regexUtils");
+const _commandService = require("./services/command-service");
+const _usersRepo = require("./repos/users-repo");
+const _regexUtils = require("./utils/regex-utils");
 const _config = require("./config/config.json");
 const _lang = require("./config/lang.json");
 

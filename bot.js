@@ -66,11 +66,7 @@ async function updateConnectedServers() {
     );
 
     if (_dbl) {
-        if (_shardMode) {
-            _dbl.postStats(_client.guilds.size, _shardId, _client.shard.count);
-        } else {
-            _dbl.postStats(_client.guilds.size);
-        }
+        _dbl.postStats(serverCount);
         console.log(
             _lang.log.events.dbl.serverCountPosted.replace(
                 "{SHARD_ID}",

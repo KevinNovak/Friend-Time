@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Shard Mode",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}\\app.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Non-Shard Mode",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}\\bot.js"
+        }
+    ]
+}

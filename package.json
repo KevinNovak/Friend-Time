@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "start": "pm2 start process.json",
-        "dev": "node app.js"
+        "dev-shard": "node app.js",
+        "dev-non-shard": "node bot.js"
     },
     "keywords": [
         "bot",

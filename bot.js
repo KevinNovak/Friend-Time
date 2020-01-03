@@ -18,32 +18,32 @@ const _client = new Discord.Client({
 });
 
 let _shardId = -1;
+let _shardMode = false;
 let _acceptMessages = false;
 
 async function updateConnectedServers() {
-    let results = [];
-    try {
-        results = await _client.shard.fetchClientValues("guilds.size");
-    } catch (error) {
-        if (!error.name.includes("[SHARDING_IN_PROCESS]")) {
-            console.error(error);
+    let serverCount = _client.guilds.size;
+    if (_shardMode) {
+        try {
+            serverCount = (
+                await _client.shard.fetchClientValues("guilds.size")
+            ).reduce((prev, guildCount) => prev + guildCount, 0);
+        } catch (error) {
+            if (!error.name.includes("[SHARDING_IN_PROCESS]")) {
+                console.error(error);
+                return;
+            }
+            console.log(
+                _lang.log.info.serverCount
+                    .replace("{SHARD_ID}", _shardId)
+                    .replace(
+                        "{SHARD_SERVER_COUNT}",
+                        _client.guilds.size.toLocaleString()
+                    )
+            );
             return;
         }
-        console.log(
-            _lang.log.info.serverCount
-                .replace("{SHARD_ID}", _shardId)
-                .replace(
-                    "{SHARD_SERVER_COUNT}",
-                    _client.guilds.size.toLocaleString()
-                )
-        );
-        return;
     }
-
-    let serverCount = results.reduce(
-        (prev, guildCount) => prev + guildCount,
-        0
-    );
 
     _client.user.setPresence({
         activity: {
@@ -77,6 +77,8 @@ _client.on("ready", async () => {
             .replace("{SHARD_ID}", _shardId)
             .replace("{USER_TAG}", userTag)
     );
+
+    _shardMode = !!_client.shard;
 
     updateConnectedServers();
 

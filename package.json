@@ -28,7 +28,7 @@
     "license": "MIT",
     "dependencies": {
         "dblapi.js": "2.3.0",
-        "discord.js": "github:discordjs/discord.js#50ed329",
+        "discord.js": "github:KevinNovak/discord.js#357eb74",
         "moment-timezone": "0.5.27",
         "mysql": "2.17.1",
         "pm2": "^4.2.1"

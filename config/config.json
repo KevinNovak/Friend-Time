@@ -1,0 +1,72 @@
+{
+    "prefix": "-ft",
+    "token": "<DISCORD_BOT_TOKEN>",
+    "mysql": {
+        "host": "localhost",
+        "database": "<MYSQL_DATABASE_NAME>",
+        "user": "<MYSQL_USER>",
+        "password": "<MYSQL_PASSWORD>",
+        "connectionLimit": 10
+    },
+    "embedColor": "#0099ff",
+    "emoji": "🕰️",
+    "regions": [
+        "Africa",
+        "America",
+        "Antarctica",
+        "Arctic",
+        "Asia",
+        "Atlantic",
+        "Australia",
+        "Europe",
+        "Indian",
+        "Pacific"
+    ],
+    "timeFormats": [
+        {
+            "name": "12",
+            "display": "12-hour",
+            "format": "ddd, MMM D, YYYY h:mm A"
+        },
+        {
+            "name": "24",
+            "display": "24-hour",
+            "format": "ddd, MMM D, YYYY HH:mm"
+        }
+    ],
+    "updateInterval": 300,
+    "sharding": {
+        "machineId": 0,
+        "machineCount": 1,
+        "serversPerShard": 1000
+    },
+    "clientOptions": {
+        "disabledEvents": ["TYPING_START"],
+        "messageCacheMaxSize": 200,
+        "messageCacheLifetime": 0,
+        "messageSweepInterval": 0,
+        "partials": ["MESSAGE", "CHANNEL", "REACTION"]
+    },
+    "botSites": {
+        "topGg": {
+            "enabled": false,
+            "url": "https://top.gg/api/bots/<BOT_ID>/stats",
+            "token": "<TOKEN>"
+        },
+        "botsOnDiscordXyz": {
+            "enabled": false,
+            "url": "https://bots.ondiscord.xyz/bot-api/bots/<BOT_ID>/guilds",
+            "token": "<TOKEN>"
+        },
+        "discordBotsGg": {
+            "enabled": false,
+            "url": "https://discord.bots.gg/api/v1/bots/<BOT_ID>/stats",
+            "token": "<TOKEN>"
+        },
+        "discordBotListCom": {
+            "enabled": false,
+            "url": "https://discordbotlist.com/api/bots/<BOT_ID>/stats",
+            "token": "Bot <TOKEN>"
+        }
+    }
+}

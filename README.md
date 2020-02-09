@@ -2,11 +2,11 @@
 
 [![Discord Bots](https://discordbots.org/api/widget/status/471091072546766849.svg?noavatar=true)](https://discordbots.org/bot/471091072546766849)[![Discord Bots](https://discordbots.org/api/widget/servers/471091072546766849.svg?noavatar=true)](https://discordbots.org/bot/471091072546766849)
 
+**Discord bot** - Automatically convert times mentioned in chat between time zones!
+
 ## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=8)
 
 [Join Support Server](https://discord.gg/QMc9Qdk) | [Donate with PayPal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
-
-**Discord bot** - Automatically convert times mentioned in chat between time zones!
 
 If you have a discord server with users across multiple countries and time zones then this is the bot for you! With Friend Time you can easily coordinate times between users. Friend Time will automatically convert any times mentioned in chat to the times of other users.
 

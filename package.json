@@ -1,12 +1,46 @@
 {
     "name": "friend-time",
     "version": "1.0.0",
-    "description": "Automatically convert times to your friends time zones!",
-    "main": "app.js",
+    "author": "Kevin Novak",
+    "description": "Discord bot for converting times between time zones.",
+    "homepage": "https://github.com/KevinNovak/Friend-Time#readme",
+    "license": "MIT",
+    "engines": {
+        "node": ">=12.14.0"
+    },
+    "main": "dist/start.js",
     "scripts": {
-        "start": "pm2 start process.json",
-        "dev-shard": "node app.js",
-        "dev-non-shard": "node bot.js"
+        "start": "tsc && node dist/start.js",
+        "start-shard": "tsc && node dist/app.js",
+        "start-pm2": "tsc && pm2 start process.json",
+        "stop-pm2": "pm2 stop process.json",
+        "delete-pm2": "pm2 delete process.json",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "chrono-node": "1.4.3",
+        "discord.js": "github:discordjs/discord.js#fe7df70",
+        "moment-timezone": "0.5.27",
+        "mysql": "2.18.1",
+        "pm2": "^4.2.3",
+        "request": "2.88.0",
+        "request-promise": "4.2.5"
+    },
+    "devDependencies": {
+        "@types/moment-timezone": "0.5.12",
+        "@types/mysql": "2.15.8",
+        "@types/node": "13.7.0",
+        "@types/request": "2.48.4",
+        "@types/request-promise": "4.1.45",
+        "tslint": "^6.0.0",
+        "typescript": "^3.7.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KevinNovak/Friend-Time.git"
+    },
+    "bugs": {
+        "url": "https://github.com/KevinNovak/Friend-Time/issues"
     },
     "keywords": [
         "bot",
@@ -23,25 +57,5 @@
         "timezone",
         "world",
         "zone"
-    ],
-    "author": "Kevin Novak",
-    "license": "MIT",
-    "dependencies": {
-        "dblapi.js": "2.3.0",
-        "discord.js": "github:discordjs/discord.js#fe7df70",
-        "moment-timezone": "0.5.27",
-        "mysql": "2.17.1",
-        "pm2": "^4.2.1"
-    },
-    "homepage": "https://github.com/KevinNovak/Friend-Time#readme",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/KevinNovak/Friend-Time.git"
-    },
-    "bugs": {
-        "url": "https://github.com/KevinNovak/Friend-Time/issues"
-    },
-    "engines": {
-        "node": ">=12.14.0"
-    }
+    ]
 }

@@ -4,16 +4,20 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Shard Mode",
+            "name": "Start",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}\\app.js"
+            "program": "${workspaceFolder}\\dist\\start.js",
+            "preLaunchTask": "tsc",
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Non-Shard Mode",
+            "name": "Start Shard",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${workspaceFolder}\\bot.js"
+            "program": "${workspaceFolder}\\dist\\app.js",
+            "preLaunchTask": "tsc",
+            "internalConsoleOptions": "openOnSessionStart"
         }
     ]
 }

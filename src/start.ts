@@ -25,6 +25,7 @@ import { Logger } from './services/logger';
 import { MessageBuilder } from './services/message-builder';
 import { MessageSender } from './services/message-sender';
 import { TimeFormatService } from './services/time-format-service';
+import { TimeParser } from './services/time-parser';
 import { ZoneService } from './services/zone-service';
 
 let config: Config = require('../config/config.json');
@@ -49,6 +50,7 @@ async function start(): Promise<void> {
     let userRepo = new UserRepo(dataAccess);
     let msgBuilder = new MessageBuilder(config.embedColor);
     let msgSender = new MessageSender(msgBuilder, langService, logger, internalLang.logs);
+    let timeParser = new TimeParser();
     let zoneService = new ZoneService(config.regions);
     let timeFormatService = new TimeFormatService(config.timeFormats);
     let helpCommand = new HelpCommand(msgSender);
@@ -96,6 +98,7 @@ async function start(): Promise<void> {
         serverRepo,
         userRepo,
         msgSender,
+        timeParser,
         zoneService,
         timeFormatService,
         langService,
@@ -105,12 +108,13 @@ async function start(): Promise<void> {
     let reactionHandler = new ReactionHandler(
         config.emoji,
         msgSender,
-        logger,
-        internalLang.logs,
+        timeParser,
         zoneService,
         timeFormatService,
         serverRepo,
-        userRepo
+        userRepo,
+        logger,
+        internalLang.logs
     );
     let bot = new Bot(client, messageHandler, reactionHandler, config.token, logger);
     await bot.start();

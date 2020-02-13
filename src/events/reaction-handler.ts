@@ -8,21 +8,22 @@ import { MessageName } from '../services/language/message-name';
 import { Logger } from '../services/logger';
 import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
+import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
 import { StringUtils } from '../utils/string-utils';
-import { TimeUtils } from '../utils/time-utils';
 import { UserUtils } from '../utils/user-utils';
 
 export class ReactionHandler {
     constructor(
         private emoji: string,
         private msgSender: MessageSender,
-        private logger: Logger,
-        private logs: Logs,
+        private timeParser: TimeParser,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
         private serverRepo: ServerRepo,
-        private userRepo: UserRepo
+        private userRepo: UserRepo,
+        private logger: Logger,
+        private logs: Logs
     ) {}
 
     public async process(messageReaction: MessageReaction, user: User): Promise<void> {
@@ -45,11 +46,11 @@ export class ReactionHandler {
         }
 
         let msg = messageReaction.message;
-        let result = TimeUtils.parseTime(msg.content);
+        let result = this.timeParser.parseTime(msg.content);
         if (
             !result ||
-            TimeUtils.offsetIsCertain(result.start) ||
-            !TimeUtils.hourIsCertain(result.start)
+            this.timeParser.offsetIsCertain(result.start) ||
+            !this.timeParser.hourIsCertain(result.start)
         ) {
             return;
         }

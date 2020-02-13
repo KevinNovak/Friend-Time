@@ -13,10 +13,10 @@ import { MessageName } from '../services/language/message-name';
 import { Logger } from '../services/logger';
 import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
+import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
 import { MessageUtils } from '../utils/message-utils';
 import { ServerUtils } from '../utils/server-utils';
-import { TimeUtils } from '../utils/time-utils';
 
 export class MessageHandler {
     // Move to config?
@@ -31,6 +31,7 @@ export class MessageHandler {
         private serverRepo: ServerRepo,
         private userRepo: UserRepo,
         private msgSender: MessageSender,
+        private timeParser: TimeParser,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
         private langService: LanguageService,
@@ -48,11 +49,11 @@ export class MessageHandler {
         let server = msg.guild;
 
         // Detect if message contains time and react
-        let result = TimeUtils.parseTime(msg.content);
+        let result = this.timeParser.parseTime(msg.content);
         if (
             result &&
-            !TimeUtils.offsetIsCertain(result.start) &&
-            TimeUtils.hourIsCertain(result.start)
+            !this.timeParser.offsetIsCertain(result.start) &&
+            this.timeParser.hourIsCertain(result.start)
         ) {
             let authorData: UserData;
             try {

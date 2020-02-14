@@ -120,4 +120,13 @@ async function start(): Promise<void> {
     await bot.start();
 }
 
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled promise rejection:', promise);
+    if (reason instanceof Error) {
+        console.error(reason.stack);
+    } else {
+        console.error(reason);
+    }
+});
+
 start();

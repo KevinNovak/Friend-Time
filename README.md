@@ -16,7 +16,7 @@ Friend Time will automatically react with a clock emoji to times mentioned in ch
 
 By also reacting, you will be private messaged with the time converted to your time zone:
 
-![Example conversion](https://i.imgur.com/KzgZkMV.png)
+![Example conversion](https://i.imgur.com/wveOlPz.png)
 
 ## Commands
 

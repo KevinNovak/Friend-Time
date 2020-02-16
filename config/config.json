@@ -26,12 +26,14 @@
         {
             "name": "12",
             "display": "12-hour",
-            "format": "ddd, MMM D, YYYY h:mm A"
+            "dateFormat": "ddd, MMM D, YYYY",
+            "timeFormat": "h:mm A"
         },
         {
             "name": "24",
             "display": "24-hour",
-            "format": "ddd, MMM D, YYYY HH:mm"
+            "dateFormat": "ddd, MMM D, YYYY",
+            "timeFormat": "HH:mm"
         }
     ],
     "updateInterval": 300,

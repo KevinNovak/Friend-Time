@@ -148,9 +148,13 @@ export class ReactionHandler {
         }
 
         let moment = this.zoneService.convert(result.date(), authorZone, userZone);
-        let timeFormat = this.timeFormatService.findTimeFormat(userFormat);
 
-        let formattedTime = moment.format(timeFormat.format);
+        let timeFormat = this.timeFormatService.findTimeFormat(userFormat);
+        let format = this.timeParser.dayIsCertain(result.start)
+            ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
+            : timeFormat.timeFormat;
+
+        let formattedTime = moment.format(format);
         let quote = StringUtils.formatQuote(result.text);
 
         this.msgSender.send(

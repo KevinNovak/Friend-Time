@@ -23,7 +23,8 @@ export interface MySqlConfig {
 export interface TimeFormat {
     name: string;
     display: string;
-    format: string;
+    dateFormat: string;
+    timeFormat: string;
 }
 
 export interface ShardingConfig {

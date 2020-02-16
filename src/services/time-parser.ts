@@ -21,6 +21,10 @@ export class TimeParser {
         }
     }
 
+    public dayIsCertain(components: any): boolean {
+        return components.isCertain('day');
+    }
+
     public hourIsCertain(components: any): boolean {
         return components.isCertain('hour');
     }

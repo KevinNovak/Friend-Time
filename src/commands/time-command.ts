@@ -96,7 +96,10 @@ export class TimeCommand implements Command {
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
         this.msgSender.send(channel, authorData.LangCode, MessageName.timeUserSuccess, [
-            { name: '{TIME}', value: time.format(timeFormat.format) },
+            {
+                name: '{TIME}',
+                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            },
             { name: '{USER}', value: mentionedUser.username },
             { name: '{ZONE}', value: zone },
         ]);
@@ -117,7 +120,10 @@ export class TimeCommand implements Command {
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
         this.msgSender.send(channel, authorData.LangCode, MessageName.timeZoneSuccess, [
-            { name: '{TIME}', value: time.format(timeFormat.format) },
+            {
+                name: '{TIME}',
+                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            },
             { name: '{ZONE}', value: zone },
         ]);
     }
@@ -136,7 +142,10 @@ export class TimeCommand implements Command {
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
         this.msgSender.send(channel, authorData.LangCode, MessageName.timeSelfSuccess, [
-            { name: '{TIME}', value: time.format(timeFormat.format) },
+            {
+                name: '{TIME}',
+                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            },
             { name: '{ZONE}', value: zone },
         ]);
     }

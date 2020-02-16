@@ -117,7 +117,10 @@ export class MessageHandler {
             }
 
             // TODO: Better way to find time format, consolidate
-            let format = this.timeFormatService.findTimeFormat(serverData.TimeFormat).format;
+            let timeFormat = this.timeFormatService.findTimeFormat(serverData.TimeFormat);
+            let format = this.timeParser.dayIsCertain(result.start)
+                ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
+                : timeFormat.timeFormat;
 
             let timeZoneData = timeZones
                 .map(name => ({

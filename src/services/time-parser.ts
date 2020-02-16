@@ -8,6 +8,8 @@ export class TimeParser {
             chrono.options.en({ strict: true }),
             chrono.options.commonPostProcessing,
         ]);
+        // Remove "ENTimeAgoFormatParser" (8), and "ENTimeLaterFormatParser" (9)
+        options.parsers.splice(8, 2);
         this.parser = new chrono.Chrono(options);
     }
 

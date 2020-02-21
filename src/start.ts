@@ -50,7 +50,7 @@ async function start(): Promise<void> {
     let userRepo = new UserRepo(dataAccess);
     let msgBuilder = new MessageBuilder(config.embedColor);
     let msgSender = new MessageSender(msgBuilder, langService, logger, internalLang.logs);
-    let timeParser = new TimeParser();
+    let timeParser = new TimeParser(config.blacklist);
     let zoneService = new ZoneService(config.regions);
     let timeFormatService = new TimeFormatService(config.timeFormats);
     let helpCommand = new HelpCommand(msgSender);

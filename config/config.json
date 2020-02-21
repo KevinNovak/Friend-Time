@@ -36,6 +36,9 @@
             "timeFormat": "HH:mm"
         }
     ],
+    "blacklist": [
+        "^[\\d]+([.]?[\\d]{1,2})?[\\s]*-[\\s]*[\\d]+([.]?[\\d]{1,2})?$"
+    ],
     "updateInterval": 300,
     "sharding": {
         "machineId": 0,

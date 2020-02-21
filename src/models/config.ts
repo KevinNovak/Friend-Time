@@ -6,6 +6,7 @@ export interface Config {
     emoji: string;
     regions: string[];
     timeFormats: TimeFormat[];
+    blacklist: string[];
     updateInterval: number;
     sharding: ShardingConfig;
     clientOptions: ClientOptionsConfig;

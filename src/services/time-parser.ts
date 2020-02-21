@@ -2,8 +2,9 @@ import * as chrono from 'chrono-node';
 
 export class TimeParser {
     private parser: any;
+    private blacklist: RegExp[];
 
-    constructor() {
+    constructor(blacklist: string[]) {
         let options = chrono.options.mergeOptions([
             chrono.options.en({ strict: true }),
             chrono.options.commonPostProcessing,
@@ -11,6 +12,7 @@ export class TimeParser {
         // Remove "ENTimeAgoFormatParser" (8), and "ENTimeLaterFormatParser" (9)
         options.parsers.splice(8, 2);
         this.parser = new chrono.Chrono(options);
+        this.blacklist = blacklist.map(regexString => new RegExp(regexString));
     }
 
     public parseTime(input: string, referenceTime: Date = new Date()): any {
@@ -31,5 +33,14 @@ export class TimeParser {
 
     public offsetIsCertain(components: any): boolean {
         return components.isCertain('timezoneOffset');
+    }
+
+    public matchesBlacklist(input: string): any {
+        for (let blacklistRegex of this.blacklist) {
+            if (blacklistRegex.test(input)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

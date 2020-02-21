@@ -53,7 +53,8 @@ export class MessageHandler {
         if (
             result &&
             !this.timeParser.offsetIsCertain(result.start) &&
-            this.timeParser.hourIsCertain(result.start)
+            this.timeParser.hourIsCertain(result.start) &&
+            !this.timeParser.matchesBlacklist(result.text)
         ) {
             let authorData: UserData;
             try {

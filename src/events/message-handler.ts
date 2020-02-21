@@ -141,10 +141,17 @@ export class MessageHandler {
             let message = '';
             for (let data of timeZoneData) {
                 // TODO: Message
-                let line =
-                    '**{TIMEZONE}**: {TIME}'
+                let line = '';
+                if (data.name === authorData.TimeZone) {
+                    line = '__***{TIMEZONE}***__: {TIME}'
                         .replace('{TIMEZONE}', data.name)
-                        .replace('{TIME}', data.time) + '\n';
+                        .replace('{TIME}', data.time);
+                } else {
+                    line = '**{TIMEZONE}**: {TIME}'
+                        .replace('{TIMEZONE}', data.name)
+                        .replace('{TIME}', data.time);
+                }
+                line += '\n';
                 if (message.length + line.length > this.MAX_MESSAGE_LENGTH) {
                     // Use message sender
                     msg.channel.send(message);

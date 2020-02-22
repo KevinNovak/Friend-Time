@@ -45,8 +45,8 @@
             "**-ft map** - Mira un mapa con las zonas horarias disponibles",
             "**-ft clear** - Quita tu zona horaria",
             "**-ft time** - Mira la hora actual",
-            "**-ft time *<user>*** - Mira la hora actual de un usuario",
-            "**-ft time *<zone>*** -  Mira la hora actual de una zona horaria",
+            "**-ft time *<usuario>*** - Mira la hora actual de un usuario",
+            "**-ft time *<zona>*** -  Mira la hora actual de una zona horaria",
             "**-ft format <12/24>** - Establece tu formato horario (12 o 24 horas)",
             "**-ft config** - Cambiar configuración del servidor. Solo administradores",
             "**-ft info** - Más información sobre Friend Time"
@@ -84,10 +84,10 @@
             "Por favor, visita el siguiente enlace y elige tu zona horaria",
             "<http://kevalbhatt.github.io/timezone-picker/>",
             "",
-            "A continuación, introduce **-ft set <zone>** con tu zona horaria",
+            "A continuación, introduce **-ft set <zona>** con tu zona horaria",
             "Por ejemplo: *-ft set America/New_York*",
             "",
-            "**Nota**: Usa una zona horaria en el formato **<region>/<city>**. Por ejemplo: *America/New_York*. Abreviaciones como *EST* o *GMT* no funcionarán. La taquigrafía también puede ser usada y Friend Time buscará la opción más aproximada: *-ft set new york*."
+            "**Nota**: Usa una zona horaria en el formato **<región>/<ciudad>**. Por ejemplo: *America/New_York*. Abreviaciones como *EST* o *GMT* no funcionarán. La taquigrafía también puede ser usada y Friend Time buscará la opción más aproximada: *-ft set new york*."
         ],
         "clearSuccess": "¡Zona horaria reseteada!",
         "clearError": "Un error ha ocurrido reseteando tu zona horaria",
@@ -127,12 +127,12 @@
         "noZoneSetReminder": [
             "Hola {AUTHOR}, veo que no tienes una zona horaria establecida todabia",
             "",
-            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zone>*** para auto asignarte esa zona"
+            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
         ],
         "noZoneSetSelf": [
             "No tienes una zona horaria establecida todavía!",
             "",
-            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zone>*** para auto asignarte esa zona"
+            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
         ],
         "noZoneSetUser": "¡**{USER}** no tiene una zona horaria establecida todavía!",
         "invalidTimeFormat": [

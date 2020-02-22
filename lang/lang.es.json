@@ -15,21 +15,21 @@
     },
     "serverConfig": {
         "mode": {
-            "name": "modo",
+            "name": "mode",
             "options": {
-                "react": "reaccionar",
-                "list": "lista"
+                "react": "react",
+                "list": "list"
             }
         },
         "format": {
-            "name": "formato",
+            "name": "format",
             "options": {
                 "twelve": "12",
                 "twentyFour": "24"
             }
         },
         "notify": {
-            "name": "notificar",
+            "name": "notify",
             "options": {
                 "on": "on",
                 "off": "off"

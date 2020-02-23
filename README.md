@@ -63,6 +63,18 @@ You can then take your time zone name and run the **set** command like so:
 
 Friend Time will then know your time zone and use this to automatically convert any times you mention in chat, as well as convert other users times to your time zone.
 
+## Permissions
+
+Friend Time requires the following permissions:
+
+1. **Read Messages**
+2. **Send Messages**
+3. **Embed Links**
+4. **Read Message History**
+5. **Add Reactions**
+
+When you invite Friend Time to your server, by default all of these permissions should be given to Friend Time. If you'd like to disable Friend Time for certain channels, feel free to remove these permissions in the channels you'd like to disable. If you are experiencing permissions issues, feel free to kick and reinvite Friend Time.
+
 ## References
 
 * [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.

@@ -20,20 +20,20 @@
     "dependencies": {
         "chrono-node": "1.4.3",
         "discord.js": "github:discordjs/discord.js#fe7df70",
-        "moment-timezone": "0.5.27",
+        "moment-timezone": "0.5.28",
         "mysql": "2.18.1",
         "pm2": "^4.2.3",
-        "request": "2.88.0",
+        "request": "2.88.2",
         "request-promise": "4.2.5"
     },
     "devDependencies": {
         "@types/moment-timezone": "0.5.12",
         "@types/mysql": "2.15.8",
-        "@types/node": "13.7.0",
+        "@types/node": "13.7.4",
         "@types/request": "2.48.4",
         "@types/request-promise": "4.1.45",
         "tslint": "^6.0.0",
-        "typescript": "^3.7.5"
+        "typescript": "^3.8.2"
     },
     "repository": {
         "type": "git",

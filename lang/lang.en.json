@@ -99,7 +99,7 @@
         "inviteTitle": "Friend Time - Invite",
         "inviteMessage": [
             "Visit the following link to invite Friend Time to your Discord server:",
-            "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=8>"
+            "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=522304>"
         ],
         "supportTitle": "Friend Time - Support",
         "supportMessage": [

@@ -50,12 +50,7 @@ export class MessageHandler {
 
         // Detect if message contains time and react
         let result = this.timeParser.parseTime(msg.content);
-        if (
-            result &&
-            !this.timeParser.offsetIsCertain(result.start) &&
-            this.timeParser.hourIsCertain(result.start) &&
-            !this.timeParser.matchesBlacklist(result.text)
-        ) {
+        if (this.timeParser.shouldRespond(result)) {
             let authorData: UserData;
             try {
                 authorData = await this.userRepo.getUserData(author.id);

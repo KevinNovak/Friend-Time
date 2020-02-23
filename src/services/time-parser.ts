@@ -23,6 +23,15 @@ export class TimeParser {
         }
     }
 
+    public shouldRespond(result: any) {
+        return (
+            result &&
+            !this.offsetIsCertain(result.start) &&
+            this.hourIsCertain(result.start) &&
+            !this.matchesBlacklist(result.text)
+        );
+    }
+
     public dayIsCertain(components: any): boolean {
         return components.isCertain('day');
     }
@@ -35,7 +44,7 @@ export class TimeParser {
         return components.isCertain('timezoneOffset');
     }
 
-    public matchesBlacklist(input: string): any {
+    private matchesBlacklist(input: string): any {
         for (let blacklistRegex of this.blacklist) {
             if (blacklistRegex.test(input)) {
                 return true;

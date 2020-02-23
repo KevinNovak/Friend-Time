@@ -15,6 +15,10 @@ export abstract class MessageUtils {
         return ServerUtils.permToSend(msg.guild, msg.channel);
     }
 
+    public static permToReact(msg: Message): boolean {
+        return ServerUtils.permToReact(msg.guild, msg.channel);
+    }
+
     public static sentByBot(msg: Message): boolean {
         return msg.author.bot;
     }

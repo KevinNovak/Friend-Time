@@ -10,6 +10,7 @@ import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
 import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
+import { MessageUtils } from '../utils/message-utils';
 import { StringUtils } from '../utils/string-utils';
 import { UserUtils } from '../utils/user-utils';
 
@@ -46,6 +47,10 @@ export class ReactionHandler {
         }
 
         let msg = messageReaction.message;
+        if (!MessageUtils.permToReply(msg) || !MessageUtils.permToReact(msg)) {
+            return;
+        }
+
         let result = this.timeParser.parseTime(msg.content);
         if (!this.timeParser.shouldRespond(result)) {
             return;

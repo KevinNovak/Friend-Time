@@ -22,6 +22,15 @@ export abstract class ServerUtils {
         }
     }
 
+    public static permToReact(server: Guild, channel: Channel): boolean {
+        let isTextChannel = this.isTextChannel(channel);
+        if (isTextChannel) {
+            return (channel as TextChannel).permissionsFor(server.me).has('ADD_REACTIONS');
+        } else {
+            return this.isDirectChannel(channel);
+        }
+    }
+
     public static async findMember(server: Guild, query: string): Promise<GuildMember> {
         let members: GuildMemberStore;
 

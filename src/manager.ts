@@ -15,7 +15,8 @@ export class Manager {
     public async start(): Promise<void> {
         this.registerListeners();
         try {
-            await this.shardManager.spawn();
+            // TODO: Place in config variables
+            await this.shardManager.spawn(this.shardManager.totalShards, 5500, 60000);
         } catch (error) {
             this.logger.error(`${this.managerTag} ${this.logs.spawnShardError}`, error);
             return;

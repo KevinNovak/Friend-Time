@@ -18,7 +18,7 @@
         "build": "tsc"
     },
     "dependencies": {
-        "chrono-node": "1.4.3",
+        "chrono-node": "1.4.4",
         "discord.js": "github:discordjs/discord.js#fe7df70",
         "moment-timezone": "0.5.28",
         "mysql": "2.18.1",
@@ -27,12 +27,12 @@
         "request-promise": "4.2.5"
     },
     "devDependencies": {
-        "@types/moment-timezone": "0.5.12",
+        "@types/moment-timezone": "0.5.13",
         "@types/mysql": "2.15.9",
         "@types/node": "13.7.7",
         "@types/request": "2.48.4",
-        "@types/request-promise": "4.1.45",
-        "tslint": "^6.0.0",
+        "@types/request-promise": "4.1.46",
+        "tslint": "^6.1.0",
         "typescript": "^3.8.3"
     },
     "repository": {

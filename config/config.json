@@ -49,9 +49,9 @@
     },
     "clientOptions": {
         "disabledEvents": ["TYPING_START"],
-        "messageCacheMaxSize": 200,
-        "messageCacheLifetime": 0,
-        "messageSweepInterval": 0,
+        "messageCacheMaxSize": 20,
+        "messageCacheLifetime": 120,
+        "messageSweepInterval": 60,
         "partials": ["MESSAGE", "CHANNEL", "REACTION"]
     },
     "botSites": {

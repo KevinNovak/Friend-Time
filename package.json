@@ -29,10 +29,10 @@
     "devDependencies": {
         "@types/moment-timezone": "0.5.13",
         "@types/mysql": "2.15.9",
-        "@types/node": "13.9.5",
+        "@types/node": "13.11.1",
         "@types/request": "2.48.4",
         "@types/request-promise": "4.1.46",
-        "tslint": "^6.1.0",
+        "tslint": "^6.1.1",
         "typescript": "^3.8.3"
     },
     "repository": {

@@ -18,7 +18,7 @@
         "build": "tsc"
     },
     "dependencies": {
-        "chrono-node": "1.4.4",
+        "chrono-node": "1.4.5",
         "discord.js": "github:discordjs/discord.js#fe7df70",
         "moment-timezone": "0.5.28",
         "mysql": "2.18.1",

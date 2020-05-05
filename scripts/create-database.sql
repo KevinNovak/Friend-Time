@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 09, 2020 at 06:13 PM
--- Server version: 10.3.18-MariaDB-0+deb10u1
--- PHP Version: 7.3.11-1~deb10u1
+-- Generation Time: May 05, 2020 at 04:01 AM
+-- Server version: 10.3.22-MariaDB-0+deb10u1
+-- PHP Version: 7.3.14-1~deb10u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,14 +19,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `friendtime-2-dev`
+-- Database: `friendtime`
 --
 
 DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`kevin`@`%` PROCEDURE `Server_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `Server_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
 
 INSERT INTO Server (`DiscordId`)
 VALUES (IN_DiscordId)
@@ -38,7 +38,7 @@ WHERE `DiscordId` = IN_DiscordId;
 
 END$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `Server_SetMode` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Mode` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `Server_SetMode` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Mode` VARCHAR(20))  BEGIN
 
 INSERT INTO Server (`DiscordId`, `Mode`)
 VALUES (IN_DiscordId, IN_Mode)
@@ -46,7 +46,7 @@ ON DUPLICATE KEY UPDATE `Mode` = IN_Mode, `Modified` = current_timestamp();
 
 END$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `Server_SetNotify` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Notify` TINYINT(1))  BEGIN
+CREATE PROCEDURE `Server_SetNotify` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Notify` TINYINT(1))  BEGIN
 
 INSERT INTO Server (`DiscordId`, `Notify`)
 VALUES (IN_DiscordId, IN_Notify)
@@ -54,7 +54,7 @@ ON DUPLICATE KEY UPDATE `Notify` = IN_Notify, `Modified` = current_timestamp();
 
 END$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `Server_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `Server_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
 
 INSERT INTO Server (`DiscordId`, `TimeFormat`)
 VALUES (IN_DiscordId, IN_TimeFormat)
@@ -62,13 +62,21 @@ ON DUPLICATE KEY UPDATE `TimeFormat` = IN_TimeFormat, `Modified` = current_times
 
 END$$
 
-CREATE DEFINER=`kevin`@`localhost` PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  SELECT DISTINCT `TimeZone`
+CREATE PROCEDURE `Stats_TopTimeZones` ()  SELECT
+	TimeZone,
+    COUNT(*) AS 'Count'
+FROM User
+WHERE TimeZone IS NOT NULL
+GROUP BY TimeZone
+ORDER BY COUNT(*) DESC$$
+
+CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  SELECT DISTINCT `TimeZone`
 FROM User
 WHERE
     FIND_IN_SET(`DiscordId`, IN_DiscordIds) > 0
     AND `TimeZone` IS NOT NULL$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `User_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `User_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
 
 INSERT INTO User (`DiscordId`)
 VALUES (IN_DiscordId)
@@ -80,7 +88,7 @@ WHERE `DiscordId` = IN_DiscordId;
 
 END$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
 
 INSERT INTO User (`DiscordId`, `TimeFormat`)
 VALUES (IN_DiscordId, IN_TimeFormat)
@@ -88,7 +96,7 @@ ON DUPLICATE KEY UPDATE `TimeFormat` = IN_TimeFormat, `Modified` = current_times
 
 END$$
 
-CREATE DEFINER=`kevin`@`%` PROCEDURE `User_SetTimeZone` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
+CREATE PROCEDURE `User_SetTimeZone` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
 
 INSERT INTO User (`DiscordId`, `TimeZone`)
 VALUES (IN_DiscordId, IN_TimeZone)

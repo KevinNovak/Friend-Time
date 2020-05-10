@@ -75,6 +75,10 @@ Friend Time requires the following permissions:
 
 When you invite Friend Time to your server, by default all of these permissions should be given to Friend Time. If you'd like to disable Friend Time for certain channels, feel free to remove these permissions in the channels you'd like to disable. If you are experiencing permissions issues, feel free to kick and reinvite Friend Time.
 
+## Running Locally
+
+If you'd like to run your own copy of Friend Time for development or personal reasons, see the [following guide](docs/running-locally.md).
+
 ## References
 
 * [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.

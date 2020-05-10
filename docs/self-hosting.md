@@ -1,9 +1,10 @@
-# Running Friend Time Locally
+# Self-Hosting Friend Time
 
 ## Requirements
 
 1. [Node.js v12.14.0](https://nodejs.org/) or newer.
 2. A [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/) server.
+    * [phpMyAdmin](https://www.phpmyadmin.net/) is also recommended.
 
 ## Setup
 

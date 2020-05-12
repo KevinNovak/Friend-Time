@@ -1,4 +1,4 @@
-import { DMChannel, MessageReaction, User } from 'discord.js';
+import { DMChannel, MessageReaction, User, TextChannel } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { ServerRepo } from '../services/database/server-repo';
@@ -67,7 +67,10 @@ export class ReactionHandler {
             return;
         }
 
-        let backupChannel = msg.channel;
+        let backupChannel =
+            msg.channel instanceof TextChannel || msg.channel instanceof DMChannel
+                ? msg.channel
+                : undefined;
 
         let server = msg.guild;
         if (server) {

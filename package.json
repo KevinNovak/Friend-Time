@@ -19,7 +19,7 @@
     },
     "dependencies": {
         "chrono-node": "1.4.6",
-        "discord.js": "github:discordjs/discord.js#fe7df70",
+        "discord.js": "12.2.0",
         "moment-timezone": "0.5.28",
         "mysql": "2.18.1",
         "pm2": "^4.4.0",

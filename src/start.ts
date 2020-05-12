@@ -1,4 +1,4 @@
-import { Client, ClientOptions, PartialTypes, WSEventType } from 'discord.js';
+import { Client, ClientOptions, PartialTypes } from 'discord.js';
 import { Bot } from './bot';
 import { ClearCommand } from './commands/clear-command';
 import { ConfigCommand } from './commands/config-command';
@@ -34,7 +34,6 @@ let internalLang: InternalLanguage = require('../lang/internal.en.json');
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
-        disabledEvents: config.clientOptions.disabledEvents as WSEventType[],
         messageCacheMaxSize: config.clientOptions.messageCacheMaxSize,
         messageCacheLifetime: config.clientOptions.messageCacheLifetime,
         messageSweepInterval: config.clientOptions.messageSweepInterval,

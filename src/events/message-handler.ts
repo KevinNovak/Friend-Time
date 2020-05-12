@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { DMChannel, Message, TextChannel } from 'discord.js';
 import { Command } from '../commands/command';
 import { HelpCommand } from '../commands/help-command';
 import { ReminderCommand } from '../commands/reminder-command';
@@ -53,6 +53,10 @@ export class MessageHandler {
         let channel = msg.channel;
         let server = msg.guild;
 
+        if (!(channel instanceof TextChannel || channel instanceof DMChannel)) {
+            return;
+        }
+
         // Detect if message contains time and react
         let result = this.timeParser.parseTime(msg.content);
         if (this.timeParser.shouldRespond(result)) {
@@ -66,7 +70,7 @@ export class MessageHandler {
             }
 
             if (!authorData.TimeZone) {
-                this.processReminder(msg, authorData);
+                this.processReminder(msg, channel, authorData);
                 return;
             }
 
@@ -181,7 +185,7 @@ export class MessageHandler {
         }
 
         if (startsWithMyMention) {
-            this.helpCommand.execute(msg, authorData);
+            this.helpCommand.execute(msg, channel, authorData);
             return;
         }
 
@@ -189,7 +193,7 @@ export class MessageHandler {
 
         // If message is just the prefix, run help
         if (args.length < 2) {
-            this.helpCommand.execute(msg, authorData);
+            this.helpCommand.execute(msg, channel, authorData);
             return;
         }
 
@@ -199,7 +203,7 @@ export class MessageHandler {
 
         // If no command found, run help
         if (!command) {
-            this.helpCommand.execute(msg, authorData);
+            this.helpCommand.execute(msg, channel, authorData);
             return;
         }
 
@@ -219,11 +223,14 @@ export class MessageHandler {
         }
 
         // Run the command
-        command.execute(msg, args.slice(2), authorData, serverData);
+        command.execute(msg, args.slice(2), channel, authorData, serverData);
     }
 
-    private async processReminder(msg: Message, authorData: UserData): Promise<void> {
-        let channel = msg.channel;
+    private async processReminder(
+        msg: Message,
+        channel: TextChannel | DMChannel,
+        authorData: UserData
+    ): Promise<void> {
         let server = msg.guild;
 
         let serverData: ServerData;
@@ -241,7 +248,7 @@ export class MessageHandler {
             }
         }
 
-        this.reminderCommand.execute(msg, authorData, serverData);
+        this.reminderCommand.execute(msg, channel, authorData, serverData);
     }
 
     // TODO: More efficient way to resolve commands

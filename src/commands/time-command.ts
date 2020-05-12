@@ -27,11 +27,11 @@ export class TimeCommand implements Command {
     public async execute(
         msg: Message,
         args: string[],
+        channel: TextChannel | DMChannel,
         authorData: UserData,
         serverData?: ServerData
     ): Promise<void> {
         // TODO: Consolidate usage between self, user, zone
-        let channel = msg.channel;
         let guild = msg.guild;
         let mentionedUsers = msg.mentions.users;
 

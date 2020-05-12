@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { DMChannel, Message, TextChannel } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
@@ -22,11 +22,11 @@ export class ClearCommand implements Command {
     public async execute(
         msg: Message,
         args: string[],
+        channel: TextChannel | DMChannel,
         authorData: UserData,
         serverData?: ServerData
     ): Promise<void> {
         let author = msg.author;
-        let channel = msg.channel;
 
         try {
             await this.userRepo.clearTimeZone(author.id);

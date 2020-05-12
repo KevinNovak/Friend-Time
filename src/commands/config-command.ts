@@ -28,11 +28,11 @@ export class ConfigCommand implements Command {
     public async execute(
         msg: Message,
         args: string[],
+        channel: TextChannel | DMChannel,
         authorData: UserData,
         serverData?: ServerData
     ): Promise<void> {
         let author = msg.author;
-        let channel = msg.channel;
         let server = msg.guild;
 
         if (!ServerUtils.isTextChannel(channel)) {

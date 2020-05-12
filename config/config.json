@@ -48,7 +48,6 @@
         "serversPerShard": 1000
     },
     "clientOptions": {
-        "disabledEvents": ["TYPING_START"],
         "messageCacheMaxSize": 20,
         "messageCacheLifetime": 120,
         "messageSweepInterval": 60,

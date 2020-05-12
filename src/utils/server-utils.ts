@@ -1,8 +1,8 @@
-import { Channel, DMChannel, Guild, GuildMember, GuildMemberStore, TextChannel } from 'discord.js';
+import { Channel, Collection, DMChannel, Guild, GuildMember, TextChannel } from 'discord.js';
 
 export abstract class ServerUtils {
     public static getMemberDiscordIds(server: Guild): string[] {
-        return server.members.filter(member => !member.user.bot).keyArray();
+        return server.members.cache.filter(member => !member.user.bot).keyArray();
     }
 
     public static isDirectChannel(channel: Channel): boolean {
@@ -32,7 +32,7 @@ export abstract class ServerUtils {
     }
 
     public static async findMember(server: Guild, query: string): Promise<GuildMember> {
-        let members: GuildMemberStore;
+        let members: Collection<string, GuildMember>;
 
         try {
             members = await server.members.fetch();

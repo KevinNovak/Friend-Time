@@ -35,7 +35,6 @@ export interface ShardingConfig {
 }
 
 export interface ClientOptionsConfig {
-    disabledEvents: string[] | null;
     messageCacheMaxSize: number;
     messageCacheLifetime: number;
     messageSweepInterval: number;

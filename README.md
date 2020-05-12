@@ -6,7 +6,7 @@
 
 ## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=522304)
 
-[Join Support Server](https://discord.gg/QMc9Qdk) | [Donate with PayPal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
+[Join Support Server](https://discord.gg/GQcBR8e) | [Donate with PayPal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 
 If you have a discord server with users across multiple countries and time zones then this is the bot for you! With Friend Time you can easily coordinate times between users. Friend Time will automatically convert any times mentioned in chat to the times of other users.
 

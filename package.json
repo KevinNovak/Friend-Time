@@ -18,22 +18,22 @@
         "build": "tsc"
     },
     "dependencies": {
-        "chrono-node": "1.4.5",
+        "chrono-node": "1.4.6",
         "discord.js": "github:discordjs/discord.js#fe7df70",
         "moment-timezone": "0.5.28",
         "mysql": "2.18.1",
-        "pm2": "^4.2.3",
+        "pm2": "^4.4.0",
         "request": "2.88.2",
         "request-promise": "4.2.5"
     },
     "devDependencies": {
         "@types/moment-timezone": "0.5.13",
-        "@types/mysql": "2.15.9",
-        "@types/node": "13.11.1",
+        "@types/mysql": "2.15.10",
+        "@types/node": "13.13.5",
         "@types/request": "2.48.4",
         "@types/request-promise": "4.1.46",
-        "tslint": "^6.1.1",
-        "typescript": "^3.8.3"
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.2"
     },
     "repository": {
         "type": "git",

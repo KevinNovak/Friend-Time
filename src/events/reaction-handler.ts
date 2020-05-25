@@ -1,4 +1,4 @@
-import { DMChannel, MessageReaction, User, TextChannel } from 'discord.js';
+import { DMChannel, MessageReaction, User } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { ServerRepo } from '../services/database/server-repo';
@@ -67,24 +67,13 @@ export class ReactionHandler {
             return;
         }
 
-        let backupChannel =
-            msg.channel instanceof TextChannel || msg.channel instanceof DMChannel
-                ? msg.channel
-                : undefined;
-
         let server = msg.guild;
         if (server) {
             let serverData: ServerData;
             try {
                 serverData = await this.serverRepo.getServerData(server.id);
             } catch (error) {
-                this.msgSender.send(
-                    dmChannel,
-                    langCode,
-                    MessageName.retrieveServerDataError,
-                    undefined,
-                    backupChannel
-                );
+                this.msgSender.send(dmChannel, langCode, MessageName.retrieveServerDataError);
                 this.logger.error(this.logs.retrieveServerDataError, error);
                 return;
             }
@@ -102,25 +91,13 @@ export class ReactionHandler {
             userZone = userData.TimeZone;
             userFormat = userData.TimeFormat;
         } catch (error) {
-            this.msgSender.send(
-                dmChannel,
-                langCode,
-                MessageName.retrieveUserDataError,
-                undefined,
-                backupChannel
-            );
+            this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
         if (!userZone) {
-            this.msgSender.send(
-                dmChannel,
-                langCode,
-                MessageName.noZoneSetSelf,
-                undefined,
-                backupChannel
-            );
+            this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetSelf);
             return;
         }
 
@@ -129,25 +106,15 @@ export class ReactionHandler {
             let authorData = await this.userRepo.getUserData(author.id);
             authorZone = authorData.TimeZone;
         } catch (error) {
-            this.msgSender.send(
-                dmChannel,
-                langCode,
-                MessageName.retrieveUserDataError,
-                undefined,
-                backupChannel
-            );
+            this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
         if (!authorZone) {
-            this.msgSender.send(
-                dmChannel,
-                langCode,
-                MessageName.noZoneSetUser,
-                [{ name: '{USER}', value: author.username }],
-                backupChannel
-            );
+            this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetUser, [
+                { name: '{USER}', value: author.username },
+            ]);
             return;
         }
 
@@ -161,18 +128,12 @@ export class ReactionHandler {
         let formattedTime = moment.format(format);
         let quote = StringUtils.formatQuote(result.text);
 
-        this.msgSender.send(
-            dmChannel,
-            langCode,
-            MessageName.convertedTime,
-            [
-                { name: '{AUTHOR}', value: author.username },
-                { name: '{QUOTE}', value: quote },
-                { name: '{AUTHOR_ZONE}', value: authorZone },
-                { name: '{USER_ZONE}', value: userZone },
-                { name: '{CONVERTED_TIME}', value: formattedTime },
-            ],
-            backupChannel
-        );
+        this.msgSender.send(dmChannel, langCode, MessageName.convertedTime, [
+            { name: '{AUTHOR}', value: author.username },
+            { name: '{QUOTE}', value: quote },
+            { name: '{AUTHOR_ZONE}', value: authorZone },
+            { name: '{USER_ZONE}', value: userZone },
+            { name: '{CONVERTED_TIME}', value: formattedTime },
+        ]);
     }
 }

@@ -50,11 +50,11 @@ By also reacting, you will be private messaged with the time converted to your t
 
 ## Finding Your Time Zone
 
-[Keval Bhatt](https://github.com/kevalbhatt) has created a handy map time zone picker:
+Visit the following link to view a map of available time zones:
 
-<http://kevalbhatt.github.io/timezone-picker/>
+<https://kevinnovak.github.io/Time-Zone-Picker/>
 
-Simply click your location on the map, and use the name displayed in the dropdown box as your time zone.
+Simply click your location on the map, and use the name displayed in "Selected Time Zone" as your time zone.
 
 You can then take your time zone name and run the **set** command like so:
 `-ft set America/New_York`

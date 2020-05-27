@@ -82,7 +82,7 @@
         "mapTitle": "Friend Time - Map",
         "mapMessage": [
             "Please visit the following link and choose your time zone:",
-            "<http://kevalbhatt.github.io/timezone-picker/>",
+            "<https://kevinnovak.github.io/Time-Zone-Picker/>",
             "",
             "Then enter **-ft set <zone>** with your time zone.",
             "For example: *-ft set America/New_York*",

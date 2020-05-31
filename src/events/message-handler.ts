@@ -135,9 +135,7 @@ export class MessageHandler {
                         .convert(result, authorData.TimeZone, name)
                         .format(format),
                     offset: parseInt(
-                        this.zoneService
-                            .convert(result, authorData.TimeZone, name)
-                            .format('ZZ')
+                        this.zoneService.convert(result, authorData.TimeZone, name).format('ZZ')
                     ),
                 }))
                 .sort(this.compareTimeZones);
@@ -146,7 +144,10 @@ export class MessageHandler {
             for (let data of timeZoneData) {
                 // TODO: Message
                 let line = '';
-                if (data.name === authorData.TimeZone) {
+                if (
+                    data.name === authorData.TimeZone &&
+                    !this.timeParser.offsetIsCertain(result.start)
+                ) {
                     line = '__***{TIMEZONE}***__: {TIME}'
                         .replace('{TIMEZONE}', data.name)
                         .replace('{TIME}', data.time);

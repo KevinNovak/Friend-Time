@@ -118,7 +118,7 @@ export class ReactionHandler {
             return;
         }
 
-        let moment = this.zoneService.convert(result.date(), authorZone, userZone);
+        let moment = this.zoneService.convert(result, authorZone, userZone);
 
         let timeFormat = this.timeFormatService.findTimeFormat(userFormat);
         let format = this.timeParser.dayIsCertain(result.start)

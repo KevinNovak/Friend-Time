@@ -17,6 +17,7 @@ import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
 import { MessageUtils } from '../utils/message-utils';
 import { ServerUtils } from '../utils/server-utils';
+import { StringUtils } from '../utils/string-utils';
 
 export class MessageHandler {
     // Move to config?
@@ -140,7 +141,7 @@ export class MessageHandler {
                 }))
                 .sort(this.compareTimeZones);
 
-            let message = '';
+            let message = `> ${StringUtils.formatQuote(result.text)}\n`;
             for (let data of timeZoneData) {
                 // TODO: Message
                 let line = '';

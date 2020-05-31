@@ -28,7 +28,6 @@ export class ZoneService {
         } else {
             momentInZone = this.createMomentInZone(result.date(), fromZone);
         }
-
         return momentInZone.tz(toZone);
     }
 

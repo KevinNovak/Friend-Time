@@ -132,11 +132,11 @@ export class MessageHandler {
                     name,
                     // TODO: More efficient way so we don't convert twice
                     time: this.zoneService
-                        .convert(result.date(), authorData.TimeZone, name)
+                        .convert(result, authorData.TimeZone, name)
                         .format(format),
                     offset: parseInt(
                         this.zoneService
-                            .convert(result.date(), authorData.TimeZone, name)
+                            .convert(result, authorData.TimeZone, name)
                             .format('ZZ')
                     ),
                 }))

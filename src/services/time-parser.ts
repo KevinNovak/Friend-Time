@@ -26,7 +26,6 @@ export class TimeParser {
     public shouldRespond(result: any) {
         return (
             result &&
-            !this.offsetIsCertain(result.start) &&
             this.hourIsCertain(result.start) &&
             !this.matchesBlacklist(result.text)
         );

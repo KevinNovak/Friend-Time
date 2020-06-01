@@ -100,7 +100,7 @@ export class TimeCommand implements Command {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
             },
-            { name: '{USER}', value: mentionedUser.username },
+            { name: '{USER_ID}', value: mentionedUser.id },
             { name: '{ZONE}', value: zone },
         ]);
     }

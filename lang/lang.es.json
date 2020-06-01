@@ -92,7 +92,7 @@
         "clearSuccess": "¡Zona horaria reseteada!",
         "clearError": "Un error ha ocurrido reseteando tu zona horaria",
         "timeSelfSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
-        "timeUserSuccess": "Actualmente son las **{TIME}** para **{USER}** en **{ZONE}**.",
+        "timeUserSuccess": "Actualmente son las **{TIME}** para <@{USER_ID}> en **{ZONE}**.",
         "timeZoneSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
         "formatSuccess": "Tu formato horario a cambiado a **{FORMAT}**!",
         "formatError": "Un error ha ocurrido cambiando tu formato horario.",

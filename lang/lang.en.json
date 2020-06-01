@@ -92,7 +92,7 @@
         "clearSuccess": "Cleared your time zone!",
         "clearError": "An error occurred while clearing your time zone.",
         "timeSelfSuccess": "It is currently **{TIME}** in **{ZONE}**.",
-        "timeUserSuccess": "It is currently **{TIME}** for **{USER}** in **{ZONE}**.",
+        "timeUserSuccess": "It is currently **{TIME}** for <@{USER_ID}> in **{ZONE}**.",
         "timeZoneSuccess": "It is currently **{TIME}** in **{ZONE}**.",
         "formatSuccess": "Set your time format to **{FORMAT}**!",
         "formatError": "An error occurred while setting your time format.",

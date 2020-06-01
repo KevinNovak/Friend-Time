@@ -125,7 +125,7 @@
             "Introduce **-ft map** para ver una lista con las zonas horarias disponibles"
         ],
         "noZoneSetReminder": [
-            "Hola {AUTHOR}, veo que no tienes una zona horaria establecida todabia",
+            "Hola <@{AUTHOR_ID}>, veo que no tienes una zona horaria establecida todabia",
             "",
             "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
         ],
@@ -134,7 +134,7 @@
             "",
             "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
         ],
-        "noZoneSetUser": "¡**{USER}** no tiene una zona horaria establecida todavía!",
+        "noZoneSetUser": "¡<@{USER_ID}> no tiene una zona horaria establecida todavía!",
         "invalidTimeFormat": [
             "Por favor, introduzca un formato horario valido",
             "",
@@ -145,7 +145,7 @@
         "retrieveServerMembersError": "Un error ha ocurrido recuperando los miembros del servidor",
         "retrieveDistinctTimeZonesError": "Un error ha ocurrido recuperando distintas zonas horarias",
         "convertedTime": [
-            "**{AUTHOR}** en **{AUTHOR_ZONE}** mencionó:",
+            "<@{AUTHOR_ID}> en **{AUTHOR_ZONE}** mencionó:",
             "> {QUOTE}",
             "",
             "En tu zona horaria, **{USER_ZONE}**, la hora sería **{CONVERTED_TIME}**."

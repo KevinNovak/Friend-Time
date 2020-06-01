@@ -113,7 +113,7 @@ export class ReactionHandler {
 
         if (!authorZone) {
             this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetUser, [
-                { name: '{USER}', value: author.username },
+                { name: '{USER_ID}', value: author.id },
             ]);
             return;
         }
@@ -129,7 +129,7 @@ export class ReactionHandler {
         let quote = StringUtils.formatQuote(result.text);
 
         this.msgSender.send(dmChannel, langCode, MessageName.convertedTime, [
-            { name: '{AUTHOR}', value: author.username },
+            { name: '{AUTHOR_ID}', value: author.id },
             { name: '{QUOTE}', value: quote },
             { name: '{AUTHOR_ZONE}', value: authorZone },
             { name: '{USER_ZONE}', value: userZone },

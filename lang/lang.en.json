@@ -125,7 +125,7 @@
             "Type **-ft map** to view a map of available timezones."
         ],
         "noZoneSetReminder": [
-            "Hi {AUTHOR}, it looks like you don't have a timezone set yet.",
+            "Hi <@{AUTHOR_ID}>, it looks like you don't have a timezone set yet.",
             "",
             "Please type **-ft map** to find your time zone, then **-ft set *<zone>*** to set yourself to that zone!"
         ],
@@ -134,7 +134,7 @@
             "",
             "Type **-ft map** to find your time zone, then **-ft set *<zone>*** to set yourself to that zone!"
         ],
-        "noZoneSetUser": "**{USER}** doesn't have a time zone set yet!",
+        "noZoneSetUser": "<@{USER_ID}> doesn't have a time zone set yet!",
         "invalidTimeFormat": [
             "Please provide a valid time format!",
             "",
@@ -145,7 +145,7 @@
         "retrieveServerMembersError": "An error occurred while retrieving server members.",
         "retrieveDistinctTimeZonesError": "An error occurred while retrieving distinct time zones.",
         "convertedTime": [
-            "**{AUTHOR}** in **{AUTHOR_ZONE}** mentioned:",
+            "<@{AUTHOR_ID}> in **{AUTHOR_ZONE}** mentioned:",
             "> {QUOTE}",
             "",
             "In your time zone, **{USER_ZONE}**, that is **{CONVERTED_TIME}**."

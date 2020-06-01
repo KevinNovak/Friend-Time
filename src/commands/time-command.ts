@@ -87,7 +87,7 @@ export class TimeCommand implements Command {
 
         if (!zone) {
             this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetUser, [
-                { name: '{USER}', value: mentionedUser.username },
+                { name: '{USER_ID}', value: mentionedUser.id },
             ]);
             return;
         }

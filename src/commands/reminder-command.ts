@@ -29,7 +29,7 @@ export class ReminderCommand {
         }
 
         this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetReminder, [
-            { name: '{AUTHOR}', value: author.username },
+            { name: '{AUTHOR_ID}', value: author.id },
         ]);
     }
 }

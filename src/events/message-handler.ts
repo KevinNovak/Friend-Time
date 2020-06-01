@@ -17,6 +17,7 @@ import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
 import { MessageUtils } from '../utils/message-utils';
 import { ServerUtils } from '../utils/server-utils';
+import { StringUtils } from '../utils/string-utils';
 
 export class MessageHandler {
     // Move to config?
@@ -132,21 +133,22 @@ export class MessageHandler {
                     name,
                     // TODO: More efficient way so we don't convert twice
                     time: this.zoneService
-                        .convert(result.date(), authorData.TimeZone, name)
+                        .convert(result, authorData.TimeZone, name)
                         .format(format),
                     offset: parseInt(
-                        this.zoneService
-                            .convert(result.date(), authorData.TimeZone, name)
-                            .format('ZZ')
+                        this.zoneService.convert(result, authorData.TimeZone, name).format('ZZ')
                     ),
                 }))
                 .sort(this.compareTimeZones);
 
-            let message = '';
+            let message = `> ${StringUtils.formatQuote(result.text)}\n`;
             for (let data of timeZoneData) {
                 // TODO: Message
                 let line = '';
-                if (data.name === authorData.TimeZone) {
+                if (
+                    data.name === authorData.TimeZone &&
+                    !this.timeParser.offsetIsCertain(result.start)
+                ) {
                     line = '__***{TIMEZONE}***__: {TIME}'
                         .replace('{TIMEZONE}', data.name)
                         .replace('{TIME}', data.time);

@@ -43,7 +43,6 @@ export class MessageHandler {
     public async process(msg: Message): Promise<void> {
         if (
             msg.partial ||
-            MessageUtils.sentByBot(msg) ||
             !MessageUtils.permToReply(msg) ||
             !MessageUtils.permToReact(msg)
         ) {

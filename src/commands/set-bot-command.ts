@@ -32,6 +32,7 @@ export class SetBotCommand implements Command {
         let timeZone = args[0];
         let bot = msg.mentions.users.first();
         if (!UserUtils.isBot(bot)) {
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.setError);
             return;
         }
         try {

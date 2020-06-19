@@ -9,6 +9,7 @@ import { InfoCommand } from './commands/info-command';
 import { InviteCommand } from './commands/invite-command';
 import { MapCommand } from './commands/map-command';
 import { ReminderCommand } from './commands/reminder-command';
+import {SetBotCommand} from './commands/set-bot-command';
 import { SetCommand } from './commands/set-command';
 import { SupportCommand } from './commands/support-command';
 import { TimeCommand } from './commands/time-command';
@@ -55,6 +56,7 @@ async function start(): Promise<void> {
     let helpCommand = new HelpCommand(msgSender);
     let reminderCommand = new ReminderCommand(msgSender);
     let setCommand = new SetCommand(msgSender, logger, internalLang.logs, zoneService, userRepo);
+    let setBotCommand = new SetBotCommand(msgSender, logger, internalLang.logs, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
     let clearCommand = new ClearCommand(msgSender, logger, internalLang.logs, userRepo);
     let timeCommand = new TimeCommand(
@@ -93,6 +95,7 @@ async function start(): Promise<void> {
             inviteCommand,
             supportCommand,
             donateCommand,
+            setBotCommand
         ],
         serverRepo,
         userRepo,

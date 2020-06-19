@@ -1,5 +1,6 @@
 export enum CommandName {
     set = 'set',
+    setBot = 'set-bot',
     find = 'find',
     map = 'map',
     clear = 'clear',

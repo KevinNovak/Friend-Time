@@ -48,7 +48,7 @@
         "serversPerShard": 1000
     },
     "clientOptions": {
-        "messageCacheMaxSize": 20,
+        "messageCacheMaxSize": 10,
         "messageCacheLifetime": 120,
         "messageSweepInterval": 60,
         "partials": ["MESSAGE", "CHANNEL", "REACTION"]

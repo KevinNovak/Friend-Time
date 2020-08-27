@@ -1,3 +1,6 @@
+import { DiscordAPIError } from 'discord.js';
+import { Response } from 'node-fetch';
+
 import { Tags } from '../models/internal-language';
 
 export class Logger {
@@ -23,19 +26,50 @@ export class Logger {
         console.warn(log);
     }
 
-    public error(message: string, error?: any): void {
+    public async error(message: string, error?: any): Promise<void> {
+        // Log custom error message
         let log = this.tags.error;
         if (this.shardTag) {
             log += ' ' + this.shardTag;
         }
         log += ' ' + message;
         console.error(log);
-        if (error) {
-            if (error instanceof Error) {
-                console.error(error.stack);
-            } else {
+
+        // Log error object if exists
+        if (!error) {
+            return;
+        }
+
+        switch (error.constructor) {
+            case Response:
+                let response = error as Response;
+                let responseText: string;
+                try {
+                    responseText = await response.text();
+                } catch {
+                    // Ignore
+                }
+                console.error({
+                    path: response.url,
+                    statusCode: response.status,
+                    statusName: response.statusText,
+                    body: responseText,
+                });
+                break;
+            case DiscordAPIError:
+                let discordError = error as DiscordAPIError;
+                console.error({
+                    message: discordError.message,
+                    code: discordError.code,
+                    statusCode: discordError.httpStatus,
+                    method: discordError.method,
+                    path: discordError.path,
+                    stack: discordError.stack,
+                });
+                break;
+            default:
                 console.error(error);
-            }
+                break;
         }
     }
 

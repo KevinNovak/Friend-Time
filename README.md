@@ -1,6 +1,6 @@
 # Friend Time
 
-[![Discord Bots](https://discordbots.org/api/widget/status/471091072546766849.svg?noavatar=true)](https://discordbots.org/bot/471091072546766849)[![Discord Bots](https://discordbots.org/api/widget/servers/471091072546766849.svg?noavatar=true)](https://discordbots.org/bot/471091072546766849)
+[![top.gg](https://top.gg/api/widget/status/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![top.gg](https://top.gg/api/widget/servers/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![discord.js](https://img.shields.io/github/package-json/dependency-version/KevinNovak/Friend-Time/discord.js)](https://discord.js.org/)
 
 **Discord bot** - Automatically convert times mentioned in chat between time zones!
 

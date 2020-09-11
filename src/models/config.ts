@@ -38,6 +38,7 @@ export interface ClientOptionsConfig {
     messageCacheMaxSize: number;
     messageCacheLifetime: number;
     messageSweepInterval: number;
+    intents: string[];
     partials: string[];
 }
 

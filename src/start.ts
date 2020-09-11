@@ -1,4 +1,4 @@
-import { Client, ClientOptions, PartialTypes } from 'discord.js';
+import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
 import { Bot } from './bot';
 import { ClearCommand } from './commands/clear-command';
 import { ConfigCommand } from './commands/config-command';
@@ -37,6 +37,7 @@ async function start(): Promise<void> {
         messageCacheMaxSize: config.clientOptions.messageCacheMaxSize,
         messageCacheLifetime: config.clientOptions.messageCacheLifetime,
         messageSweepInterval: config.clientOptions.messageSweepInterval,
+        ws: { intents: config.clientOptions.intents as IntentsString[] },
         partials: config.clientOptions.partials as PartialTypes[],
     };
 

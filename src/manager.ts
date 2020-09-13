@@ -1,10 +1,12 @@
 import { ShardingManager } from 'discord.js';
+import { ShardingConfig } from './models/config';
 import { Logs } from './models/internal-language';
 import { Logger } from './services/logger';
 import { BotSite } from './services/sites/bot-site';
 
 export class Manager {
     constructor(
+        private shardingConfig: ShardingConfig,
         private shardManager: ShardingManager,
         private botSites: BotSite[],
         private logger: Logger,
@@ -15,8 +17,11 @@ export class Manager {
     public async start(): Promise<void> {
         this.registerListeners();
         try {
-            // TODO: Place in config variables
-            await this.shardManager.spawn(this.shardManager.totalShards, 5500, 60000);
+            await this.shardManager.spawn(
+                this.shardManager.totalShards,
+                this.shardingConfig.spawnDelay * 1000,
+                this.shardingConfig.spawnTimeout * 1000
+            );
         } catch (error) {
             this.logger.error(`${this.managerTag} ${this.logs.spawnShardError}`, error);
             return;

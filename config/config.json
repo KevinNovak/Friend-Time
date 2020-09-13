@@ -27,44 +27,58 @@
         "password": "<MYSQL_PASSWORD>",
         "connectionLimit": 10
     },
-    "embedColor": "#0099ff",
-    "emoji": "🕰️",
-    "regions": [
-        "Africa",
-        "America",
-        "Antarctica",
-        "Arctic",
-        "Asia",
-        "Atlantic",
-        "Australia",
-        "Europe",
-        "Indian",
-        "Pacific"
-    ],
-    "timeFormats": [
-        {
-            "name": "12",
-            "display": "12-hour",
-            "dateFormat": "ddd, MMM D, YYYY",
-            "timeFormat": "h:mm A"
-        },
-        {
-            "name": "24",
-            "display": "24-hour",
-            "dateFormat": "ddd, MMM D, YYYY",
-            "timeFormat": "HH:mm"
+    "jobs": {
+        "updateServerCount": {
+            "interval": 300
         }
-    ],
-    "blacklist": [
-        "^[\\d]+([.]?[\\d]{1,2})?[\\s]*-[\\s]*[\\d]+([.]?[\\d]{1,2})?$",
-        "^from[\\s]*[\\d]+$",
-        "^[\\d]+:[\\d]$"
-    ],
-    "updateInterval": 300,
+    },
+    "experience": {
+        "timeFormats": [
+            {
+                "name": "12",
+                "display": "12-hour",
+                "dateFormat": "ddd, MMM D, YYYY",
+                "timeFormat": "h:mm A"
+            },
+            {
+                "name": "24",
+                "display": "24-hour",
+                "dateFormat": "ddd, MMM D, YYYY",
+                "timeFormat": "HH:mm"
+            }
+        ],
+        "blacklist": [
+            "^[\\d]+([.]?[\\d]{1,2})?[\\s]*-[\\s]*[\\d]+([.]?[\\d]{1,2})?$",
+            "^from[\\s]*[\\d]+$",
+            "^[\\d]+:[\\d]$"
+        ]
+    },
+    "colors": {
+        "default": "0x0099ff"
+    },
+    "emojis": {
+        "convert": "🕰️"
+    },
+    "validation": {
+        "regions": [
+            "Africa",
+            "America",
+            "Antarctica",
+            "Arctic",
+            "Asia",
+            "Atlantic",
+            "Australia",
+            "Europe",
+            "Indian",
+            "Pacific"
+        ]
+    },
     "sharding": {
         "machineId": 0,
         "machineCount": 1,
-        "serversPerShard": 1000
+        "serversPerShard": 1000,
+        "spawnDelay": 5,
+        "spawnTimeout": 300
     },
     "botSites": {
         "topGg": {

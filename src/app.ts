@@ -61,6 +61,7 @@ async function start(): Promise<void> {
     });
 
     let manager = new Manager(
+        config.sharding,
         shardManager,
         [topGgSite, botsOnDiscordXyzSite, discordBotsGgSite, discordBotListComSite],
         logger,
@@ -70,7 +71,7 @@ async function start(): Promise<void> {
     await manager.start();
     setInterval(() => {
         manager.updateServerCount();
-    }, config.updateInterval * 1000);
+    }, config.jobs.updateServerCount.interval * 1000);
 }
 
 start();

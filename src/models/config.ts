@@ -2,12 +2,11 @@ export interface Config {
     prefix: string;
     client: ClientConfig;
     mysql: MySqlConfig;
-    embedColor: string;
-    emoji: string;
-    regions: string[];
-    timeFormats: TimeFormat[];
-    blacklist: string[];
-    updateInterval: number;
+    jobs: JobsConfig;
+    experience: ExperienceConfig;
+    colors: ColorsConfig;
+    emojis: EmojisConfig;
+    validation: ValidationConfig;
     sharding: ShardingConfig;
     botSites: BotSitesConfig;
 }
@@ -37,6 +36,19 @@ export interface MySqlConfig {
     connectionLimit: number;
 }
 
+export interface JobsConfig {
+    updateServerCount: UpdateServerCountConfig;
+}
+
+export interface UpdateServerCountConfig {
+    interval: number;
+}
+
+export interface ExperienceConfig {
+    timeFormats: TimeFormat[];
+    blacklist: string[];
+}
+
 export interface TimeFormat {
     name: string;
     display: string;
@@ -44,10 +56,24 @@ export interface TimeFormat {
     timeFormat: string;
 }
 
+export interface ColorsConfig {
+    default: string;
+}
+
+export interface EmojisConfig {
+    convert: string;
+}
+
+export interface ValidationConfig {
+    regions: string[];
+}
+
 export interface ShardingConfig {
     machineId: number;
     machineCount: number;
     serversPerShard: number;
+    spawnDelay: number;
+    spawnTimeout: number;
 }
 
 export interface BotSitesConfig {

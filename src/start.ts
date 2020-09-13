@@ -48,11 +48,11 @@ async function start(): Promise<void> {
     let dataAccess = new DataAccess(config.mysql);
     let serverRepo = new ServerRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
-    let msgBuilder = new MessageBuilder(config.embedColor);
+    let msgBuilder = new MessageBuilder(config.colors.default);
     let msgSender = new MessageSender(msgBuilder, langService, logger, internalLang.logs);
-    let timeParser = new TimeParser(config.blacklist);
-    let zoneService = new ZoneService(config.regions, timeParser);
-    let timeFormatService = new TimeFormatService(config.timeFormats);
+    let timeParser = new TimeParser(config.experience.blacklist);
+    let zoneService = new ZoneService(config.validation.regions, timeParser);
+    let timeFormatService = new TimeFormatService(config.experience.timeFormats);
     let helpCommand = new HelpCommand(msgSender);
     let reminderCommand = new ReminderCommand(msgSender);
     let setCommand = new SetCommand(msgSender, logger, internalLang.logs, zoneService, userRepo);
@@ -80,7 +80,7 @@ async function start(): Promise<void> {
     let donateCommand = new DonateCommand(msgSender);
     let messageHandler = new MessageHandler(
         config.prefix,
-        config.emoji,
+        config.emojis.convert,
         helpCommand,
         reminderCommand,
         [
@@ -106,7 +106,7 @@ async function start(): Promise<void> {
         internalLang.logs
     );
     let reactionHandler = new ReactionHandler(
-        config.emoji,
+        config.emojis.convert,
         msgSender,
         timeParser,
         zoneService,

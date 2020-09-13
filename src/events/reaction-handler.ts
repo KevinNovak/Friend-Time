@@ -1,4 +1,4 @@
-import { DMChannel, MessageReaction, User } from 'discord.js';
+import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { ServerRepo } from '../services/database/server-repo';
@@ -37,10 +37,19 @@ export class ReactionHandler {
             return;
         }
 
-        if (messageReaction.message.partial) {
-            try {
-                await messageReaction.message.fetch();
-            } catch (error) {
+        // Fill partial structures
+        try {
+            if (messageReaction.partial) {
+                messageReaction = await messageReaction.fetch();
+            }
+            if (messageReaction.message.partial) {
+                messageReaction.message = await messageReaction.message.fetch();
+            }
+        } catch (error) {
+            // Error code 50001: "Missing Access"
+            if (error instanceof DiscordAPIError && error.code === 50001) {
+                return;
+            } else {
                 this.logger.error(this.logs.retrievePartialReactionMessageError, error);
                 return;
             }

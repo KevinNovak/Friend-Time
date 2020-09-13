@@ -22,7 +22,7 @@
 4. Setup the config file.
     * Open the `config/config.json` file found in this repository.
     * You'll need to edit the following values:
-        * `token` - Your discord bot token.
+        * `client.token` - Your discord bot token.
         * `mysql.host` - The ip address that your database is running on (or `localhost`).
         * `mysql.database` - The name of the database to use.
         * `mysql.user` - The username to use when accessing the database.

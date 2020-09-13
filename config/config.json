@@ -1,6 +1,25 @@
 {
     "prefix": "-ft",
-    "token": "<DISCORD_BOT_TOKEN>",
+    "client": {
+        "token": "<DISCORD_BOT_TOKEN>",
+        "intents": [
+            "GUILDS",
+            "GUILD_MEMBERS",
+            "GUILD_PRESENCES",
+            "GUILD_MESSAGES",
+            "GUILD_MESSAGE_REACTIONS",
+            "DIRECT_MESSAGES",
+            "DIRECT_MESSAGE_REACTIONS"
+        ],
+        "partials": ["MESSAGE", "CHANNEL", "REACTION"],
+        "caches": {
+            "messages": {
+                "size": 1,
+                "lifetime": 60,
+                "sweepInterval": 30
+            }
+        }
+    },
     "mysql": {
         "host": "localhost",
         "database": "<MYSQL_DATABASE_NAME>",
@@ -46,21 +65,6 @@
         "machineId": 0,
         "machineCount": 1,
         "serversPerShard": 1000
-    },
-    "clientOptions": {
-        "messageCacheMaxSize": 10,
-        "messageCacheLifetime": 120,
-        "messageSweepInterval": 60,
-        "intents": [
-            "GUILDS",
-            "GUILD_MEMBERS",
-            "GUILD_PRESENCES",
-            "GUILD_MESSAGES",
-            "GUILD_MESSAGE_REACTIONS",
-            "DIRECT_MESSAGES",
-            "DIRECT_MESSAGE_REACTIONS"
-        ],
-        "partials": ["MESSAGE", "CHANNEL", "REACTION"]
     },
     "botSites": {
         "topGg": {

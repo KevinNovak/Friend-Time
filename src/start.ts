@@ -34,11 +34,11 @@ let internalLang: InternalLanguage = require('../lang/internal.en.json');
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
-        messageCacheMaxSize: config.clientOptions.messageCacheMaxSize,
-        messageCacheLifetime: config.clientOptions.messageCacheLifetime,
-        messageSweepInterval: config.clientOptions.messageSweepInterval,
-        ws: { intents: config.clientOptions.intents as IntentsString[] },
-        partials: config.clientOptions.partials as PartialTypes[],
+        ws: { intents: config.client.intents as IntentsString[] },
+        partials: config.client.partials as PartialTypes[],
+        messageCacheMaxSize: config.client.caches.messages.size,
+        messageCacheLifetime: config.client.caches.messages.lifetime,
+        messageSweepInterval: config.client.caches.messages.sweepInterval,
     };
 
     // Dependency Injection
@@ -116,7 +116,7 @@ async function start(): Promise<void> {
         logger,
         internalLang.logs
     );
-    let bot = new Bot(client, messageHandler, reactionHandler, config.token, logger);
+    let bot = new Bot(client, messageHandler, reactionHandler, config.client.token, logger);
     await bot.start();
 }
 

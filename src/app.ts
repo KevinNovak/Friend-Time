@@ -33,7 +33,7 @@ async function start(): Promise<void> {
     let totalShards = 0;
     try {
         totalShards = await ShardUtils.getRecommendedShards(
-            config.token,
+            config.client.token,
             config.sharding.serversPerShard
         );
     } catch (error) {
@@ -53,7 +53,7 @@ async function start(): Promise<void> {
     }
 
     let shardManager = new ShardingManager('dist/start.js', {
-        token: config.token,
+        token: config.client.token,
         mode: 'worker',
         respawn: true,
         totalShards,

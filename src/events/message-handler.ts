@@ -15,7 +15,7 @@ import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
 import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
-import { MessageUtils } from '../utils/message-utils';
+import { PermissionUtils } from '../utils/permission-utils';
 import { ServerUtils } from '../utils/server-utils';
 import { StringUtils } from '../utils/string-utils';
 
@@ -41,29 +41,44 @@ export class MessageHandler {
     ) {}
 
     public async process(msg: Message): Promise<void> {
-        if (
-            msg.partial ||
-            MessageUtils.sentByBot(msg) ||
-            !MessageUtils.permToReply(msg) ||
-            !MessageUtils.permToReact(msg)
-        ) {
+        // Check if the message is a partial
+        if (msg.partial) {
             return;
         }
 
-        let author = msg.author;
         let channel = msg.channel;
-        let server = msg.guild;
 
+        // Only handle messages from text or DM channels
         if (!(channel instanceof TextChannel || channel instanceof DMChannel)) {
+            return;
+        }
+
+        // Don't respond to bots
+        if (msg.author.bot) {
+            return;
+        }
+
+        // Check if I have permission to send a message
+        if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
+            // No permission to send message
+            if (PermissionUtils.canSend(channel)) {
+                let message = `I don't have all permissions required to send messages here!\n\nPlease allow me to **Read Messages**, **Send Messages**, and **Embed Links** in this channel.`;
+                await channel.send(message);
+            }
             return;
         }
 
         // Detect if message contains time and react
         let result = this.timeParser.parseTime(msg.content);
         if (this.timeParser.shouldRespond(result)) {
+            // Check if I have permission to react
+            if (channel instanceof TextChannel && !PermissionUtils.canReact(channel)) {
+                return;
+            }
+
             let authorData: UserData;
             try {
-                authorData = await this.userRepo.getUserData(author.id);
+                authorData = await this.userRepo.getUserData(msg.author.id);
             } catch (error) {
                 this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
                 this.logger.error(this.logs.retrieveUserDataError, error);
@@ -75,9 +90,9 @@ export class MessageHandler {
                 return;
             }
 
-            if (!server) {
+            if (!msg.guild) {
                 try {
-                    msg.react(this.emoji);
+                    await msg.react(this.emoji);
                 } catch (error) {
                     this.logger.error(this.logs.reactError, error);
                 }
@@ -86,7 +101,7 @@ export class MessageHandler {
 
             let serverData: ServerData;
             try {
-                serverData = await this.serverRepo.getServerData(server.id);
+                serverData = await this.serverRepo.getServerData(msg.guild.id);
             } catch (error) {
                 this.msgSender.send(
                     channel,
@@ -99,7 +114,7 @@ export class MessageHandler {
 
             if (serverData.Mode !== 'List') {
                 try {
-                    msg.react(this.emoji);
+                    await msg.react(this.emoji);
                 } catch (error) {
                     this.logger.error(this.logs.reactError, error);
                 }
@@ -108,7 +123,7 @@ export class MessageHandler {
 
             // TODO: Formats in server config
             // TODO: Move to other classes
-            let discordIds = ServerUtils.getMemberDiscordIds(server);
+            let discordIds = ServerUtils.getMemberDiscordIds(msg.guild);
             let timeZones: string[];
             try {
                 timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
@@ -171,37 +186,30 @@ export class MessageHandler {
             }
         }
 
-        // Stop if message doesn't start with prefix or mentions me
-        let startsWithMyMention = MessageUtils.startsWithMyMention(msg);
-        if (!MessageUtils.startsWithPrefix(msg, this.prefix) && !startsWithMyMention) {
+        // Check if first argument is prefix
+        let args = msg.content.split(' ');
+        if (args[0].toLowerCase() !== this.prefix) {
             return;
         }
 
         let authorData: UserData;
         try {
-            authorData = await this.userRepo.getUserData(author.id);
+            authorData = await this.userRepo.getUserData(msg.author.id);
         } catch (error) {
             this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
-        if (startsWithMyMention) {
-            this.helpCommand.execute(msg, channel, authorData);
-            return;
-        }
-
-        let args = MessageUtils.extractArgs(msg);
-
-        // If message is just the prefix, run help
-        if (args.length < 2) {
-            this.helpCommand.execute(msg, channel, authorData);
+        // If only a prefix, run the help command
+        if (args.length === 1) {
+            await this.helpCommand.execute(msg, channel, authorData);
             return;
         }
 
         // Find the appropriate command
         let userCommand = args[1];
-        let command = this.resolveCommand(userCommand, authorData.LangCode);
+        let command = this.findCommand(userCommand, authorData.LangCode);
 
         // If no command found, run help
         if (!command) {
@@ -210,9 +218,9 @@ export class MessageHandler {
         }
 
         let serverData: ServerData;
-        if (server) {
+        if (msg.guild) {
             try {
-                serverData = await this.serverRepo.getServerData(server.id);
+                serverData = await this.serverRepo.getServerData(msg.guild.id);
             } catch (error) {
                 this.msgSender.send(
                     channel,
@@ -254,7 +262,7 @@ export class MessageHandler {
     }
 
     // TODO: More efficient way to resolve commands
-    private resolveCommand(userCommand: string, langCode: LangCode): Command {
+    private findCommand(userCommand: string, langCode: LangCode): Command {
         let langCommands = this.langService.getCommands(langCode);
         for (let commandKey in langCommands) {
             if (langCommands[commandKey] === userCommand) {

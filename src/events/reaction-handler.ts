@@ -1,4 +1,4 @@
-import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
+import { DiscordAPIError, DMChannel, MessageReaction, TextChannel, User } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { ServerRepo } from '../services/database/server-repo';
@@ -10,9 +10,8 @@ import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
 import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
-import { MessageUtils } from '../utils/message-utils';
+import { PermissionUtils } from '../utils/permission-utils';
 import { StringUtils } from '../utils/string-utils';
-import { UserUtils } from '../utils/user-utils';
 
 export class ReactionHandler {
     constructor(
@@ -27,13 +26,14 @@ export class ReactionHandler {
         private logs: Logs
     ) {}
 
-    public async process(messageReaction: MessageReaction, user: User): Promise<void> {
+    public async process(messageReaction: MessageReaction, reactor: User): Promise<void> {
         let reactedEmoji = messageReaction.emoji.name;
         if (reactedEmoji !== this.emoji) {
             return;
         }
 
-        if (UserUtils.isBot(user)) {
+        // Don't respond to bots
+        if (reactor.bot) {
             return;
         }
 
@@ -56,7 +56,16 @@ export class ReactionHandler {
         }
 
         let msg = messageReaction.message;
-        if (!MessageUtils.permToReply(msg) || !MessageUtils.permToReact(msg)) {
+        let channel = msg.channel;
+
+        // Only handle messages from text or DM channels
+        if (!(channel instanceof TextChannel || channel instanceof DMChannel)) {
+            return;
+        }
+
+        // Check if I have permission to send a message
+        if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
+            // No permission to send message
             return;
         }
 
@@ -70,7 +79,7 @@ export class ReactionHandler {
 
         let dmChannel: DMChannel;
         try {
-            dmChannel = user.dmChannel ?? (await user.createDM());
+            dmChannel = reactor.dmChannel ?? (await reactor.createDM());
         } catch (error) {
             this.logger.error(this.logs.createDmChannelError, error);
             return;
@@ -96,7 +105,7 @@ export class ReactionHandler {
         let userZone: string;
         let userFormat: string;
         try {
-            let userData = await this.userRepo.getUserData(user.id);
+            let userData = await this.userRepo.getUserData(reactor.id);
             userZone = userData.TimeZone;
             userFormat = userData.TimeFormat;
         } catch (error) {

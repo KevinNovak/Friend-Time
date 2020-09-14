@@ -3,7 +3,6 @@ import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
 import { MessageName } from '../services/language/message-name';
 import { MessageSender } from '../services/message-sender';
-import { ServerUtils } from '../utils/server-utils';
 
 export class ReminderCommand {
     constructor(private msgSender: MessageSender) {}
@@ -20,10 +19,8 @@ export class ReminderCommand {
             return;
         }
 
-        let fromTextChannel = ServerUtils.isTextChannel(channel);
-        let fromDirectChannel = ServerUtils.isDirectChannel(channel);
-
-        let shouldNotify = (fromTextChannel && serverData?.Notify) || fromDirectChannel;
+        let shouldNotify =
+            (channel instanceof TextChannel && serverData?.Notify) || channel instanceof DMChannel;
         if (!shouldNotify) {
             return;
         }

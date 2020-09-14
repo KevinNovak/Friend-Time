@@ -11,7 +11,6 @@ import { ModeOption } from '../services/language/server-config/mode-option';
 import { NotifyOption } from '../services/language/server-config/notify-option';
 import { ServerConfigName } from '../services/language/server-config/server-config-name';
 import { MessageSender } from '../services/message-sender';
-import { ServerUtils } from '../utils/server-utils';
 import { UserUtils } from '../utils/user-utils';
 import { Command } from './command';
 
@@ -35,7 +34,7 @@ export class ConfigCommand implements Command {
         let author = msg.author;
         let server = msg.guild;
 
-        if (!ServerUtils.isTextChannel(channel)) {
+        if (!(channel instanceof TextChannel)) {
             this.msgSender.send(channel, authorData.LangCode, MessageName.serverOnly);
             return;
         }

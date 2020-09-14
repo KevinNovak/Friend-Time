@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 05, 2020 at 04:01 AM
--- Server version: 10.3.22-MariaDB-0+deb10u1
--- PHP Version: 7.3.14-1~deb10u1
+-- Generation Time: Sep 14, 2020 at 04:39 PM
+-- Server version: 10.3.23-MariaDB-0+deb10u1
+-- PHP Version: 7.3.19-1~deb10u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `friendtime`
+-- Database: `friend-time`
 --
 
 DELIMITER $$
@@ -63,7 +63,7 @@ ON DUPLICATE KEY UPDATE `TimeFormat` = IN_TimeFormat, `Modified` = current_times
 END$$
 
 CREATE PROCEDURE `Stats_TopTimeZones` ()  SELECT
-	TimeZone,
+    TimeZone,
     COUNT(*) AS 'Count'
 FROM User
 WHERE TimeZone IS NOT NULL

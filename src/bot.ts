@@ -1,6 +1,7 @@
 import { Client, Message, MessageReaction, User } from 'discord.js';
 
 import { MessageHandler, ReactionHandler } from './events';
+import { Logs } from './models/internal-language';
 import { Logger } from './services';
 
 export class Bot {
@@ -11,7 +12,8 @@ export class Bot {
         private messageHandler: MessageHandler,
         private reactionHandler: ReactionHandler,
         private token: string,
-        private logger: Logger
+        private logger: Logger,
+        private logs: Logs
     ) {}
 
     public async start(): Promise<void> {
@@ -52,7 +54,11 @@ export class Bot {
             return;
         }
 
-        await this.messageHandler.process(msg);
+        try {
+            await this.messageHandler.process(msg);
+        } catch (error) {
+            this.logger.error(this.logs.messageError, error);
+        }
     }
 
     private async onReaction(messageReaction: MessageReaction, user: User): Promise<void> {
@@ -60,6 +66,10 @@ export class Bot {
             return;
         }
 
-        await this.reactionHandler.process(messageReaction, user);
+        try {
+            await this.reactionHandler.process(messageReaction, user);
+        } catch (error) {
+            this.logger.error(this.logs.reactionError, error);
+        }
     }
 }

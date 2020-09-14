@@ -36,4 +36,6 @@ export interface Logs {
     createDmChannelError: string;
     sendMessageError: string;
     reactError: string;
+    messageError: string;
+    reactionError: string;
 }

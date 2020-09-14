@@ -119,7 +119,14 @@ async function start(): Promise<void> {
         logger,
         internalLang.logs
     );
-    let bot = new Bot(client, messageHandler, reactionHandler, config.client.token, logger);
+    let bot = new Bot(
+        client,
+        messageHandler,
+        reactionHandler,
+        config.client.token,
+        logger,
+        internalLang.logs
+    );
     await bot.start();
 }
 

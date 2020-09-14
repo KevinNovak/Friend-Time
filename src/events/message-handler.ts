@@ -5,9 +5,7 @@ import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
 import { ServerRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { LangCode } from '../services/language/lang-code';
-import { LanguageService } from '../services/language/lang-service';
-import { MessageName } from '../services/language/message-name';
+import { LangCode, LanguageService, MessageName } from '../services/language';
 import { PermissionUtils, ServerUtils, StringUtils } from '../utils';
 
 export class MessageHandler {

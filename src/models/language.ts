@@ -1,4 +1,4 @@
-import { LangCode } from '../services/language/lang-code';
+import { LangCode } from '../services/language';
 
 export interface Language {
     langCode: LangCode;

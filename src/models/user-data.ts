@@ -1,4 +1,4 @@
-import { LangCode } from '../services/language/lang-code';
+import { LangCode } from '../services/language';
 
 export interface UserData {
     DiscordId: string;

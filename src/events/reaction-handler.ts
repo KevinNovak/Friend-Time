@@ -3,8 +3,7 @@ import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { ServerRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { LangCode } from '../services/language/lang-code';
-import { MessageName } from '../services/language/message-name';
+import { LangCode, MessageName } from '../services/language';
 import { PermissionUtils, StringUtils } from '../utils';
 
 export class ReactionHandler {

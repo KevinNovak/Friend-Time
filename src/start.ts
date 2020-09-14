@@ -28,7 +28,7 @@ import {
     ZoneService,
 } from './services';
 import { DataAccess } from './services/database/data-access';
-import { LanguageService } from './services/language/lang-service';
+import { LanguageService } from './services/language';
 
 let config: Config = require('../config/config.json');
 let langEn: Language = require('../lang/lang.en.json');

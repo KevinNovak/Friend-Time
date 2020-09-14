@@ -4,8 +4,7 @@ import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, ZoneService } from '../services';
-import { CommandName } from '../services/language/command-name';
-import { MessageName } from '../services/language/message-name';
+import { CommandName, MessageName } from '../services/language';
 import { ServerUtils } from '../utils';
 import { Command } from './command';
 

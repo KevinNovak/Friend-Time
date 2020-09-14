@@ -1,4 +1,4 @@
-import { UserData } from '../models/user-data';
+import { UserData } from '../models/database-models';
 import { DataAccess } from '../services/database/data-access';
 import { Procedure } from '../services/database/procedure';
 import { SqlUtils } from '../utils';

@@ -1,8 +1,7 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 import { Command, HelpCommand, ReminderCommand } from '../commands';
+import { ServerData, UserData } from '../models/database-models';
 import { Logs } from '../models/internal-language';
-import { ServerData } from '../models/server-data';
-import { UserData } from '../models/user-data';
 import { ServerRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { LangCode, LanguageService, MessageName } from '../services/language';

@@ -1,6 +1,5 @@
 import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
-import { ServerData } from '../models/server-data';
-import { UserData } from '../models/user-data';
+import { ServerData, UserData } from '../models/database-models';
 import { ServerRepo } from '../repos';
 import { MessageSender } from '../services';
 import { CommandName, LangCode, LanguageService, MessageName } from '../services/language';

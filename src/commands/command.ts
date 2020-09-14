@@ -1,6 +1,5 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
-import { ServerData } from '../models/server-data';
-import { UserData } from '../models/user-data';
+import { ServerData, UserData } from '../models/database-models';
 import { CommandName } from '../services/language';
 
 export interface Command {

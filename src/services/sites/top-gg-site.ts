@@ -1,4 +1,4 @@
-import { TopGgConfig } from '../../models/config';
+import { TopGgConfig } from '../../models/config-models';
 import { HttpService } from '../http-service';
 import { BotSite } from './bot-site';
 

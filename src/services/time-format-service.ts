@@ -1,4 +1,4 @@
-import { TimeFormat } from '../models/config';
+import { TimeFormat } from '../models/config-models';
 
 export class TimeFormatService {
     constructor(private timeFormats: TimeFormat[]) {}

@@ -1,6 +1,6 @@
 import { ShardingManager } from 'discord.js';
 import { Manager } from './manager';
-import { Config } from './models/config';
+import { Config } from './models/config-models';
 import { InternalLanguage } from './models/internal-language';
 import { HttpService, Logger } from './services';
 import {

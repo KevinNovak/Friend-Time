@@ -1,5 +1,5 @@
 import { ShardingManager } from 'discord.js';
-import { ShardingConfig } from './models/config';
+import { ShardingConfig } from './models/config-models';
 import { Logs } from './models/internal-language';
 import { Logger } from './services';
 import { BotSite } from './services/sites';

@@ -1,4 +1,4 @@
-import { BotsOnDiscordXyzConfig } from '../../models/config';
+import { BotsOnDiscordXyzConfig } from '../../models/config-models';
 import { HttpService } from '../http-service';
 import { BotSite } from './bot-site';
 

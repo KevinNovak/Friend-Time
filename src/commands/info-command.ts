@@ -6,6 +6,7 @@ import { Command } from './command';
 
 export class InfoCommand implements Command {
     public name = CommandName.info;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}
 

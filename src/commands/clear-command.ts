@@ -8,6 +8,7 @@ import { Command } from './command';
 
 export class ClearCommand implements Command {
     public name = CommandName.clear;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender, private logs: Logs, private userRepo: UserRepo) {}
 

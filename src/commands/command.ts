@@ -5,6 +5,7 @@ import { CommandName } from '../services/language';
 
 export interface Command {
     name: CommandName;
+    requireGuild: boolean;
     execute(
         msg: Message,
         args: string[],

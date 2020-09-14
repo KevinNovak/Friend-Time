@@ -92,6 +92,7 @@ async function start(): Promise<void> {
         ],
         guildRepo,
         userRepo,
+        msgSender,
         timeParser,
         zoneService,
         timeFormatService,

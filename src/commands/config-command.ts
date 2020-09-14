@@ -15,6 +15,7 @@ import { Command } from './command';
 // TODO: This whole class needs refactored with the config options
 export class ConfigCommand implements Command {
     public name = CommandName.config;
+    public requireGuild = true;
 
     constructor(
         private msgSender: MessageSender,
@@ -27,11 +28,6 @@ export class ConfigCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        if (!(channel instanceof TextChannel)) {
-            await this.msgSender.send(channel, MessageName.serverOnly);
-            return;
-        }
-
         if (args.length === 0) {
             await this.msgSender.sendWithTitle(
                 channel,

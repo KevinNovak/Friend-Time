@@ -6,6 +6,7 @@ import { Command } from './command';
 
 export class MapCommand implements Command {
     public name = CommandName.map;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}
 

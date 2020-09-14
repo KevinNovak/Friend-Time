@@ -6,6 +6,7 @@ import { Command } from './command';
 
 export class InviteCommand implements Command {
     public name = CommandName.invite;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}
 

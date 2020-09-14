@@ -6,6 +6,7 @@ import { Command } from './command';
 
 export class DonateCommand implements Command {
     public name = CommandName.donate;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}
 

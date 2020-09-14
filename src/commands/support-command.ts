@@ -6,6 +6,7 @@ import { Command } from './command';
 
 export class SupportCommand implements Command {
     public name = CommandName.support;
+    public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}
 

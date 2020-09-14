@@ -9,6 +9,7 @@ import { Command } from './command';
 
 export class TimeCommand implements Command {
     public name = CommandName.time;
+    public requireGuild = false;
 
     constructor(
         private msgSender: MessageSender,

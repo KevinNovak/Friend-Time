@@ -8,6 +8,7 @@ import { Command } from './command';
 
 export class SetCommand implements Command {
     public name = CommandName.set;
+    public requireGuild = false;
 
     constructor(
         private msgSender: MessageSender,

@@ -8,6 +8,7 @@ import { Command } from './command';
 
 export class FormatCommand implements Command {
     public name = CommandName.format;
+    public requireGuild = false;
 
     constructor(
         private msgSender: MessageSender,

@@ -1,7 +1,7 @@
 import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
-import { ServerRepo } from '../repos/server-repo';
+import { ServerRepo } from '../repos';
 import { CommandName } from '../services/language/command-name';
 import { LangCode } from '../services/language/lang-code';
 import { LanguageService } from '../services/language/lang-service';

@@ -2,7 +2,7 @@ import { DMChannel, GuildMember, Message, TextChannel, User } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
-import { UserRepo } from '../repos/user-repo';
+import { UserRepo } from '../repos';
 import { CommandName } from '../services/language/command-name';
 import { MessageName } from '../services/language/message-name';
 import { Logger } from '../services/logger';

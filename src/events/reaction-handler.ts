@@ -1,8 +1,8 @@
 import { DiscordAPIError, DMChannel, MessageReaction, TextChannel, User } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
-import { ServerRepo } from '../services/database/server-repo';
-import { UserRepo } from '../services/database/user-repo';
+import { ServerRepo } from '../repos/server-repo';
+import { UserRepo } from '../repos/user-repo';
 import { LangCode } from '../services/language/lang-code';
 import { MessageName } from '../services/language/message-name';
 import { Logger } from '../services/logger';

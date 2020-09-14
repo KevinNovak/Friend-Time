@@ -1,11 +1,11 @@
-import { DiscordAPIError, DMChannel, MessageReaction, TextChannel, User } from 'discord.js';
+import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
 
 import { ServerData } from '../models/database-models';
 import { Logs } from '../models/internal-language';
 import { ServerRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { LangCode, MessageName } from '../services/language';
-import { PermissionUtils, StringUtils } from '../utils';
+import { StringUtils } from '../utils';
 
 export class ReactionHandler {
     constructor(
@@ -50,18 +50,6 @@ export class ReactionHandler {
         }
 
         let msg = messageReaction.message;
-        let channel = msg.channel;
-
-        // Only handle messages from text or DM channels
-        if (!(channel instanceof TextChannel || channel instanceof DMChannel)) {
-            return;
-        }
-
-        // Check if I have permission to send a message
-        if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
-            // No permission to send message
-            return;
-        }
 
         let result = this.timeParser.parseTime(msg.content);
         if (!this.timeParser.shouldRespond(result)) {

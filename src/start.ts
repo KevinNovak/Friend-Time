@@ -15,13 +15,12 @@ import {
     SupportCommand,
     TimeCommand,
 } from './commands';
-import { MessageHandler, ReactionHandler } from './events';
+import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { Config } from './models/config-models';
 import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';
 import { GuildRepo, UserRepo } from './repos';
 import {
-    Logger,
     MessageBuilder,
     MessageSender,
     TimeFormatService,
@@ -72,6 +71,8 @@ async function start(): Promise<void> {
     let inviteCommand = new InviteCommand(msgSender);
     let supportCommand = new SupportCommand(msgSender);
     let donateCommand = new DonateCommand(msgSender);
+    let guildJoinHandler = new GuildJoinHandler(internalLang.logs);
+    let guildLeaveHandler = new GuildLeaveHandler(internalLang.logs);
     let messageHandler = new MessageHandler(
         config.prefix,
         config.emojis.convert,
@@ -108,6 +109,8 @@ async function start(): Promise<void> {
     );
     let bot = new Bot(
         client,
+        guildJoinHandler,
+        guildLeaveHandler,
         messageHandler,
         reactionHandler,
         config.client.token,

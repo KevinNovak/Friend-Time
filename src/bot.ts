@@ -1,6 +1,6 @@
-import { Client, Message, MessageReaction, User } from 'discord.js';
+import { Client, Guild, Message, MessageReaction, User } from 'discord.js';
 
-import { MessageHandler, ReactionHandler } from './events';
+import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { Logs } from './models/internal-language';
 import { Logger } from './services';
 
@@ -9,6 +9,8 @@ export class Bot {
 
     constructor(
         private client: Client,
+        private guildJoinHandler: GuildJoinHandler,
+        private guildLeaveHandler: GuildLeaveHandler,
         private messageHandler: MessageHandler,
         private reactionHandler: ReactionHandler,
         private token: string,
@@ -23,6 +25,8 @@ export class Bot {
     private registerListeners(): void {
         this.client.on('ready', () => this.onReady());
         this.client.on('shardReady', (shardId: number) => this.onShardReady(shardId));
+        this.client.on('guildCreate', (guild: Guild) => this.onGuildJoin(guild));
+        this.client.on('guildDelete', (guild: Guild) => this.onGuildLeave(guild));
         this.client.on('message', (msg: Message) => this.onMessage(msg));
         this.client.on('messageReactionAdd', (messageReaction: MessageReaction, user: User) =>
             this.onReaction(messageReaction, user)
@@ -46,6 +50,30 @@ export class Bot {
 
     private onShardReady(shardId: number): void {
         Logger.setShardId(shardId);
+    }
+
+    private async onGuildJoin(guild: Guild): Promise<void> {
+        if (!this.ready) {
+            return;
+        }
+
+        try {
+            await this.guildJoinHandler.process(guild);
+        } catch (error) {
+            Logger.error(this.logs.guildJoinError, error);
+        }
+    }
+
+    private async onGuildLeave(guild: Guild): Promise<void> {
+        if (!this.ready) {
+            return;
+        }
+
+        try {
+            await this.guildLeaveHandler.process(guild);
+        } catch (error) {
+            Logger.error(this.logs.guildLeaveError, error);
+        }
     }
 
     private async onMessage(msg: Message): Promise<void> {

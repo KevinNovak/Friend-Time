@@ -13,6 +13,10 @@ export interface Logs {
     updatedServerCount: string;
     retrieveServerCountError: string;
     broadcastServerCountError: string;
+    guildJoined: string;
+    guildLeft: string;
+    guildJoinError: string;
+    guildLeaveError: string;
     setSuccess: string;
     setError: string;
     clearSuccess: string;

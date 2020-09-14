@@ -3,10 +3,12 @@ import { Manager } from './manager';
 import { Config } from './models/config';
 import { InternalLanguage } from './models/internal-language';
 import { HttpService, Logger } from './services';
-import { BotsOnDiscordXyzSite } from './services/sites/bots-on-discord-xyz-site';
-import { DiscordBotListComSite } from './services/sites/discord-bot-list-com-site';
-import { DiscordBotsGgSite } from './services/sites/discord-bots-gg-site';
-import { TopGgSite } from './services/sites/top-gg-site';
+import {
+    BotsOnDiscordXyzSite,
+    DiscordBotListComSite,
+    DiscordBotsGgSite,
+    TopGgSite,
+} from './services/sites';
 import { ShardUtils } from './utils';
 
 let config: Config = require('../config/config.json');

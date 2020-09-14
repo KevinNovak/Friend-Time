@@ -2,7 +2,7 @@ import { ShardingManager } from 'discord.js';
 import { ShardingConfig } from './models/config';
 import { Logs } from './models/internal-language';
 import { Logger } from './services';
-import { BotSite } from './services/sites/bot-site';
+import { BotSite } from './services/sites';
 
 export class Manager {
     constructor(

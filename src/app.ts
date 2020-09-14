@@ -1,4 +1,5 @@
 import { ShardingManager } from 'discord.js';
+
 import { Manager } from './manager';
 import { Config } from './models/config-models';
 import { InternalLanguage } from './models/internal-language';

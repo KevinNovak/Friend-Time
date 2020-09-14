@@ -1,4 +1,5 @@
 import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
+
 import { Bot } from './bot';
 import {
     ClearCommand,

@@ -4,14 +4,10 @@ import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
 import { ServerRepo, UserRepo } from '../repos';
+import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { LangCode } from '../services/language/lang-code';
 import { LanguageService } from '../services/language/lang-service';
 import { MessageName } from '../services/language/message-name';
-import { Logger } from '../services/logger';
-import { MessageSender } from '../services/message-sender';
-import { TimeFormatService } from '../services/time-format-service';
-import { TimeParser } from '../services/time-parser';
-import { ZoneService } from '../services/zone-service';
 import { PermissionUtils, ServerUtils, StringUtils } from '../utils';
 
 export class MessageHandler {

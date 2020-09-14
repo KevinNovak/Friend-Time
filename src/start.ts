@@ -19,14 +19,16 @@ import { Config } from './models/config';
 import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';
 import { ServerRepo, UserRepo } from './repos';
+import {
+    Logger,
+    MessageBuilder,
+    MessageSender,
+    TimeFormatService,
+    TimeParser,
+    ZoneService,
+} from './services';
 import { DataAccess } from './services/database/data-access';
 import { LanguageService } from './services/language/lang-service';
-import { Logger } from './services/logger';
-import { MessageBuilder } from './services/message-builder';
-import { MessageSender } from './services/message-sender';
-import { TimeFormatService } from './services/time-format-service';
-import { TimeParser } from './services/time-parser';
-import { ZoneService } from './services/zone-service';
 
 let config: Config = require('../config/config.json');
 let langEn: Language = require('../lang/lang.en.json');

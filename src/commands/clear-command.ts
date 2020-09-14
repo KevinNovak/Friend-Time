@@ -3,10 +3,9 @@ import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';
 import { UserRepo } from '../repos';
+import { Logger, MessageSender } from '../services';
 import { CommandName } from '../services/language/command-name';
 import { MessageName } from '../services/language/message-name';
-import { Logger } from '../services/logger';
-import { MessageSender } from '../services/message-sender';
 import { Command } from './command';
 
 export class ClearCommand implements Command {

@@ -1,7 +1,7 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 import { UserData } from '../models/user-data';
+import { MessageSender } from '../services';
 import { MessageName } from '../services/language/message-name';
-import { MessageSender } from '../services/message-sender';
 
 export class HelpCommand {
     constructor(private msgSender: MessageSender) {}

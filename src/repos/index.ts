@@ -1,2 +1,2 @@
-export { ServerRepo } from './server-repo';
+export { GuildRepo } from './guild-repo';
 export { UserRepo } from './user-repo';

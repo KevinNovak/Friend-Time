@@ -2,7 +2,6 @@ import { DMChannel, MessageEmbed, TextChannel } from 'discord.js';
 
 import { Logs } from '../models/internal-language';
 import { StringUtils } from '../utils';
-import { LangCode } from './language/lang-code';
 import { LanguageService } from './language/lang-service';
 import { MessageName } from './language/message-name';
 import { Logger } from './logger';
@@ -18,11 +17,10 @@ export class MessageSender {
 
     public async send(
         channel: TextChannel | DMChannel,
-        lang: LangCode = LangCode.en,
         messageName: MessageName,
         variables?: { name: string; value: string }[]
     ): Promise<void> {
-        let message = this.langService.getMessage(messageName, lang);
+        let message = this.langService.getMessage(messageName);
         if (variables) {
             message = StringUtils.replaceVariables(message, variables);
         }
@@ -32,16 +30,15 @@ export class MessageSender {
 
     public async sendWithTitle(
         channel: TextChannel | DMChannel,
-        lang: LangCode = LangCode.en,
         messageName: MessageName,
         titleName: MessageName,
         variables?: { name: string; value: string }[]
     ): Promise<void> {
-        let message = this.langService.getMessage(messageName, lang);
+        let message = this.langService.getMessage(messageName);
         if (variables) {
             message = StringUtils.replaceVariables(message, variables);
         }
-        let title = this.langService.getMessage(titleName, lang);
+        let title = this.langService.getMessage(titleName);
         let embed = this.msgBuilder.createEmbed(message, title);
         await this.trySend(channel, embed);
     }

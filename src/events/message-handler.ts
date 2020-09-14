@@ -1,12 +1,12 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { Command, HelpCommand, ReminderCommand } from '../commands';
-import { ServerData, UserData } from '../models/database-models';
+import { GuildData } from '../models/database-models';
 import { Logs } from '../models/internal-language';
-import { ServerRepo, UserRepo } from '../repos';
+import { GuildRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { LangCode, LanguageService, MessageName } from '../services/language';
-import { PermissionUtils, ServerUtils, StringUtils } from '../utils';
+import { LanguageService, MessageName } from '../services/language';
+import { GuildUtils, PermissionUtils, StringUtils } from '../utils';
 
 export class MessageHandler {
     // Move to config?
@@ -18,7 +18,7 @@ export class MessageHandler {
         private helpCommand: HelpCommand,
         private reminderCommand: ReminderCommand,
         private commands: Command[],
-        private serverRepo: ServerRepo,
+        private guildRepo: GuildRepo,
         private userRepo: UserRepo,
         private msgSender: MessageSender,
         private timeParser: TimeParser,
@@ -48,13 +48,13 @@ export class MessageHandler {
         }
 
         let args = msg.content.split(' ');
-        let startWithPrefix = args[0].toLowerCase() === this.prefix;
+        let startsWithPrefix = args[0].toLowerCase() === this.prefix;
 
         let result = this.timeParser.parseTime(msg.content);
-        let shouldRespond = this.timeParser.shouldRespond(result);
+        let shouldConvert = this.timeParser.shouldConvert(result);
 
         // Return if I shouldn't handle this message
-        if (!(startWithPrefix || shouldRespond)) {
+        if (!(startsWithPrefix || shouldConvert)) {
             return;
         }
 
@@ -68,76 +68,43 @@ export class MessageHandler {
             return;
         }
 
-        let authorData: UserData;
-        try {
-            authorData = await this.userRepo.getUserData(msg.author.id);
-        } catch (error) {
-            await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
-            this.logger.error(this.logs.retrieveUserDataError, error);
-            return;
+        // Gather user data
+        let userData = await this.userRepo.getUserData(msg.author.id);
+
+        // Gather guild data
+        let guildData: GuildData;
+        if (msg.guild) {
+            guildData = await this.guildRepo.getGuildData(msg.guild.id);
         }
 
-        if (shouldRespond) {
-            if (!authorData.TimeZone) {
-                this.processReminder(msg, channel, authorData);
+        if (shouldConvert) {
+            if (!userData?.TimeZone) {
+                await this.reminderCommand.execute(msg, channel, guildData);
                 return;
             }
 
             if (!msg.guild) {
-                try {
-                    await msg.react(this.emoji);
-                } catch (error) {
-                    this.logger.error(this.logs.reactError, error);
-                }
+                await msg.react(this.emoji);
                 return;
             }
 
-            let serverData: ServerData;
-            try {
-                serverData = await this.serverRepo.getServerData(msg.guild.id);
-            } catch (error) {
-                await this.msgSender.send(
-                    channel,
-                    authorData.LangCode,
-                    MessageName.retrieveServerDataError
-                );
-                this.logger.error(this.logs.retrieveServerDataError, error);
-                return;
-            }
-
-            if (serverData.Mode !== 'List') {
+            if (guildData.Mode !== 'List') {
                 // Check if I have permission to react
                 if (channel instanceof TextChannel && !PermissionUtils.canReact(channel)) {
                     return;
                 }
 
-                try {
-                    await msg.react(this.emoji);
-                } catch (error) {
-                    this.logger.error(this.logs.reactError, error);
-                }
-
+                await msg.react(this.emoji);
                 return;
             }
 
             // TODO: Formats in server config
             // TODO: Move to other classes
-            let discordIds = ServerUtils.getMemberDiscordIds(msg.guild);
-            let timeZones: string[];
-            try {
-                timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
-            } catch (error) {
-                await this.msgSender.send(
-                    channel,
-                    authorData.LangCode,
-                    MessageName.retrieveDistinctTimeZonesError
-                );
-                this.logger.error(this.logs.retrieveDistinctTimeZonesError, error);
-                return;
-            }
+            let discordIds = GuildUtils.getMemberDiscordIds(msg.guild);
+            let timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
 
             // TODO: Better way to find time format, consolidate
-            let timeFormat = this.timeFormatService.findTimeFormat(serverData.TimeFormat);
+            let timeFormat = this.timeFormatService.findTimeFormat(guildData.TimeFormat);
             let format = this.timeParser.dayIsCertain(result.start)
                 ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
                 : timeFormat.timeFormat;
@@ -146,11 +113,9 @@ export class MessageHandler {
                 .map(name => ({
                     name,
                     // TODO: More efficient way so we don't convert twice
-                    time: this.zoneService
-                        .convert(result, authorData.TimeZone, name)
-                        .format(format),
+                    time: this.zoneService.convert(result, userData.TimeZone, name).format(format),
                     offset: parseInt(
-                        this.zoneService.convert(result, authorData.TimeZone, name).format('ZZ')
+                        this.zoneService.convert(result, userData.TimeZone, name).format('ZZ')
                     ),
                 }))
                 .sort(this.compareTimeZones);
@@ -160,7 +125,7 @@ export class MessageHandler {
                 // TODO: Message
                 let line = '';
                 if (
-                    data.name === authorData.TimeZone &&
+                    data.name === userData.TimeZone &&
                     !this.timeParser.offsetIsCertain(result.start)
                 ) {
                     line = '__***{TIMEZONE}***__: {TIME}'
@@ -190,67 +155,27 @@ export class MessageHandler {
 
         // If only a prefix, run the help command
         if (args.length === 1) {
-            await this.helpCommand.execute(msg, channel, authorData);
+            await this.helpCommand.execute(msg, channel);
             return;
         }
 
         // Find the appropriate command
         let userCommand = args[1];
-        let command = this.findCommand(userCommand, authorData.LangCode);
+        let command = this.findCommand(userCommand);
 
         // If no command found, run help
         if (!command) {
-            await this.helpCommand.execute(msg, channel, authorData);
+            await this.helpCommand.execute(msg, channel);
             return;
         }
 
-        let serverData: ServerData;
-        if (msg.guild) {
-            try {
-                serverData = await this.serverRepo.getServerData(msg.guild.id);
-            } catch (error) {
-                await this.msgSender.send(
-                    channel,
-                    authorData.LangCode,
-                    MessageName.retrieveServerDataError
-                );
-                this.logger.error(this.logs.retrieveServerDataError, error);
-                return;
-            }
-        }
-
         // Run the command
-        await command.execute(msg, args.slice(2), channel, authorData, serverData);
-    }
-
-    private async processReminder(
-        msg: Message,
-        channel: TextChannel | DMChannel,
-        authorData: UserData
-    ): Promise<void> {
-        let server = msg.guild;
-
-        let serverData: ServerData;
-        if (server) {
-            try {
-                serverData = await this.serverRepo.getServerData(server.id);
-            } catch (error) {
-                await this.msgSender.send(
-                    channel,
-                    authorData.LangCode,
-                    MessageName.retrieveServerDataError
-                );
-                this.logger.error(this.logs.retrieveServerDataError, error);
-                return;
-            }
-        }
-
-        await this.reminderCommand.execute(msg, channel, authorData, serverData);
+        await command.execute(msg, args.slice(2), channel, userData, guildData);
     }
 
     // TODO: More efficient way to resolve commands
-    private findCommand(userCommand: string, langCode: LangCode): Command {
-        let langCommands = this.langService.getCommands(langCode);
+    private findCommand(userCommand: string): Command {
+        let langCommands = this.langService.getCommands();
         for (let commandKey in langCommands) {
             if (langCommands[commandKey] === userCommand) {
                 return this.commands.find(command => command.name === commandKey);

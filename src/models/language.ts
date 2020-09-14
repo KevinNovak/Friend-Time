@@ -65,16 +65,13 @@ export interface Messages {
     infoMessage: string | string[];
     setProvideZone: string | string[];
     setSuccess: string | string[];
-    setError: string | string[];
     mapTitle: string | string[];
     mapMessage: string | string[];
     clearSuccess: string | string[];
-    clearError: string | string[];
     timeSelfSuccess: string | string[];
     timeUserSuccess: string | string[];
     timeZoneSuccess: string | string[];
     formatSuccess: string | string[];
-    formatError: string | string[];
     inviteTitle: string | string[];
     inviteMessage: string | string[];
     supportTitle: string | string[];
@@ -86,10 +83,6 @@ export interface Messages {
     noZoneSetSelf: string | string[];
     noZoneSetUser: string | string[];
     invalidTimeFormat: string | string[];
-    retrieveServerDataError: string | string[];
-    retrieveUserDataError: string | string[];
-    retrieveServerMembersError: string | string[];
-    retrieveDistinctTimeZonesError: string | string[];
     convertedTime: string | string[];
     serverOnly: string | string[];
     configNotFound: string | string[];

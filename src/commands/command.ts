@@ -1,6 +1,6 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
-import { ServerData, UserData } from '../models/database-models';
+import { GuildData, UserData } from '../models/database-models';
 import { CommandName } from '../services/language';
 
 export interface Command {
@@ -9,7 +9,7 @@ export interface Command {
         msg: Message,
         args: string[],
         channel: TextChannel | DMChannel,
-        authorData: UserData,
-        serverData?: ServerData
+        authorData?: UserData,
+        guildData?: GuildData
     ): Promise<void>;
 }

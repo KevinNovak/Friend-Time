@@ -7,57 +7,42 @@ export class UserRepo {
     constructor(private dataAccess: DataAccess) {}
 
     public async getUserData(discordId: string): Promise<UserData> {
-        let results = await this.dataAccess
-            .executeProcedure(Procedure.User_GetRow, [discordId])
-            .catch(error => {
-                throw error;
-            });
+        let results = await this.dataAccess.executeProcedure(Procedure.User_GetRow, [discordId]);
 
-        let userData = SqlUtils.getFirstResultFirstRow(results);
-        if (!userData) {
+        let row = SqlUtils.getRow(results, 0, 0);
+        if (!row) {
             return;
         }
 
-        return userData;
+        return new UserData(row);
     }
 
     public async getDistinctTimeZones(discordIds: string[]): Promise<string[]> {
         let discordIdsString = discordIds.join(',');
-        let results = await this.dataAccess
-            .executeProcedure(Procedure.User_GetDistinctTimeZones, [discordIdsString])
-            .catch(error => {
-                throw error;
-            });
+        let results = await this.dataAccess.executeProcedure(Procedure.User_GetDistinctTimeZones, [
+            discordIdsString,
+        ]);
 
-        let result = SqlUtils.getFirstResult(results);
-        if (!result) {
+        let table = SqlUtils.getTable(results, 0);
+        if (!table) {
             return;
         }
 
-        return result.map(row => row.TimeZone);
+        return table.map(row => row.TimeZone);
     }
 
     public async setTimeZone(discordId: string, timeZone: string): Promise<void> {
-        await this.dataAccess
-            .executeProcedure(Procedure.User_SetTimeZone, [discordId, timeZone])
-            .catch(error => {
-                throw error;
-            });
+        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, timeZone]);
     }
 
     public async clearTimeZone(discordId: string): Promise<void> {
-        await this.dataAccess
-            .executeProcedure(Procedure.User_SetTimeZone, [discordId, undefined])
-            .catch(error => {
-                throw error;
-            });
+        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, null]);
     }
 
     public async setTimeFormat(discordId: string, timeFormat: string): Promise<void> {
-        await this.dataAccess
-            .executeProcedure(Procedure.User_SetTimeFormat, [discordId, timeFormat])
-            .catch(error => {
-                throw error;
-            });
+        await this.dataAccess.executeProcedure(Procedure.User_SetTimeFormat, [
+            discordId,
+            timeFormat,
+        ]);
     }
 }

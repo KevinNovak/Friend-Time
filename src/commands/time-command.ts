@@ -1,11 +1,10 @@
-import { DMChannel, GuildMember, Message, TextChannel, User } from 'discord.js';
+import { DMChannel, Message, TextChannel, User } from 'discord.js';
 
-import { ServerData, UserData } from '../models/database-models';
-import { Logs } from '../models/internal-language';
+import { UserData } from '../models/database-models';
 import { UserRepo } from '../repos';
-import { Logger, MessageSender, TimeFormatService, ZoneService } from '../services';
+import { MessageSender, TimeFormatService, ZoneService } from '../services';
 import { CommandName, MessageName } from '../services/language';
-import { ServerUtils } from '../utils';
+import { GuildUtils } from '../utils';
 import { Command } from './command';
 
 export class TimeCommand implements Command {
@@ -13,8 +12,6 @@ export class TimeCommand implements Command {
 
     constructor(
         private msgSender: MessageSender,
-        private logger: Logger,
-        private logs: Logs,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
         private userRepo: UserRepo
@@ -24,13 +21,9 @@ export class TimeCommand implements Command {
         msg: Message,
         args: string[],
         channel: TextChannel | DMChannel,
-        authorData: UserData,
-        serverData?: ServerData
+        authorData: UserData
     ): Promise<void> {
-        // TODO: Consolidate usage between self, user, zone
-        let guild = msg.guild;
         let mentionedUsers = msg.mentions.users;
-
         if (mentionedUsers.size > 0) {
             this.executeMention(mentionedUsers.first(), authorData, channel);
             return;
@@ -39,20 +32,8 @@ export class TimeCommand implements Command {
         let input = args.join(' ');
 
         if (args.length > 0) {
-            if (guild) {
-                let member: GuildMember;
-                try {
-                    member = await ServerUtils.findMember(guild, input);
-                } catch (error) {
-                    await this.msgSender.send(
-                        channel,
-                        authorData.LangCode,
-                        MessageName.retrieveServerMembersError
-                    );
-                    this.logger.error(this.logs.retrieveServerMembersError, error);
-                    return;
-                }
-
+            if (msg.guild) {
+                let member = await GuildUtils.findMember(msg.guild, input);
                 if (member) {
                     this.executeMention(member.user, authorData, channel);
                     return;
@@ -71,37 +52,24 @@ export class TimeCommand implements Command {
         authorData: UserData,
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        let zone: string;
-        try {
-            let userData = await this.userRepo.getUserData(mentionedUser.id);
-            zone = userData.TimeZone;
-        } catch (error) {
-            await this.msgSender.send(
-                channel,
-                authorData.LangCode,
-                MessageName.retrieveUserDataError
-            );
-            this.logger.error(this.logs.retrieveUserDataError, error);
-            return;
-        }
-
-        if (!zone) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetUser, [
+        let userData = await this.userRepo.getUserData(mentionedUser.id);
+        if (!userData.TimeZone) {
+            await this.msgSender.send(channel, MessageName.noZoneSetUser, [
                 { name: '{USER_ID}', value: mentionedUser.id },
             ]);
             return;
         }
 
-        let time = this.zoneService.getMomentInZone(zone);
+        let time = this.zoneService.getMomentInZone(userData.TimeZone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeUserSuccess, [
+        await this.msgSender.send(channel, MessageName.timeUserSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
             },
             { name: '{USER_ID}', value: mentionedUser.id },
-            { name: '{ZONE}', value: zone },
+            { name: '{ZONE}', value: userData.TimeZone },
         ]);
     }
 
@@ -112,14 +80,14 @@ export class TimeCommand implements Command {
     ): Promise<void> {
         let zone = this.zoneService.findZone(zoneInput);
         if (!zone) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.zoneNotFound);
+            await this.msgSender.send(channel, MessageName.zoneNotFound);
             return;
         }
 
         let time = this.zoneService.getMomentInZone(zone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeZoneSuccess, [
+        await this.msgSender.send(channel, MessageName.timeZoneSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
@@ -132,21 +100,20 @@ export class TimeCommand implements Command {
         authorData: UserData,
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        let zone = authorData.TimeZone;
-        if (!zone) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetSelf);
+        if (!authorData.TimeZone) {
+            await this.msgSender.send(channel, MessageName.noZoneSetSelf);
             return;
         }
 
-        let time = this.zoneService.getMomentInZone(zone);
+        let time = this.zoneService.getMomentInZone(authorData.TimeZone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeSelfSuccess, [
+        await this.msgSender.send(channel, MessageName.timeSelfSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
             },
-            { name: '{ZONE}', value: zone },
+            { name: '{ZONE}', value: authorData.TimeZone },
         ]);
     }
 }

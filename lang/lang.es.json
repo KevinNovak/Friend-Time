@@ -81,7 +81,6 @@
             "Introduce **-ft map** para ver un mapa de las zonas horarias disponibles."
         ],
         "setSuccess": "¡Tu zona horaria ahora es **{ZONE}**!",
-        "setError": "Un error ha ocurrido al establecer tu zona horaria",
         "mapTitle": "Friend Time - Mapa",
         "mapMessage": [
             "Por favor, visita el siguiente enlace y elige tu zona horaria",
@@ -93,12 +92,10 @@
             "**Nota**: Usa una zona horaria en el formato **<región>/<ciudad>**. Por ejemplo: *America/New_York*. Abreviaciones como *EST* o *GMT* no funcionarán. La taquigrafía también puede ser usada y Friend Time buscará la opción más aproximada: *-ft set new york*."
         ],
         "clearSuccess": "¡Zona horaria reseteada!",
-        "clearError": "Un error ha ocurrido reseteando tu zona horaria",
         "timeSelfSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
         "timeUserSuccess": "Actualmente son las **{TIME}** para <@{USER_ID}> en **{ZONE}**.",
         "timeZoneSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
         "formatSuccess": "Tu formato horario a cambiado a **{FORMAT}**!",
-        "formatError": "Un error ha ocurrido cambiando tu formato horario.",
         "inviteTitle": "Friend Time - Invitación",
         "inviteMessage": [
             "Visita el siguiente enlace para invitar a Friend Time a tu servidor de Discord:",
@@ -143,10 +140,6 @@
             "",
             "Opciones disponibles: `12` para formato de 12 horas o `24` para formato de 24 horas"
         ],
-        "retrieveServerDataError": "Un error ha ocurrido recuperando los datos del servidor",
-        "retrieveUserDataError": "Un error ha ocurrido recuperando los datos del usuario",
-        "retrieveServerMembersError": "Un error ha ocurrido recuperando los miembros del servidor",
-        "retrieveDistinctTimeZonesError": "Un error ha ocurrido recuperando distintas zonas horarias",
         "convertedTime": [
             "<@{AUTHOR_ID}> en **{AUTHOR_ZONE}** mencionó:",
             "> {QUOTE}",

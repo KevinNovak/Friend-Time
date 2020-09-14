@@ -81,7 +81,6 @@
             "Type **-ft map** to view a map of available timezones."
         ],
         "setSuccess": "Set your time zone to **{ZONE}**!",
-        "setError": "An error occurred while setting your time zone.",
         "mapTitle": "Friend Time - Map",
         "mapMessage": [
             "Please visit the following link and choose your time zone:",
@@ -93,12 +92,10 @@
             "**Note**: Use a time zone in the format **<region>/<city>**. For example: *America/New_York*. Time zone abbreviations like *EST* or *GMT* will not work. Shorthand can also be used and Friend Time will find the closest option: *-ft set new york*."
         ],
         "clearSuccess": "Cleared your time zone!",
-        "clearError": "An error occurred while clearing your time zone.",
         "timeSelfSuccess": "It is currently **{TIME}** in **{ZONE}**.",
         "timeUserSuccess": "It is currently **{TIME}** for <@{USER_ID}> in **{ZONE}**.",
         "timeZoneSuccess": "It is currently **{TIME}** in **{ZONE}**.",
         "formatSuccess": "Set your time format to **{FORMAT}**!",
-        "formatError": "An error occurred while setting your time format.",
         "inviteTitle": "Friend Time - Invite",
         "inviteMessage": [
             "Visit the following link to invite Friend Time to your Discord server:",
@@ -143,10 +140,6 @@
             "",
             "Available options: `12` for 12-hour format or `24` for 24-hour format."
         ],
-        "retrieveServerDataError": "An error occurred while retrieving the servers data.",
-        "retrieveUserDataError": "An error occurred while retrieving user data.",
-        "retrieveServerMembersError": "An error occurred while retrieving server members.",
-        "retrieveDistinctTimeZonesError": "An error occurred while retrieving distinct time zones.",
         "convertedTime": [
             "<@{AUTHOR_ID}> in **{AUTHOR_ZONE}** mentioned:",
             "> {QUOTE}",

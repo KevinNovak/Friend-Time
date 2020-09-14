@@ -1,9 +1,8 @@
 import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
-import { ServerData, UserData } from '../models/database-models';
-import { ServerRepo } from '../repos';
+import { GuildRepo } from '../repos';
 import { MessageSender } from '../services';
-import { CommandName, LangCode, LanguageService, MessageName } from '../services/language';
+import { CommandName, LanguageService, MessageName } from '../services/language';
 import {
     FormatOption,
     ModeOption,
@@ -19,71 +18,56 @@ export class ConfigCommand implements Command {
 
     constructor(
         private msgSender: MessageSender,
-        private serverRepo: ServerRepo,
+        private guildRepo: GuildRepo,
         private langService: LanguageService
     ) {}
 
     public async execute(
         msg: Message,
         args: string[],
-        channel: TextChannel | DMChannel,
-        authorData: UserData,
-        serverData?: ServerData
+        channel: TextChannel | DMChannel
     ): Promise<void> {
-        let author = msg.author;
-        let server = msg.guild;
-
         if (!(channel instanceof TextChannel)) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.serverOnly);
+            await this.msgSender.send(channel, MessageName.serverOnly);
             return;
         }
 
         if (args.length === 0) {
             await this.msgSender.sendWithTitle(
                 channel,
-                authorData.LangCode,
                 MessageName.configMessage,
                 MessageName.configTitle
             );
             return;
         }
 
-        if (!UserUtils.isAdmin(author, channel as TextChannel)) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.notAdmin);
+        if (!UserUtils.isAdmin(msg.author, channel as TextChannel)) {
+            await this.msgSender.send(channel, MessageName.notAdmin);
             return;
         }
 
         let subCommand = args[0].toLowerCase();
-        let modeConfigName = this.langService.getConfigName(
-            ServerConfigName.mode,
-            authorData.LangCode
-        );
-        let formatConfigName = this.langService.getConfigName(
-            ServerConfigName.format,
-            authorData.LangCode
-        );
-        let notifyConfigName = this.langService.getConfigName(
-            ServerConfigName.notify,
-            authorData.LangCode
-        );
+        let modeConfigName = this.langService.getConfigName(ServerConfigName.mode);
+        let formatConfigName = this.langService.getConfigName(ServerConfigName.format);
+        let notifyConfigName = this.langService.getConfigName(ServerConfigName.notify);
 
         if (![modeConfigName, formatConfigName, notifyConfigName].includes(subCommand)) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.configNotFound);
+            await this.msgSender.send(channel, MessageName.configNotFound);
             return;
         }
 
         if (subCommand === modeConfigName) {
-            this.processConfigMode(channel, server, args.slice(1), authorData.LangCode);
+            this.processConfigMode(channel, msg.guild, args.slice(1));
             return;
         }
 
         if (subCommand === formatConfigName) {
-            this.processConfigFormat(channel, server, args.slice(1), authorData.LangCode);
+            this.processConfigFormat(channel, msg.guild, args.slice(1));
             return;
         }
 
         if (subCommand === notifyConfigName) {
-            this.processConfigNotify(channel, server, args.slice(1), authorData.LangCode);
+            this.processConfigNotify(channel, msg.guild, args.slice(1));
             return;
         }
     }
@@ -91,29 +75,26 @@ export class ConfigCommand implements Command {
     // TODO: Extract out
     private async processConfigNotify(
         channel: TextChannel | DMChannel,
-        server: Guild,
-        args: string[],
-        langCode: LangCode
+        guild: Guild,
+        args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
+            await this.msgSender.send(channel, MessageName.configNotifyInvalidValue);
             return;
         }
 
         let onOption = this.langService.getConfigOptionName(
             ServerConfigName.notify,
-            NotifyOption.on,
-            langCode
+            NotifyOption.on
         );
         let offOption = this.langService.getConfigOptionName(
             ServerConfigName.notify,
-            NotifyOption.off,
-            langCode
+            NotifyOption.off
         );
 
         let notifyInput = args[0].toLowerCase();
         if (![onOption, offOption].includes(notifyInput)) {
-            await this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
+            await this.msgSender.send(channel, MessageName.configNotifyInvalidValue);
             return;
         }
 
@@ -123,9 +104,9 @@ export class ConfigCommand implements Command {
             option = false;
         }
 
-        await this.serverRepo.setNotify(server.id, option);
+        await this.guildRepo.setNotify(guild.id, option);
 
-        await this.msgSender.send(channel, langCode, MessageName.configNotifySuccess, [
+        await this.msgSender.send(channel, MessageName.configNotifySuccess, [
             {
                 name: '{NOTIFY}',
                 value: notifyInput,
@@ -136,29 +117,26 @@ export class ConfigCommand implements Command {
     // TODO: Extract out
     private async processConfigFormat(
         channel: TextChannel | DMChannel,
-        server: Guild,
-        args: string[],
-        langCode: LangCode
+        guild: Guild,
+        args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
+            await this.msgSender.send(channel, MessageName.configFormatInvalidValue);
             return;
         }
 
         let twelveOption = this.langService.getConfigOptionName(
             ServerConfigName.format,
-            FormatOption.twelve,
-            langCode
+            FormatOption.twelve
         );
         let twentyFourOption = this.langService.getConfigOptionName(
             ServerConfigName.format,
-            FormatOption.twentyFour,
-            langCode
+            FormatOption.twentyFour
         );
 
         let formatInput = args[0].toLowerCase();
         if (![twelveOption, twentyFourOption].includes(formatInput)) {
-            await this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
+            await this.msgSender.send(channel, MessageName.configFormatInvalidValue);
             return;
         }
 
@@ -169,9 +147,9 @@ export class ConfigCommand implements Command {
         }
 
         // TODO: Implement
-        await this.serverRepo.setTimeFormat(server.id, option);
+        await this.guildRepo.setTimeFormat(guild.id, option);
 
-        await this.msgSender.send(channel, langCode, MessageName.configFormatSuccess, [
+        await this.msgSender.send(channel, MessageName.configFormatSuccess, [
             {
                 name: '{FORMAT}',
                 value: formatInput,
@@ -182,29 +160,26 @@ export class ConfigCommand implements Command {
     // TODO: Extract out
     private async processConfigMode(
         channel: TextChannel | DMChannel,
-        server: Guild,
-        args: string[],
-        langCode: LangCode
+        guild: Guild,
+        args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
+            await this.msgSender.send(channel, MessageName.configModeInvalidValue);
             return;
         }
 
         let reactOption = this.langService.getConfigOptionName(
             ServerConfigName.mode,
-            ModeOption.react,
-            langCode
+            ModeOption.react
         );
         let listOption = this.langService.getConfigOptionName(
             ServerConfigName.mode,
-            ModeOption.list,
-            langCode
+            ModeOption.list
         );
 
         let modeInput = args[0].toLowerCase();
         if (![reactOption, listOption].includes(modeInput)) {
-            await this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
+            await this.msgSender.send(channel, MessageName.configModeInvalidValue);
             return;
         }
 
@@ -214,9 +189,9 @@ export class ConfigCommand implements Command {
             option = 'List';
         }
 
-        await this.serverRepo.setMode(server.id, option);
+        await this.guildRepo.setMode(guild.id, option);
 
-        await this.msgSender.send(channel, langCode, MessageName.configModeSuccess, [
+        await this.msgSender.send(channel, MessageName.configModeSuccess, [
             {
                 name: '{MODE}',
                 value: modeInput,

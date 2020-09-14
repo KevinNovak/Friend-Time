@@ -1,15 +1,25 @@
-import { LangCode } from '../services/language';
-
-export interface ServerData {
+export class GuildData {
     DiscordId: string;
     Mode: string;
     TimeFormat: string;
     Notify: boolean;
+
+    constructor(row: any) {
+        this.DiscordId = row.DiscordId;
+        this.Mode = row.Mode;
+        this.TimeFormat = row.TimeFormat;
+        this.Notify = row.Notify;
+    }
 }
 
-export interface UserData {
+export class UserData {
     DiscordId: string;
     TimeZone: string;
     TimeFormat: string;
-    LangCode: LangCode;
+
+    constructor(row: any) {
+        this.DiscordId = row.DiscordId;
+        this.TimeZone = row.TimeZone;
+        this.TimeFormat = row.TimeFormat;
+    }
 }

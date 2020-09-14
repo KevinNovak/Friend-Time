@@ -1,6 +1,5 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
-import { ServerData, UserData } from '../models/database-models';
 import { Logs } from '../models/internal-language';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender } from '../services';
@@ -20,25 +19,15 @@ export class ClearCommand implements Command {
     public async execute(
         msg: Message,
         args: string[],
-        channel: TextChannel | DMChannel,
-        authorData: UserData,
-        serverData?: ServerData
+        channel: TextChannel | DMChannel
     ): Promise<void> {
-        let author = msg.author;
+        await this.userRepo.clearTimeZone(msg.author.id);
 
-        try {
-            await this.userRepo.clearTimeZone(author.id);
-        } catch (error) {
-            await this.msgSender.send(channel, authorData.LangCode, MessageName.clearError);
-            this.logger.error(this.logs.clearError, error);
-            return;
-        }
-
-        await this.msgSender.send(channel, authorData.LangCode, MessageName.clearSuccess);
+        await this.msgSender.send(channel, MessageName.clearSuccess);
         this.logger.info(
             this.logs.clearSuccess
-                .replace('{USERNAME}', author.username)
-                .replace('{USER_ID}', author.id)
+                .replace('{USERNAME}', msg.author.username)
+                .replace('{USER_ID}', msg.author.id)
         );
     }
 }

@@ -35,7 +35,6 @@ export interface Logs {
     retrievePartialReactionMessageError: string;
     createDmChannelError: string;
     sendMessageError: string;
-    reactError: string;
     messageError: string;
     reactionError: string;
 }

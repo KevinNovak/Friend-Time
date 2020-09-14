@@ -19,7 +19,7 @@ import { MessageHandler, ReactionHandler } from './events';
 import { Config } from './models/config-models';
 import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';
-import { ServerRepo, UserRepo } from './repos';
+import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
     MessageBuilder,
@@ -49,7 +49,7 @@ async function start(): Promise<void> {
     let logger = new Logger(internalLang.tags);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(config.mysql);
-    let serverRepo = new ServerRepo(dataAccess);
+    let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
     let msgBuilder = new MessageBuilder(config.colors.default);
     let msgSender = new MessageSender(msgBuilder, langService, logger, internalLang.logs);
@@ -61,14 +61,7 @@ async function start(): Promise<void> {
     let setCommand = new SetCommand(msgSender, logger, internalLang.logs, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
     let clearCommand = new ClearCommand(msgSender, logger, internalLang.logs, userRepo);
-    let timeCommand = new TimeCommand(
-        msgSender,
-        logger,
-        internalLang.logs,
-        zoneService,
-        timeFormatService,
-        userRepo
-    );
+    let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
     let formatCommand = new FormatCommand(
         msgSender,
         logger,
@@ -76,7 +69,7 @@ async function start(): Promise<void> {
         userRepo,
         timeFormatService
     );
-    let configCommand = new ConfigCommand(msgSender, serverRepo, langService);
+    let configCommand = new ConfigCommand(msgSender, guildRepo, langService);
     let infoCommand = new InfoCommand(msgSender);
     let inviteCommand = new InviteCommand(msgSender);
     let supportCommand = new SupportCommand(msgSender);
@@ -98,7 +91,7 @@ async function start(): Promise<void> {
             supportCommand,
             donateCommand,
         ],
-        serverRepo,
+        guildRepo,
         userRepo,
         msgSender,
         timeParser,
@@ -114,7 +107,7 @@ async function start(): Promise<void> {
         timeParser,
         zoneService,
         timeFormatService,
-        serverRepo,
+        guildRepo,
         userRepo,
         logger,
         internalLang.logs

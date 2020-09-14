@@ -31,7 +31,6 @@
         "retrievePartialReactionMessageError": "An error occurred while fetching a partial reaction message.",
         "createDmChannelError": "An error occurred while creating a direct message channel.",
         "sendMessageError": "An error occurred while sending a message.",
-        "reactError": "An error occurred while reacting to a message.",
         "messageError": "An error occurred while processing a message.",
         "reactionError": "An error occurred while processing a reaction."
     }

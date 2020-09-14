@@ -8,7 +8,7 @@ import { BotsOnDiscordXyzSite } from './services/sites/bots-on-discord-xyz-site'
 import { DiscordBotListComSite } from './services/sites/discord-bot-list-com-site';
 import { DiscordBotsGgSite } from './services/sites/discord-bots-gg-site';
 import { TopGgSite } from './services/sites/top-gg-site';
-import { ShardUtils } from './utils/shard-utils';
+import { ShardUtils } from './utils';
 
 let config: Config = require('../config/config.json');
 let internalLang: InternalLanguage = require('../lang/internal.en.json');

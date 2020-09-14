@@ -9,7 +9,7 @@ import { Logger } from '../services/logger';
 import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
 import { ZoneService } from '../services/zone-service';
-import { ServerUtils } from '../utils/server-utils';
+import { ServerUtils } from '../utils';
 import { Command } from './command';
 
 export class TimeCommand implements Command {

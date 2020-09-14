@@ -1,5 +1,5 @@
 import { ServerData } from '../../models/server-data';
-import { SqlUtils } from '../../utils/sql-utils';
+import { SqlUtils } from '../../utils';
 import { DataAccess } from './data-access';
 import { Procedure } from './procedure';
 

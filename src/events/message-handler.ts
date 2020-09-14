@@ -15,9 +15,7 @@ import { MessageSender } from '../services/message-sender';
 import { TimeFormatService } from '../services/time-format-service';
 import { TimeParser } from '../services/time-parser';
 import { ZoneService } from '../services/zone-service';
-import { PermissionUtils } from '../utils/permission-utils';
-import { ServerUtils } from '../utils/server-utils';
-import { StringUtils } from '../utils/string-utils';
+import { PermissionUtils, ServerUtils, StringUtils } from '../utils';
 
 export class MessageHandler {
     // Move to config?

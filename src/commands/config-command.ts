@@ -11,7 +11,7 @@ import { ModeOption } from '../services/language/server-config/mode-option';
 import { NotifyOption } from '../services/language/server-config/notify-option';
 import { ServerConfigName } from '../services/language/server-config/server-config-name';
 import { MessageSender } from '../services/message-sender';
-import { UserUtils } from '../utils/user-utils';
+import { UserUtils } from '../utils';
 import { Command } from './command';
 
 // TODO: This whole class needs refactored with the config options

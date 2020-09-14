@@ -1,6 +1,6 @@
 import { DMChannel, MessageEmbed, TextChannel } from 'discord.js';
 import { Logs } from '../models/internal-language';
-import { StringUtils } from '../utils/string-utils';
+import { StringUtils } from '../utils';
 import { LangCode } from './language/lang-code';
 import { LanguageService } from './language/lang-service';
 import { MessageName } from './language/message-name';

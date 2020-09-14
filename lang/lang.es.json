@@ -49,7 +49,10 @@
             "**-ft time *<zona>*** -  Mira la hora actual de una zona horaria",
             "**-ft format <12/24>** - Establece tu formato horario (12 o 24 horas)",
             "**-ft config** - Cambiar configuración del servidor. Solo administradores",
-            "**-ft info** - Más información sobre Friend Time"
+            "**-ft info** - Más información sobre Friend Time",
+            "",
+            "[Únete al Servidor de Soporte](https://discord.gg/GQcBR8e)",
+            "[¡Invita Friend Time a un Servidor!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
         ],
         "configTitle": "Friend Time - Configuración del servidor",
         "configMessage": [

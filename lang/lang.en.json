@@ -49,7 +49,10 @@
             "**-ft time *<zone>*** -  Get the current time of a time zone.",
             "**-ft format <12/24>** - Set your time format, `12` or `24` hours.",
             "**-ft config** - Change server settings, for admins.",
-            "**-ft info** - More information about Friend Time."
+            "**-ft info** - More information about Friend Time.",
+            "",
+            "[Join Support Server](https://discord.gg/GQcBR8e)",
+            "[Invite QOTD Bot to a Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
         ],
         "configTitle": "Friend Time - Server Configuration",
         "configMessage": [

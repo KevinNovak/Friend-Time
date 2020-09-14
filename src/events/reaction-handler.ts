@@ -15,7 +15,6 @@ export class ReactionHandler {
         private timeFormatService: TimeFormatService,
         private guildRepo: GuildRepo,
         private userRepo: UserRepo,
-        private logger: Logger,
         private logs: Logs
     ) {}
 
@@ -43,7 +42,7 @@ export class ReactionHandler {
             if (error instanceof DiscordAPIError && error.code === 50001) {
                 return;
             } else {
-                this.logger.error(this.logs.retrievePartialReactionMessageError, error);
+                Logger.error(this.logs.retrievePartialReactionMessageError, error);
                 return;
             }
         }

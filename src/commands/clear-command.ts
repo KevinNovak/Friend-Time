@@ -9,12 +9,7 @@ import { Command } from './command';
 export class ClearCommand implements Command {
     public name = CommandName.clear;
 
-    constructor(
-        private msgSender: MessageSender,
-        private logger: Logger,
-        private logs: Logs,
-        private userRepo: UserRepo
-    ) {}
+    constructor(private msgSender: MessageSender, private logs: Logs, private userRepo: UserRepo) {}
 
     public async execute(
         msg: Message,
@@ -24,7 +19,7 @@ export class ClearCommand implements Command {
         await this.userRepo.clearTimeZone(msg.author.id);
 
         await this.msgSender.send(channel, MessageName.clearSuccess);
-        this.logger.info(
+        Logger.info(
             this.logs.clearSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)

@@ -1,15 +1,11 @@
 import { DiscordAPIError } from 'discord.js';
 import { Response } from 'node-fetch';
 
-import { Tags } from '../models/internal-language';
-
 export class Logger {
-    private shardTag: string;
+    private static shardTag: string;
 
-    constructor(private tags: Tags) {}
-
-    public info(message: string): void {
-        let log = this.tags.info;
+    public static info(message: string): void {
+        let log = '[Info]';
         if (this.shardTag) {
             log += ' ' + this.shardTag;
         }
@@ -17,8 +13,8 @@ export class Logger {
         console.log(log);
     }
 
-    public warn(message: string): void {
-        let log = this.tags.warn;
+    public static warn(message: string): void {
+        let log = '[Warn]';
         if (this.shardTag) {
             log += ' ' + this.shardTag;
         }
@@ -26,9 +22,9 @@ export class Logger {
         console.warn(log);
     }
 
-    public async error(message: string, error?: any): Promise<void> {
+    public static async error(message: string, error?: any): Promise<void> {
         // Log custom error message
-        let log = this.tags.error;
+        let log = '[Error]';
         if (this.shardTag) {
             log += ' ' + this.shardTag;
         }
@@ -42,18 +38,18 @@ export class Logger {
 
         switch (error.constructor) {
             case Response:
-                let response = error as Response;
-                let responseText: string;
+                let res = error as Response;
+                let resText: string;
                 try {
-                    responseText = await response.text();
+                    resText = await res.text();
                 } catch {
                     // Ignore
                 }
                 console.error({
-                    path: response.url,
-                    statusCode: response.status,
-                    statusName: response.statusText,
-                    body: responseText,
+                    path: res.url,
+                    statusCode: res.status,
+                    statusName: res.statusText,
+                    body: resText,
                 });
                 break;
             case DiscordAPIError:
@@ -73,9 +69,9 @@ export class Logger {
         }
     }
 
-    public setShardId(shardId: number): void {
+    public static setShardId(shardId: number): void {
         if (shardId > -1) {
-            this.shardTag = this.tags.shard.replace('{SHARD_ID}', shardId.toString());
+            this.shardTag = `[Shard ${shardId.toString()}]`;
         }
     }
 }

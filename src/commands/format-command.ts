@@ -11,7 +11,6 @@ export class FormatCommand implements Command {
 
     constructor(
         private msgSender: MessageSender,
-        private logger: Logger,
         private logs: Logs,
         private userRepo: UserRepo,
         private timeFormatService: TimeFormatService
@@ -39,7 +38,7 @@ export class FormatCommand implements Command {
         await this.msgSender.send(channel, MessageName.formatSuccess, [
             { name: '{FORMAT}', value: timeFormat.display },
         ]);
-        this.logger.info(
+        Logger.info(
             this.logs.formatSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)

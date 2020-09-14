@@ -1,11 +1,4 @@
 {
-    "tags": {
-        "manager": "[Manager]",
-        "shard": "[Shard {SHARD_ID}]",
-        "info": "[Info]",
-        "warn": "[Warn]",
-        "error": "[Error]"
-    },
     "logs": {
         "appStarted": "Application started.",
         "shardCountError": "An error occurred while retrieving the recommended shard count.",

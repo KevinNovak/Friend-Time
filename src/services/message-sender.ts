@@ -11,7 +11,6 @@ export class MessageSender {
     constructor(
         private msgBuilder: MessageBuilder,
         private langService: LanguageService,
-        private logger: Logger,
         private logs: Logs
     ) {}
 
@@ -52,7 +51,7 @@ export class MessageSender {
                 return;
             }
 
-            this.logger.error(this.logs.sendMessageError, error);
+            Logger.error(this.logs.sendMessageError, error);
         }
     }
 }

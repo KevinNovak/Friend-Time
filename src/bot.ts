@@ -12,7 +12,6 @@ export class Bot {
         private messageHandler: MessageHandler,
         private reactionHandler: ReactionHandler,
         private token: string,
-        private logger: Logger,
         private logs: Logs
     ) {}
 
@@ -34,19 +33,19 @@ export class Bot {
         try {
             await this.client.login(token);
         } catch (error) {
-            this.logger.error('An error occurred while the client attempted to login.', error);
+            Logger.error('An error occurred while the client attempted to login.', error);
         }
     }
 
     private onReady(): void {
         let userTag = this.client.user.tag;
-        this.logger.info(`Logged in as '${userTag}'!`);
+        Logger.info(`Logged in as '${userTag}'!`);
 
         this.ready = true;
     }
 
     private onShardReady(shardId: number): void {
-        this.logger.setShardId(shardId);
+        Logger.setShardId(shardId);
     }
 
     private async onMessage(msg: Message): Promise<void> {
@@ -57,7 +56,7 @@ export class Bot {
         try {
             await this.messageHandler.process(msg);
         } catch (error) {
-            this.logger.error(this.logs.messageError, error);
+            Logger.error(this.logs.messageError, error);
         }
     }
 
@@ -69,7 +68,7 @@ export class Bot {
         try {
             await this.reactionHandler.process(messageReaction, user);
         } catch (error) {
-            this.logger.error(this.logs.reactionError, error);
+            Logger.error(this.logs.reactionError, error);
         }
     }
 }

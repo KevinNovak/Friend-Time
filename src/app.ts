@@ -17,7 +17,6 @@ let internalLang: InternalLanguage = require('../lang/internal.en.json');
 
 async function start(): Promise<void> {
     // Dependency Injection
-    let logger = new Logger(internalLang.tags);
     let httpService = new HttpService();
     let topGgSite = new TopGgSite(config.botSites.topGg, httpService);
     let botsOnDiscordXyzSite = new BotsOnDiscordXyzSite(
@@ -30,7 +29,7 @@ async function start(): Promise<void> {
         httpService
     );
 
-    logger.info(`${internalLang.tags.manager} ${internalLang.logs.appStarted}`);
+    Logger.info(internalLang.logs.appStarted);
 
     let totalShards = 0;
     try {
@@ -39,7 +38,7 @@ async function start(): Promise<void> {
             config.sharding.serversPerShard
         );
     } catch (error) {
-        logger.error(`${internalLang.tags.manager} ${internalLang.logs.shardCountError}`, error);
+        Logger.error(internalLang.logs.shardCountError, error);
         return;
     }
 
@@ -50,7 +49,7 @@ async function start(): Promise<void> {
     );
 
     if (myShardIds.length === 0) {
-        logger.warn(`${internalLang.tags.manager} ${internalLang.logs.noShards}`);
+        Logger.warn(internalLang.logs.noShards);
         return;
     }
 
@@ -66,8 +65,6 @@ async function start(): Promise<void> {
         config.sharding,
         shardManager,
         [topGgSite, botsOnDiscordXyzSite, discordBotsGgSite, discordBotListComSite],
-        logger,
-        internalLang.tags.manager,
         internalLang.logs
     );
     await manager.start();

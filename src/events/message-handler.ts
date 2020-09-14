@@ -2,10 +2,9 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { Command, HelpCommand, ReminderCommand } from '../commands';
 import { GuildData } from '../models/database-models';
-import { Logs } from '../models/internal-language';
 import { GuildRepo, UserRepo } from '../repos';
-import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { LanguageService, MessageName } from '../services/language';
+import { TimeFormatService, TimeParser, ZoneService } from '../services';
+import { LanguageService } from '../services/language';
 import { GuildUtils, PermissionUtils, StringUtils } from '../utils';
 
 export class MessageHandler {
@@ -20,13 +19,10 @@ export class MessageHandler {
         private commands: Command[],
         private guildRepo: GuildRepo,
         private userRepo: UserRepo,
-        private msgSender: MessageSender,
         private timeParser: TimeParser,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
-        private langService: LanguageService,
-        private logger: Logger,
-        private logs: Logs
+        private langService: LanguageService
     ) {}
 
     public async process(msg: Message): Promise<void> {

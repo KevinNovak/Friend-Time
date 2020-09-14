@@ -46,25 +46,23 @@ async function start(): Promise<void> {
 
     // Dependency Injection
     let langService = new LanguageService([langEn]);
-    let logger = new Logger(internalLang.tags);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(config.mysql);
     let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
     let msgBuilder = new MessageBuilder(config.colors.default);
-    let msgSender = new MessageSender(msgBuilder, langService, logger, internalLang.logs);
+    let msgSender = new MessageSender(msgBuilder, langService, internalLang.logs);
     let timeParser = new TimeParser(config.experience.blacklist);
     let zoneService = new ZoneService(config.validation.regions, timeParser);
     let timeFormatService = new TimeFormatService(config.experience.timeFormats);
     let helpCommand = new HelpCommand(msgSender);
     let reminderCommand = new ReminderCommand(msgSender);
-    let setCommand = new SetCommand(msgSender, logger, internalLang.logs, zoneService, userRepo);
+    let setCommand = new SetCommand(msgSender, internalLang.logs, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
-    let clearCommand = new ClearCommand(msgSender, logger, internalLang.logs, userRepo);
+    let clearCommand = new ClearCommand(msgSender, internalLang.logs, userRepo);
     let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
     let formatCommand = new FormatCommand(
         msgSender,
-        logger,
         internalLang.logs,
         userRepo,
         timeFormatService
@@ -93,13 +91,10 @@ async function start(): Promise<void> {
         ],
         guildRepo,
         userRepo,
-        msgSender,
         timeParser,
         zoneService,
         timeFormatService,
-        langService,
-        logger,
-        internalLang.logs
+        langService
     );
     let reactionHandler = new ReactionHandler(
         config.emojis.convert,
@@ -109,7 +104,6 @@ async function start(): Promise<void> {
         timeFormatService,
         guildRepo,
         userRepo,
-        logger,
         internalLang.logs
     );
     let bot = new Bot(
@@ -117,7 +111,6 @@ async function start(): Promise<void> {
         messageHandler,
         reactionHandler,
         config.client.token,
-        logger,
         internalLang.logs
     );
     await bot.start();

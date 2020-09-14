@@ -11,7 +11,6 @@ export class SetCommand implements Command {
 
     constructor(
         private msgSender: MessageSender,
-        private logger: Logger,
         private logs: Logs,
         private zoneService: ZoneService,
         private userRepo: UserRepo
@@ -39,7 +38,7 @@ export class SetCommand implements Command {
         await this.msgSender.send(channel, MessageName.setSuccess, [
             { name: '{ZONE}', value: zone },
         ]);
-        this.logger.info(
+        Logger.info(
             this.logs.setSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)

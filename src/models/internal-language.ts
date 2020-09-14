@@ -1,14 +1,5 @@
 export interface InternalLanguage {
-    tags: Tags;
     logs: Logs;
-}
-
-export interface Tags {
-    manager: string;
-    shard: string;
-    info: string;
-    warn: string;
-    error: string;
 }
 
 export interface Logs {

@@ -10,8 +10,6 @@ export class Manager {
         private shardingConfig: ShardingConfig,
         private shardManager: ShardingManager,
         private botSites: BotSite[],
-        private logger: Logger,
-        private managerTag: string,
         private logs: Logs
     ) {}
 
@@ -24,7 +22,7 @@ export class Manager {
                 this.shardingConfig.spawnTimeout * 1000
             );
         } catch (error) {
-            this.logger.error(`${this.managerTag} ${this.logs.spawnShardError}`, error);
+            Logger.error(this.logs.spawnShardError, error);
             return;
         }
         this.updateServerCount();
@@ -35,7 +33,7 @@ export class Manager {
         try {
             serverCount = await this.retrieveServerCount();
         } catch (error) {
-            this.logger.error(`${this.managerTag} ${this.logs.retrieveServerCountError}`, error);
+            Logger.error(this.logs.retrieveServerCountError, error);
             return;
         }
         try {
@@ -49,14 +47,11 @@ export class Manager {
             });
         `);
         } catch (error) {
-            this.logger.error(`${this.managerTag} ${this.logs.broadcastServerCountError}`, error);
+            Logger.error(this.logs.broadcastServerCountError, error);
         }
 
-        this.logger.info(
-            `${this.managerTag} ${this.logs.updatedServerCount.replace(
-                '{SERVER_COUNT}',
-                serverCount.toLocaleString()
-            )}`
+        Logger.info(
+            this.logs.updatedServerCount.replace('{SERVER_COUNT}', serverCount.toLocaleString())
         );
 
         for (let botSite of this.botSites) {
@@ -67,22 +62,14 @@ export class Manager {
             try {
                 await botSite.updateServerCount(serverCount);
             } catch (error) {
-                this.logger.error(
-                    `${this.managerTag} ${this.logs.updateServerCountSiteError}`.replace(
-                        '{BOT_SITE}',
-                        botSite.name
-                    ),
+                Logger.error(
+                    this.logs.updateServerCountSiteError.replace('{BOT_SITE}', botSite.name),
                     error
                 );
                 continue;
             }
 
-            this.logger.info(
-                `${this.managerTag} ${this.logs.updateServerCountSite}`.replace(
-                    '{BOT_SITE}',
-                    botSite.name
-                )
-            );
+            Logger.info(this.logs.updateServerCountSite.replace('{BOT_SITE}', botSite.name));
         }
     }
 
@@ -101,11 +88,6 @@ export class Manager {
     }
 
     private onShardCreate(shard: import('discord.js').Shard): void {
-        this.logger.info(
-            `${this.managerTag} ${this.logs.launchedShard.replace(
-                '{SHARD_ID}',
-                shard.id.toString()
-            )}`
-        );
+        Logger.info(this.logs.launchedShard.replace('{SHARD_ID}', shard.id.toString()));
     }
 }

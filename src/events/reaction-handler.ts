@@ -5,8 +5,9 @@ import { GuildRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { MessageName } from '../services/language';
 import { StringUtils } from '../utils';
+import { EventHandler } from './event-handler';
 
-export class ReactionHandler {
+export class ReactionHandler implements EventHandler {
     constructor(
         private emoji: string,
         private msgSender: MessageSender,

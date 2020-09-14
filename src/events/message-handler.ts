@@ -6,8 +6,9 @@ import { GuildRepo, UserRepo } from '../repos';
 import { TimeFormatService, TimeParser, ZoneService } from '../services';
 import { LanguageService } from '../services/language';
 import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
+import { EventHandler } from './event-handler';
 
-export class MessageHandler {
+export class MessageHandler implements EventHandler {
     // Move to config?
     private MAX_MESSAGE_LENGTH = 2000;
 

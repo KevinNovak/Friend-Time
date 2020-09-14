@@ -91,7 +91,7 @@ export class ReactionHandler {
             try {
                 serverData = await this.serverRepo.getServerData(server.id);
             } catch (error) {
-                this.msgSender.send(dmChannel, langCode, MessageName.retrieveServerDataError);
+                await this.msgSender.send(dmChannel, langCode, MessageName.retrieveServerDataError);
                 this.logger.error(this.logs.retrieveServerDataError, error);
                 return;
             }
@@ -109,13 +109,13 @@ export class ReactionHandler {
             userZone = userData.TimeZone;
             userFormat = userData.TimeFormat;
         } catch (error) {
-            this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
+            await this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
         if (!userZone) {
-            this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetSelf);
+            await this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetSelf);
             return;
         }
 
@@ -124,13 +124,13 @@ export class ReactionHandler {
             let authorData = await this.userRepo.getUserData(author.id);
             authorZone = authorData.TimeZone;
         } catch (error) {
-            this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
+            await this.msgSender.send(dmChannel, langCode, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
         if (!authorZone) {
-            this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetUser, [
+            await this.msgSender.send(dmChannel, langCode, MessageName.noZoneSetUser, [
                 { name: '{USER_ID}', value: author.id },
             ]);
             return;
@@ -146,7 +146,7 @@ export class ReactionHandler {
         let formattedTime = moment.format(format);
         let quote = StringUtils.formatQuote(result.text);
 
-        this.msgSender.send(dmChannel, langCode, MessageName.convertedTime, [
+        await this.msgSender.send(dmChannel, langCode, MessageName.convertedTime, [
             { name: '{AUTHOR_ID}', value: author.id },
             { name: '{QUOTE}', value: quote },
             { name: '{AUTHOR_ZONE}', value: authorZone },

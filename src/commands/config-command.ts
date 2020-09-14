@@ -35,12 +35,12 @@ export class ConfigCommand implements Command {
         let server = msg.guild;
 
         if (!(channel instanceof TextChannel)) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.serverOnly);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.serverOnly);
             return;
         }
 
         if (args.length === 0) {
-            this.msgSender.sendWithTitle(
+            await this.msgSender.sendWithTitle(
                 channel,
                 authorData.LangCode,
                 MessageName.configMessage,
@@ -50,7 +50,7 @@ export class ConfigCommand implements Command {
         }
 
         if (!UserUtils.isAdmin(author, channel as TextChannel)) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.notAdmin);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.notAdmin);
             return;
         }
 
@@ -69,7 +69,7 @@ export class ConfigCommand implements Command {
         );
 
         if (![modeConfigName, formatConfigName, notifyConfigName].includes(subCommand)) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.configNotFound);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.configNotFound);
             return;
         }
 
@@ -90,14 +90,14 @@ export class ConfigCommand implements Command {
     }
 
     // TODO: Extract out
-    private processConfigNotify(
+    private async processConfigNotify(
         channel: TextChannel | DMChannel,
         server: Guild,
         args: string[],
         langCode: LangCode
-    ) {
+    ): Promise<void> {
         if (args.length === 0) {
-            this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
             return;
         }
 
@@ -114,7 +114,7 @@ export class ConfigCommand implements Command {
 
         let notifyInput = args[0].toLowerCase();
         if (![onOption, offOption].includes(notifyInput)) {
-            this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configNotifyInvalidValue);
             return;
         }
 
@@ -124,9 +124,9 @@ export class ConfigCommand implements Command {
             option = false;
         }
 
-        this.serverRepo.setNotify(server.id, option);
+        await this.serverRepo.setNotify(server.id, option);
 
-        this.msgSender.send(channel, langCode, MessageName.configNotifySuccess, [
+        await this.msgSender.send(channel, langCode, MessageName.configNotifySuccess, [
             {
                 name: '{NOTIFY}',
                 value: notifyInput,
@@ -135,14 +135,14 @@ export class ConfigCommand implements Command {
     }
 
     // TODO: Extract out
-    private processConfigFormat(
+    private async processConfigFormat(
         channel: TextChannel | DMChannel,
         server: Guild,
         args: string[],
         langCode: LangCode
-    ) {
+    ): Promise<void> {
         if (args.length === 0) {
-            this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
             return;
         }
 
@@ -159,7 +159,7 @@ export class ConfigCommand implements Command {
 
         let formatInput = args[0].toLowerCase();
         if (![twelveOption, twentyFourOption].includes(formatInput)) {
-            this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configFormatInvalidValue);
             return;
         }
 
@@ -170,9 +170,9 @@ export class ConfigCommand implements Command {
         }
 
         // TODO: Implement
-        this.serverRepo.setTimeFormat(server.id, option);
+        await this.serverRepo.setTimeFormat(server.id, option);
 
-        this.msgSender.send(channel, langCode, MessageName.configFormatSuccess, [
+        await this.msgSender.send(channel, langCode, MessageName.configFormatSuccess, [
             {
                 name: '{FORMAT}',
                 value: formatInput,
@@ -181,14 +181,14 @@ export class ConfigCommand implements Command {
     }
 
     // TODO: Extract out
-    private processConfigMode(
+    private async processConfigMode(
         channel: TextChannel | DMChannel,
         server: Guild,
         args: string[],
         langCode: LangCode
-    ) {
+    ): Promise<void> {
         if (args.length === 0) {
-            this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
             return;
         }
 
@@ -205,7 +205,7 @@ export class ConfigCommand implements Command {
 
         let modeInput = args[0].toLowerCase();
         if (![reactOption, listOption].includes(modeInput)) {
-            this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
+            await this.msgSender.send(channel, langCode, MessageName.configModeInvalidValue);
             return;
         }
 
@@ -215,9 +215,9 @@ export class ConfigCommand implements Command {
             option = 'List';
         }
 
-        this.serverRepo.setMode(server.id, option);
+        await this.serverRepo.setMode(server.id, option);
 
-        this.msgSender.send(channel, langCode, MessageName.configModeSuccess, [
+        await this.msgSender.send(channel, langCode, MessageName.configModeSuccess, [
             {
                 name: '{MODE}',
                 value: modeInput,

@@ -48,7 +48,7 @@ export class TimeCommand implements Command {
                 try {
                     member = await ServerUtils.findMember(guild, input);
                 } catch (error) {
-                    this.msgSender.send(
+                    await this.msgSender.send(
                         channel,
                         authorData.LangCode,
                         MessageName.retrieveServerMembersError
@@ -80,13 +80,17 @@ export class TimeCommand implements Command {
             let userData = await this.userRepo.getUserData(mentionedUser.id);
             zone = userData.TimeZone;
         } catch (error) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.retrieveUserDataError);
+            await this.msgSender.send(
+                channel,
+                authorData.LangCode,
+                MessageName.retrieveUserDataError
+            );
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 
         if (!zone) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetUser, [
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetUser, [
                 { name: '{USER_ID}', value: mentionedUser.id },
             ]);
             return;
@@ -95,7 +99,7 @@ export class TimeCommand implements Command {
         let time = this.zoneService.getMomentInZone(zone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.timeUserSuccess, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeUserSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
@@ -112,14 +116,14 @@ export class TimeCommand implements Command {
     ): Promise<void> {
         let zone = this.zoneService.findZone(zoneInput);
         if (!zone) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.zoneNotFound);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.zoneNotFound);
             return;
         }
 
         let time = this.zoneService.getMomentInZone(zone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.timeZoneSuccess, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeZoneSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
@@ -134,14 +138,14 @@ export class TimeCommand implements Command {
     ): Promise<void> {
         let zone = authorData.TimeZone;
         if (!zone) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetSelf);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetSelf);
             return;
         }
 
         let time = this.zoneService.getMomentInZone(zone);
         let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.timeSelfSuccess, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.timeSelfSuccess, [
             {
                 name: '{TIME}',
                 value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),

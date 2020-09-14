@@ -11,7 +11,7 @@ export class HelpCommand {
         channel: TextChannel | DMChannel,
         authorData: UserData
     ): Promise<void> {
-        this.msgSender.sendWithTitle(
+        await this.msgSender.sendWithTitle(
             channel,
             authorData.LangCode,
             MessageName.helpMessage,

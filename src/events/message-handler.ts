@@ -80,7 +80,7 @@ export class MessageHandler {
             try {
                 authorData = await this.userRepo.getUserData(msg.author.id);
             } catch (error) {
-                this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
+                await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
                 this.logger.error(this.logs.retrieveUserDataError, error);
                 return;
             }
@@ -103,7 +103,7 @@ export class MessageHandler {
             try {
                 serverData = await this.serverRepo.getServerData(msg.guild.id);
             } catch (error) {
-                this.msgSender.send(
+                await this.msgSender.send(
                     channel,
                     authorData.LangCode,
                     MessageName.retrieveServerDataError
@@ -128,7 +128,7 @@ export class MessageHandler {
             try {
                 timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
             } catch (error) {
-                this.msgSender.send(
+                await this.msgSender.send(
                     channel,
                     authorData.LangCode,
                     MessageName.retrieveDistinctTimeZonesError
@@ -196,7 +196,7 @@ export class MessageHandler {
         try {
             authorData = await this.userRepo.getUserData(msg.author.id);
         } catch (error) {
-            this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
+            await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
             this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
@@ -213,7 +213,7 @@ export class MessageHandler {
 
         // If no command found, run help
         if (!command) {
-            this.helpCommand.execute(msg, channel, authorData);
+            await this.helpCommand.execute(msg, channel, authorData);
             return;
         }
 
@@ -222,7 +222,7 @@ export class MessageHandler {
             try {
                 serverData = await this.serverRepo.getServerData(msg.guild.id);
             } catch (error) {
-                this.msgSender.send(
+                await this.msgSender.send(
                     channel,
                     authorData.LangCode,
                     MessageName.retrieveServerDataError
@@ -233,7 +233,7 @@ export class MessageHandler {
         }
 
         // Run the command
-        command.execute(msg, args.slice(2), channel, authorData, serverData);
+        await command.execute(msg, args.slice(2), channel, authorData, serverData);
     }
 
     private async processReminder(
@@ -248,7 +248,7 @@ export class MessageHandler {
             try {
                 serverData = await this.serverRepo.getServerData(server.id);
             } catch (error) {
-                this.msgSender.send(
+                await this.msgSender.send(
                     channel,
                     authorData.LangCode,
                     MessageName.retrieveServerDataError
@@ -258,7 +258,7 @@ export class MessageHandler {
             }
         }
 
-        this.reminderCommand.execute(msg, channel, authorData, serverData);
+        await this.reminderCommand.execute(msg, channel, authorData, serverData);
     }
 
     // TODO: More efficient way to resolve commands

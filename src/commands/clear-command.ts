@@ -31,12 +31,12 @@ export class ClearCommand implements Command {
         try {
             await this.userRepo.clearTimeZone(author.id);
         } catch (error) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.clearError);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.clearError);
             this.logger.error(this.logs.clearError, error);
             return;
         }
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.clearSuccess);
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.clearSuccess);
         this.logger.info(
             this.logs.clearSuccess
                 .replace('{USERNAME}', author.username)

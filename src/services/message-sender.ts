@@ -26,7 +26,7 @@ export class MessageSender {
             message = StringUtils.replaceVariables(message, variables);
         }
         let embed = this.msgBuilder.createEmbed(message);
-        this.trySend(channel, embed);
+        await this.trySend(channel, embed);
     }
 
     public async sendWithTitle(
@@ -42,7 +42,7 @@ export class MessageSender {
         }
         let title = this.langService.getMessage(titleName, lang);
         let embed = this.msgBuilder.createEmbed(message, title);
-        this.trySend(channel, embed);
+        await this.trySend(channel, embed);
     }
 
     private async trySend(channel: TextChannel | DMChannel, embed: MessageEmbed): Promise<void> {

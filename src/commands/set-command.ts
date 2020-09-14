@@ -32,25 +32,25 @@ export class SetCommand implements Command {
 
         let zoneInput = args.join(' ');
         if (!zoneInput) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.setProvideZone);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.setProvideZone);
             return;
         }
 
         let zone = this.zoneService.findZone(zoneInput);
         if (!zone) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.zoneNotFound);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.zoneNotFound);
             return;
         }
 
         try {
             await this.userRepo.setTimeZone(author.id, zone);
         } catch (error) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.setError);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.setError);
             this.logger.error(this.logs.setError, error);
             return;
         }
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.setSuccess, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.setSuccess, [
             { name: '{ZONE}', value: zone },
         ]);
         this.logger.info(

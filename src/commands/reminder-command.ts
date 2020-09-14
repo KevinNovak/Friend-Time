@@ -25,7 +25,7 @@ export class ReminderCommand {
             return;
         }
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetReminder, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.noZoneSetReminder, [
             { name: '{AUTHOR_ID}', value: author.id },
         ]);
     }

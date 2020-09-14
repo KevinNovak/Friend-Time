@@ -18,7 +18,7 @@ export class InfoCommand implements Command {
         authorData: UserData,
         serverData?: ServerData
     ): Promise<void> {
-        this.msgSender.sendWithTitle(
+        await this.msgSender.sendWithTitle(
             channel,
             authorData.LangCode,
             MessageName.infoMessage,

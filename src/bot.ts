@@ -47,19 +47,19 @@ export class Bot {
         this.logger.setShardId(shardId);
     }
 
-    private onMessage(msg: Message): void {
+    private async onMessage(msg: Message): Promise<void> {
         if (!this.ready) {
             return;
         }
 
-        this.messageHandler.process(msg);
+        await this.messageHandler.process(msg);
     }
 
-    private onReaction(messageReaction: MessageReaction, user: User): void {
+    private async onReaction(messageReaction: MessageReaction, user: User): Promise<void> {
         if (!this.ready) {
             return;
         }
 
-        this.reactionHandler.process(messageReaction, user);
+        await this.reactionHandler.process(messageReaction, user);
     }
 }

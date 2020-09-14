@@ -32,25 +32,25 @@ export class FormatCommand implements Command {
 
         let formatInput = args.join(' ');
         if (!formatInput) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.invalidTimeFormat);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.invalidTimeFormat);
             return;
         }
 
         let timeFormat = this.timeFormatService.findTimeFormat(formatInput);
         if (!timeFormat) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.invalidTimeFormat);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.invalidTimeFormat);
             return;
         }
 
         try {
             await this.userRepo.setTimeFormat(author.id, timeFormat.name);
         } catch (error) {
-            this.msgSender.send(channel, authorData.LangCode, MessageName.formatError);
+            await this.msgSender.send(channel, authorData.LangCode, MessageName.formatError);
             this.logger.error(this.logs.formatError, error);
             return;
         }
 
-        this.msgSender.send(channel, authorData.LangCode, MessageName.formatSuccess, [
+        await this.msgSender.send(channel, authorData.LangCode, MessageName.formatSuccess, [
             { name: '{FORMAT}', value: timeFormat.display },
         ]);
         this.logger.info(

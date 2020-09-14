@@ -47,6 +47,17 @@ export class MessageHandler {
             return;
         }
 
+        let args = msg.content.split(' ');
+        let startWithPrefix = args[0].toLowerCase() === this.prefix;
+
+        let result = this.timeParser.parseTime(msg.content);
+        let shouldRespond = this.timeParser.shouldRespond(result);
+
+        // Return if I shouldn't handle this message
+        if (!(startWithPrefix || shouldRespond)) {
+            return;
+        }
+
         // Check if I have permission to send a message
         if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
             // No permission to send message
@@ -57,23 +68,16 @@ export class MessageHandler {
             return;
         }
 
-        // Detect if message contains time and react
-        let result = this.timeParser.parseTime(msg.content);
-        if (this.timeParser.shouldRespond(result)) {
-            // Check if I have permission to react
-            if (channel instanceof TextChannel && !PermissionUtils.canReact(channel)) {
-                return;
-            }
+        let authorData: UserData;
+        try {
+            authorData = await this.userRepo.getUserData(msg.author.id);
+        } catch (error) {
+            await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
+            this.logger.error(this.logs.retrieveUserDataError, error);
+            return;
+        }
 
-            let authorData: UserData;
-            try {
-                authorData = await this.userRepo.getUserData(msg.author.id);
-            } catch (error) {
-                await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
-                this.logger.error(this.logs.retrieveUserDataError, error);
-                return;
-            }
-
+        if (shouldRespond) {
             if (!authorData.TimeZone) {
                 this.processReminder(msg, channel, authorData);
                 return;
@@ -102,11 +106,17 @@ export class MessageHandler {
             }
 
             if (serverData.Mode !== 'List') {
+                // Check if I have permission to react
+                if (channel instanceof TextChannel && !PermissionUtils.canReact(channel)) {
+                    return;
+                }
+
                 try {
                     await msg.react(this.emoji);
                 } catch (error) {
                     this.logger.error(this.logs.reactError, error);
                 }
+
                 return;
             }
 
@@ -164,29 +174,17 @@ export class MessageHandler {
                 line += '\n';
                 if (message.length + line.length > this.MAX_MESSAGE_LENGTH) {
                     // Use message sender
-                    msg.channel.send(message);
+                    await msg.channel.send(message);
                     message = '';
                 }
                 message += line;
             }
+
             if (message.length > 1) {
                 // Use message sender
-                msg.channel.send(message);
+                await msg.channel.send(message);
             }
-        }
 
-        // Check if first argument is prefix
-        let args = msg.content.split(' ');
-        if (args[0].toLowerCase() !== this.prefix) {
-            return;
-        }
-
-        let authorData: UserData;
-        try {
-            authorData = await this.userRepo.getUserData(msg.author.id);
-        } catch (error) {
-            await this.msgSender.send(channel, undefined, MessageName.retrieveUserDataError);
-            this.logger.error(this.logs.retrieveUserDataError, error);
             return;
         }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2020 at 04:39 PM
+-- Generation Time: Sep 14, 2020 at 04:58 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -28,79 +28,122 @@ DELIMITER $$
 --
 CREATE PROCEDURE `Server_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
 
-INSERT INTO Server (`DiscordId`)
+INSERT INTO Server (DiscordId)
 VALUES (IN_DiscordId)
-ON DUPLICATE KEY UPDATE `ServerId`=`ServerId`;
+ON DUPLICATE KEY UPDATE ServerId = ServerId;
 
 SELECT *
 FROM Server
-WHERE `DiscordId` = IN_DiscordId;
+WHERE DiscordId = IN_DiscordId;
 
 END$$
 
 CREATE PROCEDURE `Server_SetMode` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Mode` VARCHAR(20))  BEGIN
 
-INSERT INTO Server (`DiscordId`, `Mode`)
-VALUES (IN_DiscordId, IN_Mode)
-ON DUPLICATE KEY UPDATE `Mode` = IN_Mode, `Modified` = current_timestamp();
+INSERT INTO Server (
+    DiscordId,
+    `Mode`
+) VALUES (
+    IN_DiscordId,
+    IN_Mode
+)
+ON DUPLICATE KEY UPDATE
+    `Mode` = IN_Mode,
+    Modified = CURRENT_TIMESTAMP();
 
 END$$
 
 CREATE PROCEDURE `Server_SetNotify` (IN `IN_DiscordId` VARCHAR(20), IN `IN_Notify` TINYINT(1))  BEGIN
 
-INSERT INTO Server (`DiscordId`, `Notify`)
-VALUES (IN_DiscordId, IN_Notify)
-ON DUPLICATE KEY UPDATE `Notify` = IN_Notify, `Modified` = current_timestamp();
+INSERT INTO Server (
+    DiscordId,
+    Notify
+) VALUES (
+    IN_DiscordId,
+    IN_Notify
+)
+ON DUPLICATE KEY UPDATE
+    Notify = IN_Notify,
+    Modified = CURRENT_TIMESTAMP();
 
 END$$
 
 CREATE PROCEDURE `Server_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
 
-INSERT INTO Server (`DiscordId`, `TimeFormat`)
-VALUES (IN_DiscordId, IN_TimeFormat)
-ON DUPLICATE KEY UPDATE `TimeFormat` = IN_TimeFormat, `Modified` = current_timestamp();
+INSERT INTO Server (
+    DiscordId,
+    TimeFormat
+) VALUES (
+    IN_DiscordId,
+    IN_TimeFormat
+)
+ON DUPLICATE KEY UPDATE
+    TimeFormat = IN_TimeFormat,
+    Modified = CURRENT_TIMESTAMP();
 
 END$$
 
-CREATE PROCEDURE `Stats_TopTimeZones` ()  SELECT
+CREATE PROCEDURE `Stats_TopTimeZones` ()  BEGIN
+
+SELECT
     TimeZone,
     COUNT(*) AS 'Count'
 FROM User
 WHERE TimeZone IS NOT NULL
 GROUP BY TimeZone
-ORDER BY COUNT(*) DESC$$
+ORDER BY COUNT(*) DESC;
 
-CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  SELECT DISTINCT `TimeZone`
+END$$
+
+CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  BEGIN
+
+SELECT DISTINCT TimeZone
 FROM User
 WHERE
-    FIND_IN_SET(`DiscordId`, IN_DiscordIds) > 0
-    AND `TimeZone` IS NOT NULL$$
+    FIND_IN_SET(DiscordId, IN_DiscordIds) > 0
+    AND TimeZone IS NOT NULL;
+
+END$$
 
 CREATE PROCEDURE `User_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
 
-INSERT INTO User (`DiscordId`)
+INSERT INTO User (DiscordId)
 VALUES (IN_DiscordId)
-ON DUPLICATE KEY UPDATE `UserId`=`UserId`;
+ON DUPLICATE KEY UPDATE UserId = UserId;
 
 SELECT *
 FROM User
-WHERE `DiscordId` = IN_DiscordId;
+WHERE DiscordId = IN_DiscordId;
 
 END$$
 
 CREATE PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
 
-INSERT INTO User (`DiscordId`, `TimeFormat`)
-VALUES (IN_DiscordId, IN_TimeFormat)
-ON DUPLICATE KEY UPDATE `TimeFormat` = IN_TimeFormat, `Modified` = current_timestamp();
+INSERT INTO User (
+    DiscordId,
+    TimeFormat
+) VALUES (
+    IN_DiscordId,
+    IN_TimeFormat
+)
+ON DUPLICATE KEY UPDATE
+    TimeFormat = IN_TimeFormat,
+    Modified = CURRENT_TIMESTAMP();
 
 END$$
 
 CREATE PROCEDURE `User_SetTimeZone` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
 
-INSERT INTO User (`DiscordId`, `TimeZone`)
-VALUES (IN_DiscordId, IN_TimeZone)
-ON DUPLICATE KEY UPDATE `TimeZone` = IN_TimeZone, `Modified` = current_timestamp();
+INSERT INTO User (
+    DiscordId,
+    TimeZone
+) VALUES (
+    IN_DiscordId,
+    IN_TimeZone
+)
+ON DUPLICATE KEY UPDATE
+    TimeZone = IN_TimeZone,
+    Modified = CURRENT_TIMESTAMP();
 
 END$$
 

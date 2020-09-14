@@ -5,7 +5,7 @@ import { GuildData } from '../models/database-models';
 import { GuildRepo, UserRepo } from '../repos';
 import { TimeFormatService, TimeParser, ZoneService } from '../services';
 import { LanguageService } from '../services/language';
-import { GuildUtils, PermissionUtils, StringUtils } from '../utils';
+import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
 
 export class MessageHandler {
     // Move to config?
@@ -80,7 +80,7 @@ export class MessageHandler {
             }
 
             if (!msg.guild) {
-                await msg.react(this.emoji);
+                await MessageUtils.react(msg, this.emoji);
                 return;
             }
 
@@ -90,7 +90,7 @@ export class MessageHandler {
                     return;
                 }
 
-                await msg.react(this.emoji);
+                await MessageUtils.react(msg, this.emoji);
                 return;
             }
 

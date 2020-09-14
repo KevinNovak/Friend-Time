@@ -51,7 +51,7 @@ async function start(): Promise<void> {
     let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
     let msgBuilder = new MessageBuilder(config.colors.default);
-    let msgSender = new MessageSender(msgBuilder, langService, internalLang.logs);
+    let msgSender = new MessageSender(msgBuilder, langService);
     let timeParser = new TimeParser(config.experience.blacklist);
     let zoneService = new ZoneService(config.validation.regions, timeParser);
     let timeFormatService = new TimeFormatService(config.experience.timeFormats);

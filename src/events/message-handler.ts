@@ -1,7 +1,5 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
-import { Command } from '../commands/command';
-import { HelpCommand } from '../commands/help-command';
-import { ReminderCommand } from '../commands/reminder-command';
+import { Command, HelpCommand, ReminderCommand } from '../commands';
 import { Logs } from '../models/internal-language';
 import { ServerData } from '../models/server-data';
 import { UserData } from '../models/user-data';

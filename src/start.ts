@@ -1,17 +1,19 @@
 import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
 import { Bot } from './bot';
-import { ClearCommand } from './commands/clear-command';
-import { ConfigCommand } from './commands/config-command';
-import { DonateCommand } from './commands/donate-command';
-import { FormatCommand } from './commands/format-command';
-import { HelpCommand } from './commands/help-command';
-import { InfoCommand } from './commands/info-command';
-import { InviteCommand } from './commands/invite-command';
-import { MapCommand } from './commands/map-command';
-import { ReminderCommand } from './commands/reminder-command';
-import { SetCommand } from './commands/set-command';
-import { SupportCommand } from './commands/support-command';
-import { TimeCommand } from './commands/time-command';
+import {
+    ClearCommand,
+    ConfigCommand,
+    DonateCommand,
+    FormatCommand,
+    HelpCommand,
+    InfoCommand,
+    InviteCommand,
+    MapCommand,
+    ReminderCommand,
+    SetCommand,
+    SupportCommand,
+    TimeCommand,
+} from './commands';
 import { MessageHandler } from './events/message-handler';
 import { ReactionHandler } from './events/reaction-handler';
 import { Config } from './models/config';

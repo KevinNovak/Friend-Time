@@ -1,6 +1,5 @@
 import { Client, Message, MessageReaction, User } from 'discord.js';
-import { MessageHandler } from './events/message-handler';
-import { ReactionHandler } from './events/reaction-handler';
+import { MessageHandler, ReactionHandler } from './events';
 import { Logger } from './services/logger';
 
 export class Bot {

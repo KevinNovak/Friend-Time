@@ -14,8 +14,7 @@ import {
     SupportCommand,
     TimeCommand,
 } from './commands';
-import { MessageHandler } from './events/message-handler';
-import { ReactionHandler } from './events/reaction-handler';
+import { MessageHandler, ReactionHandler } from './events';
 import { Config } from './models/config';
 import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';

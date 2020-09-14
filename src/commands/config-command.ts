@@ -4,10 +4,12 @@ import { UserData } from '../models/user-data';
 import { ServerRepo } from '../repos';
 import { MessageSender } from '../services';
 import { CommandName, LangCode, LanguageService, MessageName } from '../services/language';
-import { FormatOption } from '../services/language/server-config/format-option';
-import { ModeOption } from '../services/language/server-config/mode-option';
-import { NotifyOption } from '../services/language/server-config/notify-option';
-import { ServerConfigName } from '../services/language/server-config/server-config-name';
+import {
+    FormatOption,
+    ModeOption,
+    NotifyOption,
+    ServerConfigName,
+} from '../services/language/server-config';
 import { UserUtils } from '../utils';
 import { Command } from './command';
 

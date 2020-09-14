@@ -1,7 +1,7 @@
 import { Commands, Language } from '../../models/language';
 import { LangCode } from './lang-code';
 import { MessageName } from './message-name';
-import { ServerConfigName } from './server-config/server-config-name';
+import { ServerConfigName } from './server-config';
 
 export class LanguageService {
     constructor(private languages: Language[]) {}

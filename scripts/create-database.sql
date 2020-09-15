@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2020 at 05:05 PM
+-- Generation Time: Sep 15, 2020 at 09:24 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -26,7 +26,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE PROCEDURE `Server_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
+CREATE PROCEDURE `Server_Get` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
 
 INSERT INTO Server (DiscordId)
 VALUES (IN_DiscordId)
@@ -180,14 +180,14 @@ CREATE TABLE `User` (
 --
 ALTER TABLE `Server`
   ADD PRIMARY KEY (`ServerId`),
-  ADD UNIQUE KEY `UK_Server_DiscordId` (`DiscordId`) USING BTREE;
+  ADD UNIQUE KEY `UK_Server_DiscordId` (`DiscordId`);
 
 --
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`UserId`),
-  ADD UNIQUE KEY `UK_User_DiscordId` (`DiscordId`) USING BTREE;
+  ADD UNIQUE KEY `UK_User_DiscordId` (`DiscordId`);
 
 --
 -- AUTO_INCREMENT for dumped tables

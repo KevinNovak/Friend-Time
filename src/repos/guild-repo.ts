@@ -7,7 +7,7 @@ export class GuildRepo {
     constructor(private dataAccess: DataAccess) {}
 
     public async getGuildData(discordId: string): Promise<GuildData> {
-        let results = await this.dataAccess.executeProcedure(Procedure.Server_GetRow, [discordId]);
+        let results = await this.dataAccess.executeProcedure(Procedure.Server_Get, [discordId]);
 
         let row = SqlUtils.getRow(results, 0, 0);
         if (!row) {

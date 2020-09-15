@@ -54,7 +54,7 @@ export class TimeCommand implements Command {
         channel: TextChannel | DMChannel
     ): Promise<void> {
         let userData = await this.userRepo.getUserData(mentionedUser.id);
-        if (!userData.TimeZone) {
+        if (!userData?.TimeZone) {
             await this.msgSender.send(channel, MessageName.noZoneSetUser, [
                 { name: '{USER_ID}', value: mentionedUser.id },
             ]);
@@ -62,7 +62,7 @@ export class TimeCommand implements Command {
         }
 
         let time = this.zoneService.getMomentInZone(userData.TimeZone);
-        let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
+        let timeFormat = this.timeFormatService.findTimeFormat(authorData?.TimeFormat ?? '12');
 
         await this.msgSender.send(channel, MessageName.timeUserSuccess, [
             {
@@ -86,7 +86,7 @@ export class TimeCommand implements Command {
         }
 
         let time = this.zoneService.getMomentInZone(zone);
-        let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
+        let timeFormat = this.timeFormatService.findTimeFormat(authorData?.TimeFormat ?? '12');
 
         await this.msgSender.send(channel, MessageName.timeZoneSuccess, [
             {
@@ -101,7 +101,7 @@ export class TimeCommand implements Command {
         authorData: UserData,
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        if (!authorData.TimeZone) {
+        if (!authorData?.TimeZone) {
             await this.msgSender.send(channel, MessageName.noZoneSetSelf);
             return;
         }

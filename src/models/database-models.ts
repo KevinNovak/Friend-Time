@@ -6,9 +6,9 @@ export class GuildData {
 
     constructor(row: any) {
         this.DiscordId = row.DiscordId;
-        this.Mode = row.Mode;
-        this.TimeFormat = row.TimeFormat;
-        this.Notify = row.Notify;
+        this.Mode = row.Mode ?? 'React';
+        this.TimeFormat = row.TimeFormat ?? '12';
+        this.Notify = row.Notify ?? true;
     }
 }
 
@@ -20,6 +20,6 @@ export class UserData {
     constructor(row: any) {
         this.DiscordId = row.DiscordId;
         this.TimeZone = row.TimeZone;
-        this.TimeFormat = row.TimeFormat;
+        this.TimeFormat = row.TimeFormat ?? '12';
     }
 }

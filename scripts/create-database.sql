@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2020 at 04:58 PM
+-- Generation Time: Sep 15, 2020 at 05:05 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -34,7 +34,8 @@ ON DUPLICATE KEY UPDATE ServerId = ServerId;
 
 SELECT *
 FROM Server
-WHERE DiscordId = IN_DiscordId;
+WHERE DiscordId = IN_DiscordId
+LIMIT 1;
 
 END$$
 
@@ -47,9 +48,7 @@ INSERT INTO Server (
     IN_DiscordId,
     IN_Mode
 )
-ON DUPLICATE KEY UPDATE
-    `Mode` = IN_Mode,
-    Modified = CURRENT_TIMESTAMP();
+ON DUPLICATE KEY UPDATE `Mode` = IN_Mode;
 
 END$$
 
@@ -62,9 +61,7 @@ INSERT INTO Server (
     IN_DiscordId,
     IN_Notify
 )
-ON DUPLICATE KEY UPDATE
-    Notify = IN_Notify,
-    Modified = CURRENT_TIMESTAMP();
+ON DUPLICATE KEY UPDATE Notify = IN_Notify;
 
 END$$
 
@@ -77,9 +74,7 @@ INSERT INTO Server (
     IN_DiscordId,
     IN_TimeFormat
 )
-ON DUPLICATE KEY UPDATE
-    TimeFormat = IN_TimeFormat,
-    Modified = CURRENT_TIMESTAMP();
+ON DUPLICATE KEY UPDATE TimeFormat = IN_TimeFormat;
 
 END$$
 
@@ -89,9 +84,41 @@ SELECT
     TimeZone,
     COUNT(*) AS 'Count'
 FROM User
-WHERE TimeZone IS NOT NULL
 GROUP BY TimeZone
 ORDER BY COUNT(*) DESC;
+
+END$$
+
+CREATE PROCEDURE `User_AddOrUpdate` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
+
+SET @UserId = NULL;
+SELECT UserId
+INTO @UserId
+FROM User
+WHERE DiscordId = IN_DiscordId;
+
+IF @UserId IS NULL THEN
+    INSERT INTO User (
+        DiscordId,
+        TimeZone
+    ) VALUES (
+        IN_DiscordId,
+        IN_TimeZone
+    );
+ELSE
+    UPDATE User
+    SET TimeZone = IN_TimeZone
+    WHERE UserId = @UserId;
+END IF;
+
+END$$
+
+CREATE PROCEDURE `User_Get` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
+
+SELECT *
+FROM User
+WHERE DiscordId = IN_DiscordId
+LIMIT 1;
 
 END$$
 
@@ -99,51 +126,15 @@ CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  BE
 
 SELECT DISTINCT TimeZone
 FROM User
-WHERE
-    FIND_IN_SET(DiscordId, IN_DiscordIds) > 0
-    AND TimeZone IS NOT NULL;
-
-END$$
-
-CREATE PROCEDURE `User_GetRow` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
-
-INSERT INTO User (DiscordId)
-VALUES (IN_DiscordId)
-ON DUPLICATE KEY UPDATE UserId = UserId;
-
-SELECT *
-FROM User
-WHERE DiscordId = IN_DiscordId;
+WHERE FIND_IN_SET(DiscordId, IN_DiscordIds) > 0;
 
 END$$
 
 CREATE PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
 
-INSERT INTO User (
-    DiscordId,
-    TimeFormat
-) VALUES (
-    IN_DiscordId,
-    IN_TimeFormat
-)
-ON DUPLICATE KEY UPDATE
-    TimeFormat = IN_TimeFormat,
-    Modified = CURRENT_TIMESTAMP();
-
-END$$
-
-CREATE PROCEDURE `User_SetTimeZone` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
-
-INSERT INTO User (
-    DiscordId,
-    TimeZone
-) VALUES (
-    IN_DiscordId,
-    IN_TimeZone
-)
-ON DUPLICATE KEY UPDATE
-    TimeZone = IN_TimeZone,
-    Modified = CURRENT_TIMESTAMP();
+UPDATE User
+SET TimeFormat = IN_TimeFormat
+WHERE DiscordId = IN_DiscordId;
 
 END$$
 
@@ -158,11 +149,11 @@ DELIMITER ;
 CREATE TABLE `Server` (
   `ServerId` int(11) NOT NULL,
   `DiscordId` varchar(20) NOT NULL,
-  `Mode` varchar(20) NOT NULL DEFAULT 'React',
-  `TimeFormat` varchar(20) DEFAULT '12',
-  `Notify` tinyint(1) DEFAULT 1,
+  `Mode` varchar(20) DEFAULT NULL,
+  `TimeFormat` varchar(20) DEFAULT NULL,
+  `Notify` tinyint(1) DEFAULT NULL,
   `Created` datetime NOT NULL DEFAULT current_timestamp(),
-  `Modified` datetime NOT NULL DEFAULT current_timestamp()
+  `Modified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -175,9 +166,9 @@ CREATE TABLE `User` (
   `UserId` int(11) NOT NULL,
   `DiscordId` varchar(20) NOT NULL,
   `TimeZone` varchar(100) DEFAULT NULL,
-  `TimeFormat` varchar(20) NOT NULL DEFAULT '12',
+  `TimeFormat` varchar(20) DEFAULT NULL,
   `Created` datetime NOT NULL DEFAULT current_timestamp(),
-  `Modified` datetime NOT NULL DEFAULT current_timestamp()
+  `Modified` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -189,16 +180,14 @@ CREATE TABLE `User` (
 --
 ALTER TABLE `Server`
   ADD PRIMARY KEY (`ServerId`),
-  ADD UNIQUE KEY `DiscordId` (`DiscordId`),
-  ADD UNIQUE KEY `ServerId` (`ServerId`);
+  ADD UNIQUE KEY `UK_Server_DiscordId` (`DiscordId`) USING BTREE;
 
 --
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
   ADD PRIMARY KEY (`UserId`),
-  ADD UNIQUE KEY `DiscordId` (`DiscordId`),
-  ADD UNIQUE KEY `UserId` (`UserId`);
+  ADD UNIQUE KEY `UK_User_DiscordId` (`DiscordId`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables

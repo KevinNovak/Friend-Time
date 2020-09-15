@@ -65,13 +65,13 @@ export class ReactionHandler implements EventHandler {
         }
 
         let userData = await this.userRepo.getUserData(reactor.id);
-        if (!userData.TimeZone) {
+        if (!userData?.TimeZone) {
             await this.msgSender.send(dmChannel, MessageName.noZoneSetSelf);
             return;
         }
 
         let authorData = await this.userRepo.getUserData(msg.author.id);
-        if (!authorData.TimeZone) {
+        if (!authorData?.TimeZone) {
             await this.msgSender.send(dmChannel, MessageName.noZoneSetUser, [
                 { name: '{USER_ID}', value: msg.author.id },
             ]);

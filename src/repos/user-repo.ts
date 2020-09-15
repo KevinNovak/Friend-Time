@@ -7,7 +7,7 @@ export class UserRepo {
     constructor(private dataAccess: DataAccess) {}
 
     public async getUserData(discordId: string): Promise<UserData> {
-        let results = await this.dataAccess.executeProcedure(Procedure.User_GetRow, [discordId]);
+        let results = await this.dataAccess.executeProcedure(Procedure.User_Get, [discordId]);
 
         let row = SqlUtils.getRow(results, 0, 0);
         if (!row) {
@@ -32,11 +32,11 @@ export class UserRepo {
     }
 
     public async setTimeZone(discordId: string, timeZone: string): Promise<void> {
-        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, timeZone]);
+        await this.dataAccess.executeProcedure(Procedure.User_AddOrUpdate, [discordId, timeZone]);
     }
 
     public async clearTimeZone(discordId: string): Promise<void> {
-        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, null]);
+        await this.dataAccess.executeProcedure(Procedure.User_AddOrUpdate, [discordId, null]);
     }
 
     public async setTimeFormat(discordId: string, timeFormat: string): Promise<void> {

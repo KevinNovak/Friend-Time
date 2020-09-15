@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2020 at 09:24 PM
+-- Generation Time: Sep 15, 2020 at 09:26 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -179,15 +179,15 @@ CREATE TABLE `User` (
 -- Indexes for table `Server`
 --
 ALTER TABLE `Server`
-  ADD PRIMARY KEY (`ServerId`),
-  ADD UNIQUE KEY `UK_Server_DiscordId` (`DiscordId`);
+  ADD PRIMARY KEY (`ServerId`) USING BTREE,
+  ADD UNIQUE KEY `UK_Server_DiscordId` (`DiscordId`) USING BTREE;
 
 --
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
-  ADD PRIMARY KEY (`UserId`),
-  ADD UNIQUE KEY `UK_User_DiscordId` (`DiscordId`);
+  ADD PRIMARY KEY (`UserId`) USING BTREE,
+  ADD UNIQUE KEY `UK_User_DiscordId` (`DiscordId`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables

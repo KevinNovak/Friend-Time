@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 15, 2020 at 09:26 PM
+-- Generation Time: Sep 16, 2020 at 05:41 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -89,7 +89,48 @@ ORDER BY COUNT(*) DESC;
 
 END$$
 
-CREATE PROCEDURE `User_AddOrUpdate` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
+CREATE PROCEDURE `User_Get` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
+
+SELECT *
+FROM User
+WHERE DiscordId = IN_DiscordId
+LIMIT 1;
+
+END$$
+
+CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  BEGIN
+
+SELECT DISTINCT TimeZone
+FROM User
+WHERE FIND_IN_SET(DiscordId, IN_DiscordIds) > 0;
+
+END$$
+
+CREATE PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
+
+SET @UserId = NULL;
+SELECT UserId
+INTO @UserId
+FROM User
+WHERE DiscordId = IN_DiscordId;
+
+IF @UserId IS NULL THEN
+    INSERT INTO User (
+        DiscordId,
+        TimeFormat
+    ) VALUES (
+        IN_DiscordId,
+        IN_TimeFormat
+    );
+ELSE
+    UPDATE User
+    SET TimeFormat = IN_TimeFormat
+    WHERE UserId = @UserId;
+END IF;
+
+END$$
+
+CREATE PROCEDURE `User_SetTimeZone` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeZone` VARCHAR(100))  BEGIN
 
 SET @UserId = NULL;
 SELECT UserId
@@ -110,31 +151,6 @@ ELSE
     SET TimeZone = IN_TimeZone
     WHERE UserId = @UserId;
 END IF;
-
-END$$
-
-CREATE PROCEDURE `User_Get` (IN `IN_DiscordId` VARCHAR(20))  BEGIN
-
-SELECT *
-FROM User
-WHERE DiscordId = IN_DiscordId
-LIMIT 1;
-
-END$$
-
-CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  BEGIN
-
-SELECT DISTINCT TimeZone
-FROM User
-WHERE FIND_IN_SET(DiscordId, IN_DiscordIds) > 0;
-
-END$$
-
-CREATE PROCEDURE `User_SetTimeFormat` (IN `IN_DiscordId` VARCHAR(20), IN `IN_TimeFormat` VARCHAR(20))  BEGIN
-
-UPDATE User
-SET TimeFormat = IN_TimeFormat
-WHERE DiscordId = IN_DiscordId;
 
 END$$
 

@@ -32,11 +32,11 @@ export class UserRepo {
     }
 
     public async setTimeZone(discordId: string, timeZone: string): Promise<void> {
-        await this.dataAccess.executeProcedure(Procedure.User_AddOrUpdate, [discordId, timeZone]);
+        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, timeZone]);
     }
 
     public async clearTimeZone(discordId: string): Promise<void> {
-        await this.dataAccess.executeProcedure(Procedure.User_AddOrUpdate, [discordId, null]);
+        await this.dataAccess.executeProcedure(Procedure.User_SetTimeZone, [discordId, null]);
     }
 
     public async setTimeFormat(discordId: string, timeFormat: string): Promise<void> {

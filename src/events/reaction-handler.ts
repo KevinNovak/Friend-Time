@@ -80,7 +80,7 @@ export class ReactionHandler implements EventHandler {
 
         let moment = this.zoneService.convert(result, authorData.TimeZone, userData.TimeZone);
 
-        let timeFormat = this.timeFormatService.findTimeFormat(userData.TimeFormat);
+        let timeFormat = this.timeFormatService.getTimeFormat(userData?.TimeFormat);
         let format = this.timeParser.dayIsCertain(result.start)
             ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
             : timeFormat.timeFormat;

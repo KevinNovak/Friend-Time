@@ -62,7 +62,7 @@ export class TimeCommand implements Command {
         }
 
         let time = this.zoneService.getMomentInZone(userData.TimeZone);
-        let timeFormat = this.timeFormatService.findTimeFormat(authorData?.TimeFormat ?? '12');
+        let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
 
         await this.msgSender.send(channel, MessageName.timeUserSuccess, [
             {
@@ -86,7 +86,7 @@ export class TimeCommand implements Command {
         }
 
         let time = this.zoneService.getMomentInZone(zone);
-        let timeFormat = this.timeFormatService.findTimeFormat(authorData?.TimeFormat ?? '12');
+        let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
 
         await this.msgSender.send(channel, MessageName.timeZoneSuccess, [
             {
@@ -107,7 +107,7 @@ export class TimeCommand implements Command {
         }
 
         let time = this.zoneService.getMomentInZone(authorData.TimeZone);
-        let timeFormat = this.timeFormatService.findTimeFormat(authorData.TimeFormat);
+        let timeFormat = this.timeFormatService.getTimeFormat(authorData.TimeFormat);
 
         await this.msgSender.send(channel, MessageName.timeSelfSuccess, [
             {

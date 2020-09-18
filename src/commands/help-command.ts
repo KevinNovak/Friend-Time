@@ -1,11 +1,11 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
-import { Command } from '.';
 
+import { Command } from '.';
 import { MessageSender } from '../services';
-import { CommandName, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 
 export class HelpCommand implements Command {
-    public name = CommandName.help;
+    public name = 'help';
     public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}

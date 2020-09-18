@@ -3,11 +3,11 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService } from '../services';
-import { CommandName, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 import { Command } from './command';
 
 export class FormatCommand implements Command {
-    public name = CommandName.format;
+    public name = 'format';
     public requireGuild = false;
 
     constructor(

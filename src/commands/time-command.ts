@@ -3,12 +3,12 @@ import { DMChannel, Message, TextChannel, User } from 'discord.js';
 import { UserData } from '../models/database-models';
 import { UserRepo } from '../repos';
 import { MessageSender, TimeFormatService, ZoneService } from '../services';
-import { CommandName, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 import { GuildUtils } from '../utils';
 import { Command } from './command';
 
 export class TimeCommand implements Command {
-    public name = CommandName.time;
+    public name = 'time';
     public requireGuild = false;
 
     constructor(

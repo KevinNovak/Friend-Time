@@ -3,11 +3,11 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 import { Logs } from '../models/internal-language';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender } from '../services';
-import { CommandName, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 import { Command } from './command';
 
 export class ClearCommand implements Command {
-    public name = CommandName.clear;
+    public name = 'clear';
     public requireGuild = false;
 
     constructor(private msgSender: MessageSender, private logs: Logs, private userRepo: UserRepo) {}

@@ -181,12 +181,11 @@ export class MessageHandler implements EventHandler {
         await command.execute(msg, args.slice(2), channel, userData, guildData);
     }
 
-    // TODO: More efficient way to resolve commands
     private findCommand(userCommand: string): Command {
-        let langCommands = this.langService.getCommands();
-        for (let commandKey in langCommands) {
-            if (langCommands[commandKey] === userCommand) {
-                return this.commands.find(command => command.name === commandKey);
+        userCommand = userCommand.toLowerCase();
+        for (let command of this.commands) {
+            if (command.name === userCommand) {
+                return command;
             }
         }
     }

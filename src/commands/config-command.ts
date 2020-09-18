@@ -2,7 +2,7 @@ import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
 import { GuildRepo } from '../repos';
 import { MessageSender } from '../services';
-import { CommandName, LanguageService, MessageName } from '../services/language';
+import { LanguageService, MessageName } from '../services/language';
 import {
     FormatOption,
     ModeOption,
@@ -14,7 +14,7 @@ import { Command } from './command';
 
 // TODO: This whole class needs refactored with the config options
 export class ConfigCommand implements Command {
-    public name = CommandName.config;
+    public name = 'config';
     public requireGuild = true;
 
     constructor(

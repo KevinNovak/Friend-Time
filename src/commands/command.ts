@@ -1,10 +1,9 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { GuildData, UserData } from '../models/database-models';
-import { CommandName } from '../services/language';
 
 export interface Command {
-    name: CommandName;
+    name: string;
     requireGuild: boolean;
     execute(
         msg: Message,

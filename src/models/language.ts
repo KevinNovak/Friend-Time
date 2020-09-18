@@ -2,22 +2,8 @@ import { LangCode } from '../services/language';
 
 export interface Language {
     langCode: LangCode;
-    commands: Commands;
     serverConfig: ServerConfig;
     messages: Messages;
-}
-
-export interface Commands {
-    set: string;
-    find: string;
-    map: string;
-    clear: string;
-    time: string;
-    format: string;
-    info: string;
-    invite: string;
-    support: string;
-    donate: string;
 }
 
 export interface ServerConfig {

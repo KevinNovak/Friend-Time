@@ -1,11 +1,11 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { MessageSender } from '../services';
-import { CommandName, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 import { Command } from './command';
 
 export class InviteCommand implements Command {
-    public name = CommandName.invite;
+    public name = 'invite';
     public requireGuild = false;
 
     constructor(private msgSender: MessageSender) {}

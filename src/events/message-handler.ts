@@ -108,14 +108,14 @@ export class MessageHandler implements EventHandler {
                 : timeFormat.timeFormat;
 
             let timeZoneData = timeZones
-                .map(name => ({
-                    name,
-                    // TODO: More efficient way so we don't convert twice
-                    time: this.zoneService.convert(result, userData.TimeZone, name).format(format),
-                    offset: parseInt(
-                        this.zoneService.convert(result, userData.TimeZone, name).format('ZZ')
-                    ),
-                }))
+                .map(name => {
+                    let convertedTime = this.zoneService.convert(result, userData.TimeZone, name);
+                    return {
+                        name,
+                        time: convertedTime.format(format),
+                        offset: parseInt(convertedTime.format('ZZ')),
+                    };
+                })
                 .sort(this.compareTimeZones);
 
             let message = `> ${StringUtils.formatQuote(result.text)}\n`;

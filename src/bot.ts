@@ -1,10 +1,10 @@
 import { Client, Guild, Message, MessageReaction, User } from 'discord.js';
 
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
-import { Logs } from './models/logs';
+import { LogsSchema } from './models/logs';
 import { Logger } from './services';
 
-let Logs: Logs = require('../lang/logs.en.json');
+let Logs: LogsSchema = require('../lang/logs.en.json');
 
 export class Bot {
     private ready = false;

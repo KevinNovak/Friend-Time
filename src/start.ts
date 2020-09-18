@@ -15,9 +15,9 @@ import {
     TimeCommand,
 } from './commands';
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
-import { Config } from './models/config-models';
+import { ConfigSchema } from './models/config-models';
 import { Language } from './models/language';
-import { Logs } from './models/logs';
+import { LogsSchema } from './models/logs';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
@@ -31,8 +31,8 @@ import {
 import { DataAccess } from './services/database/data-access';
 import { LanguageService } from './services/language';
 
-let Config: Config = require('../config/Config.json');
-let Logs: Logs = require('../lang/logs.en.json');
+let Config: ConfigSchema = require('../config/config.json');
+let Logs: LogsSchema = require('../lang/logs.en.json');
 
 let langEn: Language = require('../lang/lang.en.json');
 

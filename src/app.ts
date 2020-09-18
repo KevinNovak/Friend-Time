@@ -1,8 +1,8 @@
 import { ShardingManager } from 'discord.js';
 
 import { Manager } from './manager';
-import { Config } from './models/config-models';
-import { Logs } from './models/logs';
+import { ConfigSchema } from './models/config-models';
+import { LogsSchema } from './models/logs';
 import { HttpService, Logger } from './services';
 import {
     BotsOnDiscordXyzSite,
@@ -12,8 +12,8 @@ import {
 } from './services/sites';
 import { ShardUtils } from './utils';
 
-let Config: Config = require('../config/Config.json');
-let Logs: Logs = require('../lang/logs.en.json');
+let Config: ConfigSchema = require('../config/config.json');
+let Logs: LogsSchema = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     // Dependency Injection

@@ -1,10 +1,10 @@
 import { Guild } from 'discord.js';
 
-import { Logs } from '../models/logs';
+import { LogsSchema } from '../models/logs';
 import { Logger } from '../services';
 import { EventHandler } from './event-handler';
 
-let Logs: Logs = require('../../lang/logs.en.json');
+let Logs: LogsSchema = require('../../lang/logs.en.json');
 
 export class GuildJoinHandler implements EventHandler {
     public async process(guild: Guild): Promise<void> {

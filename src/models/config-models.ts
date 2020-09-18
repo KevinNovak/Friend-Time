@@ -1,4 +1,4 @@
-export interface Config {
+export interface ConfigSchema {
     prefix: string;
     client: ClientConfig;
     mysql: MySqlConfig;

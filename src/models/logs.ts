@@ -1,4 +1,4 @@
-export interface Logs {
+export interface LogsSchema {
     appStarted: string;
     shardCountError: string;
     noShards: string;

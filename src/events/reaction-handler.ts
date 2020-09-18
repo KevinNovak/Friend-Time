@@ -1,13 +1,13 @@
 import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
 
-import { Logs } from '../models/logs';
+import { LogsSchema } from '../models/logs';
 import { GuildRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { MessageName } from '../services/language';
 import { StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
 
-let Logs: Logs = require('../../lang/logs.en.json');
+let Logs: LogsSchema = require('../../lang/logs.en.json');
 
 export class ReactionHandler implements EventHandler {
     constructor(

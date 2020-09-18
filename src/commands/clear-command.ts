@@ -1,12 +1,12 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
-import { Logs } from '../models/logs';
+import { LogsSchema } from '../models/logs';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender } from '../services';
 import { MessageName } from '../services/language';
 import { Command } from './command';
 
-let Logs: Logs = require('../../lang/logs.en.json');
+let Logs: LogsSchema = require('../../lang/logs.en.json');
 
 export class ClearCommand implements Command {
     public name = 'clear';

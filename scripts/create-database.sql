@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 16, 2020 at 05:41 PM
+-- Generation Time: Sep 18, 2020 at 07:42 PM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -102,7 +102,9 @@ CREATE PROCEDURE `User_GetDistinctTimeZones` (IN `IN_DiscordIds` MEDIUMTEXT)  BE
 
 SELECT DISTINCT TimeZone
 FROM User
-WHERE FIND_IN_SET(DiscordId, IN_DiscordIds) > 0;
+WHERE
+    FIND_IN_SET(DiscordId, IN_DiscordIds) > 0
+    AND TimeZone IS NOT NULL;
 
 END$$
 

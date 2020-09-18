@@ -12,20 +12,20 @@ import {
 } from './services/sites';
 import { ShardUtils } from './utils';
 
-let config: Config = require('../config/config.json');
+let Config: Config = require('../config/Config.json');
 let Logs: Logs = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     // Dependency Injection
     let httpService = new HttpService();
-    let topGgSite = new TopGgSite(config.botSites.topGg, httpService);
+    let topGgSite = new TopGgSite(Config.botSites.topGg, httpService);
     let botsOnDiscordXyzSite = new BotsOnDiscordXyzSite(
-        config.botSites.botsOnDiscordXyz,
+        Config.botSites.botsOnDiscordXyz,
         httpService
     );
-    let discordBotsGgSite = new DiscordBotsGgSite(config.botSites.discordBotsGg, httpService);
+    let discordBotsGgSite = new DiscordBotsGgSite(Config.botSites.discordBotsGg, httpService);
     let discordBotListComSite = new DiscordBotListComSite(
-        config.botSites.discordBotListCom,
+        Config.botSites.discordBotListCom,
         httpService
     );
 
@@ -34,8 +34,8 @@ async function start(): Promise<void> {
     let totalShards = 0;
     try {
         totalShards = await ShardUtils.getRecommendedShards(
-            config.client.token,
-            config.sharding.serversPerShard
+            Config.client.token,
+            Config.sharding.serversPerShard
         );
     } catch (error) {
         Logger.error(Logs.shardCountError, error);
@@ -44,8 +44,8 @@ async function start(): Promise<void> {
 
     let myShardIds = ShardUtils.getMyShardIds(
         totalShards,
-        config.sharding.machineId,
-        config.sharding.machineCount
+        Config.sharding.machineId,
+        Config.sharding.machineCount
     );
 
     if (myShardIds.length === 0) {
@@ -54,14 +54,14 @@ async function start(): Promise<void> {
     }
 
     let shardManager = new ShardingManager('dist/start.js', {
-        token: config.client.token,
+        token: Config.client.token,
         mode: 'worker',
         respawn: true,
         totalShards,
         shardList: myShardIds,
     });
 
-    let manager = new Manager(config.sharding, shardManager, [
+    let manager = new Manager(Config.sharding, shardManager, [
         topGgSite,
         botsOnDiscordXyzSite,
         discordBotsGgSite,
@@ -70,7 +70,7 @@ async function start(): Promise<void> {
     await manager.start();
     setInterval(() => {
         manager.updateServerCount();
-    }, config.jobs.updateServerCount.interval * 1000);
+    }, Config.jobs.updateServerCount.interval * 1000);
 }
 
 start();

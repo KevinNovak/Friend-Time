@@ -31,30 +31,31 @@ import {
 import { DataAccess } from './services/database/data-access';
 import { LanguageService } from './services/language';
 
-let config: Config = require('../config/config.json');
-let langEn: Language = require('../lang/lang.en.json');
+let Config: Config = require('../config/Config.json');
 let Logs: Logs = require('../lang/logs.en.json');
+
+let langEn: Language = require('../lang/lang.en.json');
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
-        ws: { intents: config.client.intents as IntentsString[] },
-        partials: config.client.partials as PartialTypes[],
-        messageCacheMaxSize: config.client.caches.messages.size,
-        messageCacheLifetime: config.client.caches.messages.lifetime,
-        messageSweepInterval: config.client.caches.messages.sweepInterval,
+        ws: { intents: Config.client.intents as IntentsString[] },
+        partials: Config.client.partials as PartialTypes[],
+        messageCacheMaxSize: Config.client.caches.messages.size,
+        messageCacheLifetime: Config.client.caches.messages.lifetime,
+        messageSweepInterval: Config.client.caches.messages.sweepInterval,
     };
 
     // Dependency Injection
     let langService = new LanguageService([langEn]);
     let client = new Client(clientOptions);
-    let dataAccess = new DataAccess(config.mysql);
+    let dataAccess = new DataAccess(Config.mysql);
     let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
-    let msgBuilder = new MessageBuilder(config.colors.default);
+    let msgBuilder = new MessageBuilder(Config.colors.default);
     let msgSender = new MessageSender(msgBuilder, langService);
-    let timeParser = new TimeParser(config.experience.blacklist);
-    let zoneService = new ZoneService(config.validation.regions, timeParser);
-    let timeFormatService = new TimeFormatService(config.experience.timeFormats);
+    let timeParser = new TimeParser(Config.experience.blacklist);
+    let zoneService = new ZoneService(Config.validation.regions, timeParser);
+    let timeFormatService = new TimeFormatService(Config.experience.timeFormats);
     let reminderService = new ReminderService(msgSender);
     let helpCommand = new HelpCommand(msgSender);
     let setCommand = new SetCommand(msgSender, zoneService, userRepo);
@@ -70,8 +71,8 @@ async function start(): Promise<void> {
     let guildJoinHandler = new GuildJoinHandler();
     let guildLeaveHandler = new GuildLeaveHandler();
     let messageHandler = new MessageHandler(
-        config.prefix,
-        config.emojis.convert,
+        Config.prefix,
+        Config.emojis.convert,
         helpCommand,
         [
             setCommand,
@@ -95,7 +96,7 @@ async function start(): Promise<void> {
         langService
     );
     let reactionHandler = new ReactionHandler(
-        config.emojis.convert,
+        Config.emojis.convert,
         msgSender,
         timeParser,
         zoneService,
@@ -109,7 +110,7 @@ async function start(): Promise<void> {
         guildLeaveHandler,
         messageHandler,
         reactionHandler,
-        config.client.token
+        Config.client.token
     );
     await bot.start();
 }

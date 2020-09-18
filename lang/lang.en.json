@@ -148,6 +148,7 @@
         ],
         "serverOnly": "This command only works in a server!",
         "configNotFound": "Could not find a configuration option with the provided name!",
+        "noPermToSendEmbed": "I don't have all permissions required to send messages here!\n\nPlease allow me to **Read Messages**, **Send Messages**, and **Embed Links** in this channel.",
         "configModeInvalidValue": [
             "Please provide a valid mode option!",
             "",

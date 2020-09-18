@@ -58,10 +58,9 @@ export class MessageHandler implements EventHandler {
 
         // Check if I have permission to send a message
         if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
-            // No permission to send message
             if (PermissionUtils.canSend(channel)) {
-                let message = `I don't have all permissions required to send messages here!\n\nPlease allow me to **Read Messages**, **Send Messages**, and **Embed Links** in this channel.`;
-                await channel.send(message);
+                let message = this.langService.getMessage(MessageName.noPermToSendEmbed);
+                await MessageUtils.send(channel, message);
             }
             return;
         }

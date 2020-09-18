@@ -28,6 +28,7 @@ export enum MessageName {
     convertedTime = 'convertedTime',
     serverOnly = 'serverOnly',
     configNotFound = 'configNotFound',
+    noPermToSendEmbed = 'noPermToSendEmbed',
     configModeInvalidValue = 'configModeInvalidValue',
     configModeSuccess = 'configModeSuccess',
     configFormatInvalidValue = 'configFormatInvalidValue',

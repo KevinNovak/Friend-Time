@@ -86,6 +86,7 @@ export interface Messages {
     convertedTime: string | string[];
     serverOnly: string | string[];
     configNotFound: string | string[];
+    noPermToSendEmbed: string | string[];
     configModeInvalidValue: string | string[];
     configModeSuccess: string | string[];
     configFormatInvalidValue: string | string[];

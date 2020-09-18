@@ -148,6 +148,7 @@
         ],
         "serverOnly": "Este comando solo funciona en un servidor",
         "configNotFound": "No se ha podido encontrar un parámetro en la configuración con ese nombre",
+        "noPermToSendEmbed": "¡No tengo todos los permisos necesarios para enviar mensajes aquí!\n\nPermíteme **Leer Mensajes**, **Enviar Mensajes**, e **Insertar Enlaces** en este canal.",
         "configModeInvalidValue": [
             "Introduce una opción de modo valida",
             "",

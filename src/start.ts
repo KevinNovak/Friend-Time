@@ -16,8 +16,8 @@ import {
 } from './commands';
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { Config } from './models/config-models';
-import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';
+import { Logs } from './models/logs';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
@@ -33,7 +33,7 @@ import { LanguageService } from './services/language';
 
 let config: Config = require('../config/config.json');
 let langEn: Language = require('../lang/lang.en.json');
-let internalLang: InternalLanguage = require('../lang/internal.en.json');
+let logs: Logs = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
@@ -57,13 +57,13 @@ async function start(): Promise<void> {
     let timeFormatService = new TimeFormatService(config.experience.timeFormats);
     let reminderService = new ReminderService(msgSender);
     let helpCommand = new HelpCommand(msgSender);
-    let setCommand = new SetCommand(msgSender, internalLang.logs, zoneService, userRepo);
+    let setCommand = new SetCommand(msgSender, logs, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
-    let clearCommand = new ClearCommand(msgSender, internalLang.logs, userRepo);
+    let clearCommand = new ClearCommand(msgSender, logs, userRepo);
     let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
     let formatCommand = new FormatCommand(
         msgSender,
-        internalLang.logs,
+        logs,
         userRepo,
         timeFormatService
     );
@@ -72,8 +72,8 @@ async function start(): Promise<void> {
     let inviteCommand = new InviteCommand(msgSender);
     let supportCommand = new SupportCommand(msgSender);
     let donateCommand = new DonateCommand(msgSender);
-    let guildJoinHandler = new GuildJoinHandler(internalLang.logs);
-    let guildLeaveHandler = new GuildLeaveHandler(internalLang.logs);
+    let guildJoinHandler = new GuildJoinHandler(logs);
+    let guildLeaveHandler = new GuildLeaveHandler(logs);
     let messageHandler = new MessageHandler(
         config.prefix,
         config.emojis.convert,
@@ -107,7 +107,7 @@ async function start(): Promise<void> {
         timeFormatService,
         guildRepo,
         userRepo,
-        internalLang.logs
+        logs
     );
     let bot = new Bot(
         client,
@@ -116,7 +116,7 @@ async function start(): Promise<void> {
         messageHandler,
         reactionHandler,
         config.client.token,
-        internalLang.logs
+        logs
     );
     await bot.start();
 }

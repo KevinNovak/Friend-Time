@@ -1,7 +1,7 @@
 import { Client, Guild, Message, MessageReaction, User } from 'discord.js';
 
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
-import { Logs } from './models/internal-language';
+import { Logs } from './models/logs';
 import { Logger } from './services';
 
 export class Bot {

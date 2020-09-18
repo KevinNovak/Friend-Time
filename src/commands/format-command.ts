@@ -1,6 +1,6 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
-import { Logs } from '../models/internal-language';
+import { Logs } from '../models/logs';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService } from '../services';
 import { MessageName } from '../services/language';

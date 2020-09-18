@@ -1,7 +1,3 @@
-export interface InternalLanguage {
-    logs: Logs;
-}
-
 export interface Logs {
     appStarted: string;
     shardCountError: string;

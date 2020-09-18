@@ -2,7 +2,7 @@ import { ShardingManager } from 'discord.js';
 
 import { Manager } from './manager';
 import { Config } from './models/config-models';
-import { InternalLanguage } from './models/internal-language';
+import { Logs } from './models/logs';
 import { HttpService, Logger } from './services';
 import {
     BotsOnDiscordXyzSite,
@@ -13,7 +13,7 @@ import {
 import { ShardUtils } from './utils';
 
 let config: Config = require('../config/config.json');
-let internalLang: InternalLanguage = require('../lang/internal.en.json');
+let logs: Logs = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     // Dependency Injection
@@ -29,7 +29,7 @@ async function start(): Promise<void> {
         httpService
     );
 
-    Logger.info(internalLang.logs.appStarted);
+    Logger.info(logs.appStarted);
 
     let totalShards = 0;
     try {
@@ -38,7 +38,7 @@ async function start(): Promise<void> {
             config.sharding.serversPerShard
         );
     } catch (error) {
-        Logger.error(internalLang.logs.shardCountError, error);
+        Logger.error(logs.shardCountError, error);
         return;
     }
 
@@ -49,7 +49,7 @@ async function start(): Promise<void> {
     );
 
     if (myShardIds.length === 0) {
-        Logger.warn(internalLang.logs.noShards);
+        Logger.warn(logs.noShards);
         return;
     }
 
@@ -65,7 +65,7 @@ async function start(): Promise<void> {
         config.sharding,
         shardManager,
         [topGgSite, botsOnDiscordXyzSite, discordBotsGgSite, discordBotListComSite],
-        internalLang.logs
+        logs
     );
     await manager.start();
     setInterval(() => {

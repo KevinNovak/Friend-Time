@@ -1,6 +1,6 @@
 import { Guild } from 'discord.js';
 
-import { Logs } from '../models/internal-language';
+import { Logs } from '../models/logs';
 import { Logger } from '../services';
 import { EventHandler } from './event-handler';
 

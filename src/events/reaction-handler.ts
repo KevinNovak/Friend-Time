@@ -1,6 +1,6 @@
 import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
 
-import { Logs } from '../models/internal-language';
+import { Logs } from '../models/logs';
 import { GuildRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
 import { MessageName } from '../services/language';

@@ -1,4 +1,5 @@
 export enum CommandName {
+    help = 'help',
     set = 'set',
     find = 'find',
     map = 'map',

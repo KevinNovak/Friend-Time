@@ -152,7 +152,7 @@ export class MessageHandler implements EventHandler {
 
         // If only a prefix, run the help command
         if (args.length === 1) {
-            await this.helpCommand.execute(msg, channel);
+            await this.helpCommand.execute(msg, args, channel);
             return;
         }
 
@@ -162,7 +162,7 @@ export class MessageHandler implements EventHandler {
 
         // If no command found, run help
         if (!command) {
-            await this.helpCommand.execute(msg, channel);
+            await this.helpCommand.execute(msg, args, channel);
             return;
         }
 

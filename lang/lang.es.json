@@ -1,6 +1,7 @@
 {
     "langCode": "es",
     "commands": {
+        "help": "help",
         "set": "set",
         "find": "find",
         "map": "map",

@@ -6,13 +6,14 @@ import { Logger, MessageSender, TimeFormatService } from '../services';
 import { MessageName } from '../services/language';
 import { Command } from './command';
 
+let Logs: Logs = require('../../lang/logs.en.json');
+
 export class FormatCommand implements Command {
     public name = 'format';
     public requireGuild = false;
 
     constructor(
         private msgSender: MessageSender,
-        private logs: Logs,
         private userRepo: UserRepo,
         private timeFormatService: TimeFormatService
     ) {}
@@ -40,7 +41,7 @@ export class FormatCommand implements Command {
             { name: '{FORMAT}', value: timeFormat.display },
         ]);
         Logger.info(
-            this.logs.formatSuccess
+            Logs.formatSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)
                 .replace('{FORMAT}', timeFormat.display)

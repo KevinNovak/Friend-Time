@@ -33,7 +33,7 @@ import { LanguageService } from './services/language';
 
 let config: Config = require('../config/config.json');
 let langEn: Language = require('../lang/lang.en.json');
-let logs: Logs = require('../lang/logs.en.json');
+let Logs: Logs = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
@@ -57,23 +57,18 @@ async function start(): Promise<void> {
     let timeFormatService = new TimeFormatService(config.experience.timeFormats);
     let reminderService = new ReminderService(msgSender);
     let helpCommand = new HelpCommand(msgSender);
-    let setCommand = new SetCommand(msgSender, logs, zoneService, userRepo);
+    let setCommand = new SetCommand(msgSender, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
-    let clearCommand = new ClearCommand(msgSender, logs, userRepo);
+    let clearCommand = new ClearCommand(msgSender, userRepo);
     let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
-    let formatCommand = new FormatCommand(
-        msgSender,
-        logs,
-        userRepo,
-        timeFormatService
-    );
+    let formatCommand = new FormatCommand(msgSender, userRepo, timeFormatService);
     let configCommand = new ConfigCommand(msgSender, guildRepo, langService);
     let infoCommand = new InfoCommand(msgSender);
     let inviteCommand = new InviteCommand(msgSender);
     let supportCommand = new SupportCommand(msgSender);
     let donateCommand = new DonateCommand(msgSender);
-    let guildJoinHandler = new GuildJoinHandler(logs);
-    let guildLeaveHandler = new GuildLeaveHandler(logs);
+    let guildJoinHandler = new GuildJoinHandler();
+    let guildLeaveHandler = new GuildLeaveHandler();
     let messageHandler = new MessageHandler(
         config.prefix,
         config.emojis.convert,
@@ -106,8 +101,7 @@ async function start(): Promise<void> {
         zoneService,
         timeFormatService,
         guildRepo,
-        userRepo,
-        logs
+        userRepo
     );
     let bot = new Bot(
         client,
@@ -115,8 +109,7 @@ async function start(): Promise<void> {
         guildLeaveHandler,
         messageHandler,
         reactionHandler,
-        config.client.token,
-        logs
+        config.client.token
     );
     await bot.start();
 }

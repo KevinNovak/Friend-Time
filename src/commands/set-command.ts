@@ -6,13 +6,14 @@ import { Logger, MessageSender, ZoneService } from '../services';
 import { MessageName } from '../services/language';
 import { Command } from './command';
 
+let Logs: Logs = require('../../lang/logs.en.json');
+
 export class SetCommand implements Command {
     public name = 'set';
     public requireGuild = false;
 
     constructor(
         private msgSender: MessageSender,
-        private logs: Logs,
         private zoneService: ZoneService,
         private userRepo: UserRepo
     ) {}
@@ -40,7 +41,7 @@ export class SetCommand implements Command {
             { name: '{ZONE}', value: zone },
         ]);
         Logger.info(
-            this.logs.setSuccess
+            Logs.setSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)
                 .replace('{ZONE}', zone)

@@ -13,7 +13,7 @@ import {
 import { ShardUtils } from './utils';
 
 let config: Config = require('../config/config.json');
-let logs: Logs = require('../lang/logs.en.json');
+let Logs: Logs = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
     // Dependency Injection
@@ -29,7 +29,7 @@ async function start(): Promise<void> {
         httpService
     );
 
-    Logger.info(logs.appStarted);
+    Logger.info(Logs.appStarted);
 
     let totalShards = 0;
     try {
@@ -38,7 +38,7 @@ async function start(): Promise<void> {
             config.sharding.serversPerShard
         );
     } catch (error) {
-        Logger.error(logs.shardCountError, error);
+        Logger.error(Logs.shardCountError, error);
         return;
     }
 
@@ -49,7 +49,7 @@ async function start(): Promise<void> {
     );
 
     if (myShardIds.length === 0) {
-        Logger.warn(logs.noShards);
+        Logger.warn(Logs.noShards);
         return;
     }
 
@@ -61,12 +61,12 @@ async function start(): Promise<void> {
         shardList: myShardIds,
     });
 
-    let manager = new Manager(
-        config.sharding,
-        shardManager,
-        [topGgSite, botsOnDiscordXyzSite, discordBotsGgSite, discordBotListComSite],
-        logs
-    );
+    let manager = new Manager(config.sharding, shardManager, [
+        topGgSite,
+        botsOnDiscordXyzSite,
+        discordBotsGgSite,
+        discordBotListComSite,
+    ]);
     await manager.start();
     setInterval(() => {
         manager.updateServerCount();

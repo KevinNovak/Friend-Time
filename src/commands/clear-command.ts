@@ -6,11 +6,13 @@ import { Logger, MessageSender } from '../services';
 import { MessageName } from '../services/language';
 import { Command } from './command';
 
+let Logs: Logs = require('../../lang/logs.en.json');
+
 export class ClearCommand implements Command {
     public name = 'clear';
     public requireGuild = false;
 
-    constructor(private msgSender: MessageSender, private logs: Logs, private userRepo: UserRepo) {}
+    constructor(private msgSender: MessageSender, private userRepo: UserRepo) {}
 
     public async execute(
         msg: Message,
@@ -21,7 +23,7 @@ export class ClearCommand implements Command {
 
         await this.msgSender.send(channel, MessageName.clearSuccess);
         Logger.info(
-            this.logs.clearSuccess
+            Logs.clearSuccess
                 .replace('{USERNAME}', msg.author.username)
                 .replace('{USER_ID}', msg.author.id)
         );

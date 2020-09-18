@@ -4,14 +4,12 @@ import { Logs } from '../models/logs';
 import { Logger } from '../services';
 import { EventHandler } from './event-handler';
 
-export class GuildLeaveHandler implements EventHandler {
-    constructor(private logs: Logs) {}
+let Logs: Logs = require('../../lang/logs.en.json');
 
+export class GuildLeaveHandler implements EventHandler {
     public async process(guild: Guild): Promise<void> {
         Logger.info(
-            this.logs.guildJoined
-                .replace('{GUILD_NAME}', guild.name)
-                .replace('{GUILD_ID}', guild.id)
+            Logs.guildJoined.replace('{GUILD_NAME}', guild.name).replace('{GUILD_ID}', guild.id)
         );
     }
 }

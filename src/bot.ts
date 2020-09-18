@@ -4,6 +4,8 @@ import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } 
 import { Logs } from './models/logs';
 import { Logger } from './services';
 
+let Logs: Logs = require('../lang/logs.en.json');
+
 export class Bot {
     private ready = false;
 
@@ -13,8 +15,7 @@ export class Bot {
         private guildLeaveHandler: GuildLeaveHandler,
         private messageHandler: MessageHandler,
         private reactionHandler: ReactionHandler,
-        private token: string,
-        private logs: Logs
+        private token: string
     ) {}
 
     public async start(): Promise<void> {
@@ -60,7 +61,7 @@ export class Bot {
         try {
             await this.guildJoinHandler.process(guild);
         } catch (error) {
-            Logger.error(this.logs.guildJoinError, error);
+            Logger.error(Logs.guildJoinError, error);
         }
     }
 
@@ -72,7 +73,7 @@ export class Bot {
         try {
             await this.guildLeaveHandler.process(guild);
         } catch (error) {
-            Logger.error(this.logs.guildLeaveError, error);
+            Logger.error(Logs.guildLeaveError, error);
         }
     }
 
@@ -84,7 +85,7 @@ export class Bot {
         try {
             await this.messageHandler.process(msg);
         } catch (error) {
-            Logger.error(this.logs.messageError, error);
+            Logger.error(Logs.messageError, error);
         }
     }
 
@@ -96,7 +97,7 @@ export class Bot {
         try {
             await this.reactionHandler.process(messageReaction, user);
         } catch (error) {
-            Logger.error(this.logs.reactionError, error);
+            Logger.error(Logs.reactionError, error);
         }
     }
 }

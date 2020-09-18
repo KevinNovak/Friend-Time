@@ -7,6 +7,8 @@ import { MessageName } from '../services/language';
 import { StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
 
+let Logs: Logs = require('../../lang/logs.en.json');
+
 export class ReactionHandler implements EventHandler {
     constructor(
         private emoji: string,
@@ -15,8 +17,7 @@ export class ReactionHandler implements EventHandler {
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
         private guildRepo: GuildRepo,
-        private userRepo: UserRepo,
-        private logs: Logs
+        private userRepo: UserRepo
     ) {}
 
     public async process(messageReaction: MessageReaction, reactor: User): Promise<void> {
@@ -43,7 +44,7 @@ export class ReactionHandler implements EventHandler {
             if (error instanceof DiscordAPIError && error.code === 50001) {
                 return;
             } else {
-                Logger.error(this.logs.retrievePartialReactionMessageError, error);
+                Logger.error(Logs.retrievePartialReactionMessageError, error);
                 return;
             }
         }

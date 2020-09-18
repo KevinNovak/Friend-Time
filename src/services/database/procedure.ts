@@ -5,6 +5,6 @@ export enum Procedure {
     Server_SetTimeFormat = 'Server_SetTimeFormat',
     User_Get = 'User_Get',
     User_GetDistinctTimeZones = 'User_GetDistinctTimeZones',
-    User_SetTimeZone = 'User_SetTimeZone',
     User_SetTimeFormat = 'User_SetTimeFormat',
+    User_SetTimeZone = 'User_SetTimeZone',
 }

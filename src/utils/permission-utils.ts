@@ -1,6 +1,16 @@
-import { Permissions, TextChannel } from 'discord.js';
+import { Permissions, TextChannel, User } from 'discord.js';
 
 export abstract class PermissionUtils {
+    public static isAdmin(user: User, channel: TextChannel): boolean {
+        let channelPerms = channel.permissionsFor(channel.client.user);
+        if (!channelPerms) {
+            // This can happen if the guild disconnected while a collector is running
+            return false;
+        }
+
+        return channel.permissionsFor(user).has('ADMINISTRATOR');
+    }
+
     public static canSend(channel: TextChannel): boolean {
         let channelPerms = channel.permissionsFor(channel.client.user);
         if (!channelPerms) {

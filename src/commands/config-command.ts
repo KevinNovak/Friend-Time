@@ -9,7 +9,7 @@ import {
     NotifyOption,
     ServerConfigName,
 } from '../services/language/server-config';
-import { UserUtils } from '../utils';
+import { PermissionUtils } from '../utils';
 import { Command } from './command';
 
 // TODO: This whole class needs refactored with the config options
@@ -37,7 +37,7 @@ export class ConfigCommand implements Command {
             return;
         }
 
-        if (!UserUtils.isAdmin(msg.author, channel as TextChannel)) {
+        if (!PermissionUtils.isAdmin(msg.author, channel as TextChannel)) {
             await this.msgSender.send(channel, MessageName.notAdmin);
             return;
         }

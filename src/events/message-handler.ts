@@ -102,7 +102,7 @@ export class MessageHandler implements EventHandler {
             let timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
 
             // TODO: Better way to find time format, consolidate
-            let timeFormat = this.timeFormatService.findTimeFormat(guildData.TimeFormat);
+            let timeFormat = this.timeFormatService.getTimeFormat(guildData.TimeFormat);
             let format = this.timeParser.dayIsCertain(result.start)
                 ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
                 : timeFormat.timeFormat;

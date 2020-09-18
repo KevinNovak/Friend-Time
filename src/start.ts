@@ -20,6 +20,7 @@ import { InternalLanguage } from './models/internal-language';
 import { Language } from './models/language';
 import { GuildRepo, UserRepo } from './repos';
 import {
+    Logger,
     MessageBuilder,
     MessageSender,
     ReminderService,
@@ -121,12 +122,7 @@ async function start(): Promise<void> {
 }
 
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled promise rejection:', promise);
-    if (reason instanceof Error) {
-        console.error(reason.stack);
-    } else {
-        console.error(reason);
-    }
+    Logger.error('Unhandled promise rejection.', reason);
 });
 
 start();

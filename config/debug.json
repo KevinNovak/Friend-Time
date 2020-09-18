@@ -1,0 +1,12 @@
+{
+    "override": {
+        "shardMode": {
+            "enabled": false,
+            "value": "process"
+        },
+        "shardCount": {
+            "enabled": false,
+            "value": 2
+        }
+    }
+}

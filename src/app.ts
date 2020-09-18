@@ -13,11 +13,14 @@ import {
 import { ShardUtils } from './utils';
 
 let Config: ConfigSchema = require('../config/config.json');
+let Debug = require('../config/debug.json');
 let Logs: LogsSchema = require('../lang/logs.en.json');
 
 async function start(): Promise<void> {
-    // Dependency Injection
+    Logger.info(Logs.appStarted);
     let httpService = new HttpService();
+
+    // Bot sites
     let topGgSite = new TopGgSite(Config.botSites.topGg, httpService);
     let botsOnDiscordXyzSite = new BotsOnDiscordXyzSite(
         Config.botSites.botsOnDiscordXyz,
@@ -29,14 +32,15 @@ async function start(): Promise<void> {
         httpService
     );
 
-    Logger.info(Logs.appStarted);
-
+    // Sharding
     let totalShards = 0;
     try {
-        totalShards = await ShardUtils.getRecommendedShards(
-            Config.client.token,
-            Config.sharding.serversPerShard
-        );
+        totalShards = Debug.override.shardCount.enabled
+            ? Debug.override.shardCount.value
+            : await ShardUtils.getRecommendedShards(
+                  Config.client.token,
+                  Config.sharding.serversPerShard
+              );
     } catch (error) {
         Logger.error(Logs.shardCountError, error);
         return;
@@ -55,7 +59,7 @@ async function start(): Promise<void> {
 
     let shardManager = new ShardingManager('dist/start.js', {
         token: Config.client.token,
-        mode: 'worker',
+        mode: Debug.override.shardMode.enabled ? Debug.override.shardMode.value : 'worker',
         respawn: true,
         totalShards,
         shardList: myShardIds,
@@ -67,6 +71,8 @@ async function start(): Promise<void> {
         discordBotsGgSite,
         discordBotListComSite,
     ]);
+
+    // Start
     await manager.start();
     setInterval(() => {
         manager.updateServerCount();

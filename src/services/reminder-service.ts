@@ -1,13 +1,13 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
+import { MessageSender } from '.';
 import { GuildData } from '../models/database-models';
-import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
+import { MessageName } from './language';
 
-export class ReminderCommand {
+export class ReminderService {
     constructor(private msgSender: MessageSender) {}
 
-    public async execute(
+    public async remind(
         msg: Message,
         channel: TextChannel | DMChannel,
         guildData?: GuildData

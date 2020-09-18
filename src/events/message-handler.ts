@@ -1,9 +1,15 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
-import { Command, HelpCommand, ReminderCommand } from '../commands';
+import { Command, HelpCommand } from '../commands';
 import { GuildData } from '../models/database-models';
 import { GuildRepo, UserRepo } from '../repos';
-import { MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
+import {
+    MessageSender,
+    ReminderService,
+    TimeFormatService,
+    TimeParser,
+    ZoneService,
+} from '../services';
 import { LanguageService, MessageName } from '../services/language';
 import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
@@ -16,7 +22,6 @@ export class MessageHandler implements EventHandler {
         private prefix: string,
         private emoji: string,
         private helpCommand: HelpCommand,
-        private reminderCommand: ReminderCommand,
         private commands: Command[],
         private guildRepo: GuildRepo,
         private userRepo: UserRepo,
@@ -24,6 +29,7 @@ export class MessageHandler implements EventHandler {
         private timeParser: TimeParser,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
+        private reminderService: ReminderService,
         private langService: LanguageService
     ) {}
 
@@ -76,7 +82,7 @@ export class MessageHandler implements EventHandler {
 
         if (shouldConvert) {
             if (!userData?.TimeZone) {
-                await this.reminderCommand.execute(msg, channel, guildData);
+                await this.reminderService.remind(msg, channel, guildData);
                 return;
             }
 

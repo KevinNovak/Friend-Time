@@ -10,7 +10,6 @@ import {
     InfoCommand,
     InviteCommand,
     MapCommand,
-    ReminderCommand,
     SetCommand,
     SupportCommand,
     TimeCommand,
@@ -23,6 +22,7 @@ import { GuildRepo, UserRepo } from './repos';
 import {
     MessageBuilder,
     MessageSender,
+    ReminderService,
     TimeFormatService,
     TimeParser,
     ZoneService,
@@ -54,8 +54,8 @@ async function start(): Promise<void> {
     let timeParser = new TimeParser(config.experience.blacklist);
     let zoneService = new ZoneService(config.validation.regions, timeParser);
     let timeFormatService = new TimeFormatService(config.experience.timeFormats);
+    let reminderService = new ReminderService(msgSender);
     let helpCommand = new HelpCommand(msgSender);
-    let reminderCommand = new ReminderCommand(msgSender);
     let setCommand = new SetCommand(msgSender, internalLang.logs, zoneService, userRepo);
     let mapCommand = new MapCommand(msgSender);
     let clearCommand = new ClearCommand(msgSender, internalLang.logs, userRepo);
@@ -77,7 +77,6 @@ async function start(): Promise<void> {
         config.prefix,
         config.emojis.convert,
         helpCommand,
-        reminderCommand,
         [
             setCommand,
             mapCommand,
@@ -96,6 +95,7 @@ async function start(): Promise<void> {
         timeParser,
         zoneService,
         timeFormatService,
+        reminderService,
         langService
     );
     let reactionHandler = new ReactionHandler(

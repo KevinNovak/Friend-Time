@@ -32,7 +32,6 @@ import { DataAccess } from './services/database/data-access';
 import { LanguageService } from './services/language';
 
 let Config: ConfigSchema = require('../config/config.json');
-let Logs: LogsSchema = require('../lang/logs.en.json');
 
 let langEn: Language = require('../lang/lang.en.json');
 

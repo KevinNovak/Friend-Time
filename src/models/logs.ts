@@ -28,4 +28,6 @@ export interface LogsSchema {
     sendMessageError: string;
     messageError: string;
     reactionError: string;
+    commandDmError: string;
+    commandGuildError: string;
 }

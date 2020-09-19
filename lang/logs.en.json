@@ -28,5 +28,7 @@
     "createDmChannelError": "An error occurred while creating a direct message channel.",
     "sendMessageError": "An error occurred while sending a message.",
     "messageError": "An error occurred while processing a message.",
-    "reactionError": "An error occurred while processing a reaction."
+    "reactionError": "An error occurred while processing a reaction.",
+    "commandDmError": "[{MESSAGE_ID}] An error occurred while executing the '{COMMAND_NAME}' command for '{SENDER_TAG}' ({SENDER_ID}) in direct message.",
+    "commandGuildError": "[{MESSAGE_ID}] An error occurred while executing the '{COMMAND_NAME}' command for '{SENDER_TAG}' ({SENDER_ID}) in channel '{CHANNEL_NAME}' ({CHANNEL_ID}) in guild '{GUILD_NAME}' ({GUILD_ID})."
 }

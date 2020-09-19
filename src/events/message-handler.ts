@@ -2,8 +2,10 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { Command, HelpCommand } from '../commands';
 import { GuildData } from '../models/database-models';
+import { LogsSchema } from '../models/logs';
 import { GuildRepo, UserRepo } from '../repos';
 import {
+    Logger,
     MessageSender,
     ReminderService,
     TimeFormatService,
@@ -13,6 +15,8 @@ import {
 import { LanguageService, MessageName } from '../services/language';
 import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
+
+let Logs: LogsSchema = require('../../lang/logs.en.json');
 
 export class MessageHandler implements EventHandler {
     // Move to config?
@@ -178,7 +182,37 @@ export class MessageHandler implements EventHandler {
         }
 
         // Run the command
-        await command.execute(msg, args.slice(2), channel, userData, guildData);
+        try {
+            await command.execute(msg, args.slice(2), channel, userData, guildData);
+        } catch (error) {
+            if (channel instanceof DMChannel) {
+                Logger.error(
+                    Logs.commandDmError
+                        .replace('{MESSAGE_ID}', msg.id)
+                        .replace('{COMMAND_NAME}', command.name)
+                        .replace('{SENDER_TAG}', msg.author.tag)
+                        .replace('{SENDER_ID}', msg.author.id),
+                    error
+                );
+                return;
+            }
+
+            if (channel instanceof TextChannel) {
+                Logger.error(
+                    Logs.commandGuildError
+                        .replace('{MESSAGE_ID}', msg.id)
+                        .replace('{COMMAND_NAME}', command.name)
+                        .replace('{SENDER_TAG}', msg.author.tag)
+                        .replace('{SENDER_ID}', msg.author.id)
+                        .replace('{CHANNEL_NAME}', channel.name)
+                        .replace('{CHANNEL_ID}', channel.id)
+                        .replace('{GUILD_NAME}', msg.guild.name)
+                        .replace('{GUILD_ID}', msg.guild.id),
+                    error
+                );
+                return;
+            }
+        }
     }
 
     private findCommand(userCommand: string): Command {

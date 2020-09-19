@@ -17,7 +17,6 @@ import {
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { ConfigSchema } from './models/config-models';
 import { Language } from './models/language';
-import { LogsSchema } from './models/logs';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,

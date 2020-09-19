@@ -65,7 +65,7 @@ async function start(): Promise<void> {
         shardList: myShardIds,
     });
 
-    let manager = new Manager(Config.sharding, shardManager, [
+    let manager = new Manager(shardManager, [
         topGgSite,
         botsOnDiscordXyzSite,
         discordBotsGgSite,

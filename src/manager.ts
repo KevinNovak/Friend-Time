@@ -1,26 +1,24 @@
-import { ShardingManager } from 'discord.js';
+import { Shard, ShardingManager } from 'discord.js';
 
-import { ShardingConfig } from './models/config-models';
+import { ConfigSchema } from './models/config-models';
 import { LogsSchema } from './models/logs';
 import { Logger } from './services';
 import { BotSite } from './services/sites';
+import { ShardUtils } from './utils';
 
+let Config: ConfigSchema = require('../config/config.json');
 let Logs: LogsSchema = require('../lang/logs.en.json');
 
 export class Manager {
-    constructor(
-        private shardingConfig: ShardingConfig,
-        private shardManager: ShardingManager,
-        private botSites: BotSite[]
-    ) {}
+    constructor(private shardManager: ShardingManager, private botSites: BotSite[]) {}
 
     public async start(): Promise<void> {
         this.registerListeners();
         try {
             await this.shardManager.spawn(
                 this.shardManager.totalShards,
-                this.shardingConfig.spawnDelay * 1000,
-                this.shardingConfig.spawnTimeout * 1000
+                Config.sharding.spawnDelay * 1000,
+                Config.sharding.spawnTimeout * 1000
             );
         } catch (error) {
             Logger.error(Logs.spawnShardError, error);
@@ -32,7 +30,7 @@ export class Manager {
     public async updateServerCount(): Promise<void> {
         let serverCount: number;
         try {
-            serverCount = await this.retrieveServerCount();
+            serverCount = await ShardUtils.retrieveServerCount(this.shardManager);
         } catch (error) {
             Logger.error(Logs.retrieveServerCountError, error);
             return;
@@ -73,22 +71,11 @@ export class Manager {
             Logger.info(Logs.updateServerCountSite.replace('{BOT_SITE}', botSite.name));
         }
     }
-
-    private async retrieveServerCount(): Promise<number> {
-        let shardSizes: number[];
-        try {
-            shardSizes = await this.shardManager.fetchClientValues('guilds.cache.size');
-        } catch (error) {
-            throw error;
-        }
-        return shardSizes.reduce((prev, val) => prev + val, 0);
-    }
-
     private registerListeners(): void {
         this.shardManager.on('shardCreate', shard => this.onShardCreate(shard));
     }
 
-    private onShardCreate(shard: import('discord.js').Shard): void {
+    private onShardCreate(shard: Shard): void {
         Logger.info(Logs.launchedShard.replace('{SHARD_ID}', shard.id.toString()));
     }
 }

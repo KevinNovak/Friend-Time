@@ -47,8 +47,6 @@ export interface Messages {
     helpMessage: string | string[];
     configTitle: string | string[];
     configMessage: string | string[];
-    infoTitle: string | string[];
-    infoMessage: string | string[];
     setProvideZone: string | string[];
     setSuccess: string | string[];
     mapTitle: string | string[];

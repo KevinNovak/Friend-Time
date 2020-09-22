@@ -3,8 +3,6 @@ export enum MessageName {
     helpMessage = 'helpMessage',
     configTitle = 'configTitle',
     configMessage = 'configMessage',
-    infoTitle = 'infoTitle',
-    infoMessage = 'infoMessage',
     setProvideZone = 'setProvideZone',
     setSuccess = 'setSuccess',
     mapTitle = 'mapTitle',

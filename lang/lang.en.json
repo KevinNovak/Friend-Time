@@ -51,17 +51,6 @@
             "**-ft config format <12/24>** - Change the servers time format, `12` or `24` hours.",
             "**-ft config notify <on/off>** - Enable or disable reminders for users who don't have a time zone set."
         ],
-        "infoTitle": "Friend Time - Info",
-        "infoMessage": [
-            "**Author**: Kevin Novak",
-            "**Source Code**: https://github.com/KevinNovak/Friend-Time",
-            "",
-            "See below for other useful information.",
-            "",
-            "**-ft invite** - Invite Friend Time to your server.",
-            "**-ft support** - Get help or report an issue.",
-            "**-ft donate** - Donate to keep Friend Time running!"
-        ],
         "setProvideZone": [
             "Please provide a time zone!",
             "",

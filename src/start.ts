@@ -1,4 +1,6 @@
 import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
+import { MultilingualService } from 'discord.js-multilingual-utils';
+import path from 'path';
 
 import { Bot } from './bot';
 import {
@@ -44,7 +46,8 @@ async function start(): Promise<void> {
     };
 
     // Dependency Injection
-    let langService = new LanguageService([langEn]);
+    let multilingualService = new MultilingualService(path.join(__dirname, '../lang/new'));
+    let langService = new LanguageService(multilingualService, [langEn]);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(Config.mysql);
     let guildRepo = new GuildRepo(dataAccess);

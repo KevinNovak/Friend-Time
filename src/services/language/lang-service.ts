@@ -1,10 +1,17 @@
+import { MessageEmbed } from 'discord.js';
+import { MultilingualService } from 'discord.js-multilingual-utils';
+
 import { Language } from '../../models/language';
 import { LangCode } from './lang-code';
 import { MessageName } from './message-name';
 import { ServerConfigName } from './server-config';
 
 export class LanguageService {
-    constructor(private languages: Language[]) {}
+    constructor(private multilingualService: MultilingualService, private languages: Language[]) {}
+
+    public getEmbed(embedName: string, variables?: { [name: string]: string }): MessageEmbed {
+        return this.multilingualService.getEmbed(embedName, 'en', variables);
+    }
 
     public getMessage(messageName: MessageName): string {
         let message = this.findLang(LangCode.en).messages[messageName];

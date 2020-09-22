@@ -8,6 +8,15 @@ import { MessageBuilder } from './message-builder';
 export class MessageSender {
     constructor(private msgBuilder: MessageBuilder, private langService: LanguageService) {}
 
+    public async sendEmbed(
+        channel: TextChannel | DMChannel,
+        embedName: string,
+        variables?: { [name: string]: string }
+    ): Promise<void> {
+        let embed = this.langService.getEmbed(embedName, variables);
+        await MessageUtils.send(channel, embed);
+    }
+
     public async send(
         channel: TextChannel | DMChannel,
         messageName: MessageName,

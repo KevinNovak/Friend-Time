@@ -2,7 +2,7 @@ import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
 import { GuildRepo } from '../repos';
 import { MessageSender } from '../services';
-import { LanguageService, MessageName } from '../services/language';
+import { MessageName } from '../services/language';
 import {
     FormatOption,
     ModeOption,
@@ -17,11 +17,7 @@ export class ConfigCommand implements Command {
     public name = 'config';
     public requireGuild = true;
 
-    constructor(
-        private msgSender: MessageSender,
-        private guildRepo: GuildRepo,
-        private langService: LanguageService
-    ) {}
+    constructor(private msgSender: MessageSender, private guildRepo: GuildRepo) {}
 
     public async execute(
         msg: Message,
@@ -43,28 +39,24 @@ export class ConfigCommand implements Command {
         }
 
         let subCommand = args[0].toLowerCase();
-        let modeConfigName = this.langService.getConfigName(ServerConfigName.mode);
-        let formatConfigName = this.langService.getConfigName(ServerConfigName.format);
-        let notifyConfigName = this.langService.getConfigName(ServerConfigName.notify);
 
-        if (![modeConfigName, formatConfigName, notifyConfigName].includes(subCommand)) {
-            await this.msgSender.send(channel, MessageName.configNotFound);
-            return;
-        }
-
-        if (subCommand === modeConfigName) {
-            this.processConfigMode(channel, msg.guild, args.slice(1));
-            return;
-        }
-
-        if (subCommand === formatConfigName) {
-            this.processConfigFormat(channel, msg.guild, args.slice(1));
-            return;
-        }
-
-        if (subCommand === notifyConfigName) {
-            this.processConfigNotify(channel, msg.guild, args.slice(1));
-            return;
+        switch (subCommand) {
+            case ServerConfigName.mode: {
+                this.processConfigMode(channel, msg.guild, args.slice(1));
+                return;
+            }
+            case ServerConfigName.format: {
+                this.processConfigFormat(channel, msg.guild, args.slice(1));
+                return;
+            }
+            case ServerConfigName.notify: {
+                this.processConfigNotify(channel, msg.guild, args.slice(1));
+                return;
+            }
+            default: {
+                await this.msgSender.send(channel, MessageName.configNotFound);
+                return;
+            }
         }
     }
 
@@ -79,24 +71,14 @@ export class ConfigCommand implements Command {
             return;
         }
 
-        let onOption = this.langService.getConfigOptionName(
-            ServerConfigName.notify,
-            NotifyOption.on
-        );
-        let offOption = this.langService.getConfigOptionName(
-            ServerConfigName.notify,
-            NotifyOption.off
-        );
-
-        let notifyInput = args[0].toLowerCase();
-        if (![onOption, offOption].includes(notifyInput)) {
+        let input = args[0].toLowerCase();
+        if (![NotifyOption.on.toString(), NotifyOption.off.toString()].includes(input)) {
             await this.msgSender.send(channel, MessageName.configNotifyInvalidValue);
             return;
         }
 
-        // TODO: Better way to resolve options
         let option = true;
-        if (notifyInput === offOption) {
+        if (input === NotifyOption.off) {
             option = false;
         }
 
@@ -105,7 +87,7 @@ export class ConfigCommand implements Command {
         await this.msgSender.send(channel, MessageName.configNotifySuccess, [
             {
                 name: '{NOTIFY}',
-                value: notifyInput,
+                value: input,
             },
         ]);
     }
@@ -121,34 +103,23 @@ export class ConfigCommand implements Command {
             return;
         }
 
-        let twelveOption = this.langService.getConfigOptionName(
-            ServerConfigName.format,
-            FormatOption.twelve
-        );
-        let twentyFourOption = this.langService.getConfigOptionName(
-            ServerConfigName.format,
-            FormatOption.twentyFour
-        );
-
-        let formatInput = args[0].toLowerCase();
-        if (![twelveOption, twentyFourOption].includes(formatInput)) {
+        let input = args[0].toLowerCase();
+        if (![FormatOption.twelve.toString(), FormatOption.twentyFour.toString()].includes(input)) {
             await this.msgSender.send(channel, MessageName.configFormatInvalidValue);
             return;
         }
 
-        // TODO: Better way to resolve options
         let option = '12';
-        if (formatInput === twentyFourOption) {
+        if (input === FormatOption.twentyFour) {
             option = '24';
         }
 
-        // TODO: Implement
         await this.guildRepo.setTimeFormat(guild.id, option);
 
         await this.msgSender.send(channel, MessageName.configFormatSuccess, [
             {
                 name: '{FORMAT}',
-                value: formatInput,
+                value: input,
             },
         ]);
     }
@@ -164,24 +135,14 @@ export class ConfigCommand implements Command {
             return;
         }
 
-        let reactOption = this.langService.getConfigOptionName(
-            ServerConfigName.mode,
-            ModeOption.react
-        );
-        let listOption = this.langService.getConfigOptionName(
-            ServerConfigName.mode,
-            ModeOption.list
-        );
-
-        let modeInput = args[0].toLowerCase();
-        if (![reactOption, listOption].includes(modeInput)) {
+        let input = args[0].toLowerCase();
+        if (![ModeOption.react.toString(), ModeOption.list.toString()].includes(input)) {
             await this.msgSender.send(channel, MessageName.configModeInvalidValue);
             return;
         }
 
-        // TODO: Better way to resolve options
         let option = 'React';
-        if (modeInput === listOption) {
+        if (input === ModeOption.list) {
             option = 'List';
         }
 
@@ -190,7 +151,7 @@ export class ConfigCommand implements Command {
         await this.msgSender.send(channel, MessageName.configModeSuccess, [
             {
                 name: '{MODE}',
-                value: modeInput,
+                value: input,
             },
         ]);
     }

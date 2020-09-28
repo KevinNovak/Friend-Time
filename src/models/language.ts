@@ -2,44 +2,7 @@ import { LangCode } from '../services/language';
 
 export interface Language {
     langCode: LangCode;
-    serverConfig: ServerConfig;
     messages: Messages;
-}
-
-export interface ServerConfig {
-    mode: Mode;
-    format: Format;
-    notify: Notify;
-}
-
-export interface Mode {
-    name: string;
-    options: ModeOptions;
-}
-
-export interface ModeOptions {
-    react: string;
-    list: string;
-}
-
-export interface Format {
-    name: string;
-    options: FormatOptions;
-}
-
-export interface FormatOptions {
-    twelve: string;
-    twentyFour: string;
-}
-
-export interface Notify {
-    name: string;
-    options: NotifyOptions;
-}
-
-export interface NotifyOptions {
-    on: string;
-    off: string;
 }
 
 export interface Messages {

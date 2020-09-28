@@ -1,4 +1,4 @@
 export enum FormatOption {
-    twelve = 'twelve',
-    twentyFour = 'twentyFour',
+    twelve = '12',
+    twentyFour = '24',
 }

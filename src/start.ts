@@ -64,7 +64,7 @@ async function start(): Promise<void> {
     let clearCommand = new ClearCommand(msgSender, userRepo);
     let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
     let formatCommand = new FormatCommand(msgSender, userRepo, timeFormatService);
-    let configCommand = new ConfigCommand(msgSender, guildRepo, langService);
+    let configCommand = new ConfigCommand(msgSender, guildRepo);
     let infoCommand = new InfoCommand(msgSender);
     let inviteCommand = new InviteCommand(msgSender);
     let supportCommand = new SupportCommand(msgSender);

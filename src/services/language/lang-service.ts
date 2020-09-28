@@ -4,7 +4,6 @@ import { MultilingualService } from 'discord.js-multilingual-utils';
 import { Language } from '../../models/language';
 import { LangCode } from './lang-code';
 import { MessageName } from './message-name';
-import { ServerConfigName } from './server-config';
 
 export class LanguageService {
     constructor(private multilingualService: MultilingualService, private languages: Language[]) {}
@@ -19,14 +18,6 @@ export class LanguageService {
             return message.join('\n');
         }
         return message;
-    }
-
-    public getConfigName(configName: ServerConfigName): string {
-        return this.findLang(LangCode.en).serverConfig[configName].name;
-    }
-
-    public getConfigOptionName(configName: ServerConfigName, option: string): string {
-        return this.findLang(LangCode.en).serverConfig[configName].options[option];
     }
 
     private findLang(langCode: LangCode): Language {

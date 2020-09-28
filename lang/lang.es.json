@@ -1,28 +1,5 @@
 {
     "langCode": "es",
-    "serverConfig": {
-        "mode": {
-            "name": "mode",
-            "options": {
-                "react": "react",
-                "list": "list"
-            }
-        },
-        "format": {
-            "name": "format",
-            "options": {
-                "twelve": "12",
-                "twentyFour": "24"
-            }
-        },
-        "notify": {
-            "name": "notify",
-            "options": {
-                "on": "on",
-                "off": "off"
-            }
-        }
-    },
     "messages": {
         "helpTitle": "Friend Time - Ayuda",
         "helpMessage": [

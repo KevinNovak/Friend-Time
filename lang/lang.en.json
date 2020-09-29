@@ -47,13 +47,13 @@
         "map": {
             "title": "Friend Time - Map",
             "description": [
-                "Please visit the following link and choose your time zone:",
-                "<https://kevinnovak.github.io/Time-Zone-Picker/>",
+                "A map of time zones can be found [here]({{REF:linkMap}}). Simply click on a location and copy the selected time zone.",
                 "",
                 "Then enter **-ft set <zone>** with your time zone.",
-                "For example: *-ft set America/New_York*",
                 "",
-                "**Note**: Use a time zone in the format **<region>/<city>**. For example: *America/New_York*. Time zone abbreviations like *EST* or *GMT* will not work. Shorthand can also be used and Friend Time will find the closest option: *-ft set new york*."
+                "**Note**: Please do not use time zone abbreviations like EST or GMT, rather your time zone should be in the format **<region>/<city>**.",
+                "",
+                "***Example***: `-ft set America/New_York`"
             ]
         },
         "clearSuccess": {
@@ -187,6 +187,7 @@
         "linkAuthor": "[Kevin Novak](https://github.com/KevinNovak)",
         "linkDonate": "[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)",
         "linkSupport": "[Join Support Server](https://discord.gg/GQcBR8e)",
-        "linkInvite": "[Invite Friend Time to a Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
+        "linkInvite": "[Invite Friend Time to a Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)",
+        "linkMap": "https://kevinnovak.github.io/Time-Zone-Picker/"
     }
 }

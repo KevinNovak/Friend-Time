@@ -47,13 +47,13 @@
         "map": {
             "title": "Friend Time - Mapa",
             "description": [
-                "Por favor, visita el siguiente enlace y elige tu zona horaria",
-                "<https://kevinnovak.github.io/Time-Zone-Picker/>",
+                "Puedes encontrar un mapa de la zonas horarias [aquí]({{REF:linkMap}}). Solo haz clic en una localidad y copia la zona horaria seleccionada.",
                 "",
-                "A continuación, introduce **-ft set <zona>** con tu zona horaria",
-                "Por ejemplo: *-ft set America/New_York*",
+                "Luego introduce **-ft set <zona>** usando la zona horaria seleccionada.",
                 "",
-                "**Nota**: Usa una zona horaria en el formato **<región>/<ciudad>**. Por ejemplo: *America/New_York*. Las zonas horarias como *EST* o *GMT* no funcionarán. Puedes abreviar las ciudades, y Friend Time buscará la opción más aproximada: *-ft set new york*."
+                "**Nota**: Por favor ,no uses abreviaciones de zonas horarias como EST o GMT, utiliza siempre el formato **<región>/<ciudad>**.",
+                "",
+                "***Ejemplo***: `-ft set America/New_York`"
             ]
         },
         "clearSuccess": {

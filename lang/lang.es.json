@@ -49,7 +49,7 @@
             "description": [
                 "Puedes encontrar un mapa de las zonas horarias [aquí]({{REF:linkMap}}). Solo haz clic en una localidad y copia la zona horaria seleccionada.",
                 "",
-                "Luego introduce **-ft set <zona>** usando la zona horaria seleccionada.",
+                "Luego, introduce **-ft set <zona>** usando la zona horaria seleccionada.",
                 "",
                 "**Nota**: Por favor, no uses abreviaciones de zonas horarias como EST o GMT; utiliza siempre el formato **<región>/<ciudad>**.",
                 "",

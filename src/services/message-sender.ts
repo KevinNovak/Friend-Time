@@ -6,6 +6,15 @@ import { LanguageService } from './language/lang-service';
 export class MessageSender {
     constructor(private langService: LanguageService) {}
 
+    public async send(
+        channel: TextChannel | DMChannel,
+        messageName: string,
+        variables?: { [name: string]: string }
+    ): Promise<void> {
+        let message = this.langService.getEmbed(messageName, variables).description;
+        await MessageUtils.send(channel, message);
+    }
+
     public async sendEmbed(
         channel: TextChannel | DMChannel,
         embedName: string,

@@ -12,7 +12,6 @@ import {
     TimeParser,
     ZoneService,
 } from '../services';
-import { LanguageService, MessageName } from '../services/language';
 import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
 
@@ -33,8 +32,7 @@ export class MessageHandler implements EventHandler {
         private timeParser: TimeParser,
         private zoneService: ZoneService,
         private timeFormatService: TimeFormatService,
-        private reminderService: ReminderService,
-        private langService: LanguageService
+        private reminderService: ReminderService
     ) {}
 
     public async process(msg: Message): Promise<void> {
@@ -69,8 +67,7 @@ export class MessageHandler implements EventHandler {
         // Check if I have permission to send a message
         if (channel instanceof TextChannel && !PermissionUtils.canSendEmbed(channel)) {
             if (PermissionUtils.canSend(channel)) {
-                let message = this.langService.getMessage(MessageName.noPermToSendEmbed);
-                await MessageUtils.send(channel, message);
+                await this.msgSender.send(channel, 'noPermToSendEmbed');
             }
             return;
         }

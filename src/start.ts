@@ -18,7 +18,6 @@ import {
 } from './commands';
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { ConfigSchema } from './models/config-models';
-import { Language } from './models/language';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
@@ -33,8 +32,6 @@ import { LanguageService } from './services/language';
 
 let Config: ConfigSchema = require('../config/config.json');
 
-let langEn: Language = require('../lang/lang.en.json');
-
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
         ws: { intents: Config.client.intents as IntentsString[] },
@@ -46,7 +43,7 @@ async function start(): Promise<void> {
 
     // Dependency Injection
     let multilingualService = new MultilingualService(path.join(__dirname, '../lang/new'));
-    let langService = new LanguageService(multilingualService, [langEn]);
+    let langService = new LanguageService(multilingualService);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(Config.mysql);
     let guildRepo = new GuildRepo(dataAccess);
@@ -91,8 +88,7 @@ async function start(): Promise<void> {
         timeParser,
         zoneService,
         timeFormatService,
-        reminderService,
-        langService
+        reminderService
     );
     let reactionHandler = new ReactionHandler(
         Config.emojis.convert,

@@ -20,6 +20,7 @@ import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } 
 import { ConfigSchema } from './models/config-models';
 import { GuildRepo, UserRepo } from './repos';
 import {
+    LanguageService,
     Logger,
     MessageSender,
     ReminderService,
@@ -28,7 +29,6 @@ import {
     ZoneService,
 } from './services';
 import { DataAccess } from './services/database/data-access';
-import { LanguageService } from './services/language';
 
 let Config: ConfigSchema = require('../config/config.json');
 

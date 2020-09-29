@@ -1,7 +1,7 @@
 import { DMChannel, TextChannel } from 'discord.js';
 
 import { MessageUtils } from '../utils';
-import { LanguageService } from './language/lang-service';
+import { LanguageService } from './language-service';
 
 export class MessageSender {
     constructor(private langService: LanguageService) {}

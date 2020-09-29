@@ -1,13 +1,13 @@
 import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
-import { GuildRepo } from '../repos';
-import { MessageSender } from '../services';
 import {
     FormatOption,
     ModeOption,
     NotifyOption,
     ServerConfigName,
-} from '../services/language/server-config';
+} from '../models/server-config-models';
+import { GuildRepo } from '../repos';
+import { MessageSender } from '../services';
 import { PermissionUtils } from '../utils';
 import { Command } from './command';
 

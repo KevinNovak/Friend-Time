@@ -15,10 +15,6 @@ export class DonateCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(
-            channel,
-            MessageName.donateMessage,
-            MessageName.donateTitle
-        );
+        await this.msgSender.sendEmbed(channel, 'donate');
     }
 }

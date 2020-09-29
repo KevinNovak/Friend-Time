@@ -21,7 +21,7 @@ export class ClearCommand implements Command {
     ): Promise<void> {
         await this.userRepo.clearTimeZone(msg.author.id);
 
-        await this.msgSender.send(channel, MessageName.clearSuccess);
+        await this.msgSender.sendEmbed(channel, 'clearSuccess');
         Logger.info(
             Logs.clearSuccess
                 .replace('{USERNAME}', msg.author.username)

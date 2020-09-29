@@ -15,10 +15,6 @@ export class InviteCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(
-            channel,
-            MessageName.inviteMessage,
-            MessageName.inviteTitle
-        );
+        await this.msgSender.sendEmbed(channel, 'invite');
     }
 }

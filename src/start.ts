@@ -22,7 +22,6 @@ import { Language } from './models/language';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
-    MessageBuilder,
     MessageSender,
     ReminderService,
     TimeFormatService,
@@ -52,8 +51,7 @@ async function start(): Promise<void> {
     let dataAccess = new DataAccess(Config.mysql);
     let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
-    let msgBuilder = new MessageBuilder(Config.colors.default);
-    let msgSender = new MessageSender(msgBuilder, langService);
+    let msgSender = new MessageSender(langService);
     let timeParser = new TimeParser(Config.experience.blacklist);
     let zoneService = new ZoneService(Config.validation.regions, timeParser);
     let timeFormatService = new TimeFormatService(Config.experience.timeFormats);

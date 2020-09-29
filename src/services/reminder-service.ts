@@ -18,8 +18,8 @@ export class ReminderService {
             return;
         }
 
-        await this.msgSender.send(channel, MessageName.noZoneSetReminder, [
-            { name: '{AUTHOR_ID}', value: msg.author.id },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'noZoneSetReminder', {
+            AUTHOR_ID: msg.author.id,
+        });
     }
 }

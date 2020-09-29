@@ -177,7 +177,7 @@ export class MessageHandler implements EventHandler {
         }
 
         if (command.requireGuild && !(channel instanceof TextChannel)) {
-            await this.msgSender.send(channel, MessageName.serverOnly);
+            await this.msgSender.sendEmbed(channel, 'serverOnly');
             return;
         }
 

@@ -15,6 +15,6 @@ export class HelpCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(channel, MessageName.helpMessage, MessageName.helpTitle);
+        await this.msgSender.sendEmbed(channel, 'help');
     }
 }

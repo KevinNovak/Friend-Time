@@ -15,10 +15,6 @@ export class SupportCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(
-            channel,
-            MessageName.supportMessage,
-            MessageName.supportTitle
-        );
+        await this.msgSender.sendEmbed(channel, 'support');
     }
 }

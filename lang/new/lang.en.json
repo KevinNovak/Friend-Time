@@ -3,6 +3,103 @@
         "color": "0x0099ff"
     },
     "embeds": {
+        "help": {
+            "title": "Friend Time - Help",
+            "description": [
+                "Friend Time will automatically react with 🕰️ to times mentioned in chat. If you also react, you will be messaged with the time converted to your time zone.",
+                "",
+                "**-ft set *<zone>*** - Set yourself to a time zone.",
+                "**-ft map** - View a map of available time zones.",
+                "**-ft clear** - Clear your time zone.",
+                "**-ft time** - Get the current time.",
+                "**-ft time *<user>*** - Get the current time of a user.",
+                "**-ft time *<zone>*** -  Get the current time of a time zone.",
+                "**-ft format <12/24>** - Set your time format, `12` or `24` hours.",
+                "**-ft config** - Change server settings, for admins.",
+                "**-ft info** - More information about Friend Time.",
+                "",
+                "{{REF:linkSupport}}",
+                "{{REF:linkInvite}}"
+            ]
+        },
+        "config": {
+            "title": "Friend Time - Server Configuration",
+            "description": [
+                "For server admins only.",
+                "",
+                "**Note**: You must have the `Administrator` permission to use the below commands.",
+                "",
+                "**-ft config mode <react/list>** - Change the mode that is used for converting times.",
+                "**-ft config format <12/24>** - Change the servers time format, `12` or `24` hours.",
+                "**-ft config notify <on/off>** - Enable or disable reminders for users who don't have a time zone set."
+            ]
+        },
+        "setProvideZone": {
+            "description": [
+                "Please provide a time zone!",
+                "",
+                "Type **-ft map** to view a map of available timezones."
+            ]
+        },
+        "setSuccess": {
+            "description": "Set your time zone to **{{ZONE}}**!"
+        },
+        "map": {
+            "title": "Friend Time - Map",
+            "description": [
+                "Please visit the following link and choose your time zone:",
+                "<https://kevinnovak.github.io/Time-Zone-Picker/>",
+                "",
+                "Then enter **-ft set <zone>** with your time zone.",
+                "For example: *-ft set America/New_York*",
+                "",
+                "**Note**: Use a time zone in the format **<region>/<city>**. For example: *America/New_York*. Time zone abbreviations like *EST* or *GMT* will not work. Shorthand can also be used and Friend Time will find the closest option: *-ft set new york*."
+            ]
+        },
+        "clearSuccess": {
+            "description": "Cleared your time zone!"
+        },
+        "timeSelfSuccess": {
+            "description": "It is currently **{{TIME}}** in **{{ZONE}}**."
+        },
+        "timeUserSuccess": {
+            "description": "It is currently **{{TIME}}** for <@{{USER_ID}}> in **{{ZONE}}**."
+        },
+        "timeZoneSuccess": {
+            "description": "It is currently **{{TIME}}** in **{{ZONE}}**."
+        },
+        "formatSuccess": {
+            "description": "Set your time format to **{{FORMAT}}**!"
+        },
+        "invite": {
+            "title": "Friend Time - Invite",
+            "description": [
+                "Visit the following link to invite Friend Time to your Discord server:",
+                "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056>"
+            ]
+        },
+        "support": {
+            "title": "Friend Time - Support",
+            "description": [
+                "Visit the following link to join the Friend Time support server:",
+                "<https://discord.gg/GQcBR8e>",
+                "",
+                "If you prefer, you can also submit a GitHub issue:",
+                "<https://github.com/KevinNovak/Friend-Time/issues>"
+            ]
+        },
+        "donate": {
+            "title": "Friend Time - Donate",
+            "description": [
+                "Donate to help the continued development and running of Friend Time!",
+                "",
+                "I originally created Friend Time for my international friends to aid in planning our activities. I realized this would be useful to others as well, so I released Friend Time for anyone to use! If you enjoy using Friend Time and are willing to contribute, I sincerely appreciate your support!",
+                "",
+                "**PayPal donation link**:",
+                "<https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC>",
+                "Donations via PayPal or credit/debit card are accepted at the above link. Thank you again for your support!"
+            ]
+        },
         "info": {
             "title": "Friend Time Info",
             "fields": [
@@ -16,6 +113,91 @@
                     "value": ["{{REF:linkDonate}}", "{{REF:linkSupport}}", "{{REF:linkInvite}}"]
                 }
             ]
+        },
+        "zoneNotFound": {
+            "description": [
+                "Could not find a time zone with the provided name!",
+                "",
+                "Type **-ft map** to view a map of available timezones."
+            ]
+        },
+        "noZoneSetReminder": {
+            "description": [
+                "Hi <@{{AUTHOR_ID}}>, it looks like you don't have a timezone set yet.",
+                "",
+                "Please type **-ft map** to find your time zone, then **-ft set *<zone>*** to set yourself to that zone!"
+            ]
+        },
+        "noZoneSetSelf": {
+            "description": [
+                "You don't have a time zone set yet!",
+                "",
+                "Type **-ft map** to find your time zone, then **-ft set *<zone>*** to set yourself to that zone!"
+            ]
+        },
+        "noZoneSetUser": {
+            "description": "<@{{USER_ID}}> doesn't have a time zone set yet!"
+        },
+        "invalidTimeFormat": {
+            "description": [
+                "Please provide a valid time format!",
+                "",
+                "Available options: `12` for 12-hour format or `24` for 24-hour format."
+            ]
+        },
+        "convertedTime": {
+            "description": [
+                "<@{{AUTHOR_ID}}> in **{{AUTHOR_ZONE}}** mentioned:",
+                "> {{QUOTE}}",
+                "",
+                "In your time zone, **{{USER_ZONE}}**, that is **{{CONVERTED_TIME}}**."
+            ]
+        },
+        "serverOnly": {
+            "description": "This command only works in a server!"
+        },
+        "configNotFound": {
+            "description": "Could not find a configuration option with the provided name!"
+        },
+        "noPermToSendEmbed": {
+            "description": [
+                "I don't have all permissions required to send messages here!",
+                "",
+                "Please allow me to **Read Messages**, **Send Messages**, and **Embed Links** in this channel."
+            ]
+        },
+        "configModeInvalidValue": {
+            "description": [
+                "Please provide a valid mode option!",
+                "",
+                "Available options: `react` for react mode or `list` for list mode."
+            ]
+        },
+        "configModeSuccess": {
+            "description": "Set mode to **{{MODE}}**."
+        },
+        "configFormatInvalidValue": {
+            "description": [
+                "Please provide a valid format option!",
+                "",
+                "Available options: `12` for 12-hour format or `24` for 24-hour format."
+            ]
+        },
+        "configFormatSuccess": {
+            "description": "Set format to **{{FORMAT}}**."
+        },
+        "configNotifyInvalidValue": {
+            "description": [
+                "Please provide a valid notify option!",
+                "",
+                "Available options: `on` to enable notifications or `off` to disable."
+            ]
+        },
+        "configNotifySuccess": {
+            "description": "Set notifications to **{{NOTIFY}}**."
+        },
+        "notAdmin": {
+            "description": "You must have the `Administrator` permission to use this command!"
         }
     },
     "refs": {

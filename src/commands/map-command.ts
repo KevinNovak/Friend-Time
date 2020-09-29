@@ -15,6 +15,6 @@ export class MapCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(channel, MessageName.mapMessage, MessageName.mapTitle);
+        await this.msgSender.sendEmbed(channel, 'map');
     }
 }

@@ -101,15 +101,15 @@
             ]
         },
         "info": {
-            "title": "Friend Time Info",
+            "title": "Info de Friend Time",
             "fields": [
-                { "name": "Author", "value": "{{REF:linkAuthor}}" },
+                { "name": "Autor", "value": "{{REF:linkAuthor}}" },
                 { "name": "Node.js", "value": "{{NODE_VERSION}}" },
                 { "name": "TypeScript", "value": "{{TS_VERSION}}" },
                 { "name": "ECMAScript", "value": "{{ES_VERSION}}" },
                 { "name": "discord.js", "value": "{{DJS_VERSION}}" },
                 {
-                    "name": "Links",
+                    "name": "Enlaces",
                     "value": ["{{REF:linkDonate}}", "{{REF:linkSupport}}", "{{REF:linkInvite}}"]
                 }
             ]
@@ -202,7 +202,7 @@
     },
     "refs": {
         "linkAuthor": "[Kevin Novak](https://github.com/KevinNovak)",
-        "linkDonate": "[Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)",
+        "linkDonate": "[Dona vía Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)",
         "linkSupport": "[Únete al Servidor de Soporte](https://discord.gg/GQcBR8e)",
         "linkInvite": "[¡Invita Friend Time a un Servidor!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
     }

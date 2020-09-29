@@ -2,7 +2,6 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { MessageSender } from '.';
 import { GuildData } from '../models/database-models';
-import { MessageName } from './language';
 
 export class ReminderService {
     constructor(private msgSender: MessageSender) {}

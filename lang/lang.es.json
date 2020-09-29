@@ -60,13 +60,13 @@
             "description": "¡Zona horaria eliminada!"
         },
         "timeSelfSuccess": {
-            "description": "Actualmente son las **{{TIME}}** en **{{ZONE}}**."
+            "description": "Actualmente es **{{TIME}}** en **{{ZONE}}**."
         },
         "timeUserSuccess": {
-            "description": "Actualmente son las **{{TIME}}** para <@{{USER_ID}}> en **{{ZONE}}**."
+            "description": "Actualmente es **{{TIME}}** para <@{{USER_ID}}> en **{{ZONE}}**."
         },
         "timeZoneSuccess": {
-            "description": "Actualmente son las **{{TIME}}** en **{{ZONE}}**."
+            "description": "Actualmente es **{{TIME}}** en **{{ZONE}}**."
         },
         "formatSuccess": {
             "description": "¡Tu formato horario ha cambiado a **{{FORMAT}}**!"

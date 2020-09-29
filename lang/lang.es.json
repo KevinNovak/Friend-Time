@@ -42,7 +42,7 @@
             ]
         },
         "setSuccess": {
-            "description": "¡Tu zona horaria ahora es **{ZONE}**!"
+            "description": "¡Tu zona horaria ahora es **{{ZONE}}**!"
         },
         "map": {
             "title": "Friend Time - Mapa",
@@ -60,16 +60,16 @@
             "description": "¡Zona horaria eliminada!"
         },
         "timeSelfSuccess": {
-            "description": "Actualmente son las **{TIME}** en **{ZONE}**."
+            "description": "Actualmente son las **{{TIME}}** en **{{ZONE}}**."
         },
         "timeUserSuccess": {
-            "description": "Actualmente son las **{TIME}** para <@{USER_ID}> en **{ZONE}**."
+            "description": "Actualmente son las **{{TIME}}** para <@{{USER_ID}}> en **{{ZONE}}**."
         },
         "timeZoneSuccess": {
-            "description": "Actualmente son las **{TIME}** en **{ZONE}**."
+            "description": "Actualmente son las **{{TIME}}** en **{{ZONE}}**."
         },
         "formatSuccess": {
-            "description": "¡Tu formato horario ha cambiado a **{FORMAT}**!"
+            "description": "¡Tu formato horario ha cambiado a **{{FORMAT}}**!"
         },
         "invite": {
             "title": "Friend Time - Invitación",
@@ -123,7 +123,7 @@
         },
         "noZoneSetReminder": {
             "description": [
-                "Hola <@{AUTHOR_ID}>, veo que no tienes una zona horaria establecida todavía",
+                "Hola <@{{AUTHOR_ID}}>, veo que no tienes una zona horaria establecida todavía",
                 "",
                 "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
             ]
@@ -136,7 +136,7 @@
             ]
         },
         "noZoneSetUser": {
-            "description": "¡<@{USER_ID}> no tiene una zona horaria establecida todavía!"
+            "description": "¡<@{{USER_ID}}> no tiene una zona horaria establecida todavía!"
         },
         "invalidTimeFormat": {
             "description": [
@@ -147,10 +147,10 @@
         },
         "convertedTime": {
             "description": [
-                "<@{AUTHOR_ID}> en **{AUTHOR_ZONE}** mencionó:",
-                "> {QUOTE}",
+                "<@{{AUTHOR_ID}}> en **{{AUTHOR_ZONE}}** mencionó:",
+                "> {{QUOTE}}",
                 "",
-                "En tu zona horaria, **{USER_ZONE}**, la hora es **{CONVERTED_TIME}**."
+                "En tu zona horaria, **{{USER_ZONE}}**, la hora es **{{CONVERTED_TIME}}**."
             ]
         },
         "serverOnly": {
@@ -174,7 +174,7 @@
             ]
         },
         "configModeSuccess": {
-            "description": "Modo establecido a **{MODE}**."
+            "description": "Modo establecido a **{{MODE}}**."
         },
         "configFormatInvalidValue": {
             "description": [
@@ -184,7 +184,7 @@
             ]
         },
         "configFormatSuccess": {
-            "description": "Formato establecido a **{FORMAT}**."
+            "description": "Formato establecido a **{{FORMAT}}**."
         },
         "configNotifyInvalidValue": {
             "description": [
@@ -194,7 +194,7 @@
             ]
         },
         "configNotifySuccess": {
-            "description": "Notificaciones establecidas a **{NOTIFY}**."
+            "description": "Notificaciones establecidas a **{{NOTIFY}}**."
         },
         "notAdmin": {
             "description": "¡Necesitas tener el permiso de `Administrador` para usar este comando!"

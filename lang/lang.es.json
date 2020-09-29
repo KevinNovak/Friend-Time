@@ -47,7 +47,7 @@
         "map": {
             "title": "Friend Time - Mapa",
             "description": [
-                "Puedes encontrar un mapa de la zonas horarias [aquí]({{REF:linkMap}}). Solo haz clic en una localidad y copia la zona horaria seleccionada.",
+                "Puedes encontrar un mapa de las zonas horarias [aquí]({{REF:linkMap}}). Solo haz clic en una localidad y copia la zona horaria seleccionada.",
                 "",
                 "Luego introduce **-ft set <zona>** usando la zona horaria seleccionada.",
                 "",

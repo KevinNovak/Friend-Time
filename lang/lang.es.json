@@ -73,32 +73,15 @@
         },
         "invite": {
             "title": "Friend Time - Invitación",
-            "description": [
-                "Visita el siguiente enlace para invitar a Friend Time a tu servidor de Discord:",
-                "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056>"
-            ]
+            "description": "{{REF:linkInvite}}"
         },
         "support": {
             "title": "Friend Time - Soporte",
-            "description": [
-                "Visita el siguiente enlace para unirte al servidor de soporte de Friend Time:",
-                "<https://discord.gg/GQcBR8e>",
-                "",
-                "Si prefieres, puedes abrir una incidencia en GitHub:",
-                "<https://github.com/KevinNovak/Friend-Time/issues>"
-            ]
+            "description": "{{REF:linkSupport}}"
         },
         "donate": {
             "title": "Friend Time - Donar",
-            "description": [
-                "¡Dona para ayudar al desarrollo continuo de Friend Time!",
-                "",
-                "Originalmente creé Friend Time para que nuestros amigos internacionales y yo nos entendiéramos mejor a la hora de planificar actividades. Luego pensé que esto sería util para otras personas, por lo que lanzé Friend Time para que todos pudieran usarlo. Si disfrutas el uso de Friend Time y te gustaría contribuir, sinceramente agradezco tu apoyo",
-                "",
-                "**Enlace de donaciones en PayPal**:",
-                "<https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC>",
-                "Las donaciones via PayPal o tarjeta de crédito/débito son aceptadas con el enlace de arriba. ¡Gracias de nuevo por el apoyo!"
-            ]
+            "description": "{{REF:linkDonate}}"
         },
         "info": {
             "title": "Info de Friend Time",

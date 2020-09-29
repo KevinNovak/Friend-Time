@@ -2,7 +2,6 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { Command } from '.';
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 
 export class HelpCommand implements Command {
     public name = 'help';

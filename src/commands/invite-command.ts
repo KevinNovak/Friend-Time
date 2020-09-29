@@ -1,7 +1,6 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 import { Command } from './command';
 
 export class InviteCommand implements Command {

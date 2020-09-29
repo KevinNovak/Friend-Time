@@ -2,7 +2,6 @@ import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
 import { GuildRepo } from '../repos';
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 import {
     FormatOption,
     ModeOption,

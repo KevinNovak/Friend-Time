@@ -51,7 +51,7 @@
                 "",
                 "Luego introduce **-ft set <zona>** usando la zona horaria seleccionada.",
                 "",
-                "**Nota**: Por favor ,no uses abreviaciones de zonas horarias como EST o GMT, utiliza siempre el formato **<región>/<ciudad>**.",
+                "**Nota**: Por favor, no uses abreviaciones de zonas horarias como EST o GMT; utiliza siempre el formato **<región>/<ciudad>**.",
                 "",
                 "***Ejemplo***: `-ft set America/New_York`"
             ]

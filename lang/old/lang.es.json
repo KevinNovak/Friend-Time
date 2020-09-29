@@ -1,0 +1,125 @@
+{
+    "langCode": "es",
+    "messages": {
+        "helpTitle": "Friend Time - Ayuda",
+        "helpMessage": [
+            "Friend Time reaccionará automáticamente con un 🕰️ a los tiempos mencionados en el chat. Si tú también reaccionas, recibirás un mensaje con el tiempo convertido a tu zona horaria",
+            "",
+            "**-ft set *<zona>*** - Establece tu zona horaria",
+            "**-ft map** - Mira un mapa con las zonas horarias disponibles",
+            "**-ft clear** - Elimina tu zona horaria",
+            "**-ft time** - Mira la hora actual",
+            "**-ft time *<usuario>*** - Mira la hora actual de un usuario",
+            "**-ft time *<zona>*** -  Mira la hora actual de una zona horaria",
+            "**-ft format <12/24>** - Establece tu formato horario (12 o 24 horas)",
+            "**-ft config** - Cambia configuración del servidor. Solo administradores",
+            "**-ft info** - Más información sobre Friend Time",
+            "",
+            "[Únete al Servidor de Soporte](https://discord.gg/GQcBR8e)",
+            "[¡Invita Friend Time a un Servidor!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
+        ],
+        "configTitle": "Friend Time - Configuración del servidor",
+        "configMessage": [
+            "Solo para administradores del servidor",
+            "",
+            "**Note**: Debes tener el permiso `Administrador` para usar estos comandos",
+            "",
+            "**-ft config mode <react/list>** - Cambia el modo que se usa para convertir tiempos",
+            "**-ft config format <12/24>** - Cambia el formato horario del servidor, `12` o `24` horas",
+            "**-ft config notify <on/off>** - Activa o desactiva recordatorios para los usuarios que no tienen zona horaria establecida."
+        ],
+        "setProvideZone": [
+            "¡Por favor, especifica una zona horaria!",
+            "",
+            "Digita **-ft map** para ver un mapa de las zonas horarias disponibles."
+        ],
+        "setSuccess": "¡Tu zona horaria ahora es **{ZONE}**!",
+        "mapTitle": "Friend Time - Mapa",
+        "mapMessage": [
+            "Por favor, visita el siguiente enlace y elige tu zona horaria",
+            "<https://kevinnovak.github.io/Time-Zone-Picker/>",
+            "",
+            "A continuación, introduce **-ft set <zona>** con tu zona horaria",
+            "Por ejemplo: *-ft set America/New_York*",
+            "",
+            "**Nota**: Usa una zona horaria en el formato **<región>/<ciudad>**. Por ejemplo: *America/New_York*. Las zonas horarias como *EST* o *GMT* no funcionarán. Puedes abreviar las ciudades, y Friend Time buscará la opción más aproximada: *-ft set new york*."
+        ],
+        "clearSuccess": "¡Zona horaria eliminada!",
+        "timeSelfSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
+        "timeUserSuccess": "Actualmente son las **{TIME}** para <@{USER_ID}> en **{ZONE}**.",
+        "timeZoneSuccess": "Actualmente son las **{TIME}** en **{ZONE}**.",
+        "formatSuccess": "¡Tu formato horario ha cambiado a **{FORMAT}**!",
+        "inviteTitle": "Friend Time - Invitación",
+        "inviteMessage": [
+            "Visita el siguiente enlace para invitar a Friend Time a tu servidor de Discord:",
+            "<https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056>"
+        ],
+        "supportTitle": "Friend Time - Soporte",
+        "supportMessage": [
+            "Visita el siguiente enlace para unirte al servidor de soporte de Friend Time:",
+            "<https://discord.gg/GQcBR8e>",
+            "",
+            "Si prefieres, puedes abrir una incidencia en GitHub:",
+            "<https://github.com/KevinNovak/Friend-Time/issues>"
+        ],
+        "donateTitle": "Friend Time - Donar",
+        "donateMessage": [
+            "¡Dona para ayudar al desarrollo continuo de Friend Time!",
+            "",
+            "Originalmente creé Friend Time para que nuestros amigos internacionales y yo nos entendiéramos mejor a la hora de planificar actividades. Luego pensé que esto sería util para otras personas, por lo que lanzé Friend Time para que todos pudieran usarlo. Si disfrutas el uso de Friend Time y te gustaría contribuir, sinceramente agradezco tu apoyo",
+            "",
+            "**Enlace de donaciones en PayPal**:",
+            "<https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC>",
+            "Las donaciones via PayPal o tarjeta de crédito/débito son aceptadas con el enlace de arriba. ¡Gracias de nuevo por el apoyo!"
+        ],
+        "zoneNotFound": [
+            "No he podido encontrar una zona horaria con ese nombre",
+            "",
+            "Introduce **-ft map** para ver una lista con las zonas horarias disponibles"
+        ],
+        "noZoneSetReminder": [
+            "Hola <@{AUTHOR_ID}>, veo que no tienes una zona horaria establecida todavía",
+            "",
+            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
+        ],
+        "noZoneSetSelf": [
+            "¡No tienes una zona horaria establecida todavía!",
+            "",
+            "Por favor escribe **-ft map** para encontrar tu zona horaria, después, **-ft set *<zona>*** para auto asignarte esa zona"
+        ],
+        "noZoneSetUser": "¡<@{USER_ID}> no tiene una zona horaria establecida todavía!",
+        "invalidTimeFormat": [
+            "Por favor, introduce un formato horario válido",
+            "",
+            "Opciones disponibles: `12` para formato de 12 horas o `24` para formato de 24 horas"
+        ],
+        "convertedTime": [
+            "<@{AUTHOR_ID}> en **{AUTHOR_ZONE}** mencionó:",
+            "> {QUOTE}",
+            "",
+            "En tu zona horaria, **{USER_ZONE}**, la hora es **{CONVERTED_TIME}**."
+        ],
+        "serverOnly": "Este comando solo funciona en un servidor",
+        "configNotFound": "No se ha podido encontrar un parámetro en la configuración con ese nombre",
+        "noPermToSendEmbed": "¡No tengo los permisos necesarios para enviar mensajes aquí!\n\nPermíteme **Leer Mensajes**, **Enviar Mensajes**, e **Insertar Enlaces** en este canal.",
+        "configModeInvalidValue": [
+            "Introduce una opción de modo válida",
+            "",
+            "Opciones disponibles: `react` para modo de reacciones o `list` para modo de lista"
+        ],
+        "configModeSuccess": "Modo establecido a **{MODE}**.",
+        "configFormatInvalidValue": [
+            "Introduce una opción de formato horario válida",
+            "",
+            "Opciones disponibles: `12` para formato de 12 horas o `24` para formato de 24 horas"
+        ],
+        "configFormatSuccess": "Formato establecido a **{FORMAT}**.",
+        "configNotifyInvalidValue": [
+            "Introduce una opción de notificación válida",
+            "",
+            "Opciones disponibles: `on` para activar notificaciones u `off` para desactivarlas."
+        ],
+        "configNotifySuccess": "Notificaciones establecidas a **{NOTIFY}**.",
+        "notAdmin": "¡Necesitas tener el permiso de `Administrador` para usar este comando!"
+    }
+}

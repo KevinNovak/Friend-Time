@@ -42,7 +42,7 @@ async function start(): Promise<void> {
     };
 
     // Dependency Injection
-    let multilingualService = new MultilingualService(path.join(__dirname, '../lang/new'));
+    let multilingualService = new MultilingualService(path.join(__dirname, '../lang'));
     let langService = new LanguageService(multilingualService);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(Config.mysql);

@@ -1,4 +1,6 @@
 import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
+import { MultilingualService } from 'discord.js-multilingual-utils';
+import path from 'path';
 
 import { Bot } from './bot';
 import {
@@ -16,11 +18,9 @@ import {
 } from './commands';
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
 import { ConfigSchema } from './models/config-models';
-import { Language } from './models/language';
 import { GuildRepo, UserRepo } from './repos';
 import {
     Logger,
-    MessageBuilder,
     MessageSender,
     ReminderService,
     TimeFormatService,
@@ -32,8 +32,6 @@ import { LanguageService } from './services/language';
 
 let Config: ConfigSchema = require('../config/config.json');
 
-let langEn: Language = require('../lang/lang.en.json');
-
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
         ws: { intents: Config.client.intents as IntentsString[] },
@@ -44,13 +42,13 @@ async function start(): Promise<void> {
     };
 
     // Dependency Injection
-    let langService = new LanguageService([langEn]);
+    let multilingualService = new MultilingualService(path.join(__dirname, '../lang'));
+    let langService = new LanguageService(multilingualService);
     let client = new Client(clientOptions);
     let dataAccess = new DataAccess(Config.mysql);
     let guildRepo = new GuildRepo(dataAccess);
     let userRepo = new UserRepo(dataAccess);
-    let msgBuilder = new MessageBuilder(Config.colors.default);
-    let msgSender = new MessageSender(msgBuilder, langService);
+    let msgSender = new MessageSender(langService);
     let timeParser = new TimeParser(Config.experience.blacklist);
     let zoneService = new ZoneService(Config.validation.regions, timeParser);
     let timeFormatService = new TimeFormatService(Config.experience.timeFormats);
@@ -90,8 +88,7 @@ async function start(): Promise<void> {
         timeParser,
         zoneService,
         timeFormatService,
-        reminderService,
-        langService
+        reminderService
     );
     let reactionHandler = new ReactionHandler(
         Config.emojis.convert,

@@ -1,8 +1,10 @@
-import { DMChannel, Message, TextChannel } from 'discord.js';
+import djs, { DMChannel, Message, TextChannel } from 'discord.js';
+import typescript from 'typescript';
 
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 import { Command } from './command';
+
+let TsConfig = require('../../tsconfig.json');
 
 export class InfoCommand implements Command {
     public name = 'info';
@@ -15,6 +17,11 @@ export class InfoCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(channel, MessageName.infoMessage, MessageName.infoTitle);
+        await this.msgSender.sendEmbed(channel, 'info', {
+            NODE_VERSION: process.version,
+            TS_VERSION: `v${typescript.version}`,
+            ES_VERSION: TsConfig.compilerOptions.target,
+            DJS_VERSION: `v${djs.version}`,
+        });
     }
 }

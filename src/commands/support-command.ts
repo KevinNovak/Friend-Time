@@ -1,7 +1,6 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 import { Command } from './command';
 
 export class SupportCommand implements Command {
@@ -15,10 +14,6 @@ export class SupportCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(
-            channel,
-            MessageName.supportMessage,
-            MessageName.supportTitle
-        );
+        await this.msgSender.sendEmbed(channel, 'support');
     }
 }

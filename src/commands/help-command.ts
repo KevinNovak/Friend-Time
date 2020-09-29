@@ -2,7 +2,6 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 
 import { Command } from '.';
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 
 export class HelpCommand implements Command {
     public name = 'help';
@@ -15,6 +14,6 @@ export class HelpCommand implements Command {
         args: string[],
         channel: TextChannel | DMChannel
     ): Promise<void> {
-        await this.msgSender.sendWithTitle(channel, MessageName.helpMessage, MessageName.helpTitle);
+        await this.msgSender.sendEmbed(channel, 'help');
     }
 }

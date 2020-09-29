@@ -3,7 +3,6 @@ import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
 import { LogsSchema } from '../models/logs';
 import { GuildRepo, UserRepo } from '../repos';
 import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { MessageName } from '../services/language';
 import { StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
 
@@ -67,15 +66,13 @@ export class ReactionHandler implements EventHandler {
 
         let userData = await this.userRepo.getUserData(reactor.id);
         if (!userData?.TimeZone) {
-            await this.msgSender.send(dmChannel, MessageName.noZoneSetSelf);
+            await this.msgSender.sendEmbed(dmChannel, 'noZoneSetSelf');
             return;
         }
 
         let authorData = await this.userRepo.getUserData(msg.author.id);
         if (!authorData?.TimeZone) {
-            await this.msgSender.send(dmChannel, MessageName.noZoneSetUser, [
-                { name: '{USER_ID}', value: msg.author.id },
-            ]);
+            await this.msgSender.sendEmbed(dmChannel, 'noZoneSetUser', { USER_ID: msg.author.id });
             return;
         }
 
@@ -89,12 +86,12 @@ export class ReactionHandler implements EventHandler {
         let formattedTime = moment.format(format);
         let quote = StringUtils.formatQuote(result.text);
 
-        await this.msgSender.send(dmChannel, MessageName.convertedTime, [
-            { name: '{AUTHOR_ID}', value: msg.author.id },
-            { name: '{QUOTE}', value: quote },
-            { name: '{AUTHOR_ZONE}', value: authorData.TimeZone },
-            { name: '{USER_ZONE}', value: userData.TimeZone },
-            { name: '{CONVERTED_TIME}', value: formattedTime },
-        ]);
+        await this.msgSender.sendEmbed(dmChannel, 'convertedTime', {
+            AUTHOR_ID: msg.author.id,
+            QUOTE: quote,
+            AUTHOR_ZONE: authorData.TimeZone,
+            USER_ZONE: userData.TimeZone,
+            CONVERTED_TIME: formattedTime,
+        });
     }
 }

@@ -1,38 +1,26 @@
 import { DMChannel, TextChannel } from 'discord.js';
 
-import { MessageUtils, StringUtils } from '../utils';
+import { MessageUtils } from '../utils';
 import { LanguageService } from './language/lang-service';
-import { MessageName } from './language/message-name';
-import { MessageBuilder } from './message-builder';
 
 export class MessageSender {
-    constructor(private msgBuilder: MessageBuilder, private langService: LanguageService) {}
+    constructor(private langService: LanguageService) {}
 
     public async send(
         channel: TextChannel | DMChannel,
-        messageName: MessageName,
-        variables?: { name: string; value: string }[]
+        messageName: string,
+        variables?: { [name: string]: string }
     ): Promise<void> {
-        let message = this.langService.getMessage(messageName);
-        if (variables) {
-            message = StringUtils.replaceVariables(message, variables);
-        }
-        let embed = this.msgBuilder.createEmbed(message);
-        await MessageUtils.send(channel, embed);
+        let message = this.langService.getEmbed(messageName, variables).description;
+        await MessageUtils.send(channel, message);
     }
 
-    public async sendWithTitle(
+    public async sendEmbed(
         channel: TextChannel | DMChannel,
-        messageName: MessageName,
-        titleName: MessageName,
-        variables?: { name: string; value: string }[]
+        embedName: string,
+        variables?: { [name: string]: string }
     ): Promise<void> {
-        let message = this.langService.getMessage(messageName);
-        if (variables) {
-            message = StringUtils.replaceVariables(message, variables);
-        }
-        let title = this.langService.getMessage(titleName);
-        let embed = this.msgBuilder.createEmbed(message, title);
+        let embed = this.langService.getEmbed(embedName, variables);
         await MessageUtils.send(channel, embed);
     }
 }

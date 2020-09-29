@@ -2,7 +2,6 @@ import { DMChannel, Guild, Message, TextChannel } from 'discord.js';
 
 import { GuildRepo } from '../repos';
 import { MessageSender } from '../services';
-import { MessageName } from '../services/language';
 import {
     FormatOption,
     ModeOption,
@@ -25,16 +24,12 @@ export class ConfigCommand implements Command {
         channel: TextChannel | DMChannel
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.sendWithTitle(
-                channel,
-                MessageName.configMessage,
-                MessageName.configTitle
-            );
+            await this.msgSender.sendEmbed(channel, 'config');
             return;
         }
 
         if (!PermissionUtils.isAdmin(msg.author, channel as TextChannel)) {
-            await this.msgSender.send(channel, MessageName.notAdmin);
+            await this.msgSender.sendEmbed(channel, 'notAdmin');
             return;
         }
 
@@ -54,7 +49,7 @@ export class ConfigCommand implements Command {
                 return;
             }
             default: {
-                await this.msgSender.send(channel, MessageName.configNotFound);
+                await this.msgSender.sendEmbed(channel, 'configNotFound');
                 return;
             }
         }
@@ -67,13 +62,13 @@ export class ConfigCommand implements Command {
         args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, MessageName.configNotifyInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configNotifyInvalidValue');
             return;
         }
 
         let input = args[0].toLowerCase();
         if (![NotifyOption.on.toString(), NotifyOption.off.toString()].includes(input)) {
-            await this.msgSender.send(channel, MessageName.configNotifyInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configNotifyInvalidValue');
             return;
         }
 
@@ -84,12 +79,9 @@ export class ConfigCommand implements Command {
 
         await this.guildRepo.setNotify(guild.id, option);
 
-        await this.msgSender.send(channel, MessageName.configNotifySuccess, [
-            {
-                name: '{NOTIFY}',
-                value: input,
-            },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'configNotifySuccess', {
+            NOTIFY: input,
+        });
     }
 
     // TODO: Extract out
@@ -99,13 +91,13 @@ export class ConfigCommand implements Command {
         args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, MessageName.configFormatInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configFormatInvalidValue');
             return;
         }
 
         let input = args[0].toLowerCase();
         if (![FormatOption.twelve.toString(), FormatOption.twentyFour.toString()].includes(input)) {
-            await this.msgSender.send(channel, MessageName.configFormatInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configFormatInvalidValue');
             return;
         }
 
@@ -116,12 +108,9 @@ export class ConfigCommand implements Command {
 
         await this.guildRepo.setTimeFormat(guild.id, option);
 
-        await this.msgSender.send(channel, MessageName.configFormatSuccess, [
-            {
-                name: '{FORMAT}',
-                value: input,
-            },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'configFormatSuccess', {
+            FORMAT: input,
+        });
     }
 
     // TODO: Extract out
@@ -131,13 +120,13 @@ export class ConfigCommand implements Command {
         args: string[]
     ): Promise<void> {
         if (args.length === 0) {
-            await this.msgSender.send(channel, MessageName.configModeInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configModeInvalidValue');
             return;
         }
 
         let input = args[0].toLowerCase();
         if (![ModeOption.react.toString(), ModeOption.list.toString()].includes(input)) {
-            await this.msgSender.send(channel, MessageName.configModeInvalidValue);
+            await this.msgSender.sendEmbed(channel, 'configModeInvalidValue');
             return;
         }
 
@@ -148,11 +137,6 @@ export class ConfigCommand implements Command {
 
         await this.guildRepo.setMode(guild.id, option);
 
-        await this.msgSender.send(channel, MessageName.configModeSuccess, [
-            {
-                name: '{MODE}',
-                value: input,
-            },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'configModeSuccess', { MODE: input });
     }
 }

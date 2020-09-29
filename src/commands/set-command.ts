@@ -3,7 +3,6 @@ import { DMChannel, Message, TextChannel } from 'discord.js';
 import { LogsSchema } from '../models/logs';
 import { UserRepo } from '../repos';
 import { Logger, MessageSender, ZoneService } from '../services';
-import { MessageName } from '../services/language';
 import { Command } from './command';
 
 let Logs: LogsSchema = require('../../lang/logs.en.json');
@@ -25,21 +24,21 @@ export class SetCommand implements Command {
     ): Promise<void> {
         let zoneInput = args.join(' ');
         if (!zoneInput) {
-            await this.msgSender.send(channel, MessageName.setProvideZone);
+            await this.msgSender.sendEmbed(channel, 'setProvideZone');
             return;
         }
 
         let zone = this.zoneService.findZone(zoneInput);
         if (!zone) {
-            await this.msgSender.send(channel, MessageName.zoneNotFound);
+            await this.msgSender.sendEmbed(channel, 'zoneNotFound');
             return;
         }
 
         await this.userRepo.setTimeZone(msg.author.id, zone);
 
-        await this.msgSender.send(channel, MessageName.setSuccess, [
-            { name: '{ZONE}', value: zone },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'setSuccess', {
+            ZONE: zone,
+        });
         Logger.info(
             Logs.setSuccess
                 .replace('{USERNAME}', msg.author.username)

@@ -3,7 +3,6 @@ import { DMChannel, Message, TextChannel, User } from 'discord.js';
 import { UserData } from '../models/database-models';
 import { UserRepo } from '../repos';
 import { MessageSender, TimeFormatService, ZoneService } from '../services';
-import { MessageName } from '../services/language';
 import { GuildUtils } from '../utils';
 import { Command } from './command';
 
@@ -55,23 +54,18 @@ export class TimeCommand implements Command {
     ): Promise<void> {
         let userData = await this.userRepo.getUserData(mentionedUser.id);
         if (!userData?.TimeZone) {
-            await this.msgSender.send(channel, MessageName.noZoneSetUser, [
-                { name: '{USER_ID}', value: mentionedUser.id },
-            ]);
+            await this.msgSender.sendEmbed(channel, 'noZoneSetUser', { USER_ID: mentionedUser.id });
             return;
         }
 
         let time = this.zoneService.getMomentInZone(userData.TimeZone);
         let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
 
-        await this.msgSender.send(channel, MessageName.timeUserSuccess, [
-            {
-                name: '{TIME}',
-                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            },
-            { name: '{USER_ID}', value: mentionedUser.id },
-            { name: '{ZONE}', value: userData.TimeZone },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'timeUserSuccess', {
+            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            USER_ID: mentionedUser.id,
+            ZONE: userData.TimeZone,
+        });
     }
 
     private async executeZone(
@@ -81,20 +75,17 @@ export class TimeCommand implements Command {
     ): Promise<void> {
         let zone = this.zoneService.findZone(zoneInput);
         if (!zone) {
-            await this.msgSender.send(channel, MessageName.zoneNotFound);
+            await this.msgSender.sendEmbed(channel, 'zoneNotFound');
             return;
         }
 
         let time = this.zoneService.getMomentInZone(zone);
         let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
 
-        await this.msgSender.send(channel, MessageName.timeZoneSuccess, [
-            {
-                name: '{TIME}',
-                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            },
-            { name: '{ZONE}', value: zone },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'timeZoneSuccess', {
+            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            ZONE: zone,
+        });
     }
 
     private async executeSelf(
@@ -102,19 +93,16 @@ export class TimeCommand implements Command {
         channel: TextChannel | DMChannel
     ): Promise<void> {
         if (!authorData?.TimeZone) {
-            await this.msgSender.send(channel, MessageName.noZoneSetSelf);
+            await this.msgSender.sendEmbed(channel, 'noZoneSetSelf');
             return;
         }
 
         let time = this.zoneService.getMomentInZone(authorData.TimeZone);
         let timeFormat = this.timeFormatService.getTimeFormat(authorData.TimeFormat);
 
-        await this.msgSender.send(channel, MessageName.timeSelfSuccess, [
-            {
-                name: '{TIME}',
-                value: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            },
-            { name: '{ZONE}', value: authorData.TimeZone },
-        ]);
+        await this.msgSender.sendEmbed(channel, 'timeSelfSuccess', {
+            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
+            ZONE: authorData.TimeZone,
+        });
     }
 }

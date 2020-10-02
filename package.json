@@ -24,7 +24,7 @@
         "moment-timezone": "0.5.31",
         "mysql": "2.18.1",
         "node-fetch": "2.6.1",
-        "pm2": "^4.4.1"
+        "pm2": "^4.5.0"
     },
     "devDependencies": {
         "@types/mysql": "2.15.15",

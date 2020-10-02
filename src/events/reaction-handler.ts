@@ -39,9 +39,10 @@ export class ReactionHandler implements EventHandler {
                 messageReaction.message = await messageReaction.message.fetch();
             }
         } catch (error) {
+            // Error code 10003: "Unknown Channel"
             // Error code 10008: "Unknown Message" (message was deleted)
             // Error code 50001: "Missing Access"
-            if (error instanceof DiscordAPIError && [10008, 50001].includes(error.code)) {
+            if (error instanceof DiscordAPIError && [10003, 10008, 50001].includes(error.code)) {
                 return;
             } else {
                 Logger.error(Logs.retrievePartialReactionMessageError, error);

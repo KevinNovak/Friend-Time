@@ -54,7 +54,11 @@ export class MessageHandler implements EventHandler {
         }
 
         let args = msg.content.split(' ');
-        let startsWithPrefix = args[0].toLowerCase() === this.prefix;
+        let startsWithPrefix = [
+            this.prefix,
+            `<@${msg.client.user.id}>`,
+            `<@!${msg.client.user.id}>`,
+        ].includes(args[0].toLowerCase());
 
         let result = this.timeParser.parseTime(msg.content);
         let shouldConvert = this.timeParser.shouldConvert(result);

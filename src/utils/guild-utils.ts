@@ -12,6 +12,7 @@ export abstract class GuildUtils {
         return (
             members.find(member => member.nickname?.toLowerCase().includes(query)) ??
             members.find(member => member.user.tag.toLowerCase().includes(query)) ??
+            members.find(member => member.user.id.includes(query)) ??
             undefined
         );
     }

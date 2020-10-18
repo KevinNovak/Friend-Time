@@ -1,6 +1,6 @@
 {
     "default": {
-        "color": "0x0099ff"
+        "color": "#0099ff"
     },
     "embeds": {
         "help": {

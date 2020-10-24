@@ -20,7 +20,7 @@
     "dependencies": {
         "chrono-node": "1.4.8",
         "discord.js": "12.4.1",
-        "discord.js-multilingual-utils": "1.0.7",
+        "discord.js-multilingual-utils": "1.0.8",
         "moment-timezone": "0.5.31",
         "mysql": "2.18.1",
         "node-fetch": "2.6.1",

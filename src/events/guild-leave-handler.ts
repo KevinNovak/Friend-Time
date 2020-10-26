@@ -9,7 +9,7 @@ let Logs: LogsSchema = require('../../lang/logs.en.json');
 export class GuildLeaveHandler implements EventHandler {
     public async process(guild: Guild): Promise<void> {
         Logger.info(
-            Logs.guildJoined.replace('{GUILD_NAME}', guild.name).replace('{GUILD_ID}', guild.id)
+            Logs.guildLeft.replace('{GUILD_NAME}', guild.name).replace('{GUILD_ID}', guild.id)
         );
     }
 }

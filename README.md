@@ -22,31 +22,31 @@ By also reacting, you will be private messaged with the time converted to your t
 
 ### Help Command
 
-* `-ft` - Show the help menu.
+-   `-ft` - Show the help menu.
 
 ### Core Commands
 
-* `-ft set <zone>` - Set yourself to a time zone.
-* `-ft map` - View a map of available time zones.
-* `-ft clear` - Clear your time zone.
-* `-ft time` - Get the current time.
-* `-ft time <user>` - Get the current time of a user.
-* `-ft time <zone>` - Get the current time of a time zone.
-* `-ft format <12/24>` - Set your time format, 12 or 24 hours.
-* `-ft config` - Change server settings, for admins.
-* `-ft info` - More information about Friend Time.
+-   `-ft set <zone>` - Set yourself to a time zone.
+-   `-ft map` - View a map of available time zones.
+-   `-ft clear` - Clear your time zone.
+-   `-ft time` - Get the current time.
+-   `-ft time <user>` - Get the current time of a user.
+-   `-ft time <zone>` - Get the current time of a time zone.
+-   `-ft format <12/24>` - Set your time format, 12 or 24 hours.
+-   `-ft config` - Change server settings, for admins.
+-   `-ft info` - More information about Friend Time.
 
 ### Config Commands
 
-* `-ft config mode <react/list>` - Change the mode that is used for converting times.
-* `-ft config format <12/24>` - Change the servers time format, 12 or 24 hours.
-* `-ft config notify <on/off>` - Enable or disable reminders for users who don't have a time zone set.
+-   `-ft config mode <react/list>` - Change the mode that is used for converting times.
+-   `-ft config format <12/24>` - Change the servers time format, 12 or 24 hours.
+-   `-ft config notify <on/off>` - Enable or disable reminders for users who don't have a time zone set.
 
 ### Info Commands
 
-* `-ft invite` - Invite Friend Time to your server.
-* `-ft support` - Get help or report an issue.
-* `-ft donate` - Donate to keep Friend Time running!
+-   `-ft invite` - Invite Friend Time to your server.
+-   `-ft support` - Get help or report an issue.
+-   `-ft donate` - Donate to keep Friend Time running!
 
 ## Finding Your Time Zone
 
@@ -81,6 +81,6 @@ If you'd like to run your own copy of Friend Time for development or personal re
 
 ## References
 
-* [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.
-* [Chrono](https://github.com/wanasit/chrono) - A natural language date parser in JavaScript.
-* [Moment Timezone](https://momentjs.com/timezone/) - Parse and display dates in any time zone.
+-   [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.
+-   [Chrono](https://github.com/wanasit/chrono) - A natural language date parser in JavaScript.
+-   [Moment Timezone](https://momentjs.com/timezone/) - Parse and display dates in any time zone.

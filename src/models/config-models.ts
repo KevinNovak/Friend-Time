@@ -8,7 +8,8 @@ export interface ConfigSchema {
     emojis: EmojisConfig;
     validation: ValidationConfig;
     sharding: ShardingConfig;
-    botSites: BotSitesConfig;
+    links: LinksConfig;
+    botSites: BotSiteConfig[];
 }
 
 export interface ClientConfig {
@@ -41,7 +42,7 @@ export interface JobsConfig {
 }
 
 export interface UpdateServerCountConfig {
-    interval: number;
+    schedule: string;
 }
 
 export interface ExperienceConfig {
@@ -68,6 +69,11 @@ export interface ValidationConfig {
     regions: string[];
 }
 
+export interface LinksConfig {
+    support: string;
+    stream: string;
+}
+
 export interface ShardingConfig {
     machineId: number;
     machineCount: number;
@@ -76,33 +82,10 @@ export interface ShardingConfig {
     spawnTimeout: number;
 }
 
-export interface BotSitesConfig {
-    topGg: TopGgConfig;
-    botsOnDiscordXyz: BotsOnDiscordXyzConfig;
-    discordBotsGg: DiscordBotsGgConfig;
-    discordBotListCom: DiscordBotListComConfig;
-}
-
-export interface TopGgConfig {
+export interface BotSiteConfig {
+    name: string;
     enabled: boolean;
     url: string;
-    token: string;
-}
-
-export interface BotsOnDiscordXyzConfig {
-    enabled: boolean;
-    url: string;
-    token: string;
-}
-
-export interface DiscordBotsGgConfig {
-    enabled: boolean;
-    url: string;
-    token: string;
-}
-
-export interface DiscordBotListComConfig {
-    enabled: boolean;
-    url: string;
-    token: string;
+    authorization: string;
+    body: string;
 }

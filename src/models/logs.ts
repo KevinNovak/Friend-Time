@@ -4,9 +4,10 @@ export interface LogsSchema {
     noShards: string;
     spawnShardError: string;
     launchedShard: string;
-    updateServerCountSiteError: string;
-    updateServerCountSite: string;
     updatedServerCount: string;
+    updateServerCountSite: string;
+    updateServerCountError: string;
+    updateServerCountSiteError: string;
     retrieveServerCountError: string;
     broadcastServerCountError: string;
     guildJoined: string;

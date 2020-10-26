@@ -40,10 +40,10 @@ You can run Friend Time in 3 different modes:
     - This runs Friend Time directly with Node and without shards.
     - Use this mode for general development.
 2. Shard Mode
-    - Type `npm run start-shard`.
+    - Type `npm run start:shard`.
     - This runs Friend Time directly with Node and with sharding enabled.
     - Use this mode if you are testing sharding.
 3. PM2 Mode
-    - Run by typing `npm run start-pm2`.
+    - Run by typing `npm run start:pm2`.
     - This runs Friend Time using the process manager [PM2](https://pm2.keymetrics.io/).
     - Use this mode if you require Friend Time to always be online.

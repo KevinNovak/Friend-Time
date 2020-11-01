@@ -108,7 +108,7 @@ export class MessageHandler implements EventHandler {
 
             // TODO: Formats in server config
             // TODO: Move to other classes
-            let discordIds = GuildUtils.getMemberDiscordIds(msg.guild);
+            let discordIds = await GuildUtils.getMemberDiscordIds(msg.guild);
             let timeZones = await this.userRepo.getDistinctTimeZones(discordIds);
 
             // TODO: Better way to find time format, consolidate

@@ -1,8 +1,8 @@
 import { Guild, GuildMember } from 'discord.js';
 
 export abstract class GuildUtils {
-    public static getMemberDiscordIds(guild: Guild): string[] {
-        return guild.members.cache.filter(member => !member.user.bot).keyArray();
+    public static async getMemberDiscordIds(guild: Guild): Promise<string[]> {
+        return (await guild.members.fetch()).filter(member => !member.user.bot).keyArray();
     }
 
     public static async findMember(guild: Guild, query: string): Promise<GuildMember> {

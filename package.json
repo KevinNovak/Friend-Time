@@ -26,6 +26,7 @@
         "chrono-node": "1.4.8",
         "discord.js": "12.5.0",
         "discord.js-multilingual-utils": "1.0.10",
+        "discord.js-rate-limiter": "1.0.2",
         "moment-timezone": "0.5.32",
         "mysql": "2.18.1",
         "node-fetch": "2.6.1",

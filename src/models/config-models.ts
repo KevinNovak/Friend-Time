@@ -2,6 +2,7 @@ export interface ConfigSchema {
     prefix: string;
     client: ClientConfig;
     mysql: MySqlConfig;
+    rateLimiting: RateLimitingConfig;
     jobs: JobsConfig;
     experience: ExperienceConfig;
     colors: ColorsConfig;
@@ -35,6 +36,15 @@ export interface MySqlConfig {
     user: string;
     password: string;
     connectionLimit: number;
+}
+
+export interface RateLimitingConfig {
+    commands: CommandsConfig;
+}
+
+export interface CommandsConfig {
+    amount: number;
+    interval: number;
 }
 
 export interface JobsConfig {

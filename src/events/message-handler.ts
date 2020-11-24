@@ -1,6 +1,8 @@
 import { DMChannel, Message, TextChannel } from 'discord.js';
+import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { Command, HelpCommand } from '../commands';
+import { ConfigSchema } from '../models/config-models';
 import { GuildData } from '../models/database-models';
 import { LogsSchema } from '../models/logs';
 import { GuildRepo, UserRepo } from '../repos';
@@ -15,11 +17,17 @@ import {
 import { GuildUtils, MessageUtils, PermissionUtils, StringUtils } from '../utils';
 import { EventHandler } from './event-handler';
 
+let Config: ConfigSchema = require('../../config/config.json');
 let Logs: LogsSchema = require('../../lang/logs.en.json');
 
 export class MessageHandler implements EventHandler {
     // Move to config?
     private MAX_MESSAGE_LENGTH = 2000;
+
+    private rateLimiter = new RateLimiter(
+        Config.rateLimiting.commands.amount,
+        Config.rateLimiting.commands.interval * 1000
+    );
 
     constructor(
         private prefix: string,
@@ -65,6 +73,12 @@ export class MessageHandler implements EventHandler {
 
         // Return if I shouldn't handle this message
         if (!(startsWithPrefix || shouldConvert)) {
+            return;
+        }
+
+        // Check if user is rate limited
+        let limited = this.rateLimiter.take(msg.author.id);
+        if (limited) {
             return;
         }
 

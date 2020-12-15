@@ -8,19 +8,20 @@
 
 ## Setup
 
-1. Obtain a bot token.
+1. Copy example config files.
+    - Navigate to the `config` folder of this project.
+    - Copy all files ending in `.example.json` and remove the `.example` from the copied file names.
+        - Ex: `config.example.json` should be copied and renamed as `config.json`.
+2. Obtain a bot token.
     - You'll need to create a new bot in your [Discord Developer Portal](https://discordapp.com/developers/applications/).
         - See [here](https://www.writebots.com/discord-bot-token/) for detailed instructions.
         - At the end you should have a **bot token**.
-2. Clone or download the repository.
-    - You can clone the repository by typing:
-        - `git clone https://github.com/KevinNovak/Friend-Time.git`
 3. Create the database.
     - In your MySQL or MariaDB server create a new database.
     - Run the `scripts/create-database.sql` script found in this repository.
         - This script will set up all the necessary tables and structures.
-4. Setup the config file.
-    - Open the `config/config.json` file found in this repository.
+4. Modify the config file.
+    - Open the `config/config.json` file.
     - You'll need to edit the following values:
         - `client.token` - Your discord bot token.
         - `mysql.host` - The ip address that your database is running on (or `localhost`).
@@ -28,8 +29,7 @@
         - `mysql.user` - The username to use when accessing the database.
         - `mysql.password` - The password of the user accessing the database.
 5. Install packages.
-    - Navigate into the downloaded source files and run:
-        - `npm install`
+    - Navigate into the downloaded source files and type `npm install`.
 
 ## Running
 

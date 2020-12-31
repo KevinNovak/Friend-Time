@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "author": "Kevin Novak",
     "description": "Discord bot for converting times between time zones.",
-    "license": "MIT",
+    "license": "Apache 2.0 with Commons Clause",
     "private": true,
     "engines": {
         "node": ">=14.0.0"

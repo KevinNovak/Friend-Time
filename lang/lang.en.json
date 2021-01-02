@@ -30,7 +30,7 @@
                 "**Note**: You must have the `Administrator` permission to use the below commands.",
                 "",
                 "**-ft config mode <react/list>** - Change the mode that is used for converting times.",
-                "**-ft config format <12/24>** - Change the servers time format, `12` or `24` hours.",
+                "**-ft config format <12/24>** - Change the server's time format, `12` or `24` hours.",
                 "**-ft config notify <on/off>** - Enable or disable reminders for users who don't have a time zone set."
             ]
         },

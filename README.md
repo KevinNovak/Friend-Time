@@ -39,7 +39,7 @@ By also reacting, you will be private messaged with the time converted to your t
 ### Config Commands
 
 -   `-ft config mode <react/list>` - Change the mode that is used for converting times.
--   `-ft config format <12/24>` - Change the servers time format, 12 or 24 hours.
+-   `-ft config format <12/24>` - Change the server's time format, 12 or 24 hours.
 -   `-ft config notify <on/off>` - Enable or disable reminders for users who don't have a time zone set.
 
 ### Info Commands
@@ -61,7 +61,7 @@ You can then take your time zone name and run the **set** command like so:
 
 ![Setting your time zone](https://i.imgur.com/LgaPfp6.png)
 
-Friend Time will then know your time zone and use this to automatically convert any times you mention in chat, as well as convert other users times to your time zone.
+Friend Time will then know your time zone and use this to automatically convert any times you mention in chat, as well as convert other user's times to your time zone.
 
 ## Permissions
 

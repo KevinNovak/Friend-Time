@@ -92,6 +92,10 @@
                 { "name": "ECMAScript", "value": "{{ES_VERSION}}" },
                 { "name": "discord.js", "value": "{{DJS_VERSION}}" },
                 {
+                    "name": "Creado con",
+                    "value": ["{{REF:linkTemplate}}"]
+                },
+                {
                     "name": "Enlaces",
                     "value": ["{{REF:linkDonate}}", "{{REF:linkSupport}}", "{{REF:linkInvite}}"]
                 }
@@ -187,6 +191,8 @@
         "linkAuthor": "[Kevin Novak](https://github.com/KevinNovak)",
         "linkDonate": "[Dona vía Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)",
         "linkSupport": "[Únete al Servidor de Soporte](https://discord.gg/GQcBR8e)",
-        "linkInvite": "[¡Invita Friend Time a un Servidor!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)"
+        "linkInvite": "[¡Invita Friend Time a un Servidor!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)",
+        "linkTemplate": "[Discord Bot TypeScript Template](https://github.com/KevinNovak/Discord-Bot-TypeScript-Template)",
+        "linkMap": "https://kevinnovak.github.io/Time-Zone-Picker/"
     }
 }

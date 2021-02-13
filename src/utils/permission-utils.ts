@@ -49,6 +49,12 @@ export abstract class PermissionUtils {
 
         // VIEW_CHANNEL - Needed to view the channel
         // ADD_REACTIONS - Needed to add new reactions to messages
-        return channelPerms.has([Permissions.FLAGS.VIEW_CHANNEL, Permissions.FLAGS.ADD_REACTIONS]);
+        // READ_MESSAGE_HISTORY - Needed to add new reactions to messages
+        //    https://discordjs.guide/popular-topics/permissions-extended.html#implicit-permissions
+        return channelPerms.has([
+            Permissions.FLAGS.VIEW_CHANNEL,
+            Permissions.FLAGS.ADD_REACTIONS,
+            Permissions.FLAGS.READ_MESSAGE_HISTORY,
+        ]);
     }
 }

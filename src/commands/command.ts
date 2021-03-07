@@ -1,15 +1,9 @@
-import { DMChannel, Message, TextChannel } from 'discord.js';
+import { Message, PermissionResolvable } from 'discord.js-light';
+import { Keyword } from '../models/common';
+import { EventData } from '../models/internal-models';
 
-import { GuildData, UserData } from '../models/database-models';
-
-export interface Command {
-    name: string;
+export interface Command extends Keyword {
     requireGuild: boolean;
-    execute(
-        msg: Message,
-        args: string[],
-        channel: TextChannel | DMChannel,
-        authorData?: UserData,
-        guildData?: GuildData
-    ): Promise<void>;
+    requirePerms: PermissionResolvable[];
+    execute(msg: Message, args: string[], data: EventData): Promise<void>;
 }

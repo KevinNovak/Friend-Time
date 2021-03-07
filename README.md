@@ -1,86 +1,43 @@
 # Friend Time
 
-[![top.gg](https://top.gg/api/widget/status/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![top.gg](https://top.gg/api/widget/servers/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![discord.js](https://img.shields.io/github/package-json/dependency-version/KevinNovak/Friend-Time/discord.js)](https://discord.js.org/)[![License](https://img.shields.io/badge/license-Apache%202.0%20with%20Commons%20Clause-blue)](https://commonsclause.com/)
+[![top.gg](https://top.gg/api/widget/status/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![top.gg](https://top.gg/api/widget/servers/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)[![discord.js-light](https://img.shields.io/github/package-json/dependency-version/KevinNovak/Friend-Time/discord.js-light)](https://github.com/timotejroiko/discord.js-light)[![License](https://img.shields.io/badge/license-Apache%202.0%20with%20Commons%20Clause-blue)](https://commonsclause.com/)
 
-**Discord bot** - Automatically convert times mentioned in chat between time zones!
+**Discord bot** - Friend Time helps your server coordinate times and events by converting times mentioned in chat between time zones!
 
-## [Add to your Discord Server!](https://discordapp.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)
+## [Add to your Discord Server!](https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)
 
-[Join Support Server](https://discord.gg/GQcBR8e) | [Donate with PayPal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
+[Documentation](https://docs.friendtime.ml/) \| [Support Server](https://discord.gg/GQcBR8e) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 
-If you have a discord server with users across multiple countries and time zones then this is the bot for you! With Friend Time you can easily coordinate times between users. Friend Time will automatically convert any times mentioned in chat to the times of other users.
+## Introduction
 
-Friend Time will automatically react with a clock emoji to times mentioned in chat:
+If you have a discord server with users across multiple countries and time zones then this is the bot for you! With Friend Time you can easily coordinate times between users.
 
-![Example usage](https://i.imgur.com/wyxFxEr.png)
+Friend Time will automatically react with a clock emoji \(🕰️\) to times mentioned in chat:
+
+![Example usage](https://i.imgur.com/pm9nCJG.png)
 
 By also reacting, you will be private messaged with the time converted to your time zone:
 
-![Example conversion](https://i.imgur.com/wveOlPz.png)
+![Example time conversion](https://i.imgur.com/wMsXvL3.png)
 
-## Commands
+## Features
 
-### Help Command
+-   Automatically reacts with a [**clock emoji**](https://docs.friendtime.ml/time-conversions#1-convert-to-your-time-zone) \(️️🕰️\) to times mentioned in chat.
+    -   Clicking the clock emoji **converts the time** to your time zone.
+    -   Sent in a direct message.
+-   A [**time zone list**](https://docs.friendtime.ml/time-conversions#2-convert-to-list-of-time-zones) where you can set up to 10 time zones to always convert to.
+    -   Sent in the server channel.
+-   **Reminders** for users to set their time zones.
+    -   Servers and users can disable this reminder if desired.
+-   Set [**time zones for other users**](https://docs.friendtime.ml/commands/user-commands/set#setup-for-another-user) or even [**bots**](https://docs.friendtime.ml/commands/user-commands/set#setup-for-a-bot)!
+-   A [**private mode**](https://docs.friendtime.ml/settings/user-settings/private-mode) for users who don't want to expose their location.
+-   Customize the **appearance of times** \(12 or 24 hour\).
+-   Support for **multiple languages**.
 
--   `-ft` - Show the help menu.
+## Documentation
 
-### Core Commands
-
--   `-ft set <zone>` - Set yourself to a time zone.
--   `-ft map` - View a map of available time zones.
--   `-ft clear` - Clear your time zone.
--   `-ft time` - Get the current time.
--   `-ft time <user>` - Get the current time of a user.
--   `-ft time <zone>` - Get the current time of a time zone.
--   `-ft format <12/24>` - Set your time format, 12 or 24 hours.
--   `-ft config` - Change server settings, for admins.
--   `-ft info` - More information about Friend Time.
-
-### Config Commands
-
--   `-ft config mode <react/list>` - Change the mode that is used for converting times.
--   `-ft config format <12/24>` - Change the server's time format, 12 or 24 hours.
--   `-ft config notify <on/off>` - Enable or disable reminders for users who don't have a time zone set.
-
-### Info Commands
-
--   `-ft invite` - Invite Friend Time to your server.
--   `-ft support` - Get help or report an issue.
--   `-ft donate` - Donate to keep Friend Time running!
-
-## Finding Your Time Zone
-
-Visit the following link to view a map of available time zones:
-
-<https://kevinnovak.github.io/Time-Zone-Picker/>
-
-Simply click your location on the map, and use the name displayed in "Selected Time Zone" as your time zone.
-
-You can then take your time zone name and run the **set** command like so:
-`-ft set America/New_York`
-
-![Setting your time zone](https://i.imgur.com/LgaPfp6.png)
-
-Friend Time will then know your time zone and use this to automatically convert any times you mention in chat, as well as convert other user's times to your time zone.
-
-## Permissions
-
-Friend Time requires the following permissions:
-
-1. **Read Messages**
-2. **Send Messages**
-3. **Embed Links**
-4. **Read Message History**
-5. **Add Reactions**
-
-When you invite Friend Time to your server, by default all of these permissions should be given to Friend Time. If you'd like to disable Friend Time for certain channels, feel free to remove these permissions in the channels you'd like to disable. If you are experiencing permissions issues, feel free to kick and reinvite Friend Time.
+Please see the [documentation site](https://docs.friendtime.ml/) for more detailed information on how to use Friend Time.
 
 ## Self-Hosting
 
-If you'd like to run your own copy of Friend Time for development or personal reasons, see the [following guide](docs/self-hosting.md).
-
-## References
-
--   [discord.js](https://discord.js.org/) - A powerful JavaScript library for interacting with the Discord API.
--   [Chrono](https://github.com/wanasit/chrono) - A natural language date parser in JavaScript.
--   [Moment Timezone](https://momentjs.com/timezone/) - Parse and display dates in any time zone.
+If you'd like to run your own copy of Friend Time for development or personal reasons, see the [self-hosting guide](https://docs.friendtime.ml/misc/self-hosting).

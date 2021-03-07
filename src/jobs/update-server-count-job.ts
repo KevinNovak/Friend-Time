@@ -1,18 +1,17 @@
-import { ShardingManager } from 'discord.js';
+import { ShardingManager } from 'discord.js-light';
 import schedule from 'node-schedule';
 
-import { BotSiteConfig, ConfigSchema } from '../models/config-models';
-import { LogsSchema } from '../models/logs';
-import { HttpService, Logger } from '../services';
+import { BotSite } from '../models/config-models';
+import { LangCode } from '../models/enums';
+import { HttpService, Lang, Logger } from '../services';
 import { ShardUtils } from '../utils';
 import { Job } from './job';
 
-let Config: ConfigSchema = require('../../config/config.json');
-let BotSites: BotSiteConfig[] = require('../../config/bot-sites.json');
-let Logs: LogsSchema = require('../../lang/logs.en.json');
+let BotSites: BotSite[] = require('../../config/bot-sites.json');
+let Logs = require('../../lang/logs.json');
 
 export class UpdateServerCountJob implements Job {
-    private botSites: BotSiteConfig[];
+    private botSites: BotSite[];
 
     constructor(
         public schedule: string,
@@ -27,15 +26,15 @@ export class UpdateServerCountJob implements Job {
         await this.shardManager.broadcastEval(`
             this.user.setPresence({
                 activity: {
-                    name: 'time to ${serverCount.toLocaleString()} servers',
+                    name: 'to ${serverCount.toLocaleString()} servers',
                     type: "STREAMING",
-                    url: "${Config.links.stream}"
+                    url: "${Lang.getRef('links.stream', LangCode.EN_US)}"
                 }
             });
         `);
 
         Logger.info(
-            Logs.updatedServerCount.replace('{SERVER_COUNT}', serverCount.toLocaleString())
+            Logs.info.updatedServerCount.replace('{SERVER_COUNT}', serverCount.toLocaleString())
         );
 
         for (let botSite of this.botSites) {
@@ -50,13 +49,13 @@ export class UpdateServerCountJob implements Job {
                 }
             } catch (error) {
                 Logger.error(
-                    Logs.updateServerCountSiteError.replace('{BOT_SITE}', botSite.name),
+                    Logs.error.updateServerCountSite.replace('{BOT_SITE}', botSite.name),
                     error
                 );
                 continue;
             }
 
-            Logger.info(Logs.updateServerCountSite.replace('{BOT_SITE}', botSite.name));
+            Logger.info(Logs.info.updateServerCountSite.replace('{BOT_SITE}', botSite.name));
         }
     }
 
@@ -65,7 +64,7 @@ export class UpdateServerCountJob implements Job {
             try {
                 await this.run();
             } catch (error) {
-                Logger.error(Logs.updateServerCountError, error);
+                Logger.error(Logs.error.updateServerCount, error);
             }
         });
     }

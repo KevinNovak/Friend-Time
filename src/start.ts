@@ -1,112 +1,215 @@
-import { Client, ClientOptions, IntentsString, PartialTypes } from 'discord.js';
-import { MultilingualService } from 'discord.js-multilingual-utils';
-import path from 'path';
+import { Client } from 'discord.js-light';
 
 import { Bot } from './bot';
 import {
-    ClearCommand,
-    ConfigCommand,
-    DonateCommand,
-    FormatCommand,
+    BotCommand,
+    DevCommand,
+    DocsCommand,
     HelpCommand,
     InfoCommand,
     InviteCommand,
+    ListCommand,
     MapCommand,
+    MeCommand,
+    ServerCommand,
     SetCommand,
+    SetupCommand,
     SupportCommand,
     TimeCommand,
+    TranslateCommand,
+    VoteCommand,
 } from './commands';
-import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
-import { ConfigSchema } from './models/config-models';
-import { GuildRepo, UserRepo } from './repos';
+import { Database } from './database/database';
 import {
-    LanguageService,
-    Logger,
-    MessageSender,
-    ReminderService,
-    TimeFormatService,
-    TimeParser,
-    ZoneService,
-} from './services';
-import { DataAccess } from './services/database/data-access';
+    CommandHandler,
+    GuildJoinHandler,
+    GuildLeaveHandler,
+    MessageHandler,
+    ReactionHandler,
+    TriggerHandler,
+} from './events';
+import { ConvertReaction } from './reactions';
+import { Logger, ReminderService, TimeService } from './services';
+import { SettingManager } from './settings';
+import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot';
+import {
+    GuildAutoDetectSetting,
+    GuildLanguageSetting,
+    GuildListSetting,
+    GuildRemindersSetting,
+    GuildTimeFormatSetting,
+    GuildTimeZoneSetting,
+} from './settings/guild';
+import {
+    UserDateFormatSetting,
+    UserLanguageSetting,
+    UserPrivateModeSetting,
+    UserRemindersSetting,
+    UserTimeFormatSetting,
+    UserTimeZoneSetting,
+} from './settings/user';
+import { ConvertTrigger } from './triggers';
 
-let Config: ConfigSchema = require('../config/config.json');
+let Config = require('../config/config.json');
 
 async function start(): Promise<void> {
-    let clientOptions: ClientOptions = {
-        ws: { intents: Config.client.intents as IntentsString[] },
-        partials: Config.client.partials as PartialTypes[],
+    await Database.connect();
+
+    let client = new Client({
+        // discord.js Options
+        ws: { intents: Config.client.intents },
+        partials: Config.client.partials,
         messageCacheMaxSize: Config.client.caches.messages.size,
         messageCacheLifetime: Config.client.caches.messages.lifetime,
         messageSweepInterval: Config.client.caches.messages.sweepInterval,
-    };
 
-    // Dependency Injection
-    let multilingualService = new MultilingualService(path.join(__dirname, '../lang'));
-    let langService = new LanguageService(multilingualService);
-    let client = new Client(clientOptions);
-    let dataAccess = new DataAccess(Config.mysql);
-    let guildRepo = new GuildRepo(dataAccess);
-    let userRepo = new UserRepo(dataAccess);
-    let msgSender = new MessageSender(langService);
-    let timeParser = new TimeParser(Config.experience.blacklist);
-    let zoneService = new ZoneService(Config.validation.regions, timeParser);
-    let timeFormatService = new TimeFormatService(Config.experience.timeFormats);
-    let reminderService = new ReminderService(msgSender);
-    let helpCommand = new HelpCommand(msgSender);
-    let setCommand = new SetCommand(msgSender, zoneService, userRepo);
-    let mapCommand = new MapCommand(msgSender);
-    let clearCommand = new ClearCommand(msgSender, userRepo);
-    let timeCommand = new TimeCommand(msgSender, zoneService, timeFormatService, userRepo);
-    let formatCommand = new FormatCommand(msgSender, userRepo, timeFormatService);
-    let configCommand = new ConfigCommand(msgSender, guildRepo);
-    let infoCommand = new InfoCommand(msgSender);
-    let inviteCommand = new InviteCommand(msgSender);
-    let supportCommand = new SupportCommand(msgSender);
-    let donateCommand = new DonateCommand(msgSender);
-    let guildJoinHandler = new GuildJoinHandler();
+        // discord.js-light Options
+        cacheGuilds: Config.client.caches.guilds,
+        cacheRoles: Config.client.caches.roles,
+        cacheEmojis: Config.client.caches.emojis,
+        cacheChannels: Config.client.caches.channels,
+        cacheOverwrites: Config.client.caches.overwrites,
+        cachePresences: Config.client.caches.presences,
+        disabledEvents: Config.client.disabledEvents,
+    });
+
+    // Guild Settings
+    let guildTimeZoneSetting = new GuildTimeZoneSetting();
+    let guildTimeFormatSetting = new GuildTimeFormatSetting();
+    let guildAutoDetectSetting = new GuildAutoDetectSetting();
+    let guildListSetting = new GuildListSetting();
+    let guildRemindersSetting = new GuildRemindersSetting();
+    let guildLanguageSetting = new GuildLanguageSetting();
+    let guildSettingManager = new SettingManager([
+        guildTimeZoneSetting,
+        guildTimeFormatSetting,
+        guildAutoDetectSetting,
+        guildListSetting,
+        guildRemindersSetting,
+        guildLanguageSetting,
+    ]);
+
+    // Bot Settings
+    let botTimeZoneSetting = new BotTimeZoneSetting();
+    let botDateFormatSetting = new BotDateFormatSetting();
+    let botSettingManager = new SettingManager([botTimeZoneSetting, botDateFormatSetting]);
+    let botSetupSettingManager = new SettingManager([botTimeZoneSetting]);
+
+    // User Settings
+    let userTimeZoneSetting = new UserTimeZoneSetting();
+    let userDateFormatSetting = new UserDateFormatSetting();
+    let userTimeFormatSetting = new UserTimeFormatSetting();
+    let userPrivateModeSetting = new UserPrivateModeSetting();
+    let userRemindersSetting = new UserRemindersSetting();
+    let userLanguageSetting = new UserLanguageSetting();
+    let userSettingManager = new SettingManager([
+        userTimeZoneSetting,
+        userDateFormatSetting,
+        userTimeFormatSetting,
+        userPrivateModeSetting,
+        userRemindersSetting,
+        userLanguageSetting,
+    ]);
+    let userSetupSettingManager = new SettingManager([userTimeZoneSetting]);
+
+    // Services
+    let timeService = new TimeService();
+    let reminderService = new ReminderService(guildRemindersSetting, userRemindersSetting);
+
+    // Commands
+    let botCommand = new BotCommand(botSettingManager);
+    let devCommand = new DevCommand();
+    let docsCommand = new DocsCommand();
+    // let donateCommand = new DonateCommand();
+    // let findCommand = new FindCommand();
+    let helpCommand = new HelpCommand();
+    let infoCommand = new InfoCommand();
+    let inviteCommand = new InviteCommand();
+    let listCommand = new ListCommand();
+    let mapCommand = new MapCommand();
+    let meCommand = new MeCommand(userSettingManager, userPrivateModeSetting);
+    let serverCommand = new ServerCommand(guildSettingManager);
+    let setCommand = new SetCommand(
+        userSetupSettingManager,
+        botSetupSettingManager,
+        userPrivateModeSetting
+    );
+    let setupCommand = new SetupCommand(guildSettingManager);
+    let supportCommand = new SupportCommand();
+    let timeCommand = new TimeCommand(
+        guildTimeZoneSetting,
+        botTimeZoneSetting,
+        userTimeZoneSetting,
+        userTimeFormatSetting,
+        userPrivateModeSetting
+    );
+    let translateCommand = new TranslateCommand();
+    let voteCommand = new VoteCommand();
+
+    // Reactions
+    let convertReaction = new ConvertReaction(
+        timeService,
+        reminderService,
+        botTimeZoneSetting,
+        botDateFormatSetting,
+        userTimeZoneSetting,
+        userDateFormatSetting,
+        userTimeFormatSetting,
+        userPrivateModeSetting
+    );
+
+    // Triggers
+    let convertTrigger = new ConvertTrigger(
+        convertReaction,
+        timeService,
+        reminderService,
+        guildAutoDetectSetting,
+        guildListSetting,
+        guildTimeFormatSetting,
+        guildLanguageSetting,
+        botTimeZoneSetting,
+        botDateFormatSetting,
+        userTimeZoneSetting,
+        userDateFormatSetting,
+        userPrivateModeSetting
+    );
+
+    // Events handlers
+    let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
-    let messageHandler = new MessageHandler(
-        Config.prefix,
-        Config.emojis.convert,
-        helpCommand,
-        [
-            setCommand,
-            mapCommand,
-            clearCommand,
-            timeCommand,
-            formatCommand,
-            configCommand,
-            infoCommand,
-            inviteCommand,
-            supportCommand,
-            donateCommand,
-        ],
-        guildRepo,
-        userRepo,
-        msgSender,
-        timeParser,
-        zoneService,
-        timeFormatService,
-        reminderService
-    );
-    let reactionHandler = new ReactionHandler(
-        Config.emojis.convert,
-        msgSender,
-        timeParser,
-        zoneService,
-        timeFormatService,
-        guildRepo,
-        userRepo
-    );
+    let commandHandler = new CommandHandler(Config.prefix, helpCommand, [
+        botCommand,
+        devCommand,
+        docsCommand,
+        // donateCommand,
+        // findCommand,
+        infoCommand,
+        inviteCommand,
+        listCommand,
+        mapCommand,
+        meCommand,
+        serverCommand,
+        setCommand,
+        setupCommand,
+        supportCommand,
+        timeCommand,
+        translateCommand,
+        voteCommand,
+    ]);
+    let triggerHandler = new TriggerHandler([convertTrigger]);
+    let messageHandler = new MessageHandler(commandHandler, triggerHandler);
+    let reactionHandler = new ReactionHandler([convertReaction]);
+
     let bot = new Bot(
+        Config.client.token,
         client,
         guildJoinHandler,
         guildLeaveHandler,
         messageHandler,
         reactionHandler,
-        Config.client.token
+        []
     );
+
     await bot.start();
 }
 

@@ -10,21 +10,19 @@
     },
     "cSpell.enabled": true,
     "cSpell.words": [
-        "Interop",
+        "Luxon",
         "Novak",
-        "chatbot",
+        "TypeORM",
+        "bot's",
         "chrono",
-        "dblapi",
         "discordbotlist",
-        "discordjs",
         "discordlabs",
-        "friendtime",
-        "geocoder",
+        "filesize",
         "ondiscord",
         "parens",
-        "quotemark",
-        "regexs",
-        "repos",
-        "respawn"
+        "regexes",
+        "respawn",
+        "tzdb",
+        "varchar"
     ]
 }

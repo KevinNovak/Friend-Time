@@ -1,108 +1,150 @@
-import { DMChannel, Message, TextChannel, User } from 'discord.js';
+import { Message, TextChannel } from 'discord.js-light';
 
-import { UserData } from '../models/database-models';
-import { UserRepo } from '../repos';
-import { MessageSender, TimeFormatService, ZoneService } from '../services';
-import { GuildUtils } from '../utils';
+import { GuildBotData } from '../database/entities';
+import { LangCode } from '../models/enums';
+import { EventData } from '../models/internal-models';
+import { Lang } from '../services';
+import { BotTimeZoneSetting } from '../settings/bot';
+import { GuildTimeZoneSetting } from '../settings/guild';
+import {
+    UserPrivateModeSetting,
+    UserTimeFormatSetting,
+    UserTimeZoneSetting,
+} from '../settings/user';
+import {
+    ClientUtils,
+    DataUtils,
+    FormatUtils,
+    MessageUtils,
+    TimeUtils,
+    TimeZoneUtils,
+} from '../utils';
 import { Command } from './command';
 
 export class TimeCommand implements Command {
-    public name = 'time';
     public requireGuild = false;
+    public requirePerms = [];
 
     constructor(
-        private msgSender: MessageSender,
-        private zoneService: ZoneService,
-        private timeFormatService: TimeFormatService,
-        private userRepo: UserRepo
+        private guildTimeZoneSetting: GuildTimeZoneSetting,
+        private botTimeZoneSetting: BotTimeZoneSetting,
+        private userTimeZoneSetting: UserTimeZoneSetting,
+        private userTimeFormatSetting: UserTimeFormatSetting,
+        private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(
-        msg: Message,
-        args: string[],
-        channel: TextChannel | DMChannel,
-        authorData: UserData
-    ): Promise<void> {
-        let mentionedUsers = msg.mentions.users;
-        if (mentionedUsers.size > 0) {
-            this.executeMention(mentionedUsers.first(), authorData, channel);
-            return;
-        }
+    public keyword(langCode: LangCode): string {
+        return Lang.getRef('commands.time', langCode);
+    }
 
-        let input = args.join(' ');
+    public regex(langCode: LangCode): RegExp {
+        return Lang.getRegex('commands.time', langCode);
+    }
 
-        if (args.length > 0) {
-            if (msg.guild) {
-                let member = await GuildUtils.findMember(msg.guild, input);
-                if (member) {
-                    this.executeMention(member.user, authorData, channel);
-                    return;
-                }
+    public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
+        // Time for server
+        if (args.length === 2) {
+            if (!(msg.channel instanceof TextChannel)) {
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('validation.serverOnlyCommand', data.lang())
+                );
+                return;
             }
 
-            this.executeZone(input, authorData, channel);
+            let guildTimeZone = this.guildTimeZoneSetting.valueOrDefault(data.guild);
+            if (!guildTimeZone) {
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('validation.noTimeZoneServer', data.lang())
+                );
+                return;
+            }
+
+            let now = TimeUtils.now(guildTimeZone);
+            let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
+            let time = FormatUtils.dateTime(now, timeFormat, data.lang());
+            await MessageUtils.send(
+                msg.channel,
+                Lang.getEmbed('displays.timeServer', data.lang(), {
+                    TIME: time,
+                    TIME_ZONE: guildTimeZone,
+                })
+            );
             return;
         }
 
-        this.executeSelf(authorData, channel);
-    }
+        if (args.length > 2) {
+            let search = args.slice(2).join(' ');
 
-    private async executeMention(
-        mentionedUser: User,
-        authorData: UserData,
-        channel: TextChannel | DMChannel
-    ): Promise<void> {
-        let userData = await this.userRepo.getUserData(mentionedUser.id);
-        if (!userData?.TimeZone) {
-            await this.msgSender.sendEmbed(channel, 'noZoneSetUser', { USER_ID: mentionedUser.id });
-            return;
+            // Time for zone
+            let timeZone = TimeZoneUtils.find(search)?.name;
+            if (timeZone) {
+                let now = TimeUtils.now(timeZone);
+                let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
+                let time = FormatUtils.dateTime(now, timeFormat, data.lang());
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('displays.timeTimeZone', data.lang(), {
+                        TIME: time,
+                        TIME_ZONE: timeZone,
+                    })
+                );
+                return;
+            }
+
+            if (!(msg.channel instanceof TextChannel)) {
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('validation.serverOnlyCommand', data.lang())
+                );
+                return;
+            }
+
+            let member = await ClientUtils.findMember(msg.guild, search);
+            if (!member) {
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('validation.notFoundUser', data.lang())
+                );
+                return;
+            }
+
+            // Time for member
+            let memberData = await DataUtils.getTargetData(member.user, data.guild);
+            let memberTimeZone =
+                memberData instanceof GuildBotData
+                    ? this.botTimeZoneSetting.valueOrDefault(memberData)
+                    : this.userTimeZoneSetting.valueOrDefault(memberData);
+            if (!memberTimeZone) {
+                await MessageUtils.send(
+                    msg.channel,
+                    Lang.getEmbed('validation.noTimeZoneUser', data.lang(), {
+                        USER: FormatUtils.userMention(member.id),
+                    })
+                );
+                return;
+            }
+
+            let now = TimeUtils.now(memberTimeZone);
+            let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
+            let time = FormatUtils.dateTime(now, timeFormat, data.lang());
+            let privateMode =
+                memberData instanceof GuildBotData
+                    ? false
+                    : this.userPrivateModeSetting.valueOrDefault(memberData);
+            await MessageUtils.send(
+                msg.channel,
+                Lang.getEmbed(
+                    privateMode ? 'displays.timeUserPrivate' : 'displays.timeUser',
+                    data.lang(),
+                    {
+                        TIME: time,
+                        USER: FormatUtils.userMention(member.id),
+                        TIME_ZONE: memberTimeZone,
+                    }
+                )
+            );
         }
-
-        let time = this.zoneService.getMomentInZone(userData.TimeZone);
-        let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
-
-        await this.msgSender.sendEmbed(channel, 'timeUserSuccess', {
-            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            USER_ID: mentionedUser.id,
-            ZONE: userData.TimeZone,
-        });
-    }
-
-    private async executeZone(
-        zoneInput: string,
-        authorData: UserData,
-        channel: TextChannel | DMChannel
-    ): Promise<void> {
-        let zone = this.zoneService.findZone(zoneInput);
-        if (!zone) {
-            await this.msgSender.sendEmbed(channel, 'zoneNotFound');
-            return;
-        }
-
-        let time = this.zoneService.getMomentInZone(zone);
-        let timeFormat = this.timeFormatService.getTimeFormat(authorData?.TimeFormat);
-
-        await this.msgSender.sendEmbed(channel, 'timeZoneSuccess', {
-            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            ZONE: zone,
-        });
-    }
-
-    private async executeSelf(
-        authorData: UserData,
-        channel: TextChannel | DMChannel
-    ): Promise<void> {
-        if (!authorData?.TimeZone) {
-            await this.msgSender.sendEmbed(channel, 'noZoneSetSelf');
-            return;
-        }
-
-        let time = this.zoneService.getMomentInZone(authorData.TimeZone);
-        let timeFormat = this.timeFormatService.getTimeFormat(authorData.TimeFormat);
-
-        await this.msgSender.sendEmbed(channel, 'timeSelfSuccess', {
-            TIME: time.format(`${timeFormat.dateFormat} ${timeFormat.timeFormat}`),
-            ZONE: authorData.TimeZone,
-        });
     }
 }

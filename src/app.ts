@@ -1,18 +1,16 @@
-import { ShardingManager } from 'discord.js';
-import { UpdateServerCountJob } from './jobs';
+import { ShardingManager } from 'discord.js-light';
 
+import { UpdateServerCountJob } from './jobs';
 import { Manager } from './manager';
-import { ConfigSchema } from './models/config-models';
-import { LogsSchema } from './models/logs';
 import { HttpService, Logger } from './services';
 import { ShardUtils } from './utils';
 
-let Config: ConfigSchema = require('../config/config.json');
+let Config = require('../config/config.json');
 let Debug = require('../config/debug.json');
-let Logs: LogsSchema = require('../lang/logs.en.json');
+let Logs = require('../lang/logs.json');
 
 async function start(): Promise<void> {
-    Logger.info(Logs.appStarted);
+    Logger.info(Logs.info.started);
     let httpService = new HttpService();
 
     // Sharding
@@ -25,7 +23,7 @@ async function start(): Promise<void> {
                   Config.sharding.serversPerShard
               );
     } catch (error) {
-        Logger.error(Logs.shardCountError, error);
+        Logger.error(Logs.error.retrieveShardCount, error);
         return;
     }
 
@@ -36,7 +34,7 @@ async function start(): Promise<void> {
     );
 
     if (myShardIds.length === 0) {
-        Logger.warn(Logs.noShards);
+        Logger.warn(Logs.warn.noShards);
         return;
     }
 

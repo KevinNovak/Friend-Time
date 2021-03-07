@@ -1,17 +1,12 @@
-import { Permissions, TextChannel, User } from 'discord.js';
+import { DMChannel, NewsChannel, Permissions, TextChannel } from 'discord.js-light';
 
-export abstract class PermissionUtils {
-    public static isAdmin(user: User, channel: TextChannel): boolean {
-        let channelPerms = channel.permissionsFor(channel.client.user);
-        if (!channelPerms) {
-            // This can happen if the guild disconnected while a collector is running
-            return false;
+export class PermissionUtils {
+    public static canSend(channel: DMChannel | TextChannel | NewsChannel): boolean {
+        // Bot always has permission in direct message
+        if (channel instanceof DMChannel) {
+            return true;
         }
 
-        return channel.permissionsFor(user).has('ADMINISTRATOR');
-    }
-
-    public static canSend(channel: TextChannel): boolean {
         let channelPerms = channel.permissionsFor(channel.client.user);
         if (!channelPerms) {
             // This can happen if the guild disconnected while a collector is running
@@ -23,7 +18,12 @@ export abstract class PermissionUtils {
         return channelPerms.has([Permissions.FLAGS.VIEW_CHANNEL, Permissions.FLAGS.SEND_MESSAGES]);
     }
 
-    public static canSendEmbed(channel: TextChannel): boolean {
+    public static canSendEmbed(channel: DMChannel | TextChannel | NewsChannel): boolean {
+        // Bot always has permission in direct message
+        if (channel instanceof DMChannel) {
+            return true;
+        }
+
         let channelPerms = channel.permissionsFor(channel.client.user);
         if (!channelPerms) {
             // This can happen if the guild disconnected while a collector is running
@@ -40,7 +40,35 @@ export abstract class PermissionUtils {
         ]);
     }
 
-    public static canReact(channel: TextChannel): boolean {
+    public static canMention(channel: DMChannel | TextChannel | NewsChannel): boolean {
+        // Bot always has permission in direct message
+        if (channel instanceof DMChannel) {
+            return true;
+        }
+
+        let channelPerms = channel.permissionsFor(channel.client.user);
+        if (!channelPerms) {
+            // This can happen if the guild disconnected while a collector is running
+            return false;
+        }
+
+        // VIEW_CHANNEL - Needed to view the channel
+        // MENTION_EVERYONE - Needed to mention @everyone, @here, and all roles
+        return channelPerms.has([
+            Permissions.FLAGS.VIEW_CHANNEL,
+            Permissions.FLAGS.MENTION_EVERYONE,
+        ]);
+    }
+
+    public static canReact(
+        channel: DMChannel | TextChannel | NewsChannel,
+        removeOthers: boolean = false
+    ): boolean {
+        // Bot always has permission in direct message
+        if (channel instanceof DMChannel) {
+            return true;
+        }
+
         let channelPerms = channel.permissionsFor(channel.client.user);
         if (!channelPerms) {
             // This can happen if the guild disconnected while a collector is running
@@ -51,10 +79,37 @@ export abstract class PermissionUtils {
         // ADD_REACTIONS - Needed to add new reactions to messages
         // READ_MESSAGE_HISTORY - Needed to add new reactions to messages
         //    https://discordjs.guide/popular-topics/permissions-extended.html#implicit-permissions
+        // MANAGE_MESSAGES - Needed to remove others reactions
         return channelPerms.has([
             Permissions.FLAGS.VIEW_CHANNEL,
             Permissions.FLAGS.ADD_REACTIONS,
             Permissions.FLAGS.READ_MESSAGE_HISTORY,
+            ...(removeOthers ? [Permissions.FLAGS.MANAGE_MESSAGES] : []),
+        ]);
+    }
+
+    public static canPin(
+        channel: DMChannel | TextChannel | NewsChannel,
+        unpinOld: boolean = false
+    ): boolean {
+        // Bot always has permission in direct message
+        if (channel instanceof DMChannel) {
+            return true;
+        }
+
+        let channelPerms = channel.permissionsFor(channel.client.user);
+        if (!channelPerms) {
+            // This can happen if the guild disconnected while a collector is running
+            return false;
+        }
+
+        // VIEW_CHANNEL - Needed to view the channel
+        // MANAGE_MESSAGES - Needed to pin messages
+        // READ_MESSAGE_HISTORY - Needed to find old pins to unpin
+        return channelPerms.has([
+            Permissions.FLAGS.VIEW_CHANNEL,
+            Permissions.FLAGS.MANAGE_MESSAGES,
+            ...(unpinOld ? [Permissions.FLAGS.READ_MESSAGE_HISTORY] : []),
         ]);
     }
 }

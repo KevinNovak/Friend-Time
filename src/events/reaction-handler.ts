@@ -1,99 +1,66 @@
-import { DiscordAPIError, DMChannel, MessageReaction, User } from 'discord.js';
+import { DMChannel, MessageReaction, TextChannel, User } from 'discord.js-light';
+import { RateLimiter } from 'discord.js-rate-limiter';
 
-import { LogsSchema } from '../models/logs';
-import { GuildRepo, UserRepo } from '../repos';
-import { Logger, MessageSender, TimeFormatService, TimeParser, ZoneService } from '../services';
-import { StringUtils } from '../utils';
-import { EventHandler } from './event-handler';
+import { EventHandler } from '.';
+import { GuildData, UserData } from '../database/entities';
+import { EventData } from '../models/internal-models';
+import { Reaction } from '../reactions';
 
-let Logs: LogsSchema = require('../../lang/logs.en.json');
+let Config = require('../../config/config.json');
 
 export class ReactionHandler implements EventHandler {
-    constructor(
-        private emoji: string,
-        private msgSender: MessageSender,
-        private timeParser: TimeParser,
-        private zoneService: ZoneService,
-        private timeFormatService: TimeFormatService,
-        private guildRepo: GuildRepo,
-        private userRepo: UserRepo
-    ) {}
+    private rateLimiter = new RateLimiter(
+        Config.rateLimiting.reactions.amount,
+        Config.rateLimiting.reactions.interval * 1000
+    );
 
-    public async process(messageReaction: MessageReaction, reactor: User): Promise<void> {
-        let reactedEmoji = messageReaction.emoji.name;
-        if (reactedEmoji !== this.emoji) {
+    constructor(private reactions: Reaction[]) {}
+
+    public async process(msgReaction: MessageReaction, reactor: User): Promise<void> {
+        let msg = msgReaction.message;
+
+        // Don't respond to self, or other bots
+        if (reactor.id === msgReaction.client.user.id || reactor.bot) {
             return;
         }
 
-        // Don't respond to bots
-        if (reactor.bot) {
+        // Only handle messages from text or DM channels
+        if (!(msg.channel instanceof TextChannel || msg.channel instanceof DMChannel)) {
             return;
         }
 
-        // Fill partial structures
-        try {
-            if (messageReaction.partial) {
-                messageReaction = await messageReaction.fetch();
-            }
-            if (messageReaction.message.partial) {
-                messageReaction.message = await messageReaction.message.fetch();
-            }
-        } catch (error) {
-            // Error code 10003: "Unknown Channel"
-            // Error code 10008: "Unknown Message" (message was deleted)
-            // Error code 50001: "Missing Access"
-            if (error instanceof DiscordAPIError && [10003, 10008, 50001].includes(error.code)) {
-                return;
-            } else {
-                Logger.error(Logs.retrievePartialReactionMessageError, error);
-                return;
-            }
-        }
-
-        let msg = messageReaction.message;
-
-        let result = this.timeParser.parseTime(msg.content);
-        if (!this.timeParser.shouldConvert(result)) {
+        // Try to find the reaction the user wants
+        let reaction = this.findReaction(msgReaction.emoji.name);
+        if (!reaction) {
             return;
         }
 
-        let dmChannel: DMChannel = reactor.dmChannel ?? (await reactor.createDM());
-
-        if (msg.guild) {
-            let guildData = await this.guildRepo.getGuildData(msg.guild.id);
-            if (guildData.Mode !== 'React') {
-                return;
-            }
-        }
-
-        let userData = await this.userRepo.getUserData(reactor.id);
-        if (!userData?.TimeZone) {
-            await this.msgSender.sendEmbed(dmChannel, 'noZoneSetSelf');
+        if (reaction.requireGuild && !(msg.channel instanceof TextChannel)) {
             return;
         }
 
-        let authorData = await this.userRepo.getUserData(msg.author.id);
-        if (!authorData?.TimeZone) {
-            await this.msgSender.sendEmbed(dmChannel, 'noZoneSetUser', { USER_ID: msg.author.id });
+        // Check if user is rate limited
+        let limited = this.rateLimiter.take(msg.author.id);
+        if (limited) {
             return;
         }
 
-        let moment = this.zoneService.convert(result, authorData.TimeZone, userData.TimeZone);
+        // Get data from database
+        let data = new EventData(
+            await UserData.findOne({ discordId: reactor.id }),
+            msg.guild
+                ? await GuildData.findOne(
+                      { discordId: msg.guild.id },
+                      { relations: ['bots', 'listItems'] }
+                  )
+                : undefined
+        );
 
-        let timeFormat = this.timeFormatService.getTimeFormat(userData?.TimeFormat);
-        let format = this.timeParser.dayIsCertain(result.start)
-            ? `${timeFormat.dateFormat} ${timeFormat.timeFormat}`
-            : timeFormat.timeFormat;
+        // Execute the reaction
+        await reaction.execute(msgReaction, reactor, data);
+    }
 
-        let formattedTime = moment.format(format);
-        let quote = StringUtils.formatQuote(result.text);
-
-        await this.msgSender.sendEmbed(dmChannel, 'convertedTime', {
-            AUTHOR_ID: msg.author.id,
-            QUOTE: quote,
-            AUTHOR_ZONE: authorData.TimeZone,
-            USER_ZONE: userData.TimeZone,
-            CONVERTED_TIME: formattedTime,
-        });
+    private findReaction(emoji: string): Reaction {
+        return this.reactions.find(reaction => reaction.emoji === emoji);
     }
 }

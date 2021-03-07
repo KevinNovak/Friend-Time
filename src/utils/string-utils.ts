@@ -1,15 +1,20 @@
-export abstract class StringUtils {
-    private static QUOTE_MAX_LENGTH = 200;
+import removeMarkdown from 'remove-markdown';
 
-    public static formatQuote(quote: string): string {
-        return this.truncate(quote.replace('\n', ' '), this.QUOTE_MAX_LENGTH);
-    }
-
-    public static truncate(input: string, size: number): string {
-        if (input.length <= size) {
+export class StringUtils {
+    public static truncate(input: string, length: number, addEllipsis: boolean = false): string {
+        if (input.length <= length) {
             return input;
         }
 
-        return input.slice(0, size) + '...';
+        let output = input.substr(0, addEllipsis ? length - 3 : length);
+        if (addEllipsis) {
+            output += '...';
+        }
+
+        return output;
+    }
+
+    public static stripMarkdown(input: string): string {
+        return removeMarkdown(input);
     }
 }

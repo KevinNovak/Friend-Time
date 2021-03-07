@@ -1,4 +1,7 @@
 {
+    "skipCheck": {
+        "perms": false
+    },
     "override": {
         "shardMode": {
             "enabled": false,
@@ -8,5 +11,9 @@
             "enabled": false,
             "value": 2
         }
+    },
+    "dummyMode": {
+        "enabled": false,
+        "whitelist": ["212772875793334272", "478288246858711040"]
     }
 }

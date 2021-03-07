@@ -4,30 +4,45 @@
         "token": "<DISCORD_BOT_TOKEN>",
         "intents": [
             "GUILDS",
-            "GUILD_MEMBERS",
             "GUILD_MESSAGES",
             "GUILD_MESSAGE_REACTIONS",
             "DIRECT_MESSAGES",
             "DIRECT_MESSAGE_REACTIONS"
         ],
+        "disabledEvents": [],
         "partials": ["MESSAGE", "CHANNEL", "REACTION"],
         "caches": {
+            "guilds": true,
+            "roles": true,
+            "emojis": false,
+            "channels": true,
+            "overwrites": true,
+            "presences": false,
             "messages": {
-                "size": 1,
-                "lifetime": 60,
-                "sweepInterval": 30
+                "size": 0,
+                "lifetime": 0,
+                "sweepInterval": 0
             }
         }
     },
-    "mysql": {
+    "database": {
+        "type": "mysql",
         "host": "localhost",
-        "database": "<MYSQL_DATABASE_NAME>",
-        "user": "<MYSQL_USER>",
-        "password": "<MYSQL_PASSWORD>",
-        "connectionLimit": 10
+        "port": 3306,
+        "database": "<DATABASE_NAME>",
+        "username": "<DATABASE_USERNAME>",
+        "password": "<DATABASE_PASSWORD>"
     },
     "rateLimiting": {
         "commands": {
+            "amount": 10,
+            "interval": 30
+        },
+        "triggers": {
+            "amount": 10,
+            "interval": 30
+        },
+        "reactions": {
             "amount": 10,
             "interval": 30
         }
@@ -38,42 +53,28 @@
         }
     },
     "experience": {
-        "timeFormats": [
-            {
-                "name": "12",
-                "display": "12-hour",
-                "dateFormat": "ddd, MMM D, YYYY",
-                "timeFormat": "h:mm A"
-            },
-            {
-                "name": "24",
-                "display": "24-hour",
-                "dateFormat": "ddd, MMM D, YYYY",
-                "timeFormat": "HH:mm"
-            }
-        ],
-        "blacklist": [
-            "^[\\d]+([.]?[\\d]{1,2})?[\\s]*-[\\s]*[\\d]+([.]?[\\d]{1,2})?$",
-            "^from[\\s]*[\\d]+$",
-            "^[\\d]+:[\\d]$"
-        ]
+        "promptExpireTime": 120
     },
-    "emojis": {
+    "reactions": {
         "convert": "🕰️"
     },
     "validation": {
-        "regions": [
-            "Africa",
-            "America",
-            "Antarctica",
-            "Arctic",
-            "Asia",
-            "Atlantic",
-            "Australia",
-            "Europe",
-            "Indian",
-            "Pacific"
-        ]
+        "timeResults": {
+            "countMax": 5
+        },
+        "timeZones": {
+            "countMax": 10
+        },
+        "bots": {
+            "countMax": 20
+        },
+        "timeZone": {
+            "lengthMin": 6
+        },
+        "timeResultText": {
+            "lengthMax": 50,
+            "blacklist": ["/^(at|from)?(\\s*)(\\d+)(\\s*)((to|-)(\\s*)(\\d+))?$/i"]
+        }
     },
     "sharding": {
         "machineId": 0,
@@ -82,8 +83,9 @@
         "spawnDelay": 5,
         "spawnTimeout": 300
     },
-    "links": {
-        "support": "https://discord.com/",
-        "stream": "https://www.twitch.tv/monstercat"
+    "logging": {
+        "rateLimit": {
+            "minTimeout": 30
+        }
     }
 }

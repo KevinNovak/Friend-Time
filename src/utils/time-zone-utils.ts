@@ -1,6 +1,10 @@
 import { RawTimeZone, rawTimeZones } from '@vvo/tzdb';
 import { TimeUtils } from './time-utils';
 
+let TimeZoneCorrections: {
+    [timeZone: string]: string;
+} = require('../../config/time-zone-corrections.json');
+
 export class TimeZoneUtils {
     private static timeZones = rawTimeZones.filter(timeZone => {
         let now = TimeUtils.now(timeZone.name);
@@ -9,6 +13,11 @@ export class TimeZoneUtils {
 
     public static find(input: string): RawTimeZone {
         let search = input.split(' ').join('_').toLowerCase();
+        // TODO: Search non-corrected zones first, fallback to corrected
+        search =
+            Object.entries(TimeZoneCorrections)
+                .find(entry => entry[0].toLowerCase().includes(search))?.[1]
+                .toLowerCase() ?? search;
         return this.timeZones.find(
             timeZone =>
                 timeZone.name.toLowerCase().includes(search) ||

@@ -1,26 +1,42 @@
 import { RawTimeZone, rawTimeZones } from '@vvo/tzdb';
 import { TimeUtils } from './time-utils';
 
+let TimeZoneCorrections: {
+    [timeZone: string]: string;
+} = require('../../config/time-zone-corrections.json');
+
 export class TimeZoneUtils {
-    private static timeZones = rawTimeZones.filter(timeZone => {
-        let now = TimeUtils.now(timeZone.name);
-        return now.isValid;
-    });
+    private static timeZones = TimeZoneUtils.buildTimeZoneList();
+
+    private static buildTimeZoneList(): RawTimeZone[] {
+        let timeZones = rawTimeZones.filter(timeZone => {
+            let now = TimeUtils.now(timeZone.name);
+            return now.isValid;
+        });
+
+        let timeZoneCorrections = Object.entries(TimeZoneCorrections);
+        for (let timeZone of timeZones) {
+            for (let name of timeZone.group) {
+                let additionalNames = timeZoneCorrections
+                    .filter(entry => entry[1] === name)
+                    .map(entry => entry[0]);
+                timeZone.group = [...new Set([...timeZone.group, ...additionalNames])];
+            }
+        }
+
+        return timeZones;
+    }
 
     public static find(input: string): RawTimeZone {
         let search = input.split(' ').join('_').toLowerCase();
         return (
             // Exact match
-            this.timeZones.find(
-                timeZone =>
-                    timeZone.name.toLowerCase() === search ||
-                    timeZone.group.some(name => name.toLowerCase() === search)
+            this.timeZones.find(timeZone =>
+                timeZone.group.some(name => name.toLowerCase() === search)
             ) ??
             // Includes search term
-            this.timeZones.find(
-                timeZone =>
-                    timeZone.name.toLowerCase().includes(search) ||
-                    timeZone.group.some(name => name.toLowerCase().includes(search))
+            this.timeZones.find(timeZone =>
+                timeZone.group.some(name => name.toLowerCase().includes(search))
             )
         );
     }

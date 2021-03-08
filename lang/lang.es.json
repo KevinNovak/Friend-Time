@@ -761,7 +761,7 @@
             "twelveHour": "/\\b(12|doce)(.?h?(oras)?)\\b/i"
         },
         "yesNo": {
-            "yes": "/\\b(habilitado|habilitar||h|s[íi]|s|cierto|verdadero|t|v|on|1)\\b/i",
+            "yes": "/\\b(habilitado|habilitar|h|s[íi]|s|cierto|verdadero|t|v|on|1)\\b/i",
             "no": "/\\b(deshabilitado|deshabilitar|d|no|n|falso|f|off|0)\\b/i"
         }
     },

@@ -13,15 +13,19 @@ export class TimeZoneUtils {
 
     public static find(input: string): RawTimeZone {
         let search = input.split(' ').join('_').toLowerCase();
-        // TODO: Search non-corrected zones first, fallback to corrected
-        search =
-            Object.entries(TimeZoneCorrections)
-                .find(entry => entry[0].toLowerCase().includes(search))?.[1]
-                .toLowerCase() ?? search;
-        return this.timeZones.find(
-            timeZone =>
-                timeZone.name.toLowerCase().includes(search) ||
-                timeZone.group.some(name => name.toLowerCase().includes(search))
+        return (
+            // Exact match
+            this.timeZones.find(
+                timeZone =>
+                    timeZone.name.toLowerCase() === search ||
+                    timeZone.group.some(name => name.toLowerCase() === search)
+            ) ??
+            // Includes search term
+            this.timeZones.find(
+                timeZone =>
+                    timeZone.name.toLowerCase().includes(search) ||
+                    timeZone.group.some(name => name.toLowerCase().includes(search))
+            )
         );
     }
 

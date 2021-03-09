@@ -24,12 +24,15 @@ export class TimeService {
         let littleEndian = DateFormat.Data[dateFormat].littleEndian;
         let parser = new Chrono(en.createConfiguration(true, littleEndian));
 
-        // Preformat input for parser (strip markdown and remove brackets)
-        // TODO: Move removeBrackets() to a util
-        input = StringUtils.stripMarkdown(input).replace(/\(|\)|\[|\]|\{|\}/g, '');
+        // Preformat input for parser
+        let lines = StringUtils.stripMarkdown(input)
+            // Replace brackets with newlines
+            .replace(/\(|\)|\[|\]|\{|\}/g, '\n')
+            // Break message into each line
+            .split('\n');
 
         // TODO: Reference date should be current time in time zone
-        let results = input.split('\n').flatMap(line => parser.parse(line, referenceDate));
+        let results = lines.flatMap(line => parser.parse(line, referenceDate));
 
         // Filter results
         results = results

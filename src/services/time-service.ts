@@ -27,7 +27,7 @@ export class TimeService {
         // Preformat input for parser
         let lines = StringUtils.stripMarkdown(input)
             // Replace brackets with newlines
-            .replace(/\(|\)|\[|\]|\{|\}/g, '\n')
+            .replace(/\(|\)|\[|\]|\{|\}|\<|\>/g, '\n')
             // Break message into each line
             .split('\n');
 

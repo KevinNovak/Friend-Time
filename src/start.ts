@@ -174,7 +174,7 @@ async function start(): Promise<void> {
         userPrivateModeSetting
     );
 
-    // Events handlers
+    // Event handlers
     let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
     let commandHandler = new CommandHandler(Config.prefix, helpCommand, [

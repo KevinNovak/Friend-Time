@@ -25,8 +25,10 @@ export class CommandHandler {
     ) {}
 
     public shouldHandle(msg: Message, args: string[]): boolean {
-        return [this.prefix, `<@${msg.client.user.id}>`, `<@!${msg.client.user.id}>`].includes(
-            args[0].toLowerCase()
+        return (
+            [this.prefix, `<@${msg.client.user.id}>`, `<@!${msg.client.user.id}>`].includes(
+                args[0].toLowerCase()
+            ) && !msg.author.bot
         );
     }
 

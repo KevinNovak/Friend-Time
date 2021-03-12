@@ -723,10 +723,10 @@
         "commands": {
             "bot": "/\\b(bot|b|bots)\\b/i",
             "dev": "/\\b(des|desarrollador|uso|memoria|mem)\\b/i",
-            "docs": "/\\b(doc|d|docs|documentaci[óo]n|leeme|website|site)\\b/i",
+            "docs": "/\\b(docs|d|doc|documentaci[óo]n|leeme|website|site)\\b/i",
             "donate": "/\\b(donar|dona)\\b/i",
             "find": "/\\b(buscar|b[uú]squeda)\\b/i",
-            "help": "/\\b(Ayuda|a|\\?)\\b/i",
+            "help": "/\\b(ayuda|a|\\?)\\b/i",
             "info": "/\\b(info|i|informaci[óo]n)\\b/i",
             "invite": "/\\b(invitar|invita)\\b/i",
             "list": "/\\b(listado|lista|l)\\b/i",
@@ -734,7 +734,7 @@
             "me": "/\\b(yo|mi|usuario)\\b/i",
             "server": "/\\b(servidor|gremio|config)\\b/i",
             "set": "/\\b(zona|fijar|poner|fija|pon|coloca[r]?)\\b/i",
-            "setup": "/\\b(configurar|instalar|configura|instala|conf|c)\\b/i",
+            "setup": "/\\b(configura|configurar|instalar|instala|conf|c)\\b/i",
             "support": "/\\b(soporte)\\b/i",
             "time": "/\\b(hora|ver|ahora|fecha)\\b/i",
             "translate": "/\\b(traducir|t|traducción|traducciones|lengua|lenguas|lenguaje|lenguajes|idioma|idiomas)\\b/i",
@@ -761,8 +761,8 @@
             "twelveHour": "/\\b(12|doce)(.?h?(oras)?)\\b/i"
         },
         "yesNo": {
-            "yes": "/\\b(habilitado|habilitar|h|s[íi]|s|cierto|verdadero|t|v|on|1)\\b/i",
-            "no": "/\\b(deshabilitado|deshabilitar|d|no|n|falso|f|off|0)\\b/i"
+            "yes": "/\\b(sí|s|si|habilitado|habilitar|h|cierto|verdadero|t|v|on|1)\\b/i",
+            "no": "/\\b(no|n|deshabilitado|deshabilitar|d|falso|f|off|0)\\b/i"
         }
     },
     "refs": {

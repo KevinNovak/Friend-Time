@@ -713,42 +713,42 @@
     },
     "regexes": {
         "meta": {
-            "language": "/\\b(en-US|en US|English)\\b/i"
+            "language": "/\\b({{REF:meta.language}}|en US|English)\\b/i"
         },
         "channels": {
             "bot": "/bot|command|cmd/i"
         },
         "commands": {
-            "bot": "/\\b(bot|b|bots)\\b/i",
-            "dev": "/\\b(dev|developer|usage|memory|mem)\\b/i",
-            "docs": "/\\b(docs|d|documentation|readme|website|site)\\b/i",
-            "donate": "/\\b(donate|d)\\b/i",
-            "find": "/\\b(find|f|lookup|search)\\b/i",
-            "help": "/\\b(help|h|\\?)\\b/i",
-            "info": "/\\b(info|i|information)\\b/i",
-            "invite": "/\\b(invite)\\b/i",
-            "list": "/\\b(list|l)\\b/i",
-            "map": "/\\b(map|m|zone|zones|picker)\\b/i",
-            "me": "/\\b(me|my|self|user)\\b/i",
-            "server": "/\\b(server|guild|config|setting|settings)\\b/i",
-            "set": "/\\b(set|s)\\b/i",
-            "setup": "/\\b(setup|install|start)\\b/i",
-            "support": "/\\b(support)\\b/i",
-            "time": "/\\b(time|view|now|date)\\b/i",
-            "translate": "/\\b(translate|t|translation|translations|lang|langs|language|languages)\\b/i",
-            "vote": "/\\b(vote|v)\\b/i",
-            "stop": "/\\b(stop|cancel|exit|close|quit)\\b/i",
-            "remove": "/\\b(remove|clear|reset|delete|purge)\\b/i"
+            "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
+            "dev": "/\\b({{REF:commands.dev}}|developer|usage|memory|mem)\\b/i",
+            "docs": "/\\b({{REF:commands.docs}}|d|documentation|readme|website|site)\\b/i",
+            "donate": "/\\b({{REF:commands.donate}}|d)\\b/i",
+            "find": "/\\b({{REF:commands.find}}|f|lookup|search)\\b/i",
+            "help": "/\\b({{REF:commands.help}}|h|\\?)\\b/i",
+            "info": "/\\b({{REF:commands.info}}|i|information)\\b/i",
+            "invite": "/\\b({{REF:commands.invite}})\\b/i",
+            "list": "/\\b({{REF:commands.list}}|l)\\b/i",
+            "map": "/\\b({{REF:commands.map}}|m|zone|zones|picker)\\b/i",
+            "me": "/\\b({{REF:commands.me}}|my|self|user)\\b/i",
+            "server": "/\\b({{REF:commands.server}}|guild|config|setting|settings)\\b/i",
+            "set": "/\\b({{REF:commands.set}}|s)\\b/i",
+            "setup": "/\\b({{REF:commands.setup}}|install|start)\\b/i",
+            "support": "/\\b({{REF:commands.support}})\\b/i",
+            "time": "/\\b({{REF:commands.time}}|view|now|date)\\b/i",
+            "translate": "/\\b({{REF:commands.translate}}|t|translation|translations|lang|langs|language|languages)\\b/i",
+            "vote": "/\\b({{REF:commands.vote}}|v)\\b/i",
+            "stop": "/\\b({{REF:commands.stop}}|cancel|exit|close|quit)\\b/i",
+            "remove": "/\\b({{REF:commands.remove}}|clear|reset|delete|purge)\\b/i"
         },
         "settings": {
-            "autoDetect": "/\\b(autoDetect|a|ad|auto-detect|auto|detect)\\b/i",
-            "dateFormat": "/\\b(dateFormat|d|df|dateParser|date|parser)\\b/i",
-            "language": "/\\b(language|l|lang|langCode)\\b/i",
-            "list": "/\\b(list)\\b/i",
-            "privateMode": "/\\b(privateMode|p|private)\\b/i",
-            "reminders": "/\\b(reminders|r|reminder|remind|remindersEnabled)\\b/i",
-            "timeFormat": "/\\b(timeFormat|tf|time)\\b/i",
-            "timeZone": "/\\b(timeZone|t|tz|zone)\\b/i"
+            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
+            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateParser|date|parser)\\b/i",
+            "language": "/\\b({{REF:settings.language}}|l|lang|langCode)\\b/i",
+            "list": "/\\b({{REF:settings.list}})\\b/i",
+            "privateMode": "/\\b({{REF:settings.privateMode}}|p|private)\\b/i",
+            "reminders": "/\\b({{REF:settings.reminders}}|r|reminder|remind|remindersEnabled)\\b/i",
+            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|time)\\b/i",
+            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
         "dateFormat": {
             "dayMonth": "/\\bd+(?:ay)?[ /\\-\\.]*m+(?:onth)?\\b/i",
@@ -759,8 +759,8 @@
             "twelveHour": "/\\b(?:12|twelve)(?:[ -]*h(?:our)?)?\\b/i"
         },
         "yesNo": {
-            "yes": "/\\b(enabled|enable|e|yes|y|true|t|on|1)\\b/i",
-            "no": "/\\b(disabled|disable|d|no|n|false|f|off|0)\\b/i"
+            "yes": "/\\b({{REF:yesNo.yes}}|y|enabled|enable|e|true|t|on|1)\\b/i",
+            "no": "/\\b({{REF:yesNo.no}}|n|disabled|disable|d|false|f|off|0)\\b/i"
         }
     },
     "refs": {

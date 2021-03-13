@@ -739,7 +739,7 @@
             "time": "/\\b({{REF:commands.time}}|ver|ahora|fecha)\\b/i",
             "translate": "/\\b({{REF:commands.translate}}|t|traducción|traducciones|lengua|lenguas|lenguaje|lenguajes|idioma|idiomas)\\b/i",
             "vote": "/\\b({{REF:commands.vote}}|vota|v)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|parar|cancela|para|salir|cerrar|stop)\\b/i",
+            "stop": "/\\b({{REF:commands.stop}}|parar|para|cancelar|cancela|salir|cerrar|stop)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|eliminar|elimina|quitar|quita|borrar|borra)\\b/i"
         },
         "settings": {
@@ -801,7 +801,7 @@
             "time": "hora",
             "translate": "traducir",
             "vote": "votar",
-            "stop": "cancelar",
+            "stop": "detener",
             "remove": "remover"
         },
         "arguments": {

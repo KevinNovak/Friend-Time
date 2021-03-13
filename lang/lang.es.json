@@ -753,12 +753,12 @@
             "timeZone": "/\\b({{REF:settings.timeZone}}|zona|z|zh)\\b/i"
         },
         "dateFormat": {
-            "dayMonth": "/\\bd+(?:[íi]a)?[ /\\-\\.]*m+(?:es)?\\b/i",
-            "monthDay": "/\\bm+(?:es)?[ /\\-\\.]*d+(?:[ií]a)?\\b/i"
+            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd/mm|dd-mm|día-mes|día/mes)\\b/i",
+            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm/dd|mm-dd|mes-día|mes/día)\\b/i"
         },
         "timeFormat": {
-            "twentyFourHour": "/\\b(24|veinticuatro)(.?h?(oras)?)\\b/i",
-            "twelveHour": "/\\b(12|doce)(.?h?(oras)?)\\b/i"
+            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-horas)\\b/i",
+            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-horas)\\b/i"
         },
         "yesNo": {
             "yes": "/\\b({{REF:yesNo.yes}}|s|si|habilitado|habilitar|h|cierto|verdadero|t|v|on|1)\\b/i",
@@ -829,9 +829,9 @@
             "timeZoneDisplay": "Zona Horaria"
         },
         "dateFormat": {
-            "monthDay": "MM/DD",
+            "monthDay": "mm/dd",
             "monthDayDisplay": "Mes/Día",
-            "dayMonth": "DD/MM",
+            "dayMonth": "dd/mm",
             "dayMonthDisplay": "Día/Mes"
         },
         "timeFormat": {

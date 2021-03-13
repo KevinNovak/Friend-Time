@@ -751,12 +751,12 @@
             "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
         "dateFormat": {
-            "dayMonth": "/\\bd+(?:ay)?[ /\\-\\.]*m+(?:onth)?\\b/i",
-            "monthDay": "/\\bm+(?:onth)?[ /\\-\\.]*d+(?:ay)?\\b/i"
+            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|day-month|day/month)\\b/i",
+            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|month-day|month/day)\\b/i"
         },
         "timeFormat": {
-            "twentyFourHour": "/\\b(?:24|twenty[ -]*four)(?:[ -]*h(?:our)?)?\\b/i",
-            "twelveHour": "/\\b(?:12|twelve)(?:[ -]*h(?:our)?)?\\b/i"
+            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hour)\\b/i",
+            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hour)\\b/i"
         },
         "yesNo": {
             "yes": "/\\b({{REF:yesNo.yes}}|y|enabled|enable|e|true|t|on|1)\\b/i",
@@ -827,10 +827,10 @@
             "timeZoneDisplay": "Time Zone"
         },
         "dateFormat": {
-            "monthDay": "MM/DD",
-            "monthDayDisplay": "Month / Day",
-            "dayMonth": "DD/MM",
-            "dayMonthDisplay": "Day / Month"
+            "monthDay": "mm/dd",
+            "monthDayDisplay": "Month/Day",
+            "dayMonth": "dd/mm",
+            "dayMonthDisplay": "Day/Month"
         },
         "timeFormat": {
             "twelveHour": "12",

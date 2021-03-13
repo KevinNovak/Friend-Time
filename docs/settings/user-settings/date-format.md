@@ -12,10 +12,10 @@ To learn how to change settings like this one, see the [me command](../../comman
 
 ## **Options**
 
-1. **Month / Day** \(`MM/DD`\)
+1. **Month/Day** \(`mm/dd`\)
    * Use this option if you prefer to types dates with the **month first**, and **day of the month second**.
    * Ex: You would type **February 3rd 2021** as "**2/3/2021**".
-2. **Day / Month** \(`DD/MM`\)
+2. **Day/Month** \(`dd/mm`\)
    * Use this option if you prefer to type dates with the **day of the month first**, and **month second**.
    * Ex: You would type **February 3rd 2021** as "**3/2/2021**".
 

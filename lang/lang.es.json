@@ -184,6 +184,7 @@
                     {
                         "name": "{{REF:fields.links}}",
                         "value": [
+                            "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
@@ -894,6 +895,8 @@
             "stream": "https://www.twitch.tv/novakevin",
             "author": "https://github.com/KevinNovak",
             "authorEmbed": "[Kevin Novak]({{REF:links.author}})",
+            "source": "https://github.com/KevinNovak/Friend-Time",
+            "sourceEmbed": "[Ver Código Fuente]({{REF:links.source}})",
             "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
             "templateEmbed": "[Plantilla de Typescript para Bots de Discord]({{REF:links.template}})",
             "map": "https://kevinnovak.github.io/Time-Zone-Picker/",

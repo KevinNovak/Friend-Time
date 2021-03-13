@@ -25,6 +25,13 @@
             }
         }
     },
+    "sharding": {
+        "clusterId": 0,
+        "shardsPerCluster": 16,
+        "serversPerShard": 1000,
+        "spawnDelay": 5,
+        "spawnTimeout": 300
+    },
     "database": {
         "type": "mysql",
         "host": "localhost",
@@ -32,6 +39,11 @@
         "database": "<DATABASE_NAME>",
         "username": "<DATABASE_USERNAME>",
         "password": "<DATABASE_PASSWORD>"
+    },
+    "jobs": {
+        "updateServerCount": {
+            "schedule": "0 */5 * * * *"
+        }
     },
     "rateLimiting": {
         "commands": {
@@ -45,11 +57,6 @@
         "reactions": {
             "amount": 10,
             "interval": 30
-        }
-    },
-    "jobs": {
-        "updateServerCount": {
-            "schedule": "0 */5 * * * *"
         }
     },
     "experience": {
@@ -75,13 +82,6 @@
             "lengthMax": 50,
             "blacklist": ["/^(at|from)?(\\s*)(\\d+)(\\s*)((to|-)(\\s*)(\\d+))?$/i"]
         }
-    },
-    "sharding": {
-        "machineId": 0,
-        "machineCount": 1,
-        "serversPerShard": 1000,
-        "spawnDelay": 5,
-        "spawnTimeout": 300
     },
     "logging": {
         "rateLimit": {

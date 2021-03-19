@@ -9,8 +9,7 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
-    // TODO: Store default language in config
-    public default = LangCode.EN_US;
+    public default = Lang.Default;
 
     public keyword(langCode: LangCode): string {
         return Lang.getRef('settings.language', langCode);

@@ -25,7 +25,7 @@ export class Lang {
     public static getRegex(regexName: string, langCode: LangCode): RegExp {
         return (
             this.multilingualService.getRegex(regexName, langCode) ??
-            this.multilingualService.getRegex(regexName, langCode)
+            this.multilingualService.getRegex(regexName, this.Default)
         );
     }
 

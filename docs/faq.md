@@ -8,6 +8,14 @@ description: Frequently asked questions.
 
 See the following guide on [finding time zones](finding-time-zones.md).
 
+## Friend Time keeps saying "User not found."
+
+If you are trying to set your time zone and keep seeing "User not found.", please see the guide on [setting your time zone](commands/user-commands/set.md#setup-for-yourself).
+
+The following is an example of how to set your time zone:
+
+![](.gitbook/assets/image%20%2867%29.png)
+
 ## Why isn't Friend Time messaging me when I react with the clock emoji?
 
 Friend Time requires that you have **Direct Messages enabled** in at least one server that you share with Friend Time. Please check your **Privacy Settings** for the server.

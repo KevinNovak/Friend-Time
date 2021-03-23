@@ -10,7 +10,7 @@ See the guide on [finding time zones](../../finding-time-zones.md) for determini
 
 Example converting a time:
 
-![](../../.gitbook/assets/image%20%2863%29%20%282%29.png)
+![](../../.gitbook/assets/image%20%2863%29%20%282%29%20%282%29.png)
 
 Example checking the time of a user:
 

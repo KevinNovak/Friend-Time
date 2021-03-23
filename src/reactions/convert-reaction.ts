@@ -11,7 +11,7 @@ import {
     UserTimeFormatSetting,
     UserTimeZoneSetting,
 } from '../settings/user';
-import { DataUtils, EmbedUtils, FormatUtils, MessageUtils } from '../utils';
+import { DataUtils, FormatUtils, MessageUtils } from '../utils';
 
 let Config = require('../../config/config.json');
 
@@ -64,7 +64,7 @@ export class ConvertReaction implements Reaction {
             authorData instanceof GuildBotData
                 ? this.botDateFormatSetting.valueOrDefault(authorData)
                 : this.userDateFormatSetting.valueOrDefault(authorData);
-        let input = msg.content || msg.embeds.map(embed => EmbedUtils.content(embed)).join('\n');
+        let input = MessageUtils.content(msg);
         let timeResults = this.timeService.parseResults(input, authorDateFormat, msg.createdAt);
         if (timeResults.length === 0) {
             return;

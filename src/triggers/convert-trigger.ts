@@ -18,7 +18,7 @@ import {
     UserPrivateModeSetting,
     UserTimeZoneSetting,
 } from '../settings/user';
-import { DataUtils, EmbedUtils, MessageUtils, PermissionUtils } from '../utils';
+import { DataUtils, MessageUtils, PermissionUtils } from '../utils';
 import { Trigger } from './trigger';
 
 let Config = require('../../config/config.json');
@@ -47,7 +47,7 @@ export class ConvertTrigger implements Trigger {
             return false;
         }
 
-        let input = msg.content || msg.embeds.map(embed => EmbedUtils.content(embed)).join('\n');
+        let input = MessageUtils.content(msg);
         let timeResults = this.timeService.parseResults(
             input,
             // Hard-coded just for performance with detecting time
@@ -96,8 +96,7 @@ export class ConvertTrigger implements Trigger {
                     : this.userDateFormatSetting.valueOrDefault(authorData);
 
             // We need to re-parse the results here with the authors date format
-            let input =
-                msg.content || msg.embeds.map(embed => EmbedUtils.content(embed)).join('\n');
+            let input = MessageUtils.content(msg);
             let timeResults = this.timeService.parseResults(input, authorDateFormat, msg.createdAt);
             let privateMode =
                 authorData instanceof GuildBotData

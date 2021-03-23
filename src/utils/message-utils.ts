@@ -10,7 +10,20 @@ import {
     User,
 } from 'discord.js-light';
 
+import { EmbedUtils } from '.';
+
 export class MessageUtils {
+    public static content(msg: Message): string {
+        return [
+            msg.content,
+            ...msg.embeds
+                .filter(embed => embed.type === 'rich')
+                .map(embed => EmbedUtils.content(embed)),
+        ]
+            .filter(Boolean)
+            .join('\n');
+    }
+
     public static async send(
         target: User | DMChannel | TextChannel | NewsChannel,
         content: StringResolvable

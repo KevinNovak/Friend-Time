@@ -6,7 +6,7 @@ description: >-
 
 # Overview
 
-## [Add to your Discord Server!](https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056)
+## [Add to your Discord Server!](https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056)
 
 [Documentation](https://docs.friendtime.ml/) \| [Support Server](https://discord.gg/GQcBR8e) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 

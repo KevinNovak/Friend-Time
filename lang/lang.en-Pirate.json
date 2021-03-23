@@ -882,7 +882,7 @@
             "private": "Private"
         },
         "links": {
-            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot&permissions=85056",
+            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
             "inviteEmbed": "[Invite {{REF:bot.name}} to a Server!]({{REF:links.invite}})",
             "docs": "https://docs.friendtime.ml",
             "docsEmbed": "[View Documentation]({{REF:links.docs}}/)",

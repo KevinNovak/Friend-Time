@@ -16,9 +16,7 @@ export class MessageUtils {
     public static content(msg: Message): string {
         return [
             msg.content,
-            ...msg.embeds
-                .filter(embed => embed.type === 'rich')
-                .map(embed => EmbedUtils.content(embed)),
+            ...msg.embeds.filter(embed => !embed.provider).map(embed => EmbedUtils.content(embed)),
         ]
             .filter(Boolean)
             .join('\n');

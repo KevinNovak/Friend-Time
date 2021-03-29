@@ -214,7 +214,10 @@
                     },
                     {
                         "name": "Estadísticas",
-                        "value": ["**Shards**: {{SHARD_COUNT}}", "**Servidores**: {{SERVER_COUNT}}"]
+                        "value": [
+                            "**Shards**: {{SHARD_COUNT}}",
+                            "**Servidores**: {{SERVER_COUNT}} ({{SERVER_COUNT_PER_SHARD}}/Shard)"
+                        ]
                     },
                     {
                         "name": "Memoria",

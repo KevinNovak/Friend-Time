@@ -11,7 +11,7 @@ The `-ft time` command is used to check the current time of the server, user, bo
 * `-ft time` - Check the current time of **the server.**
 * `-ft time <@user>` - Check the current time of **a user**.
 * `-ft time <@bot>` - Check the current time of **a bot**.
-* `-ft time <@zone>` - Check the current time of **a time zone**.
+* `-ft time <zone>` - Check the current time of **a time zone**.
 
 ## View the Server's Time
 

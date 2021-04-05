@@ -29,7 +29,7 @@ import {
     TriggerHandler,
 } from './events';
 import { ConvertReaction } from './reactions';
-import { Logger, ReminderService, TimeService } from './services';
+import { JobService, Logger, ReminderService, TimeService } from './services';
 import { SettingManager } from './settings';
 import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot';
 import {
@@ -207,7 +207,7 @@ async function start(): Promise<void> {
         guildLeaveHandler,
         messageHandler,
         reactionHandler,
-        []
+        new JobService([])
     );
 
     await bot.start();

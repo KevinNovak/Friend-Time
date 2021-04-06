@@ -1,5 +1,3 @@
-import { Client } from 'discord.js-light';
-
 import { Bot } from './bot';
 import {
     BotCommand,
@@ -28,6 +26,7 @@ import {
     ReactionHandler,
     TriggerHandler,
 } from './events';
+import { CustomClient } from './extensions';
 import { ConvertReaction } from './reactions';
 import { JobService, Logger, ReminderService, TimeService } from './services';
 import { SettingManager } from './settings';
@@ -55,7 +54,7 @@ let Config = require('../config/config.json');
 async function start(): Promise<void> {
     await Database.connect();
 
-    let client = new Client({
+    let client = new CustomClient({
         // discord.js Options
         ws: { intents: Config.client.intents },
         partials: Config.client.partials,

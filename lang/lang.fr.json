@@ -771,10 +771,10 @@
     },
     "refs": {
         "meta": {
-            "language": "fr-FR",
-            "languageDisplay": "FRançais",
-            "locale": "fr-FR",
-            "translators": "[#ρ.mayn#6270]"
+            "language": "fr",
+            "languageDisplay": "Français",
+            "locale": "fr",
+            "translators": "ρ.mayn#6270"
         },
         "bot": {
             "name": "Friend Time",

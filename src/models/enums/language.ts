@@ -1,10 +1,10 @@
 import { Lang } from '../../services';
 
 export enum LangCode {
-    EN_PIRATE = 'en-Pirate',
     EN_US = 'en-US',
     ES = 'es',
     FR = 'fr',
+    EN_PIRATE = 'en-Pirate',
 }
 
 export class Language {

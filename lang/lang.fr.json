@@ -719,7 +719,7 @@
     },
     "regexes": {
         "meta": {
-            "language": "/\\b({{REF:meta.language}}|en US|English)\\b/i"
+            "language": "/\\b({{REF:meta.language}}|français|française)\\b/i"
         },
         "channels": {
             "bot": "/bot|command|cmd/i"

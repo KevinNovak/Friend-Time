@@ -743,7 +743,7 @@
             "time": "/\\b({{REF:commands.time}}|vue|maintenant|date)\\b/i",
             "translate": "/\\b({{REF:commands.translate}}|t|traduction|traductions|langue|langues|langage|langages)\\b/i",
             "vote": "/\\b({{REF:commands.vote}}|v)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|annuler|quitter|fermer|quitter)\\b/i",
+            "stop": "/\\b({{REF:commands.stop}}|annuler|quitter|fermer)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|réinitialiser|supprimer|purger)\\b/i"
         },
         "settings": {

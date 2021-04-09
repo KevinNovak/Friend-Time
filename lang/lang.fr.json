@@ -201,7 +201,7 @@
                 "description": "Nous remercions nos traducteurs pour avoir permis à {{REF:bot.name}} d'être utilisé dans différents langages. Si tu es intéressé par de la traduction, contacte nous sur [le serveur de support]({{REF:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Information développeurs",
+                "title": "{{REF:bot.name}} - Information Développeurs",
                 "fields": [
                     {
                         "name": "Versions",
@@ -908,7 +908,7 @@
         "partials": {
             "congratulations": "🎉 Félicitations ! 🎉",
             "yesOrNo": "`{{REF:yesNo.yes}}` ou `{{REF:yesNo.no}}`",
-            "italicizedDefaults": "*Italicized* les paramètres sont par défaut.",
+            "italicizedDefaults": "Les paramètres en *italique* sont par défaut.",
             "timeInTimeZone": "À **{{TIME_ZONE}}** il est actuellement **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
                 "Tu peux trouver les fuseaux horaires grâce à la carte suivante __{{REF:links.mapEmbed}}__.",

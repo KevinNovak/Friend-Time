@@ -5,13 +5,13 @@
     "embeds": {
         "displays": {
             "welcome": {
-                "title": "Merci d'utiliser {{REF:bot.name}}!",
+                "title": "Merci d'utiliser {{REF:bot.name}} !",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
                         "name": "Important {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Regardez l'aide du bot."
+                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Regarde l'aide du bot."
                         ]
                     },
                     {
@@ -31,10 +31,10 @@
                     {
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour vous-même, un utilisateur ou un bot).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Changer vos paramètres.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou de fuseau horaire.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Regarder la carte des fuseaux horaire.",
+                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
+                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Changer tes paramètres.",
+                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou d'un fuseau horaire.",
+                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Regarder la carte des fuseaux horaires.",
                             "**{{REF:bot.prefix}} {{REF:commands.info}}** - Pour plus d'informations {{REF:bot.name}}."
                         ]
                     },
@@ -44,7 +44,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Utiliser la configuration du serveur.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Changer les paramètres du serveur.",
                             "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Changer les paramètre du bot.",
+                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Changer les paramètres du bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -80,7 +80,7 @@
             "listBot": {
                 "title": "Liste du bot",
                 "description": [
-                    "Les bots qui ont des paramètre pour ce serveur.",
+                    "Les bots qui ont des paramètres pour ce serveur.",
                     "",
                     "{{BOT_LIST}}",
                     "\u2800"
@@ -136,7 +136,7 @@
                 "footer": { "text": "Bot ID: {{BOT_ID}}" }
             },
             "settingSelf": {
-                "title": "Mes Paramètres",
+                "title": "Tes Paramètres",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -156,25 +156,25 @@
                 "footer": { "text": "User ID: {{USER_ID}}" }
             },
             "timeServer": {
-                "title": "Heure du serveur",
+                "title": "Heure du Serveur",
                 "description": "Il est actuellement **{{TIME}}** pour le serveur à **{{TIME_ZONE}}**."
             },
             "timeUser": {
-                "title": "Heure de l'utilisateur",
+                "title": "Heure de l'Utilisateur",
                 "description": "Il est actuellement **{{TIME}}** pour {{USER}} à **{{TIME_ZONE}}**."
             },
             "timeUserPrivate": {
-                "title": "Heure de l'utilisateur",
+                "title": "Heure de l'Utilisateur",
                 "description": "Il est actuellement **{{TIME}}** pour {{USER}}."
             },
             "timeTimeZone": {
-                "title": "Heure fuseau horaire",
+                "title": "Heure Fuseau Horaire",
                 "description": "Il est actuellement **{{TIME}}** à **{{TIME_ZONE}}**."
             },
             "map": {
-                "title": "Carte des fuseaux horaires",
+                "title": "Carte des Fuseaux Horaires",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Vous pouvez copier ce nom et l'utiliser quand {{REF:bot.name}} a besoin d'un fuseau horaire."
+                    "{{REF:partials.findTimeZoneHelp}} Tu peux copier ce nom et l'utiliser quand {{REF:bot.name}} a besoin d'un fuseau horaire."
                 ]
             },
             "info": {
@@ -198,7 +198,7 @@
             },
             "translate": {
                 "title": "{{REF:bot.name}} - Traductions",
-                "description": "Nous remercions nos traducteurs pour avoir permis à {{REF:bot.name}} d'être utilisé dans différents langages. Si vous êtes intéressé par de la traduction, veuillez nous contacter sur [support server]({{REF:links.support}})."
+                "description": "Nous remercions nos traducteurs pour avoir permis à {{REF:bot.name}} d'être utilisé dans différents langages. Si tu es intéressé par de la traduction, contacte nous sur [le serveur de support]({{REF:links.support}})."
             },
             "dev": {
                 "title": "{{REF:bot.name}} - Information développeurs",
@@ -240,19 +240,19 @@
             },
             "invite": {
                 "title": "{{REF:bot.name}} - Invitation",
-                "description": "Cliquez [ici]({{REF:links.invite}}) pour inviter {{REF:bot.name}} to a server!"
+                "description": "Clique [ici]({{REF:links.invite}}) pour inviter {{REF:bot.name}} sur un serveur !"
             },
             "docs": {
                 "title": "{{REF:bot.name}} - Documentation",
-                "description": "Cliquer [ici]({{REF:links.docs}}/) pour voir la documentation du bot."
+                "description": "Clique [ici]({{REF:links.docs}}/) pour voir la documentation du bot."
             },
             "vote": {
                 "title": "{{REF:bot.name}} - Vote",
-                "description": "Supportez {{REF:bot.name}} en votant [ici]({{REF:links.vote}})!"
+                "description": "Supporte {{REF:bot.name}} en votant [ici]({{REF:links.vote}}) !"
             },
             "support": {
                 "title": "{{REF:bot.name}} - Support",
-                "description": "Vous avez besoin d'aide? Rejoignez [serveur support]({{REF:links.support}})!"
+                "description": "Tu as besoin d'aide ? Rejoins [le serveur de support]({{REF:links.support}}) !"
             },
             "timeConversionDm": {
                 "description": [
@@ -286,7 +286,7 @@
             "autoDetectGuild": {
                 "title": "Serveur - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Voulez-vous que {{REF:bot.name}} détecte automatiquement les horaires mentionnés dans le chat ?",
+                    "Veux-tu que {{REF:bot.name}} détecte automatiquement les horaires mentionnés dans le chat ?",
                     "",
                     "`{{REF:yesNo.yes}}` - Les horaires seront détectés automatiquement.",
                     "",
@@ -298,7 +298,7 @@
             "timeZoneGuild": {
                 "title": "Serveur - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "Dans quel fuseau horaire votre serveur est-il ?",
+                    "Dans quel fuseau horaire ton serveur est-il ?",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
@@ -320,7 +320,7 @@
             "timeZoneSelf": {
                 "title": "Utilisateur - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "Dans quel fuseau horaire êtes-vous ?",
+                    "Dans quel fuseau horaire es-tu ?",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
@@ -343,7 +343,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Veuillez confirmer, le serveur est-il dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
+                    "Peux-tu confirmer que le serveur est dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -351,7 +351,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Veuillez confirmer, {{BOT}} est-il dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
+                    "Peux-tu confirmer que {{BOT}} est dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -359,7 +359,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Veuillez confirmer, êtes-vous dans cet fuseau horaire ({{REF:partials.yesOrNo}}) ?"
+                    "Peux-tu confirmer que tu es dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -367,14 +367,14 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Veuillez confirmer, {{USER}} est-il dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
+                    "Peux-tu confirmer que {{USER}} est dans ce fuseau horaire ({{REF:partials.yesOrNo}}) ?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "listGuild": {
                 "title": "Serveur - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Voulez-vous que {{REF:bot.name}} envoie une liste des temps convertis après qu'un temps soit mentionné ?",
+                    "Veux-tu que {{REF:bot.name}} envoie une liste des temps convertis après qu'un temps soit mentionné ?",
                     "",
                     "`{{REF:yesNo.yes}}` - {{REF:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`{{REF:bot.prefix}} {{REF:commands.list}}`). Cette liste sera envoyé dans le même salon que le message original.",
                     "",
@@ -385,12 +385,12 @@
             },
             "remindersGuild": {
                 "title": "Serveur - {{REF:settings.remindersDisplay}}",
-                "description": "Voulez-vous rappelez à vos membres de mettre leur fuseau horaire ({{REF:partials.yesOrNo}})?",
+                "description": "Veux-tu rappeler à tes membres de mettre leur fuseau horaire ({{REF:partials.yesOrNo}}) ?",
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "Utilisateur - {{REF:settings.remindersDisplay}}",
-                "description": "Voulez-vous que l'on vous souvienne d'établir votre fuseau horaire ({{REF:partials.yesOrNo}})?",
+                "description": "Veux-tu que l'on te souvienne d'établir ton fuseau horaire ({{REF:partials.yesOrNo}}) ?",
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -408,7 +408,7 @@
             "dateFormatUser": {
                 "title": "Utilisateur - {{REF:settings.dateFormatDisplay}}",
                 "description": [
-                    "Quel format utilisez-vous pour les dates ?",
+                    "Quel format utilises-tu pour les dates ?",
                     "",
                     "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
@@ -432,7 +432,7 @@
             "timeFormatUser": {
                 "title": "Utilisateur - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Quel format horaire préférez-vous?",
+                    "Quel format horaire préfères-tu ?",
                     "",
                     "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -444,7 +444,7 @@
             "privateModeUser": {
                 "title": "Utilisateur - {{REF:settings.privateModeDisplay}}",
                 "description": [
-                    "Voulez-vous garder votre fuseau horaire, et autres informations, privées ?",
+                    "Veux-tu garder ton fuseau horaire, et autres informations, privées ?",
                     "",
                     "`{{REF:yesNo.yes}}` - {{REF:bot.name}} ne montrera pas vos informations aux autres utilisateurs.",
                     "",
@@ -460,14 +460,14 @@
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
-                    "*Note: Les utilisateurs peuvent configurer leur langage différamment du serveur. {{REF:partials.translateNote}}*"
+                    "*Note: Les utilisateurs peuvent configurer leur langage différemment du serveur. {{REF:partials.translateNote}}*"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageUser": {
                 "title": "Utilisateur - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "Quel langage voulez-vous utiliser ?",
+                    "Quel langage veux-tu utiliser ?",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
@@ -479,21 +479,21 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, merci de confirmer, voulez-vous utiliser ces paramètres ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, merci de confirmer, veux-tu utiliser ces paramètres ({{REF:partials.yesOrNo}}) ?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
         "results": {
             "collectorExpired": {
-                "description": "La configuration a expiré. Veuillez réessayer.",
+                "description": "La configuration a expiré. Il faut réessayer.",
                 "color": "{{REF:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "Vous avez complété la configuration serveur!",
+                    "Tu as complété la configuration serveur !",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -512,7 +512,7 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "Vous avez complété la configuration utilisateur!",
+                    "Tu as complété la configuration utilisateur !",
                     "",
                     "*Note: {{REF:partials.dmWarning}}*",
                     "",
@@ -523,7 +523,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer vos paramètres utilisateur."
+                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer tes paramètres utilisateur."
                         ]
                     }
                 ],
@@ -533,7 +533,7 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "Vous avez complété la configuration utilisateur !",
+                    "Tu as complété la configuration utilisateur !",
                     "",
                     "*Note: {{REF:partials.dmWarning}}*",
                     "",
@@ -544,7 +544,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer les paramètres utilisateurs."
+                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer les paramètres utilisateur."
                         ]
                     }
                 ],
@@ -554,7 +554,7 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "Vous avez complété la configuration du bot !",
+                    "Tu as complété la configuration du bot !",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -570,7 +570,7 @@
                 "color": "{{REF:colors.success}}"
             },
             "setDeniedUser": {
-                "description": "Configuration utilisateur refusée. Vos paramètres n'ont pas été mis à jour.",
+                "description": "Configuration utilisateur refusée. Tes paramètres n'ont pas été mis à jour.",
                 "color": "{{REF:colors.error}}"
             },
             "updatedSettingGuild": {
@@ -582,7 +582,7 @@
                 "color": "{{REF:colors.success}}"
             },
             "updatedSettingUser": {
-                "description": "Votre paramètre **{{SETTING_NAME}}** a été configuré sur **{{SETTING_VALUE}}**.",
+                "description": "Ton paramètre **{{SETTING_NAME}}** a été configuré sur **{{SETTING_VALUE}}**.",
                 "color": "{{REF:colors.success}}"
             },
             "removedSettingGuild": {
@@ -594,7 +594,7 @@
                 "color": "{{REF:colors.success}}"
             },
             "removedSettingUser": {
-                "description": "Votre paramètre **{{SETTING_NAME}}** a été enlevé.",
+                "description": "Ton paramètre **{{SETTING_NAME}}** a été retiré.",
                 "color": "{{REF:colors.success}}"
             },
             "removedGuild": {
@@ -606,7 +606,7 @@
                 "color": "{{REF:colors.success}}"
             },
             "removedUser": {
-                "description": "Vos données ont été supprimées.",
+                "description": "Tes données ont été supprimées.",
                 "color": "{{REF:colors.success}}"
             },
             "addedListItem": {
@@ -624,7 +624,7 @@
                 "color": "{{REF:colors.warning}}"
             },
             "permissionRequired": {
-                "description": "Vous n'avez pas la permission d'utiliser cette commande !",
+                "description": "Tu n'as pas la permission d'utiliser cette commande !",
                 "color": "{{REF:colors.warning}}"
             },
             "notFoundSetting": {
@@ -644,39 +644,39 @@
                 "color": "{{REF:colors.error}}"
             },
             "invalidTimeZone": {
-                "description": "Fuseau horaire invalide, réessayez !",
+                "description": "Fuseau horaire invalide, réessaye !",
                 "color": "{{REF:colors.error}}"
             },
             "invalidDateFormat": {
-                "description": "Format de date invalide, réessayez!",
+                "description": "Format de date invalide, réessaye !",
                 "color": "{{REF:colors.error}}"
             },
             "invalidTimeFormat": {
-                "description": "Format de temps invalide, réessayez !",
+                "description": "Format de temps invalide, réessaye !",
                 "color": "{{REF:colors.error}}"
             },
             "invalidYesNo": {
-                "description": "Réponse oui ou non invalide, réessayez!",
+                "description": "Réponse oui ou non invalide, réessaye !",
                 "color": "{{REF:colors.error}}"
             },
             "invalidLanguage": {
-                "description": "Langage invalide, réessayez!",
+                "description": "Langage invalide, réessaye !",
                 "color": "{{REF:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
                     "Mode privé activé !",
                     "",
-                    "Veuillez relancer cette commande en MP pour éviter de montrer cette information."
+                    "Il faut relancer cette commande en MP pour éviter de montrer cette information."
                 ],
                 "color": "{{REF:colors.warning}}"
             },
             "notAllowedAbbreviation": {
-                "description": "Les abréviations de fuseau horaire ne sont pas autorisées, réessayez !",
+                "description": "Les abréviations de fuseau horaire ne sont pas autorisées, réessaye !",
                 "color": "{{REF:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "Vous ne pouvez pas utiliser la configuration utilisateur pour {{REF:bot.name}}!",
+                "description": "Tu ne peux pas utiliser la configuration utilisateur pour {{REF:bot.name}} !",
                 "color": "{{REF:colors.warning}}"
             },
             "maxLimitList": {
@@ -712,7 +712,7 @@
                 "color": "{{REF:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{REF:bot.name}} est encore en initialisation. Réessayez plus tard.",
+                "description": "{{REF:bot.name}} est encore en initialisation. Réessaye plus tard.",
                 "color": "{{REF:colors.warning}}"
             }
         }
@@ -778,7 +778,7 @@
         },
         "bot": {
             "name": "Friend Time",
-            "description": "{{REF:bot.name}} aide à coordonner vos membres de fuseaux horaires différentes en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !",
+            "description": "{{REF:bot.name}} aide à coordonner tes membres de fuseaux horaires différents en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !",
             "prefix": "-ft"
         },
         "colors": {
@@ -880,7 +880,7 @@
             "links": "Liens"
         },
         "footers": {
-            "collector": "Entrer votre réponse ci-dessous (ou '{{REF:commands.stop}}' pour annuler)."
+            "collector": "Entrer ta réponse ci-dessous (ou '{{REF:commands.stop}}' pour annuler)."
         },
         "other": {
             "na": "N/A",
@@ -892,7 +892,7 @@
             "docs": "https://docs.friendtime.ml",
             "docsEmbed": "[Regarder la documentation]({{REF:links.docs}}/)",
             "vote": "https://top.gg/bot/471091072546766849/vote",
-            "voteEmbed": "[Voter pour {{REF:bot.name}}!]({{REF:links.vote}})",
+            "voteEmbed": "[Voter pour {{REF:bot.name}} !]({{REF:links.vote}})",
             "support": "https://discord.gg/GQcBR8e",
             "supportEmbed": "[Rejoindre le serveur de support]({{REF:links.support}})",
             "stream": "https://www.twitch.tv/novakevin",
@@ -911,18 +911,18 @@
             "italicizedDefaults": "*Italicized* les paramètres sont par défaut.",
             "timeInTimeZone": "À **{{TIME_ZONE}}** il est actuellement **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
-                "Vous pouvez trouver les fuseaux horaires grâce à la carte suivante __{{REF:links.mapEmbed}}__.",
+                "Tu peux trouver les fuseaux horaires grâce à la carte suivante __{{REF:links.mapEmbed}}__.",
                 "",
                 "Il faut **selectionner un endroit sur la carte** pour voir le nom du fuseau."
             ],
             "translateNote": "Entrer `{{REF:bot.prefix}} {{REF:commands.translate}}` pour en apprendre plus par rapport à nos traductions.",
-            "dmWarning": "Certains commandes nécessitent que vos MP soient ouverts sur au moins un serveur que vous partagez avec {{REF:bot.name}}."
+            "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{REF:bot.name}}."
         },
         "messages": {
             "missingEmbedPerms": [
-                "Je n'ai pas la permission d'envoyer un message ici!",
+                "Je n'ai pas la permission d'envoyer un message ici !",
                 "",
-                "Veuillez m'autoriser à **Voir le salon**, **Envoyer des messages**, et **Intégrer des liens** dans ce salon."
+                "Il faut m'autoriser à **Voir le salon**, **Envoyer des messages**, et **Intégrer des liens** dans ce salon."
             ]
         }
     }

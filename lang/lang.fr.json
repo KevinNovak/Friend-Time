@@ -719,14 +719,14 @@
     },
     "regexes": {
         "meta": {
-            "language": "/\\b({{REF:meta.language}}|français|française)\\b/i"
+            "language": "/\\b({{REF:meta.language}}|fran[çc]ais|fran[çc]aise)\\b/i"
         },
         "channels": {
             "bot": "/bot|command|cmd/i"
         },
         "commands": {
             "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|développeur|usage|mémoire|mem)\\b/i",
+            "dev": "/\\b({{REF:commands.dev}}|d[ée]veloppeur|usage|m[ée]moire|mem)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|d|documentation|lismoi|website|site)\\b/i",
             "donate": "/\\b({{REF:commands.donate}}|d)\\b/i",
             "find": "/\\b({{REF:commands.find}}|f|regarder|chercher)\\b/i",
@@ -735,8 +735,8 @@
             "invite": "/\\b({{REF:commands.invite}})\\b/i",
             "list": "/\\b({{REF:commands.list}}|l)\\b/i",
             "map": "/\\b({{REF:commands.map}}|m|fuseau|fuseaux)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|moi|moi-même|utilisateur)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|guilde|configuration|paramètre|paramètres)\\b/i",
+            "me": "/\\b({{REF:commands.me}}|moi|moi-m[êe]me|utilisateur)\\b/i",
+            "server": "/\\b({{REF:commands.server}}|guilde|configuration|param[èe]tre|param[èe]tres)\\b/i",
             "set": "/\\b({{REF:commands.set}}|s)\\b/i",
             "setup": "/\\b({{REF:commands.setup}}|installer|commencer)\\b/i",
             "support": "/\\b({{REF:commands.support}})\\b/i",
@@ -744,15 +744,15 @@
             "translate": "/\\b({{REF:commands.translate}}|t|traduction|traductions|langue|langues|langage|langages)\\b/i",
             "vote": "/\\b({{REF:commands.vote}}|v)\\b/i",
             "stop": "/\\b({{REF:commands.stop}}|annuler|quitter|fermer)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|réinitialiser|supprimer|purger)\\b/i"
+            "remove": "/\\b({{REF:commands.remove}}|r[ée]initialiser|supprimer|purger)\\b/i"
         },
         "settings": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateAnalyseur|date|Analyseur)\\b/i",
             "language": "/\\b({{REF:settings.language}}|l|langue|langueCode)\\b/i",
             "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|privé)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|rappeler|rappel|rappelsAutorisés)\\b/i",
+            "privateMode": "/\\b({{REF:settings.privateMode}}|p|priv[ée])\\b/i",
+            "reminders": "/\\b({{REF:settings.reminders}}|r|rappeler|rappel|rappelsAutoris[ée]s)\\b/i",
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|heure)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
@@ -765,8 +765,8 @@
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-heure)\\b/i"
         },
         "yesNo": {
-            "yes": "/\\b({{REF:yesNo.yes}}|y|activé|activation|e|true|t|on|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|désactivé|désactivation|d|false|f|off|0)\\b/i"
+            "yes": "/\\b({{REF:yesNo.yes}}|y|activ[ée]|activation|e|true|t|on|1)\\b/i",
+            "no": "/\\b({{REF:yesNo.no}}|n|d[ée]sactiv[ée]|d[ée]sactivation|d|false|f|off|0)\\b/i"
         }
     },
     "refs": {

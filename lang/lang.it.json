@@ -39,7 +39,7 @@
                         ]
                     },
                     {
-                        "name": "Admin {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} per Admin",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Esegui la configurazione del server.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Gestisci le impostazioni del server.",
@@ -272,7 +272,7 @@
                 "description": [
                     "Ciao {{USER}}, sembra che tu abbia [menzionato o reagito a un orario]({{MESSAGE_LINK}}), ma non hai ancora impostato un fuso orario.",
                     "",
-                    "Imposta il tuo fuso orario utilizzando il comando `{{REF:bot.prefix}} {{REF:commands.set}}` !",
+                    "Imposta il tuo fuso orario utilizzando il comando `{{REF:bot.prefix}} {{REF:commands.set}}`!",
                     "",
                     "L'impostazione del fuso orario consente a {{REF:bot.name}} di convertire i tempi nella chat del server da e verso il proprio fuso orario, facilitando il coordinamento dei tempi con gli altri."
                 ],
@@ -286,7 +286,7 @@
             "autoDetectGuild": {
                 "title": "Server - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Desideri che {{REF:bot.name}}  rilevi automaticamente gli orari menzionati nella chat?",
+                    "Desideri che {{REF:bot.name}} rilevi automaticamente gli orari menzionati nella chat?",
                     "",
                     "`{{REF:yesNo.yes}}` - I tempi in chat verranno rilevati automaticamente.",
                     "",
@@ -309,7 +309,7 @@
             "timeZoneBot": {
                 "title": "Bot - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "qual è il fuso orario di {{BOT}} ?",
+                    "Qual è il fuso orario di {{BOT}}?",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
@@ -331,7 +331,7 @@
             "timeZoneUser": {
                 "title": "Utente - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "Qual è il fuso orario di {{USER}} ?",
+                    "Qual è il fuso orario di {{USER}}?",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
@@ -343,7 +343,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, il fuso orario di questo server è ({{REF:partials.yesOrNo}})?"
+                    "Perfavore conferma, è questo il fuso orario di questo server? ({{REF:partials.yesOrNo}})"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -351,7 +351,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, il fuso orario di {{BOT}} è ({{REF:partials.yesOrNo}})?"
+                    "Perfavore conferma, è questo il fuso orario di {{BOT}}? ({{REF:partials.yesOrNo}})?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -359,7 +359,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, il tuo fuso orario è ({{REF:partials.yesOrNo}})?"
+                    "Perfavore conferma, è questo il tuo fuso orario? ({{REF:partials.yesOrNo}})"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -367,7 +367,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, il fuso orario di {{USER}} è ({{REF:partials.yesOrNo}})?"
+                    "Perfavore conferma, è questo il fuso orario di {{USER}}? ({{REF:partials.yesOrNo}})"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -725,26 +725,26 @@
             "bot": "/bot|command|cmd/i"
         },
         "commands": {
-            "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|sviluppatore|uso|memoria|mem)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|d|documentazione|leggimi|website|site)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|dona)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|f|consulta|cerca)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|h|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|i|informazioni)\\b/i",
+            "bot": "/\\b({{REF:commands.bot}}|b|bot)\\b/i",
+            "dev": "/\\b({{REF:commands.dev}}|sviluppatore|dev|uso|memoria|mem)\\b/i",
+            "docs": "/\\b({{REF:commands.docs}}|d|docs|documentazione|leggimi|website|site)\\b/i",
+            "donate": "/\\b({{REF:commands.donate}}|donare|dona)\\b/i",
+            "find": "/\\b({{REF:commands.find}}|f|consulta|trova|trovare|cerca)\\b/i",
+            "help": "/\\b({{REF:commands.help}}|h|aiuto|\\?)\\b/i",
+            "info": "/\\b({{REF:commands.info}}|i|informazioni|info)\\b/i",
             "invite": "/\\b({{REF:commands.invite}})invita\\b/i",
-            "list": "/\\b({{REF:commands.list}}|l)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|m|zona|zone)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|me|utente)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|gilda|configura|impostazione|impostazioni)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|s)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|installa|inizia)\\b/i",
+            "list": "/\\b({{REF:commands.list}}|l|lista)\\b/i",
+            "map": "/\\b({{REF:commands.map}}|m|zona|zone|mappa)\\b/i",
+            "me": "/\\b({{REF:commands.me}}|me|utente|io)\\b/i",
+            "server": "/\\b({{REF:commands.server}}|server|impostazione|impostazioni)\\b/i",
+            "set": "/\\b({{REF:commands.set}}|s|imposta)\\b/i",
+            "setup": "/\\b({{REF:commands.setup}}|installa|inizia|configura)\\b/i",
             "support": "/\\b({{REF:commands.support}})\\b/i",
-            "time": "/\\b({{REF:commands.time}}|ora|data)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|t|traduzione|traduzioni|lingua|lingue)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}}|v)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|cancella|esci|chiudi)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|cancella|reset|elimina)\\b/i"
+            "time": "/\\b({{REF:commands.time}}|ora|data|tempo)\\b/i",
+            "translate": "/\\b({{REF:commands.translate}}|t|traduzione|traduzioni|lingua|lingue|traduci)\\b/i",
+            "vote": "/\\b({{REF:commands.vote}}|v|vota)\\b/i",
+            "stop": "/\\b({{REF:commands.stop}}|cancella|esci|chiudi|ferma)\\b/i",
+            "remove": "/\\b({{REF:commands.remove}}|cancella|rimuovi|elimina)\\b/i"
         },
         "settings": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-trova|auto|trova)\\b/i",
@@ -797,9 +797,9 @@
             "invite": "invita",
             "list": "lista",
             "map": "mappa",
-            "me": "me",
+            "me": "io",
             "server": "server",
-            "set": "zona",
+            "set": "imposta",
             "setup": "configura",
             "support": "supporto",
             "time": "tempo",
@@ -815,22 +815,22 @@
             "zone": "zona"
         },
         "settings": {
-            "autoDetect": "Trova automaticamente",
-            "autoDetectDisplay": "Trova automaticamente",
-            "dateFormat": "Formato data",
-            "dateFormatDisplay": "Formato data",
+            "autoDetect": "autoRileva",
+            "autoDetectDisplay": "autoRileva",
+            "dateFormat": "formatoData",
+            "dateFormatDisplay": "formatoData",
             "language": "lingua",
             "languageDisplay": "Lingua",
             "list": "lista",
             "listDisplay": "Lista",
-            "privateMode": "Modalità privata",
-            "privateModeDisplay": "Modalità privata",
+            "privateMode": "modPrivata",
+            "privateModeDisplay": "modPrivata",
             "reminders": "promemoria",
             "remindersDisplay": "Promemoria",
-            "timeFormat": "Formato orario",
-            "timeFormatDisplay": "Formato Orario",
-            "timeZone": "Fuso Orario",
-            "timeZoneDisplay": "Fuso Orario"
+            "timeFormat": "formatoOrario",
+            "timeFormatDisplay": "formatoOrario",
+            "timeZone": "fusoOrario",
+            "timeZoneDisplay": "fusoOrario"
         },
         "dateFormat": {
             "monthDay": "mm/gg",
@@ -846,8 +846,8 @@
         },
         "yesNo": {
             "yes": "si",
-            "yesDisplay": "No",
-            "no": "si",
+            "yesDisplay": "Si",
+            "no": "no",
             "noDisplay": "No"
         },
         "lists": {
@@ -911,7 +911,7 @@
             "italicizedDefaults": "Le impostazioni in *corsivo* sono quelle predefinite.",
             "timeInTimeZone": "A **{{TIME_ZONE}}** è attualmente **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
-                "Puoi trovare fusi orari utilizzando il __{{REF:links.mapEmbed}}__.",
+                "Puoi trovare fusi orari utilizzando la __{{REF:links.mapEmbed}}__.",
                 "",
                 "Semplicemente **seleziona una zona sulla mappa** per vedere il fuso orario della zona."
             ],

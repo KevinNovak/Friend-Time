@@ -1,8 +1,8 @@
-import { DMChannel, Message, TextChannel } from 'discord.js-light';
+import { DMChannel, Message, NewsChannel, TextChannel } from 'discord.js-light';
 
-import { CommandHandler, TriggerHandler } from '.';
+import { CommandHandler, EventHandler, TriggerHandler } from '.';
 
-export class MessageHandler {
+export class MessageHandler implements EventHandler {
     constructor(private commandHandler: CommandHandler, private triggerHandler: TriggerHandler) {}
 
     public async process(msg: Message): Promise<void> {
@@ -11,8 +11,14 @@ export class MessageHandler {
             return;
         }
 
-        // Only handle messages from text or DM channels
-        if (!(msg.channel instanceof TextChannel || msg.channel instanceof DMChannel)) {
+        // Only handle messages from the following channel types
+        if (
+            !(
+                msg.channel instanceof DMChannel ||
+                msg.channel instanceof TextChannel ||
+                msg.channel instanceof NewsChannel
+            )
+        ) {
             return;
         }
 

@@ -1,4 +1,4 @@
-import { Message, TextChannel } from 'discord.js-light';
+import { Message } from 'discord.js-light';
 import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { GuildData, UserData } from '../database/entities';
@@ -18,7 +18,7 @@ export class TriggerHandler {
     public async process(msg: Message, args: string[]): Promise<void> {
         // Find triggers caused by this message
         let triggers = this.triggers.filter(trigger => {
-            if (trigger.requireGuild && !(msg.channel instanceof TextChannel)) {
+            if (trigger.requireGuild && !msg.guild) {
                 return false;
             }
 

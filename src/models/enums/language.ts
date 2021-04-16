@@ -3,6 +3,7 @@ import { Lang } from '../../services';
 export enum LangCode {
     EN_US = 'en-US',
     ES = 'es',
+    PT_BR = 'pt-BR',
     FR = 'fr',
     IT = 'it',
     EN_PIRATE = 'en-Pirate',

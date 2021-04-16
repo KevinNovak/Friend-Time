@@ -764,10 +764,10 @@
     },
     "refs": {
         "meta": {
-            "language": "pt-br",
+            "language": "pt-BR",
             "languageDisplay": "Portugês",
             "locale": "pt-BR",
-            "translators": "[KiddLankaster#2198]"
+            "translators": "KiddLankaster#2198"
         },
         "bot": {
             "name": "Friend Time",

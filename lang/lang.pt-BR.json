@@ -9,7 +9,7 @@
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
-                        "name": "Importante {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} importantes.",
                         "value": ["**{{REF:bot.prefix}} {{REF:commands.help}}** - Ajuda."]
                     },
                     {
@@ -27,7 +27,7 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
-                        "name": "Usuário {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} de usuário.",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Executar o setup (para você, outro usuário ou do Bot).",
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Ajuste suas configurações.",
@@ -37,7 +37,7 @@
                         ]
                     },
                     {
-                        "name": "Admin {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} de Admin.",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Executar os ajustes do Bot.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Ajustar as configurações do servidor.",
@@ -808,20 +808,20 @@
             "zone": "zone"
         },
         "settings": {
-            "autoDetect": "autoDetect",
+            "autoDetect": "AutoDetect",
             "autoDetectDisplay": "Auto-Detect",
-            "dateFormat": "formatodata",
-            "dateFormatDisplay": "Formato da Data",
-            "language": "linguagem",
+            "dateFormat": "FormatoDeData",
+            "dateFormatDisplay": "Formato de Data",
+            "language": "Linguagem",
             "languageDisplay": "Linguagem",
-            "list": "lista",
+            "list": "Lista",
             "listDisplay": "Lista",
             "privateMode": "ModoPrivado",
             "privateModeDisplay": "Modo Privado",
-            "reminders": "lembretes",
+            "reminders": "Lembretes",
             "remindersDisplay": "Lembretes",
-            "timeFormat": "FormatoHora",
-            "timeFormatDisplay": "Formato da Hora",
+            "timeFormat": "FormatoDeHora",
+            "timeFormatDisplay": "Formato de Hora",
             "timeZone": "FusoHorario",
             "timeZoneDisplay": "Fuso Horario"
         },
@@ -868,8 +868,8 @@
             "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
         },
         "fields": {
-            "commands": "Commands",
-            "actions": "Actions",
+            "commands": "Comandos",
+            "actions": "Ações",
             "links": "Links"
         },
         "footers": {
@@ -881,7 +881,7 @@
         },
         "links": {
             "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Convite {{REF:bot.name}} to a Server!]({{REF:links.invite}})",
+            "inviteEmbed": "[Convide {{REF:bot.name}} para o seu Server!]({{REF:links.invite}})",
             "docs": "https://docs.friendtime.ml",
             "docsEmbed": "[Documentação]({{REF:links.docs}}/)",
             "vote": "https://top.gg/bot/471091072546766849/vote",
@@ -901,7 +901,7 @@
         "partials": {
             "congratulations": "🎉 Parabéns! 🎉",
             "yesOrNo": "`{{REF:yesNo.yes}}` ou `{{REF:yesNo.no}}`",
-            "italicizedDefaults": "*Italicized* ajustes são padrões.",
+            "italicizedDefaults": "Ajustes em *itálico* são padrões.",
             "timeInTimeZone": "Em **{{TIME_ZONE}}** são **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
                 "Você pode validar o fuso horário em __{{REF:links.mapEmbed}}__.",

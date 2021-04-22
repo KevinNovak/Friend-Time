@@ -9,7 +9,7 @@
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
-                        "name": "{{REF:fields.commands}} Importantes",
+                        "name": "{{REF:fields.commands}} importantes",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.help}}** - Ver ayuda del bot."
                         ]
@@ -29,7 +29,7 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
-                        "name": "{{REF:fields.commands}} de Usuario",
+                        "name": "{{REF:fields.commands}} de usuario",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Correr la configuración (para ti, otro usuario, o un bot).",
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Gestiona tus configuraciones de usuario.",
@@ -39,7 +39,7 @@
                         ]
                     },
                     {
-                        "name": "{{REF:fields.commands}} de Admin",
+                        "name": "{{REF:fields.commands}} de admin",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Ejecuta la configuración del servidor.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Gestiona las configuraciones del servidor.",
@@ -60,7 +60,7 @@
                 ]
             },
             "listTimeZone": {
-                "title": "Listado de Zonas Horarias",
+                "title": "Listado de zonas horarias",
                 "description": [
                     "Zonas horarias a que serán convertidas las horas mencionadas.",
                     "",
@@ -96,7 +96,7 @@
                 ]
             },
             "settingsServer": {
-                "title": "Configuraciones del Servidor",
+                "title": "Configuraciones del servidor",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -116,7 +116,7 @@
                 "footer": { "text": "Server ID: {{SERVER_ID}}" }
             },
             "settingsBot": {
-                "title": "Configuraciones del Bot",
+                "title": "Configuraciones del bot",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -136,7 +136,7 @@
                 "footer": { "text": "Bot ID: {{BOT_ID}}" }
             },
             "settingSelf": {
-                "title": "Mis Configuraciones",
+                "title": "Mis configuraciones",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -153,26 +153,26 @@
                         ]
                     }
                 ],
-                "footer": { "text": "ID Usuario: {{USER_ID}}" }
+                "footer": { "text": "ID usuario: {{USER_ID}}" }
             },
             "timeServer": {
-                "title": "Hora del Servidor",
+                "title": "Hora del servidor",
                 "description": "Son las **{{TIME}}** para servidores en **{{TIME_ZONE}}**."
             },
             "timeUser": {
-                "title": "Hora del Usuario",
+                "title": "Hora del usuario",
                 "description": "Son las **{{TIME}}** para {{USER}} en **{{TIME_ZONE}}**."
             },
             "timeUserPrivate": {
-                "title": "Hora del Usuario",
+                "title": "Hora del usuario",
                 "description": "Son las **{{TIME}}** para {{USER}}."
             },
             "timeTimeZone": {
-                "title": "Hora en Zona Horaria",
+                "title": "Hora en zona horaria",
                 "description": "Son las **{{TIME}}** en **{{TIME_ZONE}}**."
             },
             "map": {
-                "title": "Mapa de Zonas Horarias",
+                "title": "Mapa de zonas horarias",
                 "description": [
                     "{{REF:partials.findTimeZoneHelp}} Puedes copiar este nombre y usarlo donde {{REF:bot.name}} necesite una zona horaria."
                 ]
@@ -191,7 +191,7 @@
                         ]
                     },
                     {
-                        "name": "Creado Con",
+                        "name": "Creado con",
                         "value": ["{{REF:links.templateEmbed}}"]
                     }
                 ]
@@ -201,7 +201,7 @@
                 "description": "Gracias a nuestros traductores, quienes han hecho posible que {{REF:bot.name}} pueda ser usado en los siguientes lenguajes. Si te interesa ayudar con las traducciones, por favor ponte en contacto con el staff en el [servidor de soporte]({{REF:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Información del Desarrollador",
+                "title": "{{REF:bot.name}} - Información del desarrollador",
                 "fields": [
                     {
                         "name": "Versiones",
@@ -262,7 +262,7 @@
                     "",
                     "{{TIME_LIST}}",
                     "",
-                    "[Ver el Mensaje Original]({{MESSAGE_LINK}})"
+                    "[Ver el mensaje original]({{MESSAGE_LINK}})"
                 ]
             },
             "timeConversionGuild": {
@@ -374,7 +374,7 @@
             "listGuild": {
                 "title": "Servidor - {{REF:settings.listDisplay}}",
                 "description": [
-                    "¿Quieres que {{REF:bot.name}} envíe a la conversación un listado de horas convertidas, luego de que una hora sea mencionada?",
+                    "¿Quieres que {{REF:bot.name}} envíe a la conversación un listado de horas convertidas luego de que una hora sea mencionada?",
                     "",
                     "`{{REF:yesNo.yes}}` - {{REF:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{REF:bot.prefix}} {{REF:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
                     "",
@@ -816,21 +816,21 @@
         },
         "settings": {
             "autoDetect": "autoDetectar",
-            "autoDetectDisplay": "Auto Detectar",
+            "autoDetectDisplay": "Auto detectar",
             "dateFormat": "formatoFecha",
-            "dateFormatDisplay": "Formato Fecha",
+            "dateFormatDisplay": "Formato fecha",
             "language": "lenguaje",
             "languageDisplay": "Lenguaje",
             "list": "listado",
             "listDisplay": "Listado",
             "privateMode": "modoPrivado",
-            "privateModeDisplay": "Modo Privado",
+            "privateModeDisplay": "Modo privado",
             "reminders": "recordatorios",
             "remindersDisplay": "Recordatorios",
             "timeFormat": "formatoHora",
-            "timeFormatDisplay": "Formato Hora",
+            "timeFormatDisplay": "Formato hora",
             "timeZone": "zonaHoraria",
-            "timeZoneDisplay": "Zona Horaria"
+            "timeZoneDisplay": "Zona horaria"
         },
         "dateFormat": {
             "monthDay": "mm/dd",
@@ -908,7 +908,7 @@
         "partials": {
             "congratulations": "🎉 ¡Felicidades! 🎉",
             "yesOrNo": "`{{REF:yesNo.yes}}` o `{{REF:yesNo.no}}`",
-            "italicizedDefaults": "Las configuraciones en *Itálicas* son las predeterminadas.",
+            "italicizedDefaults": "Las configuraciones en *Itálica* son las predeterminadas.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** son ahora las **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
                 "Puedes encontrar tu zona horaria usando el __{{REF:links.mapEmbed}}__.",
@@ -922,7 +922,7 @@
             "missingEmbedPerms": [
                 "¡No tengo los permisos necesarios para enviar mensajes aquí!",
                 "",
-                "Por favor, necesito los permisos **Ver Canal**, **Enviar Mensajes**, e  **Insertar Enlaces** en este canal."
+                "Por favor, necesito los permisos **Ver canales**, **Enviar mensajes**, e  **Insertar enlaces** en este canal."
             ]
         }
     }

@@ -27,7 +27,7 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
-                        "name": "{{REF:fields.commands}} de usuário.",
+                        "name": "{{REF:fields.commands}} de usuário",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Executar o setup (para você, outro usuário ou do Bot).",
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Ajuste suas configurações.",
@@ -37,7 +37,7 @@
                         ]
                     },
                     {
-                        "name": "{{REF:fields.commands}} de Admin.",
+                        "name": "{{REF:fields.commands}} de Admin",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Executar os ajustes do Bot.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Ajustar as configurações do servidor.",
@@ -191,7 +191,7 @@
             },
             "translate": {
                 "title": "{{REF:bot.name}} - Traduções",
-                "description": "Um agradecimento especial aos tradutores do {{REF:bot.name}} que possibilitaram essa tradução para Ser usados nessa língua. Se você está interessado em ajudar com a tradução, procure um staff em [support server]({{REF:links.support}})."
+                "description": "Um agradecimento especial aos tradutores do {{REF:bot.name}} que possibilitaram essa tradução para ser utilizada nessa língua. Se você está interessado em ajudar com a tradução, procure um staff em [support server]({{REF:links.support}})."
             },
             "dev": {
                 "title": "{{REF:bot.name}} - Informações do Desenvolvedor",
@@ -802,7 +802,7 @@
             "remove": "remover"
         },
         "arguments": {
-            "user": "@user",
+            "user": "@usuário",
             "bot": "@bot",
             "setting": "ajustes",
             "zone": "zone"

@@ -1,4 +1,5 @@
 import removeMarkdown from 'remove-markdown';
+import urlRegex from 'url-regex';
 
 export class StringUtils {
     public static truncate(input: string, length: number, addEllipsis: boolean = false): string {
@@ -16,5 +17,9 @@ export class StringUtils {
 
     public static stripMarkdown(input: string): string {
         return removeMarkdown(input);
+    }
+
+    public static stripUrls(input: string): string {
+        return input.replace(urlRegex(), '');
     }
 }

@@ -25,7 +25,7 @@ export class TimeService {
         let parser = new Chrono(en.createConfiguration(true, littleEndian));
 
         // Preformat input for parser
-        let lines = StringUtils.stripMarkdown(input)
+        let lines = StringUtils.stripUrls(StringUtils.stripMarkdown(input))
             // Replace boundary-like characters with newlines
             .replace(/[\(\)\[\]{}<>"`]/g, '\n')
             // Break message into each line

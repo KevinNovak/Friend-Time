@@ -91,7 +91,7 @@ export class SetCommand implements Command {
                 if (
                     !(
                         msg.member.hasPermission(Permissions.FLAGS.MANAGE_GUILD) ||
-                        Debug.skipCheck.perms
+                        Debug.skip.checkPerms
                     )
                 ) {
                     await MessageUtils.send(

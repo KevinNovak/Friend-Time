@@ -191,7 +191,7 @@
             },
             "translate": {
                 "title": "{{REF:bot.name}} - Traduções",
-                "description": "Obrigado aos nossos tradutores que possibilitaram que {{REF: bot.name}} fosse usado nos seguintes idiomas. Se você estiver interessado em fornecer uma tradução, entre em contato com a equipe do [servidor de suporte]({{REF:links.support}})."
+                "description": "Obrigado aos nossos tradutores que possibilitaram que {{REF:bot.name}} fosse usado nos seguintes idiomas. Se você estiver interessado em fornecer uma tradução, entre em contato com a equipe do [servidor de suporte]({{REF:links.support}})."
             },
             "dev": {
                 "title": "{{REF:bot.name}} - Informações do Desenvolvedor",
@@ -216,7 +216,7 @@
                         "name": "Memória",
                         "value": [
                             "**RSS**: {{RSS_SIZE}} ({{RSS_SIZE_PER_SERVER}}/Server)",
-                            "**Total**: {{HEAP_TOTAL_SIZE}} ({{HEAP_TOTAL_SIZE_PER_SERVER}}/Server)",
+                            "**Heap**: {{HEAP_TOTAL_SIZE}} ({{HEAP_TOTAL_SIZE_PER_SERVER}}/Server)",
                             "**Usado**: {{HEAP_USED_SIZE}} ({{HEAP_USED_SIZE_PER_SERVER}}/Server)"
                         ]
                     },
@@ -909,7 +909,7 @@
                 "Basta **selecionar um local no mapa** para ver o nome de um fuso horário."
             ],
             "translateNote": "Digite `{{REF:bot.prefix}} {{REF:commands.translate}}` para saber mais sobre as traduções.",
-            "dmWarning": "Alguns comandos exigem mensagens diretas permitidas em pelo menos um servidor que você compartilha com o {{REF: bot.name}}."
+            "dmWarning": "Alguns comandos exigem mensagens diretas permitidas em pelo menos um servidor que você compartilha com o {{REF:bot.name}}."
         },
         "messages": {
             "missingEmbedPerms": [

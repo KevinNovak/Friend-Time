@@ -10,7 +10,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} importantes.",
-                        "value": ["**{{REF:bot.prefix}} {{REF:commands.help}}** - Veja a ajuda para usar o bot."]
+                        "value": [
+                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Veja a ajuda para usar o bot."
+                        ]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -77,7 +79,12 @@
             },
             "listBot": {
                 "title": "Lista de bots",
-                "description": ["bots com configurações neste servidor.", "", "{{BOT_LIST}}", "\u2800"],
+                "description": [
+                    "Bots com configurações neste servidor.",
+                    "",
+                    "{{BOT_LIST}}",
+                    "\u2800"
+                ],
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",

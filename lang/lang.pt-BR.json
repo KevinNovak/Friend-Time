@@ -34,7 +34,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Executar a configuração para você, outro usuário ou um bot).",
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Ajustar suas configurações.",
                             "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Verificar a hora do servidor, de um usuário, de um bot ou de um fuso horário.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Verificar o mapa com todos os fusos horários.",
+                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Ver o mapa com todos os fusos horários.",
                             "**{{REF:bot.prefix}} {{REF:commands.info}}** - Mais informações sobre o {{REF:bot.name}}."
                         ]
                     },
@@ -43,7 +43,7 @@
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Executar os ajustes do Bot.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Ajustar as configurações do servidor.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Ajustar os fusos horários.",
+                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Ajustar a lista de fusos horários do servidor.",
                             "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Ajustar as configurações de um bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
@@ -467,7 +467,7 @@
             "languageUser": {
                 "title": "Usuário - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "Qual linguagem você gostaria de utilizar?",
+                    "Qual idioma você gostaria de utilizar?",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
@@ -888,7 +888,7 @@
         },
         "links": {
             "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Convide {{REF:bot.name}} para o seu servidor!]({{REF:links.invite}})",
+            "inviteEmbed": "[Convide o {{REF:bot.name}} para o seu servidor!]({{REF:links.invite}})",
             "docs": "https://docs.friendtime.ml",
             "docsEmbed": "[Ver Documentação]({{REF:links.docs}}/)",
             "vote": "https://top.gg/bot/471091072546766849/vote",

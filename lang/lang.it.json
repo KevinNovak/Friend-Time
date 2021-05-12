@@ -635,7 +635,7 @@
                 "description": [
                     "Bot non trovato o non ancora configurato.",
                     "",
-                    "Digita `{{REF: bot.prefix}} {{REF: commands.set}} <{{REF: arguments.bot}}>` per configurare un nuovo bot."
+                    "Digita `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` per configurare un nuovo bot."
                 ],
                 "color": "{{REF:colors.error}}"
             },

@@ -894,7 +894,7 @@
             "source": "https://github.com/KevinNovak/Friend-Time",
             "sourceEmbed": "[Verificar o código-fonte]({{REF:links.source}})",
             "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
-            "templateEmbed": "[Modelo de um bot do Discord pelo TypeScript]({{REF:links.template}})",
+            "templateEmbed": "[Discord Bot TypeScript Template]({{REF:links.template}})",
             "map": "https://kevinnovak.github.io/Time-Zone-Picker/",
             "mapEmbed": "[Mapa de Fusos Horários]({{REF:links.map}})"
         },

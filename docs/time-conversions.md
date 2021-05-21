@@ -25,7 +25,7 @@ If you also react with the same emoji, Friend Time will message you with the tim
 
 Another way that Friend Time can convert times is by using the server's time zone list. This is a list of up to 10 time zones which Friend Time will always convert to and send after a time is mentioned in chat.
 
-![](.gitbook/assets/image%20%2861%29%20%281%29%20%282%29%20%282%29.png)
+![](.gitbook/assets/image%20%2861%29%20%281%29%20%282%29%20%282%29%20%282%29.png)
 
 To use this list, the server must have the [List](settings/server-settings/list.md) setting enabled, and also must have at least one time zone in the [server's time zone list](commands/admin-commands/list.md).
 

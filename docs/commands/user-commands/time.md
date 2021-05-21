@@ -35,7 +35,7 @@ Type `-ft time <@bot>` to see the current time for a bot.
 
 Type `-ft time <zone>` to see the current time in a time zone.
 
-![](../../.gitbook/assets/image%20%283%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%283%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 {% hint style="info" %}
 If you are unsure which time zone to use, see the guide on [finding time zones](../../finding-time-zones.md).

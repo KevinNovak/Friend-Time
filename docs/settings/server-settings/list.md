@@ -4,7 +4,7 @@
 
 The server **List** setting determines whether Friend Time will send a list of converted times in chat after a time is mentioned.
 
-![](../../.gitbook/assets/image%20%2861%29%20%281%29%20%282%29.png)
+![](../../.gitbook/assets/image%20%2861%29%20%281%29%20%282%29%20%282%29.png)
 
 {% hint style="info" %}
 To learn how to change settings like this one, see the [server command](../../commands/admin-commands/server.md).

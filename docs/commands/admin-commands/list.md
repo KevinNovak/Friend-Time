@@ -9,7 +9,7 @@ description: Manage the server time zone list.
 The `-ft list` command is used to view and change the server's time zone list. These time zones are automatically converted to when a time is mentioned in chat.
 
 * `-ft list` - View the server's time zone list.
-* `-ft bot <zone>` - Add or remove a time zone.
+* `-ft list <zone>` - Add or remove a time zone.
 
 ### View the Server's Time Zone List
 

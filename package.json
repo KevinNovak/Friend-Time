@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "@vvo/tzdb": "6.5.1",
-        "chrono-node": "2.2.6",
+        "chrono-node": "2.2.7",
         "class-transformer": "0.4.0",
         "class-validator": "0.13.1",
         "discord.js-collector-utils": "1.0.25",

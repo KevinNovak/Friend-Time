@@ -31,20 +31,20 @@
                     {
                         "name": "{{REF:fields.commands}} de usuário",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Executar a configuração para você, outro usuário ou um bot).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Ajustar suas configurações.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Verificar a hora do servidor, de um usuário, de um bot ou de um fuso horário.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Ver o mapa com todos os fusos horários.",
+                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Execute a configuração para você, outro usuário ou um bot).",
+                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Ajuste suas configurações.",
+                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Verifique a hora do servidor, de um usuário, de um bot ou de um fuso horário.",
+                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Veja o mapa com todos os fusos horários.",
                             "**{{REF:bot.prefix}} {{REF:commands.info}}** - Mais informações sobre o {{REF:bot.name}}."
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} de Admin",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Executar os ajustes do Bot.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Ajustar as configurações do servidor.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Ajustar a lista de fusos horários do servidor.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Ajustar as configurações de um bot.",
+                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Execute os ajustes do Bot.",
+                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Ajuste as configurações do servidor.",
+                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Ajuste a lista de fusos horários do servidor.",
+                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Ajuste as configurações de um bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -71,8 +71,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Adicionar ou remover um fuso horário.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Habilitar ou desabilitar a lista."
+                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Adicione ou remova um fuso horário.",
+                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Habilite ou desabilite a lista."
                         ]
                     }
                 ]
@@ -89,8 +89,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Executar a configuração para um bot.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Configurar um bot."
+                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Execute a configuração para um bot.",
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Configure um bot."
                         ]
                     }
                 ]
@@ -107,9 +107,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Alterar uma configuração",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resetar uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Remover todos os dados."
+                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Altere uma configuração",
+                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }
                 ],
@@ -127,9 +127,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Alterar uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resetar uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Remover todos os dados."
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Altere uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }
                 ],
@@ -147,9 +147,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Alterar uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resetar uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Remover todos os dados."
+                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Altere uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }
                 ],

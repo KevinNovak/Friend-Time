@@ -446,7 +446,7 @@
                     "",
                     "`{{REF:yesNo.yes}}` - {{REF:bot.name}} wird verhindern, deine Zeitzone anderen zu zeigen.",
                     "",
-                    "`{{REF:yesNo.no}}` - Mir ist’s egal.",
+                    "`{{REF:yesNo.no}}` - Ich finde es in Ordnung, dass diese Informationen geteilt werden.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -500,7 +500,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Server-Einstellungen verwalten."
+                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Servereinstellungen verwalten."
                         ]
                     }
                 ],

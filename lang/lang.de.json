@@ -300,7 +300,7 @@
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
-                    "Beispiel: `Europa/Zurich`"
+                    "Beispiel: `Europe/Zurich`"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },

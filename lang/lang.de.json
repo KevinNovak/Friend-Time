@@ -5,7 +5,7 @@
     "embeds": {
         "displays": {
             "welcome": {
-                "title": "Wir danken von ganzem Herzen, dass du {{REF:bot.name}} benützt!",
+                "title": "Wir danken dir von ganzem Herzen, dass du {{REF:bot.name}} benutzt!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -69,7 +69,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Füge oder entferne eine Zeitzone.",
+                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Entferne oder füge eine Zeitzone hinzu.",
                             "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Aktiviere oder deaktiviere die Liste."
                         ]
                     }
@@ -172,7 +172,7 @@
             "map": {
                 "title": "Karte der Zeitzonen",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wo {{REF:bot.name}} eine Zeitzone braucht."
+                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{REF:bot.name}} eine Zeitzone braucht."
                 ]
             },
             "info": {
@@ -196,7 +196,7 @@
             },
             "translate": {
                 "title": "{{REF:bot.name}} - Übersetzungen",
-                "description": "Wir danken unseren Übersetzern, die es möglich gemacht haben, {{REF:bot.name}} in folgenden Sprachen zu nützen. Du bist interressiert am Übersetzen? Dann kontaktiere doch unsere Mitarbeiter im [Hilfeserver]({{REF:links.support}})."
+                "description": "Wir danken unseren Übersetzern, die es möglich gemacht haben, {{REF:bot.name}} in folgenden Sprachen zu nutzen. Du bist interressiert am Übersetzen? Dann kontaktiere doch unsere Mitarbeiter im [Hilfeserver]({{REF:links.support}})."
             }, 
             "dev": {
                 "title": "{{REF:bot.name}} - Entwicklerinformationen",
@@ -418,7 +418,7 @@
             "timeFormatGuild": {
                 "title": "Server - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Welches Format für Nachrichten in diesem Server benutzt werden?",
+                    "Welches Format soll für Nachrichten in diesem Server benutzt werden?",
                     "",
                     "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -430,7 +430,7 @@
             "timeFormatUser": {
                 "title": "User - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Welches Zeitformat nützt du?",
+                    "Welches Zeitformat nutzt du?",
                     "",
                     "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -454,7 +454,7 @@
             "languageGuild": {
                 "title": "Server - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "Welche Sprache möchtest du in diesem Server benützen?",
+                    "Welche Sprache möchtest du in diesem Server benutzen?",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
@@ -465,7 +465,7 @@
             "languageUser": {
                 "title": "Nutzer - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "Welche Sprache möchtest du benützen?",
+                    "Welche Sprache möchtest du benutzen?",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
@@ -477,7 +477,7 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, bitte bestätige, dass du diese Einstellungen nützen möchtest ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, bitte bestätige, dass du diese Einstellungen nutzen möchtest ({{REF:partials.yesOrNo}})?"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }

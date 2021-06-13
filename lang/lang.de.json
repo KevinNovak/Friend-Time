@@ -561,7 +561,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Bot-Einstellungen verwalten."
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Boteinstellungen verwalten."
                         ]
                     }
                 ],

@@ -741,7 +741,7 @@
             "time": "/\\b({{REF:commands.time}}|t|ziit|nun|datum)\\b/i",
             "translate": "/\\b({{REF:commands.translate}}|t|ü|translation|übersetzung|lang|sprache|sprachen)\\b/i",
             "vote": "/\\b({{REF:commands.vote}}|v|entscheid)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|verlasse)\\b/i",
+            "stop": "/\\b({{REF:commands.stop}}|stop|aufhören|verlasse)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|zurücksetzen|löschen)\\b/i"
         },
         "settings": {
@@ -763,8 +763,8 @@
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12-Stunden|12h|12-hour)\\b/i"
         },
         "yesNo": {
-            "yes": "/\\b({{REF:yesNo.yes}}|ja|oké|j|y|enabled|enable|e|true|t|on|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|nein|nee|n|disabled|disable|d|false|f|off|0)\\b/i"
+            "yes": "/\\b({{REF:yesNo.yes}}|oké|j|y|enabled|enable|e|true|t|on|1)\\b/i",
+            "no": "/\\b({{REF:yesNo.no}}|nee|n|disabled|disable|d|false|f|off|0)\\b/i"
         }
     },
     "refs": {
@@ -803,7 +803,7 @@
             "time": "zeit",
             "translate": "übersetzen",
             "vote": "abstimmen",
-            "stop": "stoppe",
+            "stop": "stopp",
             "remove": "entferne"
         },
         "arguments": {
@@ -843,9 +843,9 @@
             "twentyFourHourDisplay": "24-Stunden"
         },
         "yesNo": {
-            "yes": "yes",
+            "yes": "ja",
             "yesDisplay": "Ja",
-            "no": "no",
+            "no": "nein",
             "noDisplay": "Nein"
         },
         "lists": {

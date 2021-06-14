@@ -654,7 +654,7 @@
                 "color": "{{REF:colors.error}}"
             },
             "invalidYesNo": {
-                "description": "Ungültige \"ja"\-oder \"nein"\-Antwort, bitte neu probieren!",
+                "description": "Ungültige \"ja\"-oder \"nein\"-Antwort, bitte neu probieren!",
                 "color": "{{REF:colors.error}}"
             },
             "invalidLanguage": {

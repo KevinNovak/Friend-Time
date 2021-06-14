@@ -37,7 +37,7 @@
                         ]
                     },
                     {
-                        "name": "Administration {{REF:fields.commands}}",
+                        "name": "Administrations {{REF:fields.commands}}",
                         "value": [
                             "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Starte die Server-Einrichtung.",
                             "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Verwalte die Servereinstellungen.",

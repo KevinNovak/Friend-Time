@@ -197,7 +197,7 @@
             "translate": {
                 "title": "{{REF:bot.name}} - Übersetzungen",
                 "description": "Wir danken unseren Übersetzern, die es möglich gemacht haben, {{REF:bot.name}} in folgenden Sprachen zu nutzen. Du bist interressiert am Übersetzen? Dann kontaktiere doch unsere Mitarbeiter im [Hilfeserver]({{REF:links.support}})."
-            }, 
+            },
             "dev": {
                 "title": "{{REF:bot.name}} - Entwicklerinformationen",
                 "fields": [

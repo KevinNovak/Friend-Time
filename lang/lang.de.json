@@ -873,8 +873,8 @@
             "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
         },
         "fields": {
-            "commands": "Commands",
-            "actions": "Actions",
+            "commands": "Befehle",
+            "actions": "Aktionen",
             "links": "Links"
         },
         "footers": {

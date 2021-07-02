@@ -108,7 +108,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Altere uma configuração",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Redefina uma configuração para a opção padrão.",
                             "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }
@@ -128,7 +128,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Altere uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Redefina uma configuração para a opção padrão.",
                             "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }
@@ -148,7 +148,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Altere uma configuração.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Resete uma configuração.",
+                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Redefina uma configuração para a opção padrão.",
                             "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Remova todos os dados."
                         ]
                     }

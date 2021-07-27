@@ -4,8 +4,9 @@ export enum LangCode {
     EN_US = 'en-US',
     ES = 'es',
     PT_BR = 'pt-BR',
-    DE = 'de',
     FR = 'fr',
+    RU = 'ru',
+    DE = 'de',
     IT = 'it',
     EN_PIRATE = 'en-Pirate',
 }

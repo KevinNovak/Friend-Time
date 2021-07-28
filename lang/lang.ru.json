@@ -714,54 +714,54 @@
     },
     "regexes": {
         "meta": {
-            "language": "/\\b({{REF:meta.language}}|ru|ру|русский|Russian)\\b/i"
+            "language": "/(?<=^|\\s)({{REF:meta.language}}|ru|ру|русский|Russian)(?=$|\\s)/i"
         },
         "channels": {
             "bot": "/бот|команда|команды|кмд/i"
         },
         "commands": {
-            "bot": "/\\b({{REF:commands.bot}}|б|боты)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|разработчикам|рр|использование|исп|память|пам)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|д|документация|сайт|вебсайт|веб-сайт)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|дон)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|п|найти|искать)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|пом|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|и|информация)\\b/i",
-            "invite": "/\\b({{REF:commands.invite}})\\b/i",
-            "list": "/\\b({{REF:commands.list}}|сп)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|к|пояса|чп|пояс)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|моё|мое|мой)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|сервер|группа|настройки)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|настр)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|уст|настрсерв|начать|нач)\\b/i",
-            "support": "/\\b({{REF:commands.support}})\\b/i",
-            "time": "/\\b({{REF:commands.time}}|вр|сейчас|дата)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|пер|переводы|яз|язык|языки)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}}|г|голос)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|отмена|сброс)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|сбросить|удалить|убрать|очистить)\\b/i"
+            "bot": "/(?<=^|\\s)({{REF:commands.bot}}|б|боты)(?=$|\\s)/i",
+            "dev": "/(?<=^|\\s)({{REF:commands.dev}}|разработчикам|рр|использование|исп|память|пам)(?=$|\\s)/i",
+            "docs": "/(?<=^|\\s)({{REF:commands.docs}}|д|документация|сайт|вебсайт|веб-сайт)(?=$|\\s)/i",
+            "donate": "/(?<=^|\\s)({{REF:commands.donate}}|дон)(?=$|\\s)/i",
+            "find": "/(?<=^|\\s)({{REF:commands.find}}|п|найти|искать)(?=$|\\s)/i",
+            "help": "/(?<=^|\\s)({{REF:commands.help}}|пом|\\?)(?=$|\\s)/i",
+            "info": "/(?<=^|\\s)({{REF:commands.info}}|и|информация)(?=$|\\s)/i",
+            "invite": "/(?<=^|\\s)({{REF:commands.invite}})(?=$|\\s)/i",
+            "list": "/(?<=^|\\s)({{REF:commands.list}}|сп)(?=$|\\s)/i",
+            "map": "/(?<=^|\\s)({{REF:commands.map}}|к|пояса|чп|пояс)(?=$|\\s)/i",
+            "me": "/(?<=^|\\s)({{REF:commands.me}}|моё|мое|мой)(?=$|\\s)/i",
+            "server": "/(?<=^|\\s)({{REF:commands.server}}|сервер|группа|настройки)(?=$|\\s)/i",
+            "set": "/(?<=^|\\s)({{REF:commands.set}}|настр)(?=$|\\s)/i",
+            "setup": "/(?<=^|\\s)({{REF:commands.setup}}|уст|настрсерв|начать|нач)(?=$|\\s)/i",
+            "support": "/(?<=^|\\s)({{REF:commands.support}})(?=$|\\s)/i",
+            "time": "/(?<=^|\\s)({{REF:commands.time}}|вр|сейчас|дата)(?=$|\\s)/i",
+            "translate": "/(?<=^|\\s)({{REF:commands.translate}}|пер|переводы|яз|язык|языки)(?=$|\\s)/i",
+            "vote": "/(?<=^|\\s)({{REF:commands.vote}}|г|голос)(?=$|\\s)/i",
+            "stop": "/(?<=^|\\s)({{REF:commands.stop}}|отмена|сброс)(?=$|\\s)/i",
+            "remove": "/(?<=^|\\s)({{REF:commands.remove}}|сбросить|удалить|убрать|очистить)(?=$|\\s)/i"
         },
         "settings": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|яз|язык)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|п|приватныйрежим|приватный|скрытый-режим|скрытыйрежим|скрытый|скр|с)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|н|нап|напоминание)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|форматвремени|фв|фвр|время|вр|в)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|ч|чп|часовойпояс|пояс)\\b/i"
+            "autoDetect": "/(?<=^|\\s)({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)(?=$|\\s)/i",
+            "dateFormat": "/(?<=^|\\s)({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)(?=$|\\s)/i",
+            "language": "/(?<=^|\\s)({{REF:settings.language}}|яз|язык)(?=$|\\s)/i",
+            "list": "/(?<=^|\\s)({{REF:settings.list}})(?=$|\\s)/i",
+            "privateMode": "/(?<=^|\\s)({{REF:settings.privateMode}}|п|приватныйрежим|приватный|скрытый-режим|скрытыйрежим|скрытый|скр|с)(?=$|\\s)/i",
+            "reminders": "/(?<=^|\\s)({{REF:settings.reminders}}|н|нап|напоминание)(?=$|\\s)/i",
+            "timeFormat": "/(?<=^|\\s)({{REF:settings.timeFormat}}|форматвремени|фв|фвр|время|вр|в)(?=$|\\s)/i",
+            "timeZone": "/(?<=^|\\s)({{REF:settings.timeZone}}|ч|чп|часовойпояс|пояс)(?=$|\\s)/i"
         },
         "dateFormat": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|дм|ддмм|дд-мм|дд.мм|день-месяц|день/месяц|день.месяц)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|мд|ммдд|мм-дд|мм.дд|месяц-день|месяц/день|месяц.день)\\b/i"
+            "dayMonth": "/(?<=^|\\s)({{REF:dateFormat.dayMonth}}|дм|ддмм|дд-мм|дд.мм|день-месяц|день/месяц|день.месяц)(?=$|\\s)/i",
+            "monthDay": "/(?<=^|\\s)({{REF:dateFormat.monthDay}}|мд|ммдд|мм-дд|мм.дд|месяц-день|месяц/день|месяц.день)(?=$|\\s)/i"
         },
         "timeFormat": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24ч|24часа)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12ч|12часов)\\b/i"
+            "twentyFourHour": "/(?<=^|\\s)({{REF:timeFormat.twentyFourHour}}|24ч|24часа)(?=$|\\s)/i",
+            "twelveHour": "/(?<=^|\\s)({{REF:timeFormat.twelveHour}}|12ч|12часов)(?=$|\\s)/i"
         },
         "yesNo": {
-            "yes": "/\\b({{REF:yesNo.yes}}|д|вкл|включить|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|н|выкл|выключить|0)\\b/i"
+            "yes": "/(?<=^|\\s)({{REF:yesNo.yes}}|д|вкл|включить|1)(?=$|\\s)/i",
+            "no": "/(?<=^|\\s)({{REF:yesNo.no}}|н|выкл|выключить|0)(?=$|\\s)/i"
         }
     },
     "refs": {

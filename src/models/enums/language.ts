@@ -8,6 +8,7 @@ export enum LangCode {
     RU = 'ru',
     DE = 'de',
     IT = 'it',
+    EO = 'eo',
     EN_PIRATE = 'en-Pirate',
 }
 

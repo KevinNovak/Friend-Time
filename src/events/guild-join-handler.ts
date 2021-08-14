@@ -25,7 +25,7 @@ export class GuildJoinHandler implements EventHandler {
 
         // Get data from database
         let data = new EventData(
-            await UserData.findOne({ discordId: guild.owner.id }),
+            await UserData.findOne({ discordId: guild.ownerId }),
             await GuildData.findOne({ discordId: guild.id })
         );
 

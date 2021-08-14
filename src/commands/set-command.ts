@@ -1,4 +1,4 @@
-import { DMChannel, Message, Permissions, TextChannel } from 'discord.js-light';
+import { DMChannel, Message, Permissions, TextChannel } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
 import { LangCode } from '../models/enums';

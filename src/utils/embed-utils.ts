@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js-light';
+import { MessageEmbed } from 'discord.js';
 
 export class EmbedUtils {
     public static content(embed: MessageEmbed): string {

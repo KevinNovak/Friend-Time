@@ -1,5 +1,5 @@
 import { MessageRetriever } from 'discord.js-collector-utils';
-import { Message } from 'discord.js-light';
+import { Message } from 'discord.js';
 
 import { Setting } from '..';
 import { GuildData } from '../../database/entities';

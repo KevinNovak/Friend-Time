@@ -1,4 +1,4 @@
-import { User } from 'discord.js-light';
+import { User } from 'discord.js';
 
 import { TimeZoneUtils } from '.';
 import { GuildBotData, GuildData, UserData } from '../database/entities';

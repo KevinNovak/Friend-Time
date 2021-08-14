@@ -1,4 +1,4 @@
-import { Message, Permissions } from 'discord.js-light';
+import { Message, Permissions } from 'discord.js';
 import { GuildData, GuildListItemData } from '../database/entities';
 
 import { LangCode } from '../models/enums';

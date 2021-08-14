@@ -6,7 +6,7 @@ import {
     NewsChannel,
     TextChannel,
     User,
-} from 'discord.js-light';
+} from 'discord.js';
 
 import {
     CollectorUtils as DjsCollectorUtils,

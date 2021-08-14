@@ -1,5 +1,5 @@
 import { MessageRetriever } from 'discord.js-collector-utils';
-import { Message, Snowflake } from 'discord.js-light';
+import { Message, Snowflake } from 'discord.js';
 import { BaseEntity } from 'typeorm';
 
 import { Display, Keyword } from '../models/common';

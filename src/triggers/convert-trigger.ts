@@ -1,5 +1,5 @@
 import { ParsedResult } from 'chrono-node';
-import { Message, MessageEmbed } from 'discord.js-light';
+import { Message, MessageEmbed } from 'discord.js';
 
 import { GuildBotData } from '../database/entities';
 import { DateFormatOption } from '../models/enums';

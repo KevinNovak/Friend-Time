@@ -1,4 +1,4 @@
-import { Message, User } from 'discord.js-light';
+import { Message, User } from 'discord.js';
 import { Lang } from '.';
 import { EventData } from '../models/internal-models';
 import { GuildRemindersSetting } from '../settings/guild';

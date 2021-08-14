@@ -1,4 +1,4 @@
-import { Guild } from 'discord.js-light';
+import { Guild } from 'discord.js';
 import { DateTime } from 'luxon';
 
 import { LangCode, Language, TimeFormat, TimeFormatOption } from '../models/enums';

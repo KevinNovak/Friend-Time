@@ -1,5 +1,5 @@
+import { Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
-import { Message } from 'discord.js-light';
 
 import { Setting } from '..';
 import { UserData } from '../../database/entities';

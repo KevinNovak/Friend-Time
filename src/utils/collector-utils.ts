@@ -1,12 +1,4 @@
-import {
-    DMChannel,
-    Message,
-    MessageEmbed,
-    MessageReaction,
-    NewsChannel,
-    TextChannel,
-    User,
-} from 'discord.js-light';
+import { Message, MessageEmbed, MessageReaction, TextBasedChannels, User } from 'discord.js';
 
 import {
     CollectorUtils as DjsCollectorUtils,
@@ -24,7 +16,7 @@ let Config = require('../../config/config.json');
 
 export class CollectorUtils {
     public static createMsgCollect(
-        channel: DMChannel | TextChannel | NewsChannel,
+        channel: TextBasedChannels,
         user: User,
         langCode: LangCode,
         expireEmbed?: MessageEmbed
@@ -75,7 +67,7 @@ export class CollectorUtils {
     }
 
     public static createReactCollect(
-        channel: DMChannel | TextChannel | NewsChannel,
+        channel: TextBasedChannels,
         user: User,
         langCode: LangCode,
         expireEmbed?: MessageEmbed

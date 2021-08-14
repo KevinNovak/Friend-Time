@@ -90,7 +90,7 @@ export class SetCommand implements Command {
             if (member.user.bot) {
                 if (
                     !(
-                        msg.member.hasPermission(Permissions.FLAGS.MANAGE_GUILD) ||
+                        msg.member.permissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
                         Debug.skip.checkPerms
                     )
                 ) {

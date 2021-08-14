@@ -1,5 +1,5 @@
-import { MessageRetriever } from 'discord.js-collector-utils';
 import { Message, Snowflake } from 'discord.js';
+import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Confirmation, Setting } from '..';
 import { GuildBotData } from '../../database/entities';

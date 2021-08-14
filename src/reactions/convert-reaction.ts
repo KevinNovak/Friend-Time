@@ -1,4 +1,4 @@
-import { MessageReaction, User } from 'discord.js';
+import { Message, MessageReaction, User } from 'discord.js';
 
 import { Reaction } from '.';
 import { GuildBotData } from '../database/entities';
@@ -35,7 +35,8 @@ export class ConvertReaction implements Reaction {
         reactor: User,
         data: EventData
     ): Promise<void> {
-        let msg = msgReaction.message;
+        // Can potentially be a PartialMessage, but we have already checked this
+        let msg = msgReaction.message as Message;
 
         // Don't respond to reaction on client's message
         if (msg.author.id === msg.client.user.id) {

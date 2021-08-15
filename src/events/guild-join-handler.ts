@@ -1,4 +1,4 @@
-import { Guild } from 'discord.js-light';
+import { Guild } from 'discord.js';
 
 import { GuildData, UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -25,7 +25,7 @@ export class GuildJoinHandler implements EventHandler {
 
         // Get data from database
         let data = new EventData(
-            await UserData.findOne({ discordId: guild.owner.id }),
+            await UserData.findOne({ discordId: guild.ownerId }),
             await GuildData.findOne({ discordId: guild.id })
         );
 
@@ -41,9 +41,10 @@ export class GuildJoinHandler implements EventHandler {
 
         // Send welcome message to owner
         let ownerLang = this.userLanguageSetting.valueOrDefault(data.user);
-        if (guild.owner) {
+        let owner = await guild.fetchOwner();
+        if (owner) {
             await MessageUtils.send(
-                guild.owner.user,
+                owner.user,
                 Lang.getEmbed('displays.welcome', ownerLang).setAuthor(guild.name, guild.iconURL())
             );
         }

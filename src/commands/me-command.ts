@@ -1,4 +1,4 @@
-import { DMChannel, Message } from 'discord.js-light';
+import { DMChannel, Message } from 'discord.js';
 
 import { UserData } from '../database/entities';
 import { LangCode } from '../models/enums';

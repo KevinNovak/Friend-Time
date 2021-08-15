@@ -1,4 +1,4 @@
-import { DMChannel, Message, Permissions, TextChannel } from 'discord.js-light';
+import { DMChannel, Message, Permissions, TextChannel } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
 import { LangCode } from '../models/enums';
@@ -90,7 +90,7 @@ export class SetCommand implements Command {
             if (member.user.bot) {
                 if (
                     !(
-                        msg.member.hasPermission(Permissions.FLAGS.MANAGE_GUILD) ||
+                        msg.member.permissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
                         Debug.skip.checkPerms
                     )
                 ) {

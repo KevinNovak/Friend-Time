@@ -2,7 +2,7 @@
 
 [![top.gg](https://top.gg/api/widget/status/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)
 [![top.gg](https://top.gg/api/widget/servers/471091072546766849.svg?noavatar=true)](https://top.gg/bot/471091072546766849)
-[![discord.js-light](https://img.shields.io/github/package-json/dependency-version/KevinNovak/Friend-Time/discord.js-light)](https://github.com/timotejroiko/discord.js-light)
+[![discord.js](https://img.shields.io/github/package-json/dependency-version/KevinNovak/Friend-Time/discord.js)](https://discord.js.org/)
 [![License](https://img.shields.io/badge/license-Apache%202.0%20with%20Commons%20Clause-blue)](https://commonsclause.com/)
 
 **Discord bot** - Friend Time helps your server coordinate times and events by converting times mentioned in chat between time zones!

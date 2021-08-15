@@ -62,7 +62,7 @@
             "listTimeZone": {
                 "title": "Horzonlisto",
                 "description": [
-                    "Horzonoj, en kiuj la roboto konvertu menciitajn tempojn.",
+                    "Horzonoj, en kiujn la roboto konvertu menciitajn tempojn.",
                     "",
                     "{{TIME_ZONE_LIST}}",
                     "\u2800"
@@ -172,7 +172,7 @@
                 "description": "Nun estas **{{TIME}}** en **{{TIME_ZONE}}**."
             },
             "map": {
-                "title": "Horzozmapo",
+                "title": "Horzonmapo",
                 "description": [
                     "{{REF:partials.findTimeZoneHelp}} Vi povas kopii tiun nomon kaj uzi ĝin, kiam {{REF:bot.name}} postulos."
                 ]
@@ -270,11 +270,11 @@
             },
             "timeZoneReminder": {
                 "description": [
-                    "Saluton, {{USER}}, ŝajne vi [menciis aŭ reagumis tempon]({{MESSAGE_LINK}}), sed vi ankoraŭ ne havas la horzonon.",
+                    "Saluton, {{USER}}, ŝajne vi [menciis aŭ reagumis tempon]({{MESSAGE_LINK}}), sed vi ankoraŭ ne havas horzonon.",
                     "",
                     "Agordu la roboton por vi per la komando `{{REF:bot.prefix}} {{REF:commands.set}}`!",
                     "",
-                    "Kiam vi agordos la horzonon, {{REF:bot.name}} povos konverti tempojn, menciatajn en serviloj, el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
+                    "Kiam vi agordos la horzonon, {{REF:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
                     "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
@@ -290,7 +290,7 @@
                     "",
                     "`{{REF:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
                     "",
-                    "`{{REF:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
+                    "`{{REF:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -376,7 +376,7 @@
                 "description": [
                     "Ĉu {{REF:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} konvertos menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{REF:bot.prefix}} {{REF:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{REF:bot.prefix}} {{REF:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
                     "`{{REF:yesNo.no}}` - La roboto ne sendados la liston.",
                     "\u2800"
@@ -432,7 +432,7 @@
             "timeFormatUser": {
                 "title": "Uzanto - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Kian kielon de tempo vi preferas?",
+                    "Kian temparanĝon vi preferas?",
                     "",
                     "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -570,7 +570,7 @@
                 "color": "{{REF:colors.success}}"
             },
             "setDeniedUser": {
-                "description": "Uzanto malakceptis la agordojn. La agordoj ne ŝanĝiĝis.",
+                "description": "La uzanto malakceptis la agordojn. La agordoj ne ŝanĝiĝis.",
                 "color": "{{REF:colors.error}}"
             },
             "updatedSettingGuild": {
@@ -909,7 +909,7 @@
             "congratulations": "🎉 Gratulon! 🎉",
             "yesOrNo": "`{{REF:yesNo.yes}}` aŭ `{{REF:yesNo.no}}`",
             "italicizedDefaults": "*Kursivaj* valoroj estas defaŭltaj.",
-            "timeInTimeZone": "Laŭ **{{TIME_ZONE}}** nun estas **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
+            "timeInTimeZone": "En **{{TIME_ZONE}}** nun estas **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
                 "Vi povas trovi horzonojn per la __{{REF:links.mapEmbed}}__.",
                 "",

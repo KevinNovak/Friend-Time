@@ -3,6 +3,7 @@ import {
     EmojiResolvable,
     Message,
     MessageEmbed,
+    MessageOptions,
     MessageReaction,
     TextBasedChannels,
     User,
@@ -22,13 +23,11 @@ export class MessageUtils {
 
     public static async send(
         target: User | TextBasedChannels,
-        content: string | MessageEmbed
+        content: string | MessageEmbed | MessageOptions
     ): Promise<Message> {
         try {
-            return await target.send({
-                embeds: content instanceof MessageEmbed ? [content] : undefined,
-                content: typeof content === 'string' ? content : undefined,
-            });
+            let msgOptions = this.messageOptions(content);
+            return await target.send(msgOptions);
         } catch (error) {
             // 10003: "Unknown channel"
             // 10004: "Unknown guild"
@@ -45,12 +44,13 @@ export class MessageUtils {
         }
     }
 
-    public static async reply(msg: Message, content: string | MessageEmbed): Promise<Message> {
+    public static async reply(
+        msg: Message,
+        content: string | MessageEmbed | MessageOptions
+    ): Promise<Message> {
         try {
-            return await msg.reply({
-                embeds: content instanceof MessageEmbed ? [content] : undefined,
-                content: typeof content === 'string' ? content : undefined,
-            });
+            let msgOptions = this.messageOptions(content);
+            return await msg.reply(msgOptions);
         } catch (error) {
             // 10008: "Unknown Message" (Message was deleted)
             // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
@@ -62,12 +62,13 @@ export class MessageUtils {
         }
     }
 
-    public static async edit(msg: Message, content: string | MessageEmbed): Promise<Message> {
+    public static async edit(
+        msg: Message,
+        content: string | MessageEmbed | MessageOptions
+    ): Promise<Message> {
         try {
-            return await msg.edit({
-                embeds: content instanceof MessageEmbed ? [content] : undefined,
-                content: typeof content === 'string' ? content : undefined,
-            });
+            let msgOptions = this.messageOptions(content);
+            return await msg.edit(msgOptions);
         } catch (error) {
             // 10008: "Unknown Message" (Message was deleted)
             // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
@@ -105,5 +106,17 @@ export class MessageUtils {
                 throw error;
             }
         }
+    }
+
+    private static messageOptions(content: string | MessageEmbed | MessageOptions): MessageOptions {
+        let options: MessageOptions = {};
+        if (typeof content === 'string') {
+            options.content = content;
+        } else if (content instanceof MessageEmbed) {
+            options.embeds = [content];
+        } else {
+            options = content;
+        }
+        return options;
     }
 }

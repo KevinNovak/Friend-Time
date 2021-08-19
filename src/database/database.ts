@@ -6,7 +6,7 @@ let Config = require('../../config/config.json');
 
 export class Database {
     public static async connect(): Promise<Connection> {
-        return await createConnection({
+        return createConnection({
             ...Config.database,
             entities: [path.join(__dirname, './entities/**/*{.ts,.js}')],
             synchronize: true,

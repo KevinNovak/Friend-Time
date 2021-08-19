@@ -72,6 +72,6 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         );
 
         await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.dateFormatUser', data.lang()));
-        return await collect(this.retriever(data.lang()));
+        return collect(this.retriever(data.lang()));
     }
 }

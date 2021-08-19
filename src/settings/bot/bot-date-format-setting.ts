@@ -78,6 +78,6 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
                 BOT: FormatUtils.userMention(target),
             })
         );
-        return await collect(this.retriever(data.lang()));
+        return collect(this.retriever(data.lang()));
     }
 }

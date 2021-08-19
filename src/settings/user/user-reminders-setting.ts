@@ -69,6 +69,6 @@ export class UserRemindersSetting implements Setting<UserData, boolean> {
         );
 
         await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.remindersUser', data.lang()));
-        return await collect(this.retriever(data.lang()));
+        return collect(this.retriever(data.lang()));
     }
 }

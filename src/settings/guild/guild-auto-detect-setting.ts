@@ -69,6 +69,6 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
         );
 
         await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.autoDetectGuild', data.lang()));
-        return await collect(this.retriever(data.lang()));
+        return collect(this.retriever(data.lang()));
     }
 }

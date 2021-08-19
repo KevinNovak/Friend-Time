@@ -73,6 +73,6 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
                 LANGUAGE_LIST: Language.list(),
             })
         );
-        return await collect(this.retriever(data.lang()));
+        return collect(this.retriever(data.lang()));
     }
 }

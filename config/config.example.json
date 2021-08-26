@@ -94,7 +94,7 @@
         }
     },
     "logging": {
-        "pretty": false,
+        "pretty": true,
         "rateLimit": {
             "minTimeout": 30
         }

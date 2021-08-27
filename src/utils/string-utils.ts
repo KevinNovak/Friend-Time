@@ -20,6 +20,6 @@ export class StringUtils {
     }
 
     public static stripUrls(input: string): string {
-        return input.replace(urlRegex(), '');
+        return input.replaceAll(urlRegex(), '');
     }
 }

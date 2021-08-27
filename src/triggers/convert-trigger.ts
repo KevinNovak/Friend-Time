@@ -57,7 +57,7 @@ export class ConvertTrigger implements Trigger {
         return timeResults.length > 0;
     }
 
-    public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
+    public async execute(msg: Message, data: EventData): Promise<void> {
         // Check auto-detect or if message contains the required emoji for manual conversions
         let autoDetect = this.guildAutoDetectSetting.valueOrDefault(data.guild);
         if (!(autoDetect || msg.content.includes(Config.reactions.convert))) {

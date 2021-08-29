@@ -22,6 +22,7 @@ import {
 import { Command } from './command';
 
 export class TimeCommand implements Command {
+    public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];
 

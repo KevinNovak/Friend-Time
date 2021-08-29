@@ -9,6 +9,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class ServerCommand implements Command {
+    public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
 

@@ -10,6 +10,7 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {
+    public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
 

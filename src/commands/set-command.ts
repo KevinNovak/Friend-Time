@@ -14,6 +14,7 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
 export class SetCommand implements Command {
+    public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];
 

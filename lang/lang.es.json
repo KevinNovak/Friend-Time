@@ -619,6 +619,10 @@
             }
         },
         "validation": {
+            "devOnlyCommand": {
+                "description": "This command can only be used by developers.",
+                "color": "{{REF:colors.warning}}"
+            },
             "serverOnlyCommand": {
                 "description": "Este comando solo puede usarse en un servidor.",
                 "color": "{{REF:colors.warning}}"

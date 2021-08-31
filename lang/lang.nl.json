@@ -1,6 +1,6 @@
 {
   "defaultEmbed": {
-    "color": "#FFA500"
+    "color": "#0099ff"
   },
   "embeds": {
     "displays": {
@@ -619,6 +619,10 @@
       }
     },
     "validation": {
+      "devOnlyCommand": {
+        "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
+        "color": "{{REF:colors.warning}}"
+      },
       "serverOnlyCommand": {
         "description": "Dit commando kan alleen gebruikt worden in een server.",
         "color": "{{REF:colors.warning}}"
@@ -782,8 +786,8 @@
       "prefix": "-ft"
     },
     "colors": {
-      "success": "00ff83",
-      "warning": "ffcc66",
+      "success": "#00ff83",
+      "warning": "#ffcc66",
       "error": "#ff4a4a"
     },
     "commands": {

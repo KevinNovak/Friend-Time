@@ -6,7 +6,9 @@
     "displays": {
       "welcome": {
         "title": "Bedankt voor het gebruiken van {{REF:bot.name}}!",
-        "description": ["{{REF:bot.description}}"],
+        "description": [
+          "{{REF:bot.description}}"
+        ],
         "fields": [
           {
             "name": "Belangrijke {{REF:fields.commands}}",
@@ -96,7 +98,7 @@
         ]
       },
       "settingsServer": {
-        "title": "Server Instellingen",
+        "title": "Server instellingen",
         "description": [
           "{{REF:partials.italicizedDefaults}}",
           "",
@@ -113,10 +115,12 @@
             ]
           }
         ],
-        "footer": { "text": "Server ID: {{SERVER_ID}}" }
+        "footer": {
+          "text": "Server ID: {{SERVER_ID}}"
+        }
       },
       "settingsBot": {
-        "title": "Bot Instellingen",
+        "title": "Bot instellingen",
         "description": [
           "{{REF:partials.italicizedDefaults}}",
           "",
@@ -133,10 +137,12 @@
             ]
           }
         ],
-        "footer": { "text": "Bot ID: {{BOT_ID}}" }
+        "footer": {
+          "text": "Bot ID: {{BOT_ID}}"
+        }
       },
       "settingSelf": {
-        "title": "Mijn Instellingen",
+        "title": "instellingen",
         "description": [
           "{{REF:partials.italicizedDefaults}}",
           "",
@@ -153,7 +159,9 @@
             ]
           }
         ],
-        "footer": { "text": "User ID: {{USER_ID}}" }
+        "footer": {
+          "text": "User ID: {{USER_ID}}"
+        }
       },
       "timeServer": {
         "title": "Server tijd",
@@ -180,7 +188,10 @@
       "info": {
         "title": "{{REF:bot.name}} - Informatie",
         "fields": [
-          { "name": "Auteur", "value": "{{REF:links.authorEmbed}}" },
+          {
+            "name": "Auteur",
+            "value": "{{REF:links.authorEmbed}}"
+          },
           {
             "name": "{{REF:fields.links}}",
             "value": [
@@ -192,7 +203,9 @@
           },
           {
             "name": "Gemaakt met",
-            "value": ["{{REF:links.templateEmbed}}"]
+            "value": [
+              "{{REF:links.templateEmbed}}"
+            ]
           }
         ]
       },
@@ -266,7 +279,11 @@
         ]
       },
       "timeConversionGuild": {
-        "description": ["***{{TIME_ZONE_FROM}}***", "{{TIME_TEXT_LIST}}", ""]
+        "description": [
+          "***{{TIME_ZONE_FROM}}***",
+          "{{TIME_TEXT_LIST}}",
+          ""
+        ]
       },
       "timeZoneReminder": {
         "description": [
@@ -293,7 +310,9 @@
           "`{{REF:yesNo.no}}` - Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneGuild": {
         "title": "Server - {{REF:settings.timeZoneDisplay}}",
@@ -304,7 +323,9 @@
           "",
           "Voorbeeld: `America/New_York`"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneBot": {
         "title": "Bot - {{REF:settings.timeZoneDisplay}}",
@@ -315,7 +336,9 @@
           "",
           "Voorbeeld: `America/New_York`"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneSelf": {
         "title": "Gebruiker - {{REF:settings.timeZoneDisplay}}",
@@ -326,7 +349,9 @@
           "",
           "Voorbeeld: `America/New_York`"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneUser": {
         "title": "Gebruiker - {{REF:settings.timeZoneDisplay}}",
@@ -337,7 +362,9 @@
           "",
           "Voorbeeld: `America/New_York`"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneConfirmGuild": {
         "description": [
@@ -345,7 +372,9 @@
           "",
           "Is dit de tijdzone van de server ({{REF:partials.yesOrNo}})?"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneConfirmBot": {
         "description": [
@@ -353,7 +382,9 @@
           "",
           "Is dit de tijdzone van {{BOT}} ({{REF:partials.yesOrNo}})?"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneConfirmSelf": {
         "description": [
@@ -361,7 +392,9 @@
           "",
           "Is dit jouw tijdzone ({{REF:partials.yesOrNo}})?"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeZoneConfirmUser": {
         "description": [
@@ -369,7 +402,9 @@
           "",
           "Is dit de tijdzone van {{USER}} ({{REF:partials.yesOrNo}})?"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "listGuild": {
         "title": "Server - {{REF:settings.listDisplay}}",
@@ -381,17 +416,23 @@
           "`{{REF:yesNo.no}}` - Er wordt geen lijst getoond.",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "remindersGuild": {
         "title": "Server - {{REF:settings.remindersDisplay}}",
         "description": "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "remindersUser": {
         "title": "Gebruiker - {{REF:settings.remindersDisplay}}",
         "description": "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "dateFormatBot": {
         "title": "Bot - {{REF:settings.dateFormatDisplay}}",
@@ -403,7 +444,9 @@
           "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "dateFormatUser": {
         "title": "Gebruiker - {{REF:settings.dateFormatDisplay}}",
@@ -415,7 +458,9 @@
           "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeFormatGuild": {
         "title": "Server - {{REF:settings.timeFormatDisplay}}",
@@ -427,7 +472,9 @@
           "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "timeFormatUser": {
         "title": "Gebruiker - {{REF:settings.timeFormatDisplay}}",
@@ -439,7 +486,9 @@
           "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "privateModeUser": {
         "title": "Gebruiker - {{REF:settings.privateModeDisplay}}",
@@ -451,7 +500,9 @@
           "`{{REF:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
           "\u2800"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "languageGuild": {
         "title": "Server - {{REF:settings.languageDisplay}}",
@@ -462,7 +513,9 @@
           "",
           "*Let op: gebruikers kunnen dit overschrijven met hun eigen taal. {{REF:partials.translateNote}}*"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "languageUser": {
         "title": "Gebruiker - {{REF:settings.languageDisplay}}",
@@ -473,7 +526,9 @@
           "",
           "*{{REF:partials.translateNote}}*"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       },
       "setConfirmUser": {
         "description": [
@@ -481,7 +536,9 @@
           "",
           "{{USER}}, bevestig of je deze instellingen wil gebruiken ({{REF:partials.yesOrNo}})?"
         ],
-        "footer": { "text": "{{REF:footers.collector}}" }
+        "footer": {
+          "text": "{{REF:footers.collector}}"
+        }
       }
     },
     "results": {
@@ -514,7 +571,7 @@
           "",
           "De gebruiker setup is voltooid!",
           "",
-          "*Note: {{REF:partials.dmWarning}}*",
+          "*Let op: {{REF:partials.dmWarning}}*",
           "",
           "{{SETTING_LIST}}",
           "\u2800"
@@ -820,7 +877,7 @@
     },
     "settings": {
       "autoDetect": "autoDetecteer",
-      "autoDetectDisplay": "Auto-Detecteer",
+      "autoDetectDisplay": "Auto-detecteer",
       "dateFormat": "datumFormaat",
       "dateFormatDisplay": "Datumformaat",
       "language": "taal",
@@ -844,9 +901,9 @@
     },
     "timeFormat": {
       "twelveHour": "12",
-      "twelveHourDisplay": "12-Hour",
+      "twelveHourDisplay": "12-uur",
       "twentyFourHour": "24",
-      "twentyFourHourDisplay": "24-Hour"
+      "twentyFourHourDisplay": "24-uur"
     },
     "yesNo": {
       "yes": "ja",
@@ -867,7 +924,11 @@
       "botNone": "*Deze server heeft nog geen bots ingesteld.*",
       "timeTextItem": "> {{TIME_TEXT}}",
       "timeTextWithPosItem": "> **{{POSITION}}**. {{TIME_TEXT}}",
-      "timeTextAndTimeItem": ["> {{TIME_TEXT}}", "**{{TIME_START}}**", ""],
+      "timeTextAndTimeItem": [
+        "> {{TIME_TEXT}}",
+        "**{{TIME_START}}**",
+        ""
+      ],
       "timeTextAndTimeWithEndItem": [
         "> {{TIME_TEXT}}",
         "**{{TIME_START}}** - **{{TIME_END}}**",
@@ -879,7 +940,7 @@
       "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
     },
     "fields": {
-      "commands": "Commandos",
+      "commands": "Commando's",
       "actions": "Acties",
       "links": "Links"
     },
@@ -920,7 +981,7 @@
         "Simpelweg **selecteer een locatie op de kaart** om de naam van een tijdzone te zien."
       ],
       "translateNote": "Schrijf `{{REF:bot.prefix}} {{REF:commands.translate}}` om meer te weten te komen over vertalingen.",
-      "dmWarning": "Sommige commandos van {{REF:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{REF:bot.name}} ingesteld zijn."
+      "dmWarning": "Sommige commando's van {{REF:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{REF:bot.name}} ingesteld zijn."
     },
     "messages": {
       "missingEmbedPerms": [

@@ -757,7 +757,7 @@
             "list": "/\\b({{REF:settings.list}})\\b/i",
             "privateMode": "/\\b({{REF:settings.privateMode}}|p|pr|privatareĝimo|kaŝa-reĝimo|k|kr|kaŝareĝimo|privata-regximo|privata-reghimo|privataregximo|privatareghimo|kasxa-regximo|kasha-reghimo|kasxaregximo|kashareghimo)\\b/i",
             "reminders": "/\\b({{REF:settings.reminders}}|r|rm|rememorigi|rememorigilo|rememorigado)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj)\\b/i",
+            "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj|temparangxo|temparangho)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|h|hz|z)\\b/i"
         },
         "dateFormat": {

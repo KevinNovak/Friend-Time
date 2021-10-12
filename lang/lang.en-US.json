@@ -2,7 +2,7 @@
     "data": {
         "displays": {
             "welcome": {
-                "title": "Thank you for using {{REF:bot.name}}!",
+                "title": "Thank you for using {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -20,7 +20,7 @@
                 ]
             },
             "help": {
-                "title": "{{REF:bot.name}} - Help",
+                "title": "{{COM:bot.name}} - Help",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
@@ -30,7 +30,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Manage your user settings.",
                             "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - View the time of the server, user, bot, or zone.",
                             "**{{REF:bot.prefix}} {{REF:commands.map}}** - View the zone map.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - More information about {{REF:bot.name}}."
+                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - More information about {{COM:bot.name}}."
                         ]
                     },
                     {
@@ -169,11 +169,11 @@
             "map": {
                 "title": "Time Zone Map",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} You can copy this name and use it wherever {{REF:bot.name}} needs a time zone."
+                    "{{REF:partials.findTimeZoneHelp}} You can copy this name and use it wherever {{COM:bot.name}} needs a time zone."
                 ]
             },
             "info": {
-                "title": "{{REF:bot.name}} - Info",
+                "title": "{{COM:bot.name}} - Info",
                 "fields": [
                     { "name": "Author", "value": "{{REF:links.authorEmbed}}" },
                     {
@@ -192,11 +192,11 @@
                 ]
             },
             "translate": {
-                "title": "{{REF:bot.name}} - Translations",
-                "description": "Thank you to our translators who have made it possible for {{REF:bot.name}} to be used in the following languages. If you are interested in providing a translation, please contact the staff in our [support server]({{REF:links.support}})."
+                "title": "{{COM:bot.name}} - Translations",
+                "description": "Thank you to our translators who have made it possible for {{COM:bot.name}} to be used in the following languages. If you are interested in providing a translation, please contact the staff in our [support server]({{COM:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Developer Info",
+                "title": "{{COM:bot.name}} - Developer Info",
                 "fields": [
                     {
                         "name": "Versions",
@@ -234,20 +234,20 @@
                 ]
             },
             "invite": {
-                "title": "{{REF:bot.name}} - Invite",
-                "description": "Click [here]({{REF:links.invite}}) to invite {{REF:bot.name}} to a server!"
+                "title": "{{COM:bot.name}} - Invite",
+                "description": "Click [here]({{COM:links.invite}}) to invite {{COM:bot.name}} to a server!"
             },
             "docs": {
-                "title": "{{REF:bot.name}} - Documentation",
-                "description": "Click [here]({{REF:links.docs}}/) to view the bot documentation."
+                "title": "{{COM:bot.name}} - Documentation",
+                "description": "Click [here]({{COM:links.docs}}/) to view the bot documentation."
             },
             "vote": {
-                "title": "{{REF:bot.name}} - Vote",
-                "description": "Support {{REF:bot.name}} by voting [here]({{REF:links.vote}})!"
+                "title": "{{COM:bot.name}} - Vote",
+                "description": "Support {{COM:bot.name}} by voting [here]({{COM:links.vote}})!"
             },
             "support": {
-                "title": "{{REF:bot.name}} - Support",
-                "description": "Need help? Join our [support server]({{REF:links.support}})!"
+                "title": "{{COM:bot.name}} - Support",
+                "description": "Need help? Join our [support server]({{COM:links.support}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -269,19 +269,19 @@
                     "",
                     "Set your time zone by using the `{{REF:bot.prefix}} {{REF:commands.set}}` command!",
                     "",
-                    "Setting your time zone allows {{REF:bot.name}} to convert times in server chat to and from your time zone, making coordinating times with others easier."
+                    "Setting your time zone allows {{COM:bot.name}} to convert times in server chat to and from your time zone, making coordinating times with others easier."
                 ],
                 "footer": {
                     "text": "If you wish to disable this reminder, type \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
                 },
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
         "prompts": {
             "autoDetectGuild": {
                 "title": "Server - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Would you like {{REF:bot.name}} to automatically detect times mentioned in chat?",
+                    "Would you like {{COM:bot.name}} to automatically detect times mentioned in chat?",
                     "",
                     "`{{REF:yesNo.yes}}` - Times in chat will be detected automatically.",
                     "",
@@ -369,9 +369,9 @@
             "listGuild": {
                 "title": "Server - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Would you like {{REF:bot.name}} to send a list of converted times in chat after a time is mentioned?",
+                    "Would you like {{COM:bot.name}} to send a list of converted times in chat after a time is mentioned?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} will convert times mentioned in chat to all of the time zones in the server list (`{{REF:bot.prefix}} {{REF:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} will convert times mentioned in chat to all of the time zones in the server list (`{{REF:bot.prefix}} {{REF:commands.list}}`). This list will be sent in the same channel as the original message.",
                     "",
                     "`{{REF:yesNo.no}}` - No list will be shown.",
                     "\u2800"
@@ -441,7 +441,7 @@
                 "description": [
                     "Would you like to keep your time zone and other information private?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} will prevent showing your information to other users.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} will prevent showing your information to other users.",
                     "",
                     "`{{REF:yesNo.no}}` - I am okay with sharing my information.",
                     "\u2800"
@@ -482,7 +482,7 @@
         "results": {
             "collectorExpired": {
                 "description": "Setup has expired. Please try again.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
@@ -501,7 +501,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedSelf": {
                 "description": [
@@ -522,7 +522,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedUser": {
                 "description": [
@@ -543,7 +543,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedBot": {
                 "description": [
@@ -562,73 +562,73 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setDeniedUser": {
                 "description": "User setup denied. Your settings have not been updated.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
                 "description": "The server's **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
                 "description": "{{BOT}}'s **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
                 "description": "Your **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
                 "description": "The server's **{{SETTING_NAME}}** setting has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
                 "description": "{{BOT}}'s **{{SETTING_NAME}}** setting has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
                 "description": "Your **{{SETTING_NAME}}** setting has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
                 "description": "This server's data has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedBot": {
                 "description": "{{BOT}}'s data has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedUser": {
                 "description": "Your data has been removed.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
                 "description": "**{{TIME_ZONE}}** has been added to the server's time zone list.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
                 "description": "**{{TIME_ZONE}}** has been removed from the server's time zone list.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             }
         },
         "validation": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
                 "description": "This command can only be used in a server.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "permissionRequired": {
                 "description": "You don't have permission to run that command!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notFoundSetting": {
                 "description": "Setting not found.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundBot": {
                 "description": [
@@ -636,31 +636,31 @@
                     "",
                     "Type `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` to setup a new bot."
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundUser": {
                 "description": "User not found.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeZone": {
                 "description": "Invalid time zone, try again!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
                 "description": "Invalid date format, try again!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
                 "description": "Invalid time format, try again!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
                 "description": "Invalid yes or no response, try again!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
                 "description": "Invalid language, try again!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
@@ -668,31 +668,31 @@
                     "",
                     "Please rerun this command in a DM to not expose your information."
                 ],
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedAbbreviation": {
                 "description": "Time zone abbreviations are not allowed, try again!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "You cannot run user setup for {{REF:bot.name}}!",
-                "color": "{{REF:colors.warning}}"
+                "description": "You cannot run user setup for {{COM:bot.name}}!",
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitList": {
                 "description": "This server already has the maximum number of time zones in the list!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitBots": {
                 "description": "This server already has the maximum number of bot setups allowed!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneServer": {
                 "description": "The server doesn't have a time zone set yet!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneUser": {
                 "description": "{{USER}} doesn't have a time zone set yet!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
         "errors": {
@@ -705,14 +705,14 @@
                     },
                     {
                         "name": "Contact support",
-                        "value": "{{REF:links.support}}"
+                        "value": "{{COM:links.support}}"
                     }
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{REF:bot.name}} is still starting up. Try again later.",
-                "color": "{{REF:colors.warning}}"
+                "description": "{{COM:bot.name}} is still starting up. Try again later.",
+                "color": "{{COM:colors.warning}}"
             }
         },
         "meta": {
@@ -774,14 +774,8 @@
             "translators": "[NovaKevin#6952](https://github.com/KevinNovak)"
         },
         "bot": {
-            "name": "Friend Time",
-            "description": "{{REF:bot.name}} helps your server coordinate times and events by converting times mentioned in chat between time zones!",
+            "description": "{{COM:bot.name}} helps your server coordinate times and events by converting times mentioned in chat between time zones!",
             "prefix": "-ft"
-        },
-        "colors": {
-            "success": "#00ff83",
-            "warning": "#ffcc66",
-            "error": "#ff4a4a"
         },
         "commands": {
             "bot": "bot",
@@ -884,23 +878,14 @@
             "private": "Private"
         },
         "links": {
-            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Invite {{REF:bot.name}} to a Server!]({{REF:links.invite}})",
-            "docs": "https://docs.friendtime.ml",
-            "docsEmbed": "[View Documentation]({{REF:links.docs}}/)",
-            "vote": "https://top.gg/bot/471091072546766849/vote",
-            "voteEmbed": "[Vote for {{REF:bot.name}}!]({{REF:links.vote}})",
-            "support": "https://discord.gg/GQcBR8e",
-            "supportEmbed": "[Join Support Server]({{REF:links.support}})",
-            "stream": "https://www.twitch.tv/novakevin",
-            "author": "https://github.com/KevinNovak",
-            "authorEmbed": "[Kevin Novak]({{REF:links.author}})",
-            "source": "https://github.com/KevinNovak/Friend-Time",
-            "sourceEmbed": "[View Source Code]({{REF:links.source}})",
-            "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
-            "templateEmbed": "[Discord Bot TypeScript Template]({{REF:links.template}})",
-            "map": "https://kevinnovak.github.io/Time-Zone-Picker/",
-            "mapEmbed": "[Time Zone Map]({{REF:links.map}})"
+            "inviteEmbed": "[Invite {{COM:bot.name}} to a Server!]({{COM:links.invite}})",
+            "docsEmbed": "[View Documentation]({{COM:links.docs}}/)",
+            "voteEmbed": "[Vote for {{COM:bot.name}}!]({{COM:links.vote}})",
+            "supportEmbed": "[Join Support Server]({{COM:links.support}})",
+            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "sourceEmbed": "[View Source Code]({{COM:links.source}})",
+            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
+            "mapEmbed": "[Time Zone Map]({{COM:links.map}})"
         },
         "partials": {
             "congratulations": "🎉 Congratulations! 🎉",
@@ -913,7 +898,7 @@
                 "Simply **select a location on the map** to see the time zone name."
             ],
             "translateNote": "Type `{{REF:bot.prefix}} {{REF:commands.translate}}` to learn more about translations.",
-            "dmWarning": "Some commands require DMs allowed in at least one server you share with {{REF:bot.name}}."
+            "dmWarning": "Some commands require DMs allowed in at least one server you share with {{COM:bot.name}}."
         },
         "messages": {
             "missingEmbedPerms": [

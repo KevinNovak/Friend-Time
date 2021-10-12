@@ -1,6 +1,6 @@
 {
     "data": {
-        "displays": {
+        "displayEmbeds": {
             "welcome": {
                 "title": "¡Gracias por usar {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
@@ -279,7 +279,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Servidor - {{REF:settings.autoDetectDisplay}}",
                 "description": [
@@ -481,7 +481,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "La configuración expiró, por favor intenta de nuevo.",
                 "color": "{{COM:colors.warning}}"
@@ -615,7 +615,7 @@
                 "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -697,7 +697,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "¡Algo salió mal!",
                 "fields": [
@@ -717,13 +717,13 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "meta": {
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|español|espanol|castellano)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/bot|comando|cmd/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|desarrollador|uso|memoria|mem)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|d|doc|documentaci[óo]n|leeme|website|site)\\b/i",
@@ -745,7 +745,7 @@
             "stop": "/\\b({{REF:commands.stop}}|parar|para|cancelar|cancela|salir|cerrar|stop)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|eliminar|elimina|quitar|quita|borrar|borra)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detectar|auto|detectar)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|ff)\\b/i",
             "language": "/\\b({{REF:settings.language}}|l|leng|idioma|lengua)\\b/i",
@@ -755,15 +755,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|fh|hora)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|zona|z|zh)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd/mm|dd-mm|día-mes|día/mes)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm/dd|mm-dd|mes-día|mes/día)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-horas)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-horas)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|s|si|habilitado|habilitar|h|cierto|verdadero|t|v|on|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|deshabilitado|deshabilitar|d|falso|f|off|0)\\b/i"
         }

@@ -17,7 +17,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.list', langCode);
+        return Lang.getRegex('settingRegexes.list', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -50,7 +50,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
             if (list == null) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidYesNo', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -65,10 +65,10 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.listGuild', data.lang()));
+        await MessageUtils.send(msg.channel, Lang.getEmbed('displayEmbeds.listGuild', data.lang()));
         return collect(this.retriever(data.lang()));
     }
 }

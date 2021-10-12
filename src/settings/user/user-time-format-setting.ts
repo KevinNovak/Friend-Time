@@ -16,7 +16,7 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.timeFormat', langCode);
+        return Lang.getRegex('settingRegexes.timeFormat', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -49,7 +49,7 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
             if (!timeFormat) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidTimeFormat', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidTimeFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -68,10 +68,13 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.timeFormatUser', data.lang()));
+        await MessageUtils.send(
+            msg.channel,
+            Lang.getEmbed('displayEmbeds.timeFormatUser', data.lang())
+        );
         return collect(this.retriever(data.lang()));
     }
 }

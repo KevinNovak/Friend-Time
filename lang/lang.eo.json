@@ -1,6 +1,6 @@
 {
     "data": {
-        "displays": {
+        "displayEmbeds": {
             "welcome": {
                 "title": "Dankon pro uzado de {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
@@ -279,7 +279,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Servilo - {{REF:settings.autoDetectDisplay}}",
                 "description": [
@@ -481,7 +481,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Templimo pasis. Bonvolu reprovi.",
                 "color": "{{COM:colors.warning}}"
@@ -615,7 +615,7 @@
                 "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -697,7 +697,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Io misfunkciis!",
                 "fields": [
@@ -717,13 +717,13 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "meta": {
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|eo|Esperanto)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|r|robotoj)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|programistoj|uzado|memoro)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|d|dokumentaro|retejo|TTTejo)\\b/i",
@@ -745,7 +745,7 @@
             "stop": "/\\b({{REF:commands.stop}}|nuligi|nuligo|ĉesi|ĉeso|cxesi|chesi|cxeso|cheso)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|nuligo|forigi|forigo|nul)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|det|detekti|detektadi|detekto)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|da|dato|datoj|datarangxo|datarangho)\\b/i",
             "language": "/\\b({{REF:settings.language}}|l)\\b/i",
@@ -755,15 +755,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj|temparangxo|temparangho)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|h|hz|z)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|tm|ttmm|tt-mm|tago-monato|tago/monato)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mt|mmtt|mm-tt|monato-tago|monato/tago)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hora|24hora)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hora|12hora)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|j|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|0)\\b/i"
         }

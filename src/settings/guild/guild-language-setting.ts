@@ -16,7 +16,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.language', langCode);
+        return Lang.getRegex('settingRegexes.language', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -49,7 +49,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
             if (!newLangCode) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidLanguage', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidLanguage', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -64,12 +64,12 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('prompts.languageGuild', data.lang(), {
+            Lang.getEmbed('displayEmbeds.languageGuild', data.lang(), {
                 LANGUAGE_LIST: Language.list(),
             })
         );

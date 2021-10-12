@@ -16,7 +16,7 @@ export class DonateCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.donate', langCode);
+        return Lang.getRegex('commandRegexes.donate', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {

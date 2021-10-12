@@ -20,7 +20,7 @@ export class TimeFormat {
                 return Lang.getRef('timeFormat.twelveHour', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('timeFormat.twelveHour', langCode);
+                return Lang.getRegex('timeFormatRegexes.twelveHour', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('timeFormat.twelveHourDisplay', langCode);
@@ -32,7 +32,7 @@ export class TimeFormat {
                 return Lang.getRef('timeFormat.twentyFourHour', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('timeFormat.twentyFourHour', langCode);
+                return Lang.getRegex('timeFormatRegexes.twentyFourHour', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('timeFormat.twentyFourHourDisplay', langCode);

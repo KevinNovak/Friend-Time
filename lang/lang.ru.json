@@ -1,6 +1,6 @@
 {
     "data": {
-        "displays": {
+        "displayEmbeds": {
             "welcome": {
                 "title": "Спасибо, что используете {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
@@ -274,7 +274,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Сервер - {{REF:settings.autoDetectDisplay}}",
                 "description": [
@@ -476,7 +476,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Время на настройку истекло. Пожалуйста, попробуйте снова.",
                 "color": "{{COM:colors.warning}}"
@@ -610,7 +610,7 @@
                 "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -692,7 +692,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Что-то пошло не так!",
                 "fields": [
@@ -712,13 +712,13 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "meta": {
+        "metaRegexes": {
             "language": "/(?<=^|\\s)({{REF:meta.language}}|ru|ру|русский|Russian)(?=$|\\s)/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/бот|команда|команды|кмд/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/(?<=^|\\s)({{REF:commands.bot}}|б|боты)(?=$|\\s)/i",
             "dev": "/(?<=^|\\s)({{REF:commands.dev}}|разработчикам|рр|использование|исп|память|пам)(?=$|\\s)/i",
             "docs": "/(?<=^|\\s)({{REF:commands.docs}}|д|документация|сайт|вебсайт|веб-сайт)(?=$|\\s)/i",
@@ -740,7 +740,7 @@
             "stop": "/(?<=^|\\s)({{REF:commands.stop}}|отмена|сброс)(?=$|\\s)/i",
             "remove": "/(?<=^|\\s)({{REF:commands.remove}}|сбросить|удалить|убрать|очистить)(?=$|\\s)/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/(?<=^|\\s)({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)(?=$|\\s)/i",
             "dateFormat": "/(?<=^|\\s)({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)(?=$|\\s)/i",
             "language": "/(?<=^|\\s)({{REF:settings.language}}|яз|язык)(?=$|\\s)/i",
@@ -750,15 +750,15 @@
             "timeFormat": "/(?<=^|\\s)({{REF:settings.timeFormat}}|форматвремени|фв|фвр|время|вр|в)(?=$|\\s)/i",
             "timeZone": "/(?<=^|\\s)({{REF:settings.timeZone}}|ч|чп|часовойпояс|пояс)(?=$|\\s)/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/(?<=^|\\s)({{REF:dateFormat.dayMonth}}|дм|ддмм|дд-мм|дд.мм|день-месяц|день/месяц|день.месяц)(?=$|\\s)/i",
             "monthDay": "/(?<=^|\\s)({{REF:dateFormat.monthDay}}|мд|ммдд|мм-дд|мм.дд|месяц-день|месяц/день|месяц.день)(?=$|\\s)/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/(?<=^|\\s)({{REF:timeFormat.twentyFourHour}}|24ч|24часа)(?=$|\\s)/i",
             "twelveHour": "/(?<=^|\\s)({{REF:timeFormat.twelveHour}}|12ч|12часов)(?=$|\\s)/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/(?<=^|\\s)({{REF:yesNo.yes}}|д|вкл|включить|1)(?=$|\\s)/i",
             "no": "/(?<=^|\\s)({{REF:yesNo.no}}|н|выкл|выключить|0)(?=$|\\s)/i"
         }

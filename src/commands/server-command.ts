@@ -20,7 +20,7 @@ export class ServerCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.server', langCode);
+        return Lang.getRegex('commandRegexes.server', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -34,7 +34,7 @@ export class ServerCommand implements Command {
             let settingList = this.settingManager.list(data.guild, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.settingsServer', data.lang(), {
+                Lang.getEmbed('displayEmbeds.settingsServer', data.lang(), {
                     SETTING_LIST: settingList,
                     SERVER_ID: msg.guild.id,
                 }).setAuthor(msg.guild.name, msg.guild.iconURL())
@@ -43,7 +43,7 @@ export class ServerCommand implements Command {
         }
 
         if (args.length > 2) {
-            let removeRegex = Lang.getRegex('commands.remove', data.lang());
+            let removeRegex = Lang.getRegex('commandRegexes.remove', data.lang());
 
             // Remove all setting data
             // TODO: Move to method
@@ -62,7 +62,7 @@ export class ServerCommand implements Command {
                 await data.guild.save();
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedGuild', data.lang())
+                    Lang.getEmbed('resultEmbeds.removedGuild', data.lang())
                 );
                 return;
             }
@@ -74,7 +74,7 @@ export class ServerCommand implements Command {
             if (!setting) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notFoundSetting', data.lang())
+                    Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
                 );
                 return;
             }
@@ -86,7 +86,7 @@ export class ServerCommand implements Command {
 
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedSettingGuild', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.removedSettingGuild', data.lang(), {
                         SETTING_NAME: setting.displayName(data.lang()),
                     })
                 );
@@ -104,7 +104,7 @@ export class ServerCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.updatedSettingGuild', data.lang(), {
+                Lang.getEmbed('resultEmbeds.updatedSettingGuild', data.lang(), {
                     SETTING_NAME: setting.displayName(data.lang()),
                     SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
                 })

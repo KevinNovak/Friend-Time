@@ -16,7 +16,7 @@ export class FindCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.find', langCode);
+        return Lang.getRegex('commandRegexes.find', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {

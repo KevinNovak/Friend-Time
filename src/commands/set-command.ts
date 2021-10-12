@@ -29,7 +29,7 @@ export class SetCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.set', langCode);
+        return Lang.getRegex('commandRegexes.set', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -39,7 +39,7 @@ export class SetCommand implements Command {
             if (privateMode && !(msg.channel instanceof DMChannel)) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.privateModeEnabled', data.lang())
+                    Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
                 );
                 return;
             }
@@ -61,7 +61,7 @@ export class SetCommand implements Command {
             let settingList = this.userSettingManager.list(data.user, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.setCompletedSelf', data.lang(), {
+                Lang.getEmbed('resultEmbeds.setCompletedSelf', data.lang(), {
                     SETTING_LIST: settingList,
                 })
             );
@@ -73,7 +73,7 @@ export class SetCommand implements Command {
             if (!(msg.channel instanceof TextChannel)) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.serverOnlyCommand', data.lang())
+                    Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
                 );
                 return;
             }
@@ -82,7 +82,7 @@ export class SetCommand implements Command {
             if (!member) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notFoundUser', data.lang())
+                    Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
                 );
                 return;
             }
@@ -97,7 +97,7 @@ export class SetCommand implements Command {
                 ) {
                     await MessageUtils.send(
                         msg.channel,
-                        Lang.getEmbed('validation.permissionRequired', data.lang())
+                        Lang.getEmbed('validationEmbeds.permissionRequired', data.lang())
                     );
                     return;
                 }
@@ -105,7 +105,7 @@ export class SetCommand implements Command {
                 if (member.id === msg.client.user.id) {
                     await MessageUtils.send(
                         msg.channel,
-                        Lang.getEmbed('validation.notAllowedSetClient', data.lang())
+                        Lang.getEmbed('validationEmbeds.notAllowedSetClient', data.lang())
                     );
                     return;
                 }
@@ -116,7 +116,7 @@ export class SetCommand implements Command {
                         // Hit max number of bots allowed
                         await MessageUtils.send(
                             msg.channel,
-                            Lang.getEmbed('validation.maxLimitBots', data.lang())
+                            Lang.getEmbed('validationEmbeds.maxLimitBots', data.lang())
                         );
                         return;
                     }
@@ -146,7 +146,7 @@ export class SetCommand implements Command {
                 let settingList = this.botSettingManager.list(botData, data.lang());
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.setCompletedBot', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.setCompletedBot', data.lang(), {
                         SETTING_LIST: settingList,
                     })
                 );
@@ -172,13 +172,13 @@ export class SetCommand implements Command {
                 msg.channel,
                 member.user,
                 data.lang(),
-                Lang.getEmbed('results.collectorExpired', data.lang())
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
 
             let settingList = this.userSettingManager.list(userData, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('prompts.setConfirmUser', data.lang(), {
+                Lang.getEmbed('displayEmbeds.setConfirmUser', data.lang(), {
                     SETTING_LIST: settingList,
                     USER: FormatUtils.userMention(member.id),
                 })
@@ -188,7 +188,7 @@ export class SetCommand implements Command {
                 if (privateMode == null) {
                     await MessageUtils.send(
                         msg.channel,
-                        Lang.getEmbed('validation.invalidYesNo', data.lang()).setFooter(
+                        Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang()).setFooter(
                             Lang.getRef('footers.collector', data.lang())
                         )
                     );
@@ -204,7 +204,7 @@ export class SetCommand implements Command {
             if (!confirmed) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.setDeniedUser', data.lang())
+                    Lang.getEmbed('resultEmbeds.setDeniedUser', data.lang())
                 );
                 return;
             }
@@ -214,7 +214,7 @@ export class SetCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.setCompletedUser', data.lang(), {
+                Lang.getEmbed('resultEmbeds.setCompletedUser', data.lang(), {
                     SETTING_LIST: settingList,
                 })
             );

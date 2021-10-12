@@ -20,7 +20,7 @@ export class DateFormat {
                 return Lang.getRef('dateFormat.monthDay', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('dateFormat.monthDay', langCode);
+                return Lang.getRegex('dateFormatRegexes.monthDay', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('dateFormat.monthDayDisplay', langCode);
@@ -32,7 +32,7 @@ export class DateFormat {
                 return Lang.getRef('dateFormat.dayMonth', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('dateFormat.dayMonth', langCode);
+                return Lang.getRegex('dateFormatRegexes.dayMonth', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('dateFormat.dayMonthDisplay', langCode);

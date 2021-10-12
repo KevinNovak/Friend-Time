@@ -1,6 +1,6 @@
 {
     "data": {
-        "displays": {
+        "displayEmbeds": {
             "welcome": {
                 "title": "Bedankt voor het gebruiken van {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
@@ -286,7 +286,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Server - {{REF:settings.autoDetectDisplay}}",
                 "description": [
@@ -528,7 +528,7 @@
                 }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Je verzoek is verlopen. Probeer het opnieuw.",
                 "color": "{{COM:colors.warning}}"
@@ -662,7 +662,7 @@
                 "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
                 "color": "{{COM:colors.warning}}"
@@ -744,7 +744,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Er ging iets fout!",
                 "fields": [
@@ -764,13 +764,13 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "meta": {
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|nl|Nederlands)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|developer|gebruik|geheugen)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|docs|d|documentatie|leesmij|website|site)\\b/i",
@@ -792,7 +792,7 @@
             "stop": "/\\b({{REF:commands.stop}}|sluit|sluiten|stoppen|annuleer|annuleren|cancel|exit)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|v|wis|reset|verwijderen)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detecteer|automatisch|detecteren)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|datumParser|datum|parser)\\b/i",
             "language": "/\\b({{REF:settings.language}}|t|taalCode)\\b/i",
@@ -802,15 +802,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tijd)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dag-maand|dag/maand)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|maand-dag|maand/dag)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24u|24-uur)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12u|12-uur)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|j|ingeschakeld|inschakelen|i|true|t|aan|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|uitgeschakeld|uitschakelen|u|false|f|uit|0)\\b/i"
         }

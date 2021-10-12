@@ -16,7 +16,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.dateFormat', langCode);
+        return Lang.getRegex('settingRegexes.dateFormat', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -49,7 +49,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
             if (!dateFormat) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidDateFormat', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -68,10 +68,13 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(msg.channel, Lang.getEmbed('prompts.dateFormatUser', data.lang()));
+        await MessageUtils.send(
+            msg.channel,
+            Lang.getEmbed('displayEmbeds.dateFormatUser', data.lang())
+        );
         return collect(this.retriever(data.lang()));
     }
 }

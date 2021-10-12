@@ -15,7 +15,7 @@ export class YesNo {
                 return Lang.getRef('yesNo.yes', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('yesNo.yes', langCode);
+                return Lang.getRegex('yesNoRegexes.yes', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('yesNo.yesDisplay', langCode);
@@ -27,7 +27,7 @@ export class YesNo {
                 return Lang.getRef('yesNo.no', langCode);
             },
             regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('yesNo.no', langCode);
+                return Lang.getRegex('yesNoRegexes.no', langCode);
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('yesNo.noDisplay', langCode);

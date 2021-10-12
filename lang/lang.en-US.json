@@ -1,6 +1,6 @@
 {
     "data": {
-        "displays": {
+        "displayEmbeds": {
             "welcome": {
                 "title": "Thank you for using {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
@@ -277,7 +277,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Server - {{REF:settings.autoDetectDisplay}}",
                 "description": [
@@ -479,7 +479,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Setup has expired. Please try again.",
                 "color": "{{COM:colors.warning}}"
@@ -613,7 +613,7 @@
                 "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -695,7 +695,7 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Something went wrong!",
                 "fields": [
@@ -715,13 +715,13 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "meta": {
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|en US|English)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|developer|usage|memory|mem)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|d|documentation|readme|website|site)\\b/i",
@@ -743,7 +743,7 @@
             "stop": "/\\b({{REF:commands.stop}}|cancel|exit|close|quit)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|clear|reset|delete|purge)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateParser|date|parser)\\b/i",
             "language": "/\\b({{REF:settings.language}}|l|lang|langCode)\\b/i",
@@ -753,15 +753,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|time)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|day-month|day/month)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|month-day|month/day)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hour)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hour)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|y|enabled|enable|e|true|t|on|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|disabled|disable|d|false|f|off|0)\\b/i"
         }

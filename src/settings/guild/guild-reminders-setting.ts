@@ -70,7 +70,7 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.remindersGuild', data.lang())
+            Lang.getEmbed('promptEmbeds.remindersGuild', data.lang())
         );
         return collect(this.retriever(data.lang()));
     }

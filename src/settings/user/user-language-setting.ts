@@ -69,7 +69,7 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.languageUser', data.lang(), {
+            Lang.getEmbed('promptEmbeds.languageUser', data.lang(), {
                 LANGUAGE_LIST: Language.list(),
             })
         );

@@ -73,7 +73,7 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.timeFormatUser', data.lang())
+            Lang.getEmbed('promptEmbeds.timeFormatUser', data.lang())
         );
         return collect(this.retriever(data.lang()));
     }

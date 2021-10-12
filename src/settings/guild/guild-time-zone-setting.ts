@@ -101,7 +101,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         while (confirmed === false) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displayEmbeds.timeZoneGuild', data.lang())
+                Lang.getEmbed('promptEmbeds.timeZoneGuild', data.lang())
             );
             timeZone = await collect(this.retriever(data.lang()));
             if (!timeZone) {
@@ -118,7 +118,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displayEmbeds.timeZoneConfirmGuild', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneConfirmGuild', data.lang(), {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,

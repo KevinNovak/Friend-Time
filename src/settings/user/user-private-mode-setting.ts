@@ -70,7 +70,7 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.privateModeUser', data.lang())
+            Lang.getEmbed('promptEmbeds.privateModeUser', data.lang())
         );
         return collect(this.retriever(data.lang()));
     }

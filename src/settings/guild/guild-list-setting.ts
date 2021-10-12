@@ -68,7 +68,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(msg.channel, Lang.getEmbed('displayEmbeds.listGuild', data.lang()));
+        await MessageUtils.send(msg.channel, Lang.getEmbed('promptEmbeds.listGuild', data.lang()));
         return collect(this.retriever(data.lang()));
     }
 }

@@ -106,7 +106,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         while (confirmed === false) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displayEmbeds.timeZoneBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneBot', data.lang(), {
                     BOT: FormatUtils.userMention(target),
                 })
             );
@@ -125,7 +125,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displayEmbeds.timeZoneConfirmBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneConfirmBot', data.lang(), {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,

@@ -108,10 +108,10 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             await MessageUtils.send(
                 msg.channel,
                 target
-                    ? Lang.getEmbed('displayEmbeds.timeZoneUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneUser', data.lang(), {
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('displayEmbeds.timeZoneSelf', data.lang())
+                    : Lang.getEmbed('promptEmbeds.timeZoneSelf', data.lang())
             );
             timeZone = await collect(this.retriever(data.lang()));
             if (!timeZone) {
@@ -129,13 +129,13 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             await MessageUtils.send(
                 msg.channel,
                 target
-                    ? Lang.getEmbed('displayEmbeds.timeZoneConfirmUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneConfirmUser', data.lang(), {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('displayEmbeds.timeZoneConfirmSelf', data.lang(), {
+                    : Lang.getEmbed('promptEmbeds.timeZoneConfirmSelf', data.lang(), {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,

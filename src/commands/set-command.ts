@@ -178,7 +178,7 @@ export class SetCommand implements Command {
             let settingList = this.userSettingManager.list(userData, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displayEmbeds.setConfirmUser', data.lang(), {
+                Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang(), {
                     SETTING_LIST: settingList,
                     USER: FormatUtils.userMention(member.id),
                 })

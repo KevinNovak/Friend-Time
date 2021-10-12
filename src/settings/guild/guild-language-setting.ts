@@ -69,7 +69,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.languageGuild', data.lang(), {
+            Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {
                 LANGUAGE_LIST: Language.list(),
             })
         );

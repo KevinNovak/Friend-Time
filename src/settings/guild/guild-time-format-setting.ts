@@ -73,7 +73,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.timeFormatGuild', data.lang())
+            Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang())
         );
         return collect(this.retriever(data.lang()));
     }

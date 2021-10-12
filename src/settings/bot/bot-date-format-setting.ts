@@ -74,7 +74,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('displayEmbeds.dateFormatBot', data.lang(), {
+            Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang(), {
                 BOT: FormatUtils.userMention(target),
             })
         );

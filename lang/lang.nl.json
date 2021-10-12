@@ -1,8 +1,5 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
+    "data": {
         "displays": {
             "welcome": {
                 "title": "Bedankt voor het gebruiken van {{REF:bot.name}}!",
@@ -766,9 +763,7 @@
                 "description": "{{REF:bot.name}} is nog aan het opstarten. Probeer het later nog eens.",
                 "color": "{{REF:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
+        },
         "meta": {
             "language": "/\\b({{REF:meta.language}}|nl|Nederlands)\\b/i"
         },

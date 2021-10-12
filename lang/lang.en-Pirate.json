@@ -1,8 +1,5 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
+    "data": {
         "displays": {
             "welcome": {
                 "title": "Thank ye fer usin' {{REF:bot.name}}!",
@@ -717,9 +714,7 @@
                 "description": "{{REF:bot.name}} be still startin' up. Try again later.",
                 "color": "{{REF:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
+        },
         "meta": {
             "language": "/\\b({{REF:meta.language}}|en Pirate|Pirate)\\b/i"
         },

@@ -1,8 +1,5 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
+    "data": {
         "displays": {
             "welcome": {
                 "title": "Спасибо, что используете {{REF:bot.name}}!",
@@ -714,9 +711,7 @@
                 "description": "{{REF:bot.name}} ещё запускается. Попробуйте позже.",
                 "color": "{{REF:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
+        },
         "meta": {
             "language": "/(?<=^|\\s)({{REF:meta.language}}|ru|ру|русский|Russian)(?=$|\\s)/i"
         },

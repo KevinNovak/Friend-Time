@@ -1,8 +1,5 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
+    "data": {
         "displays": {
             "welcome": {
                 "title": "Dankon pro uzado de {{REF:bot.name}}!",
@@ -719,9 +716,7 @@
                 "description": "{{REF:bot.name}} ankoraŭ startas. Reprovu poste.",
                 "color": "{{REF:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
+        },
         "meta": {
             "language": "/\\b({{REF:meta.language}}|eo|Esperanto)\\b/i"
         },

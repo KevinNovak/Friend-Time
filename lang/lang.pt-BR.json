@@ -1,8 +1,5 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
+    "data": {
         "displays": {
             "welcome": {
                 "title": "Obrigado por utilizar o {{REF:bot.name}}!",
@@ -719,9 +716,7 @@
                 "description": "{{REF:bot.name}} está iniciando ainda; aguarde e tente novamente.",
                 "color": "{{REF:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
+        },
         "meta": {
             "language": "/\\b({{REF:meta.language}}|pt BR|Português Brasileiro)\\b/i"
         },

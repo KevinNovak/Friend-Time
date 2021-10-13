@@ -34,7 +34,7 @@
         "express": "4.17.1",
         "express-promise-router": "4.1.0",
         "filesize": "8.0.3",
-        "linguini": "1.0.10",
+        "linguini": "1.2.0",
         "luxon": "2.0.2",
         "mysql": "2.18.1",
         "node-fetch": "2.6.5",

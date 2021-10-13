@@ -1,5 +1,5 @@
 import { MessageEmbed } from 'discord.js';
-import { join, Linguini, regExpTm, TypeMapper } from 'linguini';
+import { Linguini, TypeMapper, TypeMappers, Utils } from 'linguini';
 import path from 'path';
 
 import { LangCode } from '../models/enums';
@@ -22,8 +22,8 @@ export class Lang {
 
     public static getRegex(location: string, langCode: LangCode): RegExp {
         return (
-            this.linguini.get(location, langCode, regExpTm) ??
-            this.linguini.get(location, this.Default, regExpTm)
+            this.linguini.get(location, langCode, TypeMappers.RegExp) ??
+            this.linguini.get(location, this.Default, TypeMappers.RegExp)
         );
     }
 
@@ -45,18 +45,18 @@ export class Lang {
     private static messageEmbedTm: TypeMapper<MessageEmbed> = (jsonValue: any) => {
         return new MessageEmbed({
             author: jsonValue.author,
-            title: join(jsonValue.title, '\n'),
+            title: Utils.join(jsonValue.title, '\n'),
             url: jsonValue.url,
             thumbnail: jsonValue.thumbnail,
-            description: join(jsonValue.description, '\n'),
+            description: Utils.join(jsonValue.description, '\n'),
             fields: jsonValue.fields?.map(field => ({
-                name: join(field.name, '\n'),
-                value: join(field.value, '\n'),
+                name: Utils.join(field.name, '\n'),
+                value: Utils.join(field.value, '\n'),
             })),
             image: jsonValue.image,
             footer: {
-                text: join(jsonValue.footer?.text, '\n'),
-                iconURL: join(jsonValue.footer?.icon, '\n'),
+                text: Utils.join(jsonValue.footer?.text, '\n'),
+                iconURL: Utils.join(jsonValue.footer?.icon, '\n'),
             },
             timestamp: jsonValue.timestamp ? Date.now() : undefined,
             color: jsonValue.color ?? '#0099ff',

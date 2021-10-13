@@ -19,7 +19,7 @@ export class ListCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.list', langCode);
+        return Lang.getRegex('commandRegexes.list', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -40,7 +40,7 @@ export class ListCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.listTimeZone', data.lang(), {
+                Lang.getEmbed('displayEmbeds.listTimeZone', data.lang(), {
                     TIME_ZONE_LIST: timeZoneList,
                 }).setAuthor(msg.guild.name, msg.guild.iconURL())
             );
@@ -52,7 +52,7 @@ export class ListCommand implements Command {
         if (timeZoneInput.length < Config.validation.timeZone.lengthMin) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('validation.notAllowedAbbreviation', data.lang())
+                Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', data.lang())
             );
             return;
         }
@@ -62,7 +62,7 @@ export class ListCommand implements Command {
         if (!timeZone) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('validation.invalidTimeZone', data.lang())
+                Lang.getEmbed('validationEmbeds.invalidTimeZone', data.lang())
             );
             return;
         }
@@ -72,14 +72,16 @@ export class ListCommand implements Command {
             await listItem.remove();
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.removedListItem', data.lang(), { TIME_ZONE: timeZone })
+                Lang.getEmbed('resultEmbeds.removedListItem', data.lang(), { TIME_ZONE: timeZone })
             );
             return;
         } else {
             if (data.guild?.listItems.length >= Config.validation.timeZones.countMax) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.maxLimitList', data.lang(), { TIME_ZONE: timeZone })
+                    Lang.getEmbed('validationEmbeds.maxLimitList', data.lang(), {
+                        TIME_ZONE: timeZone,
+                    })
                 );
                 return;
             }
@@ -98,7 +100,7 @@ export class ListCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.addedListItem', data.lang(), { TIME_ZONE: timeZone })
+                Lang.getEmbed('resultEmbeds.addedListItem', data.lang(), { TIME_ZONE: timeZone })
             );
             return;
         }

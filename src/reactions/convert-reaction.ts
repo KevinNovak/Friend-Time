@@ -103,7 +103,7 @@ export class ConvertReaction implements Reaction {
                 : this.userPrivateModeSetting.valueOrDefault(authorData);
         await MessageUtils.send(
             reactor,
-            Lang.getEmbed('displays.timeConversionDm', data.lang(), {
+            Lang.getEmbed('displayEmbeds.timeConversionDm', data.lang(), {
                 USER: FormatUtils.userMention(msg.author.id),
                 CHANNEL: FormatUtils.channelMention(msg.channel.id),
                 TIME_ZONE_FROM: privateMode

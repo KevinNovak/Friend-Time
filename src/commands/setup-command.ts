@@ -20,7 +20,7 @@ export class SetupCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.setup', langCode);
+        return Lang.getRegex('commandRegexes.setup', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -41,7 +41,7 @@ export class SetupCommand implements Command {
         let settingList = this.guildSettingManager.list(data.guild, data.lang());
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('results.setupCompleted', data.lang(), {
+            Lang.getEmbed('resultEmbeds.setupCompleted', data.lang(), {
                 SETTING_LIST: settingList,
             })
         );

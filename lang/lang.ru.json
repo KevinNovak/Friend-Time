@@ -1,11 +1,8 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
-        "displays": {
+    "data": {
+        "displayEmbeds": {
             "welcome": {
-                "title": "Спасибо, что используете {{REF:bot.name}}!",
+                "title": "Спасибо, что используете {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -25,7 +22,7 @@
                 ]
             },
             "help": {
-                "title": "{{REF:bot.name}} - Команды",
+                "title": "{{COM:bot.name}} - Команды",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
@@ -35,7 +32,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Просмотреть и изменить свои настройки.",
                             "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Узнать время сервера, пользователя, бота или часового пояса.",
                             "**{{REF:bot.prefix}} {{REF:commands.map}}** - Просмотреть карту поясов.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Информация о {{REF:bot.name}}."
+                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Информация о {{COM:bot.name}}."
                         ]
                     },
                     {
@@ -169,11 +166,11 @@
             "map": {
                 "title": "Карта поясов",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{REF:bot.name}}."
+                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{COM:bot.name}}."
                 ]
             },
             "info": {
-                "title": "{{REF:bot.name}} - Информация",
+                "title": "{{COM:bot.name}} - Информация",
                 "fields": [
                     { "name": "Автор", "value": "{{REF:links.authorEmbed}}" },
                     {
@@ -192,11 +189,11 @@
                 ]
             },
             "translate": {
-                "title": "{{REF:bot.name}} - Перевод",
-                "description": "Спасибо переводчикам, благодаря которым {{REF:bot.name}} можно использовать на любом из следующих языков. Если вы желаете помочь с переведом бота на новый язык, пожалуйста, свяжитесь с сотрудниками на нашем [сервере поддержки]({{REF:links.support}})."
+                "title": "{{COM:bot.name}} - Перевод",
+                "description": "Спасибо переводчикам, благодаря которым {{COM:bot.name}} можно использовать на любом из следующих языков. Если вы желаете помочь с переведом бота на новый язык, пожалуйста, свяжитесь с сотрудниками на нашем [сервере поддержки]({{COM:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Информация для разработчиков",
+                "title": "{{COM:bot.name}} - Информация для разработчиков",
                 "fields": [
                     {
                         "name": "Версии",
@@ -234,20 +231,20 @@
                 ]
             },
             "invite": {
-                "title": "{{REF:bot.name}} - Приглашение",
-                "description": "Нажмите [здесь]({{REF:links.invite}}), чтобы пригласить {{REF:bot.name}} на сервер!"
+                "title": "{{COM:bot.name}} - Приглашение",
+                "description": "Нажмите [здесь]({{COM:links.invite}}), чтобы пригласить {{COM:bot.name}} на сервер!"
             },
             "docs": {
-                "title": "{{REF:bot.name}} - Документация",
-                "description": "Нажмите [здесь]({{REF:links.docs}}/), чтобы перейти к документации бота."
+                "title": "{{COM:bot.name}} - Документация",
+                "description": "Нажмите [здесь]({{COM:links.docs}}/), чтобы перейти к документации бота."
             },
             "vote": {
-                "title": "{{REF:bot.name}} - Проголосовать",
-                "description": "Поддержите {{REF:bot.name}}, проголосовав [здесь]({{REF:links.vote}})!"
+                "title": "{{COM:bot.name}} - Проголосовать",
+                "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
             },
             "support": {
-                "title": "{{REF:bot.name}} - Поддержка",
-                "description": "Нужна помощь? Присоединяйтесь к нашему [серверу поддержки]({{REF:links.support}})!"
+                "title": "{{COM:bot.name}} - Поддержка",
+                "description": "Нужна помощь? Присоединяйтесь к нашему [серверу поддержки]({{COM:links.support}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -269,19 +266,19 @@
                     "",
                     "Выберите его при помощи команды `{{REF:bot.prefix}} {{REF:commands.set}}`!",
                     "",
-                    "Как только вы установите часовой пояс, {{REF:bot.name}} сможет конвертировать время, упомянутое на сервере, в и из вашего часового пояса, благодаря чему координироваться с другими будет легче."
+                    "Как только вы установите часовой пояс, {{COM:bot.name}} сможет конвертировать время, упомянутое на сервере, в и из вашего часового пояса, благодаря чему координироваться с другими будет легче."
                 ],
                 "footer": {
                     "text": "Если вы желаете выключить напоминания об этом, напишите \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
                 },
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Сервер - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Желаете ли вы, чтобы {{REF:bot.name}} автоматически обнаруживал упоминания времени в чате?",
+                    "Желаете ли вы, чтобы {{COM:bot.name}} автоматически обнаруживал упоминания времени в чате?",
                     "",
                     "`{{REF:yesNo.yes}}` - Упоминания времени будут автоматически обнаружены.",
                     "",
@@ -369,9 +366,9 @@
             "listGuild": {
                 "title": "Сервер - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Желаете ли вы, чтобы {{REF:bot.name}} всегда высылал упомянутое время, конвентированное в его часовые пояса?",
+                    "Желаете ли вы, чтобы {{COM:bot.name}} всегда высылал упомянутое время, конвентированное в его часовые пояса?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`{{REF:bot.prefix}} {{REF:commands.list}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`{{REF:bot.prefix}} {{REF:commands.list}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
                     "",
                     "`{{REF:yesNo.no}}` - Список никогда не будет высылаться.",
                     "\u2800"
@@ -441,7 +438,7 @@
                 "description": [
                     "Желаете ли вы скрыть ваш часовой пояс и другую информацию от вас от других пользователей?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} будет скрывать информацию о вас.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} будет скрывать информацию о вас.",
                     "",
                     "`{{REF:yesNo.no}}` - Вы не против, если другим покажут ваш часовой пояс.",
                     "\u2800"
@@ -479,10 +476,10 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Время на настройку истекло. Пожалуйста, попробуйте снова.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
@@ -501,7 +498,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedSelf": {
                 "description": [
@@ -522,7 +519,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedUser": {
                 "description": [
@@ -543,7 +540,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedBot": {
                 "description": [
@@ -562,73 +559,73 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setDeniedUser": {
                 "description": "Настройка пользователя отклонена. Ваши настройки не применены.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
                 "description": "Значение настройки **{{SETTING_NAME}}** для сервера изменено на **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
                 "description": "Значение настройки **{{SETTING_NAME}}** для бота {{BOT}} изменено на **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
                 "description": "Значение вашей настройки **{{SETTING_NAME}}** изменено на **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
                 "description": "Значение настройки **{{SETTING_NAME}}** для сервера сброшено.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
                 "description": "Значение настройки **{{SETTING_NAME}}** для бота {{BOT}} сброшено.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
                 "description": "Значение вашей настройки **{{SETTING_NAME}}** сброшено.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
                 "description": "Настройки данного сервера сброшены.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedBot": {
                 "description": "Настройки бота {{BOT}} сброшены.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedUser": {
                 "description": "Ваши настройки сброшены.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
                 "description": "**{{TIME_ZONE}}** добавлен в список часовых поясов сервера.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
                 "description": "**{{TIME_ZONE}}** удалён из списка часовых поясов сервера.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
                 "description": "Эту команду возможно использовать только на серверах.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "permissionRequired": {
                 "description": "У вас недостаточно прав, чтобы использовать эту команду!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notFoundSetting": {
                 "description": "Настройка не найдена.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundBot": {
                 "description": [
@@ -636,31 +633,31 @@
                     "",
                     "Введите `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>`, чтобы настроить бота."
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundUser": {
                 "description": "Пользователь не найден.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeZone": {
                 "description": "Неизвестный часовой пояс, попробуйте снова!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
                 "description": "Неизвестный формат даты, побробуйте снова!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
                 "description": "Неизвестный формат времени, побробуйте снова!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
                 "description": "Пожалуйста, ответьте *да* или *нет*!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
                 "description": "Неизвестный язык, попробуйте снова!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
@@ -668,34 +665,34 @@
                     "",
                     "Пожалуйста, напишите эту команду в лс, чтобы не раскрывать свою информацию."
                 ],
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedAbbreviation": {
                 "description": "Аббревиатуры часовых поясов не работают, попробуйте снова!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "Нельзя настроить {{REF:bot.name}}!",
-                "color": "{{REF:colors.warning}}"
+                "description": "Нельзя настроить {{COM:bot.name}}!",
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitList": {
                 "description": "Список часовых поясов сервера уже заполнен на максимум!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitBots": {
                 "description": "На этом сервере уже настроено максимальное количество ботов!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneServer": {
                 "description": "У сервера ещё не установлен часовой пояс!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneUser": {
                 "description": "У пользователя {{USER}} ещё нет часового пояса!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Что-то пошло не так!",
                 "fields": [
@@ -705,25 +702,23 @@
                     },
                     {
                         "name": "Свяжитесь с поддержкой",
-                        "value": "{{REF:links.support}}"
+                        "value": "{{COM:links.support}}"
                     }
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{REF:bot.name}} ещё запускается. Попробуйте позже.",
-                "color": "{{REF:colors.warning}}"
+                "description": "{{COM:bot.name}} ещё запускается. Попробуйте позже.",
+                "color": "{{COM:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
-        "meta": {
+        },
+        "metaRegexes": {
             "language": "/(?<=^|\\s)({{REF:meta.language}}|ru|ру|русский|Russian)(?=$|\\s)/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/бот|команда|команды|кмд/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/(?<=^|\\s)({{REF:commands.bot}}|б|боты)(?=$|\\s)/i",
             "dev": "/(?<=^|\\s)({{REF:commands.dev}}|разработчикам|рр|использование|исп|память|пам)(?=$|\\s)/i",
             "docs": "/(?<=^|\\s)({{REF:commands.docs}}|д|документация|сайт|вебсайт|веб-сайт)(?=$|\\s)/i",
@@ -745,7 +740,7 @@
             "stop": "/(?<=^|\\s)({{REF:commands.stop}}|отмена|сброс)(?=$|\\s)/i",
             "remove": "/(?<=^|\\s)({{REF:commands.remove}}|сбросить|удалить|убрать|очистить)(?=$|\\s)/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/(?<=^|\\s)({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)(?=$|\\s)/i",
             "dateFormat": "/(?<=^|\\s)({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)(?=$|\\s)/i",
             "language": "/(?<=^|\\s)({{REF:settings.language}}|яз|язык)(?=$|\\s)/i",
@@ -755,15 +750,15 @@
             "timeFormat": "/(?<=^|\\s)({{REF:settings.timeFormat}}|форматвремени|фв|фвр|время|вр|в)(?=$|\\s)/i",
             "timeZone": "/(?<=^|\\s)({{REF:settings.timeZone}}|ч|чп|часовойпояс|пояс)(?=$|\\s)/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/(?<=^|\\s)({{REF:dateFormat.dayMonth}}|дм|ддмм|дд-мм|дд.мм|день-месяц|день/месяц|день.месяц)(?=$|\\s)/i",
             "monthDay": "/(?<=^|\\s)({{REF:dateFormat.monthDay}}|мд|ммдд|мм-дд|мм.дд|месяц-день|месяц/день|месяц.день)(?=$|\\s)/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/(?<=^|\\s)({{REF:timeFormat.twentyFourHour}}|24ч|24часа)(?=$|\\s)/i",
             "twelveHour": "/(?<=^|\\s)({{REF:timeFormat.twelveHour}}|12ч|12часов)(?=$|\\s)/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/(?<=^|\\s)({{REF:yesNo.yes}}|д|вкл|включить|1)(?=$|\\s)/i",
             "no": "/(?<=^|\\s)({{REF:yesNo.no}}|н|выкл|выключить|0)(?=$|\\s)/i"
         }
@@ -776,14 +771,8 @@
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
-            "name": "Friend Time",
-            "description": "{{REF:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!",
+            "description": "{{COM:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!",
             "prefix": "-ft"
-        },
-        "colors": {
-            "success": "#00ff83",
-            "warning": "#ffcc66",
-            "error": "#ff4a4a"
         },
         "commands": {
             "bot": "бот",
@@ -886,23 +875,14 @@
             "private": "Приватно"
         },
         "links": {
-            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Пригласить {{REF:bot.name}} на сервер]({{REF:links.invite}})",
-            "docs": "https://docs.friendtime.ml",
-            "docsEmbed": "[Перейти к документации]({{REF:links.docs}}/)",
-            "vote": "https://top.gg/bot/471091072546766849/vote",
-            "voteEmbed": "[Проголосовать за {{REF:bot.name}}!]({{REF:links.vote}})",
-            "support": "https://discord.gg/GQcBR8e",
-            "supportEmbed": "[Присоединиться к серверу поддержки]({{REF:links.support}})",
-            "stream": "https://www.twitch.tv/novakevin",
-            "author": "https://github.com/KevinNovak",
-            "authorEmbed": "[Kevin Novak]({{REF:links.author}})",
-            "source": "https://github.com/KevinNovak/Friend-Time",
-            "sourceEmbed": "[Просмотреть открытый код]({{REF:links.source}})",
-            "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
-            "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{REF:links.template}})",
-            "map": "https://kevinnovak.github.io/Time-Zone-Picker/",
-            "mapEmbed": "[Карта часовых поясов]({{REF:links.map}})"
+            "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
+            "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
+            "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})",
+            "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
+            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",
+            "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{COM:links.template}})",
+            "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})"
         },
         "partials": {
             "congratulations": "🎉 Поздравляем! 🎉",
@@ -915,7 +895,7 @@
                 "Просто **кликните по месту на карте**, чтобы увидеть название часового пояса."
             ],
             "translateNote": "Введите `{{REF:bot.prefix}} {{REF:commands.translate}}`, чтобы просмотреть информацию о переводах.",
-            "dmWarning": "Для нормального функционирования некоторых команд необходимо разрешить сообщения от участников хотя бы одного сервера, где есть {{REF:bot.name}}."
+            "dmWarning": "Для нормального функционирования некоторых команд необходимо разрешить сообщения от участников хотя бы одного сервера, где есть {{COM:bot.name}}."
         },
         "messages": {
             "missingEmbedPerms": [

@@ -22,7 +22,7 @@ export class BotCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.bot', langCode);
+        return Lang.getRegex('commandRegexes.bot', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -47,7 +47,7 @@ export class BotCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.listBot', data.lang(), {
+                Lang.getEmbed('displayEmbeds.listBot', data.lang(), {
                     BOT_LIST: botList,
                 }).setAuthor(msg.guild.name, msg.guild.iconURL())
             );
@@ -62,7 +62,7 @@ export class BotCommand implements Command {
         if (!botData) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('validation.notFoundBot', data.lang())
+                Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
             );
             return;
         }
@@ -72,7 +72,7 @@ export class BotCommand implements Command {
             let settingList = this.settingManager.list(botData, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.settingsBot', data.lang(), {
+                Lang.getEmbed('displayEmbeds.settingsBot', data.lang(), {
                     SETTING_LIST: settingList,
                     BOT_ID: botData.discordId,
                 }).setAuthor(user?.tag ?? botData.discordId, user?.avatarURL())
@@ -81,14 +81,14 @@ export class BotCommand implements Command {
         }
 
         if (args.length > 3) {
-            let removeRegex = Lang.getRegex('commands.remove', data.lang());
+            let removeRegex = Lang.getRegex('commandRegexes.remove', data.lang());
 
             // Remove all setting data
             if (removeRegex.test(args[3])) {
                 await botData.remove();
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedBot', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.removedBot', data.lang(), {
                         BOT: FormatUtils.userMention(botData.discordId),
                     })
                 );
@@ -102,7 +102,7 @@ export class BotCommand implements Command {
             if (!setting) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notFoundSetting', data.lang())
+                    Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
                 );
                 return;
             }
@@ -114,7 +114,7 @@ export class BotCommand implements Command {
 
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedSettingBot', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.removedSettingBot', data.lang(), {
                         BOT: FormatUtils.userMention(botData.discordId),
                         SETTING_NAME: setting.displayName(data.lang()),
                     })
@@ -133,7 +133,7 @@ export class BotCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.updatedSettingBot', data.lang(), {
+                Lang.getEmbed('resultEmbeds.updatedSettingBot', data.lang(), {
                     BOT: FormatUtils.userMention(botData.discordId),
                     SETTING_NAME: setting.displayName(data.lang()),
                     SETTING_VALUE: setting.valueDisplayName(value, data.lang()),

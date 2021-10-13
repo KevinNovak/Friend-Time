@@ -19,7 +19,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.timeZone', langCode);
+        return Lang.getRegex('settingRegexes.timeZone', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -51,7 +51,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (msg.content.length < Config.validation.timeZone.lengthMin) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notAllowedAbbreviation', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -62,7 +62,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (!timeZoneName) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidTimeZone', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -78,7 +78,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (confirmed == null) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidYesNo', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -98,7 +98,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
         let timeZone: string;
@@ -106,7 +106,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         while (confirmed === false) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('prompts.timeZoneBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneBot', data.lang(), {
                     BOT: FormatUtils.userMention(target),
                 })
             );
@@ -125,7 +125,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('prompts.timeZoneConfirmBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneConfirmBot', data.lang(), {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,

@@ -20,7 +20,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.timeZone', langCode);
+        return Lang.getRegex('settingRegexes.timeZone', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -52,7 +52,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             if (msg.content.length <= Config.validation.timeZone.lengthMin) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notAllowedAbbreviation', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -63,7 +63,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             if (!timeZoneName) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidTimeZone', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -79,7 +79,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             if (confirmed == null) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidYesNo', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -99,7 +99,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
         let timeZone: string;
@@ -108,10 +108,10 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             await MessageUtils.send(
                 msg.channel,
                 target
-                    ? Lang.getEmbed('prompts.timeZoneUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneUser', data.lang(), {
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('prompts.timeZoneSelf', data.lang())
+                    : Lang.getEmbed('promptEmbeds.timeZoneSelf', data.lang())
             );
             timeZone = await collect(this.retriever(data.lang()));
             if (!timeZone) {
@@ -129,13 +129,13 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             await MessageUtils.send(
                 msg.channel,
                 target
-                    ? Lang.getEmbed('prompts.timeZoneConfirmUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneConfirmUser', data.lang(), {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('prompts.timeZoneConfirmSelf', data.lang(), {
+                    : Lang.getEmbed('promptEmbeds.timeZoneConfirmSelf', data.lang(), {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,

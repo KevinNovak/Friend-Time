@@ -1,11 +1,8 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
-        "displays": {
+    "data": {
+        "displayEmbeds": {
             "welcome": {
-                "title": "Bedankt voor het gebruiken van {{REF:bot.name}}!",
+                "title": "Bedankt voor het gebruiken van {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -23,7 +20,7 @@
                 ]
             },
             "help": {
-                "title": "{{REF:bot.name}} - Hulp",
+                "title": "{{COM:bot.name}} - Hulp",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
@@ -33,7 +30,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Beheer je gebruikersinstellingen.",
                             "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
                             "**{{REF:bot.prefix}} {{REF:commands.map}}** - Bekijk de kaart met tijdzones.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Meer informatie over {{REF:bot.name}}."
+                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Meer informatie over {{COM:bot.name}}."
                         ]
                     },
                     {
@@ -178,11 +175,11 @@
             "map": {
                 "title": "Tijdzone kaart",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{REF:bot.name}} een tijdzone nodig heeft."
+                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
                 ]
             },
             "info": {
-                "title": "{{REF:bot.name}} - Informatie",
+                "title": "{{COM:bot.name}} - Informatie",
                 "fields": [
                     {
                         "name": "Auteur",
@@ -204,11 +201,11 @@
                 ]
             },
             "translate": {
-                "title": "{{REF:bot.name}} - Vertalingen",
-                "description": "Dank aan onze vertalers die het mogelijk hebben gemaakt voor {{REF:bot.name}} om in de volgende talen gebruikt te worden. Als je interesse hebt in het aanleveren van een vertaling, neem dan alstublieft contact op met het beheerders-team in onze [support server]({{REF:links.support}})."
+                "title": "{{COM:bot.name}} - Vertalingen",
+                "description": "Dank aan onze vertalers die het mogelijk hebben gemaakt voor {{COM:bot.name}} om in de volgende talen gebruikt te worden. Als je interesse hebt in het aanleveren van een vertaling, neem dan alstublieft contact op met het beheerders-team in onze [support server]({{COM:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Ontwikkelaarsinformatie",
+                "title": "{{COM:bot.name}} - Ontwikkelaarsinformatie",
                 "fields": [
                     {
                         "name": "Versies",
@@ -246,20 +243,20 @@
                 ]
             },
             "invite": {
-                "title": "{{REF:bot.name}} - Uitnodiging",
-                "description": "Klik [hier]({{REF:links.invite}}) om {{REF:bot.name}} uit te nodigen in een server!"
+                "title": "{{COM:bot.name}} - Uitnodiging",
+                "description": "Klik [hier]({{COM:links.invite}}) om {{COM:bot.name}} uit te nodigen in een server!"
             },
             "docs": {
-                "title": "{{REF:bot.name}} - Documentatie",
-                "description": "Klik [hier]({{REF:links.docs}}/) om de documentatie van de bot te bekijken."
+                "title": "{{COM:bot.name}} - Documentatie",
+                "description": "Klik [hier]({{COM:links.docs}}/) om de documentatie van de bot te bekijken."
             },
             "vote": {
-                "title": "{{REF:bot.name}} - Stem",
-                "description": "Steun {{REF:bot.name}} door [hier]({{REF:links.vote}}) te stemmen!"
+                "title": "{{COM:bot.name}} - Stem",
+                "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
             },
             "support": {
-                "title": "{{REF:bot.name}} - Support",
-                "description": "Hulp nodig? Wordt lid van onze [support server]({{REF:links.support}})!"
+                "title": "{{COM:bot.name}} - Support",
+                "description": "Hulp nodig? Wordt lid van onze [support server]({{COM:links.support}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -281,19 +278,19 @@
                     "",
                     "Stel je tijdzone in door het `{{REF:bot.prefix}} {{REF:commands.set}}` commando te gebruiken!",
                     "",
-                    "Het instellen van je tijdzone zorgt ervoor dat {{REF:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
+                    "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
                 ],
                 "footer": {
                     "text": "Als je deze herinnering wil uitschakelen, schrijf \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
                 },
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Server - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Wil je dat {{REF:bot.name}} automatisch tijden detecteerd in de chat?",
+                    "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
                     "",
                     "`{{REF:yesNo.yes}}` - Tijden in de chat worden automatisch gedetecteerd.",
                     "",
@@ -399,9 +396,9 @@
             "listGuild": {
                 "title": "Server - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Wil je dat {{REF:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
+                    "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{REF:bot.prefix}} {{REF:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{REF:bot.prefix}} {{REF:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
                     "",
                     "`{{REF:yesNo.no}}` - Er wordt geen lijst getoond.",
                     "\u2800"
@@ -485,7 +482,7 @@
                 "description": [
                     "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
                     "",
                     "`{{REF:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
                     "\u2800"
@@ -531,10 +528,10 @@
                 }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Je verzoek is verlopen. Probeer het opnieuw.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
@@ -553,7 +550,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedSelf": {
                 "description": [
@@ -574,7 +571,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedUser": {
                 "description": [
@@ -595,7 +592,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedBot": {
                 "description": [
@@ -614,73 +611,73 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setDeniedUser": {
                 "description": "Gebruiker setup geweigerd. Je instellingen zijn niet veranderd.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
                 "description": "De server's**{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
                 "description": "{{BOT}}'s **{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
                 "description": "Jouw **{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
                 "description": "De server's **{{SETTING_NAME}}** instelling is verwijderd.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
                 "description": "{{BOT}}'s **{{SETTING_NAME}}** instelling is verwijderd.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
                 "description": "Jouw **{{SETTING_NAME}}** instelling is verwijderd",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
                 "description": "De gegevens van deze server zijn verwijderd.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedBot": {
                 "description": "De gegevens van {{BOT}} zijn verwijderd.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedUser": {
                 "description": "Jouw gegevens zijn verwijderd.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
                 "description": "**{{TIME_ZONE}}** is toegevoegd aan de lijst met tijdzones van de server.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
                 "description": "**{{TIME_ZONE}}** is verwijdered van de lijst met tijdzones van de server.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden in een server.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "permissionRequired": {
                 "description": "Je hebt geen toestemming om dat commando te gebruiken!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notFoundSetting": {
                 "description": "Instellingen niet gevonden.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundBot": {
                 "description": [
@@ -688,31 +685,31 @@
                     "",
                     "Schrijf `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` om een nieuwe bot in te stellen."
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundUser": {
                 "description": "Gebruiker niet gevonden.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeZone": {
                 "description": "Ongeldige tijdzone, probeer het opnieuw!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
                 "description": "Ongeldige datum formaat, probeer het opnieuw!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
                 "description": "Ongeldige tijd formaat, probeer het opnieuw!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
                 "description": "Ongeldig ja of nee antwoord, probeer het opnieuw!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
                 "description": "Ongeldige taal, probeer het opnieuw!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
@@ -720,34 +717,34 @@
                     "",
                     "Gebruik dit commando opnieuw in een DM zodat je je gegevens niet blootstelt."
                 ],
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedAbbreviation": {
                 "description": "Afkortingen van tijdzones zijn niet toegestaan, probeer het opnieuw!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "Je hebt geen toestemming om {{REF:bot.name}} in te stellen!",
-                "color": "{{REF:colors.warning}}"
+                "description": "Je hebt geen toestemming om {{COM:bot.name}} in te stellen!",
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitList": {
                 "description": "Deze server heeft al het maximum aantal tijdzones in de lijst!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitBots": {
                 "description": "Deze server heeft al het maximum aantal ingestelde bots!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneServer": {
                 "description": "De server heeft nog geen tijdzone ingesteld!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneUser": {
                 "description": "{{USER}} heeft nog geen tijdzone ingesteld!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Er ging iets fout!",
                 "fields": [
@@ -757,25 +754,23 @@
                     },
                     {
                         "name": "Contacteer support",
-                        "value": "{{REF:links.support}}"
+                        "value": "{{COM:links.support}}"
                     }
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{REF:bot.name}} is nog aan het opstarten. Probeer het later nog eens.",
-                "color": "{{REF:colors.warning}}"
+                "description": "{{COM:bot.name}} is nog aan het opstarten. Probeer het later nog eens.",
+                "color": "{{COM:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
-        "meta": {
+        },
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|nl|Nederlands)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|developer|gebruik|geheugen)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|docs|d|documentatie|leesmij|website|site)\\b/i",
@@ -797,7 +792,7 @@
             "stop": "/\\b({{REF:commands.stop}}|sluit|sluiten|stoppen|annuleer|annuleren|cancel|exit)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|v|wis|reset|verwijderen)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detecteer|automatisch|detecteren)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|datumParser|datum|parser)\\b/i",
             "language": "/\\b({{REF:settings.language}}|t|taalCode)\\b/i",
@@ -807,15 +802,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tijd)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dag-maand|dag/maand)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|maand-dag|maand/dag)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24u|24-uur)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12u|12-uur)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|j|ingeschakeld|inschakelen|i|true|t|aan|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|uitgeschakeld|uitschakelen|u|false|f|uit|0)\\b/i"
         }
@@ -828,14 +823,8 @@
             "translators": "[Hester#5259](https://github.com/uxster)"
         },
         "bot": {
-            "name": "Friend Time",
-            "description": "{{REF:bot.name}} helpt het coördineren van tijden en evenementen in jouw server door tijden in chatberichten te converteren naar verschillende tijdzones!",
+            "description": "{{COM:bot.name}} helpt het coördineren van tijden en evenementen in jouw server door tijden in chatberichten te converteren naar verschillende tijdzones!",
             "prefix": "-ft"
-        },
-        "colors": {
-            "success": "#00ff83",
-            "warning": "#ffcc66",
-            "error": "#ff4a4a"
         },
         "commands": {
             "bot": "bot",
@@ -938,23 +927,14 @@
             "private": "Privé"
         },
         "links": {
-            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Nodig {{REF:bot.name}} uit in een server!]({{REF:links.invite}})",
-            "docs": "https://docs.friendtime.ml",
-            "docsEmbed": "[Bekijk documentatie en instructies]({{REF:links.docs}}/)",
-            "vote": "https://top.gg/bot/471091072546766849/vote",
-            "voteEmbed": "[Stem op {{REF:bot.name}}!]({{REF:links.vote}})",
-            "support": "https://discord.gg/GQcBR8e",
-            "supportEmbed": "[Wordt lid van de support server]({{REF:links.support}})",
-            "stream": "https://www.twitch.tv/novakevin",
-            "author": "https://github.com/KevinNovak",
-            "authorEmbed": "[Kevin Novak]({{REF:links.author}})",
-            "source": "https://github.com/KevinNovak/Friend-Time",
-            "sourceEmbed": "[Bekijk broncode]({{REF:links.source}})",
-            "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
-            "templateEmbed": "[Discord Bot TypeScript Template]({{REF:links.template}})",
-            "map": "https://kevinnovak.github.io/Time-Zone-Picker/",
-            "mapEmbed": "[Tijdzone kaart]({{REF:links.map}})"
+            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
+            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
+            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})",
+            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
+            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",
+            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
+            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})"
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",
@@ -967,7 +947,7 @@
                 "Simpelweg **selecteer een locatie op de kaart** om de naam van een tijdzone te zien."
             ],
             "translateNote": "Schrijf `{{REF:bot.prefix}} {{REF:commands.translate}}` om meer te weten te komen over vertalingen.",
-            "dmWarning": "Sommige commando's van {{REF:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{REF:bot.name}} ingesteld zijn."
+            "dmWarning": "Sommige commando's van {{COM:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{COM:bot.name}} ingesteld zijn."
         },
         "messages": {
             "missingEmbedPerms": [

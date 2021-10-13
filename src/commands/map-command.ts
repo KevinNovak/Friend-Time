@@ -16,10 +16,10 @@ export class MapCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.map', langCode);
+        return Lang.getRegex('commandRegexes.map', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
-        await MessageUtils.send(msg.channel, Lang.getEmbed('displays.map', data.lang()));
+        await MessageUtils.send(msg.channel, Lang.getEmbed('displayEmbeds.map', data.lang()));
     }
 }

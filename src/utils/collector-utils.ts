@@ -24,7 +24,7 @@ export class CollectorUtils {
         let collectFilter: MessageFilter = (nextMsg: Message): boolean =>
             nextMsg.author.id === user.id;
 
-        let stopRegex = Lang.getRegex('commands.stop', langCode);
+        let stopRegex = Lang.getRegex('commandRegexes.stop', langCode);
         let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
             // Check if I have permission to send a message
             if (!PermissionUtils.canSendEmbed(channel)) {
@@ -77,7 +77,7 @@ export class CollectorUtils {
             reactor: User
         ): boolean => reactor.id === user.id;
 
-        let stopRegex = Lang.getRegex('commands.stop', langCode);
+        let stopRegex = Lang.getRegex('commandRegexes.stop', langCode);
         let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
             // Check if I have permission to send a message
             if (!PermissionUtils.canSendEmbed(channel)) {

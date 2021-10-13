@@ -24,7 +24,7 @@ export class MeCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.me', langCode);
+        return Lang.getRegex('commandRegexes.me', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -32,7 +32,7 @@ export class MeCommand implements Command {
         if (privateMode && !(msg.channel instanceof DMChannel)) {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('validation.privateModeEnabled', data.lang())
+                Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
             );
             return;
         }
@@ -47,7 +47,7 @@ export class MeCommand implements Command {
             let settingList = this.settingManager.list(data.user, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.settingSelf', data.lang(), {
+                Lang.getEmbed('displayEmbeds.settingSelf', data.lang(), {
                     SETTING_LIST: settingList,
                     USER_ID: msg.author.id,
                 }).setAuthor(msg.author.tag, msg.author.avatarURL())
@@ -56,7 +56,7 @@ export class MeCommand implements Command {
         }
 
         if (args.length > 2) {
-            let removeRegex = Lang.getRegex('commands.remove', data.lang());
+            let removeRegex = Lang.getRegex('commandRegexes.remove', data.lang());
 
             // Remove all setting data
             if (removeRegex.test(args[2])) {
@@ -64,7 +64,7 @@ export class MeCommand implements Command {
                 await data.user.save();
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedUser', data.lang())
+                    Lang.getEmbed('resultEmbeds.removedUser', data.lang())
                 );
                 return;
             }
@@ -76,7 +76,7 @@ export class MeCommand implements Command {
             if (!setting) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notFoundSetting', data.lang())
+                    Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
                 );
                 return;
             }
@@ -88,7 +88,7 @@ export class MeCommand implements Command {
 
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('results.removedSettingUser', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.removedSettingUser', data.lang(), {
                         SETTING_NAME: setting.displayName(data.lang()),
                     })
                 );
@@ -106,7 +106,7 @@ export class MeCommand implements Command {
 
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('results.updatedSettingUser', data.lang(), {
+                Lang.getEmbed('resultEmbeds.updatedSettingUser', data.lang(), {
                     SETTING_NAME: setting.displayName(data.lang()),
                     SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
                 })

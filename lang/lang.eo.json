@@ -1,11 +1,8 @@
 {
-    "defaultEmbed": {
-        "color": "#0099ff"
-    },
-    "embeds": {
-        "displays": {
+    "data": {
+        "displayEmbeds": {
             "welcome": {
-                "title": "Dankon pro uzado de {{REF:bot.name}}!",
+                "title": "Dankon pro uzado de {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -25,7 +22,7 @@
                 ]
             },
             "help": {
-                "title": "{{REF:bot.name}} - Helpilo",
+                "title": "{{COM:bot.name}} - Helpilo",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
@@ -35,7 +32,7 @@
                             "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Manipuli siajn agordojn.",
                             "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
                             "**{{REF:bot.prefix}} {{REF:commands.map}}** - Vidi la horzonmapon.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Pli da informoj pri {{REF:bot.name}}."
+                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Pli da informoj pri {{COM:bot.name}}."
                         ]
                     },
                     {
@@ -174,11 +171,11 @@
             "map": {
                 "title": "Horzonmapo",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Vi povas kopii tiun nomon kaj uzi ĝin, kiam {{REF:bot.name}} postulos."
+                    "{{REF:partials.findTimeZoneHelp}} Vi povas kopii tiun nomon kaj uzi ĝin, kiam {{COM:bot.name}} postulos."
                 ]
             },
             "info": {
-                "title": "{{REF:bot.name}} - Informoj",
+                "title": "{{COM:bot.name}} - Informoj",
                 "fields": [
                     { "name": "Aŭtoro", "value": "{{REF:links.authorEmbed}}" },
                     {
@@ -197,11 +194,11 @@
                 ]
             },
             "translate": {
-                "title": "{{REF:bot.name}} - Tradukoj",
-                "description": "Dankon al niaj tradukistoj, kiuj ebligis uzadon de {{REF:bot.name}} en la ĉi-subaj lingvoj. Se vin interesus traduki la roboton, bonvolu kontakti la agentojn en nia [servilo de subteno]({{REF:links.support}})."
+                "title": "{{COM:bot.name}} - Tradukoj",
+                "description": "Dankon al niaj tradukistoj, kiuj ebligis uzadon de {{COM:bot.name}} en la ĉi-subaj lingvoj. Se vin interesus traduki la roboton, bonvolu kontakti la agentojn en nia [servilo de subteno]({{COM:links.support}})."
             },
             "dev": {
-                "title": "{{REF:bot.name}} - Programistaj informoj",
+                "title": "{{COM:bot.name}} - Programistaj informoj",
                 "fields": [
                     {
                         "name": "Versioj",
@@ -239,20 +236,20 @@
                 ]
             },
             "invite": {
-                "title": "{{REF:bot.name}} - Invitligilo",
-                "description": "Klaku [ĉi tien]({{REF:links.invite}}) por inviti {{REF:bot.name}} al servilo!"
+                "title": "{{COM:bot.name}} - Invitligilo",
+                "description": "Klaku [ĉi tien]({{COM:links.invite}}) por inviti {{COM:bot.name}} al servilo!"
             },
             "docs": {
-                "title": "{{REF:bot.name}} - Dokumentaro",
-                "description": "Klaku [ĉi tien]({{REF:links.docs}}/) por vidi la dokumentaron pri la roboto."
+                "title": "{{COM:bot.name}} - Dokumentaro",
+                "description": "Klaku [ĉi tien]({{COM:links.docs}}/) por vidi la dokumentaron pri la roboto."
             },
             "vote": {
-                "title": "{{REF:bot.name}} - Voĉdonado",
-                "description": "Subtenu {{REF:bot.name}} voĉdoninte [ĉi tie]({{REF:links.vote}})!"
+                "title": "{{COM:bot.name}} - Voĉdonado",
+                "description": "Subtenu {{COM:bot.name}} voĉdoninte [ĉi tie]({{COM:links.vote}})!"
             },
             "support": {
-                "title": "{{REF:bot.name}} - Subteno",
-                "description": "Ĉu necesas helpo? Aliĝu al nia [servilo de subteno]({{REF:links.support}})!"
+                "title": "{{COM:bot.name}} - Subteno",
+                "description": "Ĉu necesas helpo? Aliĝu al nia [servilo de subteno]({{COM:links.support}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -274,19 +271,19 @@
                     "",
                     "Agordu la roboton por vi per la komando `{{REF:bot.prefix}} {{REF:commands.set}}`!",
                     "",
-                    "Kiam vi agordos la horzonon, {{REF:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
+                    "Kiam vi agordos la horzonon, {{COM:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
                     "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
                 },
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "prompts": {
+        "promptEmbeds": {
             "autoDetectGuild": {
                 "title": "Servilo - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Ĉu vi volas, ke {{REF:bot.name}} aŭtomate detektu tempojn, menciatajn en babilejoj?",
+                    "Ĉu vi volas, ke {{COM:bot.name}} aŭtomate detektu tempojn, menciatajn en babilejoj?",
                     "",
                     "`{{REF:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
                     "",
@@ -374,9 +371,9 @@
             "listGuild": {
                 "title": "Servilo - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Ĉu {{REF:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
+                    "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{REF:bot.prefix}} {{REF:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{REF:bot.prefix}} {{REF:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
                     "`{{REF:yesNo.no}}` - La roboto ne sendados la liston.",
                     "\u2800"
@@ -446,7 +443,7 @@
                 "description": [
                     "Ĉu vi volas kaŝi viajn horzonon kaj aliajn informojn?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{REF:bot.name}} ne montros viajn informojn al aliuloj.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
                     "",
                     "`{{REF:yesNo.no}}` - Vi ne kontraŭos, se la roboto montros viajn informojn.",
                     "\u2800"
@@ -484,10 +481,10 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
         },
-        "results": {
+        "resultEmbeds": {
             "collectorExpired": {
                 "description": "Templimo pasis. Bonvolu reprovi.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
@@ -506,7 +503,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedSelf": {
                 "description": [
@@ -527,7 +524,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedUser": {
                 "description": [
@@ -548,7 +545,7 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setCompletedBot": {
                 "description": [
@@ -567,73 +564,73 @@
                         ]
                     }
                 ],
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "setDeniedUser": {
                 "description": "La uzanto malakceptis la agordojn. La agordoj ne ŝanĝiĝis.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
                 "description": "La servila agordo **{{SETTING_NAME}}** nun estas **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
                 "description": "La agordo **{{SETTING_NAME}}** de {{BOT}} nun estas **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
                 "description": "Via agordo **{{SETTING_NAME}}** nun estas **{{SETTING_VALUE}}**.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
                 "description": "La servila agordo **{{SETTING_NAME}}** estas nuligita.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
                 "description": "La agordo **{{SETTING_NAME}}** de {{BOT}} estas nuligita.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
                 "description": "Via agordo **{{SETTING_NAME}}** estas nuligita.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
                 "description": "La servilaj datumoj estas nuligitaj.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedBot": {
                 "description": "La datumoj de {{BOT}} estas nuligitaj.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedUser": {
                 "description": "Viaj datumoj estas nuligitaj.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
                 "description": "**{{TIME_ZONE}}** estas aldonita en la horzonliston.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
                 "description": "**{{TIME_ZONE}}** estas forigita el la horzonlisto.",
-                "color": "{{REF:colors.success}}"
+                "color": "{{COM:colors.success}}"
             }
         },
-        "validation": {
+        "validationEmbeds": {
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
                 "description": "Tiu komando uzeblas nur en serviloj.",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "permissionRequired": {
                 "description": "Vi ne rajtas uzi tiun komandon!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notFoundSetting": {
                 "description": "La agordo ne troveblis.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundBot": {
                 "description": [
@@ -641,31 +638,31 @@
                     "",
                     "Tajpu `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` por agordi novan roboton."
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "notFoundUser": {
                 "description": "La uzanto ne troveblis.",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeZone": {
                 "description": "Nekonata horzono, reprovu!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
                 "description": "Malĝusta dataranĝo, reprovu!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
                 "description": "Malĝusta temparanĝo, reprovu!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
                 "description": "Respondu jes aŭ ne, reprovu!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
                 "description": "Nekonata lingvo, reprovu!",
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
@@ -673,34 +670,34 @@
                     "",
                     "Bonvolu uzi la komandon privatmesaĝe por ne malkovri viajn informojn."
                 ],
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedAbbreviation": {
                 "description": "Horzonaj sigloj ne akcepteblas, reprovu!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "Oni ne rajtas agordi {{REF:bot.name}}!",
-                "color": "{{REF:colors.warning}}"
+                "description": "Oni ne rajtas agordi {{COM:bot.name}}!",
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitList": {
                 "description": "Ĉi tiu servilo jam havas maksimume da horzonoj en la listo!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "maxLimitBots": {
                 "description": "Ĉi tiu servilo jam havas maksimume da agorditaj robotoj!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneServer": {
                 "description": "La servilo ankoraŭ ne agordis sian horzonon!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneUser": {
                 "description": "{{USER}} ankoraŭ ne agordis sian horzonon!",
-                "color": "{{REF:colors.warning}}"
+                "color": "{{COM:colors.warning}}"
             }
         },
-        "errors": {
+        "errorEmbeds": {
             "command": {
                 "description": "Io misfunkciis!",
                 "fields": [
@@ -710,25 +707,23 @@
                     },
                     {
                         "name": "Kontaktu subtenon",
-                        "value": "{{REF:links.support}}"
+                        "value": "{{COM:links.support}}"
                     }
                 ],
-                "color": "{{REF:colors.error}}"
+                "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{REF:bot.name}} ankoraŭ startas. Reprovu poste.",
-                "color": "{{REF:colors.warning}}"
+                "description": "{{COM:bot.name}} ankoraŭ startas. Reprovu poste.",
+                "color": "{{COM:colors.warning}}"
             }
-        }
-    },
-    "regexes": {
-        "meta": {
+        },
+        "metaRegexes": {
             "language": "/\\b({{REF:meta.language}}|eo|Esperanto)\\b/i"
         },
-        "channels": {
+        "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
         },
-        "commands": {
+        "commandRegexes": {
             "bot": "/\\b({{REF:commands.bot}}|r|robotoj)\\b/i",
             "dev": "/\\b({{REF:commands.dev}}|programistoj|uzado|memoro)\\b/i",
             "docs": "/\\b({{REF:commands.docs}}|d|dokumentaro|retejo|TTTejo)\\b/i",
@@ -750,7 +745,7 @@
             "stop": "/\\b({{REF:commands.stop}}|nuligi|nuligo|ĉesi|ĉeso|cxesi|chesi|cxeso|cheso)\\b/i",
             "remove": "/\\b({{REF:commands.remove}}|nuligo|forigi|forigo|nul)\\b/i"
         },
-        "settings": {
+        "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|det|detekti|detektadi|detekto)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|da|dato|datoj|datarangxo|datarangho)\\b/i",
             "language": "/\\b({{REF:settings.language}}|l)\\b/i",
@@ -760,15 +755,15 @@
             "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj|temparangxo|temparangho)\\b/i",
             "timeZone": "/\\b({{REF:settings.timeZone}}|h|hz|z)\\b/i"
         },
-        "dateFormat": {
+        "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|tm|ttmm|tt-mm|tago-monato|tago/monato)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mt|mmtt|mm-tt|monato-tago|monato/tago)\\b/i"
         },
-        "timeFormat": {
+        "timeFormatRegexes": {
             "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hora|24hora)\\b/i",
             "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hora|12hora)\\b/i"
         },
-        "yesNo": {
+        "yesNoRegexes": {
             "yes": "/\\b({{REF:yesNo.yes}}|j|1)\\b/i",
             "no": "/\\b({{REF:yesNo.no}}|n|0)\\b/i"
         }
@@ -781,14 +776,8 @@
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
-            "name": "Friend Time",
-            "description": "{{REF:bot.name}} helpas al via servilo plani okazojn, konvertante tempojn, menciatajn en babilejo, inter horzonoj!",
+            "description": "{{COM:bot.name}} helpas al via servilo plani okazojn, konvertante tempojn, menciatajn en babilejo, inter horzonoj!",
             "prefix": "-ft"
-        },
-        "colors": {
-            "success": "#00ff83",
-            "warning": "#ffcc66",
-            "error": "#ff4a4a"
         },
         "commands": {
             "bot": "roboto",
@@ -891,23 +880,14 @@
             "private": "Private"
         },
         "links": {
-            "invite": "https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056",
-            "inviteEmbed": "[Invitu {{REF:bot.name}} al servilo!]({{REF:links.invite}})",
-            "docs": "https://docs.friendtime.ml",
-            "docsEmbed": "[Vidu la dokumentaron]({{REF:links.docs}}/)",
-            "vote": "https://top.gg/bot/471091072546766849/vote",
-            "voteEmbed": "[Voĉdonu por {{REF:bot.name}}!]({{REF:links.vote}})",
-            "support": "https://discord.gg/GQcBR8e",
-            "supportEmbed": "[Aliĝu al la servilo de subteno]({{REF:links.support}})",
-            "stream": "https://www.twitch.tv/novakevin",
-            "author": "https://github.com/KevinNovak",
-            "authorEmbed": "[Kevino Novako]({{REF:links.author}})",
-            "source": "https://github.com/KevinNovak/Friend-Time",
-            "sourceEmbed": "[Vidu la fontkodon]({{REF:links.source}})",
-            "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
-            "templateEmbed": "[Ŝablono TypeScript por diskordaj robotoj]({{REF:links.template}})",
-            "map": "https://kevinnovak.github.io/Time-Zone-Picker/",
-            "mapEmbed": "[horzonmapo]({{REF:links.map}})"
+            "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
+            "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
+            "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})",
+            "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
+            "authorEmbed": "[Kevino Novako]({{COM:links.author}})",
+            "sourceEmbed": "[Vidu la fontkodon]({{COM:links.source}})",
+            "templateEmbed": "[Ŝablono TypeScript por diskordaj robotoj]({{COM:links.template}})",
+            "mapEmbed": "[horzonmapo]({{COM:links.map}})"
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",
@@ -920,7 +900,7 @@
                 "Simple **elektu lokon en la mapo** por vidi la horzonan nomon."
             ],
             "translateNote": "Tajpu `{{REF:bot.prefix}} {{REF:commands.translate}}` por ekscii pli pri tradukoj.",
-            "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{REF:bot.name}}."
+            "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
         },
         "messages": {
             "missingEmbedPerms": [

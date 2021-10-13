@@ -39,7 +39,7 @@ export class TimeCommand implements Command {
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commands.time', langCode);
+        return Lang.getRegex('commandRegexes.time', langCode);
     }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
@@ -48,7 +48,7 @@ export class TimeCommand implements Command {
             if (!(msg.channel instanceof TextChannel)) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.serverOnlyCommand', data.lang())
+                    Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
                 );
                 return;
             }
@@ -57,7 +57,7 @@ export class TimeCommand implements Command {
             if (!guildTimeZone) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.noTimeZoneServer', data.lang())
+                    Lang.getEmbed('validationEmbeds.noTimeZoneServer', data.lang())
                 );
                 return;
             }
@@ -67,7 +67,7 @@ export class TimeCommand implements Command {
             let time = FormatUtils.dateTime(now, timeFormat, data.lang());
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('displays.timeServer', data.lang(), {
+                Lang.getEmbed('displayEmbeds.timeServer', data.lang(), {
                     TIME: time,
                     TIME_ZONE: guildTimeZone,
                 })
@@ -86,7 +86,7 @@ export class TimeCommand implements Command {
                 let time = FormatUtils.dateTime(now, timeFormat, data.lang());
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('displays.timeTimeZone', data.lang(), {
+                    Lang.getEmbed('displayEmbeds.timeTimeZone', data.lang(), {
                         TIME: time,
                         TIME_ZONE: timeZone,
                     })
@@ -97,7 +97,7 @@ export class TimeCommand implements Command {
             if (!(msg.channel instanceof TextChannel)) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.serverOnlyCommand', data.lang())
+                    Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
                 );
                 return;
             }
@@ -106,7 +106,7 @@ export class TimeCommand implements Command {
             if (!member) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.notFoundUser', data.lang())
+                    Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
                 );
                 return;
             }
@@ -120,7 +120,7 @@ export class TimeCommand implements Command {
             if (!memberTimeZone) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.noTimeZoneUser', data.lang(), {
+                    Lang.getEmbed('validationEmbeds.noTimeZoneUser', data.lang(), {
                         USER: FormatUtils.userMention(member.id),
                     })
                 );
@@ -137,7 +137,7 @@ export class TimeCommand implements Command {
             await MessageUtils.send(
                 msg.channel,
                 Lang.getEmbed(
-                    privateMode ? 'displays.timeUserPrivate' : 'displays.timeUser',
+                    privateMode ? 'displayEmbeds.timeUserPrivate' : 'displayEmbeds.timeUser',
                     data.lang(),
                     {
                         TIME: time,

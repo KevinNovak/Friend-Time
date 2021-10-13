@@ -16,7 +16,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     }
 
     public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settings.dateFormat', langCode);
+        return Lang.getRegex('settingRegexes.dateFormat', langCode);
     }
 
     public displayName(langCode: LangCode): string {
@@ -49,7 +49,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
             if (!dateFormat) {
                 await MessageUtils.send(
                     msg.channel,
-                    Lang.getEmbed('validation.invalidDateFormat', langCode).setFooter(
+                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
                 );
@@ -69,12 +69,12 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
             msg.channel,
             msg.author,
             data.lang(),
-            Lang.getEmbed('results.collectorExpired', data.lang())
+            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
         await MessageUtils.send(
             msg.channel,
-            Lang.getEmbed('prompts.dateFormatBot', data.lang(), {
+            Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang(), {
                 BOT: FormatUtils.userMention(target),
             })
         );

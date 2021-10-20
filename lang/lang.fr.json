@@ -8,7 +8,7 @@
                     {
                         "name": "Important {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Regarde l'aide du bot."
+                            "**{{COM:bot.prefix}} {{COM:commands.help}}** - Regarde l'aide du bot."
                         ]
                     },
                     {
@@ -28,20 +28,20 @@
                     {
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Changer tes paramètres.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou d'un fuseau horaire.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Regarder la carte des fuseaux horaires.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Pour plus d'informations {{COM:bot.name}}."
+                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
+                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{REF:arguments.setting}}]*** - Changer tes paramètres.",
+                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou d'un fuseau horaire.",
+                            "**{{COM:bot.prefix}} {{COM:commands.map}}** - Regarder la carte des fuseaux horaires.",
+                            "**{{COM:bot.prefix}} {{COM:commands.info}}** - Pour plus d'informations {{COM:bot.name}}."
                         ]
                     },
                     {
                         "name": "Admin {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Utiliser la configuration du serveur.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Changer les paramètres du serveur.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Changer les paramètres du bot.",
+                            "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Utiliser la configuration du serveur.",
+                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{REF:arguments.setting}}]*** - Changer les paramètres du serveur.",
+                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{REF:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
+                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Changer les paramètres du bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +68,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Ajouter ou enlever un fuseau horaire.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
+                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Ajouter ou enlever un fuseau horaire.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
                         ]
                     }
                 ]
@@ -86,8 +86,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Configurer un nouveau bot.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Changer un bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` - Configurer un nouveau bot.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Changer un bot."
                         ]
                     }
                 ]
@@ -104,9 +104,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Tout réinitialiser."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
                 ],
@@ -124,9 +124,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Tout réinitialiser."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
                 ],
@@ -144,9 +144,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Tout réinitialiser."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
                 ],
@@ -269,12 +269,12 @@
                 "description": [
                     "Hey {{USER}}, on dirait que tu as [mentionné ou réagit a un horaire]({{MESSAGE_LINK}}), mais tu n'as pas encore établi de fuseau horaire.",
                     "",
-                    "Configure ton fuseau horaire en utilisant la commande `{{REF:bot.prefix}} {{REF:commands.set}}` !",
+                    "Configure ton fuseau horaire en utilisant la commande `{{COM:bot.prefix}} {{COM:commands.set}}` !",
                     "",
                     "Configurer ton fuseau horaire permet à {{COM:bot.name}} de convertir les messages du chat depuis ton fuseau horaire, assurant une meilleure coordination avec les autres membres."
                 ],
                 "footer": {
-                    "text": "Si tu veux désactiver ce rappel, écris \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Si tu veux désactiver ce rappel, écris \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -373,7 +373,7 @@
                 "description": [
                     "Veux-tu que {{COM:bot.name}} envoie une liste des temps convertis après qu'un temps soit mentionné ?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`{{REF:bot.prefix}} {{REF:commands.list}}`). Cette liste sera envoyé dans le même salon que le message original.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`{{COM:bot.prefix}} {{COM:commands.list}}`). Cette liste sera envoyé dans le même salon que le message original.",
                     "",
                     "`{{REF:yesNo.no}}` - Aucune liste ne sera montrée.",
                     "\u2800"
@@ -499,7 +499,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Changer les paramètres du serveur."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}}` - Changer les paramètres du serveur."
                         ]
                     }
                 ],
@@ -520,7 +520,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer tes paramètres utilisateur."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Changer tes paramètres utilisateur."
                         ]
                     }
                 ],
@@ -541,7 +541,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Changer les paramètres utilisateur."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Changer les paramètres utilisateur."
                         ]
                     }
                 ],
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Changer les paramètres du bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Changer les paramètres du bot."
                         ]
                     }
                 ],
@@ -636,7 +636,7 @@
                 "description": [
                     "Bot non trouvé ou pas encore configuré.",
                     "",
-                    "Entrer `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` pour configurer un nouveau bot."
+                    "Entrer `{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` pour configurer un nouveau bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -723,28 +723,6 @@
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "commandRegexes": {
-            "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|d[ée]veloppeur|usage|m[ée]moire|mem)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|d|documentation|lismoi|website|site)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|d)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|f|regarder|chercher)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|h|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|i|information)\\b/i",
-            "invite": "/\\b({{REF:commands.invite}})\\b/i",
-            "list": "/\\b({{REF:commands.list}}|l)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|m|fuseau|fuseaux)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|moi|moi-m[êe]me|utilisateur)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|guilde|configuration|param[èe]tre|param[èe]tres)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|s)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|installer|commencer)\\b/i",
-            "support": "/\\b({{REF:commands.support}})\\b/i",
-            "time": "/\\b({{REF:commands.time}}|vue|maintenant|date)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|t|traduction|traductions|langue|langues|langage|langages)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}}|v)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|annuler|quitter|fermer)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|r[ée]initialiser|supprimer|purger)\\b/i"
-        },
         "settingRegexes": {
             "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
             "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateAnalyseur|date|Analyseur)\\b/i",
@@ -776,30 +754,7 @@
             "translators": "ρ.mayn#6270"
         },
         "bot": {
-            "description": "{{COM:bot.name}} aide à coordonner tes membres de fuseaux horaires différents en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !",
-            "prefix": "-ft"
-        },
-        "commands": {
-            "bot": "bot",
-            "dev": "dev",
-            "docs": "docs",
-            "donate": "donner",
-            "find": "trouver",
-            "help": "aide",
-            "info": "info",
-            "invite": "inviter",
-            "list": "liste",
-            "map": "carte",
-            "me": "moi",
-            "server": "serveur",
-            "set": "initialiser",
-            "setup": "configurer",
-            "support": "support",
-            "time": "heure",
-            "translate": "traduire",
-            "vote": "voter",
-            "stop": "arrêter",
-            "remove": "enlever"
+            "description": "{{COM:bot.name}} aide à coordonner tes membres de fuseaux horaires différents en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !"
         },
         "arguments": {
             "user": "@utilisateur",
@@ -873,7 +828,7 @@
             "links": "Liens"
         },
         "footers": {
-            "collector": "Entrer ta réponse ci-dessous (ou '{{REF:commands.stop}}' pour annuler)."
+            "collector": "Entrer ta réponse ci-dessous (ou '{{COM:commands.stop}}' pour annuler)."
         },
         "other": {
             "na": "N/A",
@@ -899,7 +854,7 @@
                 "",
                 "Il faut **selectionner un endroit sur la carte** pour voir le nom du fuseau."
             ],
-            "translateNote": "Entrer `{{REF:bot.prefix}} {{REF:commands.translate}}` pour en apprendre plus par rapport à nos traductions.",
+            "translateNote": "Entrer `{{COM:bot.prefix}} {{COM:commands.translate}}` pour en apprendre plus par rapport à nos traductions.",
             "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{COM:bot.name}}."
         },
         "messages": {

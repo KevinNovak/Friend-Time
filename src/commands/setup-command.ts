@@ -1,7 +1,6 @@
 import { Message, Permissions } from 'discord.js';
 
 import { GuildData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
@@ -9,19 +8,12 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class SetupCommand implements Command {
+    public name = Lang.getCom('commands.setup');
     public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
 
     constructor(private guildSettingManager: SettingManager) {}
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.setup', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.setup', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         if (!data.guild) {

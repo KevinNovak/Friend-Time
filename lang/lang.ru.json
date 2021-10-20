@@ -8,7 +8,7 @@
                     {
                         "name": "Важные команды",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Показать список команд."
+                            "**{{COM:bot.prefix}} {{COM:commands.help}}** - Показать список команд."
                         ]
                     },
                     {
@@ -28,20 +28,20 @@
                     {
                         "name": "{{REF:fields.commands}} для пользователей",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Начать настройку (для себя, другого пользователя или бота).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Просмотреть и изменить свои настройки.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Узнать время сервера, пользователя, бота или часового пояса.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Просмотреть карту поясов.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Информация о {{COM:bot.name}}."
+                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Начать настройку (для себя, другого пользователя или бота).",
+                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{REF:arguments.setting}}]*** - Просмотреть и изменить свои настройки.",
+                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Узнать время сервера, пользователя, бота или часового пояса.",
+                            "**{{COM:bot.prefix}} {{COM:commands.map}}** - Просмотреть карту поясов.",
+                            "**{{COM:bot.prefix}} {{COM:commands.info}}** - Информация о {{COM:bot.name}}."
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} для администраторов",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Начать настройку сервера.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Просмотреть и изменить настройки сервера.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Просмотреть и настроить карту поясов сервера.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Просмотреть и изменить настройки бота.",
+                            "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Начать настройку сервера.",
+                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{REF:arguments.setting}}]*** - Просмотреть и изменить настройки сервера.",
+                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{REF:arguments.zone}}]*** - Просмотреть и настроить карту поясов сервера.",
+                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Просмотреть и изменить настройки бота.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +68,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Добавить или удалить часовой пояс.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Включить или выключить отображение списка."
+                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Добавить или удалить часовой пояс.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Включить или выключить отображение списка."
                         ]
                     }
                 ]
@@ -81,8 +81,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Настроить нового бота.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Управлять ботом."
+                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` - Настроить нового бота.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Управлять ботом."
                         ]
                     }
                 ]
@@ -99,9 +99,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Изменить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Сбросить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Сбросить настройки."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}>` - Изменить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Сбросить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Сбросить настройки."
                         ]
                     }
                 ],
@@ -119,9 +119,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Изменить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Сбросить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Сбросить настройки."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Изменить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Сбросить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> {{COM:commands.remove}}` - Сбросить настройки."
                         ]
                     }
                 ],
@@ -139,9 +139,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Изменить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Сбросить значение.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Сбросить всё."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}>` - Изменить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Сбросить значение.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Сбросить всё."
                         ]
                     }
                 ],
@@ -264,12 +264,12 @@
                 "description": [
                     "Привет, {{USER}}, кажется, вы [написали/поставили реакцию на сообщение с упоминанием временем]({{MESSAGE_LINK}}), но ещё не установили свой часовой пояс.",
                     "",
-                    "Выберите его при помощи команды `{{REF:bot.prefix}} {{REF:commands.set}}`!",
+                    "Выберите его при помощи команды `{{COM:bot.prefix}} {{COM:commands.set}}`!",
                     "",
                     "Как только вы установите часовой пояс, {{COM:bot.name}} сможет конвертировать время, упомянутое на сервере, в и из вашего часового пояса, благодаря чему координироваться с другими будет легче."
                 ],
                 "footer": {
-                    "text": "Если вы желаете выключить напоминания об этом, напишите \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Если вы желаете выключить напоминания об этом, напишите \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -368,7 +368,7 @@
                 "description": [
                     "Желаете ли вы, чтобы {{COM:bot.name}} всегда высылал упомянутое время, конвентированное в его часовые пояса?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`{{REF:bot.prefix}} {{REF:commands.list}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
+                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`{{COM:bot.prefix}} {{COM:commands.list}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
                     "",
                     "`{{REF:yesNo.no}}` - Список никогда не будет высылаться.",
                     "\u2800"
@@ -494,7 +494,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Просмотреть и изменить настройки сервера."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}}` - Просмотреть и изменить настройки сервера."
                         ]
                     }
                 ],
@@ -515,7 +515,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Просмотреть и изменить настройки пользователя."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Просмотреть и изменить настройки пользователя."
                         ]
                     }
                 ],
@@ -536,7 +536,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Просмотреть и изменить настройки пользователя."
+                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Просмотреть и изменить настройки пользователя."
                         ]
                     }
                 ],
@@ -555,7 +555,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Просмотреть и изменить настройки бота."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Просмотреть и изменить настройки бота."
                         ]
                     }
                 ],
@@ -631,7 +631,7 @@
                 "description": [
                     "Бот не найден или ещё не настроен.",
                     "",
-                    "Введите `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>`, чтобы настроить бота."
+                    "Введите `{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>`, чтобы настроить бота."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -718,28 +718,6 @@
         "channelRegexes": {
             "bot": "/бот|команда|команды|кмд/i"
         },
-        "commandRegexes": {
-            "bot": "/(?<=^|\\s)({{REF:commands.bot}}|б|боты)(?=$|\\s)/i",
-            "dev": "/(?<=^|\\s)({{REF:commands.dev}}|разработчикам|рр|использование|исп|память|пам)(?=$|\\s)/i",
-            "docs": "/(?<=^|\\s)({{REF:commands.docs}}|д|документация|сайт|вебсайт|веб-сайт)(?=$|\\s)/i",
-            "donate": "/(?<=^|\\s)({{REF:commands.donate}}|дон)(?=$|\\s)/i",
-            "find": "/(?<=^|\\s)({{REF:commands.find}}|п|найти|искать)(?=$|\\s)/i",
-            "help": "/(?<=^|\\s)({{REF:commands.help}}|пом|\\?)(?=$|\\s)/i",
-            "info": "/(?<=^|\\s)({{REF:commands.info}}|и|информация)(?=$|\\s)/i",
-            "invite": "/(?<=^|\\s)({{REF:commands.invite}})(?=$|\\s)/i",
-            "list": "/(?<=^|\\s)({{REF:commands.list}}|сп)(?=$|\\s)/i",
-            "map": "/(?<=^|\\s)({{REF:commands.map}}|к|пояса|чп|пояс)(?=$|\\s)/i",
-            "me": "/(?<=^|\\s)({{REF:commands.me}}|моё|мое|мой)(?=$|\\s)/i",
-            "server": "/(?<=^|\\s)({{REF:commands.server}}|сервер|группа|настройки)(?=$|\\s)/i",
-            "set": "/(?<=^|\\s)({{REF:commands.set}}|настр)(?=$|\\s)/i",
-            "setup": "/(?<=^|\\s)({{REF:commands.setup}}|уст|настрсерв|начать|нач)(?=$|\\s)/i",
-            "support": "/(?<=^|\\s)({{REF:commands.support}})(?=$|\\s)/i",
-            "time": "/(?<=^|\\s)({{REF:commands.time}}|вр|сейчас|дата)(?=$|\\s)/i",
-            "translate": "/(?<=^|\\s)({{REF:commands.translate}}|пер|переводы|яз|язык|языки)(?=$|\\s)/i",
-            "vote": "/(?<=^|\\s)({{REF:commands.vote}}|г|голос)(?=$|\\s)/i",
-            "stop": "/(?<=^|\\s)({{REF:commands.stop}}|отмена|сброс)(?=$|\\s)/i",
-            "remove": "/(?<=^|\\s)({{REF:commands.remove}}|сбросить|удалить|убрать|очистить)(?=$|\\s)/i"
-        },
         "settingRegexes": {
             "autoDetect": "/(?<=^|\\s)({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)(?=$|\\s)/i",
             "dateFormat": "/(?<=^|\\s)({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)(?=$|\\s)/i",
@@ -771,30 +749,7 @@
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
-            "description": "{{COM:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!",
-            "prefix": "-ft"
-        },
-        "commands": {
-            "bot": "бот",
-            "dev": "разраб",
-            "docs": "док",
-            "donate": "донат",
-            "find": "поиск",
-            "help": "помощь",
-            "info": "инфо",
-            "invite": "пригласить",
-            "list": "список",
-            "map": "карта",
-            "me": "я",
-            "server": "сервер",
-            "set": "настройка",
-            "setup": "установка",
-            "support": "поддержка",
-            "time": "время",
-            "translate": "перевод",
-            "vote": "проголосовать",
-            "stop": "стоп",
-            "remove": "сброс"
+            "description": "{{COM:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!"
         },
         "arguments": {
             "user": "@пользователь",
@@ -868,7 +823,7 @@
             "links": "Ссылки"
         },
         "footers": {
-            "collector": "Введите свой ответ (или «{{REF:commands.stop}}» чтобы сбросить)."
+            "collector": "Введите свой ответ (или «{{COM:commands.stop}}» чтобы сбросить)."
         },
         "other": {
             "na": "Н/Д",
@@ -894,7 +849,7 @@
                 "",
                 "Просто **кликните по месту на карте**, чтобы увидеть название часового пояса."
             ],
-            "translateNote": "Введите `{{REF:bot.prefix}} {{REF:commands.translate}}`, чтобы просмотреть информацию о переводах.",
+            "translateNote": "Введите `{{COM:bot.prefix}} {{COM:commands.translate}}`, чтобы просмотреть информацию о переводах.",
             "dmWarning": "Для нормального функционирования некоторых команд необходимо разрешить сообщения от участников хотя бы одного сервера, где есть {{COM:bot.name}}."
         },
         "messages": {

@@ -1,7 +1,6 @@
 import { DMChannel, Message, Permissions, TextChannel } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { YesNo } from '../models/enums/yes-no';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
@@ -14,6 +13,7 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
 export class SetCommand implements Command {
+    public name = Lang.getCom('commands.set');
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];
@@ -23,14 +23,6 @@ export class SetCommand implements Command {
         private botSettingManager: SettingManager,
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.set', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.set', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         // Setup for self
@@ -171,7 +163,6 @@ export class SetCommand implements Command {
             let collect = CollectorUtils.createMsgCollect(
                 msg.channel,
                 member.user,
-                data.lang(),
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
 

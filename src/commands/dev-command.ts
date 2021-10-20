@@ -2,7 +2,6 @@ import djs, { Message } from 'discord.js';
 import fileSize from 'filesize';
 import typescript from 'typescript';
 
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { MessageUtils, ShardUtils } from '../utils';
@@ -11,17 +10,10 @@ import { Command } from './command';
 let TsConfig = require('../../tsconfig.json');
 
 export class DevCommand implements Command {
+    public name = Lang.getCom('commands.dev');
     public requireDev = true;
     public requireGuild = false;
     public requirePerms = [];
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.dev', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.dev', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         let shardCount = msg.client.shard?.count ?? 1;

@@ -64,7 +64,6 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

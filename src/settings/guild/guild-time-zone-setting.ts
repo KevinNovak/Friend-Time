@@ -92,7 +92,6 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

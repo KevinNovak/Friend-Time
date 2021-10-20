@@ -10,7 +10,6 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { Command } from '../commands';
 import { GuildData, UserData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang, Logger } from '../services';
 import { MessageUtils, PermissionUtils } from '../utils';
@@ -74,7 +73,9 @@ export class CommandHandler {
         }
 
         // Try to find the command the user wants
-        let command = this.find(args[1], data.lang());
+        let command = this.commands.find(
+            command => command.name.toLowerCase() === args[1].toLowerCase()
+        );
 
         // If no command found, run the help command
         if (!command) {
@@ -129,7 +130,7 @@ export class CommandHandler {
                     msg.channel instanceof ThreadChannel
                     ? Logs.error.commandGuild
                           .replaceAll('{MESSAGE_ID}', msg.id)
-                          .replaceAll('{COMMAND_KEYWORD}', command.keyword(Lang.Default))
+                          .replaceAll('{COMMAND_NAME}', command.name)
                           .replaceAll('{USER_TAG}', msg.author.tag)
                           .replaceAll('{USER_ID}', msg.author.id)
                           .replaceAll('{CHANNEL_NAME}', msg.channel.name)
@@ -138,16 +139,12 @@ export class CommandHandler {
                           .replaceAll('{GUILD_ID}', msg.guild.id)
                     : Logs.error.commandOther
                           .replaceAll('{MESSAGE_ID}', msg.id)
-                          .replaceAll('{COMMAND_KEYWORD}', command.keyword(Lang.Default))
+                          .replaceAll('{COMMAND_NAME}', command.name)
                           .replaceAll('{USER_TAG}', msg.author.tag)
                           .replaceAll('{USER_ID}', msg.author.id),
                 error
             );
         }
-    }
-
-    private find(input: string, langCode: LangCode): Command {
-        return this.commands.find(command => command.regex(langCode).test(input));
     }
 
     private hasPermission(member: GuildMember, command: Command): boolean {

@@ -64,7 +64,6 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

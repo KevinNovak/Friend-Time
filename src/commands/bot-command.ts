@@ -1,7 +1,6 @@
 import { Message, Permissions } from 'discord.js';
 
 import { GuildData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
@@ -11,19 +10,12 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class BotCommand implements Command {
+    public name = Lang.getCom('commands.bot');
     public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
 
     constructor(private settingManager: SettingManager) {}
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.bot', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.bot', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         if (!data.guild) {
@@ -81,10 +73,8 @@ export class BotCommand implements Command {
         }
 
         if (args.length > 3) {
-            let removeRegex = Lang.getRegex('commandRegexes.remove', data.lang());
-
             // Remove all setting data
-            if (removeRegex.test(args[3])) {
+            if (args[3].toLowerCase() === Lang.getCom('commands.remove')) {
                 await botData.remove();
                 await MessageUtils.send(
                     msg.channel,
@@ -108,7 +98,7 @@ export class BotCommand implements Command {
             }
 
             // Remove setting value
-            if (args.length > 4 && removeRegex.test(args[4])) {
+            if (args.length > 4 && args[4].toLowerCase() === Lang.getCom('commands.remove')) {
                 setting.clear(botData);
                 await botData.save();
 

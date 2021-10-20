@@ -1,6 +1,29 @@
 {
     "bot": {
-        "name": "Friend Time"
+        "name": "Friend Time",
+        "prefix": "-ft"
+    },
+    "commands": {
+        "bot": "bot",
+        "dev": "dev",
+        "docs": "docs",
+        "donate": "donate",
+        "find": "find",
+        "help": "help",
+        "info": "info",
+        "invite": "invite",
+        "list": "list",
+        "map": "map",
+        "me": "me",
+        "server": "server",
+        "set": "set",
+        "setup": "setup",
+        "support": "support",
+        "time": "time",
+        "translate": "translate",
+        "vote": "vote",
+        "stop": "stop",
+        "remove": "remove"
     },
     "colors": {
         "success": "#00ff83",

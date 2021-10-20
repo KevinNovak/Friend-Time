@@ -63,7 +63,6 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

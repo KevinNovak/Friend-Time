@@ -98,7 +98,6 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

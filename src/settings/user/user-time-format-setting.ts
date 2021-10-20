@@ -67,7 +67,6 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

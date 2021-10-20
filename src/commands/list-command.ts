@@ -1,7 +1,6 @@
 import { Message, Permissions } from 'discord.js';
 import { GuildData, GuildListItemData } from '../database/entities';
 
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { DataUtils, MessageUtils, TimeZoneUtils } from '../utils';
@@ -10,17 +9,10 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {
+    public name = Lang.getCom('commands.list');
     public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.list', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.list', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         // Display list of time zones

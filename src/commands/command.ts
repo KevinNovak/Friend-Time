@@ -1,8 +1,8 @@
 import { Message, PermissionResolvable } from 'discord.js';
-import { Keyword } from '../models/common';
 import { EventData } from '../models/internal-models';
 
-export interface Command extends Keyword {
+export interface Command {
+    name: string;
     requireDev: boolean;
     requireGuild: boolean;
     requirePerms: PermissionResolvable[];

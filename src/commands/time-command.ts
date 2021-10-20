@@ -1,7 +1,6 @@
 import { Message, TextChannel } from 'discord.js';
 
 import { GuildBotData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { BotTimeZoneSetting } from '../settings/bot';
@@ -22,6 +21,7 @@ import {
 import { Command } from './command';
 
 export class TimeCommand implements Command {
+    public name = Lang.getCom('commands.time');
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];
@@ -33,14 +33,6 @@ export class TimeCommand implements Command {
         private userTimeFormatSetting: UserTimeFormatSetting,
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.time', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.time', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         // Time for server

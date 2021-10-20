@@ -68,7 +68,6 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         let collect = CollectorUtils.createMsgCollect(
             msg.channel,
             msg.author,
-            data.lang(),
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 

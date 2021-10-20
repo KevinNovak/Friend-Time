@@ -1,7 +1,6 @@
 import { DMChannel, Message } from 'discord.js';
 
 import { UserData } from '../database/entities';
-import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
@@ -10,6 +9,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MeCommand implements Command {
+    public name = Lang.getCom('commands.me');
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];
@@ -18,14 +18,6 @@ export class MeCommand implements Command {
         private settingManager: SettingManager,
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('commands.me', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('commandRegexes.me', langCode);
-    }
 
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
@@ -56,10 +48,8 @@ export class MeCommand implements Command {
         }
 
         if (args.length > 2) {
-            let removeRegex = Lang.getRegex('commandRegexes.remove', data.lang());
-
             // Remove all setting data
-            if (removeRegex.test(args[2])) {
+            if (args[2].toLowerCase() === Lang.getCom('commands.remove')) {
                 this.settingManager.settings.forEach(setting => setting.clear(data.user));
                 await data.user.save();
                 await MessageUtils.send(
@@ -82,7 +72,7 @@ export class MeCommand implements Command {
             }
 
             // Remove setting value
-            if (args.length > 3 && removeRegex.test(args[3])) {
+            if (args.length > 3 && args[3].toLowerCase() === Lang.getCom('commands.remove')) {
                 setting.clear(data.user);
                 await data.user.save();
 

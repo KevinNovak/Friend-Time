@@ -285,9 +285,9 @@
                 "description": [
                     "¿Quieres que {{COM:bot.name}} detecte automáticamente las horas mencionadas en una conversación?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Las horas serán detectadas automáticamente en las conversaciones.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Las horas serán detectadas automáticamente en las conversaciones.",
                     "",
-                    "`{{COM:yesNo.no}}` - Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "¿Quieres que {{COM:bot.name}} envíe a la conversación un listado de horas convertidas luego de que una hora sea mencionada?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{COM:bot.prefix}} {{COM:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{COM:bot.prefix}} {{COM:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
                     "",
-                    "`{{COM:yesNo.no}}` - No se mostrará el listado.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No se mostrará el listado.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "¿Preferirías mantener tu zona horaria y otras informaciones privadas?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
                     "",
-                    "`{{COM:yesNo.no}}` - No tengo problemas en compartir mi información.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No tengo problemas en compartir mi información.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

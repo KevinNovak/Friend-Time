@@ -283,9 +283,9 @@
                 "description": [
                     "Would you like {{COM:bot.name}} to automatically detect times mentioned in chat?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Times in chat will be detected automatically.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Times in chat will be detected automatically.",
                     "",
-                    "`{{COM:yesNo.no}}` - Times in chat will **not** be detected automatically. A 🕰️ emoji must be present in a message for any times to be recognized and converted.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Times in chat will **not** be detected automatically. A 🕰️ emoji must be present in a message for any times to be recognized and converted.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -371,9 +371,9 @@
                 "description": [
                     "Would you like {{COM:bot.name}} to send a list of converted times in chat after a time is mentioned?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} will convert times mentioned in chat to all of the time zones in the server list (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} will convert times mentioned in chat to all of the time zones in the server list (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
                     "",
-                    "`{{COM:yesNo.no}}` - No list will be shown.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No list will be shown.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -441,9 +441,9 @@
                 "description": [
                     "Would you like to keep your time zone and other information private?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} will prevent showing your information to other users.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} will prevent showing your information to other users.",
                     "",
-                    "`{{COM:yesNo.no}}` - I am okay with sharing my information.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. I am okay with sharing my information.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

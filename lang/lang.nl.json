@@ -292,9 +292,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Tijden in de chat worden automatisch gedetecteerd.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Tijden in de chat worden automatisch gedetecteerd.",
                     "",
-                    "`{{COM:yesNo.no}}` - Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
                     "\u2800"
                 ],
                 "footer": {
@@ -398,9 +398,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{COM:bot.prefix}} {{COM:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{COM:bot.prefix}} {{COM:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
                     "",
-                    "`{{COM:yesNo.no}}` - Er wordt geen lijst getoond.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Er wordt geen lijst getoond.",
                     "\u2800"
                 ],
                 "footer": {
@@ -482,9 +482,9 @@
                 "description": [
                     "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
                     "",
-                    "`{{COM:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Ik vind het goed om mijn gegevens te delen.",
                     "\u2800"
                 ],
                 "footer": {

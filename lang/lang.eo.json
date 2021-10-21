@@ -285,9 +285,9 @@
                 "description": [
                     "Ĉu vi volas, ke {{COM:bot.name}} aŭtomate detektu tempojn, menciatajn en babilejoj?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Menciataj tempoj detektiĝos aŭtomate.",
                     "",
-                    "`{{COM:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{COM:bot.prefix}} {{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{COM:bot.prefix}} {{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
-                    "`{{COM:yesNo.no}}` - La roboto ne sendados la liston.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. La roboto ne sendados la liston.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "Ĉu vi volas kaŝi viajn horzonon kaj aliajn informojn?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
                     "",
-                    "`{{COM:yesNo.no}}` - Vi ne kontraŭos, se la roboto montros viajn informojn.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Vi ne kontraŭos, se la roboto montros viajn informojn.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

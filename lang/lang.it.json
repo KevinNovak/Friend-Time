@@ -285,9 +285,9 @@
                 "description": [
                     "Desideri che {{COM:bot.name}} rilevi automaticamente gli orari menzionati nella chat?",
                     "",
-                    "`{{COM:yesNo.yes}}` - I tempi in chat verranno rilevati automaticamente.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. I tempi in chat verranno rilevati automaticamente.",
                     "",
-                    "`{{COM:yesNo.no}}` - I tempi in chat **non** verranno rilevati automaticamente. Un 🕰️ emoji deve essere presente in un messaggio affinché ogni volta possa essere riconosciuto e convertito.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. I tempi in chat **non** verranno rilevati automaticamente. Un 🕰️ emoji deve essere presente in un messaggio affinché ogni volta possa essere riconosciuto e convertito.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "Desideri che {{COM:bot.name}} invii un elenco di tempi convertiti in chat dopo che un orario è stato menzionato?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} convertirà gli orari menzionati in una conversazione in tutti i fusi orari nell'elenco del server (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirà gli orari menzionati in una conversazione in tutti i fusi orari nell'elenco del server (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
                     "",
-                    "`{{COM:yesNo.no}}` - Non verrà mostrata nessuna lista.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Non verrà mostrata nessuna lista.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "Desideri mantenere privati ​​il ​​tuo fuso orario e altre informazioni?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} impedirà di mostrare le tue informazioni ad altri utenti.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} impedirà di mostrare le tue informazioni ad altri utenti.",
                     "",
-                    "`{{COM:yesNo.no}}` - Non ho problemi nel condividere le mie informazioni.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Non ho problemi nel condividere le mie informazioni.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

@@ -285,9 +285,9 @@
                 "description": [
                     "Veux-tu que {{COM:bot.name}} détecte automatiquement les horaires mentionnés dans le chat ?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Les horaires seront détectés automatiquement.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Les horaires seront détectés automatiquement.",
                     "",
-                    "`{{COM:yesNo.no}}` - Les horaires **ne** seront **pas** automatiquement détectés. L'emoji 🕰️ devra être présent pour que l'horaire soit reconnu et converti.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Les horaires **ne** seront **pas** automatiquement détectés. L'emoji 🕰️ devra être présent pour que l'horaire soit reconnu et converti.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "Veux-tu que {{COM:bot.name}} envoie une liste des temps convertis après qu'un temps soit mentionné ?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`{{COM:bot.prefix}} {{COM:commands.list}}`). Cette liste sera envoyé dans le même salon que le message original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`{{COM:bot.prefix}} {{COM:commands.list}}`). Cette liste sera envoyé dans le même salon que le message original.",
                     "",
-                    "`{{COM:yesNo.no}}` - Aucune liste ne sera montrée.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Aucune liste ne sera montrée.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "Veux-tu garder ton fuseau horaire, et autres informations, privées ?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} ne montrera pas vos informations aux autres utilisateurs.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} ne montrera pas vos informations aux autres utilisateurs.",
                     "",
-                    "`{{COM:yesNo.no}}` - Je veux bien montrer mes informations.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Je veux bien montrer mes informations.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

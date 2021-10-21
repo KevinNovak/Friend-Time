@@ -283,9 +283,9 @@
                 "description": [
                     "Möchtest du {{COM:bot.name}} erlauben, Zeiten automatisch zu erkennen?",
                     "",
-                    "`{{COM:yesNo.yes}}` - Zeiten im Chat werden automatisch erkannt.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Zeiten im Chat werden automatisch erkannt.",
                     "",
-                    "`{{COM:yesNo.no}}` - Zeiten im Chat werden **nicht** automatisch erkannt. Ein 🕰️-Emoji muss in einer Nachricht präsent sein, um Zeiten zu erkennen und zu konvertieren.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Zeiten im Chat werden **nicht** automatisch erkannt. Ein 🕰️-Emoji muss in einer Nachricht präsent sein, um Zeiten zu erkennen und zu konvertieren.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -371,9 +371,9 @@
                 "description": [
                     "Willst du, dass {{COM:bot.name}} eine Liste aller konvertierten Zeiten sendet, wenn eine Zeit gesendet wird?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} wird Zeiten in alle in der Liste angegebenen Zeiten konvertieren (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} wird Zeiten in alle in der Liste angegebenen Zeiten konvertieren (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
                     "",
-                    "`{{COM:yesNo.no}}` - Keine Listen werden gezeigt.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Keine Listen werden gezeigt.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -441,9 +441,9 @@
                 "description": [
                     "Willst du deine Zeitzone und andere Informationen geheim halten?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} wird verhindern, deine Zeitzone anderen zu zeigen.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} wird verhindern, deine Zeitzone anderen zu zeigen.",
                     "",
-                    "`{{COM:yesNo.no}}` - Ich finde es in Ordnung, dass diese Informationen geteilt werden.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Ich finde es in Ordnung, dass diese Informationen geteilt werden.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }

@@ -340,7 +340,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Por favor, confirma. ¿Es esta la zona horaria del servidor? ({{REF:partials.yesOrNo}})"
+                    "Por favor, confirma. ¿Es esta la zona horaria del servidor?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -348,7 +351,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Por favor, confirma. ¿Es esta la zona horaria de {{BOT}}? ({{REF:partials.yesOrNo}})"
+                    "Por favor, confirma. ¿Es esta la zona horaria de {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -356,7 +362,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Por favor, confirma. ¿Es esta tu zona horaria? ({{REF:partials.yesOrNo}})"
+                    "Por favor, confirma. ¿Es esta tu zona horaria?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -364,7 +373,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Por favor, confirma. ¿Es esta la zona horaria de {{USER}}? ({{REF:partials.yesOrNo}})"
+                    "Por favor, confirma. ¿Es esta la zona horaria de {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -382,12 +394,22 @@
             },
             "remindersGuild": {
                 "title": "Servidor - {{REF:settings.remindersDisplay}}",
-                "description": "¿Quieres que se envíe un recordatorio a los usuarios para que configuren su zona horaria? ({{REF:partials.yesOrNo}})",
+                "description": [
+                    "¿Quieres que se envíe un recordatorio a los usuarios para que configuren su zona horaria?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "Usuario - {{REF:settings.remindersDisplay}}",
-                "description": "¿Quieres que te recordemos configurar tu zona horaria? ({{REF:partials.yesOrNo}})",
+                "description": [
+                    "¿Quieres que te recordemos configurar tu zona horaria?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -476,7 +498,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, por favor confirma, ¿quieres usar estas configuraciones? ({{REF:partials.yesOrNo}})"
+                    "{{USER}}, por favor confirma, ¿quieres usar estas configuraciones?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
@@ -804,7 +829,11 @@
         },
         "partials": {
             "congratulations": "🎉 ¡Felicidades! 🎉",
-            "yesOrNo": "`{{COM:yesNo.yes}}` o `{{COM:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "Las configuraciones en *Itálica* son las predeterminadas.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** son ahora las **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [

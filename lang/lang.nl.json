@@ -357,7 +357,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van de server ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van de server?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -367,7 +370,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van {{BOT}} ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -377,7 +383,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit jouw tijdzone ({{REF:partials.yesOrNo}})?"
+                    "Is dit jouw tijdzone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -387,7 +396,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van {{USER}} ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -409,14 +421,24 @@
             },
             "remindersGuild": {
                 "title": "Server - {{REF:settings.remindersDisplay}}",
-                "description": "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
                 }
             },
             "remindersUser": {
                 "title": "Gebruiker - {{REF:settings.remindersDisplay}}",
-                "description": "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
                 }
@@ -521,7 +543,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, bevestig of je deze instellingen wil gebruiken ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, bevestig of je deze instellingen wil gebruiken?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -851,7 +876,11 @@
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",
-            "yesOrNo": "`{{COM:yesNo.yes}}` of `{{COM:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "*Schuingedrukte* instellingen zijn standaarden.",
             "timeInTimeZone": "In **{{TIME_ZONE}}** is het op dit moment **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}** uur.",
             "findTimeZoneHelp": [

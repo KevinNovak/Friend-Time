@@ -340,7 +340,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de la servilo ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de la servilo?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -348,7 +351,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{BOT}} ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -356,7 +362,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas via horzono ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas via horzono?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -364,7 +373,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{USER}} ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -382,12 +394,22 @@
             },
             "remindersGuild": {
                 "title": "Servilo - {{REF:settings.remindersDisplay}}",
-                "description": "Ĉu la roboto rememorigu uzantojn, ke ili agordu siajn horzonojn ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Ĉu la roboto rememorigu uzantojn, ke ili agordu siajn horzonojn?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "Uzanto - {{REF:settings.remindersDisplay}}",
-                "description": "Ĉu la roboto rememorigu vin, ke vi agordu vian horzonon ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Ĉu la roboto rememorigu vin, ke vi agordu vian horzonon?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -476,7 +498,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, bonvolu konfirmi, ke vi volas uzi ĉi tiujn agordojn ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, bonvolu konfirmi, ke vi volas uzi ĉi tiujn agordojn?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
@@ -804,7 +829,11 @@
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",
-            "yesOrNo": "`{{COM:yesNo.yes}}` aŭ `{{COM:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "*Kursivaj* valoroj estas defaŭltaj.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** nun estas **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [

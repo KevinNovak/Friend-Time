@@ -338,7 +338,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this the server's time zone ({{REF:partials.yesOrNo}})?"
+                    "Please confirm, is this the server's time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -346,7 +349,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this {{BOT}}'s time zone ({{REF:partials.yesOrNo}})?"
+                    "Please confirm, is this {{BOT}}'s time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -354,7 +360,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this your time zone ({{REF:partials.yesOrNo}})?"
+                    "Please confirm, is this your time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -362,7 +371,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this {{USER}}'s time zone ({{REF:partials.yesOrNo}})?"
+                    "Please confirm, is this {{USER}}'s time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -380,12 +392,22 @@
             },
             "remindersGuild": {
                 "title": "Server - {{REF:settings.remindersDisplay}}",
-                "description": "Would you like to remind users to set their time zone ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Would you like to remind users to set their time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "User - {{REF:settings.remindersDisplay}}",
-                "description": "Would you like to be reminded to set your time zone ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Would you like to be reminded to set your time zone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -474,7 +496,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, please confirm, would you like to use these settings ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, please confirm, would you like to use these settings?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
@@ -802,7 +827,11 @@
         },
         "partials": {
             "congratulations": "🎉 Congratulations! 🎉",
-            "yesOrNo": "`{{COM:yesNo.yes}}` or `{{COM:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "*Italicized* settings are defaults.",
             "timeInTimeZone": "In **{{TIME_ZONE}}** it is currently **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [

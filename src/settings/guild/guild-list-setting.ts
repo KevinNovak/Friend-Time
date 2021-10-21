@@ -10,15 +10,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildListSetting implements Setting<GuildData, boolean> {
+    public name = Lang.getCom('settings.list');
     public default = true;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.list', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.list', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.listDisplay', langCode);

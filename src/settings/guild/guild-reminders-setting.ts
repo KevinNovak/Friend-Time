@@ -10,15 +10,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildRemindersSetting implements Setting<GuildData, boolean> {
+    public name = Lang.getCom('settings.reminders');
     public default = true;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.reminders', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.reminders', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.remindersDisplay', langCode);

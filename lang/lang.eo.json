@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Aldoni aŭ forigi horzonon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Ŝalti aŭ malŝalti la liston."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
                         ]
                     }
                 ]
@@ -274,7 +274,7 @@
                     "Kiam vi agordos la horzonon, {{COM:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
-                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -723,16 +723,6 @@
         "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|det|detekti|detektadi|detekto)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|da|dato|datoj|datarangxo|datarangho)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|pr|privatareĝimo|kaŝa-reĝimo|k|kr|kaŝareĝimo|privata-regximo|privata-reghimo|privataregximo|privatareghimo|kasxa-regximo|kasha-reghimo|kasxaregximo|kashareghimo)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|rm|rememorigi|rememorigilo|rememorigado)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj|temparangxo|temparangho)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|h|hz|z)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|tm|ttmm|tt-mm|tago-monato|tago/monato)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mt|mmtt|mm-tt|monato-tago|monato/tago)\\b/i"
@@ -763,21 +753,13 @@
             "zone": "horzono"
         },
         "settings": {
-            "autoDetect": "detektado",
             "autoDetectDisplay": "Aŭtomata detektado",
-            "dateFormat": "dataranĝo",
             "dateFormatDisplay": "Dataranĝo",
-            "language": "lingvo",
             "languageDisplay": "Lingvo",
-            "list": "listo",
             "listDisplay": "Listo",
-            "privateMode": "privata-reĝimo",
             "privateModeDisplay": "Privata reĝimo",
-            "reminders": "rememorigiloj",
             "remindersDisplay": "Rememorigilo",
-            "timeFormat": "temparanĝo",
             "timeFormatDisplay": "Temparanĝo",
-            "timeZone": "horzono",
             "timeZoneDisplay": "Horzono"
         },
         "dateFormat": {

@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Aggiungi o rimuovi un fuso orario",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Abilita o disabilita la lista"
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Abilita o disabilita la lista"
                         ]
                     }
                 ]
@@ -274,7 +274,7 @@
                     "L'impostazione del fuso orario consente a {{COM:bot.name}} di convertire i tempi nella chat del server da e verso il proprio fuso orario, facilitando il coordinamento dei tempi con gli altri."
                 ],
                 "footer": {
-                    "text": "Se desideri disabilitare questo promemoria, digita \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Se desideri disabilitare questo promemoria, digita \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -723,16 +723,6 @@
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-trova|auto|trova)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|data)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|lingua|codicelingua)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|privato)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|promemoria|ricorda|promemoriaabilitato)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tempo)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zona)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|gm|ggmm|gg-mm|giorno-mese|giorno/mese)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mg|mmgg|mm-gg|month-giorno|month/giorno)\\b/i"
@@ -763,21 +753,13 @@
             "zone": "zona"
         },
         "settings": {
-            "autoDetect": "autoRileva",
             "autoDetectDisplay": "autoRileva",
-            "dateFormat": "formatoData",
             "dateFormatDisplay": "formatoData",
-            "language": "lingua",
             "languageDisplay": "Lingua",
-            "list": "lista",
             "listDisplay": "Lista",
-            "privateMode": "modPrivata",
             "privateModeDisplay": "modPrivata",
-            "reminders": "promemoria",
             "remindersDisplay": "Promemoria",
-            "timeFormat": "formatoOrario",
             "timeFormatDisplay": "formatoOrario",
-            "timeZone": "fusoOrario",
             "timeZoneDisplay": "fusoOrario"
         },
         "dateFormat": {

@@ -86,7 +86,7 @@ export class BotCommand implements Command {
             }
 
             // Find setting to configure
-            let setting = this.settingManager.find(args[3], data.lang());
+            let setting = this.settingManager.find(args[3]);
 
             // No setting found
             if (!setting) {

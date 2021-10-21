@@ -9,15 +9,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOption> {
+    public name = Lang.getCom('settings.timeFormat');
     public default = TimeFormatOption.TWELVE_HOUR;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.timeFormat', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.timeFormat', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeFormatDisplay', langCode);

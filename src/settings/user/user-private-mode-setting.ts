@@ -10,15 +10,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class UserPrivateModeSetting implements Setting<UserData, boolean> {
+    public name = Lang.getCom('settings.privateMode');
     public default = false;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.privateMode', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.privateMode', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.privateModeDisplay', langCode);

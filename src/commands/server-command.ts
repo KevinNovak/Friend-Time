@@ -58,7 +58,7 @@ export class ServerCommand implements Command {
             }
 
             // Find setting to configure
-            let setting = this.settingManager.find(args[2], data.lang());
+            let setting = this.settingManager.find(args[2]);
 
             // No setting found
             if (!setting) {

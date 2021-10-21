@@ -67,7 +67,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Een tijdzone toevoegen of verwijderen.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - De lijst in- of uitschakelen."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - De lijst in- of uitschakelen."
                         ]
                     }
                 ]
@@ -281,7 +281,7 @@
                     "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
                 ],
                 "footer": {
-                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -770,16 +770,6 @@
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detecteer|automatisch|detecteren)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|datumParser|datum|parser)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|t|taalCode)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|prive)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|h|herinnering|herinner|herinneringenIngeschakeld)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tijd)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dag-maand|dag/maand)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|maand-dag|maand/dag)\\b/i"
@@ -810,21 +800,13 @@
             "zone": "zone"
         },
         "settings": {
-            "autoDetect": "autoDetecteer",
             "autoDetectDisplay": "Auto-detecteer",
-            "dateFormat": "datumFormaat",
             "dateFormatDisplay": "Datumformaat",
-            "language": "taal",
             "languageDisplay": "Taal",
-            "list": "lijst",
             "listDisplay": "Lijst",
-            "privateMode": "priveModus",
             "privateModeDisplay": "Privémodus",
-            "reminders": "herinneringen",
             "remindersDisplay": "Herinneringen",
-            "timeFormat": "tijdFormaat",
             "timeFormatDisplay": "Tijdsformaat",
-            "timeZone": "tijdzone",
             "timeZoneDisplay": "Tijdzone"
         },
         "dateFormat": {

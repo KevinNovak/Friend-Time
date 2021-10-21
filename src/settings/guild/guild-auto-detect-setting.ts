@@ -10,15 +10,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
+    public name = Lang.getCom('settings.autoDetect');
     public default = true;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.autoDetect', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.autoDetect', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.autoDetectDisplay', langCode);

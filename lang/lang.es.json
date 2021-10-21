@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Agrega o elimina una zona horaria.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Habilita o deshabilita el listado."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Habilita o deshabilita el listado."
                         ]
                     }
                 ]
@@ -274,7 +274,7 @@
                     "Al configurar tu zona horaria le permites a {{COM:bot.name}} convertir horas en una conversación desde y hacia tu zona horaria, facilitando la coordinación de horas con otros miembros."
                 ],
                 "footer": {
-                    "text": "Si deseas deshabilitar estos recordatorios, escribe \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Si deseas deshabilitar estos recordatorios, escribe \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -723,16 +723,6 @@
         "channelRegexes": {
             "bot": "/bot|comando|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detectar|auto|detectar)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|ff)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|leng|idioma|lengua)\\b/i",
-            "list": "/\\b({{REF:settings.list}}|lista)\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|privado)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|recordatorio|recordar|recordatorioHabilitado)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|fh|hora)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|zona|z|zh)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd/mm|dd-mm|día-mes|día/mes)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm/dd|mm-dd|mes-día|mes/día)\\b/i"
@@ -763,21 +753,13 @@
             "zone": "zona"
         },
         "settings": {
-            "autoDetect": "autoDetectar",
             "autoDetectDisplay": "Auto detectar",
-            "dateFormat": "formatoFecha",
             "dateFormatDisplay": "Formato fecha",
-            "language": "lenguaje",
             "languageDisplay": "Lenguaje",
-            "list": "listado",
             "listDisplay": "Listado",
-            "privateMode": "modoPrivado",
             "privateModeDisplay": "Modo privado",
-            "reminders": "recordatorios",
             "remindersDisplay": "Recordatorios",
-            "timeFormat": "formatoHora",
             "timeFormatDisplay": "Formato hora",
-            "timeZone": "zonaHoraria",
             "timeZoneDisplay": "Zona horaria"
         },
         "dateFormat": {

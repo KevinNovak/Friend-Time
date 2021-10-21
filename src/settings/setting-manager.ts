@@ -6,8 +6,8 @@ import { Lang } from '../services';
 export class SettingManager {
     constructor(public settings: Setting<BaseEntity, any>[]) {}
 
-    public find(input: string, langCode: LangCode): Setting<BaseEntity, any> {
-        return this.settings.find(setting => setting.regex(langCode).test(input));
+    public find(input: string): Setting<BaseEntity, any> {
+        return this.settings.find(setting => setting.name.toLowerCase() === input.toLowerCase());
     }
 
     public list(entity: BaseEntity, langCode: LangCode): string {
@@ -28,7 +28,7 @@ export class SettingManager {
 
                 return Lang.getRef('lists.settingItem', langCode, {
                     SETTING_NAME: setting.displayName(langCode),
-                    SETTING_KEYWORD: setting.keyword(langCode),
+                    SETTING_KEYWORD: setting.name,
                     SETTING_VALUE: isSet ? valueDisplayName : `*${valueDisplayName}*`,
                 });
             })

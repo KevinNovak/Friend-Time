@@ -13,15 +13,8 @@ import { TimeZoneUtils } from '../../utils/time-zone-utils';
 let Config = require('../../../config/config.json');
 
 export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmation {
+    public name = Lang.getCom('settings.timeZone');
     public default = null;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.timeZone', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.timeZone', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeZoneDisplay', langCode);

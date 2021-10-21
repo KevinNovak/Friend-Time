@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Ajouter ou enlever un fuseau horaire.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
                         ]
                     }
                 ]
@@ -274,7 +274,7 @@
                     "Configurer ton fuseau horaire permet à {{COM:bot.name}} de convertir les messages du chat depuis ton fuseau horaire, assurant une meilleure coordination avec les autres membres."
                 ],
                 "footer": {
-                    "text": "Si tu veux désactiver ce rappel, écris \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Si tu veux désactiver ce rappel, écris \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -723,16 +723,6 @@
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateAnalyseur|date|Analyseur)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|langue|langueCode)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|priv[ée])\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|rappeler|rappel|rappelsAutoris[ée]s)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|heure)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|jm|jjmm|jj-mm|jour-mois|jour/mois)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mj|mmjj|mm-jj|mois-jour|mois/jour)\\b/i"
@@ -763,21 +753,13 @@
             "zone": "fuseau"
         },
         "settings": {
-            "autoDetect": "autoDétecter",
             "autoDetectDisplay": "Auto-Détection",
-            "dateFormat": "dateFormat",
             "dateFormatDisplay": "Date Format",
-            "language": "langage",
             "languageDisplay": "Langage",
-            "list": "liste",
             "listDisplay": "Liste",
-            "privateMode": "Mode Privé",
             "privateModeDisplay": "Mode Privé",
-            "reminders": "rappels",
             "remindersDisplay": "Rappels",
-            "timeFormat": "heureFormat",
             "timeFormatDisplay": "Format heure",
-            "timeZone": "fuseauHoraire",
             "timeZoneDisplay": "Fuseau Horaire"
         },
         "dateFormat": {

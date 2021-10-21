@@ -2,11 +2,12 @@ import { Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 
-import { Display, Keyword } from '../models/common';
+import { Display } from '../models/common';
 import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 
-export interface Setting<T1 extends BaseEntity, T2 extends any> extends Keyword, Display {
+export interface Setting<T1 extends BaseEntity, T2 extends any> extends Display {
+    name: string;
     default?: T2;
     value(entity: T1): T2;
     valueOrDefault(entity?: T1): T2;

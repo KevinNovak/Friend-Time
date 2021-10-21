@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Adicione ou remova um fuso horário.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Habilite ou desabilite a lista."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Habilite ou desabilite a lista."
                         ]
                     }
                 ]
@@ -274,7 +274,7 @@
                     "Configurando seu fuso horário, ficará mais fácil para o {{COM:bot.name}} converter os horários de outros usuários."
                 ],
                 "footer": {
-                    "text": "Se quiser desabilitar este lembrete, digite \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Se quiser desabilitar este lembrete, digite \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -723,16 +723,6 @@
         "channelRegexes": {
             "bot": "/bot|comando|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detectar|auto)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|fd|formatodadata)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|lang)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|privado)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|lembrete|lembretehabilitado)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|fh|formatohora)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|fh|fusohorario)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dia-mes|dia/mes)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|mes-dia|mes/dia)\\b/i"
@@ -763,21 +753,13 @@
             "zone": "fuso horário"
         },
         "settings": {
-            "autoDetect": "autoDeteccao",
             "autoDetectDisplay": "Detecção Automática",
-            "dateFormat": "formatoDeData",
             "dateFormatDisplay": "Formato de Data",
-            "language": "idioma",
             "languageDisplay": "Idioma",
-            "list": "lista",
             "listDisplay": "Lista",
-            "privateMode": "modoPrivado",
             "privateModeDisplay": "Modo Privado",
-            "reminders": "lembretes",
             "remindersDisplay": "Lembretes",
-            "timeFormat": "formatoDeHora",
             "timeFormatDisplay": "Formato de Hora",
-            "timeZone": "fusoHorario",
             "timeZoneDisplay": "Fuso Horário"
         },
         "dateFormat": {

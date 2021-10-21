@@ -25,6 +25,16 @@
         "stop": "stop",
         "remove": "remove"
     },
+    "settings": {
+        "autoDetect": "autoDetect",
+        "dateFormat": "dateFormat",
+        "language": "language",
+        "list": "list",
+        "privateMode": "privateMode",
+        "reminders": "reminders",
+        "timeFormat": "timeFormat",
+        "timeZone": "timeZone"
+    },
     "colors": {
         "success": "#00ff83",
         "warning": "#ffcc66",

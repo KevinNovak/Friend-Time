@@ -69,7 +69,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Добавить или удалить часовой пояс.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Включить или выключить отображение списка."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Включить или выключить отображение списка."
                         ]
                     }
                 ]
@@ -269,7 +269,7 @@
                     "Как только вы установите часовой пояс, {{COM:bot.name}} сможет конвертировать время, упомянутое на сервере, в и из вашего часового пояса, благодаря чему координироваться с другими будет легче."
                 ],
                 "footer": {
-                    "text": "Если вы желаете выключить напоминания об этом, напишите \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Если вы желаете выключить напоминания об этом, напишите \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -718,16 +718,6 @@
         "channelRegexes": {
             "bot": "/бот|команда|команды|кмд/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/(?<=^|\\s)({{REF:settings.autoDetect}}|обн|о|обнаружение|обнаруживание)(?=$|\\s)/i",
-            "dateFormat": "/(?<=^|\\s)({{REF:settings.dateFormat}}|форматдаты|фд|дата|д)(?=$|\\s)/i",
-            "language": "/(?<=^|\\s)({{REF:settings.language}}|яз|язык)(?=$|\\s)/i",
-            "list": "/(?<=^|\\s)({{REF:settings.list}})(?=$|\\s)/i",
-            "privateMode": "/(?<=^|\\s)({{REF:settings.privateMode}}|п|приватныйрежим|приватный|скрытый-режим|скрытыйрежим|скрытый|скр|с)(?=$|\\s)/i",
-            "reminders": "/(?<=^|\\s)({{REF:settings.reminders}}|н|нап|напоминание)(?=$|\\s)/i",
-            "timeFormat": "/(?<=^|\\s)({{REF:settings.timeFormat}}|форматвремени|фв|фвр|время|вр|в)(?=$|\\s)/i",
-            "timeZone": "/(?<=^|\\s)({{REF:settings.timeZone}}|ч|чп|часовойпояс|пояс)(?=$|\\s)/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/(?<=^|\\s)({{REF:dateFormat.dayMonth}}|дм|ддмм|дд-мм|дд.мм|день-месяц|день/месяц|день.месяц)(?=$|\\s)/i",
             "monthDay": "/(?<=^|\\s)({{REF:dateFormat.monthDay}}|мд|ммдд|мм-дд|мм.дд|месяц-день|месяц/день|месяц.день)(?=$|\\s)/i"
@@ -758,21 +748,13 @@
             "zone": "пояс"
         },
         "settings": {
-            "autoDetect": "обнаруживать",
             "autoDetectDisplay": "Обнаруживать время",
-            "dateFormat": "формат-даты",
             "dateFormatDisplay": "Формат Даты",
-            "language": "язык",
             "languageDisplay": "Язык",
-            "list": "список",
             "listDisplay": "Список",
-            "privateMode": "приватный-режим",
             "privateModeDisplay": "Приватный режим",
-            "reminders": "напоминания",
             "remindersDisplay": "Напоминания",
-            "timeFormat": "формат-времени",
             "timeFormatDisplay": "Формат времени",
-            "timeZone": "часовой-пояс",
             "timeZoneDisplay": "Часовой пояс"
         },
         "dateFormat": {

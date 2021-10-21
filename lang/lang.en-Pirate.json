@@ -67,7 +67,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Add or remove a time zone.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{REF:settings.list}}` - Enable or disable the list."
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Enable or disable the list."
                         ]
                     }
                 ]
@@ -272,7 +272,7 @@
                     "Settin' yer time zone allows {{COM:bot.name}} to convert times in server chat to an'  from yer time zone, makin' coordinatin' times with others easier."
                 ],
                 "footer": {
-                    "text": "If ye wish to disable this reminder, type \"{{COM:bot.prefix}} {{COM:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "If ye wish to disable this reminder, type \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -721,16 +721,6 @@
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detect|auto|detect)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|dateParser|date|parser)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|lang|langCode)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|private)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|reminder|remind|remindersEnabled)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|time)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
-        },
         "dateFormatRegexes": {
             "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|day-month|day/month)\\b/i",
             "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|month-day|month/day)\\b/i"
@@ -761,21 +751,13 @@
             "zone": "zone"
         },
         "settings": {
-            "autoDetect": "autoDetect",
             "autoDetectDisplay": "Auto-Detect",
-            "dateFormat": "dateFormat",
             "dateFormatDisplay": "Date Format",
-            "language": "language",
             "languageDisplay": "Language",
-            "list": "list",
             "listDisplay": "List",
-            "privateMode": "privateMode",
             "privateModeDisplay": "Private Mode",
-            "reminders": "reminders",
             "remindersDisplay": "Reminders",
-            "timeFormat": "timeFormat",
             "timeFormatDisplay": "Time Format",
-            "timeZone": "timeZone",
             "timeZoneDisplay": "Time Zone"
         },
         "dateFormat": {

@@ -9,15 +9,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class UserDateFormatSetting implements Setting<UserData, DateFormatOption> {
+    public name = Lang.getCom('settings.dateFormat');
     public default = DateFormatOption.MONTH_DAY;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.dateFormat', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.dateFormat', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.dateFormatDisplay', langCode);

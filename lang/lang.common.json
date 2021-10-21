@@ -25,6 +25,12 @@
         "stop": "stop",
         "remove": "remove"
     },
+    "arguments": {
+        "user": "@user",
+        "bot": "@bot",
+        "setting": "setting",
+        "zone": "zone"
+    },
     "settings": {
         "autoDetect": "autoDetect",
         "dateFormat": "dateFormat",

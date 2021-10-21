@@ -28,9 +28,9 @@
                     {
                         "name": "{{REF:fields.commands}} de usuario",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Correr la configuración (para ti, otro usuario, o un bot).",
-                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{REF:arguments.setting}}]*** - Gestiona tus configuraciones de usuario.",
-                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Mira la hora del servidor, usuario, bot, o zona.",
+                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Correr la configuración (para ti, otro usuario, o un bot).",
+                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Gestiona tus configuraciones de usuario.",
+                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Mira la hora del servidor, usuario, bot, o zona.",
                             "**{{COM:bot.prefix}} {{COM:commands.map}}** - Mira el mapa de zonas horarias.",
                             "**{{COM:bot.prefix}} {{COM:commands.info}}** - Más información sobre {{COM:bot.name}}."
                         ]
@@ -39,9 +39,9 @@
                         "name": "{{REF:fields.commands}} de admin",
                         "value": [
                             "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Ejecuta la configuración del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{REF:arguments.setting}}]*** - Gestiona las configuraciones del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{REF:arguments.zone}}]*** - Gestiona el listado de zonas horarias del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Gestiona las configuraciones del bot.",
+                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Gestiona las configuraciones del servidor.",
+                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Gestiona el listado de zonas horarias del servidor.",
+                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Gestiona las configuraciones del bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,7 +68,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Agrega o elimina una zona horaria.",
+                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{COM:arguments.zone}}>` - Agrega o elimina una zona horaria.",
                             "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Habilita o deshabilita el listado."
                         ]
                     }
@@ -86,8 +86,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` - Configurar un nuevo bot.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Gestionar el bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurar un nuevo bot.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Gestionar el bot."
                         ]
                     }
                 ]
@@ -104,8 +104,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}>` - Cambiar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
                             "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Eliminar todos los datos."
                         ]
                     }
@@ -124,9 +124,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> {{COM:commands.remove}}` - Eliminar todos los datos."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Cambiar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Eliminar todos los datos."
                         ]
                     }
                 ],
@@ -144,8 +144,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}>` - Cambiar una configuración.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
                             "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Eliminar todos los datos."
                         ]
                     }
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Gestionar las configuraciones del bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Gestionar las configuraciones del bot."
                         ]
                     }
                 ],
@@ -636,7 +636,7 @@
                 "description": [
                     "El Bot no fue encontrado o no se ha configurado aún.",
                     "",
-                    "Escribe `{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` para configurar un nuevo bot."
+                    "Escribe `{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` para configurar un nuevo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -745,12 +745,6 @@
         },
         "bot": {
             "description": "¡{{COM:bot.name}} ayuda a coordinar horas y eventos en tu servidor al convertir las horas mencionadas en una conversación a otras zonas horarias!"
-        },
-        "arguments": {
-            "user": "@usuario",
-            "bot": "@bot",
-            "setting": "configuración",
-            "zone": "zona"
         },
         "settings": {
             "autoDetectDisplay": "Auto detectar",

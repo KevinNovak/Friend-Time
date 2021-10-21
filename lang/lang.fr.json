@@ -28,9 +28,9 @@
                     {
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
-                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{REF:arguments.setting}}]*** - Changer tes paramètres.",
-                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou d'un fuseau horaire.",
+                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
+                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Changer tes paramètres.",
+                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Regarder le temps du serveur, utilisateur, bot, ou d'un fuseau horaire.",
                             "**{{COM:bot.prefix}} {{COM:commands.map}}** - Regarder la carte des fuseaux horaires.",
                             "**{{COM:bot.prefix}} {{COM:commands.info}}** - Pour plus d'informations {{COM:bot.name}}."
                         ]
@@ -39,9 +39,9 @@
                         "name": "Admin {{REF:fields.commands}}",
                         "value": [
                             "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Utiliser la configuration du serveur.",
-                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{REF:arguments.setting}}]*** - Changer les paramètres du serveur.",
-                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{REF:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
-                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Changer les paramètres du bot.",
+                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Changer les paramètres du serveur.",
+                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
+                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Changer les paramètres du bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,7 +68,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{REF:arguments.zone}}>` - Ajouter ou enlever un fuseau horaire.",
+                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{COM:arguments.zone}}>` - Ajouter ou enlever un fuseau horaire.",
                             "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
                         ]
                     }
@@ -86,8 +86,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` - Configurer un nouveau bot.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Changer un bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurer un nouveau bot.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Changer un bot."
                         ]
                     }
                 ]
@@ -104,8 +104,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
                             "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
@@ -124,9 +124,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}> {{COM:commands.remove}}` - Tout réinitialiser."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
                 ],
@@ -144,8 +144,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}>` - Changer un paramètre.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{REF:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}>` - Changer un paramètre.",
+                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
                             "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Tout réinitialiser."
                         ]
                     }
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{REF:arguments.bot}}>` - Changer les paramètres du bot."
+                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Changer les paramètres du bot."
                         ]
                     }
                 ],
@@ -636,7 +636,7 @@
                 "description": [
                     "Bot non trouvé ou pas encore configuré.",
                     "",
-                    "Entrer `{{COM:bot.prefix}} {{COM:commands.set}} <{{REF:arguments.bot}}>` pour configurer un nouveau bot."
+                    "Entrer `{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` pour configurer un nouveau bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -745,12 +745,6 @@
         },
         "bot": {
             "description": "{{COM:bot.name}} aide à coordonner tes membres de fuseaux horaires différents en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !"
-        },
-        "arguments": {
-            "user": "@utilisateur",
-            "bot": "@bot",
-            "setting": "paramètre",
-            "zone": "fuseau"
         },
         "settings": {
             "autoDetectDisplay": "Auto-Détection",

@@ -39,7 +39,7 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
 
     public retriever(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let autoDetect = YesNo.find(msg.content, langCode);
+            let autoDetect = YesNo.find(msg.content);
             if (autoDetect == null) {
                 await MessageUtils.send(
                     msg.channel,

@@ -38,7 +38,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
 
     public retriever(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let timeFormat = TimeFormat.find(msg.content, langCode);
+            let timeFormat = TimeFormat.find(msg.content);
             if (!timeFormat) {
                 await MessageUtils.send(
                     msg.channel,

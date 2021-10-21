@@ -175,7 +175,7 @@ export class SetCommand implements Command {
                 })
             );
             let confirmed = await collect(async (msg: Message) => {
-                let privateMode = YesNo.find(msg.content, data.lang());
+                let privateMode = YesNo.find(msg.content);
                 if (privateMode == null) {
                     await MessageUtils.send(
                         msg.channel,

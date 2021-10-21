@@ -41,6 +41,18 @@
         "timeFormat": "timeFormat",
         "timeZone": "timeZone"
     },
+    "dateFormat": {
+        "monthDay": "mm/dd",
+        "dayMonth": "dd/mm"
+    },
+    "timeFormat": {
+        "twelveHour": "12",
+        "twentyFourHour": "24"
+    },
+    "yesNo": {
+        "yes": "yes",
+        "no": "no"
+    },
     "colors": {
         "success": "#00ff83",
         "warning": "#ffcc66",

@@ -68,7 +68,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
 
     public confirmation(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let confirmed = YesNo.find(msg.content, langCode);
+            let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
                 await MessageUtils.send(
                     msg.channel,

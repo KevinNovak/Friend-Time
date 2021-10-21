@@ -38,7 +38,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
 
     public retriever(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let dateFormat = DateFormat.find(msg.content, langCode);
+            let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
                 await MessageUtils.send(
                     msg.channel,

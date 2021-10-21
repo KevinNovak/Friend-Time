@@ -285,9 +285,9 @@
                 "description": [
                     "¿Quieres que {{COM:bot.name}} detecte automáticamente las horas mencionadas en una conversación?",
                     "",
-                    "`{{REF:yesNo.yes}}` - Las horas serán detectadas automáticamente en las conversaciones.",
+                    "`{{COM:yesNo.yes}}` - Las horas serán detectadas automáticamente en las conversaciones.",
                     "",
-                    "`{{REF:yesNo.no}}` - Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
+                    "`{{COM:yesNo.no}}` - Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "¿Quieres que {{COM:bot.name}} envíe a la conversación un listado de horas convertidas luego de que una hora sea mencionada?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{COM:bot.prefix}} {{COM:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{COM:bot.prefix}} {{COM:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
                     "",
-                    "`{{REF:yesNo.no}}` - No se mostrará el listado.",
+                    "`{{COM:yesNo.no}}` - No se mostrará el listado.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -395,9 +395,9 @@
                 "description": [
                     "¿Qué formato de fecha usa {{BOT}} con más frecuencia?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -407,9 +407,9 @@
                 "description": [
                     "¿Qué formato de fecha usas con más frecuencia?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "¿Preferirías mantener tu zona horaria y otras informaciones privadas?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
                     "",
-                    "`{{REF:yesNo.no}}` - No tengo problemas en compartir mi información.",
+                    "`{{COM:yesNo.no}}` - No tengo problemas en compartir mi información.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -722,18 +722,6 @@
         },
         "channelRegexes": {
             "bot": "/bot|comando|cmd/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd/mm|dd-mm|día-mes|día/mes)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm/dd|mm-dd|mes-día|mes/día)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-horas)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-horas)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|s|si|habilitado|habilitar|h|cierto|verdadero|t|v|on|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|deshabilitado|deshabilitar|d|falso|f|off|0)\\b/i"
         }
     },
     "refs": {
@@ -757,21 +745,15 @@
             "timeZoneDisplay": "Zona horaria"
         },
         "dateFormat": {
-            "monthDay": "mm/dd",
             "monthDayDisplay": "Mes/Día",
-            "dayMonth": "dd/mm",
             "dayMonthDisplay": "Día/Mes"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-Horas",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-Horas"
         },
         "yesNo": {
-            "yes": "sí",
             "yesDisplay": "Sí",
-            "no": "no",
             "noDisplay": "No"
         },
         "lists": {
@@ -822,7 +804,7 @@
         },
         "partials": {
             "congratulations": "🎉 ¡Felicidades! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` o `{{REF:yesNo.no}}`",
+            "yesOrNo": "`{{COM:yesNo.yes}}` o `{{COM:yesNo.no}}`",
             "italicizedDefaults": "Las configuraciones en *Itálica* son las predeterminadas.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** son ahora las **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [

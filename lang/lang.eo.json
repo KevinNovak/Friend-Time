@@ -285,9 +285,9 @@
                 "description": [
                     "Ĉu vi volas, ke {{COM:bot.name}} aŭtomate detektu tempojn, menciatajn en babilejoj?",
                     "",
-                    "`{{REF:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
+                    "`{{COM:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
                     "",
-                    "`{{REF:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
+                    "`{{COM:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -373,9 +373,9 @@
                 "description": [
                     "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{COM:bot.prefix}} {{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{COM:bot.prefix}} {{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
-                    "`{{REF:yesNo.no}}` - La roboto ne sendados la liston.",
+                    "`{{COM:yesNo.no}}` - La roboto ne sendados la liston.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -395,9 +395,9 @@
                 "description": [
                     "Kiel {{BOT}} kutime mencias datojn?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -407,9 +407,9 @@
                 "description": [
                     "Kiel vi kutime mencias datojn?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +443,9 @@
                 "description": [
                     "Ĉu vi volas kaŝi viajn horzonon kaj aliajn informojn?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
                     "",
-                    "`{{REF:yesNo.no}}` - Vi ne kontraŭos, se la roboto montros viajn informojn.",
+                    "`{{COM:yesNo.no}}` - Vi ne kontraŭos, se la roboto montros viajn informojn.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -722,18 +722,6 @@
         },
         "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|tm|ttmm|tt-mm|tago-monato|tago/monato)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mt|mmtt|mm-tt|monato-tago|monato/tago)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hora|24hora)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hora|12hora)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|j|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|0)\\b/i"
         }
     },
     "refs": {
@@ -757,21 +745,15 @@
             "timeZoneDisplay": "Horzono"
         },
         "dateFormat": {
-            "monthDay": "mm/tt",
             "monthDayDisplay": "Monato/tago",
-            "dayMonth": "tt/mm",
             "dayMonthDisplay": "Tago/monato"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-hora",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-hora"
         },
         "yesNo": {
-            "yes": "jes",
             "yesDisplay": "Jes",
-            "no": "ne",
             "noDisplay": "Ne"
         },
         "lists": {
@@ -822,7 +804,7 @@
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` aŭ `{{REF:yesNo.no}}`",
+            "yesOrNo": "`{{COM:yesNo.yes}}` aŭ `{{COM:yesNo.no}}`",
             "italicizedDefaults": "*Kursivaj* valoroj estas defaŭltaj.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** nun estas **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [

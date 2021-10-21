@@ -292,9 +292,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
                     "",
-                    "`{{REF:yesNo.yes}}` - Tijden in de chat worden automatisch gedetecteerd.",
+                    "`{{COM:yesNo.yes}}` - Tijden in de chat worden automatisch gedetecteerd.",
                     "",
-                    "`{{REF:yesNo.no}}` - Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
+                    "`{{COM:yesNo.no}}` - Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
                     "\u2800"
                 ],
                 "footer": {
@@ -398,9 +398,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{COM:bot.prefix}} {{COM:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{COM:bot.prefix}} {{COM:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
                     "",
-                    "`{{REF:yesNo.no}}` - Er wordt geen lijst getoond.",
+                    "`{{COM:yesNo.no}}` - Er wordt geen lijst getoond.",
                     "\u2800"
                 ],
                 "footer": {
@@ -426,9 +426,9 @@
                 "description": [
                     "Welk formaat gebruikt {{BOT}} het meest voor datums?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -440,9 +440,9 @@
                 "description": [
                     "Welk formaat gebruik jij het meest voor datums?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -482,9 +482,9 @@
                 "description": [
                     "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "`{{COM:yesNo.yes}}` - {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
                     "",
-                    "`{{REF:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
+                    "`{{COM:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
                     "\u2800"
                 ],
                 "footer": {
@@ -769,18 +769,6 @@
         },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dag-maand|dag/maand)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|maand-dag|maand/dag)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24u|24-uur)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12u|12-uur)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|j|ingeschakeld|inschakelen|i|true|t|aan|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|uitgeschakeld|uitschakelen|u|false|f|uit|0)\\b/i"
         }
     },
     "refs": {
@@ -804,21 +792,15 @@
             "timeZoneDisplay": "Tijdzone"
         },
         "dateFormat": {
-            "monthDay": "mm/dd",
             "monthDayDisplay": "Maand/Dag",
-            "dayMonth": "dd/mm",
             "dayMonthDisplay": "Dag/Maand"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-uur",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-uur"
         },
         "yesNo": {
-            "yes": "ja",
             "yesDisplay": "Ja",
-            "no": "nee",
             "noDisplay": "Nee"
         },
         "lists": {
@@ -869,7 +851,7 @@
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` of `{{REF:yesNo.no}}`",
+            "yesOrNo": "`{{COM:yesNo.yes}}` of `{{COM:yesNo.no}}`",
             "italicizedDefaults": "*Schuingedrukte* instellingen zijn standaarden.",
             "timeInTimeZone": "In **{{TIME_ZONE}}** is het op dit moment **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}** uur.",
             "findTimeZoneHelp": [

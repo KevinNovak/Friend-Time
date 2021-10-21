@@ -39,7 +39,7 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
 
     public retriever(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let privateMode = YesNo.find(msg.content, langCode);
+            let privateMode = YesNo.find(msg.content);
             if (privateMode == null) {
                 await MessageUtils.send(
                     msg.channel,

@@ -1,13 +1,14 @@
 import { LangCode } from '.';
 import { Lang } from '../../services';
-import { Display, Keyword } from '../common';
+import { Display } from '../common';
 
 export enum TimeFormatOption {
     TWELVE_HOUR = 'TWELVE_HOUR',
     TWENTY_FOUR_HOUR = 'TWENTY_FOUR_HOUR',
 }
 
-interface TimeFormatData extends Keyword, Display {
+interface TimeFormatData extends Display {
+    name(): string;
     format: string;
 }
 
@@ -16,11 +17,8 @@ export class TimeFormat {
         [key in TimeFormatOption]: TimeFormatData;
     } = {
         TWELVE_HOUR: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('timeFormat.twelveHour', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('timeFormatRegexes.twelveHour', langCode);
+            name(): string {
+                return Lang.getCom('timeFormat.twelveHour');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('timeFormat.twelveHourDisplay', langCode);
@@ -28,11 +26,8 @@ export class TimeFormat {
             format: 'h:mm a',
         },
         TWENTY_FOUR_HOUR: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('timeFormat.twentyFourHour', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('timeFormatRegexes.twentyFourHour', langCode);
+            name(): string {
+                return Lang.getCom('timeFormat.twentyFourHour');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('timeFormat.twentyFourHourDisplay', langCode);
@@ -41,9 +36,9 @@ export class TimeFormat {
         },
     };
 
-    public static find(input: string, langCode: LangCode): TimeFormatOption {
+    public static find(input: string): TimeFormatOption {
         for (let [option, data] of Object.entries(this.Data)) {
-            if (data.regex(langCode).test(input)) {
+            if (data.name().toLowerCase() === input.toLowerCase()) {
                 return TimeFormatOption[option];
             }
         }

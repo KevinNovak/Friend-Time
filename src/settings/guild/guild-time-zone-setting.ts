@@ -67,7 +67,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
 
     public confirmation(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let confirmed = YesNo.find(msg.content, langCode);
+            let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
                 await MessageUtils.send(
                     msg.channel,

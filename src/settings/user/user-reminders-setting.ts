@@ -39,7 +39,7 @@ export class UserRemindersSetting implements Setting<UserData, boolean> {
 
     public retriever(langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let reminders = YesNo.find(msg.content, langCode);
+            let reminders = YesNo.find(msg.content);
             if (reminders == null) {
                 await MessageUtils.send(
                     msg.channel,

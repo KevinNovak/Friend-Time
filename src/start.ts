@@ -1,19 +1,15 @@
+import { REST } from '@discordjs/rest';
+import { Routes } from 'discord-api-types/rest/v9';
 import { Options } from 'discord.js';
 
 import { Bot } from './bot';
 import {
-    BotCommand,
+    Command,
     DevCommand,
     HelpCommand,
     InfoCommand,
     LinkCommand,
-    ListCommand,
     MapCommand,
-    MeCommand,
-    ServerCommand,
-    SetCommand,
-    SetupCommand,
-    TimeCommand,
     TranslateCommand,
 } from './commands';
 import { Database } from './database/database';
@@ -109,29 +105,27 @@ async function start(): Promise<void> {
     let reminderService = new ReminderService(guildRemindersSetting, userRemindersSetting);
 
     // Commands
-    let botCommand = new BotCommand(botSettingManager);
-    let devCommand = new DevCommand();
-    let helpCommand = new HelpCommand();
-    let infoCommand = new InfoCommand();
-    let linkCommand = new LinkCommand();
-    let listCommand = new ListCommand();
-    let mapCommand = new MapCommand();
-    let meCommand = new MeCommand(userSettingManager, userPrivateModeSetting);
-    let serverCommand = new ServerCommand(guildSettingManager);
-    let setCommand = new SetCommand(
-        userSetupSettingManager,
-        botSetupSettingManager,
-        userPrivateModeSetting
-    );
-    let setupCommand = new SetupCommand(guildSettingManager);
-    let timeCommand = new TimeCommand(
-        guildTimeZoneSetting,
-        botTimeZoneSetting,
-        userTimeZoneSetting,
-        userTimeFormatSetting,
-        userPrivateModeSetting
-    );
-    let translateCommand = new TranslateCommand();
+    let commands: Command[] = [
+        // new BotCommand(botSettingManager),
+        new DevCommand(),
+        new HelpCommand(),
+        new InfoCommand(),
+        new LinkCommand(),
+        // new ListCommand(),
+        new MapCommand(),
+        // new MeCommand(userSettingManager, userPrivateModeSetting),
+        // new ServerCommand(guildSettingManager),
+        // new SetCommand(userSetupSettingManager, botSetupSettingManager, userPrivateModeSetting),
+        // new SetupCommand(guildSettingManager),
+        // new TimeCommand(
+        //     guildTimeZoneSetting,
+        //     botTimeZoneSetting,
+        //     userTimeZoneSetting,
+        //     userTimeFormatSetting,
+        //     userPrivateModeSetting
+        // ),
+        new TranslateCommand(),
+    ].sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
 
     // Reactions
     let convertReaction = new ConvertReaction(
@@ -164,21 +158,7 @@ async function start(): Promise<void> {
     // Event handlers
     let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
-    let commandHandler = new CommandHandler([
-        // botCommand,
-        devCommand,
-        helpCommand,
-        infoCommand,
-        linkCommand,
-        // listCommand,
-        mapCommand,
-        // meCommand,
-        // serverCommand,
-        // setCommand,
-        // setupCommand,
-        // timeCommand,
-        translateCommand,
-    ]);
+    let commandHandler = new CommandHandler(commands);
     let triggerHandler = new TriggerHandler([convertTrigger]);
     let messageHandler = new MessageHandler(triggerHandler);
     let reactionHandler = new ReactionHandler([]);
@@ -194,7 +174,35 @@ async function start(): Promise<void> {
         new JobService([])
     );
 
+    if (process.argv[2] === '--register') {
+        await registerCommands(commands);
+        process.exit();
+    }
+
     await bot.start();
+}
+
+async function registerCommands(commands: Command[]): Promise<void> {
+    let cmdDatas = commands.map(cmd => cmd.data);
+    let cmdNames = cmdDatas.map(cmdData => cmdData.name);
+
+    Logger.info(
+        Logs.info.commandsRegistering.replaceAll(
+            '{COMMAND_NAMES}',
+            cmdNames.map(cmdName => `'${cmdName}'`).join(', ')
+        )
+    );
+
+    try {
+        let rest = new REST({ version: '9' }).setToken(Config.client.token);
+        await rest.put(Routes.applicationCommands(Config.client.id), { body: [] });
+        await rest.put(Routes.applicationCommands(Config.client.id), { body: cmdDatas });
+    } catch (error) {
+        Logger.error(Logs.error.commandsRegistering, error);
+        return;
+    }
+
+    Logger.info(Logs.info.commandsRegistered);
 }
 
 process.on('unhandledRejection', (reason, promise) => {

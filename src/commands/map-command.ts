@@ -6,11 +6,10 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MapCommand implements Command {
-    public static data: ApplicationCommandData = {
+    public data: ApplicationCommandData = {
         name: Lang.getCom('commands.map'),
         description: Lang.getCom('commandDescs.map'),
     };
-    public name = MapCommand.data.name;
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];

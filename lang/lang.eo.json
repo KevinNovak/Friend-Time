@@ -7,9 +7,7 @@
                 "fields": [
                     {
                         "name": "Gravaj komandoj",
-                        "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.help}}** - Vidi la helpilon."
-                        ]
+                        "value": ["**/{{COM:commands.help}}** - Vidi la helpilon."]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -28,20 +26,20 @@
                     {
                         "name": "{{REF:fields.commands}} por uzantoj",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Startigi agordadon (por si, uzanto aŭ roboto).",
-                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Manipuli siajn agordojn.",
-                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
-                            "**{{COM:bot.prefix}} {{COM:commands.map}}** - Vidi la horzonmapon.",
-                            "**{{COM:bot.prefix}} {{COM:commands.info}}** - Pli da informoj pri {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Startigi agordadon (por si, uzanto aŭ roboto).",
+                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Manipuli siajn agordojn.",
+                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
+                            "**/{{COM:commands.map}}** - Vidi la horzonmapon.",
+                            "**/{{COM:commands.info}}** - Pli da informoj pri {{COM:bot.name}}."
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} por administrantoj",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Startigi agordadon de la servilo.",
-                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Manipuli servilajn agordojn.",
-                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Manipuli la horzonliston de la servilo.",
-                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Manipuli robotajn agordojn.",
+                            "**/{{COM:commands.setup}}** - Startigi agordadon de la servilo.",
+                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Manipuli servilajn agordojn.",
+                            "**/{{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Manipuli la horzonliston de la servilo.",
+                            "**/{{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Manipuli robotajn agordojn.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +66,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{COM:arguments.zone}}>` - Aldoni aŭ forigi horzonon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
+                            "`/{{COM:commands.list}} <{{COM:arguments.zone}}>` - Aldoni aŭ forigi horzonon.",
+                            "`/{{COM:commands.server}} {{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
                         ]
                     }
                 ]
@@ -86,8 +84,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` - Agordi novan roboton.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli roboton."
+                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Agordi novan roboton.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli roboton."
                         ]
                     }
                 ]
@@ -104,9 +102,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
+                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
+                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
                         ]
                     }
                 ],
@@ -124,9 +122,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
                         ]
                     }
                 ],
@@ -144,9 +142,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
+                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
+                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
                         ]
                     }
                 ],
@@ -269,12 +267,12 @@
                 "description": [
                     "Saluton, {{USER}}, ŝajne vi [menciis aŭ reagumis tempon]({{MESSAGE_LINK}}), sed vi ankoraŭ ne havas horzonon.",
                     "",
-                    "Agordu la roboton por vi per la komando `{{COM:bot.prefix}} {{COM:commands.set}}`!",
+                    "Agordu la roboton por vi per la komando `/{{COM:commands.set}}`!",
                     "",
                     "Kiam vi agordos la horzonon, {{COM:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
-                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -385,7 +383,7 @@
                 "description": [
                     "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{COM:bot.prefix}} {{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`/{{COM:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. La roboto ne sendados la liston.",
                     "\u2800"
@@ -523,9 +521,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}}` - Manipuli servilajn agordojn."
-                        ]
+                        "value": ["`/{{COM:commands.server}}` - Manipuli servilajn agordojn."]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -544,9 +540,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Manipuli proprajn agordojn."
-                        ]
+                        "value": ["`/{{COM:commands.me}}` - Manipuli proprajn agordojn."]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -565,9 +559,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Manipuli proprajn agordojn."
-                        ]
+                        "value": ["`/{{COM:commands.me}}` - Manipuli proprajn agordojn."]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -585,7 +577,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli robotajn agordojn."
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli robotajn agordojn."
                         ]
                     }
                 ],
@@ -661,7 +653,7 @@
                 "description": [
                     "La roboto ne troveblis aŭ ankoraŭ ne estas agordita.",
                     "",
-                    "Tajpu `{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` por agordi novan roboton."
+                    "Tajpu `/{{COM:commands.set}} <{{COM:arguments.bot}}>` por agordi novan roboton."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -841,7 +833,7 @@
                 "",
                 "Simple **elektu lokon en la mapo** por vidi la horzonan nomon."
             ],
-            "translateNote": "Tajpu `{{COM:bot.prefix}} {{COM:commands.translate}}` por ekscii pli pri tradukoj.",
+            "translateNote": "Tajpu `/{{COM:commands.translate}}` por ekscii pli pri tradukoj.",
             "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
         },
         "messages": {

@@ -7,7 +7,7 @@
                 "fields": [
                     {
                         "name": "Wichtig {{REF:fields.commands}}",
-                        "value": ["**{{COM:bot.prefix}} {{COM:commands.help}}** - Siehe Bot-Hilfe."]
+                        "value": ["**/{{COM:commands.help}}** - Siehe Bot-Hilfe."]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -26,20 +26,20 @@
                     {
                         "name": "Benutzer {{REF:fields.commands}}",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Starte die Benutzer-Einrichtung (für dich, einen Nutzer oder einen Bot).",
-                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Verwalte deine Benutzereinstellungen.",
-                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Zeigt dir die Zeit des Servers, Nutzers, Bots oder der Zone an.",
-                            "**{{COM:bot.prefix}} {{COM:commands.map}}** - Zeigt die Karte der Zeitzonen.",
-                            "**{{COM:bot.prefix}} {{COM:commands.info}}** - Mehr Informationen über {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Starte die Benutzer-Einrichtung (für dich, einen Nutzer oder einen Bot).",
+                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Verwalte deine Benutzereinstellungen.",
+                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Zeigt dir die Zeit des Servers, Nutzers, Bots oder der Zone an.",
+                            "**/{{COM:commands.map}}** - Zeigt die Karte der Zeitzonen.",
+                            "**/{{COM:commands.info}}** - Mehr Informationen über {{COM:bot.name}}."
                         ]
                     },
                     {
                         "name": "Administrations {{REF:fields.commands}}",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Starte die Server-Einrichtung.",
-                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Verwalte die Servereinstellungen.",
-                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Verwalte die serverweite Liste der Zeitzonen.",
-                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Verwalte die Boteinstellungen.",
+                            "**/{{COM:commands.setup}}** - Starte die Server-Einrichtung.",
+                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Verwalte die Servereinstellungen.",
+                            "**/{{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Verwalte die serverweite Liste der Zeitzonen.",
+                            "**/{{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Verwalte die Boteinstellungen.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -66,8 +66,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{COM:arguments.zone}}>` - Entferne oder füge eine Zeitzone hinzu.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Aktiviere oder deaktiviere die Liste."
+                            "`/{{COM:commands.list}} <{{COM:arguments.zone}}>` - Entferne oder füge eine Zeitzone hinzu.",
+                            "`/{{COM:commands.server}} {{COM:settings.list}}` - Aktiviere oder deaktiviere die Liste."
                         ]
                     }
                 ]
@@ -84,8 +84,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` - Richte einen neuen Bot ein.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Verwalte einen Bot."
+                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Richte einen neuen Bot ein.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Verwalte einen Bot."
                         ]
                     }
                 ]
@@ -102,9 +102,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
+                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
+                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
+                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
                         ]
                     }
                 ],
@@ -122,9 +122,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
                         ]
                     }
                 ],
@@ -142,9 +142,9 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
+                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Ändere eine Einstellung.",
+                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Setze eine Einstellung zurück.",
+                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Entferne alle gespeicherten Daten."
                         ]
                     }
                 ],
@@ -267,12 +267,12 @@
                 "description": [
                     "Hoi {{USER}}, es sieht aus, dass du [eine Zeit erwähnt oder zu einer reagiert hast]({{MESSAGE_LINK}}), aber noch keine Zeitzone gesetzt hast.",
                     "",
-                    "Setze deine Zeitzone, indem du den `{{COM:bot.prefix}} {{COM:commands.set}}`-Befehl schreibst!",
+                    "Setze deine Zeitzone, indem du den `/{{COM:commands.set}}`-Befehl schreibst!",
                     "",
                     "Dies erlaubt {{COM:bot.name}} Zeiten von und zu deiner Zeit zu konvertieren, was das Koordinieren von Zeiten vereinfacht."
                 ],
                 "footer": {
-                    "text": "Wenn du diese Errinerung ausschalten möchtest, schreibe bitte \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Wenn du diese Errinerung ausschalten möchtest, schreibe bitte \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -383,7 +383,7 @@
                 "description": [
                     "Willst du, dass {{COM:bot.name}} eine Liste aller konvertierten Zeiten sendet, wenn eine Zeit gesendet wird?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} wird Zeiten in alle in der Liste angegebenen Zeiten konvertieren (`{{COM:bot.prefix}} {{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} wird Zeiten in alle in der Liste angegebenen Zeiten konvertieren (`/{{COM:commands.list}}`). This list will be sent in the same channel as the original message.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Keine Listen werden gezeigt.",
                     "\u2800"
@@ -521,9 +521,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}}` - Servereinstellungen verwalten."
-                        ]
+                        "value": ["`/{{COM:commands.server}}` - Servereinstellungen verwalten."]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -542,9 +540,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Verwalte deine Einstellungen."
-                        ]
+                        "value": ["`/{{COM:commands.me}}` - Verwalte deine Einstellungen."]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -564,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Verwalte die Einstellungen von {{USER}}."
+                            "`/{{COM:commands.me}}` - Verwalte die Einstellungen von {{USER}}."
                         ]
                     }
                 ],
@@ -583,7 +579,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Boteinstellungen verwalten."
+                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Boteinstellungen verwalten."
                         ]
                     }
                 ],
@@ -659,7 +655,7 @@
                 "description": [
                     "Bot nicht gefunden oder keine Einrichtung durchgeführt.",
                     "",
-                    "Schreibe `{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` um einen neuen Bot einzurichten."
+                    "Schreibe `/{{COM:commands.set}} <{{COM:arguments.bot}}>` um einen neuen Bot einzurichten."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -839,7 +835,7 @@
                 "",
                 "Tippe einfach **auf deinen Standort auf der Karte** um deine Zeitzone zu sehen."
             ],
-            "translateNote": "Schreibe `{{COM:bot.prefix}} {{COM:commands.translate}}` um mehr über Übersetzungen zu erfahren.",
+            "translateNote": "Schreibe `/{{COM:commands.translate}}` um mehr über Übersetzungen zu erfahren.",
             "dmWarning": "Einige Befehle benötigen Direktnachrichten in mindestens einem Server, den du mit {{COM:bot.name}} teilst, aktiviert."
         },
         "messages": {

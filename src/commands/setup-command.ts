@@ -7,7 +7,8 @@ import { SettingManager } from '../settings';
 import { MessageUtils } from '../utils';
 import { Command } from './command';
 
-export class SetupCommand implements Command {
+export class SetupCommand {
+    // export class SetupCommand implements Command {
     public name = Lang.getCom('commands.setup');
     public requireDev = false;
     public requireGuild = true;

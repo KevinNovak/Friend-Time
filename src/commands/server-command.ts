@@ -7,7 +7,8 @@ import { SettingManager } from '../settings';
 import { MessageUtils } from '../utils';
 import { Command } from './command';
 
-export class ServerCommand implements Command {
+export class ServerCommand {
+    // export class ServerCommand implements Command {
     public name = Lang.getCom('commands.server');
     public requireDev = false;
     public requireGuild = true;

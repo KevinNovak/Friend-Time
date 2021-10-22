@@ -8,7 +8,8 @@ import { UserPrivateModeSetting } from '../settings/user';
 import { MessageUtils } from '../utils';
 import { Command } from './command';
 
-export class MeCommand implements Command {
+export class MeCommand {
+    // export class MeCommand implements Command {
     public name = Lang.getCom('commands.me');
     public requireDev = false;
     public requireGuild = false;

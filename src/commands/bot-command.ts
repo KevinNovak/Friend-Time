@@ -9,7 +9,8 @@ import { Command } from './command';
 
 let Config = require('../../config/config.json');
 
-export class BotCommand implements Command {
+export class BotCommand {
+    // export class BotCommand implements Command {
     public name = Lang.getCom('commands.bot');
     public requireDev = false;
     public requireGuild = true;

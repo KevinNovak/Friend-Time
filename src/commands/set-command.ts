@@ -12,7 +12,8 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
-export class SetCommand implements Command {
+export class SetCommand {
+    // export class SetCommand implements Command {
     public name = Lang.getCom('commands.set');
     public requireDev = false;
     public requireGuild = false;

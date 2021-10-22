@@ -8,7 +8,8 @@ import { Command } from './command';
 
 let Config = require('../../config/config.json');
 
-export class ListCommand implements Command {
+export class ListCommand {
+    // export class ListCommand implements Command {
     public name = Lang.getCom('commands.list');
     public requireDev = false;
     public requireGuild = true;

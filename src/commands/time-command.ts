@@ -20,7 +20,8 @@ import {
 } from '../utils';
 import { Command } from './command';
 
-export class TimeCommand implements Command {
+export class TimeCommand {
+    // export class TimeCommand implements Command {
     public name = Lang.getCom('commands.time');
     public requireDev = false;
     public requireGuild = false;

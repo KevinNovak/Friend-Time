@@ -4,20 +4,17 @@ import { Bot } from './bot';
 import {
     BotCommand,
     DevCommand,
-    DocsCommand,
     HelpCommand,
     InfoCommand,
-    InviteCommand,
+    LinkCommand,
     ListCommand,
     MapCommand,
     MeCommand,
     ServerCommand,
     SetCommand,
     SetupCommand,
-    SupportCommand,
     TimeCommand,
     TranslateCommand,
-    VoteCommand,
 } from './commands';
 import { Database } from './database/database';
 import {
@@ -114,12 +111,9 @@ async function start(): Promise<void> {
     // Commands
     let botCommand = new BotCommand(botSettingManager);
     let devCommand = new DevCommand();
-    let docsCommand = new DocsCommand();
-    // let donateCommand = new DonateCommand();
-    // let findCommand = new FindCommand();
     let helpCommand = new HelpCommand();
     let infoCommand = new InfoCommand();
-    let inviteCommand = new InviteCommand();
+    let linkCommand = new LinkCommand();
     let listCommand = new ListCommand();
     let mapCommand = new MapCommand();
     let meCommand = new MeCommand(userSettingManager, userPrivateModeSetting);
@@ -130,7 +124,6 @@ async function start(): Promise<void> {
         userPrivateModeSetting
     );
     let setupCommand = new SetupCommand(guildSettingManager);
-    let supportCommand = new SupportCommand();
     let timeCommand = new TimeCommand(
         guildTimeZoneSetting,
         botTimeZoneSetting,
@@ -139,7 +132,6 @@ async function start(): Promise<void> {
         userPrivateModeSetting
     );
     let translateCommand = new TranslateCommand();
-    let voteCommand = new VoteCommand();
 
     // Reactions
     let convertReaction = new ConvertReaction(
@@ -172,28 +164,24 @@ async function start(): Promise<void> {
     // Event handlers
     let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
-    let commandHandler = new CommandHandler(Config.prefix, helpCommand, [
-        botCommand,
+    let commandHandler = new CommandHandler([
+        // botCommand,
         devCommand,
-        docsCommand,
-        // donateCommand,
-        // findCommand,
+        helpCommand,
         infoCommand,
-        inviteCommand,
-        listCommand,
+        linkCommand,
+        // listCommand,
         mapCommand,
-        meCommand,
-        serverCommand,
-        setCommand,
-        setupCommand,
-        supportCommand,
-        timeCommand,
+        // meCommand,
+        // serverCommand,
+        // setCommand,
+        // setupCommand,
+        // timeCommand,
         translateCommand,
-        voteCommand,
     ]);
     let triggerHandler = new TriggerHandler([convertTrigger]);
-    let messageHandler = new MessageHandler(commandHandler, triggerHandler);
-    let reactionHandler = new ReactionHandler([convertReaction]);
+    let messageHandler = new MessageHandler(triggerHandler);
+    let reactionHandler = new ReactionHandler([]);
 
     let bot = new Bot(
         Config.client.token,
@@ -201,6 +189,7 @@ async function start(): Promise<void> {
         guildJoinHandler,
         guildLeaveHandler,
         messageHandler,
+        commandHandler,
         reactionHandler,
         new JobService([])
     );

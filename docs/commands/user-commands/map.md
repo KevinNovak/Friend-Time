@@ -6,11 +6,11 @@ description: View the zone map.
 
 ## Summary
 
-The `-ft map` command is used to view the [Time Zone Map](https://kevinnovak.github.io/Time-Zone-Picker/).
+The `/map` command is used to view the [Time Zone Map](https://kevinnovak.github.io/Time-Zone-Picker/).
 
 ## View the Time Zone Map
 
-**1.** Type `-ft map.`
+**1.** Type `/map.`
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
 

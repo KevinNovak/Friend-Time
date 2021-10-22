@@ -1,4 +1,4 @@
-import { Message, TextChannel } from 'discord.js';
+import { ApplicationCommandData, Message, TextChannel } from 'discord.js';
 
 import { GuildBotData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -22,7 +22,10 @@ import { Command } from './command';
 
 export class TimeCommand {
     // export class TimeCommand implements Command {
-    public name = Lang.getCom('commands.time');
+    public static data: ApplicationCommandData = {
+        name: Lang.getCom('commands.time'),
+        description: Lang.getCom('commandDescs.time'),
+    };
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];

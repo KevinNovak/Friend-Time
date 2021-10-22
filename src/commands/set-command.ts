@@ -1,4 +1,4 @@
-import { DMChannel, Message, Permissions, TextChannel } from 'discord.js';
+import { ApplicationCommandData, DMChannel, Message, Permissions, TextChannel } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
 import { YesNo } from '../models/enums/yes-no';
@@ -14,7 +14,10 @@ let Debug = require('../../config/debug.json');
 
 export class SetCommand {
     // export class SetCommand implements Command {
-    public name = Lang.getCom('commands.set');
+    public static data: ApplicationCommandData = {
+        name: Lang.getCom('commands.set'),
+        description: Lang.getCom('commandDescs.set'),
+    };
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];

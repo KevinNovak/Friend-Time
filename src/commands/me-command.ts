@@ -1,4 +1,4 @@
-import { DMChannel, Message } from 'discord.js';
+import { ApplicationCommandData, DMChannel, Message } from 'discord.js';
 
 import { UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -10,7 +10,10 @@ import { Command } from './command';
 
 export class MeCommand {
     // export class MeCommand implements Command {
-    public name = Lang.getCom('commands.me');
+    public static data: ApplicationCommandData = {
+        name: Lang.getCom('commands.me'),
+        description: Lang.getCom('commandDescs.me'),
+    };
     public requireDev = false;
     public requireGuild = false;
     public requirePerms = [];

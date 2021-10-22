@@ -1,4 +1,4 @@
-import { Message, Permissions } from 'discord.js';
+import { ApplicationCommandData, Message, Permissions } from 'discord.js';
 
 import { GuildData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -9,7 +9,10 @@ import { Command } from './command';
 
 export class SetupCommand {
     // export class SetupCommand implements Command {
-    public name = Lang.getCom('commands.setup');
+    public static data: ApplicationCommandData = {
+        name: Lang.getCom('commands.setup'),
+        description: Lang.getCom('commandDescs.setup'),
+    };
     public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];

@@ -1,4 +1,4 @@
-import { Message, Permissions } from 'discord.js';
+import { ApplicationCommandData, Message, Permissions } from 'discord.js';
 
 import { GuildBotData, GuildData, GuildListItemData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -9,7 +9,10 @@ import { Command } from './command';
 
 export class ServerCommand {
     // export class ServerCommand implements Command {
-    public name = Lang.getCom('commands.server');
+    public static data: ApplicationCommandData = {
+        name: Lang.getCom('commands.server'),
+        description: Lang.getCom('commandDescs.server'),
+    };
     public requireDev = false;
     public requireGuild = true;
     public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];

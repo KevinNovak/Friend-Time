@@ -1,7 +1,6 @@
 {
     "bot": {
-        "name": "Friend Time",
-        "prefix": "-ft"
+        "name": "Friend Time"
     },
     "commands": {
         "bot": "bot",

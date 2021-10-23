@@ -45,7 +45,7 @@ export class TimeCommand implements Command {
     public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
         // Time for server
         if (args.length === 2) {
-            if (!(msg.channel instanceof TextChannel)) {
+            if (!msg.guild) {
                 await MessageUtils.send(
                     msg.channel,
                     Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
@@ -94,7 +94,7 @@ export class TimeCommand implements Command {
                 return;
             }
 
-            if (!(msg.channel instanceof TextChannel)) {
+            if (!msg.guild) {
                 await MessageUtils.send(
                     msg.channel,
                     Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())

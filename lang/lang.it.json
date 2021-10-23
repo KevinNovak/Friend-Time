@@ -28,7 +28,9 @@
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Esegui la configurazione dell'utente (per te stesso, un utente o un bot).",
                             "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Gestisci le tue impostazioni utente.",
-                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Visualizza l'ora del server, dell'utente, del bot o della zona.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Visualizza la mappa della zona.",
                             "**/{{COM:commands.info}}** - Più informazioni riguardanti {{COM:bot.name}}."
                         ]

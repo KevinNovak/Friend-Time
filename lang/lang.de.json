@@ -28,7 +28,9 @@
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Starte die Benutzer-Einrichtung (für dich, einen Nutzer oder einen Bot).",
                             "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Verwalte deine Benutzereinstellungen.",
-                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Zeigt dir die Zeit des Servers, Nutzers, Bots oder der Zone an.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Zeigt die Karte der Zeitzonen.",
                             "**/{{COM:commands.info}}** - Mehr Informationen über {{COM:bot.name}}."
                         ]

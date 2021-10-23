@@ -28,7 +28,9 @@
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Voer de gebruikersconfiguratie uit (voor jezelf, een gebruiker of bot).",
                             "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Beheer je gebruikersinstellingen.",
-                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Bekijk de kaart met tijdzones.",
                             "**/{{COM:commands.info}}** - Meer informatie over {{COM:bot.name}}."
                         ]

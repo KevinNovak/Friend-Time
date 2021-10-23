@@ -19,6 +19,11 @@
         "stop": "stop",
         "remove": "remove"
     },
+    "subCommands": {
+        "server": "server",
+        "user": "user",
+        "zone": "zone"
+    },
     "commandDescs": {
         "bot": "Manage bot settings.",
         "dev": "View developer info.",
@@ -35,8 +40,8 @@
         "translate": "View translation info."
     },
     "arguments": {
-        "user": "@user",
-        "bot": "@bot",
+        "user": "user",
+        "bot": "bot",
         "setting": "setting",
         "zone": "zone"
     },

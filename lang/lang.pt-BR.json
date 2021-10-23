@@ -28,7 +28,9 @@
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Execute a configuração para você, outro usuário ou um bot).",
                             "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Ajuste suas configurações.",
-                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Verifique a hora do servidor, de um usuário, de um bot ou de um fuso horário.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Veja o mapa com todos os fusos horários.",
                             "**/{{COM:commands.info}}** - Mais informações sobre o {{COM:bot.name}}."
                         ]

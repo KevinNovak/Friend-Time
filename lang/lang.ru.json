@@ -28,7 +28,9 @@
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Начать настройку (для себя, другого пользователя или бота).",
                             "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Просмотреть и изменить свои настройки.",
-                            "**/{{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Узнать время сервера, пользователя, бота или часового пояса.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Просмотреть карту поясов.",
                             "**/{{COM:commands.info}}** - Информация о {{COM:bot.name}}."
                         ]

@@ -20,31 +20,31 @@ export class TimeCommand implements Command {
         description: Lang.getCom('commandDescs.time'),
         options: [
             {
-                name: 'server',
-                description: 'server', // TODO: Description
+                name: Lang.getCom('subCommands.server'),
+                description: 'View the time of the server.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
-                name: 'user',
-                description: 'user', // TODO: Description
+                name: Lang.getCom('subCommands.user'),
+                description: ' View the time of a user.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
-                        name: 'user',
-                        description: 'user', // TODO: Description
+                        name: Lang.getCom('arguments.user'),
+                        description: 'User.',
                         type: ApplicationCommandOptionType.User.valueOf(),
                         required: true,
                     },
                 ],
             },
             {
-                name: 'zone',
-                description: 'zone', // TODO: Description
+                name: Lang.getCom('subCommands.zone'),
+                description: 'View the time of a zone.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
-                        name: 'zone',
-                        description: 'zone', // TODO: Description
+                        name: Lang.getCom('arguments.zone'),
+                        description: 'Time zone name.',
                         type: ApplicationCommandOptionType.String.valueOf(),
                         required: true,
                     },

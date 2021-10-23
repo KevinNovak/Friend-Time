@@ -62,7 +62,7 @@ export class SetCommand implements Command {
 
         // Setup for other
         if (args.length > 2) {
-            if (!(msg.channel instanceof TextChannel)) {
+            if (!msg.guild) {
                 await MessageUtils.send(
                     msg.channel,
                     Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())

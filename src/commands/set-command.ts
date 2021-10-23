@@ -1,4 +1,4 @@
-import { ApplicationCommandData, DMChannel, Message, Permissions, TextChannel } from 'discord.js';
+import { ApplicationCommandData, DMChannel, Message, Permissions } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
 import { YesNo } from '../models/enums/yes-no';
@@ -66,7 +66,7 @@ export class SetCommand {
 
         // Setup for other
         if (args.length > 2) {
-            if (!(msg.channel instanceof TextChannel)) {
+            if (!msg.guild) {
                 await MessageUtils.send(
                     msg.channel,
                     Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())

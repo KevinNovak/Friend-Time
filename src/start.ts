@@ -10,6 +10,7 @@ import {
     InfoCommand,
     LinkCommand,
     MapCommand,
+    TimeCommand,
     TranslateCommand,
 } from './commands';
 import { Database } from './database/database';
@@ -117,13 +118,13 @@ async function start(): Promise<void> {
         // new ServerCommand(guildSettingManager),
         // new SetCommand(userSetupSettingManager, botSetupSettingManager, userPrivateModeSetting),
         // new SetupCommand(guildSettingManager),
-        // new TimeCommand(
-        //     guildTimeZoneSetting,
-        //     botTimeZoneSetting,
-        //     userTimeZoneSetting,
-        //     userTimeFormatSetting,
-        //     userPrivateModeSetting
-        // ),
+        new TimeCommand(
+            guildTimeZoneSetting,
+            botTimeZoneSetting,
+            userTimeZoneSetting,
+            userTimeFormatSetting,
+            userPrivateModeSetting
+        ),
         new TranslateCommand(),
     ].sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
 

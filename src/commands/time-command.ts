@@ -1,4 +1,5 @@
-import { ApplicationCommandData, Message, TextChannel } from 'discord.js';
+import { ApplicationCommandOptionType } from 'discord-api-types';
+import { ApplicationCommandData, CommandInteraction } from 'discord.js';
 
 import { GuildBotData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -10,21 +11,46 @@ import {
     UserTimeFormatSetting,
     UserTimeZoneSetting,
 } from '../settings/user';
-import {
-    ClientUtils,
-    DataUtils,
-    FormatUtils,
-    MessageUtils,
-    TimeUtils,
-    TimeZoneUtils,
-} from '../utils';
+import { DataUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../utils';
 import { Command } from './command';
 
-export class TimeCommand {
-    // export class TimeCommand implements Command {
-    public static data: ApplicationCommandData = {
+export class TimeCommand implements Command {
+    public data: ApplicationCommandData = {
         name: Lang.getCom('commands.time'),
         description: Lang.getCom('commandDescs.time'),
+        options: [
+            {
+                name: 'server',
+                description: 'server', // TODO: Description
+                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+            },
+            {
+                name: 'user',
+                description: 'user', // TODO: Description
+                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                options: [
+                    {
+                        name: 'user',
+                        description: 'user', // TODO: Description
+                        type: ApplicationCommandOptionType.User.valueOf(),
+                        required: true,
+                    },
+                ],
+            },
+            {
+                name: 'zone',
+                description: 'zone', // TODO: Description
+                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                options: [
+                    {
+                        name: 'zone',
+                        description: 'zone', // TODO: Description
+                        type: ApplicationCommandOptionType.String.valueOf(),
+                        required: true,
+                    },
+                ],
+            },
+        ],
     };
     public requireDev = false;
     public requireGuild = false;
@@ -38,50 +64,100 @@ export class TimeCommand {
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
-        // Time for server
-        if (args.length === 2) {
-            if (!(msg.channel instanceof TextChannel)) {
-                await MessageUtils.send(
-                    msg.channel,
-                    Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
+    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+        switch (intr.options.getSubcommand()) {
+            case 'server': {
+                if (!intr.guild) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
+                    );
+                    return;
+                }
+
+                let guildTimeZone = this.guildTimeZoneSetting.valueOrDefault(data.guild);
+                if (!guildTimeZone) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.noTimeZoneServer', data.lang())
+                    );
+                    return;
+                }
+
+                let now = TimeUtils.now(guildTimeZone);
+                let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
+                let time = FormatUtils.dateTime(now, timeFormat, data.lang());
+                await MessageUtils.sendIntr(
+                    intr,
+                    Lang.getEmbed('displayEmbeds.timeServer', data.lang(), {
+                        TIME: time,
+                        TIME_ZONE: guildTimeZone,
+                    })
                 );
                 return;
             }
+            case 'user': {
+                let user = intr.options.getUser('user');
+                if (!user) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
+                    );
+                    return;
+                }
 
-            let guildTimeZone = this.guildTimeZoneSetting.valueOrDefault(data.guild);
-            if (!guildTimeZone) {
-                await MessageUtils.send(
-                    msg.channel,
-                    Lang.getEmbed('validationEmbeds.noTimeZoneServer', data.lang())
+                let userData = await DataUtils.getTargetData(user, data.guild);
+                let userTimeZone =
+                    userData instanceof GuildBotData
+                        ? this.botTimeZoneSetting.valueOrDefault(userData)
+                        : this.userTimeZoneSetting.valueOrDefault(userData);
+                if (!userTimeZone) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.noTimeZoneUser', data.lang(), {
+                            USER: FormatUtils.userMention(user.id),
+                        })
+                    );
+                    return;
+                }
+
+                let now = TimeUtils.now(userTimeZone);
+                let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
+                let time = FormatUtils.dateTime(now, timeFormat, data.lang());
+                let privateMode =
+                    userData instanceof GuildBotData
+                        ? false
+                        : this.userPrivateModeSetting.valueOrDefault(userData);
+                await MessageUtils.sendIntr(
+                    intr,
+                    Lang.getEmbed(
+                        privateMode ? 'displayEmbeds.timeUserPrivate' : 'displayEmbeds.timeUser',
+                        data.lang(),
+                        {
+                            TIME: time,
+                            USER: FormatUtils.userMention(user.id),
+                            TIME_ZONE: userTimeZone,
+                        }
+                    )
                 );
                 return;
             }
+            case 'zone': {
+                let zoneInput = intr.options.getString('zone');
+                let timeZone = TimeZoneUtils.find(zoneInput)?.name;
+                if (!timeZone) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.invalidTimeZone', data.lang())
+                    );
+                    return;
+                }
 
-            let now = TimeUtils.now(guildTimeZone);
-            let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
-            let time = FormatUtils.dateTime(now, timeFormat, data.lang());
-            await MessageUtils.send(
-                msg.channel,
-                Lang.getEmbed('displayEmbeds.timeServer', data.lang(), {
-                    TIME: time,
-                    TIME_ZONE: guildTimeZone,
-                })
-            );
-            return;
-        }
-
-        if (args.length > 2) {
-            let search = args.slice(2).join(' ');
-
-            // Time for zone
-            let timeZone = TimeZoneUtils.find(search)?.name;
-            if (timeZone) {
                 let now = TimeUtils.now(timeZone);
                 let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
                 let time = FormatUtils.dateTime(now, timeFormat, data.lang());
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('displayEmbeds.timeTimeZone', data.lang(), {
                         TIME: time,
                         TIME_ZONE: timeZone,
@@ -89,59 +165,6 @@ export class TimeCommand {
                 );
                 return;
             }
-
-            if (!(msg.channel instanceof TextChannel)) {
-                await MessageUtils.send(
-                    msg.channel,
-                    Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
-                );
-                return;
-            }
-
-            let member = await ClientUtils.findMember(msg.guild, search);
-            if (!member) {
-                await MessageUtils.send(
-                    msg.channel,
-                    Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
-                );
-                return;
-            }
-
-            // Time for member
-            let memberData = await DataUtils.getTargetData(member.user, data.guild);
-            let memberTimeZone =
-                memberData instanceof GuildBotData
-                    ? this.botTimeZoneSetting.valueOrDefault(memberData)
-                    : this.userTimeZoneSetting.valueOrDefault(memberData);
-            if (!memberTimeZone) {
-                await MessageUtils.send(
-                    msg.channel,
-                    Lang.getEmbed('validationEmbeds.noTimeZoneUser', data.lang(), {
-                        USER: FormatUtils.userMention(member.id),
-                    })
-                );
-                return;
-            }
-
-            let now = TimeUtils.now(memberTimeZone);
-            let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
-            let time = FormatUtils.dateTime(now, timeFormat, data.lang());
-            let privateMode =
-                memberData instanceof GuildBotData
-                    ? false
-                    : this.userPrivateModeSetting.valueOrDefault(memberData);
-            await MessageUtils.send(
-                msg.channel,
-                Lang.getEmbed(
-                    privateMode ? 'displayEmbeds.timeUserPrivate' : 'displayEmbeds.timeUser',
-                    data.lang(),
-                    {
-                        TIME: time,
-                        USER: FormatUtils.userMention(member.id),
-                        TIME_ZONE: memberTimeZone,
-                    }
-                )
-            );
         }
     }
 }

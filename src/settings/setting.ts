@@ -1,4 +1,4 @@
-import { Message, Snowflake } from 'discord.js';
+import { CommandInteraction, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 
@@ -14,6 +14,6 @@ export interface Setting<T1 extends BaseEntity, T2 extends any> extends Display 
     apply(entity: T1, value: T2): void;
     clear(entity: T1): void;
     valueDisplayName(value: T2, langCode: LangCode): string;
-    retriever(langCode: LangCode): MessageRetriever;
-    retrieve(msg: Message, args: string[], data: EventData, target?: Snowflake): Promise<T2>;
+    retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever;
+    retrieve(intr: CommandInteraction, data: EventData, target?: Snowflake): Promise<T2>;
 }

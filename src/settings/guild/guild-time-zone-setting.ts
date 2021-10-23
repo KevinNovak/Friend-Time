@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Confirmation, Setting } from '..';
@@ -39,11 +39,11 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         return value;
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             if (msg.content.length <= Config.validation.timeZone.lengthMin) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -53,8 +53,8 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
 
             let timeZoneName = TimeZoneUtils.find(msg.content)?.name;
             if (!timeZoneName) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -65,12 +65,12 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         };
     }
 
-    public confirmation(langCode: LangCode): MessageRetriever {
+    public confirmation(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -81,21 +81,21 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         };
     }
 
-    public async retrieve(msg: Message, args: string[], data: EventData): Promise<string> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<string> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
         let timeZone: string;
         let confirmed = false;
         while (confirmed === false) {
-            await MessageUtils.send(
-                msg.channel,
+            await MessageUtils.sendIntr(
+                intr,
                 Lang.getEmbed('promptEmbeds.timeZoneGuild', data.lang())
             );
-            timeZone = await collect(this.retriever(data.lang()));
+            timeZone = await collect(this.retriever(intr, data.lang()));
             if (!timeZone) {
                 return;
             }
@@ -108,15 +108,15 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
             );
             let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang());
 
-            await MessageUtils.send(
-                msg.channel,
+            await MessageUtils.sendIntr(
+                intr,
                 Lang.getEmbed('promptEmbeds.timeZoneConfirmGuild', data.lang(), {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,
                 })
             );
-            confirmed = await collect(this.confirmation(data.lang()));
+            confirmed = await collect(this.confirmation(intr, data.lang()));
             if (confirmed === undefined) {
                 return;
             }

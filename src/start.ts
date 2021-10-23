@@ -10,6 +10,7 @@ import {
     InfoCommand,
     LinkCommand,
     MapCommand,
+    SetupCommand,
     TimeCommand,
     TranslateCommand,
 } from './commands';
@@ -117,7 +118,7 @@ async function start(): Promise<void> {
         // new MeCommand(userSettingManager, userPrivateModeSetting),
         // new ServerCommand(guildSettingManager),
         // new SetCommand(userSetupSettingManager, botSetupSettingManager, userPrivateModeSetting),
-        // new SetupCommand(guildSettingManager),
+        new SetupCommand(guildSettingManager),
         new TimeCommand(
             guildTimeZoneSetting,
             botTimeZoneSetting,

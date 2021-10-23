@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -36,12 +36,12 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         return DateFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -52,21 +52,17 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         };
     }
 
-    public async retrieve(
-        msg: Message,
-        args: string[],
-        data: EventData
-    ): Promise<DateFormatOption> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<DateFormatOption> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang())
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

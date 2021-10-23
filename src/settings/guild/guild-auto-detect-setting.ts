@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -37,12 +37,12 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
         return YesNo.Data[value.toString()].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             let autoDetect = YesNo.find(msg.content);
             if (autoDetect == null) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -53,17 +53,17 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
         };
     }
 
-    public async retrieve(msg: Message, args: string[], data: EventData): Promise<boolean> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.autoDetectGuild', data.lang())
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

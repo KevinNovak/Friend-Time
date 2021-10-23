@@ -1,4 +1,4 @@
-import { Message, Snowflake } from 'discord.js';
+import { CommandInteraction, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -36,12 +36,12 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         return DateFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -53,23 +53,22 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     }
 
     public async retrieve(
-        msg: Message,
-        args: string[],
+        intr: CommandInteraction,
         data: EventData,
         target?: Snowflake
     ): Promise<DateFormatOption> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang(), {
                 BOT: FormatUtils.userMention(target),
             })
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

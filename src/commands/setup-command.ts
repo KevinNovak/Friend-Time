@@ -1,4 +1,4 @@
-import { ApplicationCommandData, Message, Permissions } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, Message, Permissions } from 'discord.js';
 
 import { GuildData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -7,9 +7,8 @@ import { SettingManager } from '../settings';
 import { MessageUtils } from '../utils';
 import { Command } from './command';
 
-export class SetupCommand {
-    // export class SetupCommand implements Command {
-    public static data: ApplicationCommandData = {
+export class SetupCommand implements Command {
+    public data: ApplicationCommandData = {
         name: Lang.getCom('commands.setup'),
         description: Lang.getCom('commandDescs.setup'),
     };
@@ -19,14 +18,14 @@ export class SetupCommand {
 
     constructor(private guildSettingManager: SettingManager) {}
 
-    public async execute(msg: Message, args: string[], data: EventData): Promise<void> {
+    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
-            data.guild.discordId = msg.guild.id;
+            data.guild.discordId = intr.guild.id;
         }
 
         for (let setting of this.guildSettingManager.settings) {
-            let value = await setting.retrieve(msg, args, data);
+            let value = await setting.retrieve(intr, data);
             if (value == null) {
                 return;
             }
@@ -35,8 +34,8 @@ export class SetupCommand {
         await data.guild.save();
 
         let settingList = this.guildSettingManager.list(data.guild, data.lang());
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('resultEmbeds.setupCompleted', data.lang(), {
                 SETTING_LIST: settingList,
             })

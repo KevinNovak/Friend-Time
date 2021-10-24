@@ -23,6 +23,7 @@
         "view": "view",
         "toggle": "toggle",
         "server": "server",
+        "me": "me",
         "user": "user",
         "zone": "zone"
     },

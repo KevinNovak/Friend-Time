@@ -20,7 +20,10 @@
         "remove": "remove"
     },
     "subCommands": {
+        "list": "list",
         "view": "view",
+        "edit": "edit",
+        "remove": "remove",
         "toggle": "toggle",
         "server": "server",
         "me": "me",
@@ -46,7 +49,8 @@
         "user": "user",
         "bot": "bot",
         "setting": "setting",
-        "zone": "zone"
+        "zone": "zone",
+        "reset": "reset"
     },
     "settings": {
         "autoDetect": "autoDetect",

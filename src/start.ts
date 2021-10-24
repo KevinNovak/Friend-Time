@@ -4,6 +4,7 @@ import { Options } from 'discord.js';
 
 import { Bot } from './bot';
 import {
+    BotCommand,
     Command,
     DevCommand,
     HelpCommand,
@@ -110,7 +111,7 @@ async function start(): Promise<void> {
 
     // Commands
     let commands: Command[] = [
-        // new BotCommand(botSettingManager),
+        new BotCommand(botSettingManager),
         new DevCommand(),
         new HelpCommand(),
         new InfoCommand(),

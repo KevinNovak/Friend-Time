@@ -1,4 +1,4 @@
-import { ApplicationCommandData, CommandInteraction, Message, Permissions } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, Permissions } from 'discord.js';
 
 import { GuildData } from '../database/entities';
 import { EventData } from '../models/internal-models';

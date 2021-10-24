@@ -28,7 +28,7 @@ export class TimeCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.user'),
-                description: ' View the time of a user.',
+                description: 'View the time of a user.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

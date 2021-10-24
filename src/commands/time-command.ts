@@ -14,6 +14,8 @@ import {
 import { DataUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../utils';
 import { Command } from './command';
 
+let Config = require('../../config/config.json');
+
 export class TimeCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.time'),
@@ -66,7 +68,7 @@ export class TimeCommand implements Command {
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {
-            case 'server': {
+            case Lang.getCom('subCommands.server'): {
                 if (!intr.guild) {
                     await MessageUtils.sendIntr(
                         intr,
@@ -96,8 +98,8 @@ export class TimeCommand implements Command {
                 );
                 return;
             }
-            case 'user': {
-                let user = intr.options.getUser('user');
+            case Lang.getCom('subCommands.user'): {
+                let user = intr.options.getUser(Lang.getCom('arguments.user'));
                 if (!user) {
                     await MessageUtils.sendIntr(
                         intr,
@@ -142,8 +144,19 @@ export class TimeCommand implements Command {
                 );
                 return;
             }
-            case 'zone': {
-                let zoneInput = intr.options.getString('zone');
+            case Lang.getCom('subCommands.zone'): {
+                let zoneInput = intr.options.getString(Lang.getCom('arguments.zone'));
+
+                // Check if abbreviation was provided
+                if (zoneInput.length < Config.validation.timeZone.lengthMin) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', data.lang())
+                    );
+                    return;
+                }
+
+                // Find time zone
                 let timeZone = TimeZoneUtils.find(zoneInput)?.name;
                 if (!timeZone) {
                     await MessageUtils.sendIntr(

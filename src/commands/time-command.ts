@@ -28,12 +28,12 @@ export class TimeCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.user'),
-                description: 'View the time of a user.',
+                description: 'View the time of a user or bot.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
                         name: Lang.getCom('arguments.user'),
-                        description: 'User.',
+                        description: 'User or bot.',
                         type: ApplicationCommandOptionType.User.valueOf(),
                         required: true,
                     },

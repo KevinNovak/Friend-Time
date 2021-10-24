@@ -20,6 +20,8 @@
         "remove": "remove"
     },
     "subCommands": {
+        "view": "view",
+        "toggle": "toggle",
         "server": "server",
         "user": "user",
         "zone": "zone"

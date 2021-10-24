@@ -16,12 +16,12 @@ export class ListCommand implements Command {
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: 'View the list.',
+                description: 'View the server time zone list.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.toggle'),
-                description: 'Add or remove a time zone.',
+                description: 'Add or remove to the server time zone list.',
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

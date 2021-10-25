@@ -49,7 +49,7 @@ import {
     UserTimeFormatSetting,
     UserTimeZoneSetting,
 } from './settings/user';
-import { ConvertTrigger } from './triggers';
+import { ConvertTrigger, OldPrefixTrigger } from './triggers';
 
 let Config = require('../config/config.json');
 let Logs = require('../lang/logs.json');
@@ -147,6 +147,7 @@ async function start(): Promise<void> {
     );
 
     // Triggers
+    let oldPrefixTrigger = new OldPrefixTrigger();
     let convertTrigger = new ConvertTrigger(
         convertReaction,
         timeService,
@@ -166,7 +167,7 @@ async function start(): Promise<void> {
     let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
     let commandHandler = new CommandHandler(commands);
-    let triggerHandler = new TriggerHandler([convertTrigger]);
+    let triggerHandler = new TriggerHandler([oldPrefixTrigger, convertTrigger]);
     let messageHandler = new MessageHandler(triggerHandler);
     let reactionHandler = new ReactionHandler([]);
 

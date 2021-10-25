@@ -13,6 +13,7 @@ import {
     ListCommand,
     MapCommand,
     MeCommand,
+    ServerCommand,
     SetCommand,
     SetupCommand,
     TimeCommand,
@@ -120,7 +121,7 @@ async function start(): Promise<void> {
         new ListCommand(),
         new MapCommand(),
         new MeCommand(userSettingManager, userPrivateModeSetting),
-        // new ServerCommand(guildSettingManager),
+        new ServerCommand(guildSettingManager),
         new SetCommand(userSetupSettingManager, botSetupSettingManager, userPrivateModeSetting),
         new SetupCommand(guildSettingManager),
         new TimeCommand(

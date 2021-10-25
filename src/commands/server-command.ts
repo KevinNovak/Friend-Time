@@ -50,11 +50,11 @@ export class ServerCommand implements Command {
             if (removeRegex.test(args[2])) {
                 this.settingManager.settings.forEach(setting => setting.clear(data.guild));
                 // Remove guild's bots
-                if (data.guild.bots) {
+                if (data.guild.bots?.length > 0) {
                     await GuildBotData.delete(data.guild.bots.map(botData => botData.id));
                 }
                 // Remove guild's list items
-                if (data.guild.listItems) {
+                if (data.guild.listItems?.length > 0) {
                     await GuildListItemData.delete(
                         data.guild.listItems.map(listItemData => listItemData.id)
                     );

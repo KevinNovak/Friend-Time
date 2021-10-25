@@ -46,7 +46,7 @@ export class TimeCommand implements Command {
                 options: [
                     {
                         name: Lang.getCom('arguments.zone'),
-                        description: 'Time zone name.',
+                        description: 'Time zone name. Ex: America/New_York',
                         type: ApplicationCommandOptionType.String.valueOf(),
                         required: true,
                     },

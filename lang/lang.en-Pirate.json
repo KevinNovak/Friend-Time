@@ -641,6 +641,7 @@
                     "",
                     "Try it by typing `/{{COM:commands.help}}`!"
                 ],
+                "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
             "devOnlyCommand": {

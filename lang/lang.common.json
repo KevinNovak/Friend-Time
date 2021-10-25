@@ -89,5 +89,8 @@
         "source": "https://github.com/KevinNovak/Friend-Time",
         "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
         "map": "https://kevinnovak.github.io/Time-Zone-Picker/"
+    },
+    "images": {
+        "helpCommand": "https://i.imgur.com/0GPhOSm.png"
     }
 }

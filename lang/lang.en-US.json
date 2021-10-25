@@ -636,6 +636,7 @@
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
+                "title": "Slash Commands Update",
                 "description": [
                     "{{COM:bot.name}} now uses **Slash Commands**!",
                     "",

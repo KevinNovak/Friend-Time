@@ -81,91 +81,86 @@ export class MeCommand implements Command {
     ) {}
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
-        return;
+        let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
+        if (privateMode && !(intr.channel instanceof DMChannel)) {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
+            );
+            return;
+        }
+
+        if (!data.user) {
+            data.user = new UserData();
+            data.user.discordId = intr.user.id;
+        }
+
+        switch (intr.options.getSubcommand()) {
+            case Lang.getCom('subCommands.view'): {
+                let settingList = this.settingManager.list(data.user, data.lang());
+                await MessageUtils.sendIntr(
+                    intr,
+                    Lang.getEmbed('displayEmbeds.settingSelf', data.lang(), {
+                        SETTING_LIST: settingList,
+                        USER_ID: intr.user.id,
+                    }).setAuthor(intr.user.tag, intr.user.avatarURL())
+                );
+                return;
+            }
+            case Lang.getCom('subCommands.edit'): {
+                // Find setting to configure
+                let settingInput = intr.options.getString(Lang.getCom('arguments.setting'));
+                let setting = this.settingManager.find(settingInput);
+                if (!setting) {
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
+                    );
+                    return;
+                }
+
+                // Remove setting value
+                let reset = intr.options.getBoolean(Lang.getCom('arguments.reset')) ?? false;
+                if (reset) {
+                    setting.clear(data.user);
+                    await data.user.save();
+
+                    await MessageUtils.sendIntr(
+                        intr,
+                        Lang.getEmbed('resultEmbeds.removedSettingUser', data.lang(), {
+                            SETTING_NAME: setting.displayName(data.lang()),
+                        })
+                    );
+                    return;
+                }
+
+                // Set setting value
+                let value = await setting.retrieve(intr, data);
+                if (value == null) {
+                    return;
+                }
+
+                setting.apply(data.user, value);
+                await data.user.save();
+
+                await MessageUtils.sendIntr(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.updatedSettingUser', data.lang(), {
+                        SETTING_NAME: setting.displayName(data.lang()),
+                        SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
+                    })
+                );
+                return;
+            }
+            case Lang.getCom('subCommands.remove'): {
+                this.settingManager.settings.forEach(setting => setting.clear(data.user));
+                await data.user.save();
+                await MessageUtils.sendIntr(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.removedUser', data.lang())
+                );
+                return;
+            }
+        }
     }
-
-    // public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
-    //     let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
-    //     if (privateMode && !(intr.channel instanceof DMChannel)) {
-    //         await MessageUtils.sendIntr(
-    //             intr,
-    //             Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
-    //         );
-    //         return;
-    //     }
-
-    //     if (!data.user) {
-    //         data.user = new UserData();
-    //         data.user.discordId = intr.user.id;
-    //     }
-
-    //     // Display settings
-    //     if (args.length === 2) {
-    //         let settingList = this.settingManager.list(data.user, data.lang());
-    //         await MessageUtils.sendIntr(
-    //             intr,
-    //             Lang.getEmbed('displayEmbeds.settingSelf', data.lang(), {
-    //                 SETTING_LIST: settingList,
-    //                 USER_ID: intr.user.id,
-    //             }).setAuthor(intr.user.tag, intr.user.avatarURL())
-    //         );
-    //         return;
-    //     }
-
-    //     if (args.length > 2) {
-    //         // Remove all setting data
-    //         if (args[2].toLowerCase() === Lang.getCom('commands.remove')) {
-    //             this.settingManager.settings.forEach(setting => setting.clear(data.user));
-    //             await data.user.save();
-    //             await MessageUtils.sendIntr(
-    //                 intr,
-    //                 Lang.getEmbed('resultEmbeds.removedUser', data.lang())
-    //             );
-    //             return;
-    //         }
-
-    //         // Find setting to configure
-    //         let setting = this.settingManager.find(args[2]);
-
-    //         // No setting found
-    //         if (!setting) {
-    //             await MessageUtils.sendIntr(
-    //                 intr,
-    //                 Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
-    //             );
-    //             return;
-    //         }
-
-    //         // Remove setting value
-    //         if (args.length > 3 && args[3].toLowerCase() === Lang.getCom('commands.remove')) {
-    //             setting.clear(data.user);
-    //             await data.user.save();
-
-    //             await MessageUtils.sendIntr(
-    //                 intr,
-    //                 Lang.getEmbed('resultEmbeds.removedSettingUser', data.lang(), {
-    //                     SETTING_NAME: setting.displayName(data.lang()),
-    //                 })
-    //             );
-    //             return;
-    //         }
-
-    //         // Set setting value
-    //         let value = await setting.retrieve(intr, data);
-    //         if (value == null) {
-    //             return;
-    //         }
-
-    //         setting.apply(data.user, value);
-    //         await data.user.save();
-
-    //         await MessageUtils.sendIntr(
-    //             intr,
-    //             Lang.getEmbed('resultEmbeds.updatedSettingUser', data.lang(), {
-    //                 SETTING_NAME: setting.displayName(data.lang()),
-    //                 SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
-    //             })
-    //         );
-    //     }
-    // }
 }

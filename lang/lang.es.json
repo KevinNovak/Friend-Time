@@ -32,15 +32,15 @@
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
-                            "**/{{COM:commands.map}}** - Mira el mapa de zonas horarias."
+                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} de admin",
                         "value": [
-                            "**/{{COM:commands.setup}}** - Ejecuta la configuración del servidor.",
+                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
                             "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
                             "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
                             "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",

@@ -44,7 +44,9 @@
                         "name": "{{REF:fields.commands}} de admin",
                         "value": [
                             "**/{{COM:commands.setup}}** - Ejecuta la configuración del servidor.",
-                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Gestiona las configuraciones del servidor.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - View server settings.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a server setting.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - Remove all server data.",
                             "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
                             "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
@@ -78,7 +80,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
-                            "`/{{COM:commands.server}} {{COM:settings.list}}` - Habilita o deshabilita el listado."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Habilita o deshabilita el listado."
                         ]
                     }
                 ]
@@ -113,9 +115,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Cambiar una configuración.",
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
-                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Eliminar todos los datos."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a server setting.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - Remove all server data."
                         ]
                     }
                 ],
@@ -531,7 +532,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}}` - Gestionar las configuraciones del servidor."
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - View server settings."
                         ]
                     }
                 ],

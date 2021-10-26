@@ -44,7 +44,9 @@
                         "name": "{{REF:fields.commands}} por administrantoj",
                         "value": [
                             "**/{{COM:commands.setup}}** - Startigi agordadon de la servilo.",
-                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Manipuli servilajn agordojn.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - View server settings.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a server setting.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - Remove all server data.",
                             "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
                             "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
@@ -78,7 +80,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
-                            "`/{{COM:commands.server}} {{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
                         ]
                     }
                 ]
@@ -113,9 +115,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
-                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a server setting.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - Remove all server data."
                         ]
                     }
                 ],
@@ -530,7 +531,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.server}}` - Manipuli servilajn agordojn."]
+                        "value": [
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - View server settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

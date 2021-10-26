@@ -44,7 +44,9 @@
                         "name": "Admin {{REF:fields.commands}}",
                         "value": [
                             "**/{{COM:commands.setup}}** - Utiliser la configuration du serveur.",
-                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Changer les paramètres du serveur.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - View server settings.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a server setting.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - Remove all server data.",
                             "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
                             "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
@@ -78,7 +80,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
-                            "`/{{COM:commands.server}} {{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
                         ]
                     }
                 ]
@@ -113,9 +115,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Changer un paramètre.",
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Tout réinitialiser."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a server setting.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - Remove all server data."
                         ]
                     }
                 ],
@@ -530,7 +531,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.server}}` - Changer les paramètres du serveur."]
+                        "value": [
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - View server settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

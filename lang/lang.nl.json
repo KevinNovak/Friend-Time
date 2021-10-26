@@ -44,7 +44,9 @@
                         "name": "Beheerder {{REF:fields.commands}}",
                         "value": [
                             "**/{{COM:commands.setup}}** - Voer de beheerdersconfiguratie uit.",
-                            "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Serverinstellingen beheren.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - View server settings.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a server setting.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - Remove all server data.",
                             "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
                             "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
@@ -78,7 +80,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
-                            "`/{{COM:commands.server}} {{COM:settings.list}}` - De lijst in- of uitschakelen."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - De lijst in- of uitschakelen."
                         ]
                     }
                 ]
@@ -113,9 +115,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}>` - Wijzig een instelling. .",
-                            "`/{{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reset een instelling.",
-                            "`/{{COM:commands.server}} {{COM:commands.remove}}` - Verwijder alle gegevens."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a server setting.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - Remove all server data."
                         ]
                     }
                 ],
@@ -579,7 +580,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.server}}` - Beheer serverinstellingen."]
+                        "value": [
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - View server settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

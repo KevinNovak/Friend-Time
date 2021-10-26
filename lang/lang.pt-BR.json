@@ -29,7 +29,9 @@
                         "name": "{{REF:fields.commands}} de usuário",
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Execute a configuração para você, outro usuário ou um bot).",
-                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Ajuste suas configurações.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
@@ -150,9 +152,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Altere uma configuração.",
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Redefina uma configuração para a opção padrão.",
-                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Remova todos os dados."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -280,7 +281,7 @@
                     "Configurando seu fuso horário, ficará mais fácil para o {{COM:bot.name}} converter os horários de outros usuários."
                 ],
                 "footer": {
-                    "text": "Se quiser desabilitar este lembrete, digite \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Se quiser desabilitar este lembrete, digite \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -550,7 +551,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Ajustar suas configurações."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -569,7 +572,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Ajustar suas configurações."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

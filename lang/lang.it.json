@@ -29,7 +29,9 @@
                         "name": "{{REF:fields.commands}} dell'utente",
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Esegui la configurazione dell'utente (per te stesso, un utente o un bot).",
-                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Gestisci le tue impostazioni utente.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
@@ -150,9 +152,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Cambia un impostazione.",
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Ripristina un impostazione.",
-                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Rimuovere tutti i dati."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -280,7 +281,7 @@
                     "L'impostazione del fuso orario consente a {{COM:bot.name}} di convertire i tempi nella chat del server da e verso il proprio fuso orario, facilitando il coordinamento dei tempi con gli altri."
                 ],
                 "footer": {
-                    "text": "Se desideri disabilitare questo promemoria, digita \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Se desideri disabilitare questo promemoria, digita \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -550,7 +551,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Gestisci le impostazioni utente."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -569,7 +572,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Gestisci le impostazioni utente."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

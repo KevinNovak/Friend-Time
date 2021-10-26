@@ -29,7 +29,9 @@
                         "name": "Gebruiker {{REF:fields.commands}}",
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Voer de gebruikersconfiguratie uit (voor jezelf, een gebruiker of bot).",
-                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Beheer je gebruikersinstellingen.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
@@ -154,9 +156,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Wijzig een instelling.",
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reset een instelling.",
-                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Verwijder alle gegevens."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -289,7 +290,7 @@
                     "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
                 ],
                 "footer": {
-                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -597,7 +598,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Beheer je gebruikersinstellingen."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -616,7 +619,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Beheer je gebruikersinstellingen."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

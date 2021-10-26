@@ -29,7 +29,9 @@
                         "name": "User {{REF:fields.commands}}",
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Run the user setup (for yourself, a user, or bot).",
-                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Manage your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
@@ -150,9 +152,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Change a setting.",
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reset a setting.",
-                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Remove all data."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -280,7 +281,7 @@
                     "Setting your time zone allows {{COM:bot.name}} to convert times in server chat to and from your time zone, making coordinating times with others easier."
                 ],
                 "footer": {
-                    "text": "If you wish to disable this reminder, type \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "If you wish to disable this reminder, type \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -548,7 +549,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Manage your user settings."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -567,7 +570,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Manage your user settings."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

@@ -29,7 +29,9 @@
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
                             "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
-                            "**/{{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Changer tes paramètres.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
@@ -150,9 +152,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}>` - Changer un paramètre.",
-                            "`/{{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`/{{COM:commands.me}} {{COM:commands.remove}}` - Tout réinitialiser."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -280,7 +281,7 @@
                     "Configurer ton fuseau horaire permet à {{COM:bot.name}} de convertir les messages du chat depuis ton fuseau horaire, assurant une meilleure coordination avec les autres membres."
                 ],
                 "footer": {
-                    "text": "Si tu veux désactiver ce rappel, écris \"/{{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Si tu veux désactiver ce rappel, écris \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -548,7 +549,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Changer tes paramètres utilisateur."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"
@@ -567,7 +570,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.actions}}",
-                        "value": ["`/{{COM:commands.me}}` - Changer les paramètres utilisateur."]
+                        "value": [
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
+                        ]
                     }
                 ],
                 "color": "{{COM:colors.success}}"

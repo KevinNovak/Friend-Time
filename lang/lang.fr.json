@@ -28,7 +28,8 @@
                     {
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Utiliser la configuration utilisateur (pour toi-même, un utilisateur ou un bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurer un nouveau bot.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -277,7 +278,7 @@
                 "description": [
                     "Hey {{USER}}, on dirait que tu as [mentionné ou réagit a un horaire]({{MESSAGE_LINK}}), mais tu n'as pas encore établi de fuseau horaire.",
                     "",
-                    "Configure ton fuseau horaire en utilisant la commande `/{{COM:commands.set}}` !",
+                    "Configure ton fuseau horaire en utilisant la commande `/{{COM:commands.set}} {{COM:subCommands.me}}` !",
                     "",
                     "Configurer ton fuseau horaire permet à {{COM:bot.name}} de convertir les messages du chat depuis ton fuseau horaire, assurant une meilleure coordination avec les autres membres."
                 ],
@@ -679,7 +680,7 @@
                 "description": [
                     "Bot non trouvé ou pas encore configuré.",
                     "",
-                    "Entrer `/{{COM:commands.set}} <{{COM:arguments.bot}}>` pour configurer un nouveau bot."
+                    "Entrer `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` pour configurer un nouveau bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },

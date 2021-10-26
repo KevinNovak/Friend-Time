@@ -28,7 +28,8 @@
                     {
                         "name": "{{REF:fields.commands}} de usuario",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Correr la configuración (para ti, otro usuario, o un bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurar un nuevo bot.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -277,7 +278,7 @@
                 "description": [
                     "Hola {{USER}}, parece que [mencionaste o reaccionaste a una hora]({{MESSAGE_LINK}}), pero aún no has configurado tu zona horaria.",
                     "",
-                    "Configura tu zona horaria usando el comando `/{{COM:commands.set}}`",
+                    "Configura tu zona horaria usando el comando `/{{COM:commands.set}} {{COM:subCommands.me}}`",
                     "",
                     "Al configurar tu zona horaria le permites a {{COM:bot.name}} convertir horas en una conversación desde y hacia tu zona horaria, facilitando la coordinación de horas con otros miembros."
                 ],
@@ -679,7 +680,7 @@
                 "description": [
                     "El Bot no fue encontrado o no se ha configurado aún.",
                     "",
-                    "Escribe `/{{COM:commands.set}} <{{COM:arguments.bot}}>` para configurar un nuevo bot."
+                    "Escribe `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` para configurar un nuevo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },

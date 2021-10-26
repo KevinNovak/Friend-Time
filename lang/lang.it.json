@@ -28,7 +28,8 @@
                     {
                         "name": "{{REF:fields.commands}} dell'utente",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Esegui la configurazione dell'utente (per te stesso, un utente o un bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Imposta un nuovo bot.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -277,7 +278,7 @@
                 "description": [
                     "Ciao {{USER}}, sembra che tu abbia [menzionato o reagito a un orario]({{MESSAGE_LINK}}), ma non hai ancora impostato un fuso orario.",
                     "",
-                    "Imposta il tuo fuso orario utilizzando il comando `/{{COM:commands.set}}`!",
+                    "Imposta il tuo fuso orario utilizzando il comando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "L'impostazione del fuso orario consente a {{COM:bot.name}} di convertire i tempi nella chat del server da e verso il proprio fuso orario, facilitando il coordinamento dei tempi con gli altri."
                 ],
@@ -679,7 +680,7 @@
                 "description": [
                     "Bot non trovato o non ancora configurato.",
                     "",
-                    "Digita `/{{COM:commands.set}} <{{COM:arguments.bot}}>` per configurare un nuovo bot."
+                    "Digita `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` per configurare un nuovo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },

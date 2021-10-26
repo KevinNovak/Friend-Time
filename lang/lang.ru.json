@@ -28,7 +28,8 @@
                     {
                         "name": "{{REF:fields.commands}} для пользователей",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Начать настройку (для себя, другого пользователя или бота).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -92,7 +93,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Настроить нового бота.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -272,7 +273,7 @@
                 "description": [
                     "Привет, {{USER}}, кажется, вы [написали/поставили реакцию на сообщение с упоминанием временем]({{MESSAGE_LINK}}), но ещё не установили свой часовой пояс.",
                     "",
-                    "Выберите его при помощи команды `/{{COM:commands.set}}`!",
+                    "Выберите его при помощи команды `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "Как только вы установите часовой пояс, {{COM:bot.name}} сможет конвертировать время, упомянутое на сервере, в и из вашего часового пояса, благодаря чему координироваться с другими будет легче."
                 ],
@@ -674,7 +675,7 @@
                 "description": [
                     "Бот не найден или ещё не настроен.",
                     "",
-                    "Введите `/{{COM:commands.set}} <{{COM:arguments.bot}}>`, чтобы настроить бота."
+                    "Введите `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>`, чтобы настроить бота."
                 ],
                 "color": "{{COM:colors.error}}"
             },

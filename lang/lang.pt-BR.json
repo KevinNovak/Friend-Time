@@ -28,7 +28,8 @@
                     {
                         "name": "{{REF:fields.commands}} de usuário",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Execute a configuração para você, outro usuário ou um bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Execute a configuração para um bot.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -277,7 +278,7 @@
                 "description": [
                     "Olá {{USER}}, parece que você [mencionou ou reagiu a um horário]({{MESSAGE_LINK}}), mas você não tem nenhum fuso horário configurado ainda.",
                     "",
-                    "Configure seu fuso horário com o comando `/{{COM:commands.set}}`!",
+                    "Configure seu fuso horário com o comando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "Configurando seu fuso horário, ficará mais fácil para o {{COM:bot.name}} converter os horários de outros usuários."
                 ],
@@ -679,7 +680,7 @@
                 "description": [
                     "Bot não encontrado ou não configurado ainda.",
                     "",
-                    "Digite `/{{COM:commands.set}} <{{COM:arguments.bot}}>` para configurar um bot."
+                    "Digite `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` para configurar um bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },

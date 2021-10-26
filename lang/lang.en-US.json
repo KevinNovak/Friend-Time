@@ -28,7 +28,8 @@
                     {
                         "name": "User {{REF:fields.commands}}",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Run the user setup (for yourself, a user, or bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Setup a new bot.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -277,7 +278,7 @@
                 "description": [
                     "Hi {{USER}}, it looks like you [mentioned or reacted to a time]({{MESSAGE_LINK}}), but don't have a time zone set yet.",
                     "",
-                    "Set your time zone by using the `/{{COM:commands.set}}` command!",
+                    "Set your time zone by using the `/{{COM:commands.set}} {{COM:subCommands.me}}` command!",
                     "",
                     "Setting your time zone allows {{COM:bot.name}} to convert times in server chat to and from your time zone, making coordinating times with others easier."
                 ],
@@ -679,7 +680,7 @@
                 "description": [
                     "Bot not found or not setup yet.",
                     "",
-                    "Type `/{{COM:commands.set}} <{{COM:arguments.bot}}>` to setup a new bot."
+                    "Type `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` to setup a new bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },

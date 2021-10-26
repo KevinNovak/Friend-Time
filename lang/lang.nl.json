@@ -28,7 +28,8 @@
                     {
                         "name": "Gebruiker {{REF:fields.commands}}",
                         "value": [
-                            "**/{{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Voer de gebruikersconfiguratie uit (voor jezelf, een gebruiker of bot).",
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
                             "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
                             "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
                             "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
@@ -97,7 +98,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Stel een nieuwe bot in.",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}> - Run the user setup for a bot.`",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
@@ -286,7 +287,7 @@
                 "description": [
                     "Hoi {{USER}}, het lijkt erop dat je hebt [benoemd of gereageerd op een tijd]({{MESSAGE_LINK}}) zonder een tijdzone ingesteld te hebben.",
                     "",
-                    "Stel je tijdzone in door het `/{{COM:commands.set}}` commando te gebruiken!",
+                    "Stel je tijdzone in door het `/{{COM:commands.set}} {{COM:subCommands.me}}` commando te gebruiken!",
                     "",
                     "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
                 ],
@@ -728,7 +729,7 @@
                 "description": [
                     "Bot is niet gevonden of nog niet ingesteld.",
                     "",
-                    "Schrijf `/{{COM:commands.set}} <{{COM:arguments.bot}}>` om een nieuwe bot in te stellen."
+                    "Schrijf `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` om een nieuwe bot in te stellen."
                 ],
                 "color": "{{COM:colors.error}}"
             },

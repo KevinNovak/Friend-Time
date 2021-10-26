@@ -34,7 +34,7 @@
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
                             "**/{{COM:commands.map}}** - Просмотреть карту поясов.",
-                            "**/{{COM:commands.info}}** - Информация о {{COM:bot.name}}."
+                            "**/{{COM:commands.info}}** - View bot info."
                         ]
                     },
                     {

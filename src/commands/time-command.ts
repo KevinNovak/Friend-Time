@@ -19,16 +19,16 @@ let Config = require('../../config/config.json');
 export class TimeCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.time'),
-        description: Lang.getCom('commandDescs.time'),
+        description: Lang.getRef('commandDescs.time', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.server'),
-                description: 'View the time of the server.',
+                description: Lang.getRef('commandDescs.timeServer', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.user'),
-                description: 'View the time of a user or bot.',
+                description: Lang.getRef('commandDescs.timeUser', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
@@ -41,7 +41,7 @@ export class TimeCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.zone'),
-                description: 'View the time of a zone.',
+                description: Lang.getRef('commandDescs.timeZone', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

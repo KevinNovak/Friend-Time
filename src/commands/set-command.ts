@@ -22,16 +22,16 @@ let Debug = require('../../config/debug.json');
 export class SetCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.set'),
-        description: Lang.getCom('commandDescs.set'),
+        description: Lang.getRef('commandDescs.set', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.me'),
-                description: 'Run the user setup for yourself.',
+                description: Lang.getRef('commandDescs.setMe', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.user'),
-                description: 'Run the user setup for a user or bot.',
+                description: Lang.getRef('commandDescs.setUser', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

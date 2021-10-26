@@ -12,16 +12,16 @@ let Config = require('../../config/config.json');
 export class ListCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.list'),
-        description: Lang.getCom('commandDescs.list'),
+        description: Lang.getRef('commandDescs.list', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: 'View the server time zone list.',
+                description: Lang.getRef('commandDescs.listView', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.toggle'),
-                description: 'Add or remove to the server time zone list.',
+                description: Lang.getRef('commandDescs.listToggle', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

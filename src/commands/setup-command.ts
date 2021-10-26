@@ -10,7 +10,7 @@ import { Command } from './command';
 export class SetupCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.setup'),
-        description: Lang.getCom('commandDescs.setup'),
+        description: Lang.getRef('commandDescs.setup', Lang.Default),
     };
     public requireDev = false;
     public requireGuild = true;

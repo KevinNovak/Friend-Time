@@ -9,7 +9,7 @@ import { Command } from './command';
 export class LinkCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.link'),
-        description: Lang.getCom('commandDescs.link'),
+        description: Lang.getRef('commandDescs.link', Lang.Default),
         options: [
             {
                 name: 'link',

@@ -12,16 +12,16 @@ import { Command } from './command';
 export class MeCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.me'),
-        description: Lang.getCom('commandDescs.me'),
+        description: Lang.getRef('commandDescs.me', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: `View your user settings.`,
+                description: Lang.getRef('commandDescs.meView', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: 'Change a user setting.',
+                description: Lang.getRef('commandDescs.meEdit', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
@@ -44,7 +44,7 @@ export class MeCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: 'Remove all your user data.',
+                description: Lang.getRef('commandDescs.meRemove', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
         ],

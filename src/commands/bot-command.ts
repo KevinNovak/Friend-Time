@@ -13,16 +13,16 @@ let Config = require('../../config/config.json');
 export class BotCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.bot'),
-        description: Lang.getCom('commandDescs.bot'),
+        description: Lang.getRef('commandDescs.bot', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.list'),
-                description: 'View list of bots.',
+                description: Lang.getRef('commandDescs.botList', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.view'),
-                description: `View a bot's settings.`,
+                description: Lang.getRef('commandDescs.botView', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
@@ -35,7 +35,7 @@ export class BotCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: 'Change a bot setting.',
+                description: Lang.getRef('commandDescs.botEdit', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
@@ -64,7 +64,7 @@ export class BotCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: 'Remove a bot.',
+                description: Lang.getRef('commandDescs.botRemove', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {

@@ -10,16 +10,16 @@ import { Command } from './command';
 export class ServerCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.server'),
-        description: Lang.getCom('commandDescs.server'),
+        description: Lang.getRef('commandDescs.server', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: `View server settings.`,
+                description: Lang.getRef('commandDescs.serverView', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: 'Change a server setting.',
+                description: Lang.getRef('commandDescs.serverEdit', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
                 options: [
                     {
@@ -42,7 +42,7 @@ export class ServerCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: 'Remove all server data.',
+                description: Lang.getRef('commandDescs.serverRemove', Lang.Default),
                 type: ApplicationCommandOptionType.Subcommand.valueOf(),
             },
         ],

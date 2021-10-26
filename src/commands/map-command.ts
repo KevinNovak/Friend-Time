@@ -8,7 +8,7 @@ import { Command } from './command';
 export class MapCommand implements Command {
     public data: ApplicationCommandData = {
         name: Lang.getCom('commands.map'),
-        description: Lang.getCom('commandDescs.map'),
+        description: Lang.getRef('commandDescs.map', Lang.Default),
     };
     public requireDev = false;
     public requireGuild = false;

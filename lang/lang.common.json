@@ -17,21 +17,6 @@
         "time": "time",
         "translate": "translate"
     },
-    "commandDescs": {
-        "bot": "Manage bot settings.",
-        "dev": "View developer info.",
-        "help": "View help menu and list of commands.",
-        "info": "View bot info.",
-        "link": "Get links to invite, support, etc.",
-        "list": "Manage the server time zone list.",
-        "map": "View the zone map.",
-        "me": "Manage your user settings.",
-        "server": "Manage server settings.",
-        "set": "Run the user setup (for yourself, a user, or bot).",
-        "setup": "Run the server setup.",
-        "time": "View the time of the server, user, bot, or zone.",
-        "translate": "View translation info."
-    },
     "subCommands": {
         "list": "list",
         "view": "view",

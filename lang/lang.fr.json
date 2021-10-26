@@ -41,7 +41,10 @@
                             "**/{{COM:commands.setup}}** - Utiliser la configuration du serveur.",
                             "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Changer les paramètres du serveur.",
                             "**/{{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Changer la liste des fuseaux horaires.",
-                            "**/{{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Changer les paramètres du bot.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - View a bot's settings.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - Change a bot setting.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - Remove a bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -87,7 +90,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurer un nouveau bot.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Changer un bot."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ]
@@ -124,9 +127,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Changer un paramètre.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Réinitialiser un paramètre.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Tout réinitialiser."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Change a bot setting.",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - Remove a bot."
                         ]
                     }
                 ],
@@ -579,7 +581,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Changer les paramètres du bot."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ],

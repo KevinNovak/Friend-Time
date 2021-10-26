@@ -41,7 +41,10 @@
                             "**/{{COM:commands.setup}}** - Startigi agordadon de la servilo.",
                             "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Manipuli servilajn agordojn.",
                             "**/{{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Manipuli la horzonliston de la servilo.",
-                            "**/{{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Manipuli robotajn agordojn.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - View a bot's settings.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - Change a bot setting.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - Remove a bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -87,7 +90,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.set}} <{{COM:arguments.bot}}>` - Agordi novan roboton.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli roboton."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ]
@@ -124,9 +127,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Nuligi agordon.",
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Change a bot setting.",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - Remove a bot."
                         ]
                     }
                 ],
@@ -579,7 +581,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} <{{COM:arguments.bot}}>` - Manipuli robotajn agordojn."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ],

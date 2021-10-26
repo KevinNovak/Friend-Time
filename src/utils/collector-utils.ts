@@ -34,7 +34,7 @@ export class CollectorUtils {
                 [
                     `<@${channel.client.user.id}>`,
                     `<@!${channel.client.user.id}>`,
-                    Lang.getCom('commands.stop'),
+                    Lang.getCom('keywords.stop'),
                 ].includes(nextMsgArgs[0]?.toLowerCase())
             ) {
                 return true;
@@ -84,7 +84,7 @@ export class CollectorUtils {
                 [
                     `<@${channel.client.user.id}>`,
                     `<@!${channel.client.user.id}>`,
-                    Lang.getCom('commands.stop'),
+                    Lang.getCom('keywords.stop'),
                 ].includes(nextMsgArgs[0]?.toLowerCase())
             ) {
                 return true;

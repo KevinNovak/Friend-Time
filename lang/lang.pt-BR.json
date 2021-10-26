@@ -36,9 +36,7 @@
                             "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
                             "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
                             "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
-                            "**/{{COM:commands.map}}** - Veja o mapa com todos os fusos horários.",
-                            "**/{{COM:commands.link}} *<{{COM:arguments.link}}>*** - Get links to invite, support, etc.",
-                            "**/{{COM:commands.info}}** - View bot info."
+                            "**/{{COM:commands.map}}** - Veja o mapa com todos os fusos horários."
                         ]
                     },
                     {

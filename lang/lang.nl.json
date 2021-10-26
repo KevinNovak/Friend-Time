@@ -877,7 +877,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Schrijf je antwoord hier beneden (of schrijf '{{COM:commands.stop}}' om te annuleren)."
+            "collector": "Schrijf je antwoord hier beneden (of schrijf '{{COM:keywords.stop}}' om te annuleren)."
         },
         "other": {
             "na": "N.v.t.",

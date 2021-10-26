@@ -828,7 +828,7 @@
             "links": "Liens"
         },
         "footers": {
-            "collector": "Entrer ta réponse ci-dessous (ou '{{COM:commands.stop}}' pour annuler)."
+            "collector": "Entrer ta réponse ci-dessous (ou '{{COM:keywords.stop}}' pour annuler)."
         },
         "other": {
             "na": "N/A",

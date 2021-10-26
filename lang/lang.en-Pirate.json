@@ -828,7 +828,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Enter yer response below (or '{{COM:commands.stop}}' to cancel)."
+            "collector": "Enter yer response below (or '{{COM:keywords.stop}}' to cancel)."
         },
         "other": {
             "na": "N/A",

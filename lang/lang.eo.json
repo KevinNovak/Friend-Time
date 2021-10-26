@@ -828,7 +828,7 @@
             "links": "Ligiloj"
         },
         "footers": {
-            "collector": "Tajpu la respondon (aŭ «{{COM:commands.stop}}» por nuligi)."
+            "collector": "Tajpu la respondon (aŭ «{{COM:keywords.stop}}» por nuligi)."
         },
         "other": {
             "na": "N/A",

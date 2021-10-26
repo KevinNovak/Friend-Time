@@ -823,7 +823,7 @@
             "links": "Ссылки"
         },
         "footers": {
-            "collector": "Введите свой ответ (или «{{COM:commands.stop}}» чтобы сбросить)."
+            "collector": "Введите свой ответ (или «{{COM:keywords.stop}}» чтобы сбросить)."
         },
         "other": {
             "na": "Н/Д",

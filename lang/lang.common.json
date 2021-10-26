@@ -15,20 +15,7 @@
         "set": "set",
         "setup": "setup",
         "time": "time",
-        "translate": "translate",
-        "stop": "stop",
-        "remove": "remove"
-    },
-    "subCommands": {
-        "list": "list",
-        "view": "view",
-        "edit": "edit",
-        "remove": "remove",
-        "toggle": "toggle",
-        "server": "server",
-        "me": "me",
-        "user": "user",
-        "zone": "zone"
+        "translate": "translate"
     },
     "commandDescs": {
         "bot": "Manage bot settings.",
@@ -45,6 +32,17 @@
         "time": "View the time of the server, user, bot, or zone.",
         "translate": "View translation info."
     },
+    "subCommands": {
+        "list": "list",
+        "view": "view",
+        "edit": "edit",
+        "remove": "remove",
+        "toggle": "toggle",
+        "server": "server",
+        "me": "me",
+        "user": "user",
+        "zone": "zone"
+    },
     "arguments": {
         "link": "link",
         "user": "user",
@@ -52,6 +50,9 @@
         "setting": "setting",
         "zone": "zone",
         "reset": "reset"
+    },
+    "keywords": {
+        "stop": "stop"
     },
     "settings": {
         "autoDetect": "autoDetect",

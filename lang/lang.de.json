@@ -828,7 +828,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Schreibe nun deine Antwort (oder '{{COM:commands.stop}}' zum Stoppen)."
+            "collector": "Schreibe nun deine Antwort (oder '{{COM:keywords.stop}}' zum Stoppen)."
         },
         "other": {
             "na": "N/A",

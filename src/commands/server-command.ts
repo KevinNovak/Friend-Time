@@ -27,32 +27,10 @@ export class ServerCommand implements Command {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String.valueOf(),
                         required: true,
-                        choices: [
-                            {
-                                name: 'timeZone',
-                                value: 'timeZone',
-                            },
-                            {
-                                name: 'timeFormat',
-                                value: 'timeFormat',
-                            },
-                            {
-                                name: 'autoDetect',
-                                value: 'autoDetect',
-                            },
-                            {
-                                name: 'list',
-                                value: 'list',
-                            },
-                            {
-                                name: 'reminders',
-                                value: 'reminders',
-                            },
-                            {
-                                name: 'language',
-                                value: 'language',
-                            },
-                        ],
+                        choices: this.settingManager.settings.map(setting => ({
+                            name: setting.name,
+                            value: setting.name,
+                        })),
                     },
                     {
                         name: Lang.getCom('arguments.reset'),

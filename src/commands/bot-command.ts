@@ -49,16 +49,10 @@ export class BotCommand implements Command {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String.valueOf(),
                         required: true,
-                        choices: [
-                            {
-                                name: 'timeZone',
-                                value: 'timeZone',
-                            },
-                            {
-                                name: 'dateFormat',
-                                value: 'dateFormat',
-                            },
-                        ],
+                        choices: this.settingManager.settings.map(setting => ({
+                            name: setting.name,
+                            value: setting.name,
+                        })),
                     },
                     {
                         name: Lang.getCom('arguments.reset'),

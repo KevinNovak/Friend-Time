@@ -29,32 +29,10 @@ export class MeCommand implements Command {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String.valueOf(),
                         required: true,
-                        choices: [
-                            {
-                                name: 'timeZone',
-                                value: 'timeZone',
-                            },
-                            {
-                                name: 'dateFormat',
-                                value: 'dateFormat',
-                            },
-                            {
-                                name: 'timeFormat',
-                                value: 'timeFormat',
-                            },
-                            {
-                                name: 'privateMode',
-                                value: 'privateMode',
-                            },
-                            {
-                                name: 'reminders',
-                                value: 'reminders',
-                            },
-                            {
-                                name: 'language',
-                                value: 'language',
-                            },
-                        ],
+                        choices: this.settingManager.settings.map(setting => ({
+                            name: setting.name,
+                            value: setting.name,
+                        })),
                     },
                     {
                         name: Lang.getCom('arguments.reset'),

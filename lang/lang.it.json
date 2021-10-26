@@ -7,7 +7,9 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} importanti",
-                        "value": ["**/{{COM:commands.help}}** - Visualizza la guida del bot"]
+                        "value": [
+                            "**/{{COM:commands.help}}** - View help menu and list of commands."
+                        ]
                     },
                     {
                         "name": "{{REF:fields.links}}",

@@ -7,7 +7,9 @@
                 "fields": [
                     {
                         "name": "Gravaj komandoj",
-                        "value": ["**/{{COM:commands.help}}** - Vidi la helpilon."]
+                        "value": [
+                            "**/{{COM:commands.help}}** - View help menu and list of commands."
+                        ]
                     },
                     {
                         "name": "{{REF:fields.links}}",

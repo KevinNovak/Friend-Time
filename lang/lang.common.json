@@ -46,6 +46,7 @@
         "translate": "View translation info."
     },
     "arguments": {
+        "link": "link",
         "user": "user",
         "bot": "bot",
         "setting": "setting",

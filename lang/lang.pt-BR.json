@@ -40,7 +40,8 @@
                         "value": [
                             "**/{{COM:commands.setup}}** - Execute os ajustes do Bot.",
                             "**/{{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Ajuste as configurações do servidor.",
-                            "**/{{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Ajuste a lista de fusos horários do servidor.",
+                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
+                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - View a bot's settings.",
                             "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - Change a bot setting.",
@@ -71,7 +72,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.list}} <{{COM:arguments.zone}}>` - Adicione ou remova um fuso horário.",
+                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
                             "`/{{COM:commands.server}} {{COM:settings.list}}` - Habilite ou desabilite a lista."
                         ]
                     }

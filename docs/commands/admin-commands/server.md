@@ -8,14 +8,13 @@ description: Manage server settings.
 
 The `/server` command is used to view and change your [server settings](../../settings/server-settings/). These settings apply to just the server you are using Friend Time in.
 
-* `/server` - View the server's settings.
-* `/server <setting>` - Change one of the server's settings.
-* `/server <setting> remove` - Reset a setting to default.
+* `/server view` - View the server's settings.
+* `/server edit <setting>` - Change one of the server's settings.
 * `/server remove` Remove all of the server's data.
 
 ## View the Server's Settings
 
-Type `/server` to view the server's settings.
+Type `/server view` to view the server's settings.
 
 ![](../../.gitbook/assets/image%20%2841%29.png)
 
@@ -25,13 +24,13 @@ If a setting is _italicized_ it means the server is using the default setting va
 
 ## Change One of the Server's Settings
 
-Type `/server <setting>` to change one of the server's settings.
+Type `/server edit <setting>` to change one of the server's settings.
 
 ![](../../.gitbook/assets/image%20%2840%29.png)
 
 ## Reset a Setting to Default
 
-Type `/server <setting> remove` to reset a setting to default.
+Type `/server edit <setting> reset:True` to reset a setting to default.
 
 ![](../../.gitbook/assets/image%20%2846%29.png)
 

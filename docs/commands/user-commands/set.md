@@ -8,13 +8,12 @@ description: 'Run the user setup (for yourself, a user, or bot).'
 
 The `/set` command runs the required user setup. This includes your time zone so that Friend Time is able to convert times to and from your time zone. You can run this setup for yourself, another user, or a bot.
 
-* `/set` - Run the user setup for yourself.
-* `/set <@user>` - Run the user setup for another user.
-* `/set <@bot>` - Run the user setup for a bot.
+* `/set me` - Run the user setup for yourself.
+* `/set user <user/bot>` - Run the user setup for another user or bot.
 
 ## Setup for Yourself
 
-**1.** Type `/set` to start the setup process.
+**1.** Type `/set me` to start the setup process.
 
 ![](../../.gitbook/assets/image%20%2816%29%20%281%29.png)
 
@@ -36,7 +35,7 @@ If you are unsure which time zone to use, see the guide on [finding time zones](
 
 ## Setup for Another User
 
-**1.** Type `/set <@user>` to start the setup process.
+**1.** Type `/set user <user>` to start the setup process.
 
 ![](../../.gitbook/assets/image%20%2828%29.png)
 
@@ -62,7 +61,7 @@ If you are unsure which time zone to use, see the guide on [finding time zones](
 
 ## Setup for a Bot
 
-**1.** Type `/set <@bot>` to start the setup process.
+**1.** Type `/set user <bot>` to start the setup process.
 
 ![](../../.gitbook/assets/image%20%2825%29.png)
 

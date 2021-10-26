@@ -32,7 +32,6 @@ export class CollectorUtils {
             let nextMsgArgs = nextMsg.content.split(' ');
             if (
                 [
-                    Config.prefix,
                     `<@${channel.client.user.id}>`,
                     `<@!${channel.client.user.id}>`,
                     Lang.getCom('commands.stop'),
@@ -83,7 +82,6 @@ export class CollectorUtils {
             let nextMsgArgs = nextMsg.content.split(' ');
             if (
                 [
-                    Config.prefix,
                     `<@${channel.client.user.id}>`,
                     `<@!${channel.client.user.id}>`,
                     Lang.getCom('commands.stop'),

@@ -1,10 +1,10 @@
-import { Message, PermissionResolvable } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, PermissionResolvable } from 'discord.js';
 import { EventData } from '../models/internal-models';
 
 export interface Command {
-    name: string;
+    data: ApplicationCommandData;
     requireDev: boolean;
     requireGuild: boolean;
     requirePerms: PermissionResolvable[];
-    execute(msg: Message, args: string[], data: EventData): Promise<void>;
+    execute(intr: CommandInteraction, data: EventData): Promise<void>;
 }

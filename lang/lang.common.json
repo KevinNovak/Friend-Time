@@ -1,35 +1,57 @@
 {
     "bot": {
-        "name": "Friend Time",
-        "prefix": "-ft"
+        "name": "Friend Time"
     },
     "commands": {
         "bot": "bot",
         "dev": "dev",
-        "docs": "docs",
-        "donate": "donate",
-        "find": "find",
         "help": "help",
         "info": "info",
-        "invite": "invite",
+        "link": "link",
         "list": "list",
         "map": "map",
         "me": "me",
         "server": "server",
         "set": "set",
         "setup": "setup",
-        "support": "support",
         "time": "time",
         "translate": "translate",
-        "vote": "vote",
         "stop": "stop",
         "remove": "remove"
     },
-    "arguments": {
-        "user": "@user",
-        "bot": "@bot",
-        "setting": "setting",
+    "subCommands": {
+        "list": "list",
+        "view": "view",
+        "edit": "edit",
+        "remove": "remove",
+        "toggle": "toggle",
+        "server": "server",
+        "me": "me",
+        "user": "user",
         "zone": "zone"
+    },
+    "commandDescs": {
+        "bot": "Manage bot settings.",
+        "dev": "View developer info.",
+        "help": "View help menu and list of commands.",
+        "info": "View bot info.",
+        "link": "Get links to invite, support, etc.",
+        "list": "Manage the server time zone list.",
+        "map": "View the zone map.",
+        "me": "Manage your user settings.",
+        "server": "Manage server settings.",
+        "set": "Run the user setup (for yourself, a user, or bot).",
+        "setup": "Run the server setup.",
+        "time": "View the time of the server, user, bot, or zone.",
+        "translate": "View translation info."
+    },
+    "arguments": {
+        "link": "link",
+        "user": "user",
+        "bot": "bot",
+        "setting": "setting",
+        "zone": "zone",
+        "reset": "reset"
     },
     "settings": {
         "autoDetect": "autoDetect",
@@ -68,5 +90,8 @@
         "source": "https://github.com/KevinNovak/Friend-Time",
         "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
         "map": "https://kevinnovak.github.io/Time-Zone-Picker/"
+    },
+    "images": {
+        "helpCommand": "https://i.imgur.com/0GPhOSm.png"
     }
 }

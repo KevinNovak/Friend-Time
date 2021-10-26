@@ -8,7 +8,7 @@
                     {
                         "name": "{{REF:fields.commands}} importantes",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.help}}** - Ver ayuda del bot."
+                            "**/{{COM:commands.help}}** - View help menu and list of commands."
                         ]
                     },
                     {
@@ -28,20 +28,32 @@
                     {
                         "name": "{{REF:fields.commands}} de usuario",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.set}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}]*** - Correr la configuración (para ti, otro usuario, o un bot).",
-                            "**{{COM:bot.prefix}} {{COM:commands.me}} *[{{COM:arguments.setting}}]*** - Gestiona tus configuraciones de usuario.",
-                            "**{{COM:bot.prefix}} {{COM:commands.time}} *[{{COM:arguments.user}}/{{COM:arguments.bot}}/{{COM:arguments.zone}}]*** - Mira la hora del servidor, usuario, bot, o zona.",
-                            "**{{COM:bot.prefix}} {{COM:commands.map}}** - Mira el mapa de zonas horarias.",
-                            "**{{COM:bot.prefix}} {{COM:commands.info}}** - Más información sobre {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - Run the user setup for yourself.",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - Run the user setup for a user or bot.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - View your user settings.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a user setting.",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - Remove all your user data.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - View the time of the server.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - View the time of a user.",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - View the time of a zone.",
+                            "**/{{COM:commands.map}}** - Mira el mapa de zonas horarias.",
+                            "**/{{COM:commands.link}} *<{{COM:arguments.link}}>*** - Get links to invite, support, etc.",
+                            "**/{{COM:commands.info}}** - View bot info."
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} de admin",
                         "value": [
-                            "**{{COM:bot.prefix}} {{COM:commands.setup}}** - Ejecuta la configuración del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.server}} *[{{COM:arguments.setting}}]*** - Gestiona las configuraciones del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.list}} *[{{COM:arguments.zone}}]*** - Gestiona el listado de zonas horarias del servidor.",
-                            "**{{COM:bot.prefix}} {{COM:commands.bot}} *[{{COM:arguments.bot}}]* *[{{COM:arguments.setting}}]*** - Gestiona las configuraciones del bot.",
+                            "**/{{COM:commands.setup}}** - Ejecuta la configuración del servidor.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - View server settings.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - Change a server setting.",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - Remove all server data.",
+                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - View the server time zone list.",
+                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - Add or remove to the server time zone list.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - View list of bots.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - View a bot's settings.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - Change a bot setting.",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - Remove a bot.",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +80,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.list}} <{{COM:arguments.zone}}>` - Agrega o elimina una zona horaria.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:settings.list}}` - Habilita o deshabilita el listado."
+                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - Add or remove to the server time zone list.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Habilita o deshabilita el listado."
                         ]
                     }
                 ]
@@ -86,8 +98,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` - Configurar un nuevo bot.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Gestionar el bot."
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - Run the user setup for a bot.`",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ]
@@ -104,9 +116,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.server}} {{COM:commands.remove}}` - Eliminar todos los datos."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a server setting.",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - Remove all server data."
                         ]
                     }
                 ],
@@ -124,9 +135,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}> {{COM:commands.remove}}` - Eliminar todos los datos."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - Change a bot setting.",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - Remove a bot."
                         ]
                     }
                 ],
@@ -144,9 +154,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}>` - Cambiar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} <{{COM:arguments.setting}}> {{COM:commands.remove}}` - Reiniciar una configuración.",
-                            "`{{COM:bot.prefix}} {{COM:commands.me}} {{COM:commands.remove}}` - Eliminar todos los datos."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - Change a user setting.",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - Remove all your user data."
                         ]
                     }
                 ],
@@ -269,12 +278,12 @@
                 "description": [
                     "Hola {{USER}}, parece que [mencionaste o reaccionaste a una hora]({{MESSAGE_LINK}}), pero aún no has configurado tu zona horaria.",
                     "",
-                    "Configura tu zona horaria usando el comando `{{COM:bot.prefix}} {{COM:commands.set}}`",
+                    "Configura tu zona horaria usando el comando `/{{COM:commands.set}} {{COM:subCommands.me}}`",
                     "",
                     "Al configurar tu zona horaria le permites a {{COM:bot.name}} convertir horas en una conversación desde y hacia tu zona horaria, facilitando la coordinación de horas con otros miembros."
                 ],
                 "footer": {
-                    "text": "Si deseas deshabilitar estos recordatorios, escribe \"{{COM:bot.prefix}} {{COM:commands.me}} {{COM:settings.reminders}}\"."
+                    "text": "Si deseas deshabilitar estos recordatorios, escribe \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -385,7 +394,7 @@
                 "description": [
                     "¿Quieres que {{COM:bot.name}} envíe a la conversación un listado de horas convertidas luego de que una hora sea mencionada?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`{{COM:bot.prefix}} {{COM:commands.list}}`). Este listado se enviará en el mismo canal del mensaje original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Este listado se enviará en el mismo canal del mensaje original.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No se mostrará el listado.",
                     "\u2800"
@@ -524,7 +533,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.server}}` - Gestionar las configuraciones del servidor."
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - View server settings."
                         ]
                     }
                 ],
@@ -545,7 +554,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Gestionar tus configuraciones de usuario."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
                         ]
                     }
                 ],
@@ -566,7 +575,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.me}}` - Gestionar las configuraciones de usuario."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - View your user settings."
                         ]
                     }
                 ],
@@ -585,7 +594,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{COM:bot.prefix}} {{COM:commands.bot}} <{{COM:arguments.bot}}>` - Gestionar las configuraciones del bot."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - View a bot's settings."
                         ]
                     }
                 ],
@@ -641,6 +650,16 @@
             }
         },
         "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slash Commands Update",
+                "description": [
+                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "",
+                    "Try it by typing `/{{COM:commands.help}}`!"
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -661,7 +680,7 @@
                 "description": [
                     "El Bot no fue encontrado o no se ha configurado aún.",
                     "",
-                    "Escribe `{{COM:bot.prefix}} {{COM:commands.set}} <{{COM:arguments.bot}}>` para configurar un nuevo bot."
+                    "Escribe `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` para configurar un nuevo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -841,7 +860,7 @@
                 "",
                 "Simplemente **selecciona un lugar el el mapa** para ver su zona horaria correspondiente."
             ],
-            "translateNote": "Escribe `{{COM:bot.prefix}} {{COM:commands.translate}}` para conocer más sobre las traducciones.",
+            "translateNote": "Escribe `/{{COM:commands.translate}}` para conocer más sobre las traducciones.",
             "dmWarning": "Algunos comandos requieren que se permitan los DMs en al menos un servidor que compartas con {{COM:bot.name}}."
         },
         "messages": {

@@ -12,7 +12,7 @@ export class LinkCommand implements Command {
         description: Lang.getRef('commandDescs.link', Lang.Default),
         options: [
             {
-                name: 'link',
+                name: Lang.getCom('arguments.link'),
                 description: 'Link to display.',
                 required: true,
                 type: ApplicationCommandOptionType.String.valueOf(),

@@ -918,7 +918,7 @@
             "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
             "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})",
             "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
-            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
             "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})"

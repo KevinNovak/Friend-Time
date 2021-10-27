@@ -869,7 +869,7 @@
             "docsEmbed": "[Ver Documentação]({{COM:links.docs}}/)",
             "voteEmbed": "[Vote no {{COM:bot.name}}!]({{COM:links.vote}})",
             "supportEmbed": "[Junte-se ao servidor de suporte]({{COM:links.support}})",
-            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Verificar o código-fonte]({{COM:links.source}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
             "mapEmbed": "[Mapa de Fusos Horários]({{COM:links.map}})"

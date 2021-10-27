@@ -864,7 +864,7 @@
             "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
             "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})",
             "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
-            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",
             "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{COM:links.template}})",
             "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})"

@@ -1,6 +1,7 @@
+import { CommandInteraction } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { LangCode } from '../models/enums';
 
 export interface Confirmation {
-    confirmation(langCode: LangCode): MessageRetriever;
+    confirmation(intr: CommandInteraction, langCode: LangCode): MessageRetriever;
 }

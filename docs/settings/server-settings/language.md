@@ -8,7 +8,7 @@ The server **Language** setting changes Friend Time's language for user's in you
 Please note that users can override the server language if they have a language set for themselves.
 {% endhint %}
 
-Type `-ft translate` to see what languages are available.
+Type `/translate` to see what languages are available.
 
 ![](../../.gitbook/assets/image%20%2863%29%20%281%29.png)
 

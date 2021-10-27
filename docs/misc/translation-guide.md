@@ -51,7 +51,6 @@ The following should **NOT** be changed:
 * **Emojis**
 * **Links**
 * **Bot Name**
-* **Bot Prefix**
 
 In addition to the above, the following should be kept **as similar as possible** unless inappropriate for the language:
 

@@ -7,9 +7,7 @@
                 "fields": [
                     {
                         "name": "Gravaj komandoj",
-                        "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Vidi la helpilon."
-                        ]
+                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -28,20 +26,30 @@
                     {
                         "name": "{{REF:fields.commands}} por uzantoj",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Startigi agordadon (por si, uzanto aŭ roboto).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Manipuli siajn agordojn.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Vidi la horzonmapon.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Pli da informoj pri {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} por administrantoj",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Startigi agordadon de la servilo.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Manipuli servilajn agordojn.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Manipuli la horzonliston de la servilo.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Manipuli robotajn agordojn.",
+                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +76,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Aldoni aŭ forigi horzonon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Ŝalti aŭ malŝalti la liston."
+                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
                         ]
                     }
                 ]
@@ -86,8 +94,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Agordi novan roboton.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Manipuli roboton."
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}`",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -104,9 +112,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Nuligi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -124,9 +131,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Nuligi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -144,9 +150,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Ŝanĝi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Nuligi agordon.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Nuligi ĉiujn datumojn."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -269,12 +274,12 @@
                 "description": [
                     "Saluton, {{USER}}, ŝajne vi [menciis aŭ reagumis tempon]({{MESSAGE_LINK}}), sed vi ankoraŭ ne havas horzonon.",
                     "",
-                    "Agordu la roboton por vi per la komando `{{REF:bot.prefix}} {{REF:commands.set}}`!",
+                    "Agordu la roboton por vi per la komando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "Kiam vi agordos la horzonon, {{COM:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
-                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -285,9 +290,9 @@
                 "description": [
                     "Ĉu vi volas, ke {{COM:bot.name}} aŭtomate detektu tempojn, menciatajn en babilejoj?",
                     "",
-                    "`{{REF:yesNo.yes}}` - Menciataj tempoj detektiĝos aŭtomate.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Menciataj tempoj detektiĝos aŭtomate.",
                     "",
-                    "`{{REF:yesNo.no}}` - Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Menciataj tempoj **ne** detektiĝos aŭtomate. La emoĝio 🕰️ estu en la mesaĝo por ke la tempoj detektiĝu kaj konvertiĝu.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -340,7 +345,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de la servilo ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de la servilo?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -348,7 +356,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{BOT}} ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -356,7 +367,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas via horzono ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas via horzono?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -364,7 +378,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{USER}} ({{REF:partials.yesOrNo}})?"
+                    "Bonvolu recertiĝi ke ĉi tio estas la horzono de {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -373,21 +390,31 @@
                 "description": [
                     "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`{{REF:bot.prefix}} {{REF:commands.list}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
-                    "`{{REF:yesNo.no}}` - La roboto ne sendados la liston.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. La roboto ne sendados la liston.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersGuild": {
                 "title": "Servilo - {{REF:settings.remindersDisplay}}",
-                "description": "Ĉu la roboto rememorigu uzantojn, ke ili agordu siajn horzonojn ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Ĉu la roboto rememorigu uzantojn, ke ili agordu siajn horzonojn?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "Uzanto - {{REF:settings.remindersDisplay}}",
-                "description": "Ĉu la roboto rememorigu vin, ke vi agordu vian horzonon ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Ĉu la roboto rememorigu vin, ke vi agordu vian horzonon?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -395,9 +422,9 @@
                 "description": [
                     "Kiel {{BOT}} kutime mencias datojn?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -407,9 +434,9 @@
                 "description": [
                     "Kiel vi kutime mencias datojn?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -419,9 +446,9 @@
                 "description": [
                     "Kiel oni menciu tempon en ĉi tiu servilo?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -431,9 +458,9 @@
                 "description": [
                     "Kian temparanĝon vi preferas?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +470,9 @@
                 "description": [
                     "Ĉu vi volas kaŝi viajn horzonon kaj aliajn informojn?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} ne montros viajn informojn al aliuloj.",
                     "",
-                    "`{{REF:yesNo.no}}` - Vi ne kontraŭos, se la roboto montros viajn informojn.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Vi ne kontraŭos, se la roboto montros viajn informojn.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -476,7 +503,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, bonvolu konfirmi, ke vi volas uzi ĉi tiujn agordojn ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, bonvolu konfirmi, ke vi volas uzi ĉi tiujn agordojn?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
@@ -499,7 +529,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Manipuli servilajn agordojn."
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -520,7 +550,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Manipuli proprajn agordojn."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -541,7 +571,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Manipuli proprajn agordojn."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -560,7 +590,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Manipuli robotajn agordojn."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -616,6 +646,16 @@
             }
         },
         "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slash Commands Update",
+                "description": [
+                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "",
+                    "Try it by typing `/{{COM:commands.help}}`!"
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -636,7 +676,7 @@
                 "description": [
                     "La roboto ne troveblis aŭ ankoraŭ ne estas agordita.",
                     "",
-                    "Tajpu `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` por agordi novan roboton."
+                    "Tajpu `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` por agordi novan roboton."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -722,50 +762,6 @@
         },
         "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
-        },
-        "commandRegexes": {
-            "bot": "/\\b({{REF:commands.bot}}|r|robotoj)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|programistoj|uzado|memoro)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|d|dokumentaro|retejo|TTTejo)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|mon|monsubteni|mondonaco|monsubteno)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|s|serĉo|sercxi|serchi|sercxo|sercho)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|h|helpo|helpu|help|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|i|informo|informoj)\\b/i",
-            "invite": "/\\b({{REF:commands.invite}}|invitilo|invitligilo)\\b/i",
-            "list": "/\\b({{REF:commands.list}}|l)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|m|horzonmapo|horzonoj|hz|hzm|hzmapo)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|mia|miaj|mem|propra|propraj|uzanto)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|agordoj)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|a|agordado)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|i|instalado|komenci)\\b/i",
-            "support": "/\\b({{REF:commands.support}})\\b/i",
-            "time": "/\\b({{REF:commands.time}}|vidi|nun|dato)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|t|traduko|tradukoj|lingvo|lingvoj)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}}|v|vd|voĉdono|vocxdoni|vochdoni|vocxdono|vochdono)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|nuligi|nuligo|ĉesi|ĉeso|cxesi|chesi|cxeso|cheso)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|nuligo|forigi|forigo|nul)\\b/i"
-        },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|det|detekti|detektadi|detekto)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|da|dato|datoj|datarangxo|datarangho)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|pr|privatareĝimo|kaŝa-reĝimo|k|kr|kaŝareĝimo|privata-regximo|privata-reghimo|privataregximo|privatareghimo|kasxa-regximo|kasha-reghimo|kasxaregximo|kashareghimo)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|rm|rememorigi|rememorigilo|rememorigado)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|t|ta|tempo|tempoj|temparangxo|temparangho)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|h|hz|z)\\b/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|tm|ttmm|tt-mm|tago-monato|tago/monato)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mt|mmtt|mm-tt|monato-tago|monato/tago)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-hora|24hora)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-hora|12hora)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|j|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|0)\\b/i"
         }
     },
     "refs": {
@@ -776,71 +772,60 @@
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
-            "description": "{{COM:bot.name}} helpas al via servilo plani okazojn, konvertante tempojn, menciatajn en babilejo, inter horzonoj!",
-            "prefix": "-ft"
+            "description": "{{COM:bot.name}} helpas al via servilo plani okazojn, konvertante tempojn, menciatajn en babilejo, inter horzonoj!"
         },
-        "commands": {
-            "bot": "roboto",
-            "dev": "program",
-            "docs": "dokumentaro",
-            "donate": "mondonaci",
-            "find": "serĉi",
-            "help": "helpilo",
-            "info": "info",
-            "invite": "inviti",
-            "list": "listo",
-            "map": "mapo",
-            "me": "mi",
-            "server": "servilo",
-            "set": "agordi",
-            "setup": "instali",
-            "support": "subteno",
-            "time": "tempo",
-            "translate": "traduki",
-            "vote": "voĉdoni",
-            "stop": "stop",
-            "remove": "nuligi"
-        },
-        "arguments": {
-            "user": "@uzanto",
-            "bot": "@roboto",
-            "setting": "agordo",
-            "zone": "horzono"
+        "commandDescs": {
+            "bot": "Manage bot settings.",
+            "botList": "View list of bots.",
+            "botView": "View a bot's settings.",
+            "botEdit": "Change a bot setting.",
+            "botRemove": "Remove a bot.",
+            "dev": "View developer info.",
+            "help": "View help menu and list of commands.",
+            "info": "View bot info.",
+            "link": "Get links to invite, support, etc.",
+            "list": "Manage the server time zone list.",
+            "listView": "View the server time zone list.",
+            "listToggle": "Add or remove to the server time zone list.",
+            "map": "View the zone map.",
+            "me": "Manage your user settings.",
+            "meView": "View your user settings.",
+            "meEdit": "Change a user setting.",
+            "meRemove": "Remove all your user data.",
+            "server": "Manage server settings.",
+            "serverView": "View server settings.",
+            "serverEdit": "Change a server setting.",
+            "serverRemove": "Remove all server data.",
+            "set": "Run the user setup (for yourself, a user, or bot).",
+            "setMe": "Run the user setup for yourself.",
+            "setUser": "Run the user setup for a user or bot.",
+            "setup": "Run the server setup.",
+            "time": "View the time of the server, user, bot, or zone.",
+            "timeServer": "View the time of the server.",
+            "timeUser": "View the time of a user or bot.",
+            "timeZone": "View the time of a zone.",
+            "translate": "View translation info."
         },
         "settings": {
-            "autoDetect": "detektado",
             "autoDetectDisplay": "Aŭtomata detektado",
-            "dateFormat": "dataranĝo",
             "dateFormatDisplay": "Dataranĝo",
-            "language": "lingvo",
             "languageDisplay": "Lingvo",
-            "list": "listo",
             "listDisplay": "Listo",
-            "privateMode": "privata-reĝimo",
             "privateModeDisplay": "Privata reĝimo",
-            "reminders": "rememorigiloj",
             "remindersDisplay": "Rememorigilo",
-            "timeFormat": "temparanĝo",
             "timeFormatDisplay": "Temparanĝo",
-            "timeZone": "horzono",
             "timeZoneDisplay": "Horzono"
         },
         "dateFormat": {
-            "monthDay": "mm/tt",
             "monthDayDisplay": "Monato/tago",
-            "dayMonth": "tt/mm",
             "dayMonthDisplay": "Tago/monato"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-hora",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-hora"
         },
         "yesNo": {
-            "yes": "jes",
             "yesDisplay": "Jes",
-            "no": "ne",
             "noDisplay": "Ne"
         },
         "lists": {
@@ -873,7 +858,7 @@
             "links": "Ligiloj"
         },
         "footers": {
-            "collector": "Tajpu la respondon (aŭ «{{REF:commands.stop}}» por nuligi)."
+            "collector": "Tajpu la respondon (aŭ «{{COM:keywords.stop}}» por nuligi)."
         },
         "other": {
             "na": "N/A",
@@ -891,7 +876,11 @@
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` aŭ `{{REF:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "*Kursivaj* valoroj estas defaŭltaj.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** nun estas **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
@@ -899,7 +888,7 @@
                 "",
                 "Simple **elektu lokon en la mapo** por vidi la horzonan nomon."
             ],
-            "translateNote": "Tajpu `{{REF:bot.prefix}} {{REF:commands.translate}}` por ekscii pli pri tradukoj.",
+            "translateNote": "Tajpu `/{{COM:commands.translate}}` por ekscii pli pri tradukoj.",
             "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
         },
         "messages": {

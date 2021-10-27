@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -9,15 +9,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class UserDateFormatSetting implements Setting<UserData, DateFormatOption> {
+    public name = Lang.getCom('settings.dateFormat');
     public default = DateFormatOption.MONTH_DAY;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.dateFormat', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.dateFormat', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.dateFormatDisplay', langCode);
@@ -43,12 +36,12 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         return DateFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let dateFormat = DateFormat.find(msg.content, langCode);
+            let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -59,22 +52,17 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         };
     }
 
-    public async retrieve(
-        msg: Message,
-        args: string[],
-        data: EventData
-    ): Promise<DateFormatOption> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<DateFormatOption> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
-            data.lang(),
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang())
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

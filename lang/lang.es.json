@@ -884,7 +884,7 @@
             "docsEmbed": "[Ver Documentación]({{COM:links.docs}}/)",
             "voteEmbed": "[Votar por {{COM:bot.name}}!]({{COM:links.vote}})",
             "supportEmbed": "[Únete al servidor de Soporte]({{COM:links.support}})",
-            "authorEmbed": "[Kevin Novak]({{COM:links.author}})",
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Ver Código Fuente]({{COM:links.source}})",
             "templateEmbed": "[Plantilla de Typescript para Bots de Discord]({{COM:links.template}})",
             "mapEmbed": "[Mapa de Zonas Horarias]({{COM:links.map}})"

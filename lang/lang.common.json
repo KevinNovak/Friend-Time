@@ -1,6 +1,7 @@
 {
     "bot": {
-        "name": "Friend Time"
+        "name": "Friend Time",
+        "author": "Kevin Novak"
     },
     "colors": {
         "success": "#00ff83",

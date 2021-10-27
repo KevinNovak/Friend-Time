@@ -156,8 +156,9 @@ export class CommandHandler {
             return true;
         }
 
-        // Developers and members with "Manage Server" have permission for all commands
+        // Developers, server owners, and members with "Manage Server" have permission for all commands
         if (
+            member.guild.ownerId === member.id ||
             member.permissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
             Config.developers.includes(member.id)
         ) {

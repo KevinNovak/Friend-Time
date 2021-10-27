@@ -169,7 +169,7 @@ async function start(): Promise<void> {
     let commandHandler = new CommandHandler(commands);
     let triggerHandler = new TriggerHandler([oldPrefixTrigger, convertTrigger]);
     let messageHandler = new MessageHandler(triggerHandler);
-    let reactionHandler = new ReactionHandler([]);
+    let reactionHandler = new ReactionHandler([convertReaction]);
 
     let bot = new Bot(
         Config.client.token,

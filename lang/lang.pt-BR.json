@@ -6,7 +6,7 @@
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
-                        "name": "{{REF:fields.commands}} importantes.",
+                        "name": "{{REF:fields.commands}} importantes",
                         "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
@@ -24,7 +24,7 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
-                        "name": "{{REF:fields.commands}} de usuário",
+                        "name": "{{REF:fields.commands}} de Usuário",
                         "value": [
                             "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
                             "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
@@ -38,7 +38,7 @@
                         ]
                     },
                     {
-                        "name": "{{REF:fields.commands}} de Admin",
+                        "name": "{{REF:fields.commands}} de Administrador",
                         "value": [
                             "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
                             "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
@@ -65,9 +65,9 @@
                 ]
             },
             "listTimeZone": {
-                "title": "Lista dos fusos horários do servidor",
+                "title": "Lista dos Fusos Horários do Servidor",
                 "description": [
-                    "Fusos horários para converter quando uma hora for mencionada.",
+                    "Fusos horários para converter quando uma hora é mencionada.",
                     "",
                     "{{TIME_ZONE_LIST}}",
                     "\u2800"
@@ -83,9 +83,9 @@
                 ]
             },
             "listBot": {
-                "title": "Lista de bots",
+                "title": "Lista de Bots",
                 "description": [
-                    "Bots com configurações neste servidor.",
+                    "Bots que têm configurações neste servidor.",
                     "",
                     "{{BOT_LIST}}",
                     "\u2800"

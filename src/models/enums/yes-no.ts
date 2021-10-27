@@ -1,8 +1,9 @@
 import { LangCode } from '.';
 import { Lang } from '../../services';
-import { Display, Keyword } from '../common';
+import { Display } from '../common';
 
-interface YesNoData extends Keyword, Display {
+interface YesNoData extends Display {
+    name(): string;
     value: boolean;
 }
 
@@ -11,11 +12,8 @@ export class YesNo {
         [key: string]: YesNoData;
     } = {
         true: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('yesNo.yes', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('yesNoRegexes.yes', langCode);
+            name(): string {
+                return Lang.getCom('yesNo.yes');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('yesNo.yesDisplay', langCode);
@@ -23,11 +21,8 @@ export class YesNo {
             value: true,
         },
         false: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('yesNo.no', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('yesNoRegexes.no', langCode);
+            name(): string {
+                return Lang.getCom('yesNo.no');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('yesNo.noDisplay', langCode);
@@ -36,9 +31,9 @@ export class YesNo {
         },
     };
 
-    public static find(input: string, langCode: LangCode): boolean {
+    public static find(input: string): boolean {
         for (let [_, data] of Object.entries(this.Data)) {
-            if (data.regex(langCode).test(input)) {
+            if (data.name().toLowerCase() === input.toLowerCase()) {
                 return data.value;
             }
         }

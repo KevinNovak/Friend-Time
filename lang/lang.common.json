@@ -3,6 +3,65 @@
         "name": "Friend Time",
         "author": "Kevin Novak"
     },
+    "commands": {
+        "bot": "bot",
+        "dev": "dev",
+        "help": "help",
+        "info": "info",
+        "link": "link",
+        "list": "list",
+        "map": "map",
+        "me": "me",
+        "server": "server",
+        "set": "set",
+        "setup": "setup",
+        "time": "time",
+        "translate": "translate"
+    },
+    "subCommands": {
+        "list": "list",
+        "view": "view",
+        "edit": "edit",
+        "remove": "remove",
+        "toggle": "toggle",
+        "server": "server",
+        "me": "me",
+        "user": "user",
+        "zone": "zone"
+    },
+    "arguments": {
+        "link": "link",
+        "user": "user",
+        "bot": "bot",
+        "setting": "setting",
+        "zone": "zone",
+        "reset": "reset"
+    },
+    "keywords": {
+        "stop": "stop"
+    },
+    "settings": {
+        "autoDetect": "autoDetect",
+        "dateFormat": "dateFormat",
+        "language": "language",
+        "list": "list",
+        "privateMode": "privateMode",
+        "reminders": "reminders",
+        "timeFormat": "timeFormat",
+        "timeZone": "timeZone"
+    },
+    "dateFormat": {
+        "monthDay": "mm/dd",
+        "dayMonth": "dd/mm"
+    },
+    "timeFormat": {
+        "twelveHour": "12",
+        "twentyFourHour": "24"
+    },
+    "yesNo": {
+        "yes": "yes",
+        "no": "no"
+    },
     "colors": {
         "success": "#00ff83",
         "warning": "#ffcc66",
@@ -18,5 +77,8 @@
         "source": "https://github.com/KevinNovak/Friend-Time",
         "template": "https://github.com/KevinNovak/Discord-Bot-TypeScript-Template",
         "map": "https://kevinnovak.github.io/Time-Zone-Picker/"
+    },
+    "images": {
+        "helpCommand": "https://i.imgur.com/0GPhOSm.png"
     }
 }

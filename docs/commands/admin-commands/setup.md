@@ -6,11 +6,11 @@ description: Run the server setup.
 
 ## Summary
 
-The `-ft setup` command runs the server setup. This setup is optional, but includes various server settings to customize the functionality of Friend Time for your server.
+The `/setup` command runs the server setup. This setup is optional, but includes various server settings to customize the functionality of Friend Time for your server.
 
 ## Setup Your Server
 
-**1.** Type `-ft setup` to start the setup process.
+**1.** Type `/setup` to start the setup process.
 
 ![](../../.gitbook/assets/image%20%2816%29%20%282%29%20%281%29.png)
 

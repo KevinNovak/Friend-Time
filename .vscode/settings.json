@@ -17,6 +17,7 @@
         "chrono",
         "cmds",
         "datas",
+        "descs",
         "discordbotlist",
         "discordjs",
         "discordlabs",

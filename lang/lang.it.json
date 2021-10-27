@@ -7,9 +7,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} importanti",
-                        "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.help}}** - Visualizza la guida del bot"
-                        ]
+                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -28,20 +26,30 @@
                     {
                         "name": "{{REF:fields.commands}} dell'utente",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Esegui la configurazione dell'utente (per te stesso, un utente o un bot).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Gestisci le tue impostazioni utente.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Visualizza l'ora del server, dell'utente, del bot o della zona.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Visualizza la mappa della zona.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Più informazioni riguardanti {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} per Admin",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Esegui la configurazione del server.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Gestisci le impostazioni del server.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Gestisci l'elenco dei fusi orari del server.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Gestisci le impostazioni del bot.",
+                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -68,8 +76,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Aggiungi o rimuovi un fuso orario",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - Abilita o disabilita la lista"
+                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Abilita o disabilita la lista"
                         ]
                     }
                 ]
@@ -86,8 +94,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Imposta un nuovo bot.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Gestici bot."
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}`",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -104,9 +112,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Modifica un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Ripristina un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Rimuovere tutti i dati."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -124,9 +131,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Modifica un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Ripristina un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Rimuovere tutti i dati."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -144,9 +150,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Cambia un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Ripristina un impostazione.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Rimuovere tutti i dati."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -269,12 +274,12 @@
                 "description": [
                     "Ciao {{USER}}, sembra che tu abbia [menzionato o reagito a un orario]({{MESSAGE_LINK}}), ma non hai ancora impostato un fuso orario.",
                     "",
-                    "Imposta il tuo fuso orario utilizzando il comando `{{REF:bot.prefix}} {{REF:commands.set}}`!",
+                    "Imposta il tuo fuso orario utilizzando il comando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "L'impostazione del fuso orario consente a {{COM:bot.name}} di convertire i tempi nella chat del server da e verso il proprio fuso orario, facilitando il coordinamento dei tempi con gli altri."
                 ],
                 "footer": {
-                    "text": "Se desideri disabilitare questo promemoria, digita \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Se desideri disabilitare questo promemoria, digita \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -285,9 +290,9 @@
                 "description": [
                     "Desideri che {{COM:bot.name}} rilevi automaticamente gli orari menzionati nella chat?",
                     "",
-                    "`{{REF:yesNo.yes}}` - I tempi in chat verranno rilevati automaticamente.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. I tempi in chat verranno rilevati automaticamente.",
                     "",
-                    "`{{REF:yesNo.no}}` - I tempi in chat **non** verranno rilevati automaticamente. Un 🕰️ emoji deve essere presente in un messaggio affinché ogni volta possa essere riconosciuto e convertito.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. I tempi in chat **non** verranno rilevati automaticamente. Un 🕰️ emoji deve essere presente in un messaggio affinché ogni volta possa essere riconosciuto e convertito.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -340,7 +345,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, è questo il fuso orario di questo server? ({{REF:partials.yesOrNo}})"
+                    "Perfavore conferma, è questo il fuso orario di questo server?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -348,7 +356,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, è questo il fuso orario di {{BOT}}? ({{REF:partials.yesOrNo}})?"
+                    "Perfavore conferma, è questo il fuso orario di {{BOT}}??",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -356,7 +367,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, è questo il tuo fuso orario? ({{REF:partials.yesOrNo}})"
+                    "Perfavore conferma, è questo il tuo fuso orario?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -364,7 +378,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Perfavore conferma, è questo il fuso orario di {{USER}}? ({{REF:partials.yesOrNo}})"
+                    "Perfavore conferma, è questo il fuso orario di {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -373,21 +390,31 @@
                 "description": [
                     "Desideri che {{COM:bot.name}} invii un elenco di tempi convertiti in chat dopo che un orario è stato menzionato?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} convertirà gli orari menzionati in una conversazione in tutti i fusi orari nell'elenco del server (`{{REF:bot.prefix}} {{REF:commands.list}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirà gli orari menzionati in una conversazione in tutti i fusi orari nell'elenco del server (`/{{COM:commands.list}} {{COM:subCommands.view}}`). This list will be sent in the same channel as the original message.",
                     "",
-                    "`{{REF:yesNo.no}}` - Non verrà mostrata nessuna lista.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Non verrà mostrata nessuna lista.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersGuild": {
                 "title": "Server - {{REF:settings.remindersDisplay}}",
-                "description": "Desideri ricordare agli utenti di impostare il proprio fuso orario ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Desideri ricordare agli utenti di impostare il proprio fuso orario?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
                 "title": "Utente - {{REF:settings.remindersDisplay}}",
-                "description": "Desideri di essere ricordato di impostare un fuso orario ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Desideri di essere ricordato di impostare un fuso orario?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
@@ -395,9 +422,9 @@
                 "description": [
                     "Quale formato utilizza {{BOT}} più comunemente per le date?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -407,9 +434,9 @@
                 "description": [
                     "Quale formato utilizzi più comunemente per le date?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -419,9 +446,9 @@
                 "description": [
                     "Quale formato dell'ora deve essere utilizzato per gli orari inviati in questo server?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -431,9 +458,9 @@
                 "description": [
                     "Quale formato dell'ora preferisci?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -443,9 +470,9 @@
                 "description": [
                     "Desideri mantenere privati ​​il ​​tuo fuso orario e altre informazioni?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} impedirà di mostrare le tue informazioni ad altri utenti.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} impedirà di mostrare le tue informazioni ad altri utenti.",
                     "",
-                    "`{{REF:yesNo.no}}` - Non ho problemi nel condividere le mie informazioni.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Non ho problemi nel condividere le mie informazioni.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -476,7 +503,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, perfavore conferma, desideri usare queste impostazioni ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, perfavore conferma, desideri usare queste impostazioni?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             }
@@ -499,7 +529,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Gestisci le impostazioni del server."
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -520,7 +550,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Gestisci le impostazioni utente."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -541,7 +571,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Gestisci le impostazioni utente."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -560,7 +590,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Gestisci le impostazioni del bot."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -616,6 +646,16 @@
             }
         },
         "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slash Commands Update",
+                "description": [
+                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "",
+                    "Try it by typing `/{{COM:commands.help}}`!"
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -636,7 +676,7 @@
                 "description": [
                     "Bot non trovato o non ancora configurato.",
                     "",
-                    "Digita `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` per configurare un nuovo bot."
+                    "Digita `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` per configurare un nuovo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -722,50 +762,6 @@
         },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
-        },
-        "commandRegexes": {
-            "bot": "/\\b({{REF:commands.bot}}|b|bot)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|sviluppatore|dev|uso|memoria|mem)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|d|docs|documentazione|leggimi|website|site)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|donare|dona)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|f|consulta|trova|trovare|cerca)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|h|aiuto|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|i|informazioni|info)\\b/i",
-            "invite": "/\\b({{REF:commands.invite}})invita\\b/i",
-            "list": "/\\b({{REF:commands.list}}|l|lista)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|m|zona|zone|mappa)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|me|utente|io)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|server|impostazione|impostazioni)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|s|imposta)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|installa|inizia|configura)\\b/i",
-            "support": "/\\b({{REF:commands.support}})\\b/i",
-            "time": "/\\b({{REF:commands.time}}|ora|data|tempo)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|t|traduzione|traduzioni|lingua|lingue|traduci)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}}|v|vota)\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|cancella|esci|chiudi|ferma)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|cancella|rimuovi|elimina)\\b/i"
-        },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-trova|auto|trova)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|data)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|l|lingua|codicelingua)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|privato)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|r|promemoria|ricorda|promemoriaabilitato)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tempo)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zona)\\b/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|gm|ggmm|gg-mm|giorno-mese|giorno/mese)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|mg|mmgg|mm-gg|month-giorno|month/giorno)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24h|24-ore)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12h|12-ore)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|si|abilitato|abilitare|a|vero|v|on|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|no|disabilitato|disabilitare|d|falso|f|off|0)\\b/i"
         }
     },
     "refs": {
@@ -776,71 +772,60 @@
             "translators": "Kertz#2180"
         },
         "bot": {
-            "description": "{{COM:bot.name}} aiuta il tuo server a coordinare orari ed eventi convertendo gli orari menzionati nella chat tra i fusi orari!",
-            "prefix": "-ft"
+            "description": "{{COM:bot.name}} aiuta il tuo server a coordinare orari ed eventi convertendo gli orari menzionati nella chat tra i fusi orari!"
         },
-        "commands": {
-            "bot": "bot",
-            "dev": "dev",
-            "docs": "docs",
-            "donate": "dona",
-            "find": "trova",
-            "help": "aiuto",
-            "info": "info",
-            "invite": "invita",
-            "list": "lista",
-            "map": "mappa",
-            "me": "io",
-            "server": "server",
-            "set": "imposta",
-            "setup": "configura",
-            "support": "supporto",
-            "time": "tempo",
-            "translate": "traduci",
-            "vote": "vota",
-            "stop": "ferma",
-            "remove": "rimuovi"
-        },
-        "arguments": {
-            "user": "@utente",
-            "bot": "@bot",
-            "setting": "impostazione",
-            "zone": "zona"
+        "commandDescs": {
+            "bot": "Manage bot settings.",
+            "botList": "View list of bots.",
+            "botView": "View a bot's settings.",
+            "botEdit": "Change a bot setting.",
+            "botRemove": "Remove a bot.",
+            "dev": "View developer info.",
+            "help": "View help menu and list of commands.",
+            "info": "View bot info.",
+            "link": "Get links to invite, support, etc.",
+            "list": "Manage the server time zone list.",
+            "listView": "View the server time zone list.",
+            "listToggle": "Add or remove to the server time zone list.",
+            "map": "View the zone map.",
+            "me": "Manage your user settings.",
+            "meView": "View your user settings.",
+            "meEdit": "Change a user setting.",
+            "meRemove": "Remove all your user data.",
+            "server": "Manage server settings.",
+            "serverView": "View server settings.",
+            "serverEdit": "Change a server setting.",
+            "serverRemove": "Remove all server data.",
+            "set": "Run the user setup (for yourself, a user, or bot).",
+            "setMe": "Run the user setup for yourself.",
+            "setUser": "Run the user setup for a user or bot.",
+            "setup": "Run the server setup.",
+            "time": "View the time of the server, user, bot, or zone.",
+            "timeServer": "View the time of the server.",
+            "timeUser": "View the time of a user or bot.",
+            "timeZone": "View the time of a zone.",
+            "translate": "View translation info."
         },
         "settings": {
-            "autoDetect": "autoRileva",
             "autoDetectDisplay": "autoRileva",
-            "dateFormat": "formatoData",
             "dateFormatDisplay": "formatoData",
-            "language": "lingua",
             "languageDisplay": "Lingua",
-            "list": "lista",
             "listDisplay": "Lista",
-            "privateMode": "modPrivata",
             "privateModeDisplay": "modPrivata",
-            "reminders": "promemoria",
             "remindersDisplay": "Promemoria",
-            "timeFormat": "formatoOrario",
             "timeFormatDisplay": "formatoOrario",
-            "timeZone": "fusoOrario",
             "timeZoneDisplay": "fusoOrario"
         },
         "dateFormat": {
-            "monthDay": "mm/gg",
             "monthDayDisplay": "Mese/Giorno",
-            "dayMonth": "gg/mm",
             "dayMonthDisplay": "Giorno/Mese"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-Ore",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-Ore"
         },
         "yesNo": {
-            "yes": "si",
             "yesDisplay": "Si",
-            "no": "no",
             "noDisplay": "No"
         },
         "lists": {
@@ -873,7 +858,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Digita la tua risposta qui sotto (o '{{REF:commands.stop}}' per cancellare)."
+            "collector": "Digita la tua risposta qui sotto (o '{{COM:keywords.stop}}' per cancellare)."
         },
         "other": {
             "na": "N/A",
@@ -891,7 +876,11 @@
         },
         "partials": {
             "congratulations": "🎉 Congratulazioni! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` o `{{REF:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "Le impostazioni in *corsivo* sono quelle predefinite.",
             "timeInTimeZone": "A **{{TIME_ZONE}}** è attualmente **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
@@ -899,7 +888,7 @@
                 "",
                 "Semplicemente **seleziona una zona sulla mappa** per vedere il fuso orario della zona."
             ],
-            "translateNote": "Digita `{{REF:bot.prefix}} {{REF:commands.translate}}` per imparare di più riguardo la traduzione.",
+            "translateNote": "Digita `/{{COM:commands.translate}}` per imparare di più riguardo la traduzione.",
             "dmWarning": "Alcuni comandi richiedono che i DM siano consentiti in almeno un server con cui condividi {{COM:bot.name}}."
         },
         "messages": {

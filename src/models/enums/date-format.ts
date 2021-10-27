@@ -1,13 +1,14 @@
 import { LangCode } from '.';
 import { Lang } from '../../services';
-import { Display, Keyword } from '../common';
+import { Display } from '../common';
 
 export enum DateFormatOption {
     MONTH_DAY = 'MONTH_DAY',
     DAY_MONTH = 'DAY_MONTH',
 }
 
-interface DateFormatData extends Keyword, Display {
+interface DateFormatData extends Display {
+    name(): string;
     littleEndian: boolean;
 }
 
@@ -16,11 +17,8 @@ export class DateFormat {
         [key in DateFormatOption]: DateFormatData;
     } = {
         MONTH_DAY: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('dateFormat.monthDay', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('dateFormatRegexes.monthDay', langCode);
+            name(): string {
+                return Lang.getCom('dateFormat.monthDay');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('dateFormat.monthDayDisplay', langCode);
@@ -28,11 +26,8 @@ export class DateFormat {
             littleEndian: false,
         },
         DAY_MONTH: {
-            keyword(langCode: LangCode): string {
-                return Lang.getRef('dateFormat.dayMonth', langCode);
-            },
-            regex(langCode: LangCode): RegExp {
-                return Lang.getRegex('dateFormatRegexes.dayMonth', langCode);
+            name(): string {
+                return Lang.getCom('dateFormat.dayMonth');
             },
             displayName(langCode: LangCode): string {
                 return Lang.getRef('dateFormat.dayMonthDisplay', langCode);
@@ -41,9 +36,9 @@ export class DateFormat {
         },
     };
 
-    public static find(input: string, langCode: LangCode): DateFormatOption {
+    public static find(input: string): DateFormatOption {
         for (let [option, data] of Object.entries(this.Data)) {
-            if (data.regex(langCode).test(input)) {
+            if (data.name().toLowerCase() === input.toLowerCase()) {
                 return DateFormatOption[option];
             }
         }

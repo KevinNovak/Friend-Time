@@ -4,10 +4,6 @@ description: Frequently asked questions.
 
 # FAQ
 
-## What is the prefix for Friend Time?
-
-Friend Time's prefix is "-ft" \(note the dash symbol\).
-
 ## Can Friend Time show times in a 24-hour format?
 
 Yes, see the [User Time Format](settings/user-settings/time-format.md) setting or the [Server Time Format](settings/server-settings/time-format.md) setting.

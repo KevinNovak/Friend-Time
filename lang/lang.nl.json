@@ -7,7 +7,7 @@
                 "fields": [
                     {
                         "name": "Belangrijke {{REF:fields.commands}}",
-                        "value": ["**{{REF:bot.prefix}} {{REF:commands.help}}** - Bekijk bot hulp."]
+                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -26,20 +26,30 @@
                     {
                         "name": "Gebruiker {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.set}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}]*** - Voer de gebruikersconfiguratie uit (voor jezelf, een gebruiker of bot).",
-                            "**{{REF:bot.prefix}} {{REF:commands.me}} *[{{REF:arguments.setting}}]*** - Beheer je gebruikersinstellingen.",
-                            "**{{REF:bot.prefix}} {{REF:commands.time}} *[{{REF:arguments.user}}/{{REF:arguments.bot}}/{{REF:arguments.zone}}]*** - Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
-                            "**{{REF:bot.prefix}} {{REF:commands.map}}** - Bekijk de kaart met tijdzones.",
-                            "**{{REF:bot.prefix}} {{REF:commands.info}}** - Meer informatie over {{COM:bot.name}}."
+                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "Beheerder {{REF:fields.commands}}",
                         "value": [
-                            "**{{REF:bot.prefix}} {{REF:commands.setup}}** - Voer de beheerdersconfiguratie uit.",
-                            "**{{REF:bot.prefix}} {{REF:commands.server}} *[{{REF:arguments.setting}}]*** - Serverinstellingen beheren.",
-                            "**{{REF:bot.prefix}} {{REF:commands.list}} *[{{REF:arguments.zone}}]*** - Beheer de lijst met tijdzones van de server.",
-                            "**{{REF:bot.prefix}} {{REF:commands.bot}} *[{{REF:arguments.bot}}]* *[{{REF:arguments.setting}}]*** - Beheer de instellingen van de bot.",
+                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -66,8 +76,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.list}} <{{REF:arguments.zone}}>` - Een tijdzone toevoegen of verwijderen.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:settings.list}}` - De lijst in- of uitschakelen."
+                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - De lijst in- of uitschakelen."
                         ]
                     }
                 ]
@@ -84,8 +94,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` - Stel een nieuwe bot in.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Beheer bot."
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}`",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -102,9 +112,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}>` - Wijzig een instelling. .",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Reset een instelling.",
-                            "`{{REF:bot.prefix}} {{REF:commands.server}} {{REF:commands.remove}}` - Verwijder alle gegevens."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -124,9 +133,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}>` - Wijzig een instelling.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Reset een instelling.",
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}> {{REF:commands.remove}}` - Verwijder alle gegevens."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -146,9 +154,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}>` - Wijzig een instelling.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} <{{REF:arguments.setting}}> {{REF:commands.remove}}` - Reset een instelling.",
-                            "`{{REF:bot.prefix}} {{REF:commands.me}} {{REF:commands.remove}}` - Verwijder alle gegevens."
+                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -276,12 +283,12 @@
                 "description": [
                     "Hoi {{USER}}, het lijkt erop dat je hebt [benoemd of gereageerd op een tijd]({{MESSAGE_LINK}}) zonder een tijdzone ingesteld te hebben.",
                     "",
-                    "Stel je tijdzone in door het `{{REF:bot.prefix}} {{REF:commands.set}}` commando te gebruiken!",
+                    "Stel je tijdzone in door het `/{{COM:commands.set}} {{COM:subCommands.me}}` commando te gebruiken!",
                     "",
                     "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
                 ],
                 "footer": {
-                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"{{REF:bot.prefix}} {{REF:commands.me}} {{REF:settings.reminders}}\"."
+                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -292,9 +299,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
                     "",
-                    "`{{REF:yesNo.yes}}` - Tijden in de chat worden automatisch gedetecteerd.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Tijden in de chat worden automatisch gedetecteerd.",
                     "",
-                    "`{{REF:yesNo.no}}` - Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
                     "\u2800"
                 ],
                 "footer": {
@@ -357,7 +364,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van de server ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van de server?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -367,7 +377,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van {{BOT}} ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -377,7 +390,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit jouw tijdzone ({{REF:partials.yesOrNo}})?"
+                    "Is dit jouw tijdzone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -387,7 +403,10 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Is dit de tijdzone van {{USER}} ({{REF:partials.yesOrNo}})?"
+                    "Is dit de tijdzone van {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -398,9 +417,9 @@
                 "description": [
                     "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`{{REF:bot.prefix}} {{REF:commands.list}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
                     "",
-                    "`{{REF:yesNo.no}}` - Er wordt geen lijst getoond.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Er wordt geen lijst getoond.",
                     "\u2800"
                 ],
                 "footer": {
@@ -409,14 +428,24 @@
             },
             "remindersGuild": {
                 "title": "Server - {{REF:settings.remindersDisplay}}",
-                "description": "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
                 }
             },
             "remindersUser": {
                 "title": "Gebruiker - {{REF:settings.remindersDisplay}}",
-                "description": "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen ({{REF:partials.yesOrNo}})?",
+                "description": [
+                    "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
                 }
@@ -426,9 +455,9 @@
                 "description": [
                     "Welk formaat gebruikt {{BOT}} het meest voor datums?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -440,9 +469,9 @@
                 "description": [
                     "Welk formaat gebruik jij het meest voor datums?",
                     "",
-                    "`{{REF:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
-                    "`{{REF:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -454,9 +483,9 @@
                 "description": [
                     "Welk formaat moet er gebruikt worden voor het verzenden van tijden in deze server?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -468,9 +497,9 @@
                 "description": [
                     "Welk formaat heeft jouw voorkeur?",
                     "",
-                    "`{{REF:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
-                    "`{{REF:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -482,9 +511,9 @@
                 "description": [
                     "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
                     "",
-                    "`{{REF:yesNo.yes}}` - {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
                     "",
-                    "`{{REF:yesNo.no}}` - Ik vind het goed om mijn gegevens te delen.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Ik vind het goed om mijn gegevens te delen.",
                     "\u2800"
                 ],
                 "footer": {
@@ -521,7 +550,10 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, bevestig of je deze instellingen wil gebruiken ({{REF:partials.yesOrNo}})?"
+                    "{{USER}}, bevestig of je deze instellingen wil gebruiken?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
                 ],
                 "footer": {
                     "text": "{{REF:footers.collector}}"
@@ -546,7 +578,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.server}}` - Beheer serverinstellingen."
+                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -567,7 +599,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Beheer je gebruikersinstellingen."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -588,7 +620,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.me}}` - Beheer je gebruikersinstellingen."
+                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -607,7 +639,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`{{REF:bot.prefix}} {{REF:commands.bot}} <{{REF:arguments.bot}}>` - Beheer botinstellingen."
+                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -663,6 +695,16 @@
             }
         },
         "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slashopdrachten Update",
+                "description": [
+                    "{{COM:bot.name}} gebruikt nu **Slashopdrachten**!",
+                    "",
+                    "Probeer het uit met `/{{COM:commands.help}}`!"
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
                 "color": "{{COM:colors.warning}}"
@@ -683,7 +725,7 @@
                 "description": [
                     "Bot is niet gevonden of nog niet ingesteld.",
                     "",
-                    "Schrijf `{{REF:bot.prefix}} {{REF:commands.set}} <{{REF:arguments.bot}}>` om een nieuwe bot in te stellen."
+                    "Schrijf `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` om een nieuwe bot in te stellen."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -769,50 +811,6 @@
         },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
-        },
-        "commandRegexes": {
-            "bot": "/\\b({{REF:commands.bot}}|b|bots)\\b/i",
-            "dev": "/\\b({{REF:commands.dev}}|developer|gebruik|geheugen)\\b/i",
-            "docs": "/\\b({{REF:commands.docs}}|docs|d|documentatie|leesmij|website|site)\\b/i",
-            "donate": "/\\b({{REF:commands.donate}}|d)\\b/i",
-            "find": "/\\b({{REF:commands.find}}|v|zoekOp|zoeken|zoek)\\b/i",
-            "help": "/\\b({{REF:commands.help}}|h|\\?)\\b/i",
-            "info": "/\\b({{REF:commands.info}}|i|informatie)\\b/i",
-            "invite": "/\\b({{REF:commands.invite}}|u|uitnodigen)\\b/i",
-            "list": "/\\b({{REF:commands.list}}|l)\\b/i",
-            "map": "/\\b({{REF:commands.map}}|k|zone|zones|kiezer)\\b/i",
-            "me": "/\\b({{REF:commands.me}}|ik|zelf|gebruiker)\\b/i",
-            "server": "/\\b({{REF:commands.server}}|guild|config|instelling|instellingen)\\b/i",
-            "set": "/\\b({{REF:commands.set}}|z|)\\b/i",
-            "setup": "/\\b({{REF:commands.setup}}|instellen|installeer|installeren|start|starten)\\b/i",
-            "support": "/\\b({{REF:commands.support}}|s)\\b/i",
-            "time": "/\\b({{REF:commands.time}}|bekijk|nu|datum)\\b/i",
-            "translate": "/\\b({{REF:commands.translate}}|vertaling|vertalingen|vertalen|taal|talen)\\b/i",
-            "vote": "/\\b({{REF:commands.vote}})\\b/i",
-            "stop": "/\\b({{REF:commands.stop}}|sluit|sluiten|stoppen|annuleer|annuleren|cancel|exit)\\b/i",
-            "remove": "/\\b({{REF:commands.remove}}|v|wis|reset|verwijderen)\\b/i"
-        },
-        "settingRegexes": {
-            "autoDetect": "/\\b({{REF:settings.autoDetect}}|a|ad|auto-detecteer|automatisch|detecteren)\\b/i",
-            "dateFormat": "/\\b({{REF:settings.dateFormat}}|d|df|datumParser|datum|parser)\\b/i",
-            "language": "/\\b({{REF:settings.language}}|t|taalCode)\\b/i",
-            "list": "/\\b({{REF:settings.list}})\\b/i",
-            "privateMode": "/\\b({{REF:settings.privateMode}}|p|prive)\\b/i",
-            "reminders": "/\\b({{REF:settings.reminders}}|h|herinnering|herinner|herinneringenIngeschakeld)\\b/i",
-            "timeFormat": "/\\b({{REF:settings.timeFormat}}|tf|tijd)\\b/i",
-            "timeZone": "/\\b({{REF:settings.timeZone}}|t|tz|zone)\\b/i"
-        },
-        "dateFormatRegexes": {
-            "dayMonth": "/\\b({{REF:dateFormat.dayMonth}}|dm|ddmm|dd-mm|dag-maand|dag/maand)\\b/i",
-            "monthDay": "/\\b({{REF:dateFormat.monthDay}}|md|mmdd|mm-dd|maand-dag|maand/dag)\\b/i"
-        },
-        "timeFormatRegexes": {
-            "twentyFourHour": "/\\b({{REF:timeFormat.twentyFourHour}}|24u|24-uur)\\b/i",
-            "twelveHour": "/\\b({{REF:timeFormat.twelveHour}}|12u|12-uur)\\b/i"
-        },
-        "yesNoRegexes": {
-            "yes": "/\\b({{REF:yesNo.yes}}|j|ingeschakeld|inschakelen|i|true|t|aan|1)\\b/i",
-            "no": "/\\b({{REF:yesNo.no}}|n|uitgeschakeld|uitschakelen|u|false|f|uit|0)\\b/i"
         }
     },
     "refs": {
@@ -823,71 +821,60 @@
             "translators": "[Hester#5259](https://github.com/uxster)"
         },
         "bot": {
-            "description": "{{COM:bot.name}} helpt het coördineren van tijden en evenementen in jouw server door tijden in chatberichten te converteren naar verschillende tijdzones!",
-            "prefix": "-ft"
+            "description": "{{COM:bot.name}} helpt het coördineren van tijden en evenementen in jouw server door tijden in chatberichten te converteren naar verschillende tijdzones!"
         },
-        "commands": {
-            "bot": "bot",
-            "dev": "dev",
-            "docs": "instructies",
-            "donate": "doneer",
-            "find": "vind",
-            "help": "help",
-            "info": "info",
-            "invite": "nodigUit",
-            "list": "lijst",
-            "map": "kaart",
-            "me": "ik",
-            "server": "server",
-            "set": "stelIn",
-            "setup": "zetOp",
-            "support": "support",
-            "time": "tijd",
-            "translate": "vertaal",
-            "vote": "stem",
-            "stop": "stop",
-            "remove": "verwijder"
-        },
-        "arguments": {
-            "user": "@gebruiker",
-            "bot": "@bot",
-            "setting": "instelling",
-            "zone": "zone"
+        "commandDescs": {
+            "bot": "Beheer botinstellingen.",
+            "botList": "Bekijk lijst van bots.",
+            "botView": "Bekijk een instelling van de bot.",
+            "botEdit": "Verander een instelling van de bot.",
+            "botRemove": "Verwijder een bot.",
+            "dev": "Bekijk informatie voor de ontwikkelaar.",
+            "help": "Bekijk het help menu en een lijst van commando's.",
+            "info": "Bekijk informatie over de bot.",
+            "link": "Ontvang o.a. uitnodigings- en support-links.",
+            "list": "Beheer de lijst met tijdzones van de server.",
+            "listView": "Bekijk de lijst met tijdzones van de server.",
+            "listToggle": "Dingen verwijderen of toevoegen van de lijst met tijdzones van de server.",
+            "map": "Bekijk de tijdzone kaart.",
+            "me": "Beheer je gebruikersinstellingen.",
+            "meView": "Bekijk je gebruikersintstellingen.",
+            "meEdit": "Verander een gebruikersinstelling.",
+            "meRemove": "Verwijder alle gebruikersdata.",
+            "server": "Beheer serverinstellingen.",
+            "serverView": "Bekijk serverinstellingen.",
+            "serverEdit": "Verander een serverinstelling.",
+            "serverRemove": "Verwijder alle serverdata.",
+            "set": "Doe de gebruiker setup (voor jezelf, een gebruiker of een bot).",
+            "setMe": "Doe de gebruiker setup voor jezelf.",
+            "setUser": "Doe de gebruiker setup voor een gebruiker of een bot.",
+            "setup": "Doe de gebruiker setup.",
+            "time": "Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
+            "timeServer": "Bekijk de tijd van de server.",
+            "timeUser": "Bekijk de tijd van een gebruiker of bot.",
+            "timeZone": "Bekijk de tijd van een tijdzone.",
+            "translate": "Bekijk informatie over de vertaling."
         },
         "settings": {
-            "autoDetect": "autoDetecteer",
             "autoDetectDisplay": "Auto-detecteer",
-            "dateFormat": "datumFormaat",
             "dateFormatDisplay": "Datumformaat",
-            "language": "taal",
             "languageDisplay": "Taal",
-            "list": "lijst",
             "listDisplay": "Lijst",
-            "privateMode": "priveModus",
             "privateModeDisplay": "Privémodus",
-            "reminders": "herinneringen",
             "remindersDisplay": "Herinneringen",
-            "timeFormat": "tijdFormaat",
             "timeFormatDisplay": "Tijdsformaat",
-            "timeZone": "tijdzone",
             "timeZoneDisplay": "Tijdzone"
         },
         "dateFormat": {
-            "monthDay": "mm/dd",
             "monthDayDisplay": "Maand/Dag",
-            "dayMonth": "dd/mm",
             "dayMonthDisplay": "Dag/Maand"
         },
         "timeFormat": {
-            "twelveHour": "12",
             "twelveHourDisplay": "12-uur",
-            "twentyFourHour": "24",
             "twentyFourHourDisplay": "24-uur"
         },
         "yesNo": {
-            "yes": "ja",
             "yesDisplay": "Ja",
-            "no": "nee",
             "noDisplay": "Nee"
         },
         "lists": {
@@ -920,7 +907,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Schrijf je antwoord hier beneden (of schrijf '{{REF:commands.stop}}' om te annuleren)."
+            "collector": "Schrijf je antwoord hier beneden (of schrijf '{{COM:keywords.stop}}' om te annuleren)."
         },
         "other": {
             "na": "N.v.t.",
@@ -938,7 +925,11 @@
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",
-            "yesOrNo": "`{{REF:yesNo.yes}}` of `{{REF:yesNo.no}}`",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+            ],
             "italicizedDefaults": "*Schuingedrukte* instellingen zijn standaarden.",
             "timeInTimeZone": "In **{{TIME_ZONE}}** is het op dit moment **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}** uur.",
             "findTimeZoneHelp": [
@@ -946,7 +937,7 @@
                 "",
                 "Simpelweg **selecteer een locatie op de kaart** om de naam van een tijdzone te zien."
             ],
-            "translateNote": "Schrijf `{{REF:bot.prefix}} {{REF:commands.translate}}` om meer te weten te komen over vertalingen.",
+            "translateNote": "Schrijf `/{{COM:commands.translate}}` om meer te weten te komen over vertalingen.",
             "dmWarning": "Sommige commando's van {{COM:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{COM:bot.name}} ingesteld zijn."
         },
         "messages": {

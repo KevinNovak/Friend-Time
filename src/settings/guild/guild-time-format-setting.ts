@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -9,15 +9,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOption> {
+    public name = Lang.getCom('settings.timeFormat');
     public default = TimeFormatOption.TWELVE_HOUR;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.timeFormat', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.timeFormat', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeFormatDisplay', langCode);
@@ -43,12 +36,12 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         return TimeFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let timeFormat = TimeFormat.find(msg.content, langCode);
+            let timeFormat = TimeFormat.find(msg.content);
             if (!timeFormat) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidTimeFormat', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -59,22 +52,17 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         };
     }
 
-    public async retrieve(
-        msg: Message,
-        args: string[],
-        data: EventData
-    ): Promise<TimeFormatOption> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<TimeFormatOption> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
-            data.lang(),
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang())
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

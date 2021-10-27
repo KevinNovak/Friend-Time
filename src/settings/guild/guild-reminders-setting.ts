@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { Setting } from '..';
@@ -10,15 +10,8 @@ import { Lang } from '../../services';
 import { CollectorUtils, MessageUtils } from '../../utils';
 
 export class GuildRemindersSetting implements Setting<GuildData, boolean> {
+    public name = Lang.getCom('settings.reminders');
     public default = true;
-
-    public keyword(langCode: LangCode): string {
-        return Lang.getRef('settings.reminders', langCode);
-    }
-
-    public regex(langCode: LangCode): RegExp {
-        return Lang.getRegex('settingRegexes.reminders', langCode);
-    }
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.remindersDisplay', langCode);
@@ -44,12 +37,12 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
         return YesNo.Data[value.toString()].displayName(langCode);
     }
 
-    public retriever(langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
-            let reminders = YesNo.find(msg.content, langCode);
+            let reminders = YesNo.find(msg.content);
             if (reminders == null) {
-                await MessageUtils.send(
-                    msg.channel,
+                await MessageUtils.sendIntr(
+                    intr,
                     Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
                         Lang.getRef('footers.collector', langCode)
                     )
@@ -60,18 +53,17 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
         };
     }
 
-    public async retrieve(msg: Message, args: string[], data: EventData): Promise<boolean> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
         let collect = CollectorUtils.createMsgCollect(
-            msg.channel,
-            msg.author,
-            data.lang(),
+            intr.channel,
+            intr.user,
             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
         );
 
-        await MessageUtils.send(
-            msg.channel,
+        await MessageUtils.sendIntr(
+            intr,
             Lang.getEmbed('promptEmbeds.remindersGuild', data.lang())
         );
-        return collect(this.retriever(data.lang()));
+        return collect(this.retriever(intr, data.lang()));
     }
 }

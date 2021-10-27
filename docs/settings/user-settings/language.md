@@ -4,7 +4,7 @@
 
 The user **Language** setting changes Friend Time's language for the user.
 
-Type `-ft translate` to see what languages are available.
+Type `/translate` to see what languages are available.
 
 ![](../../.gitbook/assets/image%20%2863%29.png)
 

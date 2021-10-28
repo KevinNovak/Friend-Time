@@ -92,3 +92,4 @@ You can essentially ignore everything except for this part:
 Which is just **a list of words** the user can type in place of a certain command, separated by tall lines \(\|\).
 
 When translating the `regexes` section, just focus on translating these words and adding or removing words from the list as you see necessary.
+

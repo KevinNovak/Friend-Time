@@ -22,8 +22,8 @@ description: How to self-host Friend Time.
 3. Modify the config file.
     * Open the `config/config.json` file.
     * You'll need to edit the following values:
-    * `client.id` * Your discord bot's [user ID](https://techswift.org/2020/04/22/how-to-find-your-user-id-on-discord/).
-    * `client.token` * Your discord bot's token.
+    * `client.id` - Your discord bot's [user ID](https://techswift.org/2020/04/22/how-to-find-your-user-id-on-discord/).
+    * `client.token` - Your discord bot's token.
     * `database.host`- The ip address that your database is running on \(or `localhost`\)
     * `database.database` - The name of the database to use.
     * `database.username` - The username to use when accessing the database.

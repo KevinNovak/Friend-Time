@@ -92,15 +92,3 @@ You can essentially ignore everything except for this part:
 Which is just **a list of words** the user can type in place of a certain command, separated by tall lines \(\|\).
 
 When translating the `regexes` section, just focus on translating these words and adding or removing words from the list as you see necessary.
-
-Please use the following guidelines for these lists of words:
-
-* The **first word** should be the **preferred** word.
-  * If it is for a command, it should be the main command name.
-    * Ex: `find` is the preferred word for the find command.
-  * If it is for a setting, it should be the main setting name.
-    * Ex: `timeZone` is the preferred word for the Time Zone setting.
-* The **second word** can be a **single letter** or **short abbreviation** if appropriate \(optional\).
-  * You'll want to make sure you don't have any overlap with other words.
-* Any remaining words can be aliases of the original word.
-

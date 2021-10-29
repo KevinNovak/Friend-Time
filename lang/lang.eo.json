@@ -232,6 +232,7 @@
                     {
                         "name": "Identigiloj",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**Splitoj**: {{SHARD_ID}}",
                             "**Servilo**: {{SERVER_ID}}",
                             "**Roboto**: {{BOT_ID}}",

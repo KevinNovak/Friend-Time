@@ -232,6 +232,7 @@
                     {
                         "name": "IDs",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**ID Shard**: {{SHARD_ID}}",
                             "**ID Servidor**: {{SERVER_ID}}",
                             "**ID Bot**: {{BOT_ID}}",

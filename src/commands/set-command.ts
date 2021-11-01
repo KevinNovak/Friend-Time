@@ -195,14 +195,17 @@ export class SetCommand implements Command {
                     Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
                 );
 
+                let userMention = FormatUtils.userMention(member.id);
                 let settingList = this.userSettingManager.list(userData, data.lang());
-                await MessageUtils.sendIntr(
-                    intr,
-                    Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang(), {
-                        SETTING_LIST: settingList,
-                        USER: FormatUtils.userMention(member.id),
-                    })
-                );
+                await MessageUtils.sendIntr(intr, {
+                    content: userMention,
+                    embeds: [
+                        Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang(), {
+                            SETTING_LIST: settingList,
+                            USER: userMention,
+                        }),
+                    ],
+                });
                 let confirmed = await collect(async (msg: Message) => {
                     let privateMode = YesNo.find(msg.content);
                     if (privateMode == null) {

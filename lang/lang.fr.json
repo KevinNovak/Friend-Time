@@ -652,7 +652,11 @@
                 "description": [
                     "{{COM:bot.name}} utilise maintenant les **commandes Slash**!",
                     "",
-                    "Essaye-les en écrivant `/{{COM:commands.help}}`!"
+                    "Essaye-les en écrivant `/{{COM:commands.help}}`!",
+                    "",
+                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*",
+                    "",
+                    "{{REF:links.inviteEmbed}}"
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

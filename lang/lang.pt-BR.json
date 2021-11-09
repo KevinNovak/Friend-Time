@@ -652,7 +652,11 @@
                 "description": [
                     "{{COM:bot.name}} agora usa **Comandos de Barra**!",
                     "",
-                    "Experimente digitando `/{{COM:commands.help}}`!"
+                    "Experimente digitando `/{{COM:commands.help}}`!",
+                    "",
+                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*",
+                    "",
+                    "{{REF:links.inviteEmbed}}"
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

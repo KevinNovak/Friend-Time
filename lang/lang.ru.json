@@ -647,7 +647,11 @@
                 "description": [
                     "Для {{COM:bot.name}} теперь используются **слэш-команды**!",
                     "",
-                    "Опробуйте их, напечатав `/{{COM:commands.help}}`!"
+                    "Опробуйте их, напечатав `/{{COM:commands.help}}`!",
+                    "",
+                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*",
+                    "",
+                    "{{REF:links.inviteEmbed}}"
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

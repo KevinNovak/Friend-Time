@@ -649,7 +649,7 @@
                     "",
                     "Опробуйте их, напечатав `/{{COM:commands.help}}`!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Внимание: Если вы не видите список команд для {{COM:bot.name}}, попробуйте кикнуть бота и пригласить его обратно.*"
                 ],
                 "fields": [
                     {

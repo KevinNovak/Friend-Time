@@ -654,7 +654,7 @@
                     "",
                     "Provu ilin tajpante `/{{COM:commands.help}}`!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Atentu: Se vi ne vidas liston de komandoj por {{COM:bot.name}}, provu forpeli kaj reinviti la roboton.*"
                 ],
                 "fields": [
                     {

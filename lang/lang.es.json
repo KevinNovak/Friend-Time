@@ -654,7 +654,7 @@
                     "",
                     "Pruébalo escribiendo /{{COM:commands.help}}!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Nota: si no ves ningún comando para {{COM:bot.name}}, prueba pateando y reinvitando a {{COM:bot.name}}.*"
                 ],
                 "fields": [
                     {

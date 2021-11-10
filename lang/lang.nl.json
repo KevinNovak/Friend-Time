@@ -703,7 +703,7 @@
                     "",
                     "Probeer het uit met `/{{COM:commands.help}}`!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Let op: Als je de commando's voor {{COM:bot.name}} niet kan zien, probeer dan {{COM:bot.name}} te kicken en opnieuw uit te nodigen.*"
                 ],
                 "fields": [
                     {

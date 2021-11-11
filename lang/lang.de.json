@@ -654,7 +654,7 @@
                     "",
                     "Try it by typing `/{{COM:commands.help}}`!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Achtung: Wenn du keine Befehle für {{COM:bot.name}} siehst, versuche {{COM:bot.name}} vom Server zu entfernen und neu einzuladen.*"
                 ],
                 "fields": [
                     {

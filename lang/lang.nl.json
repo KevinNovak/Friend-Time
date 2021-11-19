@@ -197,6 +197,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -261,6 +262,10 @@
             "vote": {
                 "title": "{{COM:bot.name}} - Stem",
                 "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
+            },
+            "donate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
             "support": {
                 "title": "{{COM:bot.name}} - Support",
@@ -926,6 +931,7 @@
             "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
             "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
             "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",

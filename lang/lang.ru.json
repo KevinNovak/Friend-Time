@@ -183,6 +183,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -247,6 +248,10 @@
             "vote": {
                 "title": "{{COM:bot.name}} - Проголосовать",
                 "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
+            },
+            "donate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
             "support": {
                 "title": "{{COM:bot.name}} - Поддержка",
@@ -872,6 +877,7 @@
             "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
             "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
             "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",

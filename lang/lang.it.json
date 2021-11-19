@@ -188,6 +188,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -252,6 +253,10 @@
             "vote": {
                 "title": "{{COM:bot.name}} - Vota",
                 "description": "Supporta {{COM:bot.name}} votando [qui]({{COM:links.vote}})!"
+            },
+            "donate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
             "support": {
                 "title": "{{COM:bot.name}} - Supporto",
@@ -877,6 +882,7 @@
             "inviteEmbed": "[Invita {{COM:bot.name}} in un Server!]({{COM:links.invite}})",
             "docsEmbed": "[Visualizza Documentazione]({{COM:links.docs}}/)",
             "voteEmbed": "[Vota per {{COM:bot.name}}!]({{COM:links.vote}})",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "supportEmbed": "[Unisciti al Server di Supporto!]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Visualizza Source Code]({{COM:links.source}})",

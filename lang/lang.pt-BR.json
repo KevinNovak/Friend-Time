@@ -188,6 +188,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -252,6 +253,10 @@
             "vote": {
                 "title": "{{COM:bot.name}} - Vote",
                 "description": "Ajude o {{COM:bot.name}} votando [aqui]({{COM:links.vote}})!"
+            },
+            "donate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
             "support": {
                 "title": "{{COM:bot.name}} - Suporte",
@@ -877,6 +882,7 @@
             "inviteEmbed": "[Convide o {{COM:bot.name}} para o seu servidor!]({{COM:links.invite}})",
             "docsEmbed": "[Ver Documentação]({{COM:links.docs}}/)",
             "voteEmbed": "[Vote no {{COM:bot.name}}!]({{COM:links.vote}})",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "supportEmbed": "[Junte-se ao servidor de suporte]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "sourceEmbed": "[Verificar o código-fonte]({{COM:links.source}})",

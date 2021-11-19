@@ -188,6 +188,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -252,6 +253,10 @@
             "vote": {
                 "title": "{{COM:bot.name}} - Voĉdonado",
                 "description": "Subtenu {{COM:bot.name}} voĉdoninte [ĉi tie]({{COM:links.vote}})!"
+            },
+            "donate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
             "support": {
                 "title": "{{COM:bot.name}} - Subteno",
@@ -877,6 +882,7 @@
             "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
             "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
             "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
             "authorEmbed": "[Kevino Novako]({{COM:links.author}})",
             "sourceEmbed": "[Vidu la fontkodon]({{COM:links.source}})",

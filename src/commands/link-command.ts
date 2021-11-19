@@ -33,6 +33,10 @@ export class LinkCommand implements Command {
                         name: 'vote',
                         value: 'VOTE',
                     },
+                    {
+                        name: 'map',
+                        value: 'MAP',
+                    },
                 ],
             },
         ],
@@ -60,6 +64,10 @@ export class LinkCommand implements Command {
             }
             case 'VOTE': {
                 embed = Lang.getEmbed('displayEmbeds.vote', data.lang());
+                break;
+            }
+            case 'MAP': {
+                embed = Lang.getEmbed('displayEmbeds.map', data.lang());
                 break;
             }
             default: {

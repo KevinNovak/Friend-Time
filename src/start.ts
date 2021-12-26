@@ -29,7 +29,7 @@ import {
     TriggerHandler,
 } from './events';
 import { CustomClient } from './extensions';
-import { ConvertReaction } from './reactions';
+import { ConvertReaction, Reaction } from './reactions';
 import { JobService, Logger, ReminderService, TimeService } from './services';
 import { SettingManager } from './settings';
 import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot';
@@ -145,6 +145,7 @@ async function start(): Promise<void> {
         userTimeFormatSetting,
         userPrivateModeSetting
     );
+    let reactions: Reaction[] = [convertReaction];
 
     // Triggers
     let oldPrefixTrigger = new OldPrefixTrigger();
@@ -169,7 +170,7 @@ async function start(): Promise<void> {
     let commandHandler = new CommandHandler(commands);
     let triggerHandler = new TriggerHandler([oldPrefixTrigger, convertTrigger]);
     let messageHandler = new MessageHandler(triggerHandler);
-    let reactionHandler = new ReactionHandler([convertReaction]);
+    let reactionHandler = new ReactionHandler(reactions);
 
     let bot = new Bot(
         Config.client.token,

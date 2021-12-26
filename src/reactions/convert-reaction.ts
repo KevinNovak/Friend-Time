@@ -33,12 +33,10 @@ export class ConvertReaction implements Reaction {
 
     public async execute(
         msgReaction: MessageReaction,
+        msg: Message,
         reactor: User,
         data: EventData
     ): Promise<void> {
-        // Can potentially be a PartialMessage, but we have already checked this
-        let msg = msgReaction.message as Message;
-
         // Don't respond to reaction on client's message
         if (msg.author.id === msg.client.user.id) {
             return;

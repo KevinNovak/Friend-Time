@@ -63,6 +63,7 @@
         "no": "no"
     },
     "colors": {
+        "default": "#0099ff",
         "success": "#00ff83",
         "warning": "#ffcc66",
         "error": "#ff4a4a"

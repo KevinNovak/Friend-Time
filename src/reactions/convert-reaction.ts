@@ -18,6 +18,7 @@ let Config = require('../../config/config.json');
 export class ConvertReaction implements Reaction {
     public emoji: string = Config.reactions.convert;
     public requireGuild = true;
+    public requireSentByClient = false;
 
     constructor(
         private timeService: TimeService,

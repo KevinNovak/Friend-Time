@@ -34,6 +34,10 @@ export class ReactionHandler implements EventHandler {
             return;
         }
 
+        if (reaction.requireSentByClient && msg.author.id !== msg.client.user.id) {
+            return;
+        }
+
         // Check if user is rate limited
         let limited = this.rateLimiter.take(msg.author.id);
         if (limited) {

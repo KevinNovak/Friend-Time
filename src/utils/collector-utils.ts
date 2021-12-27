@@ -1,4 +1,4 @@
-import { Message, MessageEmbed, MessageReaction, TextBasedChannels, User } from 'discord.js';
+import { Message, MessageEmbed, MessageReaction, TextBasedChannel, User } from 'discord.js';
 
 import {
     CollectorUtils as DjsCollectorUtils,
@@ -15,7 +15,7 @@ let Config = require('../../config/config.json');
 
 export class CollectorUtils {
     public static createMsgCollect(
-        channel: TextBasedChannels,
+        channel: TextBasedChannel,
         user: User,
         expireEmbed?: MessageEmbed
     ): (messageRetriever: MessageRetriever) => Promise<any> {
@@ -63,7 +63,7 @@ export class CollectorUtils {
     }
 
     public static createReactCollect(
-        channel: TextBasedChannels,
+        channel: TextBasedChannel,
         user: User,
         expireEmbed?: MessageEmbed
     ): (msg: Message, reactionRetriever: ReactionRetriever) => Promise<any> {

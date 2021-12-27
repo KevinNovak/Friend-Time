@@ -30,7 +30,7 @@ export class ReminderService {
             Lang.getEmbed('displayEmbeds.timeZoneReminder', data.lang(), {
                 USER: FormatUtils.userMention(user.id),
                 MESSAGE_LINK: msg.url,
-            }).setAuthor(msg.guild.name, msg.guild.iconURL())
+            }).setAuthor({ name: msg.guild.name, iconURL: msg.guild.iconURL() })
         );
     }
 }

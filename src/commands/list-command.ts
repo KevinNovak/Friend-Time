@@ -58,7 +58,7 @@ export class ListCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.listTimeZone', data.lang(), {
                         TIME_ZONE_LIST: timeZoneList,
-                    }).setAuthor(intr.guild.name, intr.guild.iconURL())
+                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
                 );
                 return;
             }

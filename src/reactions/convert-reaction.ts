@@ -111,7 +111,7 @@ export class ConvertReaction implements Reaction {
                 TIME_ZONE_TO: userTimeZone,
                 TIME_LIST: timeList,
                 MESSAGE_LINK: msg.url,
-            }).setAuthor(msg.guild.name, msg.guild.iconURL())
+            }).setAuthor({ name: msg.guild.name, iconURL: msg.guild.iconURL() })
         );
     }
 }

@@ -67,7 +67,7 @@ export class ServerCommand implements Command {
                     Lang.getEmbed('displayEmbeds.settingsServer', data.lang(), {
                         SETTING_LIST: settingList,
                         SERVER_ID: intr.guild.id,
-                    }).setAuthor(intr.guild.name, intr.guild.iconURL())
+                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
                 );
                 return;
             }

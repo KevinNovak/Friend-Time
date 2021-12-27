@@ -108,7 +108,7 @@ export class BotCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.listBot', data.lang(), {
                         BOT_LIST: botList,
-                    }).setAuthor(intr.guild.name, intr.guild.iconURL())
+                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
                 );
                 return;
             }
@@ -129,7 +129,10 @@ export class BotCommand implements Command {
                     Lang.getEmbed('displayEmbeds.settingsBot', data.lang(), {
                         SETTING_LIST: settingList,
                         BOT_ID: botData.discordId,
-                    }).setAuthor(user?.tag ?? botData.discordId, user?.avatarURL())
+                    }).setAuthor({
+                        name: user?.tag ?? botData.discordId,
+                        iconURL: user?.avatarURL(),
+                    })
                 );
                 return;
             }

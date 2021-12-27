@@ -173,12 +173,6 @@
                 "title": "Ora nel fuso orario",
                 "description": "Attualmente sono le **{{TIME}}** in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Mappa dei fusi orari",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Puoi copiare questo nome e usarlo ogni volta che {{COM:bot.name}} ha bisogno di un fuso orario."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Informazioni",
                 "fields": [
@@ -242,25 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Invito",
-                "description": "Clicca [qui]({{COM:links.invite}}) per invitare {{COM:bot.name}} in un server!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentazione",
                 "description": "Clicca [qui]({{COM:links.docs}}/) per vedere la documentazione del bot."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Vota",
-                "description": "Supporta {{COM:bot.name}} votando [qui]({{COM:links.vote}})!"
-            },
-            "donate": {
+            "linkDonate": {
                 "title": "{{COM:bot.name}} - Donate",
                 "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Invito",
+                "description": "Clicca [qui]({{COM:links.invite}}) per invitare {{COM:bot.name}} in un server!"
+            },
+            "linkMap": {
+                "title": "Mappa dei fusi orari",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Puoi copiare questo nome e usarlo ogni volta che {{COM:bot.name}} ha bisogno di un fuso orario."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Supporto",
                 "description": "Ti serve aiuto? Entra nel nostro [server di supporto]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Vota",
+                "description": "Supporta {{COM:bot.name}} votando [qui]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [

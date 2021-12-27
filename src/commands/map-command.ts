@@ -15,6 +15,6 @@ export class MapCommand implements Command {
     public requirePerms = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
-        await MessageUtils.sendIntr(intr, Lang.getEmbed('displayEmbeds.map', data.lang()));
+        await MessageUtils.sendIntr(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang()));
     }
 }

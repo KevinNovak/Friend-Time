@@ -173,12 +173,6 @@
                 "title": "Zeit der Zeitzone",
                 "description": "Derzeit ist es **{{TIME}}** in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Karte der Zeitzonen",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{COM:bot.name}} eine Zeitzone braucht."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Information",
                 "fields": [
@@ -242,25 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Einladung",
-                "description": "Klicke [hier]({{COM:links.invite}}), um {{COM:bot.name}} in einen Server einzuladen!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentation",
                 "description": "Klicke [hier]({{COM:links.docs}}/), um dir die Dokumentation für diesen Bot anzuschauen."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Abstimmen",
-                "description": "Unterstütze {{COM:bot.name}}, indem du [hier]({{COM:links.vote}}) abstimmst!"
-            },
-            "donate": {
+            "linkDonate": {
                 "title": "{{COM:bot.name}} - Donate",
                 "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Einladung",
+                "description": "Klicke [hier]({{COM:links.invite}}), um {{COM:bot.name}} in einen Server einzuladen!"
+            },
+            "linkMap": {
+                "title": "Karte der Zeitzonen",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{COM:bot.name}} eine Zeitzone braucht."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Hilfe",
                 "description": "Du brauchst Hilfe? Tritt’ dem [Hilfeserver]({{COM:links.support}}) bei!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Abstimmen",
+                "description": "Unterstütze {{COM:bot.name}}, indem du [hier]({{COM:links.vote}}) abstimmst!"
             },
             "timeConversionDm": {
                 "description": [

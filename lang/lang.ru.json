@@ -168,12 +168,6 @@
                 "title": "Время в часовом поясе",
                 "description": "В часовом поясе **{{TIME_ZONE}}** сейчас **{{TIME}}**."
             },
-            "map": {
-                "title": "Карта поясов",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{COM:bot.name}}."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Информация",
                 "fields": [
@@ -237,25 +231,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Приглашение",
-                "description": "Нажмите [здесь]({{COM:links.invite}}), чтобы пригласить {{COM:bot.name}} на сервер!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Документация",
                 "description": "Нажмите [здесь]({{COM:links.docs}}/), чтобы перейти к документации бота."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Проголосовать",
-                "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
-            },
-            "donate": {
+            "linkDonate": {
                 "title": "{{COM:bot.name}} - Donate",
                 "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Приглашение",
+                "description": "Нажмите [здесь]({{COM:links.invite}}), чтобы пригласить {{COM:bot.name}} на сервер!"
+            },
+            "linkMap": {
+                "title": "Карта поясов",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{COM:bot.name}}."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Поддержка",
                 "description": "Нужна помощь? Присоединяйтесь к нашему [серверу поддержки]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Проголосовать",
+                "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [

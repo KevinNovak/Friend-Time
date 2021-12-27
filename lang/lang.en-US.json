@@ -173,12 +173,6 @@
                 "title": "Time Zone Time",
                 "description": "It is currently **{{TIME}}** in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Time Zone Map",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} You can copy this name and use it wherever {{COM:bot.name}} needs a time zone."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Info",
                 "fields": [
@@ -242,25 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Invite",
-                "description": "Click [here]({{COM:links.invite}}) to invite {{COM:bot.name}} to a server!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentation",
                 "description": "Click [here]({{COM:links.docs}}/) to view the bot documentation."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Vote",
-                "description": "Support {{COM:bot.name}} by voting [here]({{COM:links.vote}})!"
-            },
-            "donate": {
+            "linkDonate": {
                 "title": "{{COM:bot.name}} - Donate",
                 "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Invite",
+                "description": "Click [here]({{COM:links.invite}}) to invite {{COM:bot.name}} to a server!"
+            },
+            "linkMap": {
+                "title": "Time Zone Map",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} You can copy this name and use it wherever {{COM:bot.name}} needs a time zone."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Support",
                 "description": "Need help? Join our [support server]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Vote",
+                "description": "Support {{COM:bot.name}} by voting [here]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [

@@ -179,12 +179,6 @@
                 "title": "Tijdzone tijd",
                 "description": "Het is op dit moment **{{TIME}}** uur in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Tijdzone kaart",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Informatie",
                 "fields": [
@@ -251,25 +245,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Uitnodiging",
-                "description": "Klik [hier]({{COM:links.invite}}) om {{COM:bot.name}} uit te nodigen in een server!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentatie",
                 "description": "Klik [hier]({{COM:links.docs}}/) om de documentatie van de bot te bekijken."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Stem",
-                "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
-            },
-            "donate": {
+            "linkDonate": {
                 "title": "{{COM:bot.name}} - Donate",
                 "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Uitnodiging",
+                "description": "Klik [hier]({{COM:links.invite}}) om {{COM:bot.name}} uit te nodigen in een server!"
+            },
+            "linkMap": {
+                "title": "Tijdzone kaart",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Support",
                 "description": "Hulp nodig? Wordt lid van onze [support server]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Stem",
+                "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
             },
             "timeConversionDm": {
                 "description": [

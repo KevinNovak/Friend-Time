@@ -928,15 +928,15 @@
             "private": "Privé"
         },
         "links": {
-            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
-            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
-            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
+            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})",
             "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",
+            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})"
+            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",

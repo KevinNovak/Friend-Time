@@ -879,15 +879,15 @@
             "private": "Private"
         },
         "links": {
-            "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
-            "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
-            "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
             "authorEmbed": "[Kevino Novako]({{COM:links.author}})",
+            "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
+            "mapEmbed": "[horzonmapo]({{COM:links.map}})",
             "sourceEmbed": "[Vidu la fontkodon]({{COM:links.source}})",
+            "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
             "templateEmbed": "[Ŝablono TypeScript por diskordaj robotoj]({{COM:links.template}})",
-            "mapEmbed": "[horzonmapo]({{COM:links.map}})"
+            "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",

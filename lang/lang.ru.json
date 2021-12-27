@@ -874,15 +874,15 @@
             "private": "Приватно"
         },
         "links": {
-            "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
-            "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
-            "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
+            "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})",
             "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",
+            "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{COM:links.template}})",
-            "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})"
+            "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Поздравляем! 🎉",

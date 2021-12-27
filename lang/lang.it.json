@@ -879,15 +879,15 @@
             "private": "Privata"
         },
         "links": {
-            "inviteEmbed": "[Invita {{COM:bot.name}} in un Server!]({{COM:links.invite}})",
-            "docsEmbed": "[Visualizza Documentazione]({{COM:links.docs}}/)",
-            "voteEmbed": "[Vota per {{COM:bot.name}}!]({{COM:links.vote}})",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "supportEmbed": "[Unisciti al Server di Supporto!]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Visualizza Documentazione]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Invita {{COM:bot.name}} in un Server!]({{COM:links.invite}})",
+            "mapEmbed": "[Mappa dei fusi orari]({{COM:links.map}})",
             "sourceEmbed": "[Visualizza Source Code]({{COM:links.source}})",
+            "supportEmbed": "[Unisciti al Server di Supporto!]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "mapEmbed": "[Mappa dei fusi orari]({{COM:links.map}})"
+            "voteEmbed": "[Vota per {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Congratulazioni! 🎉",

@@ -101,7 +101,7 @@
                 ]
             },
             "settingsServer": {
-                "title": "Configurações do servidor",
+                "title": "Configurações do Servidor",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -120,7 +120,7 @@
                 "footer": { "text": "Server ID: {{SERVER_ID}}" }
             },
             "settingsBot": {
-                "title": "Configurações do bot",
+                "title": "Configurações do Bot",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -139,7 +139,7 @@
                 "footer": { "text": "Bot ID: {{BOT_ID}}" }
             },
             "settingSelf": {
-                "title": "Minhas configurações",
+                "title": "Minhas Configurações",
                 "description": [
                     "{{REF:partials.italicizedDefaults}}",
                     "",
@@ -158,20 +158,20 @@
                 "footer": { "text": "User ID: {{USER_ID}}" }
             },
             "timeServer": {
-                "title": "Hora do servidor",
-                "description": "Agora a data e a hora são **{{TIME}}** neste servidor no fuso horário **{{TIME_ZONE}}**."
+                "title": "Hora do Servidor",
+                "description": "Hoje é **{{TIME}}** para o servidor em **{{TIME_ZONE}}**."
             },
             "timeUser": {
-                "title": "Hora do usuário",
-                "description": "{{USER}}, agora a data e a hora são **{{TIME}}** no fuso horário **{{TIME_ZONE}}**."
+                "title": "Hora do Usuário",
+                "description": "{{USER}}, hoje é **{{TIME}}** em **{{TIME_ZONE}}**."
             },
             "timeUserPrivate": {
-                "title": "Hora do usuário",
-                "description": "{{USER}}, agora a data e a hora são **{{TIME}}**."
+                "title": "Hora do Usuário",
+                "description": "{{USER}}, hoje é **{{TIME}}**."
             },
             "timeTimeZone": {
-                "title": "Hora do fuso horário",
-                "description": "Agora a data e a hora são **{{TIME}}** no fuso horário **{{TIME_ZONE}}**."
+                "title": "Hora do Fuso Horário",
+                "description": "Hoje é **{{TIME}}** em **{{TIME_ZONE}}**."
             },
             "info": {
                 "title": "{{COM:bot.name}} - Informações",
@@ -188,14 +188,14 @@
                         ]
                     },
                     {
-                        "name": "Criado com",
+                        "name": "Criado Com",
                         "value": ["{{REF:links.templateEmbed}}"]
                     }
                 ]
             },
             "translate": {
                 "title": "{{COM:bot.name}} - Traduções",
-                "description": "Obrigado aos nossos tradutores que possibilitaram que {{COM:bot.name}} fosse usado nos seguintes idiomas. Se você estiver interessado em fornecer uma tradução, entre em contato com a equipe do [servidor de suporte]({{COM:links.support}})."
+                "description": "Obrigado aos nossos tradutores que possibilitaram que o {{COM:bot.name}} fosse usado nos seguintes idiomas. Se você estiver interessado em fornecer uma tradução, entre em contato com a equipe do [servidor de suporte]({{COM:links.support}})."
             },
             "dev": {
                 "title": "{{COM:bot.name}} - Informações do Desenvolvedor",
@@ -228,30 +228,30 @@
                         "name": "IDs",
                         "value": [
                             "**Hostname**: {{HOSTNAME}}",
-                            "**ID do shard**: {{SHARD_ID}}",
-                            "**ID do servidor**: {{SERVER_ID}}",
+                            "**ID da Shard**: {{SHARD_ID}}",
+                            "**ID do Servidor**: {{SERVER_ID}}",
                             "**ID do Bot**: {{BOT_ID}}",
-                            "**ID do usuário**: {{USER_ID}}"
+                            "**ID do Usuário**: {{USER_ID}}"
                         ]
                     }
                 ]
             },
             "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentação",
-                "description": "Clique [aqui]({{COM:links.docs}}/) para ler a documentação do Bot."
+                "description": "Clique [aqui]({{COM:links.docs}}/) para ler a documentação do bot."
             },
             "linkDonate": {
-                "title": "{{COM:bot.name}} - Donate",
-                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
+                "title": "{{COM:bot.name}} - Doe",
+                "description": "Apoie o {{COM:bot.name}} doando com o PayPal [aqui]({{COM:links.donate}})!"
             },
             "linkInvite": {
-                "title": "{{COM:bot.name}} - Convite",
-                "description": "Clique [aqui]({{COM:links.invite}}) para convidar {{COM:bot.name}} para um servidor!"
+                "title": "{{COM:bot.name}} - Convide",
+                "description": "Clique [aqui]({{COM:links.invite}}) para convidar o {{COM:bot.name}} para um servidor!"
             },
             "linkMap": {
-                "title": "Mapa de fusos horários",
+                "title": "Mapa de Fusos Horários",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Você pode copiar o nome e usá-lo sempre que o {{COM:bot.name}} precisar de um fuso horário."
+                    "{{REF:partials.findTimeZoneHelp}} Você pode copiar esse nome e usá-lo sempre que o {{COM:bot.name}} precisar de um fuso horário."
                 ]
             },
             "linkSupport": {

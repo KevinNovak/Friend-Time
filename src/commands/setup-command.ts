@@ -8,7 +8,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class SetupCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
     };

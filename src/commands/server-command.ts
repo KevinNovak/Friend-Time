@@ -8,7 +8,7 @@ import { SettingManager } from '../settings';
 import { MessageUtils } from '../utils';
 import { Command } from './command';
 export class ServerCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.server'),
         description: Lang.getRef('commandDescs.server', Lang.Default),
         options: [

@@ -10,7 +10,7 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.list'),
         description: Lang.getRef('commandDescs.list', Lang.Default),
         options: [

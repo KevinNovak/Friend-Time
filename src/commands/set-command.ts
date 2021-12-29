@@ -20,7 +20,7 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
 export class SetCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.set'),
         description: Lang.getRef('commandDescs.set', Lang.Default),
         options: [

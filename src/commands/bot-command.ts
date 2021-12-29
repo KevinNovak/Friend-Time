@@ -11,7 +11,7 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class BotCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
         options: [

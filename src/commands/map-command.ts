@@ -6,7 +6,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MapCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.map'),
         description: Lang.getRef('commandDescs.map', Lang.Default),
     };

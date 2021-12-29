@@ -10,7 +10,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MeCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         options: [

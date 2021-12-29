@@ -132,7 +132,7 @@ async function start(): Promise<void> {
             userPrivateModeSetting
         ),
         new TranslateCommand(),
-    ].sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
+    ].sort((a, b) => (a.metadata.name > b.metadata.name ? 1 : -1));
 
     // Reactions
     let convertReaction = new ConvertReaction(
@@ -194,7 +194,7 @@ async function start(): Promise<void> {
 }
 
 async function registerCommands(commands: Command[]): Promise<void> {
-    let cmdDatas = commands.map(cmd => cmd.data);
+    let cmdDatas = commands.map(cmd => cmd.metadata);
     let cmdNames = cmdDatas.map(cmdData => cmdData.name);
 
     Logger.info(

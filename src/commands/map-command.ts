@@ -6,7 +6,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MapCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.map'),
         description: Lang.getRef('commandDescs.map', Lang.Default),
     };
@@ -15,6 +15,6 @@ export class MapCommand implements Command {
     public requirePerms = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
-        await MessageUtils.sendIntr(intr, Lang.getEmbed('displayEmbeds.map', data.lang()));
+        await MessageUtils.sendIntr(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang()));
     }
 }

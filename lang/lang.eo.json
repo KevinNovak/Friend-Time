@@ -173,12 +173,6 @@
                 "title": "Tempo en horzono",
                 "description": "Nun estas **{{TIME}}** en **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Horzonmapo",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Vi povas kopii tiun nomon kaj uzi ĝin, kiam {{COM:bot.name}} postulos."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Informoj",
                 "fields": [
@@ -188,6 +182,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -232,6 +227,7 @@
                     {
                         "name": "Identigiloj",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**Splitoj**: {{SHARD_ID}}",
                             "**Servilo**: {{SERVER_ID}}",
                             "**Roboto**: {{BOT_ID}}",
@@ -240,21 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Invitligilo",
-                "description": "Klaku [ĉi tien]({{COM:links.invite}}) por inviti {{COM:bot.name}} al servilo!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Dokumentaro",
                 "description": "Klaku [ĉi tien]({{COM:links.docs}}/) por vidi la dokumentaron pri la roboto."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Voĉdonado",
-                "description": "Subtenu {{COM:bot.name}} voĉdoninte [ĉi tie]({{COM:links.vote}})!"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Invitligilo",
+                "description": "Klaku [ĉi tien]({{COM:links.invite}}) por inviti {{COM:bot.name}} al servilo!"
+            },
+            "linkMap": {
+                "title": "Horzonmapo",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Vi povas kopii tiun nomon kaj uzi ĝin, kiam {{COM:bot.name}} postulos."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Subteno",
                 "description": "Ĉu necesas helpo? Aliĝu al nia [servilo de subteno]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Voĉdonado",
+                "description": "Subtenu {{COM:bot.name}} voĉdoninte [ĉi tie]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -647,11 +653,19 @@
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
-                "title": "Slash Commands Update",
+                "title": "Ĝisdatigo por suprenstrekaj komandoj",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "{{COM:bot.name}} nun uzas **suprenstrekajn komandojn**!",
                     "",
-                    "Try it by typing `/{{COM:commands.help}}`!"
+                    "Provu ilin tajpante `/{{COM:commands.help}}`!",
+                    "",
+                    "*Atentu: Se vi ne vidas liston de komandoj por {{COM:bot.name}}, provu forpeli kaj reinviti la roboton.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -775,36 +789,36 @@
             "description": "{{COM:bot.name}} helpas al via servilo plani okazojn, konvertante tempojn, menciatajn en babilejo, inter horzonoj!"
         },
         "commandDescs": {
-            "bot": "Manage bot settings.",
-            "botList": "View list of bots.",
-            "botView": "View a bot's settings.",
-            "botEdit": "Change a bot setting.",
-            "botRemove": "Remove a bot.",
-            "dev": "View developer info.",
-            "help": "View help menu and list of commands.",
-            "info": "View bot info.",
-            "link": "Get links to invite, support, etc.",
-            "list": "Manage the server time zone list.",
-            "listView": "View the server time zone list.",
-            "listToggle": "Add or remove to the server time zone list.",
-            "map": "View the zone map.",
-            "me": "Manage your user settings.",
-            "meView": "View your user settings.",
-            "meEdit": "Change a user setting.",
-            "meRemove": "Remove all your user data.",
-            "server": "Manage server settings.",
-            "serverView": "View server settings.",
-            "serverEdit": "Change a server setting.",
-            "serverRemove": "Remove all server data.",
-            "set": "Run the user setup (for yourself, a user, or bot).",
-            "setMe": "Run the user setup for yourself.",
-            "setUser": "Run the user setup for a user or bot.",
-            "setup": "Run the server setup.",
-            "time": "View the time of the server, user, bot, or zone.",
-            "timeServer": "View the time of the server.",
-            "timeUser": "View the time of a user or bot.",
-            "timeZone": "View the time of a zone.",
-            "translate": "View translation info."
+            "bot": "Agordi roboton.",
+            "botList": "Vidi la liston de robotoj.",
+            "botView": "Vidi la agordojn de robotoj.",
+            "botEdit": "Ŝanĝi agordon de roboto.",
+            "botRemove": "Forigi roboton.",
+            "dev": "Vidi programistajn informojn.",
+            "help": "Vidi la helpilon kaj la komandliston.",
+            "info": "Vidi informojn pri la roboto.",
+            "link": "Vidi ligilojn invitan, subtenan, ktp",
+            "list": "Agordi la servilan horzonliston.",
+            "listView": "Vidi la servilan horzonliston.",
+            "listToggle": "Aldoni al aŭ forigi de la servila horzonlisto.",
+            "map": "Vidi la horzonmapon.",
+            "me": "Agordi la roboton por si.",
+            "meView": "Vidi siajn agordojn.",
+            "meEdit": "Ŝanĝi sian agordon.",
+            "meRemove": "Forigi ĉiujn datumojn pri siaj agordoj.",
+            "server": "Agordi la roboton por la servilo.",
+            "serverView": "Vidi la servilajn agordojn.",
+            "serverEdit": "Ŝanĝi servilan agordon.",
+            "serverRemove": "Forigi ĉiujn datumojn pri la servilaj agordoj.",
+            "set": "Startigi agordadon de uzanto (por si, aliulo aŭ roboto).",
+            "setMe": "Startigi agordadon por si.",
+            "setUser": "Startigi agordadon por aliulo aŭ roboto.",
+            "setup": "Startigi agordadon de la servilo.",
+            "time": "Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
+            "timeServer": "Vidi la tempon laŭ la servilo.",
+            "timeUser": "Vidi la tempon laŭ uzanto aŭ roboto.",
+            "timeZone": "Vidi la tempon laŭ horzono.",
+            "translate": "Vidi informojn pri la tradukoj."
         },
         "settings": {
             "autoDetectDisplay": "Aŭtomata detektado",
@@ -865,14 +879,15 @@
             "private": "Private"
         },
         "links": {
-            "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
-            "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
-            "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})",
-            "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
             "authorEmbed": "[Kevino Novako]({{COM:links.author}})",
+            "docsEmbed": "[Vidu la dokumentaron]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Invitu {{COM:bot.name}} al servilo!]({{COM:links.invite}})",
+            "mapEmbed": "[horzonmapo]({{COM:links.map}})",
             "sourceEmbed": "[Vidu la fontkodon]({{COM:links.source}})",
+            "supportEmbed": "[Aliĝu al la servilo de subteno]({{COM:links.support}})",
             "templateEmbed": "[Ŝablono TypeScript por diskordaj robotoj]({{COM:links.template}})",
-            "mapEmbed": "[horzonmapo]({{COM:links.map}})"
+            "voteEmbed": "[Voĉdonu por {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Gratulon! 🎉",

@@ -10,7 +10,7 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.list'),
         description: Lang.getRef('commandDescs.list', Lang.Default),
         options: [
@@ -58,7 +58,7 @@ export class ListCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.listTimeZone', data.lang(), {
                         TIME_ZONE_LIST: timeZoneList,
-                    }).setAuthor(intr.guild.name, intr.guild.iconURL())
+                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
                 );
                 return;
             }

@@ -179,12 +179,6 @@
                 "title": "Tijdzone tijd",
                 "description": "Het is op dit moment **{{TIME}}** uur in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Tijdzone kaart",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Informatie",
                 "fields": [
@@ -197,6 +191,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -241,6 +236,7 @@
                     {
                         "name": "IDs",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**Shard ID**: {{SHARD_ID}}",
                             "**Server ID**: {{SERVER_ID}}",
                             "**Bot ID**: {{BOT_ID}}",
@@ -249,21 +245,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Uitnodiging",
-                "description": "Klik [hier]({{COM:links.invite}}) om {{COM:bot.name}} uit te nodigen in een server!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentatie",
                 "description": "Klik [hier]({{COM:links.docs}}/) om de documentatie van de bot te bekijken."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Stem",
-                "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Uitnodiging",
+                "description": "Klik [hier]({{COM:links.invite}}) om {{COM:bot.name}} uit te nodigen in een server!"
+            },
+            "linkMap": {
+                "title": "Tijdzone kaart",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Support",
                 "description": "Hulp nodig? Wordt lid van onze [support server]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Stem",
+                "description": "Steun {{COM:bot.name}} door [hier]({{COM:links.vote}}) te stemmen!"
             },
             "timeConversionDm": {
                 "description": [
@@ -700,7 +706,15 @@
                 "description": [
                     "{{COM:bot.name}} gebruikt nu **Slashopdrachten**!",
                     "",
-                    "Probeer het uit met `/{{COM:commands.help}}`!"
+                    "Probeer het uit met `/{{COM:commands.help}}`!",
+                    "",
+                    "*Let op: Als je de commando's voor {{COM:bot.name}} niet kan zien, probeer dan {{COM:bot.name}} te kicken en opnieuw uit te nodigen.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -914,14 +928,15 @@
             "private": "Privé"
         },
         "links": {
-            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
-            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
-            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})",
-            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
+            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})",
             "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",
+            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})"
+            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",

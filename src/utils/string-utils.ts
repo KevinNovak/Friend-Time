@@ -1,5 +1,5 @@
 import removeMarkdown from 'remove-markdown';
-import urlRegex from 'url-regex-safe';
+import urlRegex from 'url-regex';
 
 export class StringUtils {
     public static truncate(input: string, length: number, addEllipsis: boolean = false): string {
@@ -7,7 +7,7 @@ export class StringUtils {
             return input;
         }
 
-        let output = input.substr(0, addEllipsis ? length - 3 : length);
+        let output = input.substring(0, addEllipsis ? length - 3 : length);
         if (addEllipsis) {
             output += '...';
         }

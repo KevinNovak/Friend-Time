@@ -7,7 +7,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class LinkCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.link'),
         description: Lang.getRef('commandDescs.link', Lang.Default),
         options: [
@@ -18,20 +18,28 @@ export class LinkCommand implements Command {
                 type: ApplicationCommandOptionType.String.valueOf(),
                 choices: [
                     {
+                        name: 'docs',
+                        value: 'docs',
+                    },
+                    {
+                        name: 'donate',
+                        value: 'donate',
+                    },
+                    {
                         name: 'invite',
-                        value: 'INVITE',
+                        value: 'invite',
+                    },
+                    {
+                        name: 'map',
+                        value: 'map',
                     },
                     {
                         name: 'support',
-                        value: 'SUPPORT',
-                    },
-                    {
-                        name: 'docs',
-                        value: 'DOCS',
+                        value: 'support',
                     },
                     {
                         name: 'vote',
-                        value: 'VOTE',
+                        value: 'vote',
                     },
                 ],
             },
@@ -46,20 +54,28 @@ export class LinkCommand implements Command {
 
         let embed: MessageEmbed;
         switch (link) {
-            case 'INVITE': {
-                embed = Lang.getEmbed('displayEmbeds.invite', data.lang());
+            case 'docs': {
+                embed = Lang.getEmbed('displayEmbeds.linkDocs', data.lang());
                 break;
             }
-            case 'SUPPORT': {
-                embed = Lang.getEmbed('displayEmbeds.support', data.lang());
+            case 'donate': {
+                embed = Lang.getEmbed('displayEmbeds.linkDonate', data.lang());
                 break;
             }
-            case 'DOCS': {
-                embed = Lang.getEmbed('displayEmbeds.docs', data.lang());
+            case 'invite': {
+                embed = Lang.getEmbed('displayEmbeds.linkInvite', data.lang());
                 break;
             }
-            case 'VOTE': {
-                embed = Lang.getEmbed('displayEmbeds.vote', data.lang());
+            case 'map': {
+                embed = Lang.getEmbed('displayEmbeds.linkMap', data.lang());
+                break;
+            }
+            case 'support': {
+                embed = Lang.getEmbed('displayEmbeds.linkSupport', data.lang());
+                break;
+            }
+            case 'vote': {
+                embed = Lang.getEmbed('displayEmbeds.linkVote', data.lang());
                 break;
             }
             default: {

@@ -17,7 +17,7 @@ import { Command } from './command';
 let Config = require('../../config/config.json');
 
 export class TimeCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.time'),
         description: Lang.getRef('commandDescs.time', Lang.Default),
         options: [

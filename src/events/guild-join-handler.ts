@@ -35,10 +35,10 @@ export class GuildJoinHandler implements EventHandler {
         if (notifyChannel) {
             await MessageUtils.send(
                 notifyChannel,
-                Lang.getEmbed('displayEmbeds.welcome', guildLang).setAuthor(
-                    guild.name,
-                    guild.iconURL()
-                )
+                Lang.getEmbed('displayEmbeds.welcome', guildLang).setAuthor({
+                    name: guild.name,
+                    iconURL: guild.iconURL(),
+                })
             );
         }
 
@@ -48,10 +48,10 @@ export class GuildJoinHandler implements EventHandler {
         if (owner) {
             await MessageUtils.send(
                 owner.user,
-                Lang.getEmbed('displayEmbeds.welcome', ownerLang).setAuthor(
-                    guild.name,
-                    guild.iconURL()
-                )
+                Lang.getEmbed('displayEmbeds.welcome', ownerLang).setAuthor({
+                    name: guild.name,
+                    iconURL: guild.iconURL(),
+                })
             );
         }
     }

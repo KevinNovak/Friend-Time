@@ -29,7 +29,7 @@ import {
     TriggerHandler,
 } from './events';
 import { CustomClient } from './extensions';
-import { ConvertReaction } from './reactions';
+import { ConvertReaction, Reaction } from './reactions';
 import { JobService, Logger, ReminderService, TimeService } from './services';
 import { SettingManager } from './settings';
 import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot';
@@ -49,7 +49,7 @@ import {
     UserTimeFormatSetting,
     UserTimeZoneSetting,
 } from './settings/user';
-import { ConvertTrigger, OldPrefixTrigger } from './triggers';
+import { ConvertTrigger, OldPrefixTrigger, Trigger } from './triggers';
 
 let Config = require('../config/config.json');
 let Logs = require('../lang/logs.json');
@@ -132,7 +132,7 @@ async function start(): Promise<void> {
             userPrivateModeSetting
         ),
         new TranslateCommand(),
-    ].sort((a, b) => (a.data.name > b.data.name ? 1 : -1));
+    ].sort((a, b) => (a.metadata.name > b.metadata.name ? 1 : -1));
 
     // Reactions
     let convertReaction = new ConvertReaction(
@@ -145,31 +145,34 @@ async function start(): Promise<void> {
         userTimeFormatSetting,
         userPrivateModeSetting
     );
+    let reactions: Reaction[] = [convertReaction];
 
     // Triggers
-    let oldPrefixTrigger = new OldPrefixTrigger();
-    let convertTrigger = new ConvertTrigger(
-        convertReaction,
-        timeService,
-        reminderService,
-        guildAutoDetectSetting,
-        guildListSetting,
-        guildTimeFormatSetting,
-        guildLanguageSetting,
-        botTimeZoneSetting,
-        botDateFormatSetting,
-        userTimeZoneSetting,
-        userDateFormatSetting,
-        userPrivateModeSetting
-    );
+    let triggers: Trigger[] = [
+        new OldPrefixTrigger(),
+        new ConvertTrigger(
+            convertReaction,
+            timeService,
+            reminderService,
+            guildAutoDetectSetting,
+            guildListSetting,
+            guildTimeFormatSetting,
+            guildLanguageSetting,
+            botTimeZoneSetting,
+            botDateFormatSetting,
+            userTimeZoneSetting,
+            userDateFormatSetting,
+            userPrivateModeSetting
+        ),
+    ];
 
     // Event handlers
     let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
     let guildLeaveHandler = new GuildLeaveHandler();
     let commandHandler = new CommandHandler(commands);
-    let triggerHandler = new TriggerHandler([oldPrefixTrigger, convertTrigger]);
+    let triggerHandler = new TriggerHandler(triggers);
     let messageHandler = new MessageHandler(triggerHandler);
-    let reactionHandler = new ReactionHandler([]);
+    let reactionHandler = new ReactionHandler(reactions);
 
     let bot = new Bot(
         Config.client.token,
@@ -191,7 +194,7 @@ async function start(): Promise<void> {
 }
 
 async function registerCommands(commands: Command[]): Promise<void> {
-    let cmdDatas = commands.map(cmd => cmd.data);
+    let cmdDatas = commands.map(cmd => cmd.metadata);
     let cmdNames = cmdDatas.map(cmdData => cmdData.name);
 
     Logger.info(

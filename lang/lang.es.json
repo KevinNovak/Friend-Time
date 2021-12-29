@@ -173,12 +173,6 @@
                 "title": "Hora en zona horaria",
                 "description": "Son las **{{TIME}}** en **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Mapa de zonas horarias",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Puedes copiar este nombre y usarlo donde {{COM:bot.name}} necesite una zona horaria."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Información",
                 "fields": [
@@ -188,6 +182,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -232,6 +227,7 @@
                     {
                         "name": "IDs",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**ID Shard**: {{SHARD_ID}}",
                             "**ID Servidor**: {{SERVER_ID}}",
                             "**ID Bot**: {{BOT_ID}}",
@@ -240,21 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Invitación",
-                "description": "Haz clic [aquí]({{COM:links.invite}}) para invitar {{COM:bot.name}} a un servidor!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentación",
                 "description": "Haz clic [aquí]({{COM:links.docs}}/) para ver la documentación del bot."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Vota",
-                "description": "Puedes ayudar a {{COM:bot.name}} votando [aquí]({{COM:links.vote}})!"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Invitación",
+                "description": "Haz clic [aquí]({{COM:links.invite}}) para invitar {{COM:bot.name}} a un servidor!"
+            },
+            "linkMap": {
+                "title": "Mapa de zonas horarias",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Puedes copiar este nombre y usarlo donde {{COM:bot.name}} necesite una zona horaria."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Soporte",
                 "description": "¿Necesitas ayuda? Únete a nuestro [servidor de soporte]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Vota",
+                "description": "Puedes ayudar a {{COM:bot.name}} votando [aquí]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -651,7 +657,15 @@
                 "description": [
                     "{{COM:bot.name}} ahora utiliza **Commandos de Barra**!",
                     "",
-                    "Pruébalo escribiendo /{{COM:commands.help}}!"
+                    "Pruébalo escribiendo /{{COM:commands.help}}!",
+                    "",
+                    "*Nota: si no ves ningún comando para {{COM:bot.name}}, prueba pateando y reinvitando a {{COM:bot.name}}.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -865,14 +879,15 @@
             "private": "Privado"
         },
         "links": {
-            "inviteEmbed": "[¡Invitar {{COM:bot.name}} a un servidor!]({{COM:links.invite}})",
-            "docsEmbed": "[Ver Documentación]({{COM:links.docs}}/)",
-            "voteEmbed": "[Votar por {{COM:bot.name}}!]({{COM:links.vote}})",
-            "supportEmbed": "[Únete al servidor de Soporte]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Ver Documentación]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[¡Invitar {{COM:bot.name}} a un servidor!]({{COM:links.invite}})",
+            "mapEmbed": "[Mapa de Zonas Horarias]({{COM:links.map}})",
             "sourceEmbed": "[Ver Código Fuente]({{COM:links.source}})",
+            "supportEmbed": "[Únete al servidor de Soporte]({{COM:links.support}})",
             "templateEmbed": "[Plantilla de Typescript para Bots de Discord]({{COM:links.template}})",
-            "mapEmbed": "[Mapa de Zonas Horarias]({{COM:links.map}})"
+            "voteEmbed": "[Votar por {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 ¡Felicidades! 🎉",

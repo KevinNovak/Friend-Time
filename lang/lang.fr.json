@@ -173,12 +173,6 @@
                 "title": "Heure Fuseau Horaire",
                 "description": "Il est actuellement **{{TIME}}** à **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Carte des Fuseaux Horaires",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Tu peux copier ce nom et l'utiliser quand {{COM:bot.name}} a besoin d'un fuseau horaire."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Info",
                 "fields": [
@@ -188,6 +182,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -232,6 +227,7 @@
                     {
                         "name": "IDs",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**Shard ID**: {{SHARD_ID}}",
                             "**Server ID**: {{SERVER_ID}}",
                             "**Bot ID**: {{BOT_ID}}",
@@ -240,21 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Invitation",
-                "description": "Clique [ici]({{COM:links.invite}}) pour inviter {{COM:bot.name}} sur un serveur !"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentation",
                 "description": "Clique [ici]({{COM:links.docs}}/) pour voir la documentation du bot."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Vote",
-                "description": "Supporte {{COM:bot.name}} en votant [ici]({{COM:links.vote}}) !"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Invitation",
+                "description": "Clique [ici]({{COM:links.invite}}) pour inviter {{COM:bot.name}} sur un serveur !"
+            },
+            "linkMap": {
+                "title": "Carte des Fuseaux Horaires",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Tu peux copier ce nom et l'utiliser quand {{COM:bot.name}} a besoin d'un fuseau horaire."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Support",
                 "description": "Tu as besoin d'aide ? Rejoins [le serveur de support]({{COM:links.support}}) !"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Vote",
+                "description": "Supporte {{COM:bot.name}} en votant [ici]({{COM:links.vote}}) !"
             },
             "timeConversionDm": {
                 "description": [
@@ -647,11 +653,19 @@
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
-                "title": "Slash Commands Update",
+                "title": "Mise à jour pour les commandes Slash",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "{{COM:bot.name}} utilise maintenant les **commandes Slash**!",
                     "",
-                    "Try it by typing `/{{COM:commands.help}}`!"
+                    "Essaye-les en écrivant `/{{COM:commands.help}}`!",
+                    "",
+                    "*Note : Si vous ne voyez aucune commande pour {{COM:bot.name}}, essayez d'expulser et réinviter {{COM:bot.name}}.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -775,36 +789,36 @@
             "description": "{{COM:bot.name}} aide à coordonner tes membres de fuseaux horaires différents en convertissant les horaires mentionnés dans plusieurs fuseaux horaires !"
         },
         "commandDescs": {
-            "bot": "Manage bot settings.",
-            "botList": "View list of bots.",
-            "botView": "View a bot's settings.",
-            "botEdit": "Change a bot setting.",
-            "botRemove": "Remove a bot.",
-            "dev": "View developer info.",
-            "help": "View help menu and list of commands.",
-            "info": "View bot info.",
-            "link": "Get links to invite, support, etc.",
-            "list": "Manage the server time zone list.",
-            "listView": "View the server time zone list.",
-            "listToggle": "Add or remove to the server time zone list.",
-            "map": "View the zone map.",
-            "me": "Manage your user settings.",
-            "meView": "View your user settings.",
-            "meEdit": "Change a user setting.",
-            "meRemove": "Remove all your user data.",
-            "server": "Manage server settings.",
-            "serverView": "View server settings.",
-            "serverEdit": "Change a server setting.",
-            "serverRemove": "Remove all server data.",
-            "set": "Run the user setup (for yourself, a user, or bot).",
-            "setMe": "Run the user setup for yourself.",
-            "setUser": "Run the user setup for a user or bot.",
-            "setup": "Run the server setup.",
-            "time": "View the time of the server, user, bot, or zone.",
-            "timeServer": "View the time of the server.",
-            "timeUser": "View the time of a user or bot.",
-            "timeZone": "View the time of a zone.",
-            "translate": "View translation info."
+            "bot": "Changer les paramètres du bot",
+            "botList": "Voir la liste des bots.",
+            "botView": "Voir les paramètres d'un bot.",
+            "botEdit": "Changer un paramètre d'un bot.",
+            "botRemove": "Enlever un bot.",
+            "dev": "Voir les informations du développeur.",
+            "help": "Voir le menu d'aide et les commandes.",
+            "info": "Voir les informations du bot.",
+            "link": "Avoir les liens pour inviter, le support...",
+            "list": "Changer la liste des fuseaux horaires du serveur.",
+            "listView": "Voir la liste des fuseaux horaires du serveur.",
+            "listToggle": "Ajouter ou supprimer de la liste des fuseaux horaires du serveur.",
+            "map": "Voir la carte des fuseaux horaires.",
+            "me": "Changer tes paramètres.",
+            "meView": "Voir tes paramètres.",
+            "meEdit": "Changer un paramètre d'un utilisateur.",
+            "meRemove": "Enlever toutes les données te concernant.",
+            "server": "Changer les paramètres du serveur.",
+            "serverView": "Voir les paramètres du serveur.",
+            "serverEdit": "Changer un paramètre du serveur.",
+            "serverRemove": "Enlever toutes les données concernant le serveur.",
+            "set": "Changer la configuration (le tien, celui d'un bot, ou celui d'un utilisateur).",
+            "setMe": "Changer la configuration d'un utilisateur pour toi.",
+            "setUser": "Changer la configuration d'un utilisateur pour un autre ou un bot.",
+            "setup": "Changer la configuration du serveur.",
+            "time": "Voir le fuseau horaire du serveur, d'un utilisateur, d'un bot, ou d'une zone horaire",
+            "timeServer": "Voir l'heure du serveur.",
+            "timeUser": "Voir l'heure d'un utilisateur ou d'un bot.",
+            "timeZone": "Voir l'heure d'une zone horaire.",
+            "translate": "Voir les informations de traduction."
         },
         "settings": {
             "autoDetectDisplay": "Auto-Détection",
@@ -865,14 +879,15 @@
             "private": "Privé"
         },
         "links": {
-            "inviteEmbed": "[Inviter {{COM:bot.name}} dans un serveur !]({{COM:links.invite}})",
-            "docsEmbed": "[Regarder la documentation]({{COM:links.docs}}/)",
-            "voteEmbed": "[Voter pour {{COM:bot.name}} !]({{COM:links.vote}})",
-            "supportEmbed": "[Rejoindre le serveur de support]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Regarder la documentation]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Inviter {{COM:bot.name}} dans un serveur !]({{COM:links.invite}})",
+            "mapEmbed": "[Carte fuseaux horaire]({{COM:links.map}})",
             "sourceEmbed": "[Regarder le code source]({{COM:links.source}})",
+            "supportEmbed": "[Rejoindre le serveur de support]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "mapEmbed": "[Carte fuseaux horaire]({{COM:links.map}})"
+            "voteEmbed": "[Voter pour {{COM:bot.name}} !]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Félicitations ! 🎉",

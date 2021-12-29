@@ -10,7 +10,7 @@ import { MessageUtils } from '../utils';
 import { Command } from './command';
 
 export class MeCommand implements Command {
-    public data: ApplicationCommandData = {
+    public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         options: [
@@ -81,7 +81,7 @@ export class MeCommand implements Command {
                     Lang.getEmbed('displayEmbeds.settingSelf', data.lang(), {
                         SETTING_LIST: settingList,
                         USER_ID: intr.user.id,
-                    }).setAuthor(intr.user.tag, intr.user.avatarURL())
+                    }).setAuthor({ name: intr.user.tag, iconURL: intr.user.avatarURL() })
                 );
                 return;
             }

@@ -6,7 +6,7 @@ import {
     MessageEmbed,
     MessageOptions,
     MessageReaction,
-    TextBasedChannels,
+    TextBasedChannel,
     User,
 } from 'discord.js';
 
@@ -23,7 +23,7 @@ export class MessageUtils {
     }
 
     public static async send(
-        target: User | TextBasedChannels,
+        target: User | TextBasedChannel,
         content: string | MessageEmbed | MessageOptions
     ): Promise<Message> {
         try {

@@ -168,12 +168,6 @@
                 "title": "Время в часовом поясе",
                 "description": "В часовом поясе **{{TIME_ZONE}}** сейчас **{{TIME}}**."
             },
-            "map": {
-                "title": "Карта поясов",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{COM:bot.name}}."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Информация",
                 "fields": [
@@ -183,6 +177,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -227,6 +222,7 @@
                     {
                         "name": "ID",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**ID шардов**: {{SHARD_ID}}",
                             "**ID сервера**: {{SERVER_ID}}",
                             "**ID бота**: {{BOT_ID}}",
@@ -235,21 +231,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Приглашение",
-                "description": "Нажмите [здесь]({{COM:links.invite}}), чтобы пригласить {{COM:bot.name}} на сервер!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Документация",
                 "description": "Нажмите [здесь]({{COM:links.docs}}/), чтобы перейти к документации бота."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Проголосовать",
-                "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Приглашение",
+                "description": "Нажмите [здесь]({{COM:links.invite}}), чтобы пригласить {{COM:bot.name}} на сервер!"
+            },
+            "linkMap": {
+                "title": "Карта поясов",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Вы можете скопировать это название и использовать его там, где это будет нужно {{COM:bot.name}}."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Поддержка",
                 "description": "Нужна помощь? Присоединяйтесь к нашему [серверу поддержки]({{COM:links.support}})!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Проголосовать",
+                "description": "Поддержите {{COM:bot.name}}, проголосовав [здесь]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -642,11 +648,19 @@
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
-                "title": "Slash Commands Update",
+                "title": "Обновление с слэш-командами",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**!",
+                    "Для {{COM:bot.name}} теперь используются **слэш-команды**!",
                     "",
-                    "Try it by typing `/{{COM:commands.help}}`!"
+                    "Опробуйте их, напечатав `/{{COM:commands.help}}`!",
+                    "",
+                    "*Внимание: Если вы не видите список команд для {{COM:bot.name}}, попробуйте кикнуть бота и пригласить его обратно.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -770,36 +784,36 @@
             "description": "{{COM:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!"
         },
         "commandDescs": {
-            "bot": "Manage bot settings.",
-            "botList": "View list of bots.",
-            "botView": "View a bot's settings.",
-            "botEdit": "Change a bot setting.",
-            "botRemove": "Remove a bot.",
-            "dev": "View developer info.",
-            "help": "View help menu and list of commands.",
-            "info": "View bot info.",
-            "link": "Get links to invite, support, etc.",
-            "list": "Manage the server time zone list.",
-            "listView": "View the server time zone list.",
-            "listToggle": "Add or remove to the server time zone list.",
-            "map": "View the zone map.",
-            "me": "Manage your user settings.",
-            "meView": "View your user settings.",
-            "meEdit": "Change a user setting.",
-            "meRemove": "Remove all your user data.",
-            "server": "Manage server settings.",
-            "serverView": "View server settings.",
-            "serverEdit": "Change a server setting.",
-            "serverRemove": "Remove all server data.",
-            "set": "Run the user setup (for yourself, a user, or bot).",
-            "setMe": "Run the user setup for yourself.",
-            "setUser": "Run the user setup for a user or bot.",
-            "setup": "Run the server setup.",
-            "time": "View the time of the server, user, bot, or zone.",
-            "timeServer": "View the time of the server.",
-            "timeUser": "View the time of a user or bot.",
-            "timeZone": "View the time of a zone.",
-            "translate": "View translation info."
+            "bot": "Управлять настройками бота.",
+            "botList": "Просмотреть список ботов.",
+            "botView": "Просмотреть настройки бота.",
+            "botEdit": "Изменить настройку бота.",
+            "botRemove": "Очистить информацию о боте.",
+            "dev": "Просмотреть информацию для разработчиков.",
+            "help": "Просмотреть меню помощи и список команд.",
+            "info": "Просмотреть информацию о боте.",
+            "link": "Просмотреть ссылки приглашения, сервера поддержки и т.д.",
+            "list": "Управлять списком часовых поясов сервера.",
+            "listView": "Просмотреть список часовых поясов сервера.",
+            "listToggle": "Добавить в или убрать из списка часовых поясов сервера часовой пояс.",
+            "map": "Просмотреть карту часовых поясов.",
+            "me": "Управлять своими настройками.",
+            "meView": "Просмотреть свои настройки.",
+            "meEdit": "Изменить свою настройку.",
+            "meRemove": "Очистить информацию о себе.",
+            "server": "Управлять настройками сервера.",
+            "serverView": "Просмотреть настройки сервера.",
+            "serverEdit": "Изменить настройку сервера.",
+            "serverRemove": "Очистить информацию о сервере.",
+            "set": "Провести установку для себя, другого пользователя или бота.",
+            "setMe": "Провести установку для себя.",
+            "setUser": "Провести установку для другого пользователя или бота.",
+            "setup": "Провести установку для сервера.",
+            "time": "Просмотреть время сервера, пользователя, бота или в часовом поясе.",
+            "timeServer": "Просмотреть время сервера.",
+            "timeUser": "Просмотреть время пользователя или бота.",
+            "timeZone": "Просмотреть время в часовом поясе.",
+            "translate": "Просмотреть информацию о переводах."
         },
         "settings": {
             "autoDetectDisplay": "Обнаруживать время",
@@ -860,14 +874,15 @@
             "private": "Приватно"
         },
         "links": {
-            "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
-            "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
-            "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})",
-            "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
+            "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})",
             "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",
+            "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{COM:links.template}})",
-            "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})"
+            "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Поздравляем! 🎉",

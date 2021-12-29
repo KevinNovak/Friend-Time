@@ -173,12 +173,6 @@
                 "title": "Zeit der Zeitzone",
                 "description": "Derzeit ist es **{{TIME}}** in **{{TIME_ZONE}}**."
             },
-            "map": {
-                "title": "Karte der Zeitzonen",
-                "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{COM:bot.name}} eine Zeitzone braucht."
-                ]
-            },
             "info": {
                 "title": "{{COM:bot.name}} - Information",
                 "fields": [
@@ -188,6 +182,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
                         ]
@@ -232,6 +227,7 @@
                     {
                         "name": "IDs",
                         "value": [
+                            "**Hostname**: {{HOSTNAME}}",
                             "**Shard ID**: {{SHARD_ID}}",
                             "**Server ID**: {{SERVER_ID}}",
                             "**Bot ID**: {{BOT_ID}}",
@@ -240,21 +236,31 @@
                     }
                 ]
             },
-            "invite": {
-                "title": "{{COM:bot.name}} - Einladung",
-                "description": "Klicke [hier]({{COM:links.invite}}), um {{COM:bot.name}} in einen Server einzuladen!"
-            },
-            "docs": {
+            "linkDocs": {
                 "title": "{{COM:bot.name}} - Documentation",
                 "description": "Klicke [hier]({{COM:links.docs}}/), um dir die Dokumentation für diesen Bot anzuschauen."
             },
-            "vote": {
-                "title": "{{COM:bot.name}} - Abstimmen",
-                "description": "Unterstütze {{COM:bot.name}}, indem du [hier]({{COM:links.vote}}) abstimmst!"
+            "linkDonate": {
+                "title": "{{COM:bot.name}} - Donate",
+                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
             },
-            "support": {
+            "linkInvite": {
+                "title": "{{COM:bot.name}} - Einladung",
+                "description": "Klicke [hier]({{COM:links.invite}}), um {{COM:bot.name}} in einen Server einzuladen!"
+            },
+            "linkMap": {
+                "title": "Karte der Zeitzonen",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{COM:bot.name}} eine Zeitzone braucht."
+                ]
+            },
+            "linkSupport": {
                 "title": "{{COM:bot.name}} - Hilfe",
                 "description": "Du brauchst Hilfe? Tritt’ dem [Hilfeserver]({{COM:links.support}}) bei!"
+            },
+            "linkVote": {
+                "title": "{{COM:bot.name}} - Abstimmen",
+                "description": "Unterstütze {{COM:bot.name}}, indem du [hier]({{COM:links.vote}}) abstimmst!"
             },
             "timeConversionDm": {
                 "description": [
@@ -651,7 +657,15 @@
                 "description": [
                     "{{COM:bot.name}} now uses **Slash Commands**!",
                     "",
-                    "Try it by typing `/{{COM:commands.help}}`!"
+                    "Try it by typing `/{{COM:commands.help}}`!",
+                    "",
+                    "*Achtung: Wenn du keine Befehle für {{COM:bot.name}} siehst, versuche {{COM:bot.name}} vom Server zu entfernen und neu einzuladen.*"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
+                    }
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
@@ -865,14 +879,15 @@
             "private": "Privat"
         },
         "links": {
-            "inviteEmbed": "[Lade {{COM:bot.name}} zu deinem Server ein!]({{COM:links.invite}})",
-            "docsEmbed": "[Siehe Dokumentation]({{COM:links.docs}}/)",
-            "voteEmbed": "[Stimme für {{COM:bot.name}}!]({{COM:links.vote}})",
-            "supportEmbed": "[Hilfeserver beitreten]({{COM:links.support}})",
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Siehe Dokumentation]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Lade {{COM:bot.name}} zu deinem Server ein!]({{COM:links.invite}})",
+            "mapEmbed": "[Karte der Zeitzonen]({{COM:links.map}})",
             "sourceEmbed": "[Schau’ dir den Quellcode an]({{COM:links.source}})",
+            "supportEmbed": "[Hilfeserver beitreten]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "mapEmbed": "[Karte der Zeitzonen]({{COM:links.map}})"
+            "voteEmbed": "[Stimme für {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Glückwunsch! 🎉",

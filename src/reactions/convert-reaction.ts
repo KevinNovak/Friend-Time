@@ -18,6 +18,7 @@ let Config = require('../../config/config.json');
 export class ConvertReaction implements Reaction {
     public emoji: string = Config.reactions.convert;
     public requireGuild = true;
+    public requireSentByClient = false;
 
     constructor(
         private timeService: TimeService,
@@ -32,12 +33,10 @@ export class ConvertReaction implements Reaction {
 
     public async execute(
         msgReaction: MessageReaction,
+        msg: Message,
         reactor: User,
         data: EventData
     ): Promise<void> {
-        // Can potentially be a PartialMessage, but we have already checked this
-        let msg = msgReaction.message as Message;
-
         // Don't respond to reaction on client's message
         if (msg.author.id === msg.client.user.id) {
             return;
@@ -112,7 +111,7 @@ export class ConvertReaction implements Reaction {
                 TIME_ZONE_TO: userTimeZone,
                 TIME_LIST: timeList,
                 MESSAGE_LINK: msg.url,
-            }).setAuthor(msg.guild.name, msg.guild.iconURL())
+            }).setAuthor({ name: msg.guild.name, iconURL: msg.guild.iconURL() })
         );
     }
 }

@@ -30,13 +30,7 @@ export class CollectorUtils {
 
             // Check if another command was ran, if so cancel the current running setup
             let nextMsgArgs = nextMsg.content.split(' ');
-            if (
-                [
-                    `<@${channel.client.user.id}>`,
-                    `<@!${channel.client.user.id}>`,
-                    Lang.getCom('keywords.stop'),
-                ].includes(nextMsgArgs[0]?.toLowerCase())
-            ) {
+            if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
                 return true;
             }
 
@@ -80,13 +74,7 @@ export class CollectorUtils {
 
             // Check if another command was ran, if so cancel the current running setup
             let nextMsgArgs = nextMsg.content.split(' ');
-            if (
-                [
-                    `<@${channel.client.user.id}>`,
-                    `<@!${channel.client.user.id}>`,
-                    Lang.getCom('keywords.stop'),
-                ].includes(nextMsgArgs[0]?.toLowerCase())
-            ) {
+            if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
                 return true;
             }
 

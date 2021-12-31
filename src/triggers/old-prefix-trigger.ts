@@ -8,7 +8,13 @@ export class OldPrefixTrigger implements Trigger {
     public requireGuild = false;
 
     public triggered(msg: Message): boolean {
-        return ['-ft', '/ft'].includes(msg.content.split(' ')?.[0].toLowerCase());
+        return [
+            'ft',
+            '-ft',
+            '/ft',
+            `<@${msg.client.user.id}>`,
+            `<@!${msg.client.user.id}>`,
+        ].includes(msg.content.split(' ')?.[0].toLowerCase());
     }
 
     public async execute(msg: Message, data: EventData): Promise<void> {

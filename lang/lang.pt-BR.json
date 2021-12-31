@@ -65,7 +65,7 @@
                 ]
             },
             "listTimeZone": {
-                "title": "Lista dos Fusos Horários do Servidor",
+                "title": "Lista de Fusos Horários do Servidor",
                 "description": [
                     "Fusos horários para converter quando uma hora é mencionada.",
                     "",

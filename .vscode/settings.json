@@ -10,9 +10,6 @@
     },
     "cSpell.enabled": true,
     "cSpell.words": [
-        "Luxon",
-        "Novak",
-        "TypeORM",
         "bot's",
         "chrono",
         "cmds",
@@ -22,11 +19,15 @@
         "discordjs",
         "discordlabs",
         "filesize",
+        "Luxon",
+        "Metadatas",
+        "Novak",
         "ondiscord",
         "parens",
         "pino",
         "regexes",
         "respawn",
+        "TypeORM",
         "tzdb",
         "varchar"
     ]

@@ -659,9 +659,9 @@
                     "",
                     "Se você não vê nenhum comando de barra listado para o {{COM:bot.name}}:",
                     "",
-                    "  1. Verifique se você tem a permissão **Usar comandos de aplicativo** neste canal.",
-                    "  2. Tente expulsar e [reconvidar o {{COM:bot.name}}]({{COM:links.invite}}).",
-                    "  3. Junte-se ao nosso [servidor de suporte]({{COM:links.support}}) para ajuda."
+                    "1. Verifique se você tem a permissão **Usar comandos de aplicativo** neste canal.",
+                    "2. Tente expulsar e [reconvidar o {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Junte-se ao nosso [servidor de suporte]({{COM:links.support}}) para ajuda."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

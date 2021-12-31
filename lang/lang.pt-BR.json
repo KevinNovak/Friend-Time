@@ -67,7 +67,7 @@
             "listTimeZone": {
                 "title": "Lista de Fusos Horários do Servidor",
                 "description": [
-                    "Fusos horários para converter quando uma hora é mencionada.",
+                    "Fusos horários para converter quando uma hora for mencionada.",
                     "",
                     "{{TIME_ZONE_LIST}}",
                     "\u2800"

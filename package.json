@@ -42,7 +42,7 @@
         "mysql": "2.18.1",
         "node-fetch": "2.6.5",
         "node-schedule": "2.1.0",
-        "pino": "7.6.0",
+        "pino": "7.6.2",
         "pino-pretty": "7.3.0",
         "pm2": "^5.1.2",
         "reflect-metadata": "^0.1.13",

@@ -670,6 +670,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Mi ne havas ĉiujn necesajn permesojn por sendi mesaĝojn ĉi tie!",
+                    "",
+                    "Bonvolu rajtigu min **vidi la kanalon**, **sendi mesaĝojn**, kaj **aldoni ligilojn** en ĉi tiu kanalo."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -905,13 +913,6 @@
             ],
             "translateNote": "Tajpu `/{{COM:commands.translate}}` por ekscii pli pri tradukoj.",
             "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Mi ne havas ĉiujn necesajn permesojn por sendi mesaĝojn ĉi tie!",
-                "",
-                "Bonvolu rajtigu min **vidi la kanalon**, **sendi mesaĝojn**, kaj **aldoni ligilojn** en ĉi tiu kanalo."
-            ]
         }
     }
 }

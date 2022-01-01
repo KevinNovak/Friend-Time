@@ -670,6 +670,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Je n'ai pas la permission d'envoyer un message ici !",
+                    "",
+                    "Il faut m'autoriser à **Voir le salon**, **Envoyer des messages**, et **Intégrer des liens** dans ce salon."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -905,13 +913,6 @@
             ],
             "translateNote": "Entrer `/{{COM:commands.translate}}` pour en apprendre plus par rapport à nos traductions.",
             "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Je n'ai pas la permission d'envoyer un message ici !",
-                "",
-                "Il faut m'autoriser à **Voir le salon**, **Envoyer des messages**, et **Intégrer des liens** dans ce salon."
-            ]
         }
     }
 }

@@ -251,7 +251,7 @@
             "linkMap": {
                 "title": "Time Zone Map",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Ye can copy this name an'  use it wherever {{COM:bot.name}} needs a time zone."
+                    "{{REF:partials.findTimeZoneHelp}} Ye can copy this name an' use it wherever {{COM:bot.name}} needs a time zone."
                 ]
             },
             "linkSupport": {
@@ -282,7 +282,7 @@
                     "",
                     "Set yer time zone by usin' the `/{{COM:commands.set}} {{COM:subCommands.me}}` command!",
                     "",
-                    "Settin' yer time zone allows {{COM:bot.name}} to convert times in server chat to an'  from yer time zone, makin' coordinatin' times with others easier."
+                    "Settin' yer time zone allows {{COM:bot.name}} to convert times in server chat to an' from yer time zone, makin' coordinatin' times with others easier."
                 ],
                 "footer": {
                     "text": "If ye wish to disable this reminder, type \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
@@ -298,7 +298,7 @@
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Times in chat will be detected automatically.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Times in chat will **not** be detected automatically. A 🕰️ emoji must be present in a message fer any times to be recognized an'  converted.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Times in chat will **not** be detected automatically. A 🕰️ emoji must be present in a message fer any times to be recognized an' converted.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -474,7 +474,7 @@
             "privateModeUser": {
                 "title": "User - {{REF:settings.privateModeDisplay}}",
                 "description": [
-                    "Would ye like to keep yer time zone an'  other information private?",
+                    "Would ye like to keep yer time zone an' other information private?",
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} will prevent showin' yer information to other users.",
                     "",
@@ -670,6 +670,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "I don't 'ave all permissions required to send messages here!",
+                    "",
+                    "Please allow me to **View Channel**, **Send Messages**, an' **Embed Links** in this channel."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -786,7 +794,7 @@
             "translators": "[NovaKevin#6952](https://github.com/KevinNovak)"
         },
         "bot": {
-            "description": "{{COM:bot.name}} helps yer server coordinate times an'  events by convertin' times mentioned in chat between time zones!"
+            "description": "{{COM:bot.name}} helps yer server coordinate times an' events by convertin' times mentioned in chat between time zones!"
         },
         "commandDescs": {
             "bot": "Manage bot settings.",
@@ -905,13 +913,6 @@
             ],
             "translateNote": "Type `/{{COM:commands.translate}}` to learn more about translations.",
             "dmWarning": "Some commands require DMs allowed in at least one server ye share with {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "I don't 'ave all permissions required to send messages here!",
-                "",
-                "Please allow me to **View Channel**, **Send Messages**, an'  **Embed Links** in this channel."
-            ]
         }
     }
 }

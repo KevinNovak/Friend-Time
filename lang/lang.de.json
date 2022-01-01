@@ -670,6 +670,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Mir fehlen einige Berechtigungen, die es mir nicht erlauben, diese Nachricht zu schreiben!",
+                    "",
+                    "Bitte erlaube mir **Kanäle anzusehen**, **Nachrichten zu senden** und **Links einzubetten**."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -905,13 +913,6 @@
             ],
             "translateNote": "Schreibe `/{{COM:commands.translate}}` um mehr über Übersetzungen zu erfahren.",
             "dmWarning": "Einige Befehle benötigen Direktnachrichten in mindestens einem Server, den du mit {{COM:bot.name}} teilst, aktiviert."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Mir fehlen einige Berechtigungen, die es mir nicht erlauben, diese Nachricht zu schreiben!",
-                "",
-                "Bitte erlaube mir **Kanäle anzusehen**, **Nachrichten zu senden** und **Links einzubetten**."
-            ]
         }
     }
 }

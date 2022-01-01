@@ -670,6 +670,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Non ho abbastanza permessi per scrivere qui!",
+                    "",
+                    "Consentimi di **Visualizzare il canale**, **Inviare messaggi** e **Incorporare link** in questo canale."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -905,13 +913,6 @@
             ],
             "translateNote": "Digita `/{{COM:commands.translate}}` per imparare di più riguardo la traduzione.",
             "dmWarning": "Alcuni comandi richiedono che i DM siano consentiti in almeno un server con cui condividi {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Non ho abbastanza permessi per scrivere qui!",
-                "",
-                "Consentimi di **Visualizzare il canale**, **Inviare messaggi** e **Incorporare link** in questo canale."
-            ]
         }
     }
 }

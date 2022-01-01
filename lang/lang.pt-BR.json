@@ -666,6 +666,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Eu não tenho todas as permissões necessárias para enviar mensagens aqui!",
+                    "",
+                    "Dê-me permissão para **Ver canal**, **Enviar mensagens** e **Inserir links** neste canal."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "Este comando pode só ser usado por desenvolvedores",
                 "color": "{{COM:colors.warning}}"
@@ -901,13 +909,6 @@
             ],
             "translateNote": "Digite `/{{COM:commands.translate}}` para saber mais sobre as traduções.",
             "dmWarning": "Alguns comandos exigem mensagens diretas permitidas em pelo menos um servidor que você compartilha com o {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Eu não tenho todas as permissões necessárias para enviar mensagens aqui!",
-                "",
-                "Dê-me permissão para **Ver canal**, **Enviar mensagens** e **Inserir links** neste canal."
-            ]
         }
     }
 }

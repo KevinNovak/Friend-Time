@@ -719,6 +719,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "Ik heb niet alle rechten om hier berichten te versturen!",
+                    "",
+                    "Geef me de **Kanalen bekijken**, **Berichten verzenden**, en **Ingesloten links** rechten in dit kanaal."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
                 "color": "{{COM:colors.warning}}"
@@ -954,13 +962,6 @@
             ],
             "translateNote": "Schrijf `/{{COM:commands.translate}}` om meer te weten te komen over vertalingen.",
             "dmWarning": "Sommige commando's van {{COM:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{COM:bot.name}} ingesteld zijn."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "Ik heb niet alle rechten om hier berichten te versturen!",
-                "",
-                "Geef me de **Kanalen bekijken**, **Berichten verzenden**, en **Ingesloten links** rechten in dit kanaal."
-            ]
         }
     }
 }

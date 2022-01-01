@@ -666,6 +666,14 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
+            "missingEmbedPerms": {
+                "description": [
+                    "I don't have all permissions required to send messages here!",
+                    "",
+                    "Please allow me to **View Channel**, **Send Messages**, and **Embed Links** in this channel."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
             "devOnlyCommand": {
                 "description": "This command can only be used by developers.",
                 "color": "{{COM:colors.warning}}"
@@ -901,13 +909,6 @@
             ],
             "translateNote": "Type `/{{COM:commands.translate}}` to learn more about translations.",
             "dmWarning": "Some commands require DMs allowed in at least one server you share with {{COM:bot.name}}."
-        },
-        "messages": {
-            "missingEmbedPerms": [
-                "I don't have all permissions required to send messages here!",
-                "",
-                "Please allow me to **View Channel**, **Send Messages**, and **Embed Links** in this channel."
-            ]
         }
     }
 }

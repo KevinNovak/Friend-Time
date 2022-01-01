@@ -12,8 +12,8 @@ export class OldPrefixTrigger implements Trigger {
             'ft',
             '-ft',
             '/ft',
-            `<@${msg.client.user.id}>`,
-            `<@!${msg.client.user.id}>`,
+            `<@${msg.client.user?.id}>`,
+            `<@!${msg.client.user?.id}>`,
         ].includes(msg.content.split(' ')?.[0].toLowerCase());
     }
 

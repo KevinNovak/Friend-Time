@@ -38,7 +38,7 @@ export class ConvertReaction implements Reaction {
         data: EventData
     ): Promise<void> {
         // Don't respond to reaction on client's message
-        if (msg.author.id === msg.client.user.id) {
+        if (msg.author.id === msg.client.user?.id) {
             return;
         }
 

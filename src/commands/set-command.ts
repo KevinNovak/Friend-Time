@@ -123,7 +123,7 @@ export class SetCommand implements Command {
                         return;
                     }
 
-                    if (member.id === intr.client.user.id) {
+                    if (member.id === intr.client.user?.id) {
                         await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('validationEmbeds.notAllowedSetClient', data.lang())

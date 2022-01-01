@@ -157,7 +157,7 @@ export class SetCommand implements Command {
                     // If the guild is not in the database, we need to create it first.
                     if (!data.guild) {
                         data.guild = new GuildData();
-                        data.guild.discordId = intr.guild.id;
+                        data.guild.discordId = intr.guild?.id;
                         data.guild = await data.guild.save();
                     }
 

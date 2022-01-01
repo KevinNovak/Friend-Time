@@ -58,7 +58,7 @@ export class ListCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.listTimeZone', data.lang(), {
                         TIME_ZONE_LIST: timeZoneList,
-                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
+                    }).setAuthor({ name: intr.guild?.name, iconURL: intr.guild?.iconURL() })
                 );
                 return;
             }
@@ -110,7 +110,7 @@ export class ListCommand implements Command {
                     // Save guild if not already in database
                     if (!data.guild) {
                         data.guild = new GuildData();
-                        data.guild.discordId = intr.guild.id;
+                        data.guild.discordId = intr.guild?.id;
                         data.guild = await data.guild.save();
                     }
 

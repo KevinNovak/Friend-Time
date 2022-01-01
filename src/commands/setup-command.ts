@@ -21,7 +21,7 @@ export class SetupCommand implements Command {
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
-            data.guild.discordId = intr.guild.id;
+            data.guild.discordId = intr.guild?.id;
         }
 
         for (let setting of this.guildSettingManager.settings) {

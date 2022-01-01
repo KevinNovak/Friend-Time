@@ -56,7 +56,7 @@ export class ServerCommand implements Command {
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
-            data.guild.discordId = intr.guild.id;
+            data.guild.discordId = intr.guild?.id;
         }
 
         switch (intr.options.getSubcommand()) {
@@ -66,8 +66,8 @@ export class ServerCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.settingsServer', data.lang(), {
                         SETTING_LIST: settingList,
-                        SERVER_ID: intr.guild.id,
-                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
+                        SERVER_ID: intr.guild?.id,
+                    }).setAuthor({ name: intr.guild?.name, iconURL: intr.guild?.iconURL() })
                 );
                 return;
             }

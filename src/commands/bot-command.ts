@@ -86,7 +86,7 @@ export class BotCommand implements Command {
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
-            data.guild.discordId = intr.guild.id;
+            data.guild.discordId = intr.guild?.id;
         }
 
         switch (intr.options.getSubcommand()) {
@@ -108,7 +108,7 @@ export class BotCommand implements Command {
                     intr,
                     Lang.getEmbed('displayEmbeds.listBot', data.lang(), {
                         BOT_LIST: botList,
-                    }).setAuthor({ name: intr.guild.name, iconURL: intr.guild.iconURL() })
+                    }).setAuthor({ name: intr.guild?.name, iconURL: intr.guild?.iconURL() })
                 );
                 return;
             }

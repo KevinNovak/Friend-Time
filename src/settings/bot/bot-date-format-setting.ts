@@ -42,9 +42,9 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
             if (!dateFormat) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

@@ -44,9 +44,9 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (msg.content.length < Config.validation.timeZone.lengthMin) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }
@@ -55,9 +55,9 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (!timeZoneName) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }
@@ -71,9 +71,9 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             if (confirmed == null) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

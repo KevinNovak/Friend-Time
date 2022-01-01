@@ -43,9 +43,9 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
             if (autoDetect == null) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

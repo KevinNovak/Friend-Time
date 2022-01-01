@@ -42,9 +42,9 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
             if (!dateFormat) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

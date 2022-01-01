@@ -42,9 +42,9 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
             if (!newLangCode) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidLanguage', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidLanguage', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

@@ -211,9 +211,9 @@ export class SetCommand implements Command {
                     if (privateMode == null) {
                         await MessageUtils.sendIntr(
                             intr,
-                            Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang()).setFooter(
-                                Lang.getRef('footers.collector', data.lang())
-                            )
+                            Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang()).setFooter({
+                                text: Lang.getRef('footers.collector', data.lang()),
+                            })
                         );
                         return;
                     }

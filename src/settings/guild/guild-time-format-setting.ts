@@ -42,9 +42,9 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
             if (!timeFormat) {
                 await MessageUtils.sendIntr(
                     intr,
-                    Lang.getEmbed('validationEmbeds.invalidTimeFormat', langCode).setFooter(
-                        Lang.getRef('footers.collector', langCode)
-                    )
+                    Lang.getEmbed('validationEmbeds.invalidTimeFormat', langCode).setFooter({
+                        text: Lang.getRef('footers.collector', langCode),
+                    })
                 );
                 return;
             }

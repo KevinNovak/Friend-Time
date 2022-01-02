@@ -721,9 +721,9 @@
             },
             "missingEmbedPerms": {
                 "description": [
-                    "Ik heb niet alle rechten om hier berichten te versturen!",
+                    "I don't have all permissions required to run that command here!",
                     "",
-                    "Geef me de **Kanalen bekijken**, **Berichten verzenden**, en **Ingesloten links** rechten in dit kanaal."
+                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, and **{{REF:permissions.EMBED_LINKS}}** in this channel."
                 ],
                 "color": "{{COM:colors.warning}}"
             },

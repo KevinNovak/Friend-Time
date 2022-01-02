@@ -672,9 +672,9 @@
             },
             "missingEmbedPerms": {
                 "description": [
-                    "Je n'ai pas la permission d'envoyer un message ici !",
+                    "I don't have all permissions required to run that command here!",
                     "",
-                    "Il faut m'autoriser à **Voir le salon**, **Envoyer des messages**, et **Intégrer des liens** dans ce salon."
+                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, and **{{REF:permissions.EMBED_LINKS}}** in this channel."
                 ],
                 "color": "{{COM:colors.warning}}"
             },

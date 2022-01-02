@@ -659,7 +659,7 @@
                     "",
                     "Try it by typing `/{{COM:commands.help}}`!",
                     "",
-                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking and re-inviting {{COM:bot.name}}.*"
+                    "*Note: If you do not see any commands listed for {{COM:bot.name}}, try kicking an' re-inviting {{COM:bot.name}}.*"
                 ],
                 "fields": [
                     {
@@ -672,9 +672,9 @@
             },
             "missingEmbedPerms": {
                 "description": [
-                    "I don't 'ave all permissions required to send messages here!",
+                    "I don't 'ave all permissions required to run that command here!",
                     "",
-                    "Please allow me to **View Channel**, **Send Messages**, an' **Embed Links** in this channel."
+                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, an' **{{REF:permissions.EMBED_LINKS}}** in this channel."
                 ],
                 "color": "{{COM:colors.warning}}"
             },
@@ -688,7 +688,7 @@
             },
             "missingClientPerms": {
                 "description": [
-                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "I don't 'ave all permissions required to run that command here! Please check the server an' channel permissions to make sure I 'ave the following permissions.",
                     "",
                     "Required permissions: {{PERMISSIONS}}"
                 ],
@@ -811,7 +811,7 @@
             "botEdit": "Change a bot setting.",
             "botRemove": "Remove a bot.",
             "dev": "View developer info.",
-            "help": "View help menu and list of commands.",
+            "help": "View help menu an' list of commands.",
             "info": "View bot info.",
             "link": "Get links to invite, support, etc.",
             "list": "Manage the server time zone list.",

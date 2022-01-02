@@ -667,9 +667,9 @@
             },
             "missingEmbedPerms": {
                 "description": [
-                    "У меня недостаточно разрешений, чтобы писать здесь!",
+                    "I don't have all permissions required to run that command here!",
                     "",
-                    "Пожалуйста, разрешите мне **просматривать канал**, **отправлять сообщения** и **присылать ссылки** на этом канале."
+                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, and **{{REF:permissions.EMBED_LINKS}}** in this channel."
                 ],
                 "color": "{{COM:colors.warning}}"
             },

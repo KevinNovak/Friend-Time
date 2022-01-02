@@ -672,9 +672,9 @@
             },
             "missingEmbedPerms": {
                 "description": [
-                    "Mi ne havas ĉiujn necesajn permesojn por sendi mesaĝojn ĉi tie!",
+                    "I don't have all permissions required to run that command here!",
                     "",
-                    "Bonvolu rajtigu min **vidi la kanalon**, **sendi mesaĝojn**, kaj **aldoni ligilojn** en ĉi tiu kanalo."
+                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, and **{{REF:permissions.EMBED_LINKS}}** in this channel."
                 ],
                 "color": "{{COM:colors.warning}}"
             },

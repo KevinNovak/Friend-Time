@@ -49,7 +49,7 @@ export class ServerCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
-    public requireClientPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 
     constructor(private settingManager: SettingManager) {}

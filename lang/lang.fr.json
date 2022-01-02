@@ -655,17 +655,13 @@
             "oldPrefixUsed": {
                 "title": "Mise à jour pour les commandes Slash",
                 "description": [
-                    "{{COM:bot.name}} utilise maintenant les **commandes Slash**!",
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
                     "",
-                    "Essaye-les en écrivant `/{{COM:commands.help}}`!",
+                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
                     "",
-                    "*Note : Si vous ne voyez aucune commande pour {{COM:bot.name}}, essayez d'expulser et réinviter {{COM:bot.name}}.*"
-                ],
-                "fields": [
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
-                    }
+                    "1. Check that you have the **Use Application Commands** permission in this channel.",
+                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Join our [support server]({{COM:links.support}}) for help."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

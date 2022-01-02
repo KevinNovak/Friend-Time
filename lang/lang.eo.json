@@ -655,17 +655,13 @@
             "oldPrefixUsed": {
                 "title": "Ĝisdatigo por suprenstrekaj komandoj",
                 "description": [
-                    "{{COM:bot.name}} nun uzas **suprenstrekajn komandojn**!",
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
                     "",
-                    "Provu ilin tajpante `/{{COM:commands.help}}`!",
+                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
                     "",
-                    "*Atentu: Se vi ne vidas liston de komandoj por {{COM:bot.name}}, provu forpeli kaj reinviti la roboton.*"
-                ],
-                "fields": [
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.supportEmbed}}", "{{REF:links.inviteEmbed}}"]
-                    }
+                    "1. Check that you have the **Use Application Commands** permission in this channel.",
+                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Join our [support server]({{COM:links.support}}) for help."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"

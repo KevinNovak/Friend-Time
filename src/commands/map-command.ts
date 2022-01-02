@@ -12,7 +12,7 @@ export class MapCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requirePerms = [];
+    public requireUserPerms = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         await MessageUtils.sendIntr(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang()));

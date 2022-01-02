@@ -51,7 +51,7 @@ export class MeCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requirePerms = [];
+    public requireUserPerms = [];
 
     constructor(
         private settingManager: SettingManager,

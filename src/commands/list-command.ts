@@ -36,7 +36,7 @@ export class ListCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
-    public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
+    public requireUserPerms = [Permissions.FLAGS.MANAGE_GUILD];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {

@@ -46,7 +46,7 @@ export class SetCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requirePerms = [];
+    public requireUserPerms = [];
 
     constructor(
         private userSettingManager: SettingManager,

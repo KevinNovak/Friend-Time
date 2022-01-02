@@ -14,7 +14,7 @@ export class SetupCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
-    public requirePerms = [Permissions.FLAGS.MANAGE_GUILD];
+    public requireUserPerms = [Permissions.FLAGS.MANAGE_GUILD];
 
     constructor(private guildSettingManager: SettingManager) {}
 

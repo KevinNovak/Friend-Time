@@ -54,11 +54,12 @@ export class UserRemindersSetting implements Setting<UserData, boolean> {
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
-        let collect = CollectorUtils.createMsgCollect(
-            intr.channel,
-            intr.user,
-            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-        );
+        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+            );
+        });
 
         await MessageUtils.sendIntr(intr, Lang.getEmbed('promptEmbeds.remindersUser', data.lang()));
         return collect(this.retriever(intr, data.lang()));

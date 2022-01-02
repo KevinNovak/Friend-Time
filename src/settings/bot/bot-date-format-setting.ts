@@ -57,11 +57,12 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         data: EventData,
         target?: Snowflake
     ): Promise<DateFormatOption> {
-        let collect = CollectorUtils.createMsgCollect(
-            intr.channel,
-            intr.user,
-            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-        );
+        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+            );
+        });
 
         await MessageUtils.sendIntr(
             intr,

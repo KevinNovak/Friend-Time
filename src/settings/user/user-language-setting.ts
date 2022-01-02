@@ -53,11 +53,12 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<LangCode> {
-        let collect = CollectorUtils.createMsgCollect(
-            intr.channel,
-            intr.user,
-            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-        );
+        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+            );
+        });
 
         await MessageUtils.sendIntr(
             intr,

@@ -82,11 +82,12 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<string> {
-        let collect = CollectorUtils.createMsgCollect(
-            intr.channel,
-            intr.user,
-            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-        );
+        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+            );
+        });
 
         let timeZone: string;
         let confirmed = false;

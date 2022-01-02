@@ -1,4 +1,4 @@
-import { Message, MessageEmbed, MessageReaction, TextBasedChannel, User } from 'discord.js';
+import { Message, MessageReaction, TextBasedChannel, User } from 'discord.js';
 
 import {
     CollectorUtils as DjsCollectorUtils,
@@ -8,7 +8,6 @@ import {
     ReactionFilter,
     ReactionRetriever,
 } from 'discord.js-collector-utils';
-import { MessageUtils, PermissionUtils } from '.';
 import { Lang } from '../services';
 
 let Config = require('../../config/config.json');
@@ -17,17 +16,12 @@ export class CollectorUtils {
     public static createMsgCollect(
         channel: TextBasedChannel,
         user: User,
-        expireEmbed?: MessageEmbed
+        expireFunction?: ExpireFunction
     ): (messageRetriever: MessageRetriever) => Promise<any> {
         let collectFilter: MessageFilter = (nextMsg: Message): boolean =>
             nextMsg.author.id === user.id;
 
         let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
-            // Check if I have permission to send a message
-            if (!PermissionUtils.canSendEmbed(channel)) {
-                return true;
-            }
-
             // Check if another command was ran, if so cancel the current running setup
             let nextMsgArgs = nextMsg.content.split(' ');
             if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -35,14 +29,6 @@ export class CollectorUtils {
             }
 
             return false;
-        };
-
-        let expireFunction: ExpireFunction = async () => {
-            if (!(expireEmbed && PermissionUtils.canSendEmbed(channel))) {
-                return;
-            }
-
-            await MessageUtils.send(channel, expireEmbed);
         };
 
         return (messageRetriever: MessageRetriever) =>
@@ -57,21 +43,15 @@ export class CollectorUtils {
     }
 
     public static createReactCollect(
-        channel: TextBasedChannel,
         user: User,
-        expireEmbed?: MessageEmbed
+        expireFunction?: ExpireFunction
     ): (msg: Message, reactionRetriever: ReactionRetriever) => Promise<any> {
         let collectFilter: ReactionFilter = (
-            msgReaction: MessageReaction,
+            _msgReaction: MessageReaction,
             reactor: User
         ): boolean => reactor.id === user.id;
 
         let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
-            // Check if I have permission to send a message
-            if (!PermissionUtils.canSendEmbed(channel)) {
-                return true;
-            }
-
             // Check if another command was ran, if so cancel the current running setup
             let nextMsgArgs = nextMsg.content.split(' ');
             if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -79,14 +59,6 @@ export class CollectorUtils {
             }
 
             return false;
-        };
-
-        let expireFunction: ExpireFunction = async () => {
-            if (!(expireEmbed && PermissionUtils.canSendEmbed(channel))) {
-                return;
-            }
-
-            await MessageUtils.send(channel, expireEmbed);
         };
 
         return (msg: Message, reactionRetriever: ReactionRetriever) =>

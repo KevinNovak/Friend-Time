@@ -87,11 +87,12 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         data: EventData,
         target?: Snowflake
     ): Promise<string> {
-        let collect = CollectorUtils.createMsgCollect(
-            intr.channel,
-            intr.user,
-            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-        );
+        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
+            await MessageUtils.sendIntr(
+                intr,
+                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+            );
+        });
 
         let timeZone: string;
         let confirmed = false;

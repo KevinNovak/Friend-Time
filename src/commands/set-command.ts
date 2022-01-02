@@ -194,7 +194,12 @@ export class SetCommand implements Command {
                 let collect = CollectorUtils.createMsgCollect(
                     intr.channel,
                     member.user,
-                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    async () => {
+                        await MessageUtils.sendIntr(
+                            intr,
+                            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        );
+                    }
                 );
 
                 let userMention = FormatUtils.userMention(member.id);

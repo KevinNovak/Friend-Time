@@ -118,7 +118,7 @@ export class SetCommand implements Command {
                     ) {
                         await MessageUtils.sendIntr(
                             intr,
-                            Lang.getEmbed('validationEmbeds.permissionRequired', data.lang())
+                            Lang.getEmbed('validationEmbeds.missingUserPerms', data.lang())
                         );
                         return;
                     }

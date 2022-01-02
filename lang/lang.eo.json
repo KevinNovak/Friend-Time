@@ -686,7 +686,7 @@
                 "description": "Tiu komando uzeblas nur en serviloj.",
                 "color": "{{COM:colors.warning}}"
             },
-            "permissionRequired": {
+            "missingUserPerms": {
                 "description": "Vi ne rajtas uzi tiun komandon!",
                 "color": "{{COM:colors.warning}}"
             },

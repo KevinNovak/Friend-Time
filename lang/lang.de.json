@@ -686,7 +686,7 @@
                 "description": "Dieser Befehl kann nur in einem Server ausgeführt werden.",
                 "color": "{{COM:colors.warning}}"
             },
-            "permissionRequired": {
+            "missingUserPerms": {
                 "description": "Du hast nicht die benötigten Berechtigungen, um diesen Befehl auszuführen!",
                 "color": "{{COM:colors.warning}}"
             },

@@ -735,7 +735,7 @@
                 "description": "Dit commando kan alleen gebruikt worden in een server.",
                 "color": "{{COM:colors.warning}}"
             },
-            "permissionRequired": {
+            "missingUserPerms": {
                 "description": "Je hebt geen toestemming om dat commando te gebruiken!",
                 "color": "{{COM:colors.warning}}"
             },

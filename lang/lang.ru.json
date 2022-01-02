@@ -681,7 +681,7 @@
                 "description": "Эту команду возможно использовать только на серверах.",
                 "color": "{{COM:colors.warning}}"
             },
-            "permissionRequired": {
+            "missingUserPerms": {
                 "description": "У вас недостаточно прав, чтобы использовать эту команду!",
                 "color": "{{COM:colors.warning}}"
             },

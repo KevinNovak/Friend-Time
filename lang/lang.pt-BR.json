@@ -682,7 +682,7 @@
                 "description": "Esse comando só pode ser usado num servidor.",
                 "color": "{{COM:colors.warning}}"
             },
-            "permissionRequired": {
+            "missingUserPerms": {
                 "description": "Você não tem permissão para executar esse comando!",
                 "color": "{{COM:colors.warning}}"
             },

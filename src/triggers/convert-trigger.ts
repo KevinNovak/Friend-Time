@@ -43,7 +43,7 @@ export class ConvertTrigger implements Trigger {
 
     public triggered(msg: Message): boolean {
         // Check prerequisite permissions needed for execute
-        if (!(PermissionUtils.canReact(msg.channel) || PermissionUtils.canSendEmbed(msg.channel))) {
+        if (!(PermissionUtils.canReact(msg.channel) || PermissionUtils.canSend(msg.channel))) {
             return false;
         }
 
@@ -88,7 +88,7 @@ export class ConvertTrigger implements Trigger {
         if (
             listEnabled &&
             data.guild?.listItems.length > 0 &&
-            PermissionUtils.canSendEmbed(msg.channel)
+            PermissionUtils.canSend(msg.channel)
         ) {
             let authorDateFormat =
                 authorData instanceof GuildBotData

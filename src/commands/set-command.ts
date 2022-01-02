@@ -5,6 +5,7 @@ import {
     DMChannel,
     Message,
     Permissions,
+    PermissionString,
 } from 'discord.js';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities';
@@ -46,7 +47,7 @@ export class SetCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requireUserPerms = [];
+    public requireUserPerms: PermissionString[] = [];
 
     constructor(
         private userSettingManager: SettingManager,

@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType } from 'discord-api-types';
-import { ApplicationCommandData, CommandInteraction } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildBotData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -56,7 +56,7 @@ export class TimeCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requireUserPerms = [];
+    public requireUserPerms: PermissionString[] = [];
 
     constructor(
         private guildTimeZoneSetting: GuildTimeZoneSetting,

@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType } from 'discord-api-types';
-import { ApplicationCommandData, CommandInteraction, Permissions } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 import { GuildData, GuildListItemData } from '../database/entities';
 
 import { EventData } from '../models/internal-models';
@@ -36,7 +36,7 @@ export class ListCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
-    public requireUserPerms = [Permissions.FLAGS.MANAGE_GUILD];
+    public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {

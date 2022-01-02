@@ -1,5 +1,10 @@
 import { ApplicationCommandOptionType } from 'discord-api-types';
-import { ApplicationCommandData, CommandInteraction, MessageEmbed } from 'discord.js';
+import {
+    ApplicationCommandData,
+    CommandInteraction,
+    MessageEmbed,
+    PermissionString,
+} from 'discord.js';
 
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
@@ -47,7 +52,7 @@ export class LinkCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requireUserPerms = [];
+    public requireUserPerms: PermissionString[] = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         let link = intr.options.getString('link');

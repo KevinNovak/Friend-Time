@@ -1,5 +1,10 @@
 import { ApplicationCommandOptionType } from 'discord-api-types';
-import { ApplicationCommandData, CommandInteraction, DMChannel } from 'discord.js';
+import {
+    ApplicationCommandData,
+    CommandInteraction,
+    DMChannel,
+    PermissionString,
+} from 'discord.js';
 
 import { UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -51,7 +56,7 @@ export class MeCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
-    public requireUserPerms = [];
+    public requireUserPerms: PermissionString[] = [];
 
     constructor(
         private settingManager: SettingManager,

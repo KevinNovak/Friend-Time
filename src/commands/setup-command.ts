@@ -1,4 +1,4 @@
-import { ApplicationCommandData, CommandInteraction, Permissions } from 'discord.js';
+import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildData } from '../database/entities';
 import { EventData } from '../models/internal-models';
@@ -14,7 +14,7 @@ export class SetupCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
-    public requireUserPerms = [Permissions.FLAGS.MANAGE_GUILD];
+    public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 
     constructor(private guildSettingManager: SettingManager) {}
 

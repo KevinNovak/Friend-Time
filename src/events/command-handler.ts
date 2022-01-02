@@ -6,7 +6,7 @@ import { Command } from '../commands';
 import { GuildData, UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang, Logger } from '../services';
-import { CommandUtils, MessageUtils, PermissionUtils } from '../utils';
+import { CommandUtils, MessageUtils } from '../utils';
 
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');

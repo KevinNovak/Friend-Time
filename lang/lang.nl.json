@@ -719,14 +719,6 @@
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
-            "missingEmbedPerms": {
-                "description": [
-                    "I don't have all permissions required to run that command here!",
-                    "",
-                    "Please allow me to **{{REF:permissions.VIEW_CHANNEL}}**, **{{REF:permissions.SEND_MESSAGES}}**, and **{{REF:permissions.EMBED_LINKS}}** in this channel."
-                ],
-                "color": "{{COM:colors.warning}}"
-            },
             "devOnlyCommand": {
                 "description": "Dit commando kan alleen gebruikt worden door een ontwikkelaar.",
                 "color": "{{COM:colors.warning}}"

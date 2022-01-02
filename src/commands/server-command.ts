@@ -49,6 +49,7 @@ export class ServerCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
+    public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 
     constructor(private settingManager: SettingManager) {}

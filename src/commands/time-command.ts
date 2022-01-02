@@ -56,6 +56,7 @@ export class TimeCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = false;
+    public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = [];
 
     constructor(

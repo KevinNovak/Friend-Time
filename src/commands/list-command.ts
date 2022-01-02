@@ -36,6 +36,7 @@ export class ListCommand implements Command {
     };
     public requireDev = false;
     public requireGuild = true;
+    public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {

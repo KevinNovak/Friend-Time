@@ -178,9 +178,7 @@ async function start(): Promise<void> {
     let reactionHandler = new ReactionHandler(reactions);
 
     // Jobs
-    let jobs: Job[] = [
-        // TODO: Add new jobs here
-    ];
+    let jobs: Job[] = [];
 
     // Bot
     let bot = new Bot(

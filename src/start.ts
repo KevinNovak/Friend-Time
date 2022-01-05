@@ -55,20 +55,10 @@ let Config = require('../config/config.json');
 let Logs = require('../lang/logs.json');
 
 async function start(): Promise<void> {
+    // Database
     await Database.connect();
 
-    let client = new CustomClient({
-        intents: Config.client.intents,
-        partials: Config.client.partials,
-        makeCache: Options.cacheWithLimits({
-            // Keep default caching behavior
-            ...Options.defaultMakeCacheSettings,
-            // Override specific options from config
-            ...Config.client.caches,
-        }),
-    });
-
-    // Guild Settings
+    // Database - Guild Settings
     let guildTimeZoneSetting = new GuildTimeZoneSetting();
     let guildTimeFormatSetting = new GuildTimeFormatSetting();
     let guildAutoDetectSetting = new GuildAutoDetectSetting();
@@ -84,13 +74,13 @@ async function start(): Promise<void> {
         guildLanguageSetting,
     ]);
 
-    // Bot Settings
+    // Database - Bot Settings
     let botTimeZoneSetting = new BotTimeZoneSetting();
     let botDateFormatSetting = new BotDateFormatSetting();
     let botSettingManager = new SettingManager([botTimeZoneSetting, botDateFormatSetting]);
     let botSetupSettingManager = new SettingManager([botTimeZoneSetting]);
 
-    // User Settings
+    // Database - User Settings
     let userTimeZoneSetting = new UserTimeZoneSetting();
     let userDateFormatSetting = new UserDateFormatSetting();
     let userTimeFormatSetting = new UserTimeFormatSetting();
@@ -110,6 +100,18 @@ async function start(): Promise<void> {
     // Services
     let timeService = new TimeService();
     let reminderService = new ReminderService(guildRemindersSetting, userRemindersSetting);
+
+    // Client
+    let client = new CustomClient({
+        intents: Config.client.intents,
+        partials: Config.client.partials,
+        makeCache: Options.cacheWithLimits({
+            // Keep default caching behavior
+            ...Options.defaultMakeCacheSettings,
+            // Override specific options from config
+            ...Config.client.caches,
+        }),
+    });
 
     // Commands
     let commands: Command[] = [
@@ -174,6 +176,7 @@ async function start(): Promise<void> {
     let messageHandler = new MessageHandler(triggerHandler);
     let reactionHandler = new ReactionHandler(reactions);
 
+    // Bot
     let bot = new Bot(
         Config.client.token,
         client,
@@ -185,6 +188,7 @@ async function start(): Promise<void> {
         new JobService([])
     );
 
+    // Register
     if (process.argv[2] === '--register') {
         await registerCommands(commands);
         process.exit();

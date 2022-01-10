@@ -13,7 +13,7 @@ let Config = require('../../../config/config.json');
 
 export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confirmation {
     public name = Lang.getCom('settings.timeZone');
-    public default = null;
+    public default: string = null;
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeZoneDisplay', langCode);

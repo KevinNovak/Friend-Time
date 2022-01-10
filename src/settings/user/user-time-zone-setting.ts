@@ -14,7 +14,7 @@ let Config = require('../../../config/config.json');
 
 export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmation {
     public name = Lang.getCom('settings.timeZone');
-    public default = null;
+    public default: string = null;
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeZoneDisplay', langCode);

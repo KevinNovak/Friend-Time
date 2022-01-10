@@ -1,4 +1,5 @@
 import { BaseEntity } from 'typeorm';
+
 import { Setting } from '.';
 import { LangCode } from '../models/enums';
 import { Lang } from '../services';

@@ -1,7 +1,7 @@
-import { ApplicationCommandOptionType } from 'discord-api-types';
+import { ApplicationCommandOptionType } from 'discord-api-types/payloads/v9';
 import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
-import { GuildData, GuildListItemData } from '../database/entities';
 
+import { GuildData, GuildListItemData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { DataUtils, MessageUtils, TimeZoneUtils } from '../utils';

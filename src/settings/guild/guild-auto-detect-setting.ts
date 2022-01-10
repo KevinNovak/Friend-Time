@@ -65,6 +65,6 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
             intr,
             Lang.getEmbed('promptEmbeds.autoDetectGuild', data.lang())
         );
-        return collect(this.retriever(intr, data.lang()));
+        return (await collect(this.retriever(intr, data.lang()))) as boolean;
     }
 }

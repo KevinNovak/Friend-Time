@@ -65,6 +65,6 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
             intr,
             Lang.getEmbed('promptEmbeds.privateModeUser', data.lang())
         );
-        return collect(this.retriever(intr, data.lang()));
+        return (await collect(this.retriever(intr, data.lang()))) as boolean;
     }
 }

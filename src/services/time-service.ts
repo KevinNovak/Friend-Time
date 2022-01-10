@@ -1,4 +1,5 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
+
 import { DateFormat, DateFormatOption, LangCode, TimeFormatOption } from '../models/enums';
 import { FormattedTimeResult } from '../models/internal-models';
 import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils';
@@ -27,7 +28,7 @@ export class TimeService {
         // Preformat input for parser
         let lines = StringUtils.stripUrls(StringUtils.stripMarkdown(input))
             // Replace boundary-like characters with newlines
-            .replaceAll(/[\(\)\[\]{}<>"`]/g, '\n')
+            .replaceAll(/[()[\]{}<>"`]/g, '\n')
             // Break message into each line
             .split('\n');
 

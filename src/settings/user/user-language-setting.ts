@@ -32,7 +32,7 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
         userData.language = null;
     }
 
-    public valueDisplayName(value: LangCode, langCode: LangCode): string {
+    public valueDisplayName(value: LangCode, _langCode: LangCode): string {
         return Language.displayName(value);
     }
 
@@ -66,6 +66,6 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
                 LANGUAGE_LIST: Language.list(),
             })
         );
-        return collect(this.retriever(intr, data.lang()));
+        return (await collect(this.retriever(intr, data.lang()))) as LangCode;
     }
 }

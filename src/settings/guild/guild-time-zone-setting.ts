@@ -13,7 +13,7 @@ let Config = require('../../../config/config.json');
 
 export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirmation {
     public name = Lang.getCom('settings.timeZone');
-    public default = null;
+    public default: string = null;
 
     public displayName(langCode: LangCode): string {
         return Lang.getRef('settings.timeZoneDisplay', langCode);
@@ -35,7 +35,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         guildData.timeZone = null;
     }
 
-    public valueDisplayName(value: string, langCode: LangCode): string {
+    public valueDisplayName(value: string, _langCode: LangCode): string {
         return value;
     }
 

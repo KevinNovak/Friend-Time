@@ -78,7 +78,7 @@ async function start(): Promise<void> {
     }
 }
 
-process.on('unhandledRejection', (reason, promise) => {
+process.on('unhandledRejection', (reason, _promise) => {
     Logger.error(Logs.error.unhandledRejection, reason);
 });
 

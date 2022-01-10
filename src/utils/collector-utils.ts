@@ -1,5 +1,4 @@
 import { Message, MessageReaction, TextBasedChannel, User } from 'discord.js';
-
 import {
     CollectorUtils as DjsCollectorUtils,
     ExpireFunction,
@@ -8,6 +7,7 @@ import {
     ReactionFilter,
     ReactionRetriever,
 } from 'discord.js-collector-utils';
+
 import { Lang } from '../services';
 
 let Config = require('../../config/config.json');

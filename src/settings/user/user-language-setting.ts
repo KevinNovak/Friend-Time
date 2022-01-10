@@ -66,6 +66,6 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
                 LANGUAGE_LIST: Language.list(),
             })
         );
-        return collect(this.retriever(intr, data.lang()));
+        return await collect(this.retriever(intr, data.lang()));
     }
 }

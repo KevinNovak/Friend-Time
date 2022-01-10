@@ -65,6 +65,6 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
             intr,
             Lang.getEmbed('promptEmbeds.remindersGuild', data.lang())
         );
-        return collect(this.retriever(intr, data.lang()));
+        return await collect(this.retriever(intr, data.lang()));
     }
 }

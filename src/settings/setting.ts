@@ -6,7 +6,7 @@ import { Display } from '../models/common';
 import { LangCode } from '../models/enums';
 import { EventData } from '../models/internal-models';
 
-export interface Setting<T1 extends BaseEntity, T2 extends any> extends Display {
+export interface Setting<T1 extends BaseEntity, T2> extends Display {
     name: string;
     default?: T2;
     value(entity: T1): T2;

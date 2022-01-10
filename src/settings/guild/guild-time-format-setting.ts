@@ -64,6 +64,6 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
             intr,
             Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang())
         );
-        return collect(this.retriever(intr, data.lang()));
+        return await collect(this.retriever(intr, data.lang()));
     }
 }

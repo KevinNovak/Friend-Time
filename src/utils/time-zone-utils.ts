@@ -45,7 +45,7 @@ export class TimeZoneUtils {
     public static sort(timeZones: string[]): string[] {
         return timeZones
             .map(timeZone => this.find(timeZone))
-            .sort(this.compare)
+            .sort((a, b) => this.compare(a, b))
             .map(timeZone => timeZone.name);
     }
 

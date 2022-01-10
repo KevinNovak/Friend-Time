@@ -62,6 +62,6 @@ export class UserRemindersSetting implements Setting<UserData, boolean> {
         });
 
         await MessageUtils.sendIntr(intr, Lang.getEmbed('promptEmbeds.remindersUser', data.lang()));
-        return (await collect(this.retriever(intr, data.lang()))) as boolean;
+        return await collect(this.retriever(intr, data.lang()));
     }
 }

@@ -39,7 +39,7 @@ export class TimeFormat {
     public static find(input: string): TimeFormatOption {
         for (let [option, data] of Object.entries(this.Data)) {
             if (data.name().toLowerCase() === input.toLowerCase()) {
-                return TimeFormatOption[option] as TimeFormatOption;
+                return TimeFormatOption[option];
             }
         }
     }

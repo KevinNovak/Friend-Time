@@ -39,7 +39,7 @@ export class DateFormat {
     public static find(input: string): DateFormatOption {
         for (let [option, data] of Object.entries(this.Data)) {
             if (data.name().toLowerCase() === input.toLowerCase()) {
-                return DateFormatOption[option] as DateFormatOption;
+                return DateFormatOption[option];
             }
         }
     }

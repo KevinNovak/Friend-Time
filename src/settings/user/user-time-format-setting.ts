@@ -64,6 +64,6 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
             intr,
             Lang.getEmbed('promptEmbeds.timeFormatUser', data.lang())
         );
-        return (await collect(this.retriever(intr, data.lang()))) as TimeFormatOption;
+        return await collect(this.retriever(intr, data.lang()));
     }
 }

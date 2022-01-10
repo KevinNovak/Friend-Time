@@ -64,6 +64,6 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
             intr,
             Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang())
         );
-        return await collect(this.retriever(intr, data.lang()));
+        return (await collect(this.retriever(intr, data.lang()))) as DateFormatOption;
     }
 }

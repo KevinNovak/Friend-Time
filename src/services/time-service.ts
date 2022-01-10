@@ -28,7 +28,7 @@ export class TimeService {
         // Preformat input for parser
         let lines = StringUtils.stripUrls(StringUtils.stripMarkdown(input))
             // Replace boundary-like characters with newlines
-            .replaceAll(/[\(\)\[\]{}<>"`]/g, '\n')
+            .replaceAll(/[()[\]{}<>"`]/g, '\n')
             // Break message into each line
             .split('\n');
 

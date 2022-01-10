@@ -32,7 +32,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
         guildData.language = null;
     }
 
-    public valueDisplayName(value: LangCode, langCode: LangCode): string {
+    public valueDisplayName(value: LangCode, _langCode: LangCode): string {
         return Language.displayName(value);
     }
 

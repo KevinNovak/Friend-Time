@@ -32,7 +32,7 @@ export class UserLanguageSetting implements Setting<UserData, LangCode> {
         userData.language = null;
     }
 
-    public valueDisplayName(value: LangCode, langCode: LangCode): string {
+    public valueDisplayName(value: LangCode, _langCode: LangCode): string {
         return Language.displayName(value);
     }
 

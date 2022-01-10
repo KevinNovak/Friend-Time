@@ -35,7 +35,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         guildData.timeZone = null;
     }
 
-    public valueDisplayName(value: string, langCode: LangCode): string {
+    public valueDisplayName(value: string, _langCode: LangCode): string {
         return value;
     }
 

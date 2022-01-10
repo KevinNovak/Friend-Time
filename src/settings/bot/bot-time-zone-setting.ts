@@ -35,7 +35,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         botData.timeZone = null;
     }
 
-    public valueDisplayName(value: string, langCode: LangCode): string {
+    public valueDisplayName(value: string, _langCode: LangCode): string {
         return value;
     }
 

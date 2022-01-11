@@ -28,7 +28,7 @@ export class CommandHandler implements EventHandler {
 
         // Defer interaction
         // NOTE: Anything after this point we should be responding to the interaction
-        await intr.deferReply();
+        await MessageUtils.deferIntr(intr);
 
         // Get data from database
         let data = new EventData(

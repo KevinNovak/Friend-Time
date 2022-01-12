@@ -1,3 +1,4 @@
+import { RESTJSONErrorCodes as DiscordApiErrors } from 'discord-api-types/rest/v9';
 import {
     CommandInteraction,
     DiscordAPIError,
@@ -11,6 +12,16 @@ import {
 } from 'discord.js';
 
 import { EmbedUtils } from '.';
+
+const IGNORED_ERRORS = [
+    DiscordApiErrors.UnknownMessage,
+    DiscordApiErrors.UnknownChannel,
+    DiscordApiErrors.UnknownGuild,
+    DiscordApiErrors.UnknownUser,
+    DiscordApiErrors.UnknownInteraction,
+    DiscordApiErrors.CannotSendMessagesToThisUser, // User blocked bot or DM disabled
+    DiscordApiErrors.ReactionWasBlocked, // User blocked bot or DM disabled
+];
 
 export class MessageUtils {
     public static content(msg: Message): string {
@@ -30,14 +41,7 @@ export class MessageUtils {
             let msgOptions = this.messageOptions(content);
             return await target.send(msgOptions);
         } catch (error) {
-            // 10003: "Unknown channel"
-            // 10004: "Unknown guild"
-            // 10013: "Unknown user"
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (
-                error instanceof DiscordAPIError &&
-                [10003, 10004, 10013, 50007].includes(error.code)
-            ) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -54,15 +58,7 @@ export class MessageUtils {
                 ephemeral: hidden,
             });
         } catch (error) {
-            // 10003: "Unknown channel"
-            // 10004: "Unknown guild"
-            // 10013: "Unknown user"
-            // 10062: "Unknown interaction"
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (
-                error instanceof DiscordAPIError &&
-                [10003, 10004, 10013, 10062, 50007].includes(error.code)
-            ) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -82,15 +78,7 @@ export class MessageUtils {
                 ephemeral: hidden,
             })) as Message;
         } catch (error) {
-            // 10003: "Unknown channel"
-            // 10004: "Unknown guild"
-            // 10013: "Unknown user"
-            // 10062: "Unknown interaction"
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (
-                error instanceof DiscordAPIError &&
-                [10003, 10004, 10013, 10062, 50007].includes(error.code)
-            ) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -106,9 +94,7 @@ export class MessageUtils {
             let msgOptions = this.messageOptions(content);
             return await msg.reply(msgOptions);
         } catch (error) {
-            // 10008: "Unknown Message" (Message was deleted)
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (error instanceof DiscordAPIError && [10008, 50007].includes(error.code)) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -124,9 +110,7 @@ export class MessageUtils {
             let msgOptions = this.messageOptions(content);
             return await msg.edit(msgOptions);
         } catch (error) {
-            // 10008: "Unknown Message" (Message was deleted)
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (error instanceof DiscordAPIError && [10008, 50007].includes(error.code)) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -138,9 +122,7 @@ export class MessageUtils {
         try {
             return await msg.react(emoji);
         } catch (error) {
-            // 10008: "Unknown Message" (Message was deleted)
-            // 90001: "Reaction Blocked" (User blocked bot)
-            if (error instanceof DiscordAPIError && [10008, 90001].includes(error.code)) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;
@@ -152,9 +134,7 @@ export class MessageUtils {
         try {
             return await msg.delete();
         } catch (error) {
-            // 10008: "Unknown Message" (Message was deleted)
-            // 50007: "Cannot send messages to this user" (User blocked bot or DM disabled)
-            if (error instanceof DiscordAPIError && [10008, 50007].includes(error.code)) {
+            if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
             } else {
                 throw error;

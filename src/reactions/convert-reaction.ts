@@ -19,6 +19,7 @@ export class ConvertReaction implements Reaction {
     public emoji: string = Config.reactions.convert;
     public requireGuild = true;
     public requireSentByClient = false;
+    public requireEmbedAuthorTag = false;
 
     constructor(
         private timeService: TimeService,

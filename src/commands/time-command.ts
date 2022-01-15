@@ -1,6 +1,7 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/payloads/v9';
 import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 
+import { Command, CommandDeferType } from '.';
 import { GuildBotData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
@@ -12,7 +13,6 @@ import {
     UserTimeZoneSetting,
 } from '../settings/user';
 import { DataUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../utils';
-import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 

@@ -8,6 +8,7 @@ import {
     PermissionString,
 } from 'discord.js';
 
+import { Command, CommandDeferType } from '.';
 import { GuildBotData, GuildData, UserData } from '../database/entities';
 import { YesNo } from '../models/enums/yes-no';
 import { EventData } from '../models/internal-models';
@@ -15,7 +16,6 @@ import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { UserPrivateModeSetting } from '../settings/user';
 import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils';
-import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');

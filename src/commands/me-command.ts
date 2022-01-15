@@ -6,13 +6,13 @@ import {
     PermissionString,
 } from 'discord.js';
 
+import { Command, CommandDeferType } from '.';
 import { UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { UserPrivateModeSetting } from '../settings/user';
 import { MessageUtils } from '../utils';
-import { Command, CommandDeferType } from './command';
 
 export class MeCommand implements Command {
     public metadata: ApplicationCommandData = {

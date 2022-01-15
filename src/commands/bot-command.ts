@@ -6,7 +6,7 @@ import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { FormatUtils, MessageUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 
@@ -77,6 +77,7 @@ export class BotCommand implements Command {
             },
         ],
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = true;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];

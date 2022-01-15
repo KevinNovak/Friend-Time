@@ -5,13 +5,14 @@ import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { MessageUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 export class SetupCommand implements Command {
     public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = true;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];

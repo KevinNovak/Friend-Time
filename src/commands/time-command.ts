@@ -12,7 +12,7 @@ import {
     UserTimeZoneSetting,
 } from '../settings/user';
 import { DataUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 
@@ -54,6 +54,7 @@ export class TimeCommand implements Command {
             },
         ],
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = false;
     public requireClientPerms: PermissionString[] = [];

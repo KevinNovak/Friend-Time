@@ -15,7 +15,7 @@ import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { UserPrivateModeSetting } from '../settings/user';
 import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
@@ -45,6 +45,7 @@ export class SetCommand implements Command {
             },
         ],
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = false;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];

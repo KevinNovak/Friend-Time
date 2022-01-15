@@ -2,7 +2,7 @@ import { CommandInteraction, NewsChannel, TextChannel, ThreadChannel } from 'dis
 import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { EventHandler } from '.';
-import { Command } from '../commands';
+import { Command, CommandDeferType } from '../commands';
 import { GuildData, UserData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang, Logger } from '../services';
@@ -26,9 +26,29 @@ export class CommandHandler implements EventHandler {
             return;
         }
 
+        // Try to find the command the user wants
+        let command = this.commands.find(command => command.metadata.name === intr.commandName);
+        if (!command) {
+            Logger.error(
+                Logs.error.commandNotFound
+                    .replaceAll('{INTERACTION_ID}', intr.id)
+                    .replaceAll('{COMMAND_NAME}', intr.commandName)
+            );
+            return;
+        }
+
         // Defer interaction
         // NOTE: Anything after this point we should be responding to the interaction
-        await MessageUtils.deferIntr(intr);
+        switch (command.deferType) {
+            case CommandDeferType.PUBLIC: {
+                await MessageUtils.deferIntr(intr, false);
+                break;
+            }
+            case CommandDeferType.HIDDEN: {
+                await MessageUtils.deferIntr(intr, false);
+                break;
+            }
+        }
 
         // Get data from database
         let data = new EventData(
@@ -40,18 +60,6 @@ export class CommandHandler implements EventHandler {
                   )
                 : undefined
         );
-
-        // Try to find the command the user wants
-        let command = this.commands.find(command => command.metadata.name === intr.commandName);
-        if (!command) {
-            await this.sendError(intr, data);
-            Logger.error(
-                Logs.error.commandNotFound
-                    .replaceAll('{INTERACTION_ID}', intr.id)
-                    .replaceAll('{COMMAND_NAME}', intr.commandName)
-            );
-            return;
-        }
 
         try {
             // Check if interaction passes command checks

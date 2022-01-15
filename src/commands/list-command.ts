@@ -5,7 +5,7 @@ import { GuildData, GuildListItemData } from '../database/entities';
 import { EventData } from '../models/internal-models';
 import { Lang } from '../services';
 import { DataUtils, MessageUtils, TimeZoneUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 let Config = require('../../config/config.json');
 
@@ -34,6 +34,7 @@ export class ListCommand implements Command {
             },
         ],
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = true;
     public requireClientPerms: PermissionString[] = [];

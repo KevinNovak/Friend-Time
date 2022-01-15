@@ -12,7 +12,7 @@ import { Lang } from '../services';
 import { SettingManager } from '../settings';
 import { UserPrivateModeSetting } from '../settings/user';
 import { MessageUtils } from '../utils';
-import { Command } from './command';
+import { Command, CommandDeferType } from './command';
 
 export class MeCommand implements Command {
     public metadata: ApplicationCommandData = {
@@ -54,6 +54,7 @@ export class MeCommand implements Command {
             },
         ],
     };
+    public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
     public requireGuild = false;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];

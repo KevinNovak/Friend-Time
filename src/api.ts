@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-import util from 'util';
+import util from 'node:util';
 
 import { Controller } from './controllers';
 import { checkAuth, handleError } from './middleware';

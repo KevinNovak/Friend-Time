@@ -1,6 +1,6 @@
 import djs, { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 import fileSize from 'filesize';
-import os from 'os';
+import os from 'node:os';
 import typescript from 'typescript';
 
 import { Command, CommandDeferType } from '.';

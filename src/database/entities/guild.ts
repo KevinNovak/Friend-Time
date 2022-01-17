@@ -9,8 +9,8 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { GuildBotData, GuildListItemData } from '.';
-import { LangCode, TimeFormatOption } from '../../models/enums';
+import { LangCode, TimeFormatOption } from '../../models/enums/index.js';
+import { GuildBotData, GuildListItemData } from './index.js';
 
 @Entity('guild')
 @Unique(['discordId'])

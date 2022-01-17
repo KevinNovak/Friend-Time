@@ -1,3 +1,3 @@
-export { ConvertTrigger } from './convert-trigger';
-export { OldPrefixTrigger } from './old-prefix-trigger';
-export { Trigger } from './trigger';
+export { ConvertTrigger } from './convert-trigger.js';
+export { OldPrefixTrigger } from './old-prefix-trigger.js';
+export { Trigger } from './trigger.js';

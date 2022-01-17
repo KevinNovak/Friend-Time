@@ -1,13 +1,18 @@
 import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
-import { Confirmation, Setting } from '..';
-import { GuildData } from '../../database/entities';
-import { LangCode, TimeFormatOption } from '../../models/enums';
-import { YesNo } from '../../models/enums/yes-no';
-import { EventData } from '../../models/internal-models';
-import { Lang } from '../../services';
-import { CollectorUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../../utils';
+import { GuildData } from '../../database/entities/index.js';
+import { LangCode, TimeFormatOption, YesNo } from '../../models/enums/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import {
+    CollectorUtils,
+    FormatUtils,
+    MessageUtils,
+    TimeUtils,
+    TimeZoneUtils,
+} from '../../utils/index.js';
+import { Confirmation, Setting } from '../index.js';
 
 let Config = require('../../../config/config.json');
 

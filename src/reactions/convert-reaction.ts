@@ -1,17 +1,17 @@
 import { Message, MessageReaction, User } from 'discord.js';
 
-import { Reaction } from '.';
-import { GuildBotData } from '../database/entities';
-import { EventData } from '../models/internal-models';
-import { Lang, ReminderService, TimeService } from '../services';
-import { BotDateFormatSetting, BotTimeZoneSetting } from '../settings/bot';
+import { GuildBotData } from '../database/entities/index.js';
+import { EventData } from '../models/internal-models.js';
+import { Lang, ReminderService, TimeService } from '../services/index.js';
+import { BotDateFormatSetting, BotTimeZoneSetting } from '../settings/bot/index.js';
 import {
     UserDateFormatSetting,
     UserPrivateModeSetting,
     UserTimeFormatSetting,
     UserTimeZoneSetting,
-} from '../settings/user';
-import { DataUtils, FormatUtils, MessageUtils } from '../utils';
+} from '../settings/user/index.js';
+import { DataUtils, FormatUtils, MessageUtils } from '../utils/index.js';
+import { Reaction } from './index.js';
 
 let Config = require('../../config/config.json');
 

@@ -8,7 +8,7 @@ import {
     ReactionRetriever,
 } from 'discord.js-collector-utils';
 
-import { Lang } from '../services';
+import { Lang } from '../services/index.js';
 
 let Config = require('../../config/config.json');
 

@@ -1,6 +1,6 @@
 import { RawTimeZone, rawTimeZones } from '@vvo/tzdb';
 
-import { TimeUtils } from './time-utils';
+import { TimeUtils } from './index.js';
 
 let TimeZoneCorrections: {
     [timeZone: string]: string;

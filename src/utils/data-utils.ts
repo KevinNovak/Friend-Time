@@ -1,7 +1,7 @@
 import { User } from 'discord.js';
 
-import { TimeZoneUtils } from '.';
-import { GuildBotData, GuildData, UserData } from '../database/entities';
+import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
+import { TimeZoneUtils } from './index.js';
 
 let Config = require('../../config/config.json');
 

@@ -1,2 +1,2 @@
-export { ConvertReaction } from './convert-reaction';
-export { Reaction } from './reaction';
+export { ConvertReaction } from './convert-reaction.js';
+export { Reaction } from './reaction.js';

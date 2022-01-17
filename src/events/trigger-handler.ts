@@ -1,9 +1,9 @@
 import { Message } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 
-import { GuildData, UserData } from '../database/entities';
-import { EventData } from '../models/internal-models';
-import { Trigger } from '../triggers';
+import { GuildData, UserData } from '../database/entities/index.js';
+import { EventData } from '../models/internal-models.js';
+import { Trigger } from '../triggers/index.js';
 
 let Config = require('../../config/config.json');
 

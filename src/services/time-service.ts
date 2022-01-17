@@ -1,8 +1,8 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
 
-import { DateFormat, DateFormatOption, LangCode, TimeFormatOption } from '../models/enums';
-import { FormattedTimeResult } from '../models/internal-models';
-import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils';
+import { DateFormat, DateFormatOption, LangCode, TimeFormatOption } from '../models/enums/index.js';
+import { FormattedTimeResult } from '../models/internal-models.js';
+import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils/index.js';
 
 let Config = require('../../config/config.json');
 

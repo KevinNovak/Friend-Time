@@ -1,6 +1,6 @@
-import { LangCode } from '.';
-import { Lang } from '../../services';
-import { Display } from '../common';
+import { Lang } from '../../services/index.js';
+import { Display } from '../common/index.js';
+import { LangCode } from './index.js';
 
 interface YesNoData extends Display {
     name(): string;

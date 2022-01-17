@@ -12,7 +12,7 @@ import {
     User,
 } from 'discord.js';
 
-import { EmbedUtils } from '.';
+import { EmbedUtils } from './index.js';
 
 const IGNORED_ERRORS = [
     DiscordApiErrors.UnknownMessage,

@@ -8,14 +8,14 @@ import {
     PermissionString,
 } from 'discord.js';
 
-import { Command, CommandDeferType } from '.';
-import { GuildBotData, GuildData, UserData } from '../database/entities';
-import { YesNo } from '../models/enums/yes-no';
-import { EventData } from '../models/internal-models';
-import { Lang } from '../services';
-import { SettingManager } from '../settings';
-import { UserPrivateModeSetting } from '../settings/user';
-import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils';
+import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
+import { YesNo } from '../models/enums/index.js';
+import { EventData } from '../models/internal-models.js';
+import { Lang } from '../services/index.js';
+import { SettingManager } from '../settings/index.js';
+import { UserPrivateModeSetting } from '../settings/user/index.js';
+import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils/index.js';
+import { Command, CommandDeferType } from './index.js';
 
 let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');

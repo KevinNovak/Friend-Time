@@ -9,7 +9,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { GuildData } from '.';
+import { GuildData } from './index.js';
 
 @Entity('guild_list_item')
 @Unique(['guild', 'timeZone'])

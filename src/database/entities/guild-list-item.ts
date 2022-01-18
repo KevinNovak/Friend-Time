@@ -1,4 +1,5 @@
-import {
+import TypeORM from 'typeorm';
+export const {
     BaseEntity,
     Column,
     CreateDateColumn,
@@ -7,7 +8,7 @@ import {
     PrimaryGeneratedColumn,
     Unique,
     UpdateDateColumn,
-} from 'typeorm';
+} = TypeORM;
 
 import { GuildData } from './index.js';
 

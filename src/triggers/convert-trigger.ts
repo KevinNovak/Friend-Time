@@ -1,5 +1,6 @@
 import { ParsedResult } from 'chrono-node';
 import { Message, MessageEmbed } from 'discord.js';
+import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
 import { DateFormatOption } from '../models/enums/index.js';
@@ -21,6 +22,7 @@ import {
 import { DataUtils, MessageUtils, PermissionUtils } from '../utils/index.js';
 import { Trigger } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class ConvertTrigger implements Trigger {

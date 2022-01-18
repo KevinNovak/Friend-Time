@@ -7,6 +7,7 @@ import {
     Permissions,
     PermissionString,
 } from 'discord.js';
+import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
 import { YesNo } from '../models/enums/index.js';
@@ -17,6 +18,7 @@ import { UserPrivateModeSetting } from '../settings/user/index.js';
 import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 

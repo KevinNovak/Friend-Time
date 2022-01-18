@@ -1,5 +1,6 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
 import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -7,6 +8,7 @@ import { Lang } from '../services/index.js';
 import { DataUtils, MessageUtils, TimeZoneUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {

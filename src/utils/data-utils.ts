@@ -1,8 +1,10 @@
 import { User } from 'discord.js';
+import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
 import { TimeZoneUtils } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class DataUtils {

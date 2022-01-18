@@ -1,3 +1,4 @@
+import { createRequire } from 'node:module';
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import TypeORM from 'typeorm';
@@ -5,6 +6,7 @@ export const { createConnection } = TypeORM;
 import type { Connection } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class Database {

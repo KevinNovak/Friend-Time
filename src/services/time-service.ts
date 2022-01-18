@@ -1,9 +1,11 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
+import { createRequire } from 'node:module';
 
 import { DateFormat, DateFormatOption, LangCode, TimeFormatOption } from '../models/enums/index.js';
 import { FormattedTimeResult } from '../models/internal-models.js';
 import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils/index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class TimeService {

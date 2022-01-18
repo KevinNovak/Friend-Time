@@ -1,10 +1,12 @@
 import { Message } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
+import { createRequire } from 'node:module';
 
 import { GuildData, UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Trigger } from '../triggers/index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class TriggerHandler {

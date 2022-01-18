@@ -1,4 +1,5 @@
 import { Guild } from 'discord.js';
+import { createRequire } from 'node:module';
 
 import { GuildData, UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -8,6 +9,7 @@ import { UserLanguageSetting } from '../settings/user/index.js';
 import { ClientUtils, MessageUtils } from '../utils/index.js';
 import { EventHandler } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');
 
 export class GuildJoinHandler implements EventHandler {

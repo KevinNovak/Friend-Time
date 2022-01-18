@@ -1,3 +1,4 @@
+import { createRequire } from 'node:module';
 import { URL } from 'node:url';
 
 import {
@@ -7,6 +8,7 @@ import {
 } from '../models/master-api/index.js';
 import { HttpService } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class MasterApiService {

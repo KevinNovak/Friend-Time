@@ -7,9 +7,11 @@ import {
     ReactionFilter,
     ReactionRetriever,
 } from 'discord.js-collector-utils';
+import { createRequire } from 'node:module';
 
 import { Lang } from '../services/index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class CollectorUtils {

@@ -1,5 +1,6 @@
 import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
+import { createRequire } from 'node:module';
 
 import { GuildData } from '../../database/entities/index.js';
 import { LangCode, TimeFormatOption, YesNo } from '../../models/enums/index.js';
@@ -14,6 +15,7 @@ import {
 } from '../../utils/index.js';
 import { Confirmation, Setting } from '../index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../../config/config.json');
 
 export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirmation {

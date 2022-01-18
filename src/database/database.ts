@@ -1,4 +1,5 @@
-import path from 'node:path';
+import path, { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import TypeORM from 'typeorm';
 export const { createConnection } = TypeORM;
 import type { Connection } from 'typeorm';
@@ -10,7 +11,9 @@ export class Database {
     public static async connect(): Promise<Connection> {
         return await createConnection({
             ...Config.database,
-            entities: [path.join(__dirname, './entities/**/*{.ts,.js}')],
+            entities: [
+                path.join(dirname(fileURLToPath(import.meta.url)), './entities/**/*{.ts,.js}'),
+            ],
             synchronize: true,
             logging: false,
             namingStrategy: new SnakeNamingStrategy(),

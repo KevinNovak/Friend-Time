@@ -1,5 +1,7 @@
 import path from 'node:path';
-import { Connection, createConnection } from 'typeorm';
+import TypeORM from 'typeorm';
+export const { createConnection } = TypeORM;
+import type { Connection } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 let Config = require('../../config/config.json');

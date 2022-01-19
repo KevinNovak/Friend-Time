@@ -50,7 +50,7 @@
         "pm2": "^5.1.2",
         "reflect-metadata": "^0.1.13",
         "remove-markdown": "0.3.0",
-        "typeorm": "0.2.41",
+        "typeorm": "file:typeorm-0.2.41-fix.tgz",
         "url-regex-safe": "3.0.0"
     },
     "devDependencies": {

@@ -12,7 +12,13 @@ import {
     UserTimeFormatSetting,
     UserTimeZoneSetting,
 } from '../settings/user/index.js';
-import { DataUtils, FormatUtils, MessageUtils, TimeUtils, TimeZoneUtils } from '../utils/index.js';
+import {
+    DataUtils,
+    FormatUtils,
+    InteractionUtils,
+    TimeUtils,
+    TimeZoneUtils,
+} from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 const require = createRequire(import.meta.url);
@@ -74,7 +80,7 @@ export class TimeCommand implements Command {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.server'): {
                 if (!intr.guild) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
                     );
@@ -83,7 +89,7 @@ export class TimeCommand implements Command {
 
                 let guildTimeZone = this.guildTimeZoneSetting.valueOrDefault(data.guild);
                 if (!guildTimeZone) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.noTimeZoneServer', data.lang())
                     );
@@ -93,7 +99,7 @@ export class TimeCommand implements Command {
                 let now = TimeUtils.now(guildTimeZone);
                 let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
                 let time = FormatUtils.dateTime(now, timeFormat, data.lang());
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('displayEmbeds.timeServer', data.lang(), {
                         TIME: time,
@@ -105,7 +111,7 @@ export class TimeCommand implements Command {
             case Lang.getCom('subCommands.user'): {
                 let user = intr.options.getUser(Lang.getCom('arguments.user'));
                 if (!user) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
                     );
@@ -118,7 +124,7 @@ export class TimeCommand implements Command {
                         ? this.botTimeZoneSetting.valueOrDefault(userData)
                         : this.userTimeZoneSetting.valueOrDefault(userData);
                 if (!userTimeZone) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.noTimeZoneUser', data.lang(), {
                             USER: FormatUtils.userMention(user.id),
@@ -134,7 +140,7 @@ export class TimeCommand implements Command {
                     userData instanceof GuildBotData
                         ? false
                         : this.userPrivateModeSetting.valueOrDefault(userData);
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed(
                         privateMode ? 'displayEmbeds.timeUserPrivate' : 'displayEmbeds.timeUser',
@@ -153,7 +159,7 @@ export class TimeCommand implements Command {
 
                 // Check if abbreviation was provided
                 if (zoneInput.length < Config.validation.timeZone.lengthMin) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', data.lang())
                     );
@@ -163,7 +169,7 @@ export class TimeCommand implements Command {
                 // Find time zone
                 let timeZone = TimeZoneUtils.find(zoneInput)?.name;
                 if (!timeZone) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.invalidTimeZone', data.lang())
                     );
@@ -173,7 +179,7 @@ export class TimeCommand implements Command {
                 let now = TimeUtils.now(timeZone);
                 let timeFormat = this.userTimeFormatSetting.valueOrDefault(data.user);
                 let time = FormatUtils.dateTime(now, timeFormat, data.lang());
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('displayEmbeds.timeTimeZone', data.lang(), {
                         TIME: time,

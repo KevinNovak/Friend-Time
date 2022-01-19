@@ -4,7 +4,7 @@ import { GuildData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
 import { SettingManager } from '../settings/index.js';
-import { MessageUtils } from '../utils/index.js';
+import { InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class SetupCommand implements Command {
@@ -36,7 +36,7 @@ export class SetupCommand implements Command {
         await data.guild.save();
 
         let settingList = this.guildSettingManager.list(data.guild, data.lang());
-        await MessageUtils.sendIntr(
+        await InteractionUtils.send(
             intr,
             Lang.getEmbed('resultEmbeds.setupCompleted', data.lang(), {
                 SETTING_LIST: settingList,

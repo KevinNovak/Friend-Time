@@ -5,7 +5,7 @@ import { UserData } from '../../database/entities/index.js';
 import { DateFormat, DateFormatOption, LangCode } from '../../models/enums/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
-import { CollectorUtils, MessageUtils } from '../../utils/index.js';
+import { CollectorUtils, InteractionUtils } from '../../utils/index.js';
 import { Setting } from '../index.js';
 
 export class UserDateFormatSetting implements Setting<UserData, DateFormatOption> {
@@ -40,7 +40,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidDateFormat', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -54,13 +54,13 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<DateFormatOption> {
         let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await MessageUtils.sendIntr(
+            await InteractionUtils.send(
                 intr,
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
         });
 
-        await MessageUtils.sendIntr(
+        await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang())
         );

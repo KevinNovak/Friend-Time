@@ -1,16 +1,17 @@
 import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
+    ManyToOne,
+    Related,
 } from 'typeorm';
 
-import { GuildData } from '.';
-import { DateFormatOption } from '../../models/enums';
+import { DateFormatOption } from '../../models/enums/index.js';
+import { GuildData } from './index.js';
 
 @Entity('guild_bot')
 @Unique(['guild', 'discordId'])
@@ -38,5 +39,5 @@ export class GuildBotData extends BaseEntity {
 
     // Relations
     @ManyToOne(() => GuildData, guildData => guildData.bots, { onDelete: 'CASCADE' })
-    guild: GuildData;
+    guild: Related<GuildData>;
 }

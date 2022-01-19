@@ -1,14 +1,14 @@
 import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
 } from 'typeorm';
 
-import { DateFormatOption, LangCode, TimeFormatOption } from '../../models/enums';
+import { DateFormatOption, LangCode, TimeFormatOption } from '../../models/enums/index.js';
 
 @Entity('user')
 @Unique(['discordId'])

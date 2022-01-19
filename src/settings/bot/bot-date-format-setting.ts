@@ -1,12 +1,12 @@
 import { CommandInteraction, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
-import { Setting } from '..';
-import { GuildBotData } from '../../database/entities';
-import { DateFormat, DateFormatOption, LangCode } from '../../models/enums';
-import { EventData } from '../../models/internal-models';
-import { Lang } from '../../services';
-import { CollectorUtils, FormatUtils, MessageUtils } from '../../utils';
+import { GuildBotData } from '../../database/entities/index.js';
+import { DateFormat, DateFormatOption, LangCode } from '../../models/enums/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { CollectorUtils, FormatUtils, MessageUtils } from '../../utils/index.js';
+import { Setting } from '../index.js';
 
 export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOption> {
     public name = Lang.getCom('settings.dateFormat');

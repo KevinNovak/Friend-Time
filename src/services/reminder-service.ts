@@ -1,10 +1,10 @@
 import { Message, User } from 'discord.js';
 
-import { Lang } from '.';
-import { EventData } from '../models/internal-models';
-import { GuildRemindersSetting } from '../settings/guild';
-import { UserRemindersSetting } from '../settings/user';
-import { FormatUtils, MessageUtils } from '../utils';
+import { EventData } from '../models/internal-models.js';
+import { GuildRemindersSetting } from '../settings/guild/index.js';
+import { UserRemindersSetting } from '../settings/user/index.js';
+import { FormatUtils, MessageUtils } from '../utils/index.js';
+import { Lang } from './index.js';
 
 export class ReminderService {
     constructor(

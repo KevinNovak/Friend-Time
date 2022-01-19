@@ -1,15 +1,16 @@
 import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
+    ManyToOne,
+    Related,
 } from 'typeorm';
 
-import { GuildData } from '.';
+import { GuildData } from './index.js';
 
 @Entity('guild_list_item')
 @Unique(['guild', 'timeZone'])
@@ -30,5 +31,5 @@ export class GuildListItemData extends BaseEntity {
 
     // Relations
     @ManyToOne(() => GuildData, guildData => guildData.listItems, { onDelete: 'CASCADE' })
-    guild: GuildData;
+    guild: Related<GuildData>;
 }

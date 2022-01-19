@@ -1,7 +1,9 @@
 import { RawTimeZone, rawTimeZones } from '@vvo/tzdb';
+import { createRequire } from 'node:module';
 
-import { TimeUtils } from './time-utils';
+import { TimeUtils } from './index.js';
 
+const require = createRequire(import.meta.url);
 let TimeZoneCorrections: {
     [timeZone: string]: string;
 } = require('../../config/time-zone-corrections.json');

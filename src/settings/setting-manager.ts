@@ -1,8 +1,8 @@
-import { BaseEntity } from 'typeorm';
+import type { BaseEntity } from 'typeorm';
 
-import { Setting } from '.';
-import { LangCode } from '../models/enums';
-import { Lang } from '../services';
+import { LangCode } from '../models/enums/index.js';
+import { Lang } from '../services/index.js';
+import { Setting } from './index.js';
 
 export class SettingManager {
     constructor(public settings: Setting<BaseEntity, any>[]) {}

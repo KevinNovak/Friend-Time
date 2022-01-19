@@ -1,12 +1,12 @@
 import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
-import { Setting } from '..';
-import { GuildData } from '../../database/entities';
-import { LangCode, TimeFormat, TimeFormatOption } from '../../models/enums';
-import { EventData } from '../../models/internal-models';
-import { Lang } from '../../services';
-import { CollectorUtils, MessageUtils } from '../../utils';
+import { GuildData } from '../../database/entities/index.js';
+import { LangCode, TimeFormat, TimeFormatOption } from '../../models/enums/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { CollectorUtils, MessageUtils } from '../../utils/index.js';
+import { Setting } from '../index.js';
 
 export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOption> {
     public name = Lang.getCom('settings.timeFormat');

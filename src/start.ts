@@ -1,9 +1,10 @@
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
 import { Options } from 'discord.js';
+import { createRequire } from 'node:module';
 
-import { Bot } from './bot';
-import { Button } from './buttons';
+import { Bot } from './bot.js';
+import { Button } from './buttons/index.js';
 import {
     BotCommand,
     Command,
@@ -19,8 +20,8 @@ import {
     SetupCommand,
     TimeCommand,
     TranslateCommand,
-} from './commands';
-import { Database } from './database/database';
+} from './commands/index.js';
+import { Database } from './database/database.js';
 import {
     ButtonHandler,
     CommandHandler,
@@ -29,13 +30,12 @@ import {
     MessageHandler,
     ReactionHandler,
     TriggerHandler,
-} from './events';
-import { CustomClient } from './extensions';
-import { Job } from './jobs';
-import { ConvertReaction, Reaction } from './reactions';
-import { JobService, Logger, ReminderService, TimeService } from './services';
-import { SettingManager } from './settings';
-import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot';
+} from './events/index.js';
+import { CustomClient } from './extensions/index.js';
+import { Job } from './jobs/index.js';
+import { ConvertReaction, Reaction } from './reactions/index.js';
+import { JobService, Logger, ReminderService, TimeService } from './services/index.js';
+import { BotDateFormatSetting, BotTimeZoneSetting } from './settings/bot/index.js';
 import {
     GuildAutoDetectSetting,
     GuildLanguageSetting,
@@ -43,7 +43,8 @@ import {
     GuildRemindersSetting,
     GuildTimeFormatSetting,
     GuildTimeZoneSetting,
-} from './settings/guild';
+} from './settings/guild/index.js';
+import { SettingManager } from './settings/index.js';
 import {
     UserDateFormatSetting,
     UserLanguageSetting,
@@ -51,9 +52,10 @@ import {
     UserRemindersSetting,
     UserTimeFormatSetting,
     UserTimeZoneSetting,
-} from './settings/user';
-import { ConvertTrigger, OldPrefixTrigger, Trigger } from './triggers';
+} from './settings/user/index.js';
+import { ConvertTrigger, OldPrefixTrigger, Trigger } from './triggers/index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../config/config.json');
 let Logs = require('../lang/logs.json');
 

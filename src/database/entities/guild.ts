@@ -1,16 +1,17 @@
 import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
+    Related,
+    OneToMany,
 } from 'typeorm';
 
-import { GuildBotData, GuildListItemData } from '.';
-import { LangCode, TimeFormatOption } from '../../models/enums';
+import { LangCode, TimeFormatOption } from '../../models/enums/index.js';
+import { GuildBotData, GuildListItemData } from './index.js';
 
 @Entity('guild')
 @Unique(['discordId'])
@@ -50,8 +51,8 @@ export class GuildData extends BaseEntity {
 
     // Relations
     @OneToMany(() => GuildBotData, botData => botData.guild)
-    bots: GuildBotData[];
+    bots: Related<GuildBotData[]>;
 
     @OneToMany(() => GuildListItemData, guildListItemData => guildListItemData.guild)
-    listItems: GuildListItemData[];
+    listItems: Related<GuildListItemData[]>;
 }

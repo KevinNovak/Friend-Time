@@ -1,12 +1,13 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
 import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 
-import { Command, CommandDeferType } from '.';
-import { GuildBotData, GuildData, GuildListItemData } from '../database/entities';
-import { EventData } from '../models/internal-models';
-import { Lang } from '../services';
-import { SettingManager } from '../settings';
-import { MessageUtils } from '../utils';
+import { GuildBotData, GuildData, GuildListItemData } from '../database/entities/index.js';
+import { EventData } from '../models/internal-models.js';
+import { Lang } from '../services/index.js';
+import { SettingManager } from '../settings/index.js';
+import { MessageUtils } from '../utils/index.js';
+import { Command, CommandDeferType } from './index.js';
+
 export class ServerCommand implements Command {
     public metadata: ApplicationCommandData = {
         name: Lang.getCom('commands.server'),

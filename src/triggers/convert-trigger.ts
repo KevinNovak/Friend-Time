@@ -1,26 +1,28 @@
 import { ParsedResult } from 'chrono-node';
 import { Message, MessageEmbed } from 'discord.js';
+import { createRequire } from 'node:module';
 
-import { GuildBotData } from '../database/entities';
-import { DateFormatOption } from '../models/enums';
-import { EventData } from '../models/internal-models';
-import { ConvertReaction } from '../reactions';
-import { Lang, ReminderService, TimeService } from '../services';
-import { BotDateFormatSetting, BotTimeZoneSetting } from '../settings/bot';
+import { GuildBotData } from '../database/entities/index.js';
+import { DateFormatOption } from '../models/enums/index.js';
+import { EventData } from '../models/internal-models.js';
+import { ConvertReaction } from '../reactions/index.js';
+import { Lang, ReminderService, TimeService } from '../services/index.js';
+import { BotDateFormatSetting, BotTimeZoneSetting } from '../settings/bot/index.js';
 import {
     GuildAutoDetectSetting,
     GuildLanguageSetting,
     GuildListSetting,
     GuildTimeFormatSetting,
-} from '../settings/guild';
+} from '../settings/guild/index.js';
 import {
     UserDateFormatSetting,
     UserPrivateModeSetting,
     UserTimeZoneSetting,
-} from '../settings/user';
-import { DataUtils, MessageUtils, PermissionUtils } from '../utils';
-import { Trigger } from './trigger';
+} from '../settings/user/index.js';
+import { DataUtils, MessageUtils, PermissionUtils } from '../utils/index.js';
+import { Trigger } from './index.js';
 
+const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class ConvertTrigger implements Trigger {

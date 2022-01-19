@@ -1,4 +1,4 @@
-export { GuildBotData } from './guild-bot';
-export { GuildListItemData } from './guild-list-item';
-export { GuildData } from './guild';
-export { UserData } from './user';
+export { GuildBotData } from './guild-bot.js';
+export { GuildListItemData } from './guild-list-item.js';
+export { GuildData } from './guild.js';
+export { UserData } from './user.js';

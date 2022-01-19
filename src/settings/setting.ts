@@ -1,6 +1,6 @@
 import { CommandInteraction, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
-import type { BaseEntity } from 'typeorm';
+import { BaseEntity } from 'typeorm';
 
 import { Display } from '../models/common/index.js';
 import { LangCode } from '../models/enums/index.js';

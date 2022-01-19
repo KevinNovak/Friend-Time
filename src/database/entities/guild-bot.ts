@@ -1,14 +1,14 @@
-import TypeORM from 'typeorm';
-export const {
+import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
-} = TypeORM;
+    ManyToOne,
+    Related,
+} from 'typeorm';
 
 import { DateFormatOption } from '../../models/enums/index.js';
 import { GuildData } from './index.js';
@@ -39,5 +39,5 @@ export class GuildBotData extends BaseEntity {
 
     // Relations
     @ManyToOne(() => GuildData, guildData => guildData.bots, { onDelete: 'CASCADE' })
-    guild: GuildData;
+    guild: Related<GuildData>;
 }

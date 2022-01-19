@@ -1,14 +1,14 @@
-import TypeORM from 'typeorm';
-export const {
+import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
-} = TypeORM;
+    Related,
+    OneToMany,
+} from 'typeorm';
 
 import { LangCode, TimeFormatOption } from '../../models/enums/index.js';
 import { GuildBotData, GuildListItemData } from './index.js';
@@ -51,8 +51,8 @@ export class GuildData extends BaseEntity {
 
     // Relations
     @OneToMany(() => GuildBotData, botData => botData.guild)
-    bots: GuildBotData[];
+    bots: Related<GuildBotData[]>;
 
     @OneToMany(() => GuildListItemData, guildListItemData => guildListItemData.guild)
-    listItems: GuildListItemData[];
+    listItems: Related<GuildListItemData[]>;
 }

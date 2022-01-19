@@ -1,14 +1,14 @@
-import TypeORM from 'typeorm';
-export const {
+import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
-} = TypeORM;
+    ManyToOne,
+    Related,
+} from 'typeorm';
 
 import { GuildData } from './index.js';
 
@@ -31,5 +31,5 @@ export class GuildListItemData extends BaseEntity {
 
     // Relations
     @ManyToOne(() => GuildData, guildData => guildData.listItems, { onDelete: 'CASCADE' })
-    guild: GuildData;
+    guild: Related<GuildData>;
 }

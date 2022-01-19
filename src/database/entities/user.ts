@@ -1,13 +1,12 @@
-import TypeORM from 'typeorm';
-export const {
+import {
+    Entity,
+    Unique,
     BaseEntity,
+    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    Entity,
-    PrimaryGeneratedColumn,
-    Unique,
     UpdateDateColumn,
-} = TypeORM;
+} from 'typeorm';
 
 import { DateFormatOption, LangCode, TimeFormatOption } from '../../models/enums/index.js';
 

@@ -6,7 +6,7 @@ import { GuildData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
 import { SettingManager } from '../settings/index.js';
-import { FormatUtils, MessageUtils } from '../utils/index.js';
+import { FormatUtils, InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 const require = createRequire(import.meta.url);
@@ -108,7 +108,7 @@ export class BotCommand implements Command {
                               .trim()
                         : Lang.getRef('lists.botNone', data.lang());
 
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('displayEmbeds.listBot', data.lang(), {
                         BOT_LIST: botList,
@@ -120,7 +120,7 @@ export class BotCommand implements Command {
                 let user = intr.options.getUser(Lang.getCom('arguments.bot'));
                 let botData = data.guild.bots?.find(botData => botData.discordId === user.id);
                 if (!botData) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
                     );
@@ -128,7 +128,7 @@ export class BotCommand implements Command {
                 }
 
                 let settingList = this.settingManager.list(botData, data.lang());
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('displayEmbeds.settingsBot', data.lang(), {
                         SETTING_LIST: settingList,
@@ -144,7 +144,7 @@ export class BotCommand implements Command {
                 let user = intr.options.getUser(Lang.getCom('arguments.bot'));
                 let botData = data.guild.bots?.find(botData => botData.discordId === user.id);
                 if (!botData) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
                     );
@@ -155,7 +155,7 @@ export class BotCommand implements Command {
                 let settingInput = intr.options.getString(Lang.getCom('arguments.setting'));
                 let setting = this.settingManager.find(settingInput);
                 if (!setting) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
                     );
@@ -168,7 +168,7 @@ export class BotCommand implements Command {
                     setting.clear(botData);
                     await botData.save();
 
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('resultEmbeds.removedSettingBot', data.lang(), {
                             BOT: FormatUtils.userMention(botData.discordId),
@@ -187,7 +187,7 @@ export class BotCommand implements Command {
                 setting.apply(botData, value);
                 await botData.save();
 
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('resultEmbeds.updatedSettingBot', data.lang(), {
                         BOT: FormatUtils.userMention(botData.discordId),
@@ -201,7 +201,7 @@ export class BotCommand implements Command {
                 let user = intr.options.getUser(Lang.getCom('arguments.bot'));
                 let botData = data.guild.bots?.find(botData => botData.discordId === user.id);
                 if (!botData) {
-                    await MessageUtils.sendIntr(
+                    await InteractionUtils.send(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
                     );
@@ -209,7 +209,7 @@ export class BotCommand implements Command {
                 }
 
                 await botData.remove();
-                await MessageUtils.sendIntr(
+                await InteractionUtils.send(
                     intr,
                     Lang.getEmbed('resultEmbeds.removedBot', data.lang(), {
                         BOT: FormatUtils.userMention(botData.discordId),

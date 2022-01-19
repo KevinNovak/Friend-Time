@@ -1,10 +1,10 @@
 import {
-    Entity,
-    Unique,
     BaseEntity,
-    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
+    Entity,
+    PrimaryGeneratedColumn,
+    Unique,
     UpdateDateColumn,
 } from 'typeorm';
 

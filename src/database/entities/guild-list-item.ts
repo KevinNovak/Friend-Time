@@ -1,13 +1,13 @@
 import {
-    Entity,
-    Unique,
     BaseEntity,
-    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    UpdateDateColumn,
+    Entity,
     ManyToOne,
+    PrimaryGeneratedColumn,
     Related,
+    Unique,
+    UpdateDateColumn,
 } from 'typeorm';
 
 import { GuildData } from './index.js';

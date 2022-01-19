@@ -1,13 +1,13 @@
 import {
-    Entity,
-    Unique,
     BaseEntity,
-    PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
-    UpdateDateColumn,
-    Related,
+    Entity,
     OneToMany,
+    PrimaryGeneratedColumn,
+    Related,
+    Unique,
+    UpdateDateColumn,
 } from 'typeorm';
 
 import { LangCode, TimeFormatOption } from '../../models/enums/index.js';

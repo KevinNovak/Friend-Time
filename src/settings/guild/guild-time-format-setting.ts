@@ -5,7 +5,7 @@ import { GuildData } from '../../database/entities/index.js';
 import { LangCode, TimeFormat, TimeFormatOption } from '../../models/enums/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
-import { CollectorUtils, InteractionUtils } from '../../utils/index.js';
+import { CollectorUtils, MessageUtils } from '../../utils/index.js';
 import { Setting } from '../index.js';
 
 export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOption> {
@@ -40,7 +40,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         return async (msg: Message) => {
             let timeFormat = TimeFormat.find(msg.content);
             if (!timeFormat) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidTimeFormat', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -54,13 +54,13 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<TimeFormatOption> {
         let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
         });
 
-        await InteractionUtils.send(
+        await MessageUtils.sendIntr(
             intr,
             Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang())
         );

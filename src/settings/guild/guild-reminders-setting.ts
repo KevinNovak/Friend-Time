@@ -5,7 +5,7 @@ import { GuildData } from '../../database/entities/index.js';
 import { LangCode, YesNo } from '../../models/enums/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
-import { CollectorUtils, InteractionUtils } from '../../utils/index.js';
+import { CollectorUtils, MessageUtils } from '../../utils/index.js';
 import { Setting } from '../index.js';
 
 export class GuildRemindersSetting implements Setting<GuildData, boolean> {
@@ -40,7 +40,7 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
         return async (msg: Message) => {
             let reminders = YesNo.find(msg.content);
             if (reminders == null) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -54,13 +54,13 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
         let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
         });
 
-        await InteractionUtils.send(
+        await MessageUtils.sendIntr(
             intr,
             Lang.getEmbed('promptEmbeds.remindersGuild', data.lang())
         );

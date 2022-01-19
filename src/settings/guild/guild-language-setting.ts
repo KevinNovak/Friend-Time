@@ -5,7 +5,7 @@ import { GuildData } from '../../database/entities/index.js';
 import { LangCode, Language } from '../../models/enums/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
-import { CollectorUtils, InteractionUtils } from '../../utils/index.js';
+import { CollectorUtils, MessageUtils } from '../../utils/index.js';
 import { Setting } from '../index.js';
 
 export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
@@ -40,7 +40,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
         return async (msg: Message) => {
             let newLangCode = Language.find(msg.content);
             if (!newLangCode) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidLanguage', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -54,13 +54,13 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<LangCode> {
         let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
         });
 
-        await InteractionUtils.send(
+        await MessageUtils.sendIntr(
             intr,
             Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {
                 LANGUAGE_LIST: Language.list(),

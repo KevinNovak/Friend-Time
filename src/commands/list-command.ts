@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { GuildData, GuildListItemData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
-import { DataUtils, InteractionUtils, TimeZoneUtils } from '../utils/index.js';
+import { DataUtils, MessageUtils, TimeZoneUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 const require = createRequire(import.meta.url);
@@ -58,7 +58,7 @@ export class ListCommand implements Command {
                               .trim()
                         : Lang.getRef('lists.timeZoneNone', data.lang());
 
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('displayEmbeds.listTimeZone', data.lang(), {
                         TIME_ZONE_LIST: timeZoneList,
@@ -71,7 +71,7 @@ export class ListCommand implements Command {
 
                 // Check if abbreviation was provided
                 if (zoneInput.length < Config.validation.timeZone.lengthMin) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', data.lang())
                     );
@@ -81,7 +81,7 @@ export class ListCommand implements Command {
                 // Find time zone
                 let timeZone = TimeZoneUtils.find(zoneInput)?.name;
                 if (!timeZone) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.invalidTimeZone', data.lang())
                     );
@@ -93,7 +93,7 @@ export class ListCommand implements Command {
                 );
                 if (listItem) {
                     await listItem.remove();
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('resultEmbeds.removedListItem', data.lang(), {
                             TIME_ZONE: timeZone,
@@ -102,7 +102,7 @@ export class ListCommand implements Command {
                     return;
                 } else {
                     if (data.guild?.listItems.length >= Config.validation.timeZones.countMax) {
-                        await InteractionUtils.send(
+                        await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('validationEmbeds.maxLimitList', data.lang(), {
                                 TIME_ZONE: timeZone,
@@ -123,7 +123,7 @@ export class ListCommand implements Command {
                     listItem.timeZone = timeZone;
                     await listItem.save();
 
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('resultEmbeds.addedListItem', data.lang(), {
                             TIME_ZONE: timeZone,

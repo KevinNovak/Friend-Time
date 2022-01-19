@@ -9,7 +9,7 @@ import { Lang } from '../../services/index.js';
 import {
     CollectorUtils,
     FormatUtils,
-    InteractionUtils,
+    MessageUtils,
     TimeUtils,
     TimeZoneUtils,
 } from '../../utils/index.js';
@@ -49,7 +49,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
     public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
         return async (msg: Message) => {
             if (msg.content.length < Config.validation.timeZone.lengthMin) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.notAllowedAbbreviation', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -60,7 +60,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
 
             let timeZoneName = TimeZoneUtils.find(msg.content)?.name;
             if (!timeZoneName) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidTimeZone', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -76,7 +76,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         return async (msg: Message) => {
             let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('validationEmbeds.invalidYesNo', langCode).setFooter({
                         text: Lang.getRef('footers.collector', langCode),
@@ -94,7 +94,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         target?: Snowflake
     ): Promise<string> {
         let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
             );
@@ -103,7 +103,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         let timeZone: string;
         let confirmed = false;
         while (confirmed === false) {
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('promptEmbeds.timeZoneBot', data.lang(), {
                     BOT: FormatUtils.userMention(target),
@@ -122,7 +122,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             );
             let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang());
 
-            await InteractionUtils.send(
+            await MessageUtils.sendIntr(
                 intr,
                 Lang.getEmbed('promptEmbeds.timeZoneConfirmBot', data.lang(), {
                     TIME_12_HOUR: nowTwelveHour,

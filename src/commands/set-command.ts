@@ -15,7 +15,7 @@ import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
 import { SettingManager } from '../settings/index.js';
 import { UserPrivateModeSetting } from '../settings/user/index.js';
-import { ClientUtils, CollectorUtils, FormatUtils, InteractionUtils } from '../utils/index.js';
+import { ClientUtils, CollectorUtils, FormatUtils, MessageUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 const require = createRequire(import.meta.url);
@@ -64,7 +64,7 @@ export class SetCommand implements Command {
             case Lang.getCom('subCommands.me'): {
                 let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
                 if (privateMode && !(intr.channel instanceof DMChannel)) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
                     );
@@ -86,7 +86,7 @@ export class SetCommand implements Command {
                 await data.user.save();
 
                 let settingList = this.userSettingManager.list(data.user, data.lang());
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('resultEmbeds.setCompletedSelf', data.lang(), {
                         SETTING_LIST: settingList,
@@ -96,7 +96,7 @@ export class SetCommand implements Command {
             }
             case Lang.getCom('subCommands.user'): {
                 if (!intr.guild) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
                     );
@@ -106,7 +106,7 @@ export class SetCommand implements Command {
                 let user = intr.options.getUser(Lang.getCom('arguments.user'));
                 let member = await ClientUtils.findMember(intr.guild, user.id);
                 if (!member) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
                     );
@@ -121,7 +121,7 @@ export class SetCommand implements Command {
                             Debug.skip.checkPerms
                         )
                     ) {
-                        await InteractionUtils.send(
+                        await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('validationEmbeds.missingUserPerms', data.lang())
                         );
@@ -129,7 +129,7 @@ export class SetCommand implements Command {
                     }
 
                     if (member.id === intr.client.user?.id) {
-                        await InteractionUtils.send(
+                        await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('validationEmbeds.notAllowedSetClient', data.lang())
                         );
@@ -140,7 +140,7 @@ export class SetCommand implements Command {
                     if (!botData) {
                         if (data.guild?.bots.length >= Config.validation.bots.countMax) {
                             // Hit max number of bots allowed
-                            await InteractionUtils.send(
+                            await MessageUtils.sendIntr(
                                 intr,
                                 Lang.getEmbed('validationEmbeds.maxLimitBots', data.lang())
                             );
@@ -170,7 +170,7 @@ export class SetCommand implements Command {
                     await botData.save();
 
                     let settingList = this.botSettingManager.list(botData, data.lang());
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('resultEmbeds.setCompletedBot', data.lang(), {
                             SETTING_LIST: settingList,
@@ -198,7 +198,7 @@ export class SetCommand implements Command {
                     intr.channel,
                     member.user,
                     async () => {
-                        await InteractionUtils.send(
+                        await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
                         );
@@ -207,7 +207,7 @@ export class SetCommand implements Command {
 
                 let userMention = FormatUtils.userMention(member.id);
                 let settingList = this.userSettingManager.list(userData, data.lang());
-                await InteractionUtils.send(intr, {
+                await MessageUtils.sendIntr(intr, {
                     content: userMention,
                     embeds: [
                         Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang(), {
@@ -219,7 +219,7 @@ export class SetCommand implements Command {
                 let confirmed = await collect(async (msg: Message) => {
                     let privateMode = YesNo.find(msg.content);
                     if (privateMode == null) {
-                        await InteractionUtils.send(
+                        await MessageUtils.sendIntr(
                             intr,
                             Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang()).setFooter({
                                 text: Lang.getRef('footers.collector', data.lang()),
@@ -235,7 +235,7 @@ export class SetCommand implements Command {
 
                 // User denied settings
                 if (!confirmed) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('resultEmbeds.setDeniedUser', data.lang())
                     );
@@ -245,7 +245,7 @@ export class SetCommand implements Command {
                 // User accepted settings
                 await userData.save();
 
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('resultEmbeds.setCompletedUser', data.lang(), {
                         SETTING_LIST: settingList,

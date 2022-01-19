@@ -5,7 +5,7 @@ import { GuildBotData, GuildData, GuildListItemData } from '../database/entities
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
 import { SettingManager } from '../settings/index.js';
-import { InteractionUtils } from '../utils/index.js';
+import { MessageUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class ServerCommand implements Command {
@@ -65,7 +65,7 @@ export class ServerCommand implements Command {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.view'): {
                 let settingList = this.settingManager.list(data.guild, data.lang());
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('displayEmbeds.settingsServer', data.lang(), {
                         SETTING_LIST: settingList,
@@ -79,7 +79,7 @@ export class ServerCommand implements Command {
                 let settingInput = intr.options.getString(Lang.getCom('arguments.setting'));
                 let setting = this.settingManager.find(settingInput);
                 if (!setting) {
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
                     );
@@ -92,7 +92,7 @@ export class ServerCommand implements Command {
                     setting.clear(data.guild);
                     await data.guild.save();
 
-                    await InteractionUtils.send(
+                    await MessageUtils.sendIntr(
                         intr,
                         Lang.getEmbed('resultEmbeds.removedSettingGuild', data.lang(), {
                             SETTING_NAME: setting.displayName(data.lang()),
@@ -110,7 +110,7 @@ export class ServerCommand implements Command {
                 setting.apply(data.guild, value);
                 await data.guild.save();
 
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('resultEmbeds.updatedSettingGuild', data.lang(), {
                         SETTING_NAME: setting.displayName(data.lang()),
@@ -132,7 +132,7 @@ export class ServerCommand implements Command {
                     );
                 }
                 await data.guild.save();
-                await InteractionUtils.send(
+                await MessageUtils.sendIntr(
                     intr,
                     Lang.getEmbed('resultEmbeds.removedGuild', data.lang())
                 );

@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 import { Button, ButtonDeferType } from '../buttons/index.js';
 import { EventData } from '../models/internal-models.js';
-import { InteractionUtils } from '../utils/index.js';
+import { MessageUtils } from '../utils/index.js';
 import { EventHandler } from './index.js';
 
 const require = createRequire(import.meta.url);
@@ -49,11 +49,11 @@ export class ButtonHandler implements EventHandler {
         // NOTE: Anything after this point we should be responding to the interaction
         switch (button.deferType) {
             case ButtonDeferType.REPLY: {
-                await InteractionUtils.deferReply(intr);
+                await MessageUtils.deferReply(intr);
                 break;
             }
             case ButtonDeferType.UPDATE: {
-                await InteractionUtils.deferUpdate(intr);
+                await MessageUtils.deferUpdate(intr);
                 break;
             }
         }

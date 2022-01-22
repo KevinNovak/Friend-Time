@@ -58,6 +58,11 @@ export class ButtonHandler implements EventHandler {
             }
         }
 
+        // Return if defer was unsuccessful
+        if (button.deferType !== ButtonDeferType.NONE && !intr.deferred) {
+            return;
+        }
+
         // TODO: Get data from database
         let data = new EventData();
 

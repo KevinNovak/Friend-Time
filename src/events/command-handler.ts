@@ -57,6 +57,11 @@ export class CommandHandler implements EventHandler {
             }
         }
 
+        // Return if defer was unsuccessful
+        if (command.deferType !== CommandDeferType.NONE && !intr.deferred) {
+            return;
+        }
+
         // Get data from database
         let data = new EventData(
             await UserData.findOne({ discordId: intr.user.id }),

@@ -34,5 +34,6 @@
         "TypeORM",
         "tzdb",
         "varchar"
-    ]
+    ],
+    "typescript.preferences.importModuleSpecifierEnding": "js"
 }

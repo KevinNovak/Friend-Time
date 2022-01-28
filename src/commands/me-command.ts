@@ -1,6 +1,6 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
 import {
-    ApplicationCommandData,
+    ChatInputApplicationCommandData,
     CommandInteraction,
     DMChannel,
     PermissionString,
@@ -15,7 +15,7 @@ import { InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class MeCommand implements Command {
-    public metadata: ApplicationCommandData = {
+    public metadata: ChatInputApplicationCommandData = {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         options: [

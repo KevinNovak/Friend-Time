@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
-import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildBotData, GuildData, GuildListItemData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -9,7 +9,7 @@ import { InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class ServerCommand implements Command {
-    public metadata: ApplicationCommandData = {
+    public metadata: ChatInputApplicationCommandData = {
         name: Lang.getCom('commands.server'),
         description: Lang.getRef('commandDescs.server', Lang.Default),
         options: [

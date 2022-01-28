@@ -1,6 +1,6 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
 import {
-    ApplicationCommandData,
+    ChatInputApplicationCommandData,
     CommandInteraction,
     DMChannel,
     Message,
@@ -23,7 +23,7 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
 export class SetCommand implements Command {
-    public metadata: ApplicationCommandData = {
+    public metadata: ChatInputApplicationCommandData = {
         name: Lang.getCom('commands.set'),
         description: Lang.getRef('commandDescs.set', Lang.Default),
         options: [

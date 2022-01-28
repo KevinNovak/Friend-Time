@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
-import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData } from '../database/entities/index.js';
@@ -13,7 +13,7 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class BotCommand implements Command {
-    public metadata: ApplicationCommandData = {
+    public metadata: ChatInputApplicationCommandData = {
         name: Lang.getCom('commands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
         options: [

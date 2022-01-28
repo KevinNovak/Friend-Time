@@ -1,5 +1,5 @@
 import { ApplicationCommandOptionType } from 'discord-api-types/v9';
-import { ApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
@@ -25,7 +25,7 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class TimeCommand implements Command {
-    public metadata: ApplicationCommandData = {
+    public metadata: ChatInputApplicationCommandData = {
         name: Lang.getCom('commands.time'),
         description: Lang.getRef('commandDescs.time', Lang.Default),
         options: [

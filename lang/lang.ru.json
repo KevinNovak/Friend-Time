@@ -89,7 +89,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}`",
+                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
                             "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }

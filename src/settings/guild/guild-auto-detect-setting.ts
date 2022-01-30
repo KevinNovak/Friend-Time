@@ -36,7 +36,7 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
         return YesNo.Data[value.toString()].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let autoDetect = YesNo.find(msg.content);
             if (autoDetect == null) {
@@ -53,17 +53,21 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.autoDetectGuild', data.lang())
         );
-        return await collect(this.retriever(intr, data.lang()));
+
+        return await CollectorUtils.collectByMessage(
+            intr.channel,
+            intr.user,
+            this.retriever(intr, data.lang()),
+            async () => {
+                await InteractionUtils.send(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                );
+            }
+        );
     }
 }

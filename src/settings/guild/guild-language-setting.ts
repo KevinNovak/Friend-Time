@@ -36,7 +36,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
         return Language.displayName(value);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<LangCode> {
         return async (msg: Message) => {
             let newLangCode = Language.find(msg.content);
             if (!newLangCode) {
@@ -53,19 +53,23 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<LangCode> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {
                 LANGUAGE_LIST: Language.list(),
             })
         );
-        return await collect(this.retriever(intr, data.lang()));
+
+        return await CollectorUtils.collectByMessage(
+            intr.channel,
+            intr.user,
+            this.retriever(intr, data.lang()),
+            async () => {
+                await InteractionUtils.send(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                );
+            }
+        );
     }
 }

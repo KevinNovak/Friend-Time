@@ -36,7 +36,10 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         return TimeFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(
+        intr: CommandInteraction,
+        langCode: LangCode
+    ): MessageRetriever<TimeFormatOption> {
         return async (msg: Message) => {
             let timeFormat = TimeFormat.find(msg.content);
             if (!timeFormat) {
@@ -53,17 +56,21 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<TimeFormatOption> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang())
         );
-        return await collect(this.retriever(intr, data.lang()));
+
+        return await CollectorUtils.collectByMessage(
+            intr.channel,
+            intr.user,
+            this.retriever(intr, data.lang()),
+            async () => {
+                await InteractionUtils.send(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                );
+            }
+        );
     }
 }

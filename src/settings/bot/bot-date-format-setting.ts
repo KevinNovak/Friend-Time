@@ -36,7 +36,10 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         return DateFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(
+        intr: CommandInteraction,
+        langCode: LangCode
+    ): MessageRetriever<DateFormatOption> {
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
@@ -57,19 +60,23 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         data: EventData,
         target?: Snowflake
     ): Promise<DateFormatOption> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang(), {
                 BOT: FormatUtils.userMention(target),
             })
         );
-        return await collect(this.retriever(intr, data.lang()));
+
+        return await CollectorUtils.collectByMessage(
+            intr.channel,
+            intr.user,
+            this.retriever(intr, data.lang()),
+            async () => {
+                await InteractionUtils.send(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                );
+            }
+        );
     }
 }

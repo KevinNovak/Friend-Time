@@ -46,7 +46,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         return value;
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<string> {
         return async (msg: Message) => {
             if (msg.content.length <= Config.validation.timeZone.lengthMin) {
                 await InteractionUtils.send(
@@ -72,7 +72,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         };
     }
 
-    public confirmation(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public confirmation(intr: CommandInteraction, langCode: LangCode): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
@@ -89,13 +89,6 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<string> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         let timeZone: string;
         let confirmed = false;
         while (confirmed === false) {
@@ -103,7 +96,17 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
                 intr,
                 Lang.getEmbed('promptEmbeds.timeZoneGuild', data.lang())
             );
-            timeZone = await collect(this.retriever(intr, data.lang()));
+            timeZone = await CollectorUtils.collectByMessage(
+                intr.channel,
+                intr.user,
+                this.retriever(intr, data.lang()),
+                async () => {
+                    await InteractionUtils.send(
+                        intr,
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    );
+                }
+            );
             if (!timeZone) {
                 return;
             }
@@ -124,7 +127,17 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
                     TIME_ZONE: timeZone,
                 })
             );
-            confirmed = await collect(this.confirmation(intr, data.lang()));
+            confirmed = await CollectorUtils.collectByMessage(
+                intr.channel,
+                intr.user,
+                this.confirmation(intr, data.lang()),
+                async () => {
+                    await InteractionUtils.send(
+                        intr,
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    );
+                }
+            );
             if (confirmed === undefined) {
                 return;
             }

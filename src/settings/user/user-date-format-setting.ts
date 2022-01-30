@@ -36,7 +36,10 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         return DateFormat.Data[value].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever {
+    public retriever(
+        intr: CommandInteraction,
+        langCode: LangCode
+    ): MessageRetriever<DateFormatOption> {
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);
             if (!dateFormat) {
@@ -53,17 +56,21 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<DateFormatOption> {
-        let collect = CollectorUtils.createMsgCollect(intr.channel, intr.user, async () => {
-            await InteractionUtils.send(
-                intr,
-                Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-            );
-        });
-
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang())
         );
-        return await collect(this.retriever(intr, data.lang()));
+
+        return await CollectorUtils.collectByMessage(
+            intr.channel,
+            intr.user,
+            this.retriever(intr, data.lang()),
+            async () => {
+                await InteractionUtils.send(
+                    intr,
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                );
+            }
+        );
     }
 }

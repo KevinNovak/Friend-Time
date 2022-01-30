@@ -1,10 +1,9 @@
-import { Message, MessageReaction, TextBasedChannel, User } from 'discord.js';
+import { ButtonInteraction, Message, MessageReaction, TextBasedChannel, User } from 'discord.js';
 import {
+    ButtonRetriever,
     CollectorUtils as DjsCollectorUtils,
     ExpireFunction,
-    MessageFilter,
     MessageRetriever,
-    ReactionFilter,
     ReactionRetriever,
 } from 'discord.js-collector-utils';
 import { createRequire } from 'node:module';
@@ -15,62 +14,78 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class CollectorUtils {
-    public static createMsgCollect(
+    public static collectByMessage<T>(
         channel: TextBasedChannel,
         user: User,
+        messageRetriever: MessageRetriever<T>,
         expireFunction?: ExpireFunction
-    ): (messageRetriever: MessageRetriever) => Promise<any> {
-        let collectFilter: MessageFilter = (nextMsg: Message): boolean =>
-            nextMsg.author.id === user.id;
+    ): Promise<T> {
+        return DjsCollectorUtils.collectByMessage(
+            channel,
+            (nextMsg: Message): boolean => nextMsg.author.id === user.id,
+            (nextMsg: Message): boolean => {
+                // Check if another command was ran, if so cancel the current running setup
+                let nextMsgArgs = nextMsg.content.split(' ');
+                if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
+                    return true;
+                }
 
-        let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
-            // Check if another command was ran, if so cancel the current running setup
-            let nextMsgArgs = nextMsg.content.split(' ');
-            if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
-                return true;
-            }
-
-            return false;
-        };
-
-        return (messageRetriever: MessageRetriever) =>
-            DjsCollectorUtils.collectByMessage(
-                channel,
-                collectFilter,
-                stopFilter,
-                messageRetriever,
-                expireFunction,
-                { time: Config.experience.promptExpireTime * 1000, reset: true }
-            );
+                return false;
+            },
+            messageRetriever,
+            expireFunction,
+            { time: Config.experience.promptExpireTime * 1000, reset: true }
+        );
     }
 
-    public static createReactCollect(
+    public static collectByReaction<T>(
+        msg: Message,
         user: User,
+        reactionRetriever: ReactionRetriever<T>,
         expireFunction?: ExpireFunction
-    ): (msg: Message, reactionRetriever: ReactionRetriever) => Promise<any> {
-        let collectFilter: ReactionFilter = (
-            _msgReaction: MessageReaction,
-            reactor: User
-        ): boolean => reactor.id === user.id;
+    ): Promise<T> {
+        return DjsCollectorUtils.collectByReaction(
+            msg,
+            (_msgReaction: MessageReaction, reactor: User): boolean => reactor.id === user.id,
+            (nextMsg: Message): boolean => {
+                // Check if another command was ran, if so cancel the current running setup
+                let nextMsgArgs = nextMsg.content.split(' ');
+                if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
+                    return true;
+                }
 
-        let stopFilter: MessageFilter = (nextMsg: Message): boolean => {
-            // Check if another command was ran, if so cancel the current running setup
-            let nextMsgArgs = nextMsg.content.split(' ');
-            if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
-                return true;
-            }
+                return false;
+            },
+            reactionRetriever,
+            expireFunction,
+            { time: Config.experience.promptExpireTime * 1000, reset: true }
+        );
+    }
 
-            return false;
-        };
+    public static collectByButton<T>(
+        msg: Message,
+        user: User,
+        buttonRetriever: ButtonRetriever<T>,
+        expireFunction?: ExpireFunction
+    ): Promise<{
+        intr: ButtonInteraction;
+        value: T;
+    }> {
+        return DjsCollectorUtils.collectByButton(
+            msg,
+            (intr: ButtonInteraction) => intr.user.id === user.id,
+            (nextMsg: Message): boolean => {
+                // Check if another command was ran, if so cancel the current running setup
+                let nextMsgArgs = nextMsg.content.split(' ');
+                if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
+                    return true;
+                }
 
-        return (msg: Message, reactionRetriever: ReactionRetriever) =>
-            DjsCollectorUtils.collectByReaction(
-                msg,
-                collectFilter,
-                stopFilter,
-                reactionRetriever,
-                expireFunction,
-                { time: Config.experience.promptExpireTime * 1000, reset: true }
-            );
+                return false;
+            },
+            buttonRetriever,
+            expireFunction,
+            { time: Config.experience.promptExpireTime * 1000, reset: true }
+        );
     }
 }

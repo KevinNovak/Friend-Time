@@ -194,17 +194,6 @@ export class SetCommand implements Command {
                     setting.apply(userData, value);
                 }
 
-                let collect = CollectorUtils.createMsgCollect(
-                    intr.channel,
-                    member.user,
-                    async () => {
-                        await InteractionUtils.send(
-                            intr,
-                            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
-                        );
-                    }
-                );
-
                 let userMention = FormatUtils.userMention(member.id);
                 let settingList = this.userSettingManager.list(userData, data.lang());
                 await InteractionUtils.send(intr, {
@@ -216,19 +205,32 @@ export class SetCommand implements Command {
                         }),
                     ],
                 });
-                let confirmed = await collect(async (msg: Message) => {
-                    let privateMode = YesNo.find(msg.content);
-                    if (privateMode == null) {
+                let confirmed = await CollectorUtils.collectByMessage(
+                    intr.channel,
+                    member.user,
+                    async (msg: Message) => {
+                        let privateMode = YesNo.find(msg.content);
+                        if (privateMode == null) {
+                            await InteractionUtils.send(
+                                intr,
+                                Lang.getEmbed(
+                                    'validationEmbeds.invalidYesNo',
+                                    data.lang()
+                                ).setFooter({
+                                    text: Lang.getRef('footers.collector', data.lang()),
+                                })
+                            );
+                            return;
+                        }
+                        return privateMode;
+                    },
+                    async () => {
                         await InteractionUtils.send(
                             intr,
-                            Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang()).setFooter({
-                                text: Lang.getRef('footers.collector', data.lang()),
-                            })
+                            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
                         );
-                        return;
                     }
-                    return privateMode;
-                });
+                );
                 if (confirmed === undefined) {
                     return;
                 }

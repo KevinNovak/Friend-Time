@@ -655,23 +655,23 @@
             "oldPrefixUsed": {
                 "title": "Actualización de Comandos de Barra",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
+                    "{{COM:bot.name}} ahora usa **Comandos de Barra**! Prueba digitando `/{{COM:commands.help}}`!",
                     "",
-                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
+                    "Si no ves ningún comando de barra para {{COM:bot.name}}:",
                     "",
-                    "1. Check that you have the **Use Application Commands** permission in this channel.",
-                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
-                    "3. Join our [support server]({{COM:links.support}}) for help."
+                    "1. Verifica que tengas el permiso **Usar Comandos de Aplicaciones** en este canal.",
+                    "2. Intenta expulsar y [reinvitar a {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Únete a nuestro [servidor de soporte]({{COM:links.support}}) para obtener ayuda."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
             "cooldownHit": {
-                "description": "You can only run this command {{AMOUNT}} time(s) every {{INTERVAL}}. Please wait before attempting this command again.",
+                "description": "Solo puedes correr este comando {{AMOUNT}} vez/veces cada {{INTERVAL}}. Por favor espera antes de intentar correr este comando de nuevo.",
                 "color": "{{COM:colors.warning}}"
             },
             "devOnlyCommand": {
-                "description": "This command can only be used by developers.",
+                "description": "Este comando solo puede ser usado por desarrolladores.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
@@ -680,9 +680,9 @@
             },
             "missingClientPerms": {
                 "description": [
-                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "¡No tengo los permisos necesarios para correr ese comando aquí! Por favor verifica los permisos del servidor y del canal para asegurarte que tengo los siguientes permisos.",
                     "",
-                    "Required permissions: {{PERMISSIONS}}"
+                    "Permisos requeridos: {{PERMISSIONS}}"
                 ],
                 "color": "{{COM:colors.warning}}"
             },

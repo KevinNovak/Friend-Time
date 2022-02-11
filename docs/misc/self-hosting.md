@@ -39,7 +39,7 @@ description: How to self-host Friend Time.
 
 ## Running
 
-You can run Friend Time in 4 different modes:
+You can run the bot in multiple modes:
 
 1. Normal Mode
     * Type `npm start`.

@@ -6,7 +6,7 @@ description: How to self-host Friend Time.
 
 ## Requirements
 
-1. [Node.js v15](https://nodejs.org/) or newer.
+1. [Node.js v16.6.0](https://nodejs.org/) or newer.
 2. A [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/) database.
 
 ## Setup

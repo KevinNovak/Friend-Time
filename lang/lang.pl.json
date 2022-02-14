@@ -77,7 +77,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Aktywuj lub dezaktywuj listę."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Aktywuje lub dezaktywuje listę."
                         ]
                     }
                 ]
@@ -195,7 +195,7 @@
             },
             "translate": {
                 "title": "{{COM:bot.name}} - Tłumaczenia",
-                "description": "Dziękujemy naszym tłumaczom, dzięki którym{{COM:bot.name}} jest dostępny w poniższych językach. Jeśli jesteś zainteresowany stworzeniem tłumaczenia, proszę o kontakt z nami na [naszym serwerze]({{COM:links.support}})."
+                "description": "Dziękujemy naszym tłumaczom, dzięki którym {{COM:bot.name}} jest dostępny w poniższych językach. Jeśli jesteś zainteresowany stworzeniem tłumaczenia, proszę o kontakt z nami na [naszym serwerze]({{COM:links.support}})."
             },
             "dev": {
                 "title": "{{COM:bot.name}} - Informacje dla deweloperów",
@@ -242,14 +242,14 @@
             },
             "linkDonate": {
                 "title": "{{COM:bot.name}} - Dotacje",
-                "description": "Wesprzyj {{COM:bot.name}} wpłacając dotcję na Paypal [tutaj]({{COM:links.donate}})!"
+                "description": "Wesprzyj {{COM:bot.name}} wpłacając dotację poprzez Paypal [tutaj]({{COM:links.donate}})!"
             },
             "linkInvite": {
                 "title": "{{COM:bot.name}} - Zaproszenie",
                 "description": "Kliknij [tutaj]({{COM:links.invite}}) , aby zaprosić {{COM:bot.name}} do Swojego serwera!"
             },
             "linkMap": {
-                "title": "Time Zone Map",
+                "title": "Mapa stref czasowych",
                 "description": [
                     "{{REF:partials.findTimeZoneHelp}} Tu możesz skopiować nazwę strefy czasowej i użyć jej kiedykolwiek {{COM:bot.name}} będzie jej potrzebował."
                 ]
@@ -298,7 +298,7 @@
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Godzina w tym serwerze będzie wykrywana automatycznie.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Godzina w tym serwerze **nie** będzie wykrywana automatycznie. Aby rozpoznać i przekonwertować godzinę, emotka 🕰️ musi być obecna pod wiadomością.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Godzina na tym serwerze **nie** będzie wykrywana automatycznie. Aby rozpoznać i przekonwertować godzinę, emotka 🕰️ musi być obecna pod wiadomością.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -607,19 +607,19 @@
                 "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
-                "description": "Ustawienia serwera **{{SETTING_NAME}}** zostały zmienione na **{{SETTING_VALUE}}**.",
+                "description": "Ustawienia serwera sekcji **{{SETTING_NAME}}** zostały zmienione na **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
-                "description": "Ustawienia **{{SETTING_NAME}}** dla {{BOT}} zostały zmienione **{{SETTING_VALUE}}**.",
+                "description": "Ustawienia zakładki **{{SETTING_NAME}}** dla {{BOT}} zostały zmienione **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
-                "description": "Twoje ustawienia **{{SETTING_NAME}}** zostały zmienione na **{{SETTING_VALUE}}**.",
+                "description": "Twoje ustawienia sekcji **{{SETTING_NAME}}** zostały zmienione na **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
-                "description": "Ustawienia serwera **{{SETTING_NAME}}** zostały usunięte.",
+                "description": "Ustawienia serwera sekcji **{{SETTING_NAME}}** zostały usunięte.",
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
@@ -627,7 +627,7 @@
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
-                "description": "Twoje ustawienia **{{SETTING_NAME}}** zostały usunięte.",
+                "description": "Twoje ustawienia sekcji **{{SETTING_NAME}}** zostały usunięte.",
                 "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
@@ -671,7 +671,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "devOnlyCommand": {
-                "description": "Tą komendę mogą zastosować wyłącznie developerzy..",
+                "description": "Tą komendę mogą zastosować wyłącznie developerzy.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
@@ -719,7 +719,7 @@
                 "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
-                "description": "Odpowiedź powinna brzmieć 'tak lub 'nie, spróbuj ponownie!",
+                "description": "Odpowiedź powinna brzmieć **yes** lub **no**, spróbuj ponownie!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
@@ -794,7 +794,7 @@
             "translators": "PurpleKneazle#2287"
         },
         "bot": {
-            "description": "{{COM:bot.name}} pomaga koordynowanie czasu oraz wydarzeń na serwerze dzięki konwertowaniu godzin wspomnianych w kanałach pomiędzy strefami czasowymi!"
+            "description": "{{COM:bot.name}} pomaga w koordynowaniu czasu oraz wydarzeń na serwerze dzięki konwertowaniu godzin wspomnianych w kanałach pomiędzy strefami czasowymi!"
         },
         "commandDescs": {
             "bot": "Zarządza ustawieniami bota.",
@@ -880,7 +880,7 @@
             "links": "Links"
         },
         "footers": {
-            "collector": "Wpisz swoją odpowiedź poniżej,(lub'{{COM:keywords.stop}}', aby anulować."
+            "collector": "Wpisz swoją odpowiedź poniżej lub '{{COM:keywords.stop}}', aby anulować."
         },
         "permissions": {
             "ADD_REACTIONS": "Add Reactions",
@@ -933,14 +933,14 @@
         },
         "links": {
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
-            "docsEmbed": "[View Documentation]({{COM:links.docs}}/)",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "inviteEmbed": "[Invite {{COM:bot.name}} to a Server!]({{COM:links.invite}})",
-            "mapEmbed": "[Time Zone Map]({{COM:links.map}})",
-            "sourceEmbed": "[View Source Code]({{COM:links.source}})",
-            "supportEmbed": "[Join Support Server]({{COM:links.support}})",
-            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "voteEmbed": "[Vote for {{COM:bot.name}}!]({{COM:links.vote}})"
+            "docsEmbed": "[Zobacz dokumentację]({{COM:links.docs}}/)",
+            "donateEmbed": "[Wyślij dotację poprzez PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Zaproś {{COM:bot.name}} do serwera!]({{COM:links.invite}})",
+            "mapEmbed": "[Mapa stref czasowych]({{COM:links.map}})",
+            "sourceEmbed": "[Wyświelt kod źródłowy]({{COM:links.source}})",
+            "supportEmbed": "[Dołącz do naszego serwera]({{COM:links.support}})",
+            "templateEmbed": "[Szablon bota (TypeScript)]({{COM:links.template}})",
+            "voteEmbed": "[Oddaj głos na {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
             "congratulations": "🎉 Gratulacje!! 🎉",

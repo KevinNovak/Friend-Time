@@ -24,7 +24,7 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     {
-                        "name": "Użytkownik {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} dla użytkowników",
                         "value": [
                             "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
                             "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
@@ -38,7 +38,7 @@
                         ]
                     },
                     {
-                        "name": "Administracja {{REF:fields.commands}}",
+                        "name": "{{REF:fields.commands}} dla administracji",
                         "value": [
                             "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
                             "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
@@ -201,7 +201,7 @@
                 "title": "{{COM:bot.name}} - Informacje dla deweloperów",
                 "fields": [
                     {
-                        "name": "Wesje",
+                        "name": "Wersje",
                         "value": [
                             "**Node.js**: {{NODE_VERSION}}",
                             "**TypeScript**: {{TS_VERSION}}",
@@ -296,7 +296,7 @@
                 "description": [
                     "Czy chciałbyś, aby {{COM:bot.name}} automatycznie wykrywał godzinę wspomnianą w wiadomościach?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Godzina w tym serwerze będzie wykrywana automatycznie.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Godzina na tym serwerze będzie wykrywana automatycznie.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Godzina na tym serwerze **nie** będzie wykrywana automatycznie. Aby rozpoznać i przekonwertować godzinę, emotka 🕰️ musi być obecna pod wiadomością.",
                     "\u2800"
@@ -304,7 +304,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneGuild": {
-                "title": "Server - {{REF:settings.timeZoneDisplay}}",
+                "title": "Serwer - {{REF:settings.timeZoneDisplay}}",
                 "description": [
                     "W jakiej strefie czasowej znajduje się ten serwer?",
                     "",
@@ -394,7 +394,7 @@
             "listGuild": {
                 "title": "Serwer - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Czy chciałbyś, aby {{COM:bot.name}} wysyłał listę przekonwertowanych godzin na czacie, po wspomnieniu godziny?",
+                    "Czy chciałbyś, aby {{COM:bot.name}} wysyłał listę przekonwertowanych godzin na kanał, po wspomnieniu godziny?",
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} będzie konwertować godziny wspomniane na kanale na wszystkie strefy czasowe na liście tego serwera (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Lista ta będzie wysłana na tym samym kanale co oryginalna wiadomość.",
                     "",
@@ -474,7 +474,7 @@
             "privateModeUser": {
                 "title": "Użytkownik - {{REF:settings.privateModeDisplay}}",
                 "description": [
-                    "Czy chciałbyś, aby Twoja strefa czasowa oraz inne informacje był prywatne? ",
+                    "Czy chciałbyś, aby Twoja strefa czasowa oraz inne informacje były prywatne? ",
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} bot nie pokaże Twoich informacji innym użytkownikom.",
                     "",
@@ -643,7 +643,7 @@
                 "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
-                "description": "**{{TIME_ZONE}}** has been added to the server's time zone list.",
+                "description": "Strefa czasowa **{{TIME_ZONE}}** została dodana na listę stref czasowych serwera.",
                 "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
@@ -805,7 +805,7 @@
             "dev": "Wyświetla informacje o developerach.",
             "help": "Wyświetla menu oraz listę komend.",
             "info": "Wyświetla informacje o bocie.",
-            "link": "Wyświelta linki do zaproszenia, wparcia itp.",
+            "link": "Wyświelta linki do zaproszenia, serwera twórców itp.",
             "list": "Zarządza listą stref czasowych serwera.",
             "listView": "Wyświetla listę stref czasowych serwera.",
             "listToggle": "Dodaje lub usuwa strefy czasowej do listy serwera.",
@@ -858,9 +858,9 @@
                 ""
             ],
             "timeZoneItem": "- **{{TIME_ZONE}}**",
-            "timeZoneNone": "*This server has no time zones in the list.*",
+            "timeZoneNone": "*Ten serwer nie posiada stref czasowych na liście.*",
             "botItem": "- {{BOT}}",
-            "botNone": "*This server has no bot setups.*",
+            "botNone": "*Ten serwer nie posiada skonfigurowanych botów.*",
             "timeTextItem": "> {{TIME_TEXT}}",
             "timeTextWithPosItem": "> **{{POSITION}}**. {{TIME_TEXT}}",
             "timeTextAndTimeItem": ["> {{TIME_TEXT}}", "**{{TIME_START}}**", ""],
@@ -875,9 +875,9 @@
             "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
         },
         "fields": {
-            "commands": "Commands",
-            "actions": "Actions",
-            "links": "Links"
+            "commands": "Komendy",
+            "actions": "Działania",
+            "links": "Linki"
         },
         "footers": {
             "collector": "Wpisz swoją odpowiedź poniżej lub '{{COM:keywords.stop}}', aby anulować."

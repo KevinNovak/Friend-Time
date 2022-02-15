@@ -719,7 +719,7 @@
                 "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
-                "description": "Odpowiedź powinna brzmieć **yes** lub **no**, spróbuj ponownie!",
+                "description": "Odpowiedź powinna brzmieć 'yes' lub 'no', spróbuj ponownie!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {

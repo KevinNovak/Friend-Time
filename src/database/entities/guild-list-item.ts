@@ -5,7 +5,7 @@ import {
     Entity,
     ManyToOne,
     PrimaryGeneratedColumn,
-    Related,
+    Relation,
     Unique,
     UpdateDateColumn,
 } from 'typeorm';
@@ -31,5 +31,5 @@ export class GuildListItemData extends BaseEntity {
 
     // Relations
     @ManyToOne(() => GuildData, guildData => guildData.listItems, { onDelete: 'CASCADE' })
-    guild: Related<GuildData>;
+    guild: Relation<GuildData>;
 }

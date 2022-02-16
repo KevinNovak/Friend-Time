@@ -5,7 +5,7 @@ import {
     Entity,
     OneToMany,
     PrimaryGeneratedColumn,
-    Related,
+    Relation,
     Unique,
     UpdateDateColumn,
 } from 'typeorm';
@@ -51,8 +51,8 @@ export class GuildData extends BaseEntity {
 
     // Relations
     @OneToMany(() => GuildBotData, botData => botData.guild)
-    bots: Related<GuildBotData[]>;
+    bots: Relation<GuildBotData[]>;
 
     @OneToMany(() => GuildListItemData, guildListItemData => guildListItemData.guild)
-    listItems: Related<GuildListItemData[]>;
+    listItems: Relation<GuildListItemData[]>;
 }

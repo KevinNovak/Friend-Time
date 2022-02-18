@@ -51,6 +51,7 @@
         "reflect-metadata": "^0.1.13",
         "remove-markdown": "0.3.0",
         "typeorm": "0.2.42",
+        "typeorm-naming-strategies": "3.0.0",
         "url-regex-safe": "3.0.0"
     },
     "devDependencies": {

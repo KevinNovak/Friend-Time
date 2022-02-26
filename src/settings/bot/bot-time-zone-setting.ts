@@ -134,7 +134,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
                     BOT: FormatUtils.userMention(target),
                 })
             );
-            await CollectorUtils.collectByMessage(
+            confirmed = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
                 this.confirmation(intr, data.lang()),

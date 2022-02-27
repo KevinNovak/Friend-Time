@@ -42,14 +42,11 @@ description: How to self-host Friend Time.
 You can run the bot in multiple modes:
 
 1. Normal Mode
-    * Type `npm start`.
-    * This runs the bot directly with Node and without shards.
-    * Use this mode if you don't need sharding.
-2. Shard Mode
-    * Type `npm run start:shard`.
-    * This runs the bot directly with Node and with sharding enabled.
-    * Use this mode if you need sharding.
+    - Type `npm start`.
+    - Starts a single instance of the bot.
+2. Manager Mode
+    - Type `npm run start:manager`.
+    - Starts a shard manager which will spawn multiple bot shards.
 3. PM2 Mode
-    * Run by typing `npm run start:pm2`.
-    * This runs the bot using the process manager [PM2](https://pm2.keymetrics.io/).
-    * Use this mode if you require the bot to always be online.
+    - Type `npm run start:pm2`.
+    - Similar to Manager Mode but uses [PM2](https://pm2.keymetrics.io/) to manage processes.

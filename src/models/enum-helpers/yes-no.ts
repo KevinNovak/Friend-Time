@@ -1,6 +1,6 @@
+import { LangCode } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
-import { LangCode } from './index.js';
 
 interface YesNoData extends Display {
     name(): string;

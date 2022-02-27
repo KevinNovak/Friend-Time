@@ -2,8 +2,8 @@ import { CommandInteraction, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 
+import { LangCode } from '../enums/index.js';
 import { Display } from '../models/common/index.js';
-import { LangCode } from '../models/enums/index.js';
 import { EventData } from '../models/internal-models.js';
 
 export interface Setting<T1 extends BaseEntity, T2> extends Display {

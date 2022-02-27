@@ -1,7 +1,8 @@
 import { Guild } from 'discord.js';
 import { DateTime, Duration } from 'luxon'; // TODO: Missing types
 
-import { LangCode, Language, TimeFormat, TimeFormatOption } from '../models/enums/index.js';
+import { LangCode, TimeFormatOption } from '../enums/index.js';
+import { Language, TimeFormat } from '../models/enum-helpers/index.js';
 
 export class FormatUtils {
     public static roleMention(guild: Guild, discordId: string): string {

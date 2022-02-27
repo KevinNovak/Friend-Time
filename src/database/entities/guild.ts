@@ -10,7 +10,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { LangCode, TimeFormatOption } from '../../models/enums/index.js';
+import { LangCode, TimeFormatOption } from '../../enums/index.js';
 import { GuildBotData, GuildListItemData } from './index.js';
 
 @Entity('guild')

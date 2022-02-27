@@ -1,6 +1,6 @@
 import type { BaseEntity } from 'typeorm';
 
-import { LangCode } from '../models/enums/index.js';
+import { LangCode } from '../enums/index.js';
 import { Lang } from '../services/index.js';
 import { Setting } from './index.js';
 

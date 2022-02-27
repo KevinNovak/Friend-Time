@@ -1,11 +1,6 @@
+import { LangCode, TimeFormatOption } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
-import { LangCode } from './index.js';
-
-export enum TimeFormatOption {
-    TWELVE_HOUR = 'TWELVE_HOUR',
-    TWENTY_FOUR_HOUR = 'TWENTY_FOUR_HOUR',
-}
 
 interface TimeFormatData extends Display {
     name(): string;

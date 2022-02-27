@@ -3,7 +3,7 @@ import { Message, MessageEmbed } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
-import { DateFormatOption } from '../models/enums/index.js';
+import { DateFormatOption } from '../enums/index.js';
 import { EventData } from '../models/internal-models.js';
 import { ConvertReaction } from '../reactions/index.js';
 import { Lang, ReminderService, TimeService } from '../services/index.js';

@@ -2,7 +2,8 @@ import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { UserData } from '../../database/entities/index.js';
-import { DateFormat, DateFormatOption, LangCode } from '../../models/enums/index.js';
+import { DateFormatOption, LangCode } from '../../enums/index.js';
+import { DateFormat } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { CollectorUtils, InteractionUtils } from '../../utils/index.js';

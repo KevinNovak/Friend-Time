@@ -10,7 +10,7 @@ import {
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
-import { YesNo } from '../models/enums/index.js';
+import { YesNo } from '../models/enum-helpers/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
 import { SettingManager } from '../settings/index.js';

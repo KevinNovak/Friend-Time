@@ -1,11 +1,6 @@
+import { DateFormatOption, LangCode } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
-import { LangCode } from './index.js';
-
-export enum DateFormatOption {
-    MONTH_DAY = 'MONTH_DAY',
-    DAY_MONTH = 'DAY_MONTH',
-}
 
 interface DateFormatData extends Display {
     name(): string;

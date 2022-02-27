@@ -1,6 +1,6 @@
 import { GuildData, UserData } from '../database/entities/index.js';
+import { LangCode } from '../enums/index.js';
 import { Lang } from '../services/index.js';
-import { LangCode } from './enums/index.js';
 
 // This class is used to store and pass data along in events
 export class EventData {

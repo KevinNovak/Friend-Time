@@ -35,6 +35,7 @@
         "pino",
         "regexes",
         "respawn",
+        "respawned",
         "restjson",
         "TypeORM",
         "tzdb",

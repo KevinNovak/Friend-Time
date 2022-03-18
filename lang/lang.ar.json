@@ -788,10 +788,10 @@
     },
     "refs": {
         "meta": {
-            "language": "en-US",
-            "languageDisplay": "English",
-            "locale": "en-US",
-            "translators": "[NovaKevin#6952](https://github.com/KevinNovak)"
+            "language": "ar",
+            "languageDisplay": "اَلْعَرَبِيَّةُ",
+            "locale": "ar",
+            "translators": "[TheQuadOne#9196](https://thequadone.carrd.co/)"
         },
         "bot": {
             "description": "{{COM:bot.name}} helps your server coordinate times and events by converting times mentioned in chat between time zones!"

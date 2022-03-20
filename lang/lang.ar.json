@@ -176,7 +176,7 @@
             "info": {
                 "title": "{{COM:bot.name}} - معلومات",
                 "fields": [
-                    { "name": "مطور", "value": "{{REF:links.authorEmbed}}" },
+                    { "name": "المطور", "value": "{{REF:links.authorEmbed}}" },
                     {
                         "name": "{{REF:fields.links}}",
                         "value": [
@@ -237,40 +237,40 @@
                 ]
             },
             "linkDocs": {
-                "title": "{{COM:bot.name}} - Documentation",
-                "description": "Click [here]({{COM:links.docs}}/) to view the bot documentation."
+                "title": "{{COM:bot.name}} - توثيق",
+                "description": "اضغط [هنا]({{COM:links.docs}}/) لرؤية توثيق البوت."
             },
             "linkDonate": {
-                "title": "{{COM:bot.name}} - Donate",
-                "description": "Support {{COM:bot.name}} by donating with PayPal [here]({{COM:links.donate}})!"
+                "title": "{{COM:bot.name}} - تبرع",
+                "description": "ادعم {{COM:bot.name}} عن طريق التبرع بواسطة باي بال (PayPal) [هنا]({{COM:links.donate}})!"
             },
             "linkInvite": {
-                "title": "{{COM:bot.name}} - Invite",
-                "description": "Click [here]({{COM:links.invite}}) to invite {{COM:bot.name}} to a server!"
+                "title": "{{COM:bot.name}} - أدعو",
+                "description": "اضغط [هنا]({{COM:links.invite}}) لدعوة {{COM:bot.name}} إلى سيرفر!"
             },
             "linkMap": {
-                "title": "Time Zone Map",
+                "title": "خريطة المناطق الزمنية",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} You can copy this name and use it wherever {{COM:bot.name}} needs a time zone."
+                    "{{REF:partials.findTimeZoneHelp}} يمكن نسخ هذا الاسم واستخدامه في اي وقت يحتاج {{COM:bot.name}} إلى منطقة زمنية."
                 ]
             },
             "linkSupport": {
-                "title": "{{COM:bot.name}} - Support",
-                "description": "Need help? Join our [support server]({{COM:links.support}})!"
+                "title": "{{COM:bot.name}} - دعم",
+                "description": "تحاتج إلى مساعدة؟ انضم إلى [سيرفر الدعم]({{COM:links.support}})!"
             },
             "linkVote": {
-                "title": "{{COM:bot.name}} - Vote",
-                "description": "Support {{COM:bot.name}} by voting [here]({{COM:links.vote}})!"
+                "title": "{{COM:bot.name}} - تصويت",
+                "description": "ادعم {{COM:bot.name}} من خلال التصويت [هنا]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [
-                    "{{USER}} in {{CHANNEL}} mentioned the following times.",
+                    "{{USER}} في {{CHANNEL}} ذكر الأوقات التالية.",
                     "",
                     "{{TIME_ZONE_FROM}} ➡️ **{{TIME_ZONE_TO}}**",
                     "",
                     "{{TIME_LIST}}",
                     "",
-                    "[View Original Message]({{MESSAGE_LINK}})"
+                    "[اظهر الرسالة الأصلية]({{MESSAGE_LINK}})"
                 ]
             },
             "timeConversionGuild": {
@@ -278,72 +278,72 @@
             },
             "timeZoneReminder": {
                 "description": [
-                    "Hi {{USER}}, it looks like you [mentioned or reacted to a time]({{MESSAGE_LINK}}), but don't have a time zone set yet.",
+                    "أهلًا {{USER}}, يبدو كأنك [ذكرت أو تفاعلت مع وقت]({{MESSAGE_LINK}}), ولكن ليس لديك منطقة زمنية محددة حتى الآن.",
                     "",
-                    "Set your time zone by using the `/{{COM:commands.set}} {{COM:subCommands.me}}` command!",
+                    "اضبط منطقتك الزمنية باستخدام الأمر `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
                     "",
-                    "Setting your time zone allows {{COM:bot.name}} to convert times in server chat to and from your time zone, making coordinating times with others easier."
+                    "يتيح ضبط المنطقة الزمنية الخاصة بك {{COM:bot.name}} إلى تحويل الأوقات في دردشة السيرفر من وإلى منطقتك الزمنية, مما يسهل تنسيق الأوقات مع الآخرين."
                 ],
                 "footer": {
-                    "text": "If you wish to disable this reminder, type \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                    "text": "إذا رغبت في إقاف هذا المنبه, اكتب \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
         },
         "promptEmbeds": {
             "autoDetectGuild": {
-                "title": "Server - {{REF:settings.autoDetectDisplay}}",
+                "title": "سيرفر - {{REF:settings.autoDetectDisplay}}",
                 "description": [
-                    "Would you like {{COM:bot.name}} to automatically detect times mentioned in chat?",
+                    "هل ترغب بأن يكشف {{COM:bot.name}} الأوقات التي ذكرت في الدردشة تلقائيًا؟",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Times in chat will be detected automatically.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. سيتم الكشف عن الأوقات في الدردشة تلقائيًا.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Times in chat will **not** be detected automatically. A 🕰️ emoji must be present in a message for any times to be recognized and converted.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. الأوقات في الدردشة **لن** يتم كشفها تلقائيًا. يجب أن يكون رمز تعبيري (Emoji) 🕰️ موجودًا في رسالة حتى يتم التعرف عليه وتحويله.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneGuild": {
-                "title": "Server - {{REF:settings.timeZoneDisplay}}",
+                "title": "سيرفر - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "What time zone is this server located in?",
+                    "في أي منطقة زمنية يقع هذا السيرفر؟",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
-                    "Example: `America/New_York`"
+                    "مثال: `America/New_York`"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneBot": {
-                "title": "Bot - {{REF:settings.timeZoneDisplay}}",
+                "title": "بوت - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "What is {{BOT}}'s time zone?",
+                    "ما هي المنطقة الزمنية لـ {{BOT}}؟",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
-                    "Example: `America/New_York`"
+                    "مثال: `America/New_York`"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneSelf": {
-                "title": "User - {{REF:settings.timeZoneDisplay}}",
+                "title": "المستخدم - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "What is your time zone?",
+                    "ما هي منطقتك الزمنية؟",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
-                    "Example: `America/New_York`"
+                    "مثال: `America/New_York`"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneUser": {
-                "title": "User - {{REF:settings.timeZoneDisplay}}",
+                "title": "المستخدم - {{REF:settings.timeZoneDisplay}}",
                 "description": [
-                    "What is {{USER}}'s time zone?",
+                    "ما هي المنطقة الزمنية لـ {{USER}}؟",
                     "",
                     "{{REF:partials.findTimeZoneHelp}}",
                     "",
-                    "Example: `America/New_York`"
+                    "مثال: `America/New_York`"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
@@ -351,7 +351,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this the server's time zone?",
+                    "يُرجى التأكيد ، هل هذه هي المنطقة الزمنية للسيرفر؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -362,7 +362,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this {{BOT}}'s time zone?",
+                    "يُرجى التأكيد ، هل هذه المنطقة الزمنية لـ {{BOT}}؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -373,7 +373,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this your time zone?",
+                    "يُرجى التأكيد ، هل هذه منطقتك الزمنية؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -384,7 +384,7 @@
                 "description": [
                     "{{REF:partials.timeInTimeZone}}",
                     "",
-                    "Please confirm, is this {{USER}}'s time zone?",
+                    "يُرجى التأكيد ، هل هذه المنطقة الزمنية لـ {{USER}}؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -392,21 +392,21 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "listGuild": {
-                "title": "Server - {{REF:settings.listDisplay}}",
+                "title": "السيرفر - {{REF:settings.listDisplay}}",
                 "description": [
-                    "Would you like {{COM:bot.name}} to send a list of converted times in chat after a time is mentioned?",
+                    "هل ترغب في أن يرسل {{COM: bot.name}} قائمة بالأوقات المحولة في الدردشة بعد ذكر وقت؟",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} will convert times mentioned in chat to all of the time zones in the server list (`/{{COM:commands.list}} {{COM:subCommands.view}}`). This list will be sent in the same channel as the original message.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} سيحول الأوقات المذكورة في الدردشة إلى جميع المناطق الزمنية في قائمة السيرفر (`/{{COM:commands.list}} {{COM:subCommands.view}}`). سيتم إرسال هذه القائمة في نفس القناة مثل الرسالة الأصلية.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No list will be shown.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. لن يتم عرض أي قائمة.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersGuild": {
-                "title": "Server - {{REF:settings.remindersDisplay}}",
+                "title": "السيرفر - {{REF:settings.remindersDisplay}}",
                 "description": [
-                    "Would you like to remind users to set their time zone?",
+                    "هل ترغب في تذكير المستخدمين بتعيين منطقتهم الزمنية؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -414,9 +414,9 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
-                "title": "User - {{REF:settings.remindersDisplay}}",
+                "title": "المستخدم - {{REF:settings.remindersDisplay}}",
                 "description": [
-                    "Would you like to be reminded to set your time zone?",
+                    "هل ترغب في أن يتم تذكيرك بتعيين منطقتك الزمنية؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -424,9 +424,9 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
-                "title": "Bot - {{REF:settings.dateFormatDisplay}}",
+                "title": "البوت - {{REF:settings.dateFormatDisplay}}",
                 "description": [
-                    "Which format does {{BOT}} most commonly use for dates?",
+                    "ما التنسيق الأكثر شيوعًا لاستخدام {{BOT}} للتواريخ؟",
                     "",
                     "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
@@ -436,9 +436,9 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatUser": {
-                "title": "User - {{REF:settings.dateFormatDisplay}}",
+                "title": "المستخدم - {{REF:settings.dateFormatDisplay}}",
                 "description": [
-                    "Which format do you most commonly use for dates?",
+                    "ما التنسيق الذي تستخدمه بشكل شائع للتواريخ؟",
                     "",
                     "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
@@ -448,9 +448,9 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatGuild": {
-                "title": "Server - {{REF:settings.timeFormatDisplay}}",
+                "title": "السيرفر - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Which time format should be used for times sent in this server?",
+                    "ما تنسيق الوقت الذي يجب استخدامه للأوقات المرسلة في هذا السيرفر؟",
                     "",
                     "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -460,9 +460,9 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatUser": {
-                "title": "User - {{REF:settings.timeFormatDisplay}}",
+                "title": "المستخدم - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "Which time format do you prefer?",
+                    "ما هو تنسيق الوقت الذي تفضله؟",
                     "",
                     "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -472,32 +472,32 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "privateModeUser": {
-                "title": "User - {{REF:settings.privateModeDisplay}}",
+                "title": "المستخدم - {{REF:settings.privateModeDisplay}}",
                 "description": [
-                    "Would you like to keep your time zone and other information private?",
+                    "هل ترغب في الحفاظ على خصوصية منطقتك الزمنية وغيرها من المعلومات؟",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} will prevent showing your information to other users.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} سيمنع عرض معلوماتك للمستخدمين الآخرين.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. I am okay with sharing my information.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. أنا لا امانع  بمشاركة معلوماتي.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageGuild": {
-                "title": "Server - {{REF:settings.languageDisplay}}",
+                "title": "السيرفر - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "What language should be used in this server?",
+                    "ما اللغة التي يجب استخدامها في هذا السيرفر؟",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
-                    "*Note: Users can override this with their own language. {{REF:partials.translateNote}}*"
+                    "*ملاحظة: يمكن للمستخدمين تجاوز هذا بلغتهم الخاصة. {{REF:partials.translateNote}}*"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageUser": {
-                "title": "User - {{REF:settings.languageDisplay}}",
+                "title": "المستخدم - {{REF:settings.languageDisplay}}",
                 "description": [
-                    "What language would you like to use?",
+                    "ما اللغة التي تريد استخدامها؟",
                     "",
                     "{{LANGUAGE_LIST}}",
                     "",
@@ -509,7 +509,7 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, please confirm, would you like to use these settings?",
+                    "{{USER}}, يُرجى التأكيد, هل ترغب في استخدام هذه الإعدادات؟",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -519,14 +519,14 @@
         },
         "resultEmbeds": {
             "collectorExpired": {
-                "description": "Setup has expired. Please try again.",
+                "description": "انتهى الإعداد. حاول مرة اخرى.",
                 "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "You've completed server setup!",
+                    "لقد أكملت من إعداد السيرفر!",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -545,9 +545,9 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "You've completed user setup!",
+                    "لقد أكملت إعداد المستخدم!",
                     "",
-                    "*Note: {{REF:partials.dmWarning}}*",
+                    "*ملاحظة: {{REF:partials.dmWarning}}*",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -566,9 +566,9 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "You've completed user setup!",
+                    "لقد أكملت إعداد المستخدم!",
                     "",
-                    "*Note: {{REF:partials.dmWarning}}*",
+                    "*ملاحظة: {{REF:partials.dmWarning}}*",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -587,7 +587,7 @@
                 "description": [
                     "{{REF:partials.congratulations}}",
                     "",
-                    "You've completed bot setup!",
+                    "لقد أكملت إعداد البوت!",
                     "",
                     "{{SETTING_LIST}}",
                     "\u2800"
@@ -603,134 +603,134 @@
                 "color": "{{COM:colors.success}}"
             },
             "setDeniedUser": {
-                "description": "User setup denied. Your settings have not been updated.",
+                "description": "تم رفض إعداد المستخدم. لم يتم تحديث إعداداتك.",
                 "color": "{{COM:colors.error}}"
             },
             "updatedSettingGuild": {
-                "description": "The server's **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
+                "description": "إعداد السيرفر **{{SETTING_NAME}}** قد تم تعيينه إلى **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "updatedSettingBot": {
-                "description": "{{BOT}}'s **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
+                "description": "إعداد {{BOT}} **{{SETTING_NAME}}** قد تم تعيينه إلى **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "updatedSettingUser": {
-                "description": "Your **{{SETTING_NAME}}** setting has been set to **{{SETTING_VALUE}}**.",
+                "description": "**{{SETTING_NAME}}** الخاص بك قد تم تعيينه إلى **{{SETTING_VALUE}}**.",
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingGuild": {
-                "description": "The server's **{{SETTING_NAME}}** setting has been removed.",
+                "description": "إعداد السيرفر **{{SETTING_NAME}}** تم إزالته.",
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingBot": {
-                "description": "{{BOT}}'s **{{SETTING_NAME}}** setting has been removed.",
+                "description": "**{{SETTING_NAME}}** {{BOT}} تم إزالته.",
                 "color": "{{COM:colors.success}}"
             },
             "removedSettingUser": {
-                "description": "Your **{{SETTING_NAME}}** setting has been removed.",
+                "description": " **{{SETTING_NAME}}** الخاص بك تم إزالته.",
                 "color": "{{COM:colors.success}}"
             },
             "removedGuild": {
-                "description": "This server's data has been removed.",
+                "description": "تمت إزالة بيانات هذا السيرفر.",
                 "color": "{{COM:colors.success}}"
             },
             "removedBot": {
-                "description": "{{BOT}}'s data has been removed.",
+                "description": "تمت إزالة بيانات {{BOT}}.",
                 "color": "{{COM:colors.success}}"
             },
             "removedUser": {
-                "description": "Your data has been removed.",
+                "description": "تمت إزالة بياناتك.",
                 "color": "{{COM:colors.success}}"
             },
             "addedListItem": {
-                "description": "**{{TIME_ZONE}}** has been added to the server's time zone list.",
+                "description": "تمت إضافة ** {{TIME_ZONE}} ** إلى قائمة المنطقة الزمنية للسيرفر.",
                 "color": "{{COM:colors.success}}"
             },
             "removedListItem": {
-                "description": "**{{TIME_ZONE}}** has been removed from the server's time zone list.",
+                "description": "تمت إزالة ** {{TIME_ZONE}} ** من قائمة المنطقة الزمنية للسيرفر.",
                 "color": "{{COM:colors.success}}"
             }
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
-                "title": "Slash Commands Update",
+                "title": "تحديث أوامر سلاش (Slash)",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
+                    "{{COM:bot.name}} يستخدم الآن **أوامر سلاش (Slash)**! جربها من خلال كتابة `/{{COM:commands.help}}`!",
                     "",
-                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
+                    "إذا كنت لا ترى أي أوامر سلاش (Slash) مدرجة لـ {{COM:bot.name}}:",
                     "",
-                    "1. Check that you have the **Use Application Commands** permission in this channel.",
-                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
-                    "3. Join our [support server]({{COM:links.support}}) for help."
+                    "1. تحقق من أن لديك إذن **Use Application Commands**  في هذه القناة.",
+                    "2. جرب طرد و [إعادة دعوة {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. إنضم إلى [سيرفر الدعم]({{COM:links.support}}) للمساعدة."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
             "cooldownHit": {
-                "description": "You can only run this command {{AMOUNT}} time(s) every {{INTERVAL}}. Please wait before attempting this command again.",
+                "description": "يمكنك استخدامه هذا الأمر  {{AMOUNT}} مررة كل {{INTERVAL}}. الرجاء الانتظار قبل محاولة استخدام هذا الأمر مجددًا.",
                 "color": "{{COM:colors.warning}}"
             },
             "devOnlyCommand": {
-                "description": "This command can only be used by developers.",
+                "description": "لا يمكن استخدام هذا الأمر إلا من قبل المطورين.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
-                "description": "This command can only be used in a server.",
+                "description": "لا يمكن استخدام هذا الأمر إلا في سيرفر.",
                 "color": "{{COM:colors.warning}}"
             },
             "missingClientPerms": {
                 "description": [
-                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "أنا ليس لدي كل الأذونات المطلوبة لإستخدام هذا الأمر هنا! الرجاء التحقق من أذونات السيرفر والقناة للتأكد على حصولي لهذه الأذونات.",
                     "",
-                    "Required permissions: {{PERMISSIONS}}"
+                    "الأذونات المطلوبة: {{PERMISSIONS}}"
                 ],
                 "color": "{{COM:colors.warning}}"
             },
             "missingUserPerms": {
-                "description": "You don't have permission to run that command!",
+                "description": "ليس لديك الإذن لاستخدام هذا الأمر!",
                 "color": "{{COM:colors.warning}}"
             },
             "notFoundSetting": {
-                "description": "Setting not found.",
+                "description": "الإعداد غير موجود.",
                 "color": "{{COM:colors.error}}"
             },
             "notFoundBot": {
                 "description": [
-                    "Bot not found or not setup yet.",
+                    "لم يتم العثور على البوت أو لم يتم إعداده بعد.",
                     "",
-                    "Type `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` to setup a new bot."
+                    "اكتب `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` لإعداد بوت جديد."
                 ],
                 "color": "{{COM:colors.error}}"
             },
             "notFoundUser": {
-                "description": "User not found.",
+                "description": "لم يتم العثور على المستخدم.",
                 "color": "{{COM:colors.error}}"
             },
             "invalidTimeZone": {
-                "description": "Invalid time zone, try again!",
+                "description": "المنطقة الزمنية غير صحيحة ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
-                "description": "Invalid date format, try again!",
+                "description": "تنسيق التاريخ غير صالح ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
-                "description": "Invalid time format, try again!",
+                "description": "تنسيق الوقت غير صالح ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
-                "description": "Invalid yes or no response, try again!",
+                "description": "رد نعم أو لا غير صالح ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidLanguage": {
-                "description": "Invalid language, try again!",
+                "description": "لغة غير صحيحة ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "privateModeEnabled": {
                 "description": [
-                    "You have private mode enabled!",
+                    "لديك وضع خاص يعمل!",
                     "",
-                    "Please rerun this command in a DM to not expose your information."
+                    "يرجى إعادة اتسخدام هذا الأمر في رسالة خاصة لعدم كشف معلوماتك."
                 ],
                 "color": "{{COM:colors.warning}}"
             },
@@ -739,43 +739,43 @@
                 "color": "{{COM:colors.warning}}"
             },
             "notAllowedSetClient": {
-                "description": "You cannot run user setup for {{COM:bot.name}}!",
+                "description": "لا يمكنك تشغيل إعداد المستخدم لـ{{COM:bot.name}}!",
                 "color": "{{COM:colors.warning}}"
             },
             "maxLimitList": {
-                "description": "This server already has the maximum number of time zones in the list!",
+                "description": "يحتوي هذا السيرفر بالفعل على الحد الأقصى لعدد المناطق الزمنية في القائمة!",
                 "color": "{{COM:colors.warning}}"
             },
             "maxLimitBots": {
-                "description": "This server already has the maximum number of bot setups allowed!",
+                "description": "يحتوي هذا السيرفر بالفعل على أقصى عدد مسموح به من إعدادات البوت!",
                 "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneServer": {
-                "description": "The server doesn't have a time zone set yet!",
+                "description": "لم يتم تعيين منطقة زمنية للسيرفر حتى الآن!",
                 "color": "{{COM:colors.warning}}"
             },
             "noTimeZoneUser": {
-                "description": "{{USER}} doesn't have a time zone set yet!",
+                "description": "{{USER}} ليس لديه منطقة زمنية حتى الآن!",
                 "color": "{{COM:colors.warning}}"
             }
         },
         "errorEmbeds": {
             "command": {
-                "description": "Something went wrong!",
+                "description": "هناك خطأ ما!",
                 "fields": [
                     {
-                        "name": "Error code",
+                        "name": "خطا بالكود",
                         "value": "{{ERROR_CODE}}"
                     },
                     {
-                        "name": "Contact support",
+                        "name": "تواصل مع الدعم",
                         "value": "{{COM:links.support}}"
                     }
                 ],
                 "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "{{COM:bot.name}} is still starting up. Try again later.",
+                "description": "لا يزال {{COM: bot.name}} قيد التشغيل. حاول مرة أخرى في وقت لاحق.",
                 "color": "{{COM:colors.warning}}"
             }
         },
@@ -794,61 +794,61 @@
             "translators": "[TheQuadOne#9196](https://thequadone.carrd.co/)"
         },
         "bot": {
-            "description": "{{COM:bot.name}} helps your server coordinate times and events by converting times mentioned in chat between time zones!"
+            "description": "{{COM:bot.name}} يساعد سيرفرك في تنسيق الأوقات والأحداث عن طريق تحويل الأوقات المذكورة في الدردشة بين المناطق الزمنية!"
         },
         "commandDescs": {
-            "bot": "Manage bot settings.",
-            "botList": "View list of bots.",
-            "botView": "View a bot's settings.",
-            "botEdit": "Change a bot setting.",
-            "botRemove": "Remove a bot.",
-            "dev": "View developer info.",
-            "help": "View help menu and list of commands.",
-            "info": "View bot info.",
-            "link": "Get links to invite, support, etc.",
-            "list": "Manage the server time zone list.",
-            "listView": "View the server time zone list.",
-            "listToggle": "Add or remove to the server time zone list.",
-            "map": "View the zone map.",
-            "me": "Manage your user settings.",
-            "meView": "View your user settings.",
-            "meEdit": "Change a user setting.",
-            "meRemove": "Remove all your user data.",
-            "server": "Manage server settings.",
-            "serverView": "View server settings.",
-            "serverEdit": "Change a server setting.",
-            "serverRemove": "Remove all server data.",
-            "set": "Run the user setup (for yourself, a user, or bot).",
-            "setMe": "Run the user setup for yourself.",
-            "setUser": "Run the user setup for a user or bot.",
-            "setup": "Run the server setup.",
-            "time": "View the time of the server, user, bot, or zone.",
-            "timeServer": "View the time of the server.",
-            "timeUser": "View the time of a user or bot.",
-            "timeZone": "View the time of a zone.",
-            "translate": "View translation info."
+            "bot": "إدارة إعدادات البوت.",
+            "botList": "عرض قائمة الروبوتات.",
+            "botView": "عرض إعدادات البوت.",
+            "botEdit": "تغيير إعداد البوت.",
+            "botRemove": "إزالة بوت.",
+            "dev": "عرض معلومات المطور.",
+            "help": "عرض قائمة المساعدة وقائمة الأوامر.",
+            "info": "عرض معلومات البوت.",
+            "link": "احصل على روابط للدعوة والدعم الخ...",
+            "list": "إدارة قائمة المنطقة الزمنية للسيرفر.",
+            "listView": "اعرض قائمة المنطقة الزمنية للسيرفر.",
+            "listToggle": "إضافة أو إزالة إلى قائمة المنطقة الزمنية للسيرفر.",
+            "map": "اعرض خريطة المناطق الزمنية.",
+            "me": "إدارة إعدادات المستخدم الخاصة بك.",
+            "meView": "عرض إعدادات المستخدم الخاصة بك.",
+            "meEdit": "تغيير إعدادات مستخدم.",
+            "meRemove": "قم بإزالة جميع بيانات المستخدم الخاصة بك.",
+            "server": "إدارة إعدادات السيرفر.",
+            "serverView": "اعرض إعدادات السيرفر.",
+            "serverEdit": "تغيير إعدادات السيرفر.",
+            "serverRemove": "قم بإزالة كافة بيانات السيرفر.",
+            "set": "قم بتشغيل إعداد المستخدم (لنفسك أو لمستخدم أو لبوت).",
+            "setMe": "قم بتشغيل إعداد المستخدم لنفسك.",
+            "setUser": "قم بتشغيل إعداد المستخدم لمستخدم أو بوت.",
+            "setup": "قم بتشغيل إعداد السيرفر.",
+            "time": "اعرض وقت السيرفر أو مستخدم أو روبوت أو منطقة.",
+            "timeServer": "عرض وقت السيرفر.",
+            "timeUser": "عرض وقت مستخدم أو بوت.",
+            "timeZone": "عرض وقت منطقة.",
+            "translate": "عرض معلومات الترجمة."
         },
         "settings": {
-            "autoDetectDisplay": "Auto-Detect",
-            "dateFormatDisplay": "Date Format",
-            "languageDisplay": "Language",
-            "listDisplay": "List",
-            "privateModeDisplay": "Private Mode",
-            "remindersDisplay": "Reminders",
-            "timeFormatDisplay": "Time Format",
-            "timeZoneDisplay": "Time Zone"
+            "autoDetectDisplay": "اكتشاف تلقائي",
+            "dateFormatDisplay": "صيغة التاريخ",
+            "languageDisplay": "اللغة",
+            "listDisplay": "قائمة",
+            "privateModeDisplay": "وضع الخاص",
+            "remindersDisplay": "تذكيرات",
+            "timeFormatDisplay": "صيغة الوقت",
+            "timeZoneDisplay": "منطقة زمنية"
         },
         "dateFormat": {
-            "monthDayDisplay": "Month/Day",
-            "dayMonthDisplay": "Day/Month"
+            "monthDayDisplay": "شهر/يوم",
+            "dayMonthDisplay": "يوم/شهر"
         },
         "timeFormat": {
-            "twelveHourDisplay": "12-Hour",
-            "twentyFourHourDisplay": "24-Hour"
+            "twelveHourDisplay": "12 ساعة",
+            "twentyFourHourDisplay": "24 ساعة"
         },
         "yesNo": {
-            "yesDisplay": "Yes",
-            "noDisplay": "No"
+            "yesDisplay": "نعم",
+            "noDisplay": "لا"
         },
         "lists": {
             "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
@@ -858,9 +858,9 @@
                 ""
             ],
             "timeZoneItem": "- **{{TIME_ZONE}}**",
-            "timeZoneNone": "*This server has no time zones in the list.*",
+            "timeZoneNone": "*هذا السيرفر ليس لديه مناطق زمنية في القائمة.*",
             "botItem": "- {{BOT}}",
-            "botNone": "*This server has no bot setups.*",
+            "botNone": "*هذا السيرفر ليس لديه إعدادات بوت.*",
             "timeTextItem": "> {{TIME_TEXT}}",
             "timeTextWithPosItem": "> **{{POSITION}}**. {{TIME_TEXT}}",
             "timeTextAndTimeItem": ["> {{TIME_TEXT}}", "**{{TIME_START}}**", ""],
@@ -880,7 +880,7 @@
             "links": "روابط"
         },
         "footers": {
-            "collector": "Enter your response below (or '{{COM:keywords.stop}}' to cancel)."
+            "collector": "أدخل إجابتك أدناه (أو '{{COM:keywords.stop}}' لللإلغاء)."
         },
         "permissions": {
             "ADD_REACTIONS": "Add Reactions",
@@ -928,36 +928,36 @@
             "VIEW_GUILD_INSIGHTS": "View Server Insights"
         },
         "other": {
-            "na": "N/A",
-            "private": "Private"
+            "na": "غير متاح",
+            "private": "خاص"
         },
         "links": {
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
-            "docsEmbed": "[View Documentation]({{COM:links.docs}}/)",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
-            "inviteEmbed": "[Invite {{COM:bot.name}} to a Server!]({{COM:links.invite}})",
-            "mapEmbed": "[Time Zone Map]({{COM:links.map}})",
-            "sourceEmbed": "[View Source Code]({{COM:links.source}})",
-            "supportEmbed": "[Join Support Server]({{COM:links.support}})",
+            "docsEmbed": "[عرض التوثيق]({{COM:links.docs}}/)",
+            "donateEmbed": "[تبرع بواسطة PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[ادعو {{COM:bot.name}} لسيرفر!]({{COM:links.invite}})",
+            "mapEmbed": "[خريطة منطقة زمنية]({{COM:links.map}})",
+            "sourceEmbed": "[عرض Source Code]({{COM:links.source}})",
+            "supportEmbed": "[انضم لسيرفر الدعم]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "voteEmbed": "[Vote for {{COM:bot.name}}!]({{COM:links.vote}})"
+            "voteEmbed": "[صوت إلى {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {
-            "congratulations": "🎉 Congratulations! 🎉",
+            "congratulations": "🎉 مبروك! 🎉",
             "yesOrNo": [
                 "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
                 "",
                 "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
             ],
-            "italicizedDefaults": "*Italicized* settings are defaults.",
-            "timeInTimeZone": "In **{{TIME_ZONE}}** it is currently **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
+            "italicizedDefaults": "*مائل* الإعدادات الافتراضية.",
+            "timeInTimeZone": "في **{{TIME_ZONE}}** إنها حاليًا **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
-                "You can find time zones by using the __{{REF:links.mapEmbed}}__.",
+                "يمكنك العثور على المناطق الزمنية باستخدام __{{REF:links.mapEmbed}}__.",
                 "",
-                "Simply **select a location on the map** to see the time zone name."
+                "ببساطة **حدد موقعًا على الخريطة** لمعرفة اسم المنطقة الزمنية."
             ],
-            "translateNote": "Type `/{{COM:commands.translate}}` to learn more about translations.",
-            "dmWarning": "Some commands require DMs allowed in at least one server you share with {{COM:bot.name}}."
+            "translateNote": "اكتب `/{{COM:commands.translate}}` لمعرفة المزيد عن الترجمات.",
+            "dmWarning": "تتطلب بعض الأوامر السماح برسائل مباشرة في سيرفر واحد على الأقل تشاركه مع {{COM:bot.name}}."
         }
     }
 }

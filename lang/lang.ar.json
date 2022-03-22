@@ -77,7 +77,7 @@
                         "name": "{{REF:fields.actions}}",
                         "value": [
                             "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Enable or disable the list."
+                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - تفعيل أو تعطيل القائمة."
                         ]
                     }
                 ]
@@ -298,7 +298,7 @@
                     "",
                     "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. سيتم الكشف عن الأوقات في الدردشة تلقائيًا.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. الأوقات في الدردشة **لن** يتم كشفها تلقائيًا. يجب أن يكون رمز تعبيري (Emoji) 🕰️ موجودًا في رسالة حتى يتم التعرف عليه وتحويله.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. الأوقات في الدردشة **لن** يتم كشفها تلقائيًا. يجب أن يكون رمز تعبيري (اللإموجي) 🕰️ موجودًا في رسالة حتى يتم التعرف عليه وتحويله.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -394,9 +394,9 @@
             "listGuild": {
                 "title": "السيرفر - {{REF:settings.listDisplay}}",
                 "description": [
-                    "هل ترغب في أن يرسل {{COM: bot.name}} قائمة بالأوقات المحولة في الدردشة بعد ذكر وقت؟",
+                    "هل ترغب في أن يرسل {{COM:bot.name}} قائمة بالأوقات المحولة في الدردشة بعد ذكر وقت؟",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} سيحول الأوقات المذكورة في الدردشة إلى جميع المناطق الزمنية في قائمة السيرفر (`/{{COM:commands.list}} {{COM:subCommands.view}}`). سيتم إرسال هذه القائمة في نفس القناة مثل الرسالة الأصلية.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}.  سيحول {{COM:bot.name}} (`/{{COM:commands.list}} {{COM:subCommands.view}}`) الأوقات المذكورة في الدردشة إلى جميع المناطق الزمنية في قائمة السيرفر . سيتم إرسال هذه القائمة في نفس القناة مثل الرسالة الأصلية.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. لن يتم عرض أي قائمة.",
                     "\u2800"
@@ -426,7 +426,7 @@
             "dateFormatBot": {
                 "title": "البوت - {{REF:settings.dateFormatDisplay}}",
                 "description": [
-                    "ما التنسيق الأكثر شيوعًا لاستخدام {{BOT}} للتواريخ؟",
+                    "ما الصيغة الأكثر شيوعًا لاستخدام {{BOT}} للتواريخ؟",
                     "",
                     "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
@@ -438,7 +438,7 @@
             "dateFormatUser": {
                 "title": "المستخدم - {{REF:settings.dateFormatDisplay}}",
                 "description": [
-                    "ما التنسيق الذي تستخدمه بشكل شائع للتواريخ؟",
+                    "ما الصيغة الذي تستخدمه بشكل شائع للتواريخ؟",
                     "",
                     "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
                     "",
@@ -450,7 +450,7 @@
             "timeFormatGuild": {
                 "title": "السيرفر - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "ما تنسيق الوقت الذي يجب استخدامه للأوقات المرسلة في هذا السيرفر؟",
+                    "ما صيغة الوقت الذي يجب استخدامه للأوقات المرسلة في هذا السيرفر؟",
                     "",
                     "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -462,7 +462,7 @@
             "timeFormatUser": {
                 "title": "المستخدم - {{REF:settings.timeFormatDisplay}}",
                 "description": [
-                    "ما هو تنسيق الوقت الذي تفضله؟",
+                    "ما هو صيغة الوقت الذي تفضله؟",
                     "",
                     "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
                     "",
@@ -476,7 +476,7 @@
                 "description": [
                     "هل ترغب في الحفاظ على خصوصية منطقتك الزمنية وغيرها من المعلومات؟",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} سيمنع عرض معلوماتك للمستخدمين الآخرين.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. سيمنع {{COM:bot.name}} عرض معلوماتك للمستخدمين الآخرين.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. أنا لا امانع  بمشاركة معلوماتي.",
                     "\u2800"
@@ -711,11 +711,11 @@
                 "color": "{{COM:colors.error}}"
             },
             "invalidDateFormat": {
-                "description": "تنسيق التاريخ غير صالح ، حاول مرة أخرى!",
+                "description": "صيغة التاريخ غير صالح ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidTimeFormat": {
-                "description": "تنسيق الوقت غير صالح ، حاول مرة أخرى!",
+                "description": "صيغة الوقت غير صالح ، حاول مرة أخرى!",
                 "color": "{{COM:colors.error}}"
             },
             "invalidYesNo": {
@@ -839,12 +839,12 @@
             "timeZoneDisplay": "منطقة زمنية"
         },
         "dateFormat": {
-            "monthDayDisplay": "شهر/يوم",
-            "dayMonthDisplay": "يوم/شهر"
+            "monthDayDisplay": "يوم/شهر",
+            "dayMonthDisplay": "شهر/يوم"
         },
         "timeFormat": {
-            "twelveHourDisplay": "12 ساعة",
-            "twentyFourHourDisplay": "24 ساعة"
+            "twelveHourDisplay": "صيغة الـ12 ساعة",
+            "twentyFourHourDisplay": "صيغة الـ24 ساعة"
         },
         "yesNo": {
             "yesDisplay": "نعم",
@@ -880,7 +880,7 @@
             "links": "روابط"
         },
         "footers": {
-            "collector": "أدخل إجابتك أدناه (أو '{{COM:keywords.stop}}' لللإلغاء)."
+            "collector": "أدخل إجابتك أدناه (أو '{{COM:keywords.stop}}' للإلغاء)."
         },
         "permissions": {
             "ADD_REACTIONS": "Add Reactions",

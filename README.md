@@ -11,7 +11,7 @@
 
 ## [Add to your Discord Server!](https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056)
 
-[Documentation](https://docs.friendtime.ml/) \| [Support Server](https://discord.gg/GQcBR8e) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
+[Documentation](https://novakevin.gitbook.io/friend-time/) \| [Support Server](https://discord.gg/GQcBR8e) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 
 ## Introduction
 
@@ -27,22 +27,22 @@ By also reacting, you will be private messaged with the time converted to your t
 
 ## Features
 
--   Automatically reacts with a [**clock emoji**](https://docs.friendtime.ml/time-conversions#1-convert-to-your-time-zone) \(️️🕰️\) to times mentioned in chat.
+-   Automatically reacts with a [**clock emoji**](https://novakevin.gitbook.io/friend-time/time-conversions#1-convert-to-your-time-zone) \(️️🕰️\) to times mentioned in chat.
     -   Clicking the clock emoji **converts the time** to your time zone.
     -   Sent in a direct message.
--   A [**time zone list**](https://docs.friendtime.ml/time-conversions#2-convert-to-list-of-time-zones) where you can set up to 10 time zones to always convert to.
+-   A [**time zone list**](https://novakevin.gitbook.io/friend-time/time-conversions#2-convert-to-list-of-time-zones) where you can set up to 10 time zones to always convert to.
     -   Sent in the server channel.
 -   **Reminders** for users to set their time zones.
     -   Servers and users can disable this reminder if desired.
--   Set [**time zones for other users**](https://docs.friendtime.ml/commands/user-commands/set#setup-for-another-user) or even [**bots**](https://docs.friendtime.ml/commands/user-commands/set#setup-for-a-bot)!
--   A [**private mode**](https://docs.friendtime.ml/settings/user-settings/private-mode) for users who don't want to expose their location.
+-   Set [**time zones for other users**](https://novakevin.gitbook.io/friend-time/commands/user-commands/set#setup-for-another-user) or even [**bots**](https://novakevin.gitbook.io/friend-time/commands/user-commands/set#setup-for-a-bot)!
+-   A [**private mode**](https://novakevin.gitbook.io/friend-time/settings/user-settings/private-mode) for users who don't want to expose their location.
 -   Customize the **appearance of times** \(12 or 24 hour\).
 -   Support for **multiple languages**.
 
 ## Documentation
 
-Please see the [documentation site](https://docs.friendtime.ml/) for more detailed information on how to use Friend Time.
+Please see the [documentation site](https://novakevin.gitbook.io/friend-time/) for more detailed information on how to use Friend Time.
 
 ## Self-Hosting
 
-If you'd like to run your own copy of Friend Time for development or personal reasons, see the [self-hosting guide](https://docs.friendtime.ml/misc/self-hosting).
+If you'd like to run your own copy of Friend Time for development or personal reasons, see the [self-hosting guide](https://novakevin.gitbook.io/friend-time/misc/self-hosting).

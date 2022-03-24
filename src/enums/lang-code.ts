@@ -3,6 +3,7 @@ export enum LangCode {
     ES = 'es',
     PT_BR = 'pt-BR',
     FR = 'fr',
+    AR = 'ar',
     RU = 'ru',
     DE = 'de',
     IT = 'it',

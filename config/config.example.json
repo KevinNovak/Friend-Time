@@ -78,7 +78,7 @@
         "promptExpireTime": 120
     },
     "reactions": {
-        "convert": "🕰️"
+        "convert": "🕰"
     },
     "validation": {
         "timeResults": {

@@ -768,6 +768,14 @@
                         "value": "{{ERROR_CODE}}"
                     },
                     {
+                        "name": "Server ID",
+                        "value": "{{GUILD_ID}}"
+                    },
+                    {
+                        "name": "Shard ID",
+                        "value": "{{SHARD_ID}}"
+                    },
+                    {
                         "name": "Kontaktu subtenon",
                         "value": "{{COM:links.support}}"
                     }

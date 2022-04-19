@@ -763,6 +763,14 @@
                         "value": "{{ERROR_CODE}}"
                     },
                     {
+                        "name": "Server ID",
+                        "value": "{{GUILD_ID}}"
+                    },
+                    {
+                        "name": "Shard ID",
+                        "value": "{{SHARD_ID}}"
+                    },
+                    {
                         "name": "Свяжитесь с поддержкой",
                         "value": "{{COM:links.support}}"
                     }

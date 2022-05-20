@@ -18,6 +18,7 @@ export class ListCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.list'),
         description: Lang.getRef('commandDescs.list', Lang.Default),
+        dm_permission: false,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
@@ -41,7 +42,6 @@ export class ListCommand implements Command {
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
-    public requireGuild = true;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 

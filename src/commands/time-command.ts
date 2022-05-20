@@ -31,6 +31,7 @@ export class TimeCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.time'),
         description: Lang.getRef('commandDescs.time', Lang.Default),
+        dm_permission: true,
         options: [
             {
                 name: Lang.getCom('subCommands.server'),
@@ -67,7 +68,6 @@ export class TimeCommand implements Command {
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
-    public requireGuild = false;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = [];
 

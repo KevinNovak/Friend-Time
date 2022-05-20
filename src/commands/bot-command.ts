@@ -19,6 +19,7 @@ export class BotCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
+        dm_permission: false,
         options: [
             {
                 name: Lang.getCom('subCommands.list'),
@@ -84,7 +85,6 @@ export class BotCommand implements Command {
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
-    public requireGuild = true;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 

@@ -16,6 +16,7 @@ export class MeCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
+        dm_permission: true,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
@@ -54,7 +55,6 @@ export class MeCommand implements Command {
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
-    public requireGuild = false;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = [];
 

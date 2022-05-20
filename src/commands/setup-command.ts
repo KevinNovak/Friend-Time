@@ -12,10 +12,10 @@ export class SetupCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
+        dm_permission: false,
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;
-    public requireGuild = true;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 

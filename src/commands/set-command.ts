@@ -1,12 +1,8 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import {
-    ChatInputApplicationCommandData,
-    CommandInteraction,
-    DMChannel,
-    Message,
-    Permissions,
-    PermissionString,
-} from 'discord.js';
+    ApplicationCommandOptionType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
+import { CommandInteraction, DMChannel, Message, Permissions, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
@@ -23,24 +19,24 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 
 export class SetCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.set'),
         description: Lang.getRef('commandDescs.set', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.me'),
                 description: Lang.getRef('commandDescs.setMe', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.user'),
                 description: Lang.getRef('commandDescs.setUser', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.user'),
                         description: 'User or bot.',
-                        type: ApplicationCommandOptionType.User.valueOf(),
+                        type: ApplicationCommandOptionType.User,
                         required: true,
                     },
                 ],

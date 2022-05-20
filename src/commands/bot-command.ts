@@ -1,5 +1,8 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
-import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import {
+    ApplicationCommandOptionType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
+import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData } from '../database/entities/index.js';
@@ -13,24 +16,24 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class BotCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.list'),
                 description: Lang.getRef('commandDescs.botList', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.view'),
                 description: Lang.getRef('commandDescs.botView', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.bot'),
                         description: 'Bot.',
-                        type: ApplicationCommandOptionType.User.valueOf(),
+                        type: ApplicationCommandOptionType.User,
                         required: true,
                     },
                 ],
@@ -38,18 +41,18 @@ export class BotCommand implements Command {
             {
                 name: Lang.getCom('subCommands.edit'),
                 description: Lang.getRef('commandDescs.botEdit', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.bot'),
                         description: 'Bot.',
-                        type: ApplicationCommandOptionType.User.valueOf(),
+                        type: ApplicationCommandOptionType.User,
                         required: true,
                     },
                     {
                         name: Lang.getCom('arguments.setting'),
                         description: 'Setting.',
-                        type: ApplicationCommandOptionType.String.valueOf(),
+                        type: ApplicationCommandOptionType.String,
                         required: true,
                         choices: this.settingManager.settings.map(setting => ({
                             name: setting.name,
@@ -59,7 +62,7 @@ export class BotCommand implements Command {
                     {
                         name: Lang.getCom('arguments.reset'),
                         description: 'Reset setting to default?',
-                        type: ApplicationCommandOptionType.Boolean.valueOf(),
+                        type: ApplicationCommandOptionType.Boolean,
                         required: false,
                     },
                 ],
@@ -67,12 +70,12 @@ export class BotCommand implements Command {
             {
                 name: Lang.getCom('subCommands.remove'),
                 description: Lang.getRef('commandDescs.botRemove', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.bot'),
                         description: 'Bot.',
-                        type: ApplicationCommandOptionType.User.valueOf(),
+                        type: ApplicationCommandOptionType.User,
                         required: true,
                     },
                 ],

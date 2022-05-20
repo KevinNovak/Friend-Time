@@ -1,4 +1,5 @@
-import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import { RESTPostAPIChatInputApplicationCommandsJSONBody } from 'discord-api-types/v10';
+import { CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -8,7 +9,7 @@ import { InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class SetupCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
     };

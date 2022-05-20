@@ -1,5 +1,8 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
-import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import {
+    ApplicationCommandOptionType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
+import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
@@ -25,24 +28,24 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class TimeCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.time'),
         description: Lang.getRef('commandDescs.time', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.server'),
                 description: Lang.getRef('commandDescs.timeServer', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.user'),
                 description: Lang.getRef('commandDescs.timeUser', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.user'),
                         description: 'User or bot.',
-                        type: ApplicationCommandOptionType.User.valueOf(),
+                        type: ApplicationCommandOptionType.User,
                         required: true,
                     },
                 ],
@@ -50,12 +53,12 @@ export class TimeCommand implements Command {
             {
                 name: Lang.getCom('subCommands.zone'),
                 description: Lang.getRef('commandDescs.timeZone', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.zone'),
                         description: 'Time zone name. Ex: America/New_York',
-                        type: ApplicationCommandOptionType.String.valueOf(),
+                        type: ApplicationCommandOptionType.String,
                         required: true,
                     },
                 ],

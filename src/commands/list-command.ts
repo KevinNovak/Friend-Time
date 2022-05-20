@@ -1,5 +1,8 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
-import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
+import {
+    ApplicationCommandOptionType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
+import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../database/entities/index.js';
@@ -12,24 +15,24 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
 export class ListCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.list'),
         description: Lang.getRef('commandDescs.list', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
                 description: Lang.getRef('commandDescs.listView', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.toggle'),
                 description: Lang.getRef('commandDescs.listToggle', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.zone'),
                         description: 'Time zone name. Ex: America/New_York',
-                        type: ApplicationCommandOptionType.String.valueOf(),
+                        type: ApplicationCommandOptionType.String,
                         required: true,
                     },
                 ],

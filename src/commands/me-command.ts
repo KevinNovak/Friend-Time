@@ -1,10 +1,8 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import {
-    ChatInputApplicationCommandData,
-    CommandInteraction,
-    DMChannel,
-    PermissionString,
-} from 'discord.js';
+    ApplicationCommandOptionType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
+import { CommandInteraction, DMChannel, PermissionString } from 'discord.js';
 
 import { UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -15,24 +13,24 @@ import { InteractionUtils } from '../utils/index.js';
 import { Command, CommandDeferType } from './index.js';
 
 export class MeCommand implements Command {
-    public metadata: ChatInputApplicationCommandData = {
+    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
                 description: Lang.getRef('commandDescs.meView', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.edit'),
                 description: Lang.getRef('commandDescs.meEdit', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
                         name: Lang.getCom('arguments.setting'),
                         description: 'Setting.',
-                        type: ApplicationCommandOptionType.String.valueOf(),
+                        type: ApplicationCommandOptionType.String,
                         required: true,
                         choices: this.settingManager.settings.map(setting => ({
                             name: setting.name,
@@ -42,7 +40,7 @@ export class MeCommand implements Command {
                     {
                         name: Lang.getCom('arguments.reset'),
                         description: 'Reset setting to default?',
-                        type: ApplicationCommandOptionType.Boolean.valueOf(),
+                        type: ApplicationCommandOptionType.Boolean,
                         required: false,
                     },
                 ],
@@ -50,7 +48,7 @@ export class MeCommand implements Command {
             {
                 name: Lang.getCom('subCommands.remove'),
                 description: Lang.getRef('commandDescs.meRemove', Lang.Default),
-                type: ApplicationCommandOptionType.Subcommand.valueOf(),
+                type: ApplicationCommandOptionType.Subcommand,
             },
         ],
     };

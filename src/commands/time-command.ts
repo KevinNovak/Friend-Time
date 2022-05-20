@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionType } from 'discord-api-types/v9';
+import { ApplicationCommandOptionType } from 'discord-api-types/v10';
 import { ChatInputApplicationCommandData, CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 

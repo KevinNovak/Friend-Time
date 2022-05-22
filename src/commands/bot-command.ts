@@ -20,6 +20,7 @@ export class BotCommand implements Command {
         name: Lang.getCom('commands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
         dm_permission: false,
+        default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.list'),

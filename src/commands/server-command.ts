@@ -16,6 +16,7 @@ export class ServerCommand implements Command {
         name: Lang.getCom('commands.server'),
         description: Lang.getRef('commandDescs.server', Lang.Default),
         dm_permission: false,
+        default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),

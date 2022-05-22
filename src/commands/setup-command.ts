@@ -13,6 +13,7 @@ export class SetupCommand implements Command {
         name: Lang.getCom('commands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
         dm_permission: false,
+        default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;

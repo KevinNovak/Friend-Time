@@ -11,6 +11,7 @@ export class MapCommand implements Command {
         name: Lang.getCom('commands.map'),
         description: Lang.getRef('commandDescs.map', Lang.Default),
         dm_permission: true,
+        default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;

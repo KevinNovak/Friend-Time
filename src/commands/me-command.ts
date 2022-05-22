@@ -17,6 +17,7 @@ export class MeCommand implements Command {
         name: Lang.getCom('commands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         dm_permission: true,
+        default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),

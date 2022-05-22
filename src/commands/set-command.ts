@@ -23,6 +23,7 @@ export class SetCommand implements Command {
         name: Lang.getCom('commands.set'),
         description: Lang.getRef('commandDescs.set', Lang.Default),
         dm_permission: true,
+        default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.me'),

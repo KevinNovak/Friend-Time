@@ -19,6 +19,7 @@ export class ListCommand implements Command {
         name: Lang.getCom('commands.list'),
         description: Lang.getRef('commandDescs.list', Lang.Default),
         dm_permission: false,
+        default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),

@@ -13,6 +13,7 @@ export class TranslateCommand implements Command {
         name: Lang.getCom('commands.translate'),
         description: Lang.getRef('commandDescs.translate', Lang.Default),
         dm_permission: true,
+        default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;

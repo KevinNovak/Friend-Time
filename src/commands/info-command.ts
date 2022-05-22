@@ -11,6 +11,7 @@ export class InfoCommand implements Command {
         name: Lang.getCom('commands.info'),
         description: Lang.getRef('commandDescs.info', Lang.Default),
         dm_permission: true,
+        default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
     public requireDev = false;

@@ -6,10 +6,8 @@ import { Button } from './buttons/index.js';
 import {
     BotCommand,
     Command,
-    DevCommand,
     HelpCommand,
     InfoCommand,
-    LinkCommand,
     ListCommand,
     MapCommand,
     MeCommand,
@@ -17,7 +15,6 @@ import {
     SetCommand,
     SetupCommand,
     TimeCommand,
-    TranslateCommand,
 } from './commands/index.js';
 import { Database } from './database/database.js';
 import {
@@ -126,10 +123,8 @@ async function start(): Promise<void> {
     // Commands
     let commands: Command[] = [
         new BotCommand(botSettingManager),
-        new DevCommand(),
         new HelpCommand(),
         new InfoCommand(),
-        new LinkCommand(),
         new ListCommand(),
         new MapCommand(),
         new MeCommand(userSettingManager, userPrivateModeSetting),
@@ -143,7 +138,6 @@ async function start(): Promise<void> {
             userTimeFormatSetting,
             userPrivateModeSetting
         ),
-        new TranslateCommand(),
     ].sort((a, b) => (a.metadata.name > b.metadata.name ? 1 : -1));
 
     // Buttons

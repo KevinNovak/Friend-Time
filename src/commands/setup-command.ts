@@ -16,7 +16,6 @@ export class SetupCommand implements Command {
         default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
-    public requireDev = false;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 

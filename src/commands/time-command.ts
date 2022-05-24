@@ -68,7 +68,6 @@ export class TimeCommand implements Command {
         ],
     };
     public deferType = CommandDeferType.PUBLIC;
-    public requireDev = false;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = [];
 

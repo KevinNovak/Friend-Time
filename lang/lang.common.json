@@ -5,18 +5,15 @@
     },
     "commands": {
         "bot": "bot",
-        "dev": "dev",
         "help": "help",
         "info": "info",
-        "link": "link",
         "list": "list",
         "map": "map",
         "me": "me",
         "server": "server",
         "set": "set",
         "setup": "setup",
-        "time": "time",
-        "translate": "translate"
+        "time": "time"
     },
     "subCommands": {
         "list": "list",
@@ -31,6 +28,7 @@
     },
     "arguments": {
         "link": "link",
+        "option": "option",
         "user": "user",
         "bot": "bot",
         "setting": "setting",

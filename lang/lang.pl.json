@@ -11,17 +11,12 @@
                     },
                     {
                         "name": "{{REF:fields.links}}",
-                        "value": [
-                            "{{REF:links.docsEmbed}}",
-                            "{{REF:links.supportEmbed}}",
-                            "{{REF:links.inviteEmbed}}"
-                        ]
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
                     }
                 ]
             },
-            "help": {
-                "title": "{{COM:bot.name}} - Pomoc",
-                "description": "{{REF:bot.description}}",
+            "commands": {
+                "title": "{{COM:bot.name}} - Commands",
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} dla użytkowników",
@@ -56,11 +51,17 @@
                     },
                     {
                         "name": "{{REF:fields.links}}",
-                        "value": [
-                            "{{REF:links.docsEmbed}}",
-                            "{{REF:links.supportEmbed}}",
-                            "{{REF:links.inviteEmbed}}"
-                        ]
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "permissions": {
+                "title": "{{COM:bot.name}} - Permissions",
+                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
                     }
                 ]
             },
@@ -173,8 +174,9 @@
                 "title": "Czas dla strefy czasowej",
                 "description": "Obecnie jest **{{TIME}}** w **{{TIME_ZONE}}**."
             },
-            "info": {
-                "title": "{{COM:bot.name}} - Informacje",
+            "about": {
+                "title": "{{COM:bot.name}} - About",
+                "description": "{{REF:bot.description}}",
                 "fields": [
                     { "name": "Author", "value": "{{REF:links.authorEmbed}}" },
                     {
@@ -182,6 +184,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.voteEmbed}}",
                             "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
                             "{{REF:links.inviteEmbed}}"
@@ -236,31 +239,11 @@
                     }
                 ]
             },
-            "linkDocs": {
-                "title": "{{COM:bot.name}} - Dokumentacja",
-                "description": "Kliknij [tutaj]({{COM:links.docs}}/) , aby zobaczyć dokumentację bota."
-            },
-            "linkDonate": {
-                "title": "{{COM:bot.name}} - Dotacje",
-                "description": "Wesprzyj {{COM:bot.name}} wpłacając dotację poprzez Paypal [tutaj]({{COM:links.donate}})!"
-            },
-            "linkInvite": {
-                "title": "{{COM:bot.name}} - Zaproszenie",
-                "description": "Kliknij [tutaj]({{COM:links.invite}}) , aby zaprosić {{COM:bot.name}} do Swojego serwera!"
-            },
             "linkMap": {
                 "title": "Mapa stref czasowych",
                 "description": [
                     "{{REF:partials.findTimeZoneHelp}} Tu możesz skopiować nazwę strefy czasowej i użyć jej kiedykolwiek {{COM:bot.name}} będzie jej potrzebował."
                 ]
-            },
-            "linkSupport": {
-                "title": "{{COM:bot.name}} - Pomoc",
-                "description": "Potrzebujesz pomocy? Dołącz do naszego[serwera]({{COM:links.support}}) , aby uzyskać wsparcie!"
-            },
-            "linkVote": {
-                "title": "{{COM:bot.name}} - Daj głos",
-                "description": "Wesprzyj {{COM:bot.name}} głosując na niego [tutaj]({{COM:links.vote}})!"
             },
             "timeConversionDm": {
                 "description": [
@@ -670,8 +653,8 @@
                 "description": "Możesz użyć tej komendy {{AMOUNT}} razy na {{INTERVAL}}. Proszę spróbować później.",
                 "color": "{{COM:colors.warning}}"
             },
-            "devOnlyCommand": {
-                "description": "Tą komendę mogą zastosować wyłącznie developerzy.",
+            "devOnly": {
+                "description": "This action can only be done by developers.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {

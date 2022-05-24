@@ -42,7 +42,6 @@ export class ListCommand implements Command {
         ],
     };
     public deferType = CommandDeferType.PUBLIC;
-    public requireDev = false;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
 

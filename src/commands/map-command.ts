@@ -14,7 +14,6 @@ export class MapCommand implements Command {
         default_member_permissions: undefined,
     };
     public deferType = CommandDeferType.PUBLIC;
-    public requireDev = false;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = [];
 

@@ -45,8 +45,8 @@ The bot may use stored data, as defined below, for different features including 
 
 The bot may share non-sensitive data with 3rd party sites or services, including but not limited to:
 
--   Aggregate/statistical data (ex: total number of server or users).
--   Discord generated IDs needed to tie 3rd party data to Discord or user-provided data.
+-   Aggregate/statistical data (ex: total number of server or users)
+-   Discord generated IDs needed to tie 3rd party data to Discord or user-provided data
 
 Personally identifiable (other than IDs) or sensitive information will not be shared with 3rd party sites or services.
 

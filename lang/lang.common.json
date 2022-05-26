@@ -27,7 +27,6 @@
         "zone": "zone"
     },
     "arguments": {
-        "link": "link",
         "option": "option",
         "user": "user",
         "bot": "bot",

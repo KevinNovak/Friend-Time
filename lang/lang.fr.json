@@ -947,7 +947,7 @@
                 "",
                 "Il faut **selectionner un endroit sur la carte** pour voir le nom du fuseau."
             ],
-            "translateNote": "Entrer `/{{COM:commands.translate}}` pour en apprendre plus par rapport à nos traductions.",
+            "translateNote": "Entrer `/{{COM:commands.info}} {{COM:arguments.option}}:translate` pour en apprendre plus par rapport à nos traductions.",
             "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{COM:bot.name}}."
         }
     }

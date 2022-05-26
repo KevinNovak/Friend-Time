@@ -947,7 +947,7 @@
                 "",
                 "Simply **select a location on the map** to see the time zone name."
             ],
-            "translateNote": "Type `/{{COM:commands.translate}}` to learn more about translations.",
+            "translateNote": "Type `/{{COM:commands.info}} {{COM:arguments.option}}:translate` to learn more about translations.",
             "dmWarning": "Some commands require DMs allowed in at least one server ye share with {{COM:bot.name}}."
         }
     }

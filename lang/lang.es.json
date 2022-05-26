@@ -947,7 +947,7 @@
                 "",
                 "Simplemente **selecciona un lugar el el mapa** para ver su zona horaria correspondiente."
             ],
-            "translateNote": "Escribe `/{{COM:commands.translate}}` para conocer más sobre las traducciones.",
+            "translateNote": "Escribe `/{{COM:commands.info}} {{COM:arguments.option}}:translate` para conocer más sobre las traducciones.",
             "dmWarning": "Algunos comandos requieren que se permitan los DMs en al menos un servidor que compartas con {{COM:bot.name}}."
         }
     }

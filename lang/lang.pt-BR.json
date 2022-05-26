@@ -947,7 +947,7 @@
                 "",
                 "Basta **selecionar um local no mapa** para ver o nome de um fuso horário."
             ],
-            "translateNote": "Digite `/{{COM:commands.translate}}` para saber mais sobre as traduções.",
+            "translateNote": "Digite `/{{COM:commands.info}} {{COM:arguments.option}}:translate` para saber mais sobre as traduções.",
             "dmWarning": "Alguns comandos exigem mensagens diretas permitidas em pelo menos um servidor que você compartilha com o {{COM:bot.name}}."
         }
     }

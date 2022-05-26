@@ -947,7 +947,7 @@
                 "",
                 "Po prostu **wybierz miejsce na mapie** , aby zobaczyć nazwę danej strefy czasowej."
             ],
-            "translateNote": "Wpisz `/{{COM:commands.translate}}` , aby dowiedzieć się więcej o tłumaczeniach.",
+            "translateNote": "Wpisz `/{{COM:commands.info}} {{COM:arguments.option}}:translate` , aby dowiedzieć się więcej o tłumaczeniach.",
             "dmWarning": "Niektóre komendy wymagają zezwolenia na wysyłanie wiadomości prywatnych na przynajmniej jednym serwerze dzielonym z {{COM:bot.name}}."
         }
     }

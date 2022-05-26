@@ -996,7 +996,7 @@
                 "",
                 "Simpelweg **selecteer een locatie op de kaart** om de naam van een tijdzone te zien."
             ],
-            "translateNote": "Schrijf `/{{COM:commands.translate}}` om meer te weten te komen over vertalingen.",
+            "translateNote": "Schrijf `/{{COM:commands.info}} {{COM:arguments.option}}:translate` om meer te weten te komen over vertalingen.",
             "dmWarning": "Sommige commando's van {{COM:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{COM:bot.name}} ingesteld zijn."
         }
     }

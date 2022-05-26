@@ -947,7 +947,7 @@
                 "",
                 "Tippe einfach **auf deinen Standort auf der Karte** um deine Zeitzone zu sehen."
             ],
-            "translateNote": "Schreibe `/{{COM:commands.translate}}` um mehr über Übersetzungen zu erfahren.",
+            "translateNote": "Schreibe `/{{COM:commands.info}} {{COM:arguments.option}}:translate` um mehr über Übersetzungen zu erfahren.",
             "dmWarning": "Einige Befehle benötigen Direktnachrichten in mindestens einem Server, den du mit {{COM:bot.name}} teilst, aktiviert."
         }
     }

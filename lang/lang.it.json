@@ -947,7 +947,7 @@
                 "",
                 "Semplicemente **seleziona una zona sulla mappa** per vedere il fuso orario della zona."
             ],
-            "translateNote": "Digita `/{{COM:commands.translate}}` per imparare di più riguardo la traduzione.",
+            "translateNote": "Digita `/{{COM:commands.info}} {{COM:arguments.option}}:translate` per imparare di più riguardo la traduzione.",
             "dmWarning": "Alcuni comandi richiedono che i DM siano consentiti in almeno un server con cui condividi {{COM:bot.name}}."
         }
     }

@@ -947,7 +947,7 @@
                 "",
                 "Simple **elektu lokon en la mapo** por vidi la horzonan nomon."
             ],
-            "translateNote": "Tajpu `/{{COM:commands.translate}}` por ekscii pli pri tradukoj.",
+            "translateNote": "Tajpu `/{{COM:commands.info}} {{COM:arguments.option}}:translate` por ekscii pli pri tradukoj.",
             "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
         }
     }

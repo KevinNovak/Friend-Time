@@ -3,6 +3,7 @@ import {
     DiscordAPIError,
     EmojiResolvable,
     Message,
+    MessageEditOptions,
     MessageEmbed,
     MessageOptions,
     MessageReaction,
@@ -39,8 +40,13 @@ export class MessageUtils {
         content: string | MessageEmbed | MessageOptions
     ): Promise<Message> {
         try {
-            let msgOptions = this.messageOptions(content);
-            return await target.send(msgOptions);
+            let options: MessageOptions =
+                typeof content === 'string'
+                    ? { content }
+                    : content instanceof MessageEmbed
+                    ? { embeds: [content] }
+                    : content;
+            return await target.send(options);
         } catch (error) {
             if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
@@ -55,8 +61,13 @@ export class MessageUtils {
         content: string | MessageEmbed | MessageOptions
     ): Promise<Message> {
         try {
-            let msgOptions = this.messageOptions(content);
-            return await msg.reply(msgOptions);
+            let options: MessageOptions =
+                typeof content === 'string'
+                    ? { content }
+                    : content instanceof MessageEmbed
+                    ? { embeds: [content] }
+                    : content;
+            return await msg.reply(options);
         } catch (error) {
             if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
@@ -68,11 +79,16 @@ export class MessageUtils {
 
     public static async edit(
         msg: Message,
-        content: string | MessageEmbed | MessageOptions
+        content: string | MessageEmbed | MessageEditOptions
     ): Promise<Message> {
         try {
-            let msgOptions = this.messageOptions(content);
-            return await msg.edit(msgOptions);
+            let options: MessageEditOptions =
+                typeof content === 'string'
+                    ? { content }
+                    : content instanceof MessageEmbed
+                    ? { embeds: [content] }
+                    : content;
+            return await msg.edit(options);
         } catch (error) {
             if (error instanceof DiscordAPIError && IGNORED_ERRORS.includes(error.code)) {
                 return;
@@ -143,17 +159,5 @@ export class MessageUtils {
                 throw error;
             }
         }
-    }
-
-    public static messageOptions(content: string | MessageEmbed | MessageOptions): MessageOptions {
-        let options: MessageOptions = {};
-        if (typeof content === 'string') {
-            options.content = content;
-        } else if (content instanceof MessageEmbed) {
-            options.embeds = [content];
-        } else {
-            options = content;
-        }
-        return options;
     }
 }

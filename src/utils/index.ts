@@ -12,6 +12,6 @@ export { PermissionUtils } from './permission-utils.js';
 export { RegexUtils } from './regex-utils.js';
 export { ShardUtils } from './shard-utils.js';
 export { StringUtils } from './string-utils.js';
+export { ThreadUtils } from './thread-utils.js';
 export { TimeUtils } from './time-utils.js';
 export { TimeZoneUtils } from './time-zone-utils.js';
-export { ThreadUtils } from './thread-utils.js';

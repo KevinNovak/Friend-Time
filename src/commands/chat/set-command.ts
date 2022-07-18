@@ -1,26 +1,28 @@
 import {
     ApplicationCommandOptionType,
+    ApplicationCommandType,
     RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { CommandInteraction, DMChannel, Message, Permissions, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { GuildBotData, GuildData, UserData } from '../database/entities/index.js';
-import { YesNo } from '../models/enum-helpers/index.js';
-import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/index.js';
-import { SettingManager } from '../settings/index.js';
-import { UserPrivateModeSetting } from '../settings/user/index.js';
-import { ClientUtils, CollectorUtils, FormatUtils, InteractionUtils } from '../utils/index.js';
-import { Command, CommandDeferType } from './index.js';
+import { GuildBotData, GuildData, UserData } from '../../database/entities/index.js';
+import { YesNo } from '../../models/enum-helpers/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { SettingManager } from '../../settings/index.js';
+import { UserPrivateModeSetting } from '../../settings/user/index.js';
+import { ClientUtils, CollectorUtils, FormatUtils, InteractionUtils } from '../../utils/index.js';
+import { Command, CommandDeferType } from '../index.js';
 
 const require = createRequire(import.meta.url);
-let Config = require('../../config/config.json');
-let Debug = require('../../config/debug.json');
+let Config = require('../../../config/config.json');
+let Debug = require('../../../config/debug.json');
 
 export class SetCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        name: Lang.getCom('commands.set'),
+        type: ApplicationCommandType.ChatInput,
+        name: Lang.getCom('chatCommands.set'),
         description: Lang.getRef('commandDescs.set', Lang.Default),
         dm_permission: true,
         default_member_permissions: undefined,

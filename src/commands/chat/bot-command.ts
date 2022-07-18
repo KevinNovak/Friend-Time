@@ -1,23 +1,25 @@
 import {
     ApplicationCommandOptionType,
+    ApplicationCommandType,
     RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { GuildData } from '../database/entities/index.js';
-import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/index.js';
-import { SettingManager } from '../settings/index.js';
-import { FormatUtils, InteractionUtils } from '../utils/index.js';
-import { Command, CommandDeferType } from './index.js';
+import { GuildData } from '../../database/entities/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { SettingManager } from '../../settings/index.js';
+import { FormatUtils, InteractionUtils } from '../../utils/index.js';
+import { Command, CommandDeferType } from '../index.js';
 
 const require = createRequire(import.meta.url);
-let Config = require('../../config/config.json');
+let Config = require('../../../config/config.json');
 
 export class BotCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        name: Lang.getCom('commands.bot'),
+        type: ApplicationCommandType.ChatInput,
+        name: Lang.getCom('chatCommands.bot'),
         description: Lang.getRef('commandDescs.bot', Lang.Default),
         dm_permission: false,
         default_member_permissions: undefined,

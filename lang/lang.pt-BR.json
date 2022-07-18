@@ -7,7 +7,7 @@
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} importantes",
-                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
+                        "value": ["**/{{COM:chatCommands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -21,30 +21,30 @@
                     {
                         "name": "{{REF:fields.commands}} de Usuário",
                         "value": [
-                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
-                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
-                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:chatCommands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} de Administrador",
                         "value": [
-                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
+                            "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -77,8 +77,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Habilite ou desabilite a lista."
+                            "`/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Habilite ou desabilite a lista."
                         ]
                     }
                 ]
@@ -95,8 +95,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -113,8 +113,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -132,8 +132,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -151,8 +151,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
-                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -263,12 +263,12 @@
                 "description": [
                     "Olá {{USER}}, parece que você [mencionou ou reagiu a um horário]({{MESSAGE_LINK}}), mas não tem nenhum fuso horário configurado ainda.",
                     "",
-                    "Configure o seu fuso horário usando o comando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
+                    "Configure o seu fuso horário usando o comando `/{{COM:chatCommands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "Configurar seu fuso horário permite o {{COM:bot.name}} converter os horários nos chats do servidor para e do seu fuso horário, tornando mais fácil coordenar horários com outros."
                 ],
                 "footer": {
-                    "text": "Se quiser desabilitar este lembrete, digite \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                    "text": "Se quiser desabilitar este lembrete, digite \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -379,7 +379,7 @@
                 "description": [
                     "Gostaria que o {{COM:bot.name}} enviasse uma lista de horários convertidos no chat após um horário ser mencionado?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. O {{COM:bot.name}} vai converter os horários no chat para todos os fusos horários na lista do servidor (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Essa lista será enviada no mesmo canal da mensagem original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. O {{COM:bot.name}} vai converter os horários no chat para todos os fusos horários na lista do servidor (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Essa lista será enviada no mesmo canal da mensagem original.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Nenhuma lista será exibida.",
                     "\u2800"
@@ -518,7 +518,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -539,7 +539,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -579,7 +579,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -638,7 +638,7 @@
             "oldPrefixUsed": {
                 "title": "Atualização dos Comandos de Barra",
                 "description": [
-                    "O {{COM:bot.name}} agora usa **Comandos de Barra**! Tente digitando `/{{COM:commands.help}}`!",
+                    "O {{COM:bot.name}} agora usa **Comandos de Barra**! Tente digitando `/{{COM:chatCommands.help}}`!",
                     "",
                     "Se você não vê nenhum comando de barra listado para o {{COM:bot.name}}:",
                     "",
@@ -681,7 +681,7 @@
                 "description": [
                     "Bot não encontrado ou não configurado ainda.",
                     "",
-                    "Digite `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` para configurar um novo bot."
+                    "Digite `/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` para configurar um novo bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -947,7 +947,7 @@
                 "",
                 "Basta **selecionar um local no mapa** para ver o nome de um fuso horário."
             ],
-            "translateNote": "Digite `/{{COM:commands.info}} {{COM:arguments.option}}:translate` para saber mais sobre as traduções.",
+            "translateNote": "Digite `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` para saber mais sobre as traduções.",
             "dmWarning": "Alguns comandos exigem mensagens diretas permitidas em pelo menos um servidor que você compartilha com o {{COM:bot.name}}."
         }
     }

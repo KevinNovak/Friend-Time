@@ -1,5 +1,5 @@
 import {
-    CommandInteraction,
+    BaseCommandInteraction,
     GuildChannel,
     GuildMember,
     Permissions,
@@ -20,7 +20,7 @@ let Debug = require('../../config/debug.json');
 export class CommandUtils {
     public static async runChecks(
         command: Command,
-        intr: CommandInteraction,
+        intr: BaseCommandInteraction,
         data: EventData
     ): Promise<boolean> {
         if (command.cooldown) {

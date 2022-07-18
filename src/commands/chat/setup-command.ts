@@ -1,16 +1,20 @@
-import { RESTPostAPIChatInputApplicationCommandsJSONBody } from 'discord-api-types/v10';
+import {
+    ApplicationCommandType,
+    RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from 'discord-api-types/v10';
 import { CommandInteraction, PermissionString } from 'discord.js';
 
-import { GuildData } from '../database/entities/index.js';
-import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/index.js';
-import { SettingManager } from '../settings/index.js';
-import { InteractionUtils } from '../utils/index.js';
-import { Command, CommandDeferType } from './index.js';
+import { GuildData } from '../../database/entities/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { SettingManager } from '../../settings/index.js';
+import { InteractionUtils } from '../../utils/index.js';
+import { Command, CommandDeferType } from '../index.js';
 
 export class SetupCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        name: Lang.getCom('commands.setup'),
+        type: ApplicationCommandType.ChatInput,
+        name: Lang.getCom('chatCommands.setup'),
         description: Lang.getRef('commandDescs.setup', Lang.Default),
         dm_permission: false,
         default_member_permissions: undefined,

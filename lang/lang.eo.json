@@ -7,7 +7,7 @@
                 "fields": [
                     {
                         "name": "Gravaj komandoj",
-                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
+                        "value": ["**/{{COM:chatCommands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -21,30 +21,30 @@
                     {
                         "name": "{{REF:fields.commands}} por uzantoj",
                         "value": [
-                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
-                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
-                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:chatCommands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "{{REF:fields.commands}} por administrantoj",
                         "value": [
-                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
+                            "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -77,8 +77,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
+                            "`/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Ŝalti aŭ malŝalti la liston."
                         ]
                     }
                 ]
@@ -95,8 +95,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -113,8 +113,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -132,8 +132,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -151,8 +151,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
-                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -263,12 +263,12 @@
                 "description": [
                     "Saluton, {{USER}}, ŝajne vi [menciis aŭ reagumis tempon]({{MESSAGE_LINK}}), sed vi ankoraŭ ne havas horzonon.",
                     "",
-                    "Agordu la roboton por vi per la komando `/{{COM:commands.set}} {{COM:subCommands.me}}`!",
+                    "Agordu la roboton por vi per la komando `/{{COM:chatCommands.set}} {{COM:subCommands.me}}`!",
                     "",
                     "Kiam vi agordos la horzonon, {{COM:bot.name}} povos konverti tempojn menciatajn en serviloj el via horzono kaj en ĝin, ebligante pli facilan planadon de okazoj kun aliuloj."
                 ],
                 "footer": {
-                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                    "text": "Se vi volas malŝalti ĉi tian rememorigilon, tajpu \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -379,7 +379,7 @@
                 "description": [
                     "Ĉu {{COM:bot.name}} sendu liston de konvertitaj tempoj en la babilejon, kiam oni mencias tempon?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} konvertados menciatajn tempojn al ĉiuj horzonoj de la horzonlisto (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Tiun liston ĝi sendos en la kanalon, kie estis la originala mesaĝo.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. La roboto ne sendados la liston.",
                     "\u2800"
@@ -518,7 +518,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -539,7 +539,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -579,7 +579,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -638,7 +638,7 @@
             "oldPrefixUsed": {
                 "title": "Ĝisdatigo por suprenstrekaj komandoj",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:chatCommands.help}}`!",
                     "",
                     "If you don't see any slash commands listed for {{COM:bot.name}}:",
                     "",
@@ -681,7 +681,7 @@
                 "description": [
                     "La roboto ne troveblis aŭ ankoraŭ ne estas agordita.",
                     "",
-                    "Tajpu `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` por agordi novan roboton."
+                    "Tajpu `/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` por agordi novan roboton."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -947,7 +947,7 @@
                 "",
                 "Simple **elektu lokon en la mapo** por vidi la horzonan nomon."
             ],
-            "translateNote": "Tajpu `/{{COM:commands.info}} {{COM:arguments.option}}:translate` por ekscii pli pri tradukoj.",
+            "translateNote": "Tajpu `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` por ekscii pli pri tradukoj.",
             "dmWarning": "Kelkaj komandoj postulas, ke vi ebligu privatajn mesaĝojn de anoj de almenaŭ unu servilo, kie estas {{COM:bot.name}}."
         }
     }

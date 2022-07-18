@@ -7,7 +7,7 @@
                 "fields": [
                     {
                         "name": "Important {{REF:fields.commands}}",
-                        "value": ["**/{{COM:commands.help}}** - {{REF:commandDescs.help}}"]
+                        "value": ["**/{{COM:chatCommands.help}}** - {{REF:commandDescs.help}}"]
                     },
                     {
                         "name": "{{REF:fields.links}}",
@@ -21,30 +21,30 @@
                     {
                         "name": "Utilisateur {{REF:fields.commands}}",
                         "value": [
-                            "**/{{COM:commands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
-                            "**/{{COM:commands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
-                            "**/{{COM:commands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
-                            "**/{{COM:commands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
-                            "**/{{COM:commands.map}}** - {{REF:commandDescs.map}}"
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:chatCommands.map}}** - {{REF:commandDescs.map}}"
                         ]
                     },
                     {
                         "name": "Admin {{REF:fields.commands}}",
                         "value": [
-                            "**/{{COM:commands.setup}}** - {{REF:commandDescs.setup}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
-                            "**/{{COM:commands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
-                            "**/{{COM:commands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
-                            "**/{{COM:commands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
+                            "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
                             "",
                             "*{{REF:partials.dmWarning}}*"
                         ]
@@ -77,8 +77,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
+                            "`/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Activer ou désactiver la liste des fuseaux horaires."
                         ]
                     }
                 ]
@@ -95,8 +95,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ]
@@ -113,8 +113,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
-                            "`/{{COM:commands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
                         ]
                     }
                 ],
@@ -132,8 +132,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
-                            "`/{{COM:commands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
                         ]
                     }
                 ],
@@ -151,8 +151,8 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
-                            "`/{{COM:commands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
                         ]
                     }
                 ],
@@ -263,12 +263,12 @@
                 "description": [
                     "Hey {{USER}}, on dirait que tu as [mentionné ou réagit a un horaire]({{MESSAGE_LINK}}), mais tu n'as pas encore établi de fuseau horaire.",
                     "",
-                    "Configure ton fuseau horaire en utilisant la commande `/{{COM:commands.set}} {{COM:subCommands.me}}` !",
+                    "Configure ton fuseau horaire en utilisant la commande `/{{COM:chatCommands.set}} {{COM:subCommands.me}}` !",
                     "",
                     "Configurer ton fuseau horaire permet à {{COM:bot.name}} de convertir les messages du chat depuis ton fuseau horaire, assurant une meilleure coordination avec les autres membres."
                 ],
                 "footer": {
-                    "text": "Si tu veux désactiver ce rappel, écris \"/{{COM:commands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                    "text": "Si tu veux désactiver ce rappel, écris \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
                 },
                 "color": "{{COM:colors.warning}}"
             }
@@ -379,7 +379,7 @@
                 "description": [
                     "Veux-tu que {{COM:bot.name}} envoie une liste des temps convertis après qu'un temps soit mentionné ?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`/{{COM:commands.list}} {{COM:subCommands.view}}`). Cette liste sera envoyé dans le même salon que le message original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertira tous les temps mentionnés dans chacun des fuseaux horaires de la liste des fuseaux horaires (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Cette liste sera envoyé dans le même salon que le message original.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Aucune liste ne sera montrée.",
                     "\u2800"
@@ -518,7 +518,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
                         ]
                     }
                 ],
@@ -539,7 +539,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -560,7 +560,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
                         ]
                     }
                 ],
@@ -579,7 +579,7 @@
                     {
                         "name": "{{REF:fields.actions}}",
                         "value": [
-                            "`/{{COM:commands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
                         ]
                     }
                 ],
@@ -638,7 +638,7 @@
             "oldPrefixUsed": {
                 "title": "Mise à jour pour les commandes Slash",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:commands.help}}`!",
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:chatCommands.help}}`!",
                     "",
                     "If you don't see any slash commands listed for {{COM:bot.name}}:",
                     "",
@@ -681,7 +681,7 @@
                 "description": [
                     "Bot non trouvé ou pas encore configuré.",
                     "",
-                    "Entrer `/{{COM:commands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` pour configurer un nouveau bot."
+                    "Entrer `/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` pour configurer un nouveau bot."
                 ],
                 "color": "{{COM:colors.error}}"
             },
@@ -947,7 +947,7 @@
                 "",
                 "Il faut **selectionner un endroit sur la carte** pour voir le nom du fuseau."
             ],
-            "translateNote": "Entrer `/{{COM:commands.info}} {{COM:arguments.option}}:translate` pour en apprendre plus par rapport à nos traductions.",
+            "translateNote": "Entrer `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` pour en apprendre plus par rapport à nos traductions.",
             "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{COM:bot.name}}."
         }
     }

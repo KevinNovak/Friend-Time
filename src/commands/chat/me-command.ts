@@ -1,20 +1,22 @@
 import {
     ApplicationCommandOptionType,
+    ApplicationCommandType,
     RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { CommandInteraction, DMChannel, PermissionString } from 'discord.js';
 
-import { UserData } from '../database/entities/index.js';
-import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/index.js';
-import { SettingManager } from '../settings/index.js';
-import { UserPrivateModeSetting } from '../settings/user/index.js';
-import { InteractionUtils } from '../utils/index.js';
-import { Command, CommandDeferType } from './index.js';
+import { UserData } from '../../database/entities/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { SettingManager } from '../../settings/index.js';
+import { UserPrivateModeSetting } from '../../settings/user/index.js';
+import { InteractionUtils } from '../../utils/index.js';
+import { Command, CommandDeferType } from '../index.js';
 
 export class MeCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        name: Lang.getCom('commands.me'),
+        type: ApplicationCommandType.ChatInput,
+        name: Lang.getCom('chatCommands.me'),
         description: Lang.getRef('commandDescs.me', Lang.Default),
         dm_permission: true,
         default_member_permissions: undefined,

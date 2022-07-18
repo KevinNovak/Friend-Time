@@ -1,35 +1,37 @@
 import {
     ApplicationCommandOptionType,
+    ApplicationCommandType,
     RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { GuildBotData } from '../database/entities/index.js';
-import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/index.js';
-import { BotTimeZoneSetting } from '../settings/bot/index.js';
-import { GuildTimeZoneSetting } from '../settings/guild/index.js';
+import { GuildBotData } from '../../database/entities/index.js';
+import { EventData } from '../../models/internal-models.js';
+import { Lang } from '../../services/index.js';
+import { BotTimeZoneSetting } from '../../settings/bot/index.js';
+import { GuildTimeZoneSetting } from '../../settings/guild/index.js';
 import {
     UserPrivateModeSetting,
     UserTimeFormatSetting,
     UserTimeZoneSetting,
-} from '../settings/user/index.js';
+} from '../../settings/user/index.js';
 import {
     DataUtils,
     FormatUtils,
     InteractionUtils,
     TimeUtils,
     TimeZoneUtils,
-} from '../utils/index.js';
-import { Command, CommandDeferType } from './index.js';
+} from '../../utils/index.js';
+import { Command, CommandDeferType } from '../index.js';
 
 const require = createRequire(import.meta.url);
-let Config = require('../../config/config.json');
+let Config = require('../../../config/config.json');
 
 export class TimeCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        name: Lang.getCom('commands.time'),
+        type: ApplicationCommandType.ChatInput,
+        name: Lang.getCom('chatCommands.time'),
         description: Lang.getRef('commandDescs.time', Lang.Default),
         dm_permission: true,
         default_member_permissions: undefined,

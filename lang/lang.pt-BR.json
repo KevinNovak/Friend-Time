@@ -793,10 +793,8 @@
             "botView": "Veja as propriedades de um bot.",
             "botEdit": "Mude uma propriedade de um bot.",
             "botRemove": "Remova um bot.",
-            "dev": "Veja informações de desenvolvedor.",
             "help": "Veja o menu de ajuda e a lista de comandos.",
             "info": "Veja informações do bot.",
-            "link": "Obtenha links para convidar, suporte, etc.",
             "list": "Gerencie a lista dos fusos horários do servidor.",
             "listView": "Veja a lista dos fusos horários do servidor.",
             "listToggle": "Adicione à lista de fusos horários do servidor ou remova dela.",
@@ -816,8 +814,7 @@
             "time": "Veja a hora do servidor, de um usuário, de um bot ou de um fuso.",
             "timeServer": "Veja a hora do servidor.",
             "timeUser": "Veja a hora de um usuário ou de um bot.",
-            "timeZone": "Veja a hora de um fuso.",
-            "translate": "Veja informações de tradução."
+            "timeZone": "Veja a hora de um fuso."
         },
         "settings": {
             "autoDetectDisplay": "Detecção Automática",

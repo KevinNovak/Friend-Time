@@ -793,10 +793,8 @@
             "botView": "Vidi la agordojn de robotoj.",
             "botEdit": "Ŝanĝi agordon de roboto.",
             "botRemove": "Forigi roboton.",
-            "dev": "Vidi programistajn informojn.",
             "help": "Vidi la helpilon kaj la komandliston.",
             "info": "Vidi informojn pri la roboto.",
-            "link": "Vidi ligilojn invitan, subtenan, ktp",
             "list": "Agordi la servilan horzonliston.",
             "listView": "Vidi la servilan horzonliston.",
             "listToggle": "Aldoni al aŭ forigi de la servila horzonlisto.",
@@ -816,8 +814,7 @@
             "time": "Vidi la tempon laŭ la servilo, uzanto, roboto aŭ horzono.",
             "timeServer": "Vidi la tempon laŭ la servilo.",
             "timeUser": "Vidi la tempon laŭ uzanto aŭ roboto.",
-            "timeZone": "Vidi la tempon laŭ horzono.",
-            "translate": "Vidi informojn pri la tradukoj."
+            "timeZone": "Vidi la tempon laŭ horzono."
         },
         "settings": {
             "autoDetectDisplay": "Aŭtomata detektado",

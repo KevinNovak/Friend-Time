@@ -793,10 +793,8 @@
             "botView": "Wyświetla ustawienia bota.",
             "botEdit": "Zmienia ustawienia bota.",
             "botRemove": "Usuwanie bota.",
-            "dev": "Wyświetla informacje o developerach.",
             "help": "Wyświetla menu oraz listę komend.",
             "info": "Wyświetla informacje o bocie.",
-            "link": "Wyświelta linki do zaproszenia, serwera twórców itp.",
             "list": "Zarządza listą stref czasowych serwera.",
             "listView": "Wyświetla listę stref czasowych serwera.",
             "listToggle": "Dodaje lub usuwa strefy czasowej do listy serwera.",
@@ -816,8 +814,7 @@
             "time": "Wyświetla czas serwera, użytkownika, bota lub strefy czasowej.",
             "timeServer": "Wyświetla czas serwera.",
             "timeUser": "Wyświetla czas użytkownika lub bota.",
-            "timeZone": "Wyświetla czas dla strefy czasowej.",
-            "translate": "Wyświetla informacje o tłumaczeniach."
+            "timeZone": "Wyświetla czas dla strefy czasowej."
         },
         "settings": {
             "autoDetectDisplay": "Wykrywanie automatyczne",

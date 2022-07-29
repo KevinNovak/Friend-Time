@@ -793,10 +793,8 @@
             "botView": "Voir les paramètres d'un bot.",
             "botEdit": "Changer un paramètre d'un bot.",
             "botRemove": "Enlever un bot.",
-            "dev": "Voir les informations du développeur.",
             "help": "Voir le menu d'aide et les commandes.",
             "info": "Voir les informations du bot.",
-            "link": "Avoir les liens pour inviter, le support...",
             "list": "Changer la liste des fuseaux horaires du serveur.",
             "listView": "Voir la liste des fuseaux horaires du serveur.",
             "listToggle": "Ajouter ou supprimer de la liste des fuseaux horaires du serveur.",
@@ -816,8 +814,7 @@
             "time": "Voir le fuseau horaire du serveur, d'un utilisateur, d'un bot, ou d'une zone horaire",
             "timeServer": "Voir l'heure du serveur.",
             "timeUser": "Voir l'heure d'un utilisateur ou d'un bot.",
-            "timeZone": "Voir l'heure d'une zone horaire.",
-            "translate": "Voir les informations de traduction."
+            "timeZone": "Voir l'heure d'une zone horaire."
         },
         "settings": {
             "autoDetectDisplay": "Auto-Détection",

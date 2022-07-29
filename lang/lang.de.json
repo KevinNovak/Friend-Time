@@ -793,10 +793,8 @@
             "botView": "View a bot's settings.",
             "botEdit": "Change a bot setting.",
             "botRemove": "Remove a bot.",
-            "dev": "View developer info.",
             "help": "View help menu and list of commands.",
             "info": "View bot info.",
-            "link": "Get links to invite, support, etc.",
             "list": "Manage the server time zone list.",
             "listView": "View the server time zone list.",
             "listToggle": "Add or remove to the server time zone list.",
@@ -816,8 +814,7 @@
             "time": "View the time of the server, user, bot, or zone.",
             "timeServer": "View the time of the server.",
             "timeUser": "View the time of a user or bot.",
-            "timeZone": "View the time of a zone.",
-            "translate": "View translation info."
+            "timeZone": "View the time of a zone."
         },
         "settings": {
             "autoDetectDisplay": "Automatische Erkennung",

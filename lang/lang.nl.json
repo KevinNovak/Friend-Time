@@ -842,10 +842,8 @@
             "botView": "Bekijk een instelling van de bot.",
             "botEdit": "Verander een instelling van de bot.",
             "botRemove": "Verwijder een bot.",
-            "dev": "Bekijk informatie voor de ontwikkelaar.",
             "help": "Bekijk het help menu en een lijst van commando's.",
             "info": "Bekijk informatie over de bot.",
-            "link": "Ontvang o.a. uitnodigings- en support-links.",
             "list": "Beheer de lijst met tijdzones van de server.",
             "listView": "Bekijk de lijst met tijdzones van de server.",
             "listToggle": "Dingen verwijderen of toevoegen van de lijst met tijdzones van de server.",
@@ -865,8 +863,7 @@
             "time": "Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
             "timeServer": "Bekijk de tijd van de server.",
             "timeUser": "Bekijk de tijd van een gebruiker of bot.",
-            "timeZone": "Bekijk de tijd van een tijdzone.",
-            "translate": "Bekijk informatie over de vertaling."
+            "timeZone": "Bekijk de tijd van een tijdzone."
         },
         "settings": {
             "autoDetectDisplay": "Auto-detecteer",

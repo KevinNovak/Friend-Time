@@ -65,6 +65,21 @@
                     }
                 ]
             },
+            "faq": {
+                "title": "{{COM:bot.name}} - FAQ",
+                "description": [
+                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "",
+                    "**How do I restrict who can run the commands?**",
+                    "Slash command permissions can be configured in the Server Settings. See \"{{COM:chatCommands.help}} {{COM:arguments.option}}:Permissions\" for more information."
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
             "listTimeZone": {
                 "title": "Liste der Zeitzonen",
                 "description": [

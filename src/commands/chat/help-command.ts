@@ -33,6 +33,11 @@ export class HelpCommand implements Command {
                     //     name: 'Permissions',
                     //     value: 'PERMISSIONS',
                     // },
+                    // TODO: Implement
+                    // {
+                    //     name: 'FAQ',
+                    //     value: 'FAQ',
+                    // },
                 ],
             },
         ],
@@ -52,6 +57,10 @@ export class HelpCommand implements Command {
             }
             case 'PERMISSIONS': {
                 embed = Lang.getEmbed('displayEmbeds.permissions', data.lang());
+                break;
+            }
+            case 'FAQ': {
+                embed = Lang.getEmbed('displayEmbeds.faq', data.lang());
                 break;
             }
             default: {

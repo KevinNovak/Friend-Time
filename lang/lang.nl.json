@@ -832,6 +832,10 @@
             "startupInProcess": {
                 "description": "{{COM:bot.name}} is nog aan het opstarten. Probeer het later nog eens.",
                 "color": "{{COM:colors.warning}}"
+            },
+            "notImplemented": {
+                "description": "This feature has not been implemented yet!",
+                "color": "{{COM:colors.warning}}"
             }
         },
         "metaRegexes": {

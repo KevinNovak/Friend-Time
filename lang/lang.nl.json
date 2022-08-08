@@ -857,7 +857,7 @@
             "botView": "Bekijk een instelling van de bot.",
             "botEdit": "Verander een instelling van de bot.",
             "botRemove": "Verwijder een bot.",
-            "help": "Bekijk het help menu en een lijst van commando's.",
+            "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Bekijk informatie over de bot.",
             "list": "Beheer de lijst met tijdzones van de server.",
             "listView": "Bekijk de lijst met tijdzones van de server.",

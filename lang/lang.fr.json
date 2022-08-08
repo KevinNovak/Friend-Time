@@ -808,7 +808,7 @@
             "botView": "Voir les paramètres d'un bot.",
             "botEdit": "Changer un paramètre d'un bot.",
             "botRemove": "Enlever un bot.",
-            "help": "Voir le menu d'aide et les commandes.",
+            "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Voir les informations du bot.",
             "list": "Changer la liste des fuseaux horaires du serveur.",
             "listView": "Voir la liste des fuseaux horaires du serveur.",

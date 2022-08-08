@@ -808,7 +808,7 @@
             "botView": "Vidi la agordojn de robotoj.",
             "botEdit": "Ŝanĝi agordon de roboto.",
             "botRemove": "Forigi roboton.",
-            "help": "Vidi la helpilon kaj la komandliston.",
+            "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Vidi informojn pri la roboto.",
             "list": "Agordi la servilan horzonliston.",
             "listView": "Vidi la servilan horzonliston.",

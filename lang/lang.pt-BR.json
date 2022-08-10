@@ -934,6 +934,16 @@
             "VIEW_CHANNEL": "Ver canal(is)",
             "VIEW_GUILD_INSIGHTS": "Ver Análise do Servidor"
         },
+        "helpOptions": {
+            "commands": "Commands",
+            "permissions": "Permissions",
+            "faq": "FAQ"
+        },
+        "infoOptions": {
+            "about": "About",
+            "translate": "Translate",
+            "dev": "Dev"
+        },
         "other": {
             "na": "N/A",
             "private": "Privado"

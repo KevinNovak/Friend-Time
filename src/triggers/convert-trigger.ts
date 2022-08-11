@@ -174,7 +174,7 @@ export class ConvertTrigger implements Trigger {
                 .join('\n')
                 .trim();
 
-            embed.addField(timeZoneTo, timeList);
+            embed.addFields([{ name: timeZoneTo, value: timeList }]);
         }
 
         return embed;

@@ -1,9 +1,18 @@
-import { ButtonInteraction, Message, MessageReaction, TextBasedChannel, User } from 'discord.js';
+import {
+    ButtonInteraction,
+    Message,
+    MessageReaction,
+    Modal,
+    ModalSubmitInteraction,
+    TextBasedChannel,
+    User,
+} from 'discord.js';
 import {
     ButtonRetriever,
     CollectorUtils as DjsCollectorUtils,
     ExpireFunction,
     MessageRetriever,
+    ModalRetriever,
     ReactionRetriever,
 } from 'discord.js-collector-utils';
 import { createRequire } from 'node:module';
@@ -84,6 +93,35 @@ export class CollectorUtils {
                 return false;
             },
             buttonRetriever,
+            expireFunction,
+            { time: Config.experience.promptExpireTime * 1000, reset: true }
+        );
+    }
+
+    public static collectByModal<T>(
+        msg: Message,
+        modal: Modal,
+        user: User,
+        modalRetriever: ModalRetriever<T>,
+        expireFunction?: ExpireFunction
+    ): Promise<{
+        intr: ModalSubmitInteraction;
+        value: T;
+    }> {
+        return DjsCollectorUtils.collectByModal(
+            msg,
+            modal,
+            (intr: ButtonInteraction) => intr.user.id === user.id,
+            (nextMsg: Message): boolean => {
+                // Check if another command was ran, if so cancel the current running setup
+                let nextMsgArgs = nextMsg.content.split(' ');
+                if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
+                    return true;
+                }
+
+                return false;
+            },
+            modalRetriever,
             expireFunction,
             { time: Config.experience.promptExpireTime * 1000, reset: true }
         );

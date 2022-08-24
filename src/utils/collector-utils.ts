@@ -38,6 +38,10 @@ export class CollectorUtils {
             msg,
             (intr: ButtonInteraction) => intr.user.id === user.id,
             (nextMsg: Message): boolean => {
+                if (nextMsg.author.id !== user.id) {
+                    return false;
+                }
+
                 // Check if another command was ran, if so cancel the current running setup
                 let nextMsgArgs = nextMsg.content.split(' ');
                 if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -65,6 +69,10 @@ export class CollectorUtils {
             msg,
             (intr: SelectMenuInteraction) => intr.user.id === user.id,
             (nextMsg: Message): boolean => {
+                if (nextMsg.author.id !== user.id) {
+                    return false;
+                }
+
                 // Check if another command was ran, if so cancel the current running setup
                 let nextMsgArgs = nextMsg.content.split(' ');
                 if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -94,6 +102,10 @@ export class CollectorUtils {
             modal,
             (intr: ButtonInteraction) => intr.user.id === user.id,
             (nextMsg: Message): boolean => {
+                if (nextMsg.author.id !== user.id) {
+                    return false;
+                }
+
                 // Check if another command was ran, if so cancel the current running setup
                 let nextMsgArgs = nextMsg.content.split(' ');
                 if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -118,6 +130,10 @@ export class CollectorUtils {
             msg,
             (_msgReaction: MessageReaction, reactor: User): boolean => reactor.id === user.id,
             (nextMsg: Message): boolean => {
+                if (nextMsg.author.id !== user.id) {
+                    return false;
+                }
+
                 // Check if another command was ran, if so cancel the current running setup
                 let nextMsgArgs = nextMsg.content.split(' ');
                 if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {
@@ -142,6 +158,10 @@ export class CollectorUtils {
             channel,
             (nextMsg: Message): boolean => nextMsg.author.id === user.id,
             (nextMsg: Message): boolean => {
+                if (nextMsg.author.id !== user.id) {
+                    return false;
+                }
+
                 // Check if another command was ran, if so cancel the current running setup
                 let nextMsgArgs = nextMsg.content.split(' ');
                 if ([Lang.getCom('keywords.stop')].includes(nextMsgArgs[0]?.toLowerCase())) {

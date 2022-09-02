@@ -61,10 +61,6 @@
         "yes": "yes",
         "no": "no"
     },
-    "argDescs": {
-        "helpOption": "Option.",
-        "infoOption": "Option."
-    },
     "emojis": {
         "yes": "✅",
         "no": "❌",

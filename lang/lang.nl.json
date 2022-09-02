@@ -906,6 +906,10 @@
             "yesDisplay": "Ja",
             "noDisplay": "Nee"
         },
+        "argDescs": {
+            "helpOption": "Option.",
+            "infoOption": "Option."
+        },
         "lists": {
             "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [

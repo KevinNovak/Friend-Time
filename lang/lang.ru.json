@@ -852,6 +852,10 @@
             "yesDisplay": "Да",
             "noDisplay": "Нет"
         },
+        "argDescs": {
+            "helpOption": "Option.",
+            "infoOption": "Option."
+        },
         "lists": {
             "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [

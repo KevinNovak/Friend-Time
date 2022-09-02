@@ -71,7 +71,7 @@
                     "Frequently Asked Questions about {{COM:bot.name}}.",
                     "",
                     "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:Permissions\" for more information."
+                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
                 ],
                 "fields": [
                     {
@@ -977,7 +977,7 @@
                 "",
                 "Il faut **selectionner un endroit sur la carte** pour voir le nom du fuseau."
             ],
-            "translateNote": "Entrer `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` pour en apprendre plus par rapport à nos traductions.",
+            "translateNote": "Entrer `/{{COM:chatCommands.info}} {{COM:arguments.option}}:{{REF:infoOptions.translate}}` pour en apprendre plus par rapport à nos traductions.",
             "dmWarning": "Certains commandes nécessitent que tes MP soient ouverts sur au moins un serveur que tes partages avec {{COM:bot.name}}."
         }
     }

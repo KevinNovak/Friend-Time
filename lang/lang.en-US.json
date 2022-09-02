@@ -71,7 +71,7 @@
                     "Frequently Asked Questions about {{COM:bot.name}}.",
                     "",
                     "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:Permissions\" for more information."
+                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
                 ],
                 "fields": [
                     {
@@ -977,7 +977,7 @@
                 "",
                 "Simply **select a location on the map** to see the time zone name."
             ],
-            "translateNote": "Type `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` to learn more about translations.",
+            "translateNote": "Type `/{{COM:chatCommands.info}} {{COM:arguments.option}}:{{REF:infoOptions.translate}}` to learn more about translations.",
             "dmWarning": "Some commands require DMs allowed in at least one server you share with {{COM:bot.name}}."
         }
     }

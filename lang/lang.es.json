@@ -71,7 +71,7 @@
                     "Frequently Asked Questions about {{COM:bot.name}}.",
                     "",
                     "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:Permissions\" for more information."
+                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
                 ],
                 "fields": [
                     {
@@ -977,7 +977,7 @@
                 "",
                 "Simplemente **selecciona un lugar el el mapa** para ver su zona horaria correspondiente."
             ],
-            "translateNote": "Escribe `/{{COM:chatCommands.info}} {{COM:arguments.option}}:translate` para conocer más sobre las traducciones.",
+            "translateNote": "Escribe `/{{COM:chatCommands.info}} {{COM:arguments.option}}:{{REF:infoOptions.translate}}` para conocer más sobre las traducciones.",
             "dmWarning": "Algunos comandos requieren que se permitan los DMs en al menos un servidor que compartas con {{COM:bot.name}}."
         }
     }

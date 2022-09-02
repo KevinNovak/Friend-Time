@@ -77,9 +77,6 @@
     "experience": {
         "promptExpireTime": 120
     },
-    "reactions": {
-        "convert": "🕰"
-    },
     "validation": {
         "timeResults": {
             "countMax": 5

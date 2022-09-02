@@ -61,6 +61,11 @@
         "yes": "yes",
         "no": "no"
     },
+    "emojis": {
+        "yes": "✅",
+        "no": "❌",
+        "convert": "🕰"
+    },
     "colors": {
         "default": "#0099ff",
         "success": "#00ff83",

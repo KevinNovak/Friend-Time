@@ -1,6 +1,5 @@
 import { ParsedResult } from 'chrono-node';
 import { Message, MessageEmbed } from 'discord.js';
-import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
 import { DateFormatOption } from '../enums/index.js';
@@ -22,11 +21,9 @@ import {
 import { DataUtils, MessageUtils, PermissionUtils } from '../utils/index.js';
 import { Trigger } from './index.js';
 
-const require = createRequire(import.meta.url);
-let Config = require('../../config/config.json');
-
 export class ConvertTrigger implements Trigger {
     public requireGuild = true;
+    private convertEmoji = Lang.getCom('emojis.convert');
 
     constructor(
         private convertReaction: ConvertReaction,
@@ -64,7 +61,7 @@ export class ConvertTrigger implements Trigger {
     public async execute(msg: Message, data: EventData): Promise<void> {
         // Check auto-detect or if message contains the required emoji for manual conversions
         let autoDetect = this.guildAutoDetectSetting.valueOrDefault(data.guild);
-        if (!(autoDetect || msg.content.includes(Config.reactions.convert))) {
+        if (!(autoDetect || msg.content.includes(this.convertEmoji))) {
             return;
         }
 

@@ -1,5 +1,4 @@
 import { Message, MessageReaction, User } from 'discord.js';
-import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -14,11 +13,8 @@ import {
 import { DataUtils, FormatUtils, MessageUtils } from '../utils/index.js';
 import { Reaction } from './index.js';
 
-const require = createRequire(import.meta.url);
-let Config = require('../../config/config.json');
-
 export class ConvertReaction implements Reaction {
-    public emoji: string = Config.reactions.convert;
+    public emoji: string = Lang.getCom('emojis.convert');
     public requireGuild = true;
     public requireSentByClient = false;
     public requireEmbedAuthorTag = false;

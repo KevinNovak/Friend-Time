@@ -1,10 +1,10 @@
 import {
-    ApplicationCommandOptionType,
     ApplicationCommandType,
     RESTPostAPIChatInputApplicationCommandsJSONBody,
 } from 'discord-api-types/v10';
 import { CommandInteraction, MessageEmbed, PermissionString } from 'discord.js';
 
+import { ChatArgs } from '../../constants/index.js';
 import { HelpOption } from '../../enums/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -20,25 +20,8 @@ export class HelpCommand implements Command {
         default_member_permissions: undefined,
         options: [
             {
-                name: Lang.getCom('arguments.option'),
-                description: Lang.getRef('argDescs.helpOption', Lang.Default),
+                ...ChatArgs.HELP_OPTION,
                 required: true,
-                type: ApplicationCommandOptionType.String,
-                choices: [
-                    {
-                        name: Lang.getRef('helpOptions.commands', Lang.Default),
-                        value: HelpOption.COMMANDS,
-                    },
-                    // TODO: Implement once switched to slash command perms
-                    // {
-                    //     name: Lang.getRef('helpOptions.permissions', Lang.Default),
-                    //     value: HelpOption.PERMISSIONS,
-                    // },
-                    // {
-                    //     name: Lang.getRef('helpOptions.faq', Lang.Default),
-                    //     value: HelpOption.FAQ,
-                    // },
-                ],
             },
         ],
     };

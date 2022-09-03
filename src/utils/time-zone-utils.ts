@@ -12,10 +12,12 @@ export class TimeZoneUtils {
     private static timeZones = TimeZoneUtils.buildTimeZoneList();
 
     private static buildTimeZoneList(): RawTimeZone[] {
-        let timeZones = rawTimeZones.filter(timeZone => {
-            let now = TimeUtils.now(timeZone.name);
-            return now.isValid;
-        });
+        let timeZones = rawTimeZones
+            .filter(timeZone => {
+                let now = TimeUtils.now(timeZone.name);
+                return now.isValid;
+            })
+            .sort((a, b) => (a.name > b.name ? 1 : -1));
 
         let timeZoneCorrections = Object.entries(TimeZoneCorrections);
         for (let timeZone of timeZones) {
@@ -34,14 +36,38 @@ export class TimeZoneUtils {
         let search = input.split(' ').join('_').toLowerCase();
         return (
             // Exact match
+            this.timeZones.find(timeZone => timeZone.name.toLowerCase() === search) ??
             this.timeZones.find(timeZone =>
                 timeZone.group.some(name => name.toLowerCase() === search)
             ) ??
             // Includes search term
+            this.timeZones.find(timeZone => timeZone.name.toLowerCase().includes(search)) ??
             this.timeZones.find(timeZone =>
                 timeZone.group.some(name => name.toLowerCase().includes(search))
             )
         );
+    }
+
+    public static findAll(input: string): RawTimeZone[] {
+        let search = input.split(' ').join('_').toLowerCase();
+        let found: RawTimeZone[] = [];
+        // Exact match
+        found.push(...this.timeZones.filter(timeZone => timeZone.name.toLowerCase() === search));
+        found.push(
+            ...this.timeZones.filter(timeZone =>
+                timeZone.group.some(name => name.toLowerCase() === search)
+            )
+        );
+        // Includes search term
+        found.push(
+            ...this.timeZones.filter(timeZone => timeZone.name.toLowerCase().includes(search))
+        );
+        found.push(
+            ...this.timeZones.filter(timeZone =>
+                timeZone.group.some(name => name.toLowerCase().includes(search))
+            )
+        );
+        return [...new Set(found)];
     }
 
     public static sort(timeZones: string[]): string[] {

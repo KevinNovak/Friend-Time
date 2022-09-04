@@ -789,18 +789,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/\\b({{REF:meta.language}}|eo|Esperanto)\\b/i"
-        },
         "channelRegexes": {
             "bot": "/roboto|komando|kmd|robotoj|komandoj/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "eo",
-            "languageDisplay": "Esperanto",
-            "locale": "eo",
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
@@ -862,7 +856,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

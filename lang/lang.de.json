@@ -789,18 +789,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/\\b({{REF:meta.language}}|de|Deutsch|German)\\b/i"
-        },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "de",
-            "languageDisplay": "Deutsch",
-            "locale": "de",
             "translators": "[WoelfiVW#3870](https://github.com/WoelfiVW)"
         },
         "bot": {
@@ -862,7 +856,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

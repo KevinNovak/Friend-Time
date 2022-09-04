@@ -789,18 +789,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/\\b({{REF:meta.language}}|fran[çc]ais|fran[çc]aise)\\b/i"
-        },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "fr",
-            "languageDisplay": "Français",
-            "locale": "fr",
             "translators": "Personne#0128"
         },
         "bot": {
@@ -862,7 +856,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

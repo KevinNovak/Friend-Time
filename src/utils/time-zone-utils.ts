@@ -40,6 +40,11 @@ export class TimeZoneUtils {
             this.timeZones.find(timeZone =>
                 timeZone.group.some(name => name.toLowerCase() === search)
             ) ??
+            // Starts with search term
+            this.timeZones.find(timeZone => timeZone.name.toLowerCase().startsWith(search)) ??
+            this.timeZones.find(timeZone =>
+                timeZone.group.some(name => name.toLowerCase().startsWith(search))
+            ) ??
             // Includes search term
             this.timeZones.find(timeZone => timeZone.name.toLowerCase().includes(search)) ??
             this.timeZones.find(timeZone =>
@@ -56,6 +61,15 @@ export class TimeZoneUtils {
         found.push(
             ...this.timeZones.filter(timeZone =>
                 timeZone.group.some(name => name.toLowerCase() === search)
+            )
+        );
+        // Starts with search term
+        found.push(
+            ...this.timeZones.filter(timeZone => timeZone.name.toLowerCase().startsWith(search))
+        );
+        found.push(
+            ...this.timeZones.filter(timeZone =>
+                timeZone.group.some(name => name.toLowerCase().startsWith(search))
             )
         );
         // Includes search term

@@ -9,7 +9,7 @@ import { Lang } from '../services/index.js';
 
 export class ChatArgs {
     public static readonly HELP_OPTION: APIApplicationCommandBasicOption = {
-        name: Lang.getRef('arguments.option', Language.Default),
+        name: Lang.getCom('arguments.option'),
         description: Lang.getRef('argDescs.helpOption', Language.Default),
         type: ApplicationCommandOptionType.String,
         choices: [
@@ -29,7 +29,7 @@ export class ChatArgs {
         ],
     };
     public static readonly INFO_OPTION: APIApplicationCommandBasicOption = {
-        name: Lang.getRef('arguments.option', Language.Default),
+        name: Lang.getCom('arguments.option'),
         description: Lang.getRef('argDescs.helpOption', Language.Default),
         type: ApplicationCommandOptionType.String,
         choices: [

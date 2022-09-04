@@ -4,7 +4,7 @@ import {
 } from 'discord-api-types/v10';
 
 import { HelpOption, InfoOption } from '../enums/index.js';
-import { Language } from '../models/enum-helpers/index.js';
+import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/index.js';
 
 export class ChatArgs {

@@ -10,7 +10,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { LangCode, TimeFormatOption } from '../../enums/index.js';
+import { Locale, TimeFormatOption } from '../../enums/index.js';
 import { GuildBotData, GuildListItemData } from './index.js';
 
 @Entity('guild')
@@ -40,7 +40,7 @@ export class GuildData extends BaseEntity {
     reminders?: boolean;
 
     @Column({ type: 'varchar', length: 13, nullable: true })
-    language?: LangCode;
+    language?: Locale;
 
     // Timestamps
     @CreateDateColumn()

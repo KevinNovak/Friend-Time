@@ -1,7 +1,7 @@
 import { Guild } from 'discord.js';
 import { DateTime, Duration } from 'luxon'; // TODO: Missing types
 
-import { LangCode, TimeFormatOption } from '../enums/index.js';
+import { Locale, TimeFormatOption } from '../enums/index.js';
 import { Language, TimeFormat } from '../models/enum-helpers/index.js';
 
 export class FormatUtils {
@@ -28,30 +28,26 @@ export class FormatUtils {
     public static dateTime(
         dateTime: DateTime,
         timeFormat: TimeFormatOption,
-        langCode: LangCode
+        langCode: Locale
     ): string {
         let date = this.date(dateTime, langCode);
         let time = this.time(dateTime, timeFormat, langCode);
         return `${date}, ${time}`;
     }
 
-    public static date(dateTime: DateTime, langCode: LangCode): string {
+    public static date(dateTime: DateTime, langCode: Locale): string {
         let locale = Language.locale(langCode);
         dateTime = dateTime.setLocale(locale);
         return dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
     }
 
-    public static time(
-        dateTime: DateTime,
-        timeFormat: TimeFormatOption,
-        langCode: LangCode
-    ): string {
+    public static time(dateTime: DateTime, timeFormat: TimeFormatOption, langCode: Locale): string {
         let locale = Language.locale(langCode);
         dateTime = dateTime.setLocale(locale);
         return dateTime.toFormat(TimeFormat.Data[timeFormat].format);
     }
 
-    public static duration(milliseconds: number, langCode: LangCode): string {
+    public static duration(milliseconds: number, langCode: Locale): string {
         return Duration.fromObject(
             Object.fromEntries(
                 Object.entries(

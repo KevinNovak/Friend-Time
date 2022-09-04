@@ -1,29 +1,29 @@
-import { LangCode } from '../../enums/index.js';
+import { Locale } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 
 export class Language {
-    public static keyword(langCode: LangCode): string {
+    public static keyword(langCode: Locale): string {
         return Lang.getRef('meta.language', langCode);
     }
 
-    public static regex(langCode: LangCode): RegExp {
+    public static regex(langCode: Locale): RegExp {
         return Lang.getRegex('metaRegexes.language', langCode);
     }
 
-    public static displayName(langCode: LangCode): string {
+    public static displayName(langCode: Locale): string {
         return Lang.getRef('meta.languageDisplay', langCode);
     }
 
-    public static locale(langCode: LangCode): string {
+    public static locale(langCode: Locale): string {
         return Lang.getRef('meta.locale', langCode);
     }
 
-    public static translators(langCode: LangCode): string {
+    public static translators(langCode: Locale): string {
         return Lang.getRef('meta.translators', langCode);
     }
 
-    public static find(input: string): LangCode {
-        for (let langCode of Object.values(LangCode)) {
+    public static find(input: string): Locale {
+        for (let langCode of Object.values(Locale)) {
             if (this.regex(langCode).test(input)) {
                 return langCode;
             }
@@ -31,7 +31,7 @@ export class Language {
     }
 
     public static list(): string {
-        return Object.values(LangCode)
+        return Object.values(Locale)
             .map(langCode => {
                 return Lang.getRef('lists.languageItem', langCode, {
                     LANGUAGE_NAME: this.displayName(langCode),

@@ -3,7 +3,7 @@ import { MessageRetriever } from 'discord.js-collector-utils';
 import { createRequire } from 'node:module';
 
 import { UserData } from '../../database/entities/index.js';
-import { LangCode, TimeFormatOption } from '../../enums/index.js';
+import { Locale, TimeFormatOption } from '../../enums/index.js';
 import { YesNo } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -23,7 +23,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
     public name = Lang.getCom('settings.timeZone');
     public default: string = null;
 
-    public displayName(langCode: LangCode): string {
+    public displayName(langCode: Locale): string {
         return Lang.getRef('settings.timeZoneDisplay', langCode);
     }
 
@@ -43,11 +43,11 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         userData.timeZone = null;
     }
 
-    public valueDisplayName(value: string, _langCode: LangCode): string {
+    public valueDisplayName(value: string, _langCode: Locale): string {
         return value;
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<string> {
+    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<string> {
         return async (msg: Message) => {
             if (msg.content.length <= Config.validation.timeZone.lengthMin) {
                 await InteractionUtils.send(
@@ -73,7 +73,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         };
     }
 
-    public confirmation(intr: CommandInteraction, langCode: LangCode): MessageRetriever<boolean> {
+    public confirmation(intr: CommandInteraction, langCode: Locale): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {

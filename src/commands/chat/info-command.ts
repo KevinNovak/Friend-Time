@@ -9,7 +9,7 @@ import os from 'node:os';
 import typescript from 'typescript';
 
 import { ChatArgs } from '../../constants/index.js';
-import { InfoOption, LangCode } from '../../enums/index.js';
+import { InfoOption, Locale } from '../../enums/index.js';
 import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -49,7 +49,7 @@ export class InfoCommand implements Command {
             }
             case InfoOption.TRANSLATE: {
                 embed = Lang.getEmbed('displayEmbeds.translate', data.lang());
-                for (let langCode of Object.values(LangCode)) {
+                for (let langCode of Object.values(Locale)) {
                     embed.addFields([
                         {
                             name: Language.displayName(langCode),

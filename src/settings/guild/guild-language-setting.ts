@@ -2,30 +2,30 @@ import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildData } from '../../database/entities/index.js';
-import { LangCode } from '../../enums/index.js';
+import { Locale } from '../../enums/index.js';
 import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { CollectorUtils, InteractionUtils } from '../../utils/index.js';
 import { Setting } from '../index.js';
 
-export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
+export class GuildLanguageSetting implements Setting<GuildData, Locale> {
     public name = Lang.getCom('settings.language');
     public default = Lang.Default;
 
-    public displayName(langCode: LangCode): string {
+    public displayName(langCode: Locale): string {
         return Lang.getRef('settings.languageDisplay', langCode);
     }
 
-    public value(guildData: GuildData): LangCode {
+    public value(guildData: GuildData): Locale {
         return guildData.language;
     }
 
-    public valueOrDefault(guildData?: GuildData): LangCode {
+    public valueOrDefault(guildData?: GuildData): Locale {
         return guildData ? this.value(guildData) ?? this.default : this.default;
     }
 
-    public apply(guildData: GuildData, value: LangCode): void {
+    public apply(guildData: GuildData, value: Locale): void {
         guildData.language = value;
     }
 
@@ -33,11 +33,11 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
         guildData.language = null;
     }
 
-    public valueDisplayName(value: LangCode, _langCode: LangCode): string {
+    public valueDisplayName(value: Locale, _langCode: Locale): string {
         return Language.displayName(value);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<LangCode> {
+    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<Locale> {
         return async (msg: Message) => {
             let newLangCode = Language.find(msg.content);
             if (!newLangCode) {
@@ -53,7 +53,7 @@ export class GuildLanguageSetting implements Setting<GuildData, LangCode> {
         };
     }
 
-    public async retrieve(intr: CommandInteraction, data: EventData): Promise<LangCode> {
+    public async retrieve(intr: CommandInteraction, data: EventData): Promise<Locale> {
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {

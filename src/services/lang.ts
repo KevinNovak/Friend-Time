@@ -4,10 +4,10 @@ import { Linguini, TypeMapper, TypeMappers, Utils } from 'linguini';
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { LangCode } from '../enums/index.js';
+import { Locale } from '../enums/index.js';
 
 export class Lang {
-    public static Default = LangCode.EN_US;
+    public static Default = Locale.EN_US;
 
     private static linguini = new Linguini(
         path.resolve(dirname(fileURLToPath(import.meta.url)), '../../lang'),
@@ -16,7 +16,7 @@ export class Lang {
 
     public static getEmbed(
         location: string,
-        langCode: LangCode,
+        langCode: Locale,
         variables?: { [name: string]: string }
     ): MessageEmbed {
         return (
@@ -25,7 +25,7 @@ export class Lang {
         );
     }
 
-    public static getRegex(location: string, langCode: LangCode): RegExp {
+    public static getRegex(location: string, langCode: Locale): RegExp {
         return (
             this.linguini.get(location, langCode, TypeMappers.RegExp) ??
             this.linguini.get(location, this.Default, TypeMappers.RegExp)
@@ -34,7 +34,7 @@ export class Lang {
 
     public static getRef(
         location: string,
-        langCode: LangCode,
+        langCode: Locale,
         variables?: { [name: string]: string }
     ): string {
         return (
@@ -48,7 +48,7 @@ export class Lang {
         variables?: { [name: string]: string }
     ): LocalizationMap {
         let obj = {};
-        for (let langCode of Object.values(LangCode)) {
+        for (let langCode of Object.values(Locale)) {
             obj[langCode] = this.getRef(location, langCode, variables);
         }
         return obj;

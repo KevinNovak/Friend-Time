@@ -1,6 +1,6 @@
 import type { BaseEntity } from 'typeorm';
 
-import { LangCode } from '../enums/index.js';
+import { Locale } from '../enums/index.js';
 import { Lang } from '../services/index.js';
 import { Setting } from './index.js';
 
@@ -11,7 +11,7 @@ export class SettingManager {
         return this.settings.find(setting => setting.name.toLowerCase() === input.toLowerCase());
     }
 
-    public list(entity: BaseEntity, langCode: LangCode): string {
+    public list(entity: BaseEntity, langCode: Locale): string {
         return this.settings
             .map(setting => {
                 let value = setting.value(entity);

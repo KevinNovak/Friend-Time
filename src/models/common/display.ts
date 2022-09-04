@@ -1,5 +1,5 @@
-import { LangCode } from '../../enums/index.js';
+import { Locale } from '../../enums/index.js';
 
 export interface Display {
-    displayName(langCode: LangCode): string;
+    displayName(langCode: Locale): string;
 }

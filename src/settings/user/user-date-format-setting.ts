@@ -2,7 +2,7 @@ import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { UserData } from '../../database/entities/index.js';
-import { DateFormatOption, LangCode } from '../../enums/index.js';
+import { DateFormatOption, Locale } from '../../enums/index.js';
 import { DateFormat } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -13,7 +13,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     public name = Lang.getCom('settings.dateFormat');
     public default = DateFormatOption.MONTH_DAY;
 
-    public displayName(langCode: LangCode): string {
+    public displayName(langCode: Locale): string {
         return Lang.getRef('settings.dateFormatDisplay', langCode);
     }
 
@@ -33,13 +33,13 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         userData.dateFormat = null;
     }
 
-    public valueDisplayName(value: DateFormatOption, langCode: LangCode): string {
+    public valueDisplayName(value: DateFormatOption, langCode: Locale): string {
         return DateFormat.Data[value].displayName(langCode);
     }
 
     public retriever(
         intr: CommandInteraction,
-        langCode: LangCode
+        langCode: Locale
     ): MessageRetriever<DateFormatOption> {
         return async (msg: Message) => {
             let dateFormat = DateFormat.find(msg.content);

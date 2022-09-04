@@ -13,7 +13,7 @@ import {
     VoiceChannel,
 } from 'discord.js';
 
-import { LangCode } from '../enums/index.js';
+import { Locale } from '../enums/index.js';
 import { Lang } from '../services/index.js';
 import { PermissionUtils, RegexUtils } from './index.js';
 
@@ -206,7 +206,7 @@ export class ClientUtils {
 
     public static async findNotifyChannel(
         guild: Guild,
-        langCode: LangCode
+        langCode: Locale
     ): Promise<TextChannel | NewsChannel> {
         // Prefer the system channel
         let systemChannel = guild.systemChannel;

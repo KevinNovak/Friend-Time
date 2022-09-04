@@ -1,4 +1,4 @@
-export enum LangCode {
+export enum Locale {
     EN_US = 'en-US',
     ES = 'es',
     PT_BR = 'pt-BR',

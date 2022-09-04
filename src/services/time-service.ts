@@ -1,7 +1,7 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
 import { createRequire } from 'node:module';
 
-import { DateFormatOption, LangCode, TimeFormatOption } from '../enums/index.js';
+import { DateFormatOption, Locale, TimeFormatOption } from '../enums/index.js';
 import { DateFormat } from '../models/enum-helpers/index.js';
 import { FormattedTimeResult } from '../models/internal-models.js';
 import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils/index.js';
@@ -55,7 +55,7 @@ export class TimeService {
         timeZoneFrom: string,
         timeZoneTo: string,
         timeFormat: TimeFormatOption,
-        langCode: LangCode
+        langCode: Locale
     ): FormattedTimeResult {
         return {
             text: this.formatTimeText(result.text),
@@ -75,7 +75,7 @@ export class TimeService {
         timeZoneFrom: string,
         timeZoneTo: string,
         timeFormat: TimeFormatOption,
-        langCode: LangCode
+        langCode: Locale
     ): string {
         let dateTime = TimeUtils.dateToDateTime(
             components.date(),

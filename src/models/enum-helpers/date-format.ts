@@ -1,4 +1,4 @@
-import { DateFormatOption, LangCode } from '../../enums/index.js';
+import { DateFormatOption, Locale } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
 
@@ -15,7 +15,7 @@ export class DateFormat {
             name(): string {
                 return Lang.getCom('dateFormat.monthDay');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('dateFormat.monthDayDisplay', langCode);
             },
             littleEndian: false,
@@ -24,7 +24,7 @@ export class DateFormat {
             name(): string {
                 return Lang.getCom('dateFormat.dayMonth');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('dateFormat.dayMonthDisplay', langCode);
             },
             littleEndian: true,

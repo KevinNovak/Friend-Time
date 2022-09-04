@@ -1,4 +1,4 @@
-import { LangCode } from '../../enums/index.js';
+import { Locale } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
 
@@ -15,7 +15,7 @@ export class YesNo {
             name(): string {
                 return Lang.getCom('yesNo.yes');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('yesNo.yesDisplay', langCode);
             },
             value: true,
@@ -24,7 +24,7 @@ export class YesNo {
             name(): string {
                 return Lang.getCom('yesNo.no');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('yesNo.noDisplay', langCode);
             },
             value: false,

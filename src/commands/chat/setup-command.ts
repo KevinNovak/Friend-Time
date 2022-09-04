@@ -5,6 +5,7 @@ import {
 import { CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildData } from '../../database/entities/index.js';
+import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -15,7 +16,7 @@ export class SetupCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.setup'),
-        description: Lang.getRef('commandDescs.setup', Lang.Default),
+        description: Lang.getRef('commandDescs.setup', Language.Default),
         dm_permission: false,
         default_member_permissions: undefined,
     };

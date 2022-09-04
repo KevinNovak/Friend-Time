@@ -6,6 +6,7 @@ import {
 import { CommandInteraction, DMChannel, PermissionString } from 'discord.js';
 
 import { UserData } from '../../database/entities/index.js';
+import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -17,18 +18,18 @@ export class MeCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.me'),
-        description: Lang.getRef('commandDescs.me', Lang.Default),
+        description: Lang.getRef('commandDescs.me', Language.Default),
         dm_permission: true,
         default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.meView', Lang.Default),
+                description: Lang.getRef('commandDescs.meView', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: Lang.getRef('commandDescs.meEdit', Lang.Default),
+                description: Lang.getRef('commandDescs.meEdit', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
@@ -51,7 +52,7 @@ export class MeCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: Lang.getRef('commandDescs.meRemove', Lang.Default),
+                description: Lang.getRef('commandDescs.meRemove', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
         ],

@@ -1,8 +1,8 @@
+import { Locale } from 'discord-api-types/v10';
 import { CommandInteraction, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 
-import { Locale } from '../enums/index.js';
 import { Display } from '../models/common/index.js';
 import { EventData } from '../models/internal-models.js';
 

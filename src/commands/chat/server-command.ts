@@ -6,6 +6,7 @@ import {
 import { CommandInteraction, PermissionString } from 'discord.js';
 
 import { GuildBotData, GuildData, GuildListItemData } from '../../database/entities/index.js';
+import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -16,18 +17,18 @@ export class ServerCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.server'),
-        description: Lang.getRef('commandDescs.server', Lang.Default),
+        description: Lang.getRef('commandDescs.server', Language.Default),
         dm_permission: false,
         default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.serverView', Lang.Default),
+                description: Lang.getRef('commandDescs.serverView', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: Lang.getRef('commandDescs.serverEdit', Lang.Default),
+                description: Lang.getRef('commandDescs.serverEdit', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
@@ -50,7 +51,7 @@ export class ServerCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: Lang.getRef('commandDescs.serverRemove', Lang.Default),
+                description: Lang.getRef('commandDescs.serverRemove', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
         ],

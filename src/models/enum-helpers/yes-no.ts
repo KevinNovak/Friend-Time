@@ -1,4 +1,5 @@
-import { Locale } from '../../enums/index.js';
+import { Locale } from 'discord-api-types/v10';
+
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
 

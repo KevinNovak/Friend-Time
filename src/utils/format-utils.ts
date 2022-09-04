@@ -1,8 +1,9 @@
+import { Locale } from 'discord-api-types/v10';
 import { Guild } from 'discord.js';
 import { DateTime, Duration } from 'luxon'; // TODO: Missing types
 
-import { Locale, TimeFormatOption } from '../enums/index.js';
-import { Language, TimeFormat } from '../models/enum-helpers/index.js';
+import { TimeFormatOption } from '../enums/index.js';
+import { TimeFormat } from '../models/enum-helpers/index.js';
 
 export class FormatUtils {
     public static roleMention(guild: Guild, discordId: string): string {
@@ -36,14 +37,12 @@ export class FormatUtils {
     }
 
     public static date(dateTime: DateTime, langCode: Locale): string {
-        let locale = Language.locale(langCode);
-        dateTime = dateTime.setLocale(locale);
+        dateTime = dateTime.setLocale(langCode);
         return dateTime.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
     }
 
     public static time(dateTime: DateTime, timeFormat: TimeFormatOption, langCode: Locale): string {
-        let locale = Language.locale(langCode);
-        dateTime = dateTime.setLocale(locale);
+        dateTime = dateTime.setLocale(langCode);
         return dateTime.toFormat(TimeFormat.Data[timeFormat].format);
     }
 
@@ -51,7 +50,7 @@ export class FormatUtils {
         return Duration.fromObject(
             Object.fromEntries(
                 Object.entries(
-                    Duration.fromMillis(milliseconds, { locale: Language.locale(langCode) })
+                    Duration.fromMillis(milliseconds, { locale: langCode })
                         .shiftTo(
                             'year',
                             'quarter',

@@ -1,8 +1,9 @@
+import { Locale } from 'discord-api-types/v10';
 import { CommandInteraction, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildBotData } from '../../database/entities/index.js';
-import { DateFormatOption, Locale } from '../../enums/index.js';
+import { DateFormatOption } from '../../enums/index.js';
 import { DateFormat } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';

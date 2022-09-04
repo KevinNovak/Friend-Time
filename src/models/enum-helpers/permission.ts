@@ -1,6 +1,6 @@
+import { Locale } from 'discord-api-types/v10';
 import { PermissionString } from 'discord.js';
 
-import { Locale } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 
 interface PermissionData {

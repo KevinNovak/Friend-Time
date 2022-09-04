@@ -1,7 +1,8 @@
 import { Chrono, en, ParsedComponents, ParsedResult } from 'chrono-node';
+import { Locale } from 'discord-api-types/v10';
 import { createRequire } from 'node:module';
 
-import { DateFormatOption, Locale, TimeFormatOption } from '../enums/index.js';
+import { DateFormatOption, TimeFormatOption } from '../enums/index.js';
 import { DateFormat } from '../models/enum-helpers/index.js';
 import { FormattedTimeResult } from '../models/internal-models.js';
 import { FormatUtils, RegexUtils, StringUtils, TimeUtils } from '../utils/index.js';

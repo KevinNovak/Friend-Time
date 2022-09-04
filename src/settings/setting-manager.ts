@@ -1,6 +1,6 @@
+import { Locale } from 'discord-api-types/v10';
 import type { BaseEntity } from 'typeorm';
 
-import { Locale } from '../enums/index.js';
 import { Lang } from '../services/index.js';
 import { Setting } from './index.js';
 

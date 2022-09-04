@@ -1,4 +1,6 @@
-import { Locale, TimeFormatOption } from '../../enums/index.js';
+import { Locale } from 'discord-api-types/v10';
+
+import { TimeFormatOption } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
 

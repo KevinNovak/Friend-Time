@@ -1,3 +1,4 @@
+import { Locale } from 'discord-api-types/v10';
 import {
     BaseEntity,
     Column,
@@ -10,7 +11,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { Locale, TimeFormatOption } from '../../enums/index.js';
+import { TimeFormatOption } from '../../enums/index.js';
 import { GuildBotData, GuildListItemData } from './index.js';
 
 @Entity('guild')

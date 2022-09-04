@@ -1,4 +1,6 @@
-import { LangCode, TimeFormatOption } from '../../enums/index.js';
+import { Locale } from 'discord-api-types/v10';
+
+import { TimeFormatOption } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';
 import { Display } from '../common/index.js';
 
@@ -15,7 +17,7 @@ export class TimeFormat {
             name(): string {
                 return Lang.getCom('timeFormat.twelveHour');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('timeFormat.twelveHourDisplay', langCode);
             },
             format: 'h:mm a',
@@ -24,7 +26,7 @@ export class TimeFormat {
             name(): string {
                 return Lang.getCom('timeFormat.twentyFourHour');
             },
-            displayName(langCode: LangCode): string {
+            displayName(langCode: Locale): string {
                 return Lang.getRef('timeFormat.twentyFourHourDisplay', langCode);
             },
             format: 'HH:mm',

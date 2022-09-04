@@ -789,18 +789,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/\\b({{REF:meta.language}}|pt BR|Português Brasileiro)\\b/i"
-        },
         "channelRegexes": {
             "bot": "/bot|comando|cmd/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "pt-BR",
-            "languageDisplay": "Português do Brasil",
-            "locale": "pt-BR",
             "translators": "KiddLankaster#2198, [Davi 6596#6596](https://github.com/Davi-the-Mudkip)"
         },
         "bot": {
@@ -862,7 +856,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

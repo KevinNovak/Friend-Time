@@ -784,18 +784,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/(?<=^|\\s)({{REF:meta.language}}|ru|ру|русский|Russian)(?=$|\\s)/i"
-        },
         "channelRegexes": {
             "bot": "/бот|команда|команды|кмд/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "ru",
-            "languageDisplay": "Русский",
-            "locale": "ru",
             "translators": "[Ajno#0239](https://vk.com/almazikfl)"
         },
         "bot": {
@@ -857,7 +851,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

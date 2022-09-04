@@ -1,8 +1,9 @@
+import { Locale } from 'discord-api-types/v10';
 import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildData } from '../../database/entities/index.js';
-import { LangCode, TimeFormatOption } from '../../enums/index.js';
+import { TimeFormatOption } from '../../enums/index.js';
 import { TimeFormat } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -13,7 +14,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
     public name = Lang.getCom('settings.timeFormat');
     public default = TimeFormatOption.TWELVE_HOUR;
 
-    public displayName(langCode: LangCode): string {
+    public displayName(langCode: Locale): string {
         return Lang.getRef('settings.timeFormatDisplay', langCode);
     }
 
@@ -33,13 +34,13 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         guildData.timeFormat = null;
     }
 
-    public valueDisplayName(value: TimeFormatOption, langCode: LangCode): string {
+    public valueDisplayName(value: TimeFormatOption, langCode: Locale): string {
         return TimeFormat.Data[value].displayName(langCode);
     }
 
     public retriever(
         intr: CommandInteraction,
-        langCode: LangCode
+        langCode: Locale
     ): MessageRetriever<TimeFormatOption> {
         return async (msg: Message) => {
             let timeFormat = TimeFormat.find(msg.content);

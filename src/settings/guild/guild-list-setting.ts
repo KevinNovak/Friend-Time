@@ -1,8 +1,8 @@
+import { Locale } from 'discord-api-types/v10';
 import { CommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildData } from '../../database/entities/index.js';
-import { LangCode } from '../../enums/index.js';
 import { YesNo } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -13,7 +13,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
     public name = Lang.getCom('settings.list');
     public default = true;
 
-    public displayName(langCode: LangCode): string {
+    public displayName(langCode: Locale): string {
         return Lang.getRef('settings.listDisplay', langCode);
     }
 
@@ -33,11 +33,11 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
         guildData.list = null;
     }
 
-    public valueDisplayName(value: boolean, langCode: LangCode): string {
+    public valueDisplayName(value: boolean, langCode: Locale): string {
         return YesNo.Data[value.toString()].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: LangCode): MessageRetriever<boolean> {
+    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let list = YesNo.find(msg.content);
             if (list == null) {

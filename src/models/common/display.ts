@@ -1,5 +1,5 @@
-import { LangCode } from '../../enums/index.js';
+import { Locale } from 'discord-api-types/v10';
 
 export interface Display {
-    displayName(langCode: LangCode): string;
+    displayName(langCode: Locale): string;
 }

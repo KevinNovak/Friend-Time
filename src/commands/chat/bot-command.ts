@@ -7,6 +7,7 @@ import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData } from '../../database/entities/index.js';
+import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -20,18 +21,18 @@ export class BotCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.bot'),
-        description: Lang.getRef('commandDescs.bot', Lang.Default),
+        description: Lang.getRef('commandDescs.bot', Language.Default),
         dm_permission: false,
         default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.list'),
-                description: Lang.getRef('commandDescs.botList', Lang.Default),
+                description: Lang.getRef('commandDescs.botList', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.botView', Lang.Default),
+                description: Lang.getRef('commandDescs.botView', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
@@ -44,7 +45,7 @@ export class BotCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.edit'),
-                description: Lang.getRef('commandDescs.botEdit', Lang.Default),
+                description: Lang.getRef('commandDescs.botEdit', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {
@@ -73,7 +74,7 @@ export class BotCommand implements Command {
             },
             {
                 name: Lang.getCom('subCommands.remove'),
-                description: Lang.getRef('commandDescs.botRemove', Lang.Default),
+                description: Lang.getRef('commandDescs.botRemove', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {

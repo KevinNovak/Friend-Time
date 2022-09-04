@@ -1,3 +1,4 @@
+import { Locale } from 'discord-api-types/v10';
 import {
     BaseEntity,
     Column,
@@ -8,7 +9,7 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { DateFormatOption, LangCode, TimeFormatOption } from '../../enums/index.js';
+import { DateFormatOption, TimeFormatOption } from '../../enums/index.js';
 
 @Entity('user')
 @Unique(['discordId'])
@@ -37,7 +38,7 @@ export class UserData extends BaseEntity {
     reminders?: boolean;
 
     @Column({ type: 'varchar', length: 13, nullable: true })
-    language?: LangCode;
+    language?: Locale;
 
     // Timestamps
     @CreateDateColumn()

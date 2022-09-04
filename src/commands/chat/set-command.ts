@@ -7,7 +7,7 @@ import { CommandInteraction, DMChannel, Message, Permissions, PermissionString }
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../../database/entities/index.js';
-import { YesNo } from '../../models/enum-helpers/index.js';
+import { Language, YesNo } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -23,18 +23,18 @@ export class SetCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.set'),
-        description: Lang.getRef('commandDescs.set', Lang.Default),
+        description: Lang.getRef('commandDescs.set', Language.Default),
         dm_permission: true,
         default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.me'),
-                description: Lang.getRef('commandDescs.setMe', Lang.Default),
+                description: Lang.getRef('commandDescs.setMe', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.user'),
-                description: Lang.getRef('commandDescs.setUser', Lang.Default),
+                description: Lang.getRef('commandDescs.setUser', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {

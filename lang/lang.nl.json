@@ -838,18 +838,12 @@
                 "color": "{{COM:colors.warning}}"
             }
         },
-        "metaRegexes": {
-            "language": "/\\b({{REF:meta.language}}|nl|Nederlands)\\b/i"
-        },
         "channelRegexes": {
             "bot": "/bot|command|cmd/i"
         }
     },
     "refs": {
         "meta": {
-            "language": "nl",
-            "languageDisplay": "Nederlands",
-            "locale": "nl",
             "translators": "[Hester#5259](https://github.com/uxster)"
         },
         "bot": {
@@ -911,7 +905,6 @@
             "infoOption": "Option."
         },
         "lists": {
-            "languageItem": "**{{LANGUAGE_NAME}}** (`{{LANGUAGE_KEYWORD}}`)",
             "settingItem": [
                 "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
                 "{{SETTING_VALUE}}",

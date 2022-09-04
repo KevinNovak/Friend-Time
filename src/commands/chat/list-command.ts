@@ -7,6 +7,7 @@ import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../../database/entities/index.js';
+import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { DataUtils, InteractionUtils, TimeZoneUtils } from '../../utils/index.js';
@@ -19,18 +20,18 @@ export class ListCommand implements Command {
     public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getCom('chatCommands.list'),
-        description: Lang.getRef('commandDescs.list', Lang.Default),
+        description: Lang.getRef('commandDescs.list', Language.Default),
         dm_permission: false,
         default_member_permissions: undefined,
         options: [
             {
                 name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.listView', Lang.Default),
+                description: Lang.getRef('commandDescs.listView', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
             },
             {
                 name: Lang.getCom('subCommands.toggle'),
-                description: Lang.getRef('commandDescs.listToggle', Lang.Default),
+                description: Lang.getRef('commandDescs.listToggle', Language.Default),
                 type: ApplicationCommandOptionType.Subcommand,
                 options: [
                     {

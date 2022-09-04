@@ -57,7 +57,11 @@ export class UserLanguageSetting implements Setting<UserData, Locale> {
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.languageUser', data.lang(), {
-                LANGUAGE_LIST: Language.list(),
+                LANGUAGE_LIST: Language.Enabled.map(
+                    langCode => `**${Language.Data[langCode].nativeName}** (\`${langCode}\`)`
+                )
+                    .join('\n')
+                    .trim(),
             })
         );
 

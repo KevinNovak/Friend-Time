@@ -57,7 +57,11 @@ export class GuildLanguageSetting implements Setting<GuildData, Locale> {
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {
-                LANGUAGE_LIST: Language.list(),
+                LANGUAGE_LIST: Language.Enabled.map(
+                    langCode => `**${Language.Data[langCode].nativeName}** (\`${langCode}\`)`
+                )
+                    .join('\n')
+                    .trim(),
             })
         );
 

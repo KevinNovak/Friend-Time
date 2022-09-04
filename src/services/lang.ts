@@ -1,14 +1,12 @@
-import { LocalizationMap } from 'discord-api-types/v10.js';
+import { Locale, LocalizationMap } from 'discord-api-types/v10';
 import { MessageEmbed } from 'discord.js';
 import { Linguini, TypeMapper, TypeMappers, Utils } from 'linguini';
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { Locale } from '../enums/index.js';
+import { Language } from '../models/enum-helpers/index.js';
 
 export class Lang {
-    public static Default = Locale.EN_US;
-
     private static linguini = new Linguini(
         path.resolve(dirname(fileURLToPath(import.meta.url)), '../../lang'),
         'lang'
@@ -21,14 +19,14 @@ export class Lang {
     ): MessageEmbed {
         return (
             this.linguini.get(location, langCode, this.messageEmbedTm, variables) ??
-            this.linguini.get(location, this.Default, this.messageEmbedTm, variables)
+            this.linguini.get(location, Language.Default, this.messageEmbedTm, variables)
         );
     }
 
     public static getRegex(location: string, langCode: Locale): RegExp {
         return (
             this.linguini.get(location, langCode, TypeMappers.RegExp) ??
-            this.linguini.get(location, this.Default, TypeMappers.RegExp)
+            this.linguini.get(location, Language.Default, TypeMappers.RegExp)
         );
     }
 
@@ -39,7 +37,7 @@ export class Lang {
     ): string {
         return (
             this.linguini.getRef(location, langCode, variables) ??
-            this.linguini.getRef(location, this.Default, variables)
+            this.linguini.getRef(location, Language.Default, variables)
         );
     }
 
@@ -48,7 +46,7 @@ export class Lang {
         variables?: { [name: string]: string }
     ): LocalizationMap {
         let obj = {};
-        for (let langCode of Object.values(Locale)) {
+        for (let langCode of Language.Enabled) {
             obj[langCode] = this.getRef(location, langCode, variables);
         }
         return obj;

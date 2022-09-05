@@ -33,55 +33,44 @@ export class TimeZoneUtils {
     }
 
     public static find(input: string): RawTimeZone {
-        let search = input.split(' ').join('_').toLowerCase();
-        return (
-            // Exact match
-            this.timeZones.find(timeZone => timeZone.name.toLowerCase() === search) ??
-            this.timeZones.find(timeZone =>
-                timeZone.group.some(name => name.toLowerCase() === search)
-            ) ??
-            // Starts with search term
-            this.timeZones.find(timeZone => timeZone.name.toLowerCase().startsWith(search)) ??
-            this.timeZones.find(timeZone =>
-                timeZone.group.some(name => name.toLowerCase().startsWith(search))
-            ) ??
-            // Includes search term
-            this.timeZones.find(timeZone => timeZone.name.toLowerCase().includes(search)) ??
-            this.timeZones.find(timeZone =>
-                timeZone.group.some(name => name.toLowerCase().includes(search))
-            )
-        );
+        return this.findMultiple(input, 1)[0];
     }
 
-    public static findAll(input: string): RawTimeZone[] {
+    public static findMultiple(input: string, limit: number = Number.MAX_VALUE): RawTimeZone[] {
         let search = input.split(' ').join('_').toLowerCase();
-        let found: RawTimeZone[] = [];
+        let found = new Set<RawTimeZone>();
         // Exact match
-        found.push(...this.timeZones.filter(timeZone => timeZone.name.toLowerCase() === search));
-        found.push(
-            ...this.timeZones.filter(timeZone =>
+        if (found.size < limit)
+            this.timeZones
+                .filter(timeZone => timeZone.name.toLowerCase() === search)
+                .forEach(timeZone => found.add(timeZone));
+        if (found.size < limit)
+            this.timeZones.filter(timeZone =>
                 timeZone.group.some(name => name.toLowerCase() === search)
-            )
-        );
+            );
         // Starts with search term
-        found.push(
-            ...this.timeZones.filter(timeZone => timeZone.name.toLowerCase().startsWith(search))
-        );
-        found.push(
-            ...this.timeZones.filter(timeZone =>
-                timeZone.group.some(name => name.toLowerCase().startsWith(search))
-            )
-        );
+        if (found.size < limit)
+            this.timeZones
+                .filter(timeZone => timeZone.name.toLowerCase().startsWith(search))
+                .forEach(timeZone => found.add(timeZone));
+        if (found.size < limit)
+            this.timeZones
+                .filter(timeZone =>
+                    timeZone.group.some(name => name.toLowerCase().startsWith(search))
+                )
+                .forEach(timeZone => found.add(timeZone));
         // Includes search term
-        found.push(
-            ...this.timeZones.filter(timeZone => timeZone.name.toLowerCase().includes(search))
-        );
-        found.push(
-            ...this.timeZones.filter(timeZone =>
-                timeZone.group.some(name => name.toLowerCase().includes(search))
-            )
-        );
-        return [...new Set(found)];
+        if (found.size < limit)
+            this.timeZones
+                .filter(timeZone => timeZone.name.toLowerCase().includes(search))
+                .forEach(timeZone => found.add(timeZone));
+        if (found.size < limit)
+            this.timeZones
+                .filter(timeZone =>
+                    timeZone.group.some(name => name.toLowerCase().includes(search))
+                )
+                .forEach(timeZone => found.add(timeZone));
+        return [...found];
     }
 
     public static sort(timeZones: string[]): string[] {

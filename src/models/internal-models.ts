@@ -9,7 +9,7 @@ export class EventData {
     public user?: UserData;
     public guild?: GuildData;
 
-    private guildPrimaryLocale: Locale;
+    private guildPrimaryLocale?: Locale;
 
     public async initialize(user?: User, guild?: Guild): Promise<EventData> {
         if (user) {

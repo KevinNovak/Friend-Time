@@ -6,8 +6,8 @@ import { Language } from './enum-helpers/index.js';
 
 // This class is used to store and pass data along in events
 export class EventData {
-    public user: UserData;
-    public guild: GuildData;
+    public user?: UserData;
+    public guild?: GuildData;
 
     private guildPrimaryLocale: Locale;
 

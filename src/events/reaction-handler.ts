@@ -2,7 +2,6 @@ import { Message, MessageReaction, User } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { GuildData, UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Reaction } from '../reactions/index.js';
 import { EventHandler } from './index.js';
@@ -50,15 +49,7 @@ export class ReactionHandler implements EventHandler {
         }
 
         // Get data from database
-        let data = new EventData(
-            await UserData.findOne({ discordId: reactor.id }),
-            msg.guild
-                ? await GuildData.findOne(
-                      { discordId: msg.guild.id },
-                      { relations: ['bots', 'listItems'] }
-                  )
-                : undefined
-        );
+        let data = await new EventData().initialize(reactor, msg.guild);
 
         // Execute the reaction
         await reaction.execute(msgReaction, msg, reactor, data);

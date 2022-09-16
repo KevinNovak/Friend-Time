@@ -9,7 +9,6 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
 import { Command, CommandDeferType } from '../commands/index.js';
-import { GuildData, UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang, Logger } from '../services/index.js';
 import { CommandUtils, InteractionUtils } from '../utils/index.js';
@@ -111,15 +110,7 @@ export class CommandHandler implements EventHandler {
         }
 
         // Get data from database
-        let data = new EventData(
-            await UserData.findOne({ discordId: intr.user.id }),
-            intr.guild
-                ? await GuildData.findOne(
-                      { discordId: intr.guild?.id },
-                      { relations: ['bots', 'listItems'] }
-                  )
-                : undefined
-        );
+        let data = await new EventData().initialize(intr.user, intr.guild);
 
         try {
             // Check if interaction passes command checks

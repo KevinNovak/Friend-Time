@@ -2,7 +2,6 @@ import { Message } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { GuildData, UserData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Trigger } from '../triggers/index.js';
 
@@ -43,15 +42,7 @@ export class TriggerHandler {
         }
 
         // Get data from database
-        let data = new EventData(
-            await UserData.findOne({ discordId: msg.author.id }),
-            msg.guild
-                ? await GuildData.findOne(
-                      { discordId: msg.guild.id },
-                      { relations: ['bots', 'listItems'] }
-                  )
-                : undefined
-        );
+        let data = await new EventData().initialize(msg.author, msg.guild);
 
         // Execute triggers
         for (let trigger of triggers) {

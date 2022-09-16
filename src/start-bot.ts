@@ -179,7 +179,7 @@ async function start(): Promise<void> {
     ];
 
     // Event handlers
-    let guildJoinHandler = new GuildJoinHandler(guildLanguageSetting, userLanguageSetting);
+    let guildJoinHandler = new GuildJoinHandler();
     let guildLeaveHandler = new GuildLeaveHandler();
     let commandHandler = new CommandHandler(commands);
     let buttonHandler = new ButtonHandler(buttons);

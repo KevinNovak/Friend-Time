@@ -58,19 +58,16 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
     }
 
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<TimeFormatOption> {
-        await InteractionUtils.send(
-            intr,
-            Lang.getEmbed('promptEmbeds.timeFormatUser', data.lang())
-        );
+        await InteractionUtils.send(intr, Lang.getEmbed('promptEmbeds.timeFormatUser', data.lang));
 
         return await CollectorUtils.collectByMessage(
             intr.channel,
             intr.user,
-            this.retriever(intr, data.lang()),
+            this.retriever(intr, data.lang),
             async () => {
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                 );
             }
         );

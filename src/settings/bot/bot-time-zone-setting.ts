@@ -100,18 +100,18 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
         while (confirmed === false) {
             await InteractionUtils.send(
                 intr,
-                Lang.getEmbed('promptEmbeds.timeZoneBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneBot', data.lang, {
                     BOT: FormatUtils.userMention(target),
                 })
             );
             timeZone = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.retriever(intr, data.lang()),
+                this.retriever(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );
@@ -123,13 +123,13 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             let nowTwentyFourHour = FormatUtils.time(
                 now,
                 TimeFormatOption.TWENTY_FOUR_HOUR,
-                data.lang()
+                data.lang
             );
-            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang());
+            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang);
 
             await InteractionUtils.send(
                 intr,
-                Lang.getEmbed('promptEmbeds.timeZoneConfirmBot', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneConfirmBot', data.lang, {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,
@@ -139,11 +139,11 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
             confirmed = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.confirmation(intr, data.lang()),
+                this.confirmation(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );

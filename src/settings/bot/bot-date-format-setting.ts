@@ -64,7 +64,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     ): Promise<DateFormatOption> {
         await InteractionUtils.send(
             intr,
-            Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang(), {
+            Lang.getEmbed('promptEmbeds.dateFormatBot', data.lang, {
                 BOT: FormatUtils.userMention(target),
             })
         );
@@ -72,11 +72,11 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
         return await CollectorUtils.collectByMessage(
             intr.channel,
             intr.user,
-            this.retriever(intr, data.lang()),
+            this.retriever(intr, data.lang),
             async () => {
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                 );
             }
         );

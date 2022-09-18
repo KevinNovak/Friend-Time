@@ -106,17 +106,17 @@ export class BotCommand implements Command {
                         ? data.guild.bots
                               .slice(0, Config.validation.bots.countMax)
                               .map(botData =>
-                                  Lang.getRef('lists.botItem', data.lang(), {
+                                  Lang.getRef('lists.botItem', data.lang, {
                                       BOT: FormatUtils.userMention(botData.discordId),
                                   })
                               )
                               .join('\n')
                               .trim()
-                        : Lang.getRef('lists.botNone', data.lang());
+                        : Lang.getRef('lists.botNone', data.lang);
 
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('displayEmbeds.listBot', data.lang(), {
+                    Lang.getEmbed('displayEmbeds.listBot', data.lang, {
                         BOT_LIST: botList,
                     }).setAuthor({ name: intr.guild?.name, iconURL: intr.guild?.iconURL() })
                 );
@@ -128,15 +128,15 @@ export class BotCommand implements Command {
                 if (!botData) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang)
                     );
                     return;
                 }
 
-                let settingList = this.settingManager.list(botData, data.lang());
+                let settingList = this.settingManager.list(botData, data.lang);
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('displayEmbeds.settingsBot', data.lang(), {
+                    Lang.getEmbed('displayEmbeds.settingsBot', data.lang, {
                         SETTING_LIST: settingList,
                         BOT_ID: botData.discordId,
                     }).setAuthor({
@@ -152,7 +152,7 @@ export class BotCommand implements Command {
                 if (!botData) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang)
                     );
                     return;
                 }
@@ -163,7 +163,7 @@ export class BotCommand implements Command {
                 if (!setting) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang)
                     );
                     return;
                 }
@@ -176,9 +176,9 @@ export class BotCommand implements Command {
 
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.removedSettingBot', data.lang(), {
+                        Lang.getEmbed('resultEmbeds.removedSettingBot', data.lang, {
                             BOT: FormatUtils.userMention(botData.discordId),
-                            SETTING_NAME: setting.displayName(data.lang()),
+                            SETTING_NAME: setting.displayName(data.lang),
                         })
                     );
                     return;
@@ -195,10 +195,10 @@ export class BotCommand implements Command {
 
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.updatedSettingBot', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.updatedSettingBot', data.lang, {
                         BOT: FormatUtils.userMention(botData.discordId),
-                        SETTING_NAME: setting.displayName(data.lang()),
-                        SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
+                        SETTING_NAME: setting.displayName(data.lang),
+                        SETTING_VALUE: setting.valueDisplayName(value, data.lang),
                     })
                 );
                 return;
@@ -209,7 +209,7 @@ export class BotCommand implements Command {
                 if (!botData) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundBot', data.lang)
                     );
                     return;
                 }
@@ -217,7 +217,7 @@ export class BotCommand implements Command {
                 await botData.remove();
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.removedBot', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.removedBot', data.lang, {
                         BOT: FormatUtils.userMention(botData.discordId),
                     })
                 );

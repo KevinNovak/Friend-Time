@@ -6,21 +6,15 @@ import { GuildData, UserData } from '../database/entities/index.js';
 export class EventData {
     // TODO: Add any data you want to store
     constructor(
-        private userLang: Locale,
-        private guildLang: Locale,
+        // Event language
+        public lang: Locale,
+        // Guild language
+        public langGuild: Locale,
+        // User data
         public user?: UserData,
+        // Guild data
         public guild?: GuildData
     ) {}
-
-    // User language
-    public lang(): Locale {
-        return this.userLang;
-    }
-
-    // Guild language
-    public langGuild(): Locale {
-        return this.guildLang;
-    }
 }
 
 export interface FormattedTimeResult {

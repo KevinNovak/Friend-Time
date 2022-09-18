@@ -101,19 +101,19 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             await InteractionUtils.send(
                 intr,
                 target
-                    ? Lang.getEmbed('promptEmbeds.timeZoneUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneUser', data.lang, {
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('promptEmbeds.timeZoneSelf', data.lang())
+                    : Lang.getEmbed('promptEmbeds.timeZoneSelf', data.lang)
             );
             timeZone = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.retriever(intr, data.lang()),
+                this.retriever(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );
@@ -125,20 +125,20 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             let nowTwentyFourHour = FormatUtils.time(
                 now,
                 TimeFormatOption.TWENTY_FOUR_HOUR,
-                data.lang()
+                data.lang
             );
-            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang());
+            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang);
 
             await InteractionUtils.send(
                 intr,
                 target
-                    ? Lang.getEmbed('promptEmbeds.timeZoneConfirmUser', data.lang(), {
+                    ? Lang.getEmbed('promptEmbeds.timeZoneConfirmUser', data.lang, {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,
                           USER: FormatUtils.userMention(target),
                       })
-                    : Lang.getEmbed('promptEmbeds.timeZoneConfirmSelf', data.lang(), {
+                    : Lang.getEmbed('promptEmbeds.timeZoneConfirmSelf', data.lang, {
                           TIME_12_HOUR: nowTwelveHour,
                           TIME_24_HOUR: nowTwentyFourHour,
                           TIME_ZONE: timeZone,
@@ -147,11 +147,11 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
             confirmed = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.confirmation(intr, data.lang()),
+                this.confirmation(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );

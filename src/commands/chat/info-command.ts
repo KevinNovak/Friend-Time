@@ -44,11 +44,11 @@ export class InfoCommand implements Command {
         let embed: MessageEmbed;
         switch (option) {
             case InfoOption.ABOUT: {
-                embed = Lang.getEmbed('displayEmbeds.about', data.lang());
+                embed = Lang.getEmbed('displayEmbeds.about', data.lang);
                 break;
             }
             case InfoOption.TRANSLATE: {
-                embed = Lang.getEmbed('displayEmbeds.translate', data.lang());
+                embed = Lang.getEmbed('displayEmbeds.translate', data.lang);
                 for (let langCode of Language.Enabled) {
                     embed.addFields([
                         {
@@ -63,7 +63,7 @@ export class InfoCommand implements Command {
                 if (!Config.developers.includes(intr.user.id)) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.devOnly', data.lang())
+                        Lang.getEmbed('validationEmbeds.devOnly', data.lang)
                     );
                     return;
                 }
@@ -78,7 +78,7 @@ export class InfoCommand implements Command {
                         if (error.name.includes('SHARDING_IN_PROCESS')) {
                             await InteractionUtils.send(
                                 intr,
-                                Lang.getEmbed('errorEmbeds.startupInProcess', data.lang())
+                                Lang.getEmbed('errorEmbeds.startupInProcess', data.lang)
                             );
                             return;
                         } else {
@@ -90,7 +90,7 @@ export class InfoCommand implements Command {
                 }
 
                 let memory = process.memoryUsage();
-                embed = Lang.getEmbed('displayEmbeds.dev', data.lang(), {
+                embed = Lang.getEmbed('displayEmbeds.dev', data.lang, {
                     NODE_VERSION: process.version,
                     TS_VERSION: `v${typescript.version}`,
                     ES_VERSION: TsConfig.compilerOptions.target,
@@ -102,20 +102,20 @@ export class InfoCommand implements Command {
                     RSS_SIZE_PER_SERVER:
                         serverCount > 0
                             ? fileSize(memory.rss / serverCount)
-                            : Lang.getRef('other.na', data.lang()),
+                            : Lang.getRef('other.na', data.lang),
                     HEAP_TOTAL_SIZE: fileSize(memory.heapTotal),
                     HEAP_TOTAL_SIZE_PER_SERVER:
                         serverCount > 0
                             ? fileSize(memory.heapTotal / serverCount)
-                            : Lang.getRef('other.na', data.lang()),
+                            : Lang.getRef('other.na', data.lang),
                     HEAP_USED_SIZE: fileSize(memory.heapUsed),
                     HEAP_USED_SIZE_PER_SERVER:
                         serverCount > 0
                             ? fileSize(memory.heapUsed / serverCount)
-                            : Lang.getRef('other.na', data.lang()),
+                            : Lang.getRef('other.na', data.lang),
                     HOSTNAME: os.hostname(),
                     SHARD_ID: (intr.guild?.shardId ?? 0).toString(),
-                    SERVER_ID: intr.guild?.id ?? Lang.getRef('other.na', data.lang()),
+                    SERVER_ID: intr.guild?.id ?? Lang.getRef('other.na', data.lang),
                     BOT_ID: intr.client.user?.id,
                     USER_ID: intr.user.id,
                 });

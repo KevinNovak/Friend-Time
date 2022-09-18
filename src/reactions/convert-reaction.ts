@@ -76,7 +76,7 @@ export class ConvertReaction implements Reaction {
                 authorTimeZone,
                 userTimeZone,
                 timeFormat,
-                data.lang()
+                data.lang
             )
         );
 
@@ -84,7 +84,7 @@ export class ConvertReaction implements Reaction {
             .map(result => {
                 return Lang.getRef(
                     result.end ? 'lists.timeTextAndTimeWithEndItem' : 'lists.timeTextAndTimeItem',
-                    data.lang(),
+                    data.lang,
                     {
                         TIME_TEXT: result.text,
                         TIME_START: result.start,
@@ -101,11 +101,11 @@ export class ConvertReaction implements Reaction {
                 : this.userPrivateModeSetting.valueOrDefault(authorData);
         await MessageUtils.send(
             reactor,
-            Lang.getEmbed('displayEmbeds.timeConversionDm', data.lang(), {
+            Lang.getEmbed('displayEmbeds.timeConversionDm', data.lang, {
                 USER: FormatUtils.userMention(msg.author.id),
                 CHANNEL: FormatUtils.channelMention(msg.channel.id),
                 TIME_ZONE_FROM: privateMode
-                    ? Lang.getRef('other.private', data.lang())
+                    ? Lang.getRef('other.private', data.lang)
                     : authorTimeZone,
                 TIME_ZONE_TO: userTimeZone,
                 TIME_LIST: timeList,

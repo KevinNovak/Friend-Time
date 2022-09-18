@@ -134,7 +134,7 @@ export class ConvertTrigger implements Trigger {
             .trim();
 
         let embed = Lang.getEmbed('displayEmbeds.timeConversionGuild', guildLangCode, {
-            TIME_ZONE_FROM: privateMode ? Lang.getRef('other.private', data.lang()) : timeZoneFrom,
+            TIME_ZONE_FROM: privateMode ? Lang.getRef('other.private', data.lang) : timeZoneFrom,
             TIME_TEXT_LIST: timeTextList,
         });
 

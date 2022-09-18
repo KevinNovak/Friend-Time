@@ -16,7 +16,7 @@ export class OldPrefixTrigger implements Trigger {
         try {
             await MessageUtils.send(
                 msg.channel,
-                Lang.getEmbed('validationEmbeds.oldPrefixUsed', data.lang())
+                Lang.getEmbed('validationEmbeds.oldPrefixUsed', data.lang)
             );
         } catch (error) {
             // Ignore

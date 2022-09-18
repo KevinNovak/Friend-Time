@@ -96,16 +96,16 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
         while (confirmed === false) {
             await InteractionUtils.send(
                 intr,
-                Lang.getEmbed('promptEmbeds.timeZoneGuild', data.lang())
+                Lang.getEmbed('promptEmbeds.timeZoneGuild', data.lang)
             );
             timeZone = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.retriever(intr, data.lang()),
+                this.retriever(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );
@@ -117,13 +117,13 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
             let nowTwentyFourHour = FormatUtils.time(
                 now,
                 TimeFormatOption.TWENTY_FOUR_HOUR,
-                data.lang()
+                data.lang
             );
-            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang());
+            let nowTwelveHour = FormatUtils.time(now, TimeFormatOption.TWELVE_HOUR, data.lang);
 
             await InteractionUtils.send(
                 intr,
-                Lang.getEmbed('promptEmbeds.timeZoneConfirmGuild', data.lang(), {
+                Lang.getEmbed('promptEmbeds.timeZoneConfirmGuild', data.lang, {
                     TIME_12_HOUR: nowTwelveHour,
                     TIME_24_HOUR: nowTwentyFourHour,
                     TIME_ZONE: timeZone,
@@ -132,11 +132,11 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
             confirmed = await CollectorUtils.collectByMessage(
                 intr.channel,
                 intr.user,
-                this.confirmation(intr, data.lang()),
+                this.confirmation(intr, data.lang),
                 async () => {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                        Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                     );
                 }
             );

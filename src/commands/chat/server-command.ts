@@ -70,10 +70,10 @@ export class ServerCommand implements Command {
 
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.view'): {
-                let settingList = this.settingManager.list(data.guild, data.lang());
+                let settingList = this.settingManager.list(data.guild, data.lang);
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('displayEmbeds.settingsServer', data.lang(), {
+                    Lang.getEmbed('displayEmbeds.settingsServer', data.lang, {
                         SETTING_LIST: settingList,
                         SERVER_ID: intr.guild?.id,
                     }).setAuthor({ name: intr.guild?.name, iconURL: intr.guild?.iconURL() })
@@ -87,7 +87,7 @@ export class ServerCommand implements Command {
                 if (!setting) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang)
                     );
                     return;
                 }
@@ -100,8 +100,8 @@ export class ServerCommand implements Command {
 
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.removedSettingGuild', data.lang(), {
-                            SETTING_NAME: setting.displayName(data.lang()),
+                        Lang.getEmbed('resultEmbeds.removedSettingGuild', data.lang, {
+                            SETTING_NAME: setting.displayName(data.lang),
                         })
                     );
                     return;
@@ -118,9 +118,9 @@ export class ServerCommand implements Command {
 
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.updatedSettingGuild', data.lang(), {
-                        SETTING_NAME: setting.displayName(data.lang()),
-                        SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
+                    Lang.getEmbed('resultEmbeds.updatedSettingGuild', data.lang, {
+                        SETTING_NAME: setting.displayName(data.lang),
+                        SETTING_VALUE: setting.valueDisplayName(value, data.lang),
                     })
                 );
                 return;
@@ -140,7 +140,7 @@ export class ServerCommand implements Command {
                 await data.guild.save();
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.removedGuild', data.lang())
+                    Lang.getEmbed('resultEmbeds.removedGuild', data.lang)
                 );
                 return;
             }

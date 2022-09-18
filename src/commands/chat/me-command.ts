@@ -71,7 +71,7 @@ export class MeCommand implements Command {
         if (privateMode && !(intr.channel instanceof DMChannel)) {
             await InteractionUtils.send(
                 intr,
-                Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
+                Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang)
             );
             return;
         }
@@ -83,10 +83,10 @@ export class MeCommand implements Command {
 
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.view'): {
-                let settingList = this.settingManager.list(data.user, data.lang());
+                let settingList = this.settingManager.list(data.user, data.lang);
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('displayEmbeds.settingSelf', data.lang(), {
+                    Lang.getEmbed('displayEmbeds.settingSelf', data.lang, {
                         SETTING_LIST: settingList,
                         USER_ID: intr.user.id,
                     }).setAuthor({ name: intr.user.tag, iconURL: intr.user.avatarURL() })
@@ -100,7 +100,7 @@ export class MeCommand implements Command {
                 if (!setting) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundSetting', data.lang)
                     );
                     return;
                 }
@@ -113,8 +113,8 @@ export class MeCommand implements Command {
 
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.removedSettingUser', data.lang(), {
-                            SETTING_NAME: setting.displayName(data.lang()),
+                        Lang.getEmbed('resultEmbeds.removedSettingUser', data.lang, {
+                            SETTING_NAME: setting.displayName(data.lang),
                         })
                     );
                     return;
@@ -131,9 +131,9 @@ export class MeCommand implements Command {
 
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.updatedSettingUser', data.lang(), {
-                        SETTING_NAME: setting.displayName(data.lang()),
-                        SETTING_VALUE: setting.valueDisplayName(value, data.lang()),
+                    Lang.getEmbed('resultEmbeds.updatedSettingUser', data.lang, {
+                        SETTING_NAME: setting.displayName(data.lang),
+                        SETTING_VALUE: setting.valueDisplayName(value, data.lang),
                     })
                 );
                 return;
@@ -143,7 +143,7 @@ export class MeCommand implements Command {
                 await data.user.save();
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.removedUser', data.lang())
+                    Lang.getEmbed('resultEmbeds.removedUser', data.lang)
                 );
                 return;
             }

@@ -56,7 +56,7 @@ export class GuildLanguageSetting implements Setting<GuildData, Locale> {
     public async retrieve(intr: CommandInteraction, data: EventData): Promise<Locale> {
         await InteractionUtils.send(
             intr,
-            Lang.getEmbed('promptEmbeds.languageGuild', data.lang(), {
+            Lang.getEmbed('promptEmbeds.languageGuild', data.lang, {
                 LANGUAGE_LIST: Language.Enabled.map(
                     langCode => `**${Language.Data[langCode].nativeName}** (\`${langCode}\`)`
                 )
@@ -68,11 +68,11 @@ export class GuildLanguageSetting implements Setting<GuildData, Locale> {
         return await CollectorUtils.collectByMessage(
             intr.channel,
             intr.user,
-            this.retriever(intr, data.lang()),
+            this.retriever(intr, data.lang),
             async () => {
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                    Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                 );
             }
         );

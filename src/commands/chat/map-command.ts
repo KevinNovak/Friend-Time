@@ -23,6 +23,6 @@ export class MapCommand implements Command {
     public requireUserPerms: PermissionString[] = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
-        await InteractionUtils.send(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang()));
+        await InteractionUtils.send(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang));
     }
 }

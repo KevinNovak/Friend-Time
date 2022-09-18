@@ -41,10 +41,10 @@ export class SetupCommand implements Command {
         }
         await data.guild.save();
 
-        let settingList = this.guildSettingManager.list(data.guild, data.lang());
+        let settingList = this.guildSettingManager.list(data.guild, data.lang);
         await InteractionUtils.send(
             intr,
-            Lang.getEmbed('resultEmbeds.setupCompleted', data.lang(), {
+            Lang.getEmbed('resultEmbeds.setupCompleted', data.lang, {
                 SETTING_LIST: settingList,
             })
         );

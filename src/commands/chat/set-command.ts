@@ -64,7 +64,7 @@ export class SetCommand implements Command {
                 if (privateMode && !(intr.channel instanceof DMChannel)) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang())
+                        Lang.getEmbed('validationEmbeds.privateModeEnabled', data.lang)
                     );
                     return;
                 }
@@ -83,10 +83,10 @@ export class SetCommand implements Command {
                 }
                 await data.user.save();
 
-                let settingList = this.userSettingManager.list(data.user, data.lang());
+                let settingList = this.userSettingManager.list(data.user, data.lang);
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.setCompletedSelf', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.setCompletedSelf', data.lang, {
                         SETTING_LIST: settingList,
                     })
                 );
@@ -96,7 +96,7 @@ export class SetCommand implements Command {
                 if (!intr.guild) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang())
+                        Lang.getEmbed('validationEmbeds.serverOnlyCommand', data.lang)
                     );
                     return;
                 }
@@ -106,7 +106,7 @@ export class SetCommand implements Command {
                 if (!member) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('validationEmbeds.notFoundUser', data.lang())
+                        Lang.getEmbed('validationEmbeds.notFoundUser', data.lang)
                     );
                     return;
                 }
@@ -121,7 +121,7 @@ export class SetCommand implements Command {
                     ) {
                         await InteractionUtils.send(
                             intr,
-                            Lang.getEmbed('validationEmbeds.missingUserPerms', data.lang())
+                            Lang.getEmbed('validationEmbeds.missingUserPerms', data.lang)
                         );
                         return;
                     }
@@ -129,7 +129,7 @@ export class SetCommand implements Command {
                     if (member.id === intr.client.user?.id) {
                         await InteractionUtils.send(
                             intr,
-                            Lang.getEmbed('validationEmbeds.notAllowedSetClient', data.lang())
+                            Lang.getEmbed('validationEmbeds.notAllowedSetClient', data.lang)
                         );
                         return;
                     }
@@ -140,7 +140,7 @@ export class SetCommand implements Command {
                             // Hit max number of bots allowed
                             await InteractionUtils.send(
                                 intr,
-                                Lang.getEmbed('validationEmbeds.maxLimitBots', data.lang())
+                                Lang.getEmbed('validationEmbeds.maxLimitBots', data.lang)
                             );
                             return;
                         }
@@ -167,10 +167,10 @@ export class SetCommand implements Command {
                     botData.guild = data.guild;
                     await botData.save();
 
-                    let settingList = this.botSettingManager.list(botData, data.lang());
+                    let settingList = this.botSettingManager.list(botData, data.lang);
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.setCompletedBot', data.lang(), {
+                        Lang.getEmbed('resultEmbeds.setCompletedBot', data.lang, {
                             SETTING_LIST: settingList,
                         })
                     );
@@ -193,11 +193,11 @@ export class SetCommand implements Command {
                 }
 
                 let userMention = FormatUtils.userMention(member.id);
-                let settingList = this.userSettingManager.list(userData, data.lang());
+                let settingList = this.userSettingManager.list(userData, data.lang);
                 await InteractionUtils.send(intr, {
                     content: userMention,
                     embeds: [
-                        Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang(), {
+                        Lang.getEmbed('promptEmbeds.setConfirmUser', data.lang, {
                             SETTING_LIST: settingList,
                             USER: userMention,
                         }),
@@ -211,12 +211,11 @@ export class SetCommand implements Command {
                         if (privateMode == null) {
                             await InteractionUtils.send(
                                 intr,
-                                Lang.getEmbed(
-                                    'validationEmbeds.invalidYesNo',
-                                    data.lang()
-                                ).setFooter({
-                                    text: Lang.getRef('footers.collector', data.lang()),
-                                })
+                                Lang.getEmbed('validationEmbeds.invalidYesNo', data.lang).setFooter(
+                                    {
+                                        text: Lang.getRef('footers.collector', data.lang),
+                                    }
+                                )
                             );
                             return;
                         }
@@ -225,7 +224,7 @@ export class SetCommand implements Command {
                     async () => {
                         await InteractionUtils.send(
                             intr,
-                            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang())
+                            Lang.getEmbed('resultEmbeds.collectorExpired', data.lang)
                         );
                     }
                 );
@@ -237,7 +236,7 @@ export class SetCommand implements Command {
                 if (!confirmed) {
                     await InteractionUtils.send(
                         intr,
-                        Lang.getEmbed('resultEmbeds.setDeniedUser', data.lang())
+                        Lang.getEmbed('resultEmbeds.setDeniedUser', data.lang)
                     );
                     return;
                 }
@@ -247,7 +246,7 @@ export class SetCommand implements Command {
 
                 await InteractionUtils.send(
                     intr,
-                    Lang.getEmbed('resultEmbeds.setCompletedUser', data.lang(), {
+                    Lang.getEmbed('resultEmbeds.setCompletedUser', data.lang, {
                         SETTING_LIST: settingList,
                     })
                 );

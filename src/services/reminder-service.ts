@@ -28,7 +28,7 @@ export class ReminderService {
         // Send the reminder
         await MessageUtils.send(
             user,
-            Lang.getEmbed('displayEmbeds.timeZoneReminder', data.lang(), {
+            Lang.getEmbed('displayEmbeds.timeZoneReminder', data.lang, {
                 USER: FormatUtils.userMention(user.id),
                 MESSAGE_LINK: msg.url,
             }).setAuthor({ name: msg.guild.name, iconURL: msg.guild.iconURL() })

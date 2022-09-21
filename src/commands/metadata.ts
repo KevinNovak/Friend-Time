@@ -53,10 +53,16 @@ export const ChatCommandMetadata: {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String,
                         required: true,
-                        // choices: this.settingManager.settings.map(setting => ({
-                        //     name: setting.name,
-                        //     value: setting.name,
-                        // })),
+                        choices: [
+                            {
+                                name: Lang.getCom('settings.timeZone'),
+                                value: Lang.getCom('settings.timeZone'),
+                            },
+                            {
+                                name: Lang.getCom('settings.dateFormat'),
+                                value: Lang.getCom('settings.dateFormat'),
+                            },
+                        ],
                     },
                     {
                         name: Lang.getCom('arguments.reset'),
@@ -163,10 +169,32 @@ export const ChatCommandMetadata: {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String,
                         required: true,
-                        // choices: this.settingManager.settings.map(setting => ({
-                        //     name: setting.name,
-                        //     value: setting.name,
-                        // })),
+                        choices: [
+                            {
+                                name: Lang.getCom('settings.timeZone'),
+                                value: Lang.getCom('settings.timeZone'),
+                            },
+                            {
+                                name: Lang.getCom('settings.dateFormat'),
+                                value: Lang.getCom('settings.dateFormat'),
+                            },
+                            {
+                                name: Lang.getCom('settings.timeFormat'),
+                                value: Lang.getCom('settings.timeFormat'),
+                            },
+                            {
+                                name: Lang.getCom('settings.privateMode'),
+                                value: Lang.getCom('settings.privateMode'),
+                            },
+                            {
+                                name: Lang.getCom('settings.reminders'),
+                                value: Lang.getCom('settings.reminders'),
+                            },
+                            {
+                                name: Lang.getCom('settings.language'),
+                                value: Lang.getCom('settings.language'),
+                            },
+                        ],
                     },
                     {
                         name: Lang.getCom('arguments.reset'),
@@ -205,10 +233,32 @@ export const ChatCommandMetadata: {
                         description: 'Setting.',
                         type: ApplicationCommandOptionType.String,
                         required: true,
-                        // choices: this.settingManager.settings.map(setting => ({
-                        //     name: setting.name,
-                        //     value: setting.name,
-                        // })),
+                        choices: [
+                            {
+                                name: Lang.getCom('settings.timeZone'),
+                                value: Lang.getCom('settings.timeZone'),
+                            },
+                            {
+                                name: Lang.getCom('settings.timeFormat'),
+                                value: Lang.getCom('settings.timeFormat'),
+                            },
+                            {
+                                name: Lang.getCom('settings.autoDetect'),
+                                value: Lang.getCom('settings.autoDetect'),
+                            },
+                            {
+                                name: Lang.getCom('settings.list'),
+                                value: Lang.getCom('settings.list'),
+                            },
+                            {
+                                name: Lang.getCom('settings.reminders'),
+                                value: Lang.getCom('settings.reminders'),
+                            },
+                            {
+                                name: Lang.getCom('settings.language'),
+                                value: Lang.getCom('settings.language'),
+                            },
+                        ],
                     },
                     {
                         name: Lang.getCom('arguments.reset'),

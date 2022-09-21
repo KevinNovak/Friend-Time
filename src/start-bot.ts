@@ -15,7 +15,12 @@ import {
     SetupCommand,
     TimeCommand,
 } from './commands/chat/index.js';
-import { Command } from './commands/index.js';
+import {
+    ChatCommandMetadata,
+    Command,
+    MessageCommandMetadata,
+    UserCommandMetadata,
+} from './commands/index.js';
 import { Database } from './database/database.js';
 import {
     ButtonHandler,
@@ -141,7 +146,7 @@ async function start(): Promise<void> {
             userTimeFormatSetting,
             userPrivateModeSetting
         ),
-    ].sort((a, b) => (a.metadata.name > b.metadata.name ? 1 : -1));
+    ];
 
     // Buttons
     let buttons: Button[] = [
@@ -210,7 +215,11 @@ async function start(): Promise<void> {
         try {
             let rest = new REST({ version: '10' }).setToken(Config.client.token);
             let commandRegistrationService = new CommandRegistrationService(rest);
-            let localCmds = commands.map(cmd => cmd.metadata);
+            let localCmds = [
+                ...Object.values(ChatCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
+                ...Object.values(MessageCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
+                ...Object.values(UserCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
+            ];
             await commandRegistrationService.process(localCmds, process.argv);
         } catch (error) {
             Logger.error(Logs.error.commandAction, error);

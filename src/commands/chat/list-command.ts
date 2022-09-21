@@ -1,13 +1,7 @@
-import {
-    ApplicationCommandOptionType,
-    ApplicationCommandType,
-    RESTPostAPIChatInputApplicationCommandsJSONBody,
-} from 'discord-api-types/v10';
 import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../../database/entities/index.js';
-import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { DataUtils, InteractionUtils, TimeZoneUtils } from '../../utils/index.js';
@@ -17,33 +11,7 @@ const require = createRequire(import.meta.url);
 let Config = require('../../../config/config.json');
 
 export class ListCommand implements Command {
-    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        type: ApplicationCommandType.ChatInput,
-        name: Lang.getCom('chatCommands.list'),
-        description: Lang.getRef('commandDescs.list', Language.Default),
-        dm_permission: false,
-        default_member_permissions: undefined,
-        options: [
-            {
-                name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.listView', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-            },
-            {
-                name: Lang.getCom('subCommands.toggle'),
-                description: Lang.getRef('commandDescs.listToggle', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-                options: [
-                    {
-                        name: Lang.getCom('arguments.zone'),
-                        description: 'Time zone name. Ex: America/New_York',
-                        type: ApplicationCommandOptionType.String,
-                        required: true,
-                    },
-                ],
-            },
-        ],
-    };
+    public names = [Lang.getCom('chatCommands.list')];
     public deferType = CommandDeferType.PUBLIC;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];

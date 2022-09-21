@@ -7,7 +7,7 @@ import { HelpOption, InfoOption } from '../enums/index.js';
 import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/index.js';
 
-export class ChatArgs {
+export class Args {
     public static readonly HELP_OPTION: APIApplicationCommandBasicOption = {
         name: Lang.getCom('arguments.option'),
         description: Lang.getRef('argDescs.helpOption', Language.Default),

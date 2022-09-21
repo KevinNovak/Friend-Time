@@ -1,12 +1,6 @@
-import {
-    ApplicationCommandOptionType,
-    ApplicationCommandType,
-    RESTPostAPIChatInputApplicationCommandsJSONBody,
-} from 'discord-api-types/v10';
 import { CommandInteraction, DMChannel, PermissionString } from 'discord.js';
 
 import { UserData } from '../../database/entities/index.js';
-import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { SettingManager } from '../../settings/index.js';
@@ -15,48 +9,7 @@ import { InteractionUtils } from '../../utils/index.js';
 import { Command, CommandDeferType } from '../index.js';
 
 export class MeCommand implements Command {
-    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        type: ApplicationCommandType.ChatInput,
-        name: Lang.getCom('chatCommands.me'),
-        description: Lang.getRef('commandDescs.me', Language.Default),
-        dm_permission: true,
-        default_member_permissions: undefined,
-        options: [
-            {
-                name: Lang.getCom('subCommands.view'),
-                description: Lang.getRef('commandDescs.meView', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-            },
-            {
-                name: Lang.getCom('subCommands.edit'),
-                description: Lang.getRef('commandDescs.meEdit', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-                options: [
-                    {
-                        name: Lang.getCom('arguments.setting'),
-                        description: 'Setting.',
-                        type: ApplicationCommandOptionType.String,
-                        required: true,
-                        choices: this.settingManager.settings.map(setting => ({
-                            name: setting.name,
-                            value: setting.name,
-                        })),
-                    },
-                    {
-                        name: Lang.getCom('arguments.reset'),
-                        description: 'Reset setting to default?',
-                        type: ApplicationCommandOptionType.Boolean,
-                        required: false,
-                    },
-                ],
-            },
-            {
-                name: Lang.getCom('subCommands.remove'),
-                description: Lang.getRef('commandDescs.meRemove', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-            },
-        ],
-    };
+    public names = [Lang.getCom('chatCommands.me')];
     public deferType = CommandDeferType.PUBLIC;
     public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
     public requireUserPerms: PermissionString[] = [];

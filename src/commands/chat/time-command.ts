@@ -1,13 +1,7 @@
-import {
-    ApplicationCommandOptionType,
-    ApplicationCommandType,
-    RESTPostAPIChatInputApplicationCommandsJSONBody,
-} from 'discord-api-types/v10';
 import { CommandInteraction, PermissionString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../../database/entities/index.js';
-import { Language } from '../../models/enum-helpers/index.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
 import { BotTimeZoneSetting } from '../../settings/bot/index.js';
@@ -30,46 +24,7 @@ const require = createRequire(import.meta.url);
 let Config = require('../../../config/config.json');
 
 export class TimeCommand implements Command {
-    public metadata: RESTPostAPIChatInputApplicationCommandsJSONBody = {
-        type: ApplicationCommandType.ChatInput,
-        name: Lang.getCom('chatCommands.time'),
-        description: Lang.getRef('commandDescs.time', Language.Default),
-        dm_permission: true,
-        default_member_permissions: undefined,
-        options: [
-            {
-                name: Lang.getCom('subCommands.server'),
-                description: Lang.getRef('commandDescs.timeServer', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-            },
-            {
-                name: Lang.getCom('subCommands.user'),
-                description: Lang.getRef('commandDescs.timeUser', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-                options: [
-                    {
-                        name: Lang.getCom('arguments.user'),
-                        description: 'User or bot.',
-                        type: ApplicationCommandOptionType.User,
-                        required: true,
-                    },
-                ],
-            },
-            {
-                name: Lang.getCom('subCommands.zone'),
-                description: Lang.getRef('commandDescs.timeZone', Language.Default),
-                type: ApplicationCommandOptionType.Subcommand,
-                options: [
-                    {
-                        name: Lang.getCom('arguments.zone'),
-                        description: 'Time zone name. Ex: America/New_York',
-                        type: ApplicationCommandOptionType.String,
-                        required: true,
-                    },
-                ],
-            },
-        ],
-    };
+    public names = [Lang.getCom('chatCommands.time')];
     public deferType = CommandDeferType.PUBLIC;
     public requireClientPerms: PermissionString[] = [];
     public requireUserPerms: PermissionString[] = [];

@@ -1,5 +1,5 @@
 import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message } from 'discord.js';
+import { ChatInputCommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { UserData } from '../../database/entities/index.js';
@@ -39,7 +39,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     }
 
     public retriever(
-        intr: CommandInteraction,
+        intr: ChatInputCommandInteraction,
         langCode: Locale
     ): MessageRetriever<DateFormatOption> {
         return async (msg: Message) => {
@@ -57,7 +57,10 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
         };
     }
 
-    public async retrieve(intr: CommandInteraction, data: EventData): Promise<DateFormatOption> {
+    public async retrieve(
+        intr: ChatInputCommandInteraction,
+        data: EventData
+    ): Promise<DateFormatOption> {
         await InteractionUtils.send(intr, Lang.getEmbed('promptEmbeds.dateFormatUser', data.lang));
 
         return await CollectorUtils.collectByMessage(

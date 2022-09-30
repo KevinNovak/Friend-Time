@@ -1,4 +1,4 @@
-import { CommandInteraction, DMChannel, PermissionsString } from 'discord.js';
+import { ChatInputCommandInteraction, DMChannel, PermissionsString } from 'discord.js';
 
 import { UserData } from '../../database/entities/index.js';
 import { EventData } from '../../models/internal-models.js';
@@ -19,7 +19,7 @@ export class MeCommand implements Command {
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
         if (privateMode && !(intr.channel instanceof DMChannel)) {
             await InteractionUtils.send(

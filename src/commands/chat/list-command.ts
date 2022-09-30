@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionsString } from 'discord.js';
+import { ChatInputCommandInteraction, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../../database/entities/index.js';
@@ -16,7 +16,7 @@ export class ListCommand implements Command {
     public requireClientPerms: PermissionsString[] = [];
     public requireUserPerms: PermissionsString[] = ['MANAGE_GUILD'];
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.view'): {
                 let guildTimeZones = DataUtils.getTimeZoneList(data.guild);

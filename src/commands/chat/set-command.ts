@@ -1,5 +1,5 @@
 import {
-    CommandInteraction,
+    ChatInputCommandInteraction,
     DMChannel,
     Message,
     PermissionFlagsBits,
@@ -32,7 +32,7 @@ export class SetCommand implements Command {
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.me'): {
                 let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);

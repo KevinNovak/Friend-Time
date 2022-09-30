@@ -1,5 +1,5 @@
 import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message } from 'discord.js';
+import { ChatInputCommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildData } from '../../database/entities/index.js';
@@ -39,7 +39,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
     }
 
     public retriever(
-        intr: CommandInteraction,
+        intr: ChatInputCommandInteraction,
         langCode: Locale
     ): MessageRetriever<TimeFormatOption> {
         return async (msg: Message) => {
@@ -57,7 +57,10 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
         };
     }
 
-    public async retrieve(intr: CommandInteraction, data: EventData): Promise<TimeFormatOption> {
+    public async retrieve(
+        intr: ChatInputCommandInteraction,
+        data: EventData
+    ): Promise<TimeFormatOption> {
         await InteractionUtils.send(intr, Lang.getEmbed('promptEmbeds.timeFormatGuild', data.lang));
 
         return await CollectorUtils.collectByMessage(

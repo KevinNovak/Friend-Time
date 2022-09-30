@@ -1,5 +1,5 @@
 import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message } from 'discord.js';
+import { ChatInputCommandInteraction, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildData } from '../../database/entities/index.js';
@@ -37,7 +37,10 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
         return YesNo.Data[value.toString()].displayName(langCode);
     }
 
-    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<boolean> {
+    public retriever(
+        intr: ChatInputCommandInteraction,
+        langCode: Locale
+    ): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let list = YesNo.find(msg.content);
             if (list == null) {
@@ -53,7 +56,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
         };
     }
 
-    public async retrieve(intr: CommandInteraction, data: EventData): Promise<boolean> {
+    public async retrieve(intr: ChatInputCommandInteraction, data: EventData): Promise<boolean> {
         await InteractionUtils.send(intr, Lang.getEmbed('promptEmbeds.listGuild', data.lang));
 
         return await CollectorUtils.collectByMessage(

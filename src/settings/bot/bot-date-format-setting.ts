@@ -1,5 +1,5 @@
 import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message, Snowflake } from 'discord.js';
+import { ChatInputCommandInteraction, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildBotData } from '../../database/entities/index.js';
@@ -39,7 +39,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     }
 
     public retriever(
-        intr: CommandInteraction,
+        intr: ChatInputCommandInteraction,
         langCode: Locale
     ): MessageRetriever<DateFormatOption> {
         return async (msg: Message) => {
@@ -58,7 +58,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     }
 
     public async retrieve(
-        intr: CommandInteraction,
+        intr: ChatInputCommandInteraction,
         data: EventData,
         target?: Snowflake
     ): Promise<DateFormatOption> {

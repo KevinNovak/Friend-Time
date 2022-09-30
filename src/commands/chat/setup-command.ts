@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionsString } from 'discord.js';
+import { ChatInputCommandInteraction, PermissionsString } from 'discord.js';
 
 import { GuildData } from '../../database/entities/index.js';
 import { EventData } from '../../models/internal-models.js';
@@ -15,7 +15,7 @@ export class SetupCommand implements Command {
 
     constructor(private guildSettingManager: SettingManager) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
             data.guild.discordId = intr.guild?.id;

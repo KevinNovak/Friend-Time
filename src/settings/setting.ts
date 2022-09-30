@@ -1,5 +1,5 @@
 import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Snowflake } from 'discord.js';
+import { ChatInputCommandInteraction, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 
@@ -14,6 +14,6 @@ export interface Setting<T1 extends BaseEntity, T2> extends Display {
     apply(entity: T1, value: T2): void;
     clear(entity: T1): void;
     valueDisplayName(value: T2, langCode: Locale): string;
-    retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<T2>;
-    retrieve(intr: CommandInteraction, data: EventData, target?: Snowflake): Promise<T2>;
+    retriever(intr: ChatInputCommandInteraction, langCode: Locale): MessageRetriever<T2>;
+    retrieve(intr: ChatInputCommandInteraction, data: EventData, target?: Snowflake): Promise<T2>;
 }

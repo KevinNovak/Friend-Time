@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionsString } from 'discord.js';
+import { ChatInputCommandInteraction, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../../database/entities/index.js';
@@ -37,7 +37,7 @@ export class TimeCommand implements Command {
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.server'): {
                 if (!intr.guild) {

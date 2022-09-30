@@ -35,7 +35,7 @@
         "pm2:delete": "pm2 delete process.json"
     },
     "dependencies": {
-        "@discordjs/rest": "1.1.0",
+        "@discordjs/rest": "1.2.0",
         "@vvo/tzdb": "6.5.1",
         "chrono-node": "2.2.7",
         "class-transformer": "0.5.1",

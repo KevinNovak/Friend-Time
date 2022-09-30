@@ -1,5 +1,5 @@
 import { ParsedResult } from 'chrono-node';
-import { Message, MessageEmbed } from 'discord.js';
+import { EmbedBuilder, Message } from 'discord.js';
 
 import { GuildBotData } from '../database/entities/index.js';
 import { DateFormatOption } from '../enums/index.js';
@@ -115,7 +115,7 @@ export class ConvertTrigger implements Trigger {
         timeZoneFrom: string,
         privateMode: boolean,
         data: EventData
-    ): MessageEmbed {
+    ): EmbedBuilder {
         let guildLangCode = this.guildLanguageSetting.valueOrDefault(data.guild);
         let guildTimeFormat = this.guildTimeFormatSetting.valueOrDefault(data.guild);
 

@@ -1,4 +1,10 @@
-import { CommandInteraction, DMChannel, Message, Permissions, PermissionsString } from 'discord.js';
+import {
+    CommandInteraction,
+    DMChannel,
+    Message,
+    PermissionFlagsBits,
+    PermissionsString,
+} from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../../database/entities/index.js';
@@ -84,7 +90,7 @@ export class SetCommand implements Command {
                 if (member.user.bot) {
                     if (
                         !(
-                            intr.memberPermissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
+                            intr.memberPermissions.has(PermissionFlagsBits.ManageGuild) ||
                             Debug.skip.checkPerms
                         )
                     ) {

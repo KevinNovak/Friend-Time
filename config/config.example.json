@@ -8,7 +8,8 @@
             "GuildMessages",
             "GuildMessageReactions",
             "DirectMessages",
-            "DirectMessageReactions"
+            "DirectMessageReactions",
+            "MessageContent"
         ],
         "partials": ["Message", "Channel", "Reaction"],
         "caches": {

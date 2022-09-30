@@ -121,7 +121,7 @@ async function start(): Promise<void> {
         partials: Config.client.partials,
         makeCache: Options.cacheWithLimits({
             // Keep default caching behavior
-            ...Options.defaultMakeCacheSettings,
+            ...Options.DefaultMakeCacheSettings,
             // Override specific options from config
             ...Config.client.caches,
         }),

@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { Guild } from 'discord.js';
+import { Guild, Locale } from 'discord.js';
 import { DateTime, Duration } from 'luxon'; // TODO: Missing types
 
 import { TimeFormatOption } from '../enums/index.js';

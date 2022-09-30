@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionString } from 'discord.js';
+import { CommandInteraction, PermissionsString } from 'discord.js';
 
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/index.js';
@@ -8,8 +8,8 @@ import { Command, CommandDeferType } from '../index.js';
 export class MapCommand implements Command {
     public names = [Lang.getCom('chatCommands.map')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = [];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = [];
+    public requireUserPerms: PermissionsString[] = [];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         await InteractionUtils.send(intr, Lang.getEmbed('displayEmbeds.linkMap', data.lang));

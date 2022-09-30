@@ -1,4 +1,4 @@
-import { CommandInteraction, DMChannel, PermissionString } from 'discord.js';
+import { CommandInteraction, DMChannel, PermissionsString } from 'discord.js';
 
 import { UserData } from '../../database/entities/index.js';
 import { EventData } from '../../models/internal-models.js';
@@ -11,8 +11,8 @@ import { Command, CommandDeferType } from '../index.js';
 export class MeCommand implements Command {
     public names = [Lang.getCom('chatCommands.me')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
+    public requireUserPerms: PermissionsString[] = [];
 
     constructor(
         private settingManager: SettingManager,

@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionString } from 'discord.js';
+import { CommandInteraction, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData } from '../../database/entities/index.js';
@@ -26,8 +26,8 @@ let Config = require('../../../config/config.json');
 export class TimeCommand implements Command {
     public names = [Lang.getCom('chatCommands.time')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = [];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = [];
+    public requireUserPerms: PermissionsString[] = [];
 
     constructor(
         private guildTimeZoneSetting: GuildTimeZoneSetting,

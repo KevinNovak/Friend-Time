@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionString } from 'discord.js';
+import { CommandInteraction, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData, GuildListItemData } from '../../database/entities/index.js';
@@ -13,8 +13,8 @@ let Config = require('../../../config/config.json');
 export class ListCommand implements Command {
     public names = [Lang.getCom('chatCommands.list')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = [];
-    public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
+    public requireClientPerms: PermissionsString[] = [];
+    public requireUserPerms: PermissionsString[] = ['MANAGE_GUILD'];
 
     public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {

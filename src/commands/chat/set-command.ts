@@ -1,4 +1,4 @@
-import { CommandInteraction, DMChannel, Message, Permissions, PermissionString } from 'discord.js';
+import { CommandInteraction, DMChannel, Message, Permissions, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../../database/entities/index.js';
@@ -17,8 +17,8 @@ let Debug = require('../../../config/debug.json');
 export class SetCommand implements Command {
     public names = [Lang.getCom('chatCommands.set')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
+    public requireUserPerms: PermissionsString[] = [];
 
     constructor(
         private userSettingManager: SettingManager,

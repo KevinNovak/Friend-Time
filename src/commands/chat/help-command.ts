@@ -1,4 +1,4 @@
-import { CommandInteraction, MessageEmbed, PermissionString } from 'discord.js';
+import { ChatInputCommandInteraction, EmbedBuilder, PermissionsString } from 'discord.js';
 
 import { HelpOption } from '../../enums/index.js';
 import { EventData } from '../../models/internal-models.js';
@@ -9,13 +9,13 @@ import { Command, CommandDeferType } from '../index.js';
 export class HelpCommand implements Command {
     public names = [Lang.getCom('chatCommands.help')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = [];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = [];
+    public requireUserPerms: PermissionsString[] = [];
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         let option = intr.options.getString(Lang.getCom('arguments.option'));
 
-        let embed: MessageEmbed;
+        let embed: EmbedBuilder;
         switch (option) {
             case HelpOption.COMMANDS: {
                 embed = Lang.getEmbed('displayEmbeds.commands', data.lang);

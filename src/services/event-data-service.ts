@@ -1,4 +1,3 @@
-import { Locale } from 'discord-api-types/v10.js';
 import { Channel, Guild, PartialDMChannel, User } from 'discord.js';
 
 import { GuildData, UserData } from '../database/entities/index.js';
@@ -33,8 +32,8 @@ export class EventDataService {
                 : guildData?.language && Language.Enabled.includes(guildData.language)
                 ? guildData.language
                 : options.guild?.preferredLocale &&
-                  Language.Enabled.includes(options.guild.preferredLocale as Locale)
-                ? (options.guild.preferredLocale as Locale)
+                  Language.Enabled.includes(options.guild.preferredLocale)
+                ? options.guild.preferredLocale
                 : Language.Default;
 
         // Guild language
@@ -42,8 +41,8 @@ export class EventDataService {
             guildData?.language && Language.Enabled.includes(guildData.language)
                 ? guildData.language
                 : options.guild?.preferredLocale &&
-                  Language.Enabled.includes(options.guild.preferredLocale as Locale)
-                ? (options.guild.preferredLocale as Locale)
+                  Language.Enabled.includes(options.guild.preferredLocale)
+                ? options.guild.preferredLocale
                 : Language.Default;
 
         return new EventData(lang, langGuild, userData, guildData);

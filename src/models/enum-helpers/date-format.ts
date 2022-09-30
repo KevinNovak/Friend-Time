@@ -1,4 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
+import { Locale } from 'discord.js';
 
 import { DateFormatOption } from '../../enums/index.js';
 import { Lang } from '../../services/index.js';

@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionString } from 'discord.js';
+import { ChatInputCommandInteraction, PermissionsString } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildData } from '../../database/entities/index.js';
@@ -14,12 +14,12 @@ let Config = require('../../../config/config.json');
 export class BotCommand implements Command {
     public names = [Lang.getCom('chatCommands.bot')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
+    public requireUserPerms: PermissionsString[] = ['ManageGuild'];
 
     constructor(private settingManager: SettingManager) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
             data.guild.discordId = intr.guild?.id;

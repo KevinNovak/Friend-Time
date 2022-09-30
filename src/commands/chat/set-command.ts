@@ -1,4 +1,10 @@
-import { CommandInteraction, DMChannel, Message, Permissions, PermissionString } from 'discord.js';
+import {
+    ChatInputCommandInteraction,
+    DMChannel,
+    Message,
+    PermissionFlagsBits,
+    PermissionsString,
+} from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { GuildBotData, GuildData, UserData } from '../../database/entities/index.js';
@@ -17,8 +23,8 @@ let Debug = require('../../../config/debug.json');
 export class SetCommand implements Command {
     public names = [Lang.getCom('chatCommands.set')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionString[] = [];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
+    public requireUserPerms: PermissionsString[] = [];
 
     constructor(
         private userSettingManager: SettingManager,
@@ -26,7 +32,7 @@ export class SetCommand implements Command {
         private userPrivateModeSetting: UserPrivateModeSetting
     ) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {
             case Lang.getCom('subCommands.me'): {
                 let privateMode = this.userPrivateModeSetting.valueOrDefault(data.user);
@@ -84,7 +90,7 @@ export class SetCommand implements Command {
                 if (member.user.bot) {
                     if (
                         !(
-                            intr.memberPermissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
+                            intr.memberPermissions.has(PermissionFlagsBits.ManageGuild) ||
                             Debug.skip.checkPerms
                         )
                     ) {

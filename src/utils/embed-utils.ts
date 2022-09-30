@@ -1,7 +1,7 @@
-import { MessageEmbed } from 'discord.js';
+import { Embed } from 'discord.js';
 
 export class EmbedUtils {
-    public static content(embed: MessageEmbed): string {
+    public static content(embed: Embed): string {
         return [
             embed.author?.name,
             embed.title,

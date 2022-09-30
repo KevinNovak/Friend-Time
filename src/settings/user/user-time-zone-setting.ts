@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message, Snowflake } from 'discord.js';
+import { ChatInputCommandInteraction, Locale, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { createRequire } from 'node:module';
 
@@ -48,7 +47,10 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         return value;
     }
 
-    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<string> {
+    public retriever(
+        intr: ChatInputCommandInteraction,
+        langCode: Locale
+    ): MessageRetriever<string> {
         return async (msg: Message) => {
             if (msg.content.length <= Config.validation.timeZone.lengthMin) {
                 await InteractionUtils.send(
@@ -74,7 +76,10 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
         };
     }
 
-    public confirmation(intr: CommandInteraction, langCode: Locale): MessageRetriever<boolean> {
+    public confirmation(
+        intr: ChatInputCommandInteraction,
+        langCode: Locale
+    ): MessageRetriever<boolean> {
         return async (msg: Message) => {
             let confirmed = YesNo.find(msg.content);
             if (confirmed == null) {
@@ -91,7 +96,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
     }
 
     public async retrieve(
-        intr: CommandInteraction,
+        intr: ChatInputCommandInteraction,
         data: EventData,
         target?: Snowflake
     ): Promise<string> {

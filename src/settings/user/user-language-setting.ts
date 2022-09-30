@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { CommandInteraction, Message } from 'discord.js';
+import { ChatInputCommandInteraction, Locale, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { UserData } from '../../database/entities/index.js';
@@ -37,7 +36,10 @@ export class UserLanguageSetting implements Setting<UserData, Locale> {
         return Language.Data[value].nativeName;
     }
 
-    public retriever(intr: CommandInteraction, langCode: Locale): MessageRetriever<Locale> {
+    public retriever(
+        intr: ChatInputCommandInteraction,
+        langCode: Locale
+    ): MessageRetriever<Locale> {
         return async (msg: Message) => {
             let newLangCode = Language.find(msg.content, true);
             if (!newLangCode) {
@@ -53,7 +55,7 @@ export class UserLanguageSetting implements Setting<UserData, Locale> {
         };
     }
 
-    public async retrieve(intr: CommandInteraction, data: EventData): Promise<Locale> {
+    public async retrieve(intr: ChatInputCommandInteraction, data: EventData): Promise<Locale> {
         await InteractionUtils.send(
             intr,
             Lang.getEmbed('promptEmbeds.languageUser', data.lang, {

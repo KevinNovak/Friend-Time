@@ -1,4 +1,4 @@
-import { CommandInteraction, PermissionString } from 'discord.js';
+import { ChatInputCommandInteraction, PermissionsString } from 'discord.js';
 
 import { GuildData } from '../../database/entities/index.js';
 import { EventData } from '../../models/internal-models.js';
@@ -10,12 +10,12 @@ import { Command, CommandDeferType } from '../index.js';
 export class SetupCommand implements Command {
     public names = [Lang.getCom('chatCommands.setup')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionString[] = ['MANAGE_GUILD'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
+    public requireUserPerms: PermissionsString[] = ['ManageGuild'];
 
     constructor(private guildSettingManager: SettingManager) {}
 
-    public async execute(intr: CommandInteraction, data: EventData): Promise<void> {
+    public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         if (!data.guild) {
             data.guild = new GuildData();
             data.guild.discordId = intr.guild?.id;

@@ -1,8 +1,8 @@
 import {
-    BaseCommandInteraction,
+    CommandInteraction,
     GuildChannel,
     GuildMember,
-    Permissions,
+    PermissionFlagsBits,
     ThreadChannel,
 } from 'discord.js';
 import { createRequire } from 'node:module';
@@ -41,7 +41,7 @@ export class CommandUtils {
 
     public static async runChecks(
         command: Command,
-        intr: BaseCommandInteraction,
+        intr: CommandInteraction,
         data: EventData
     ): Promise<boolean> {
         if (command.cooldown) {
@@ -94,7 +94,7 @@ export class CommandUtils {
         // Developers, server owners, and members with "Manage Server" have permission for all commands
         if (
             member.guild.ownerId === member.id ||
-            member.permissions.has(Permissions.FLAGS.MANAGE_GUILD) ||
+            member.permissions.has(PermissionFlagsBits.ManageGuild) ||
             Config.developers.includes(member.id)
         ) {
             return true;

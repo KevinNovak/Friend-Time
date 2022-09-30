@@ -11,7 +11,7 @@ import { Command, CommandDeferType } from '../index.js';
 export class MeCommand implements Command {
     public names = [Lang.getCom('chatCommands.me')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
     public requireUserPerms: PermissionsString[] = [];
 
     constructor(

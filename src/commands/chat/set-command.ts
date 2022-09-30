@@ -23,7 +23,7 @@ let Debug = require('../../../config/debug.json');
 export class SetCommand implements Command {
     public names = [Lang.getCom('chatCommands.set')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
     public requireUserPerms: PermissionsString[] = [];
 
     constructor(

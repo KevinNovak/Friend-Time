@@ -14,8 +14,8 @@ let Config = require('../../../config/config.json');
 export class BotCommand implements Command {
     public names = [Lang.getCom('chatCommands.bot')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionsString[] = ['MANAGE_GUILD'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
+    public requireUserPerms: PermissionsString[] = ['ManageGuild'];
 
     constructor(private settingManager: SettingManager) {}
 

@@ -10,8 +10,8 @@ import { Command, CommandDeferType } from '../index.js';
 export class SetupCommand implements Command {
     public names = [Lang.getCom('chatCommands.setup')];
     public deferType = CommandDeferType.PUBLIC;
-    public requireClientPerms: PermissionsString[] = ['VIEW_CHANNEL'];
-    public requireUserPerms: PermissionsString[] = ['MANAGE_GUILD'];
+    public requireClientPerms: PermissionsString[] = ['ViewChannel'];
+    public requireUserPerms: PermissionsString[] = ['ManageGuild'];
 
     constructor(private guildSettingManager: SettingManager) {}
 

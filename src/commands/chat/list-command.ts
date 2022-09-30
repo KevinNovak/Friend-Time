@@ -14,7 +14,7 @@ export class ListCommand implements Command {
     public names = [Lang.getCom('chatCommands.list')];
     public deferType = CommandDeferType.PUBLIC;
     public requireClientPerms: PermissionsString[] = [];
-    public requireUserPerms: PermissionsString[] = ['MANAGE_GUILD'];
+    public requireUserPerms: PermissionsString[] = ['ManageGuild'];
 
     public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         switch (intr.options.getSubcommand()) {

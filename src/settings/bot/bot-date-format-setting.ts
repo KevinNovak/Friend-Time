@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { ChatInputCommandInteraction, Message, Snowflake } from 'discord.js';
+import { ChatInputCommandInteraction, Locale, Message, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 import { GuildBotData } from '../../database/entities/index.js';

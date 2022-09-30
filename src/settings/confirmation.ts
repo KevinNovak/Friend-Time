@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { ChatInputCommandInteraction } from 'discord.js';
+import { ChatInputCommandInteraction, Locale } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 
 export interface Confirmation {

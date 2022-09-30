@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { ChatInputCommandInteraction, Snowflake } from 'discord.js';
+import { ChatInputCommandInteraction, Locale, Snowflake } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { BaseEntity } from 'typeorm';
 

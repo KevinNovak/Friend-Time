@@ -1,5 +1,4 @@
-import { Locale } from 'discord-api-types/v10';
-import { ChatInputCommandInteraction, Message } from 'discord.js';
+import { ChatInputCommandInteraction, Locale, Message } from 'discord.js';
 import { MessageRetriever } from 'discord.js-collector-utils';
 import { createRequire } from 'node:module';
 

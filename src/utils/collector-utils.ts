@@ -1,7 +1,7 @@
 import {
     ButtonInteraction,
     Message,
-    Modal,
+    ModalBuilder,
     ModalSubmitInteraction,
     SelectMenuInteraction,
     TextBasedChannel,
@@ -78,7 +78,7 @@ export class CollectorUtils {
 
     public static collectByModal<T>(
         msg: Message,
-        modal: Modal,
+        modal: ModalBuilder,
         user: User,
         retriever: ModalRetriever<T>,
         expireFunc?: ExpireFunction

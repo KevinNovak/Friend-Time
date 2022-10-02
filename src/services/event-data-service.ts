@@ -1,4 +1,10 @@
-import { Channel, Guild, PartialDMChannel, User } from 'discord.js';
+import {
+    Channel,
+    CommandInteractionOptionResolver,
+    Guild,
+    PartialDMChannel,
+    User,
+} from 'discord.js';
 
 import { GuildData, UserData } from '../database/entities/index.js';
 import { Language } from '../models/enum-helpers/language.js';
@@ -10,6 +16,7 @@ export class EventDataService {
             user?: User;
             channel?: Channel | PartialDMChannel;
             guild?: Guild;
+            args?: Omit<CommandInteractionOptionResolver, 'getMessage' | 'getFocused'>;
         } = {}
     ): Promise<EventData> {
         let userData: UserData;

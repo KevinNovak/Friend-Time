@@ -285,19 +285,19 @@
         },
         "promptEmbeds": {
             "autoDetectGuild": {
-                "title": "Сервер - {{REF:settings.autoDetectDisplay}}",
+                "title": "Сервер - {{REF:settings.autoDetect}}",
                 "description": [
                     "Желаете ли вы, чтобы {{COM:bot.name}} автоматически обнаруживал упоминания времени в чате?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Упоминания времени будут автоматически обнаружены.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Упоминания времени будут автоматически обнаружены.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Упоминания времени **не** будут автоматически обнаружены. Необходимо чтобы в сообщении было 🕰️, чтобы обнаруживать и конвертировать упоминания времени в нём.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Упоминания времени **не** будут автоматически обнаружены. Необходимо чтобы в сообщении было 🕰️, чтобы обнаруживать и конвертировать упоминания времени в нём.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneGuild": {
-                "title": "Сервер - {{REF:settings.timeZoneDisplay}}",
+                "title": "Сервер - {{REF:settings.timeZone}}",
                 "description": [
                     "В каком часовом поясе расположен этот сервер?",
                     "",
@@ -308,7 +308,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneBot": {
-                "title": "Бот - {{REF:settings.timeZoneDisplay}}",
+                "title": "Бот - {{REF:settings.timeZone}}",
                 "description": [
                     "В каком часовом поясе находится {{BOT}}?",
                     "",
@@ -319,7 +319,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneSelf": {
-                "title": "Пользователь - {{REF:settings.timeZoneDisplay}}",
+                "title": "Пользователь - {{REF:settings.timeZone}}",
                 "description": [
                     "В каком часовом поясе вы живёте?",
                     "",
@@ -330,7 +330,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneUser": {
-                "title": "Пользователь - {{REF:settings.timeZoneDisplay}}",
+                "title": "Пользователь - {{REF:settings.timeZone}}",
                 "description": [
                     "В каком часовом поясе живёт {{USER}}?",
                     "",
@@ -385,19 +385,19 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "listGuild": {
-                "title": "Сервер - {{REF:settings.listDisplay}}",
+                "title": "Сервер - {{REF:settings.list}}",
                 "description": [
                     "Желаете ли вы, чтобы {{COM:bot.name}} всегда высылал упомянутое время, конвентированное в его часовые пояса?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} будет конвертировать время, упоминаемое в чате, во все часовые пояса в списке сервера (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Конвертированные времена будут отправлены в том же чате, что и оригинальное сообщение.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Список никогда не будет высылаться.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Список никогда не будет высылаться.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersGuild": {
-                "title": "Сервер - {{REF:settings.remindersDisplay}}",
+                "title": "Сервер - {{REF:settings.reminders}}",
                 "description": [
                     "Желаете ли вы, чтобы бот напоминал пользователям установить часовой пояс?",
                     "",
@@ -407,7 +407,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
-                "title": "Пользователь - {{REF:settings.remindersDisplay}}",
+                "title": "Пользователь - {{REF:settings.reminders}}",
                 "description": [
                     "Желаете ли вы, чтобы вам напоминали установить ваш часовой пояс?",
                     "",
@@ -417,67 +417,67 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
-                "title": "Бот - {{REF:settings.dateFormatDisplay}}",
+                "title": "Бот - {{REF:settings.dateFormat}}",
                 "description": [
                     "Какой формат {{BOT}} обычно использует для дат?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatUser": {
-                "title": "Пользователь - {{REF:settings.dateFormatDisplay}}",
+                "title": "Пользователь - {{REF:settings.dateFormat}}",
                 "description": [
                     "Какой формат вы обычно используете для дат?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatGuild": {
-                "title": "Сервер - {{REF:settings.timeFormatDisplay}}",
+                "title": "Сервер - {{REF:settings.timeFormat}}",
                 "description": [
                     "В каком формате упоминают время на этом сервере?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatUser": {
-                "title": "Пользователь - {{REF:settings.timeFormatDisplay}}",
+                "title": "Пользователь - {{REF:settings.timeFormat}}",
                 "description": [
                     "Какой формат для времени вы предпочитаете?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "privateModeUser": {
-                "title": "Пользователь - {{REF:settings.privateModeDisplay}}",
+                "title": "Пользователь - {{REF:settings.privateMode}}",
                 "description": [
                     "Желаете ли вы скрыть ваш часовой пояс и другую информацию от вас от других пользователей?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} будет скрывать информацию о вас.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} будет скрывать информацию о вас.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Вы не против, если другим покажут ваш часовой пояс.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Вы не против, если другим покажут ваш часовой пояс.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageGuild": {
-                "title": "Сервер - {{REF:settings.languageDisplay}}",
+                "title": "Сервер - {{REF:settings.language}}",
                 "description": [
                     "Какой язык используют на этом сервере?",
                     "",
@@ -488,7 +488,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageUser": {
-                "title": "Пользователь - {{REF:settings.languageDisplay}}",
+                "title": "Пользователь - {{REF:settings.language}}",
                 "description": [
                     "Какой язык вы предпочитаете?",
                     "",
@@ -825,26 +825,26 @@
             "timeZone": "Просмотреть время в часовом поясе."
         },
         "settings": {
-            "autoDetectDisplay": "Обнаруживать время",
-            "dateFormatDisplay": "Формат Даты",
-            "languageDisplay": "Язык",
-            "listDisplay": "Список",
-            "privateModeDisplay": "Приватный режим",
-            "remindersDisplay": "Напоминания",
-            "timeFormatDisplay": "Формат времени",
-            "timeZoneDisplay": "Часовой пояс"
+            "autoDetect": "Обнаруживать время",
+            "dateFormat": "Формат Даты",
+            "language": "Язык",
+            "list": "Список",
+            "privateMode": "Приватный режим",
+            "reminders": "Напоминания",
+            "timeFormat": "Формат времени",
+            "timeZone": "Часовой пояс"
         },
         "dateFormat": {
-            "monthDayDisplay": "Месяц/день",
-            "dayMonthDisplay": "День/месяц"
+            "monthDay": "Месяц/день",
+            "dayMonth": "День/месяц"
         },
         "timeFormat": {
-            "twelveHourDisplay": "12-часовой",
-            "twentyFourHourDisplay": "24-часовой"
+            "twelveHour": "12-часовой",
+            "twentyFourHour": "24-часовой"
         },
         "yesNo": {
-            "yesDisplay": "Да",
-            "noDisplay": "Нет"
+            "yes": "Да",
+            "no": "Нет"
         },
         "argDescs": {
             "helpOption": "Option.",
@@ -952,9 +952,9 @@
         "partials": {
             "congratulations": "🎉 Поздравляем! 🎉",
             "yesOrNo": [
-                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}",
                 "",
-                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
             ],
             "italicizedDefaults": "*Курсивом* выделены настройки по-умолчанию.",
             "timeInTimeZone": "В часовом поясе **{{TIME_ZONE}}** сейчас **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",

@@ -290,19 +290,19 @@
         },
         "promptEmbeds": {
             "autoDetectGuild": {
-                "title": "Servidor - {{REF:settings.autoDetectDisplay}}",
+                "title": "Servidor - {{REF:settings.autoDetect}}",
                 "description": [
                     "¿Quieres que {{COM:bot.name}} detecte automáticamente las horas mencionadas en una conversación?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Las horas serán detectadas automáticamente en las conversaciones.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Las horas serán detectadas automáticamente en las conversaciones.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Las horas **no** serán detectadas automáticamente en las conversaciones. El emoji 🕰️ debe aparecer en un mensaje para que las horas sean reconocidas y convertidas.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneGuild": {
-                "title": "Servidor - {{REF:settings.timeZoneDisplay}}",
+                "title": "Servidor - {{REF:settings.timeZone}}",
                 "description": [
                     "¿En qué zona horaria se encuentra este servidor?",
                     "",
@@ -313,7 +313,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneBot": {
-                "title": "Bot - {{REF:settings.timeZoneDisplay}}",
+                "title": "Bot - {{REF:settings.timeZone}}",
                 "description": [
                     "¿Cuál es la zona horaria de {{BOT}}?",
                     "",
@@ -324,7 +324,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneSelf": {
-                "title": "Usuario - {{REF:settings.timeZoneDisplay}}",
+                "title": "Usuario - {{REF:settings.timeZone}}",
                 "description": [
                     "¿Cuál es tu zona horaria?",
                     "",
@@ -335,7 +335,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeZoneUser": {
-                "title": "Usuario - {{REF:settings.timeZoneDisplay}}",
+                "title": "Usuario - {{REF:settings.timeZone}}",
                 "description": [
                     "¿Cuál es la zona horaria de {{USER}}?",
                     "",
@@ -390,19 +390,19 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "listGuild": {
-                "title": "Servidor - {{REF:settings.listDisplay}}",
+                "title": "Servidor - {{REF:settings.list}}",
                 "description": [
                     "¿Quieres que {{COM:bot.name}} envíe a la conversación un listado de horas convertidas luego de que una hora sea mencionada?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Este listado se enviará en el mismo canal del mensaje original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} convertirá las horas mencionadas en una conversación a todas las zonas horarias en el listado del servidor (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Este listado se enviará en el mismo canal del mensaje original.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No se mostrará el listado.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. No se mostrará el listado.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersGuild": {
-                "title": "Servidor - {{REF:settings.remindersDisplay}}",
+                "title": "Servidor - {{REF:settings.reminders}}",
                 "description": [
                     "¿Quieres que se envíe un recordatorio a los usuarios para que configuren su zona horaria?",
                     "",
@@ -412,7 +412,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "remindersUser": {
-                "title": "Usuario - {{REF:settings.remindersDisplay}}",
+                "title": "Usuario - {{REF:settings.reminders}}",
                 "description": [
                     "¿Quieres que te recordemos configurar tu zona horaria?",
                     "",
@@ -422,67 +422,67 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatBot": {
-                "title": "Bot - {{REF:settings.dateFormatDisplay}}",
+                "title": "Bot - {{REF:settings.dateFormat}}",
                 "description": [
                     "¿Qué formato de fecha usa {{BOT}} con más frecuencia?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "dateFormatUser": {
-                "title": "Usuario - {{REF:settings.dateFormatDisplay}}",
+                "title": "Usuario - {{REF:settings.dateFormat}}",
                 "description": [
                     "¿Qué formato de fecha usas con más frecuencia?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatGuild": {
-                "title": "Servidor - {{REF:settings.timeFormatDisplay}}",
+                "title": "Servidor - {{REF:settings.timeFormat}}",
                 "description": [
                     "¿Qué formato de horas prefieres usar para las horas mencionadas en este servidor?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "timeFormatUser": {
-                "title": "Usuario - {{REF:settings.timeFormatDisplay}}",
+                "title": "Usuario - {{REF:settings.timeFormat}}",
                 "description": [
                     "¿Qué formato de horas prefieres?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "privateModeUser": {
-                "title": "Usuario - {{REF:settings.privateModeDisplay}}",
+                "title": "Usuario - {{REF:settings.privateMode}}",
                 "description": [
                     "¿Preferirías mantener tu zona horaria y otras informaciones privadas?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} no mostrará tus informaciones a otros usuarios.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. No tengo problemas en compartir mi información.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. No tengo problemas en compartir mi información.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageGuild": {
-                "title": "Servidor - {{REF:settings.languageDisplay}}",
+                "title": "Servidor - {{REF:settings.language}}",
                 "description": [
                     "¿Qué lenguaje quieres usar en este servidor?",
                     "",
@@ -493,7 +493,7 @@
                 "footer": { "text": "{{REF:footers.collector}}" }
             },
             "languageUser": {
-                "title": "Usuario - {{REF:settings.languageDisplay}}",
+                "title": "Usuario - {{REF:settings.language}}",
                 "description": [
                     "¿Qué lenguaje quieres usar?",
                     "",
@@ -830,26 +830,26 @@
             "timeZone": "Ver la hora en una zona horaria."
         },
         "settings": {
-            "autoDetectDisplay": "Auto detectar",
-            "dateFormatDisplay": "Formato fecha",
-            "languageDisplay": "Lenguaje",
-            "listDisplay": "Listado",
-            "privateModeDisplay": "Modo privado",
-            "remindersDisplay": "Recordatorios",
-            "timeFormatDisplay": "Formato hora",
-            "timeZoneDisplay": "Zona horaria"
+            "autoDetect": "Auto detectar",
+            "dateFormat": "Formato fecha",
+            "language": "Lenguaje",
+            "list": "Listado",
+            "privateMode": "Modo privado",
+            "reminders": "Recordatorios",
+            "timeFormat": "Formato hora",
+            "timeZone": "Zona horaria"
         },
         "dateFormat": {
-            "monthDayDisplay": "Mes/Día",
-            "dayMonthDisplay": "Día/Mes"
+            "monthDay": "Mes/Día",
+            "dayMonth": "Día/Mes"
         },
         "timeFormat": {
-            "twelveHourDisplay": "12-Horas",
-            "twentyFourHourDisplay": "24-Horas"
+            "twelveHour": "12-Horas",
+            "twentyFourHour": "24-Horas"
         },
         "yesNo": {
-            "yesDisplay": "Sí",
-            "noDisplay": "No"
+            "yes": "Sí",
+            "no": "No"
         },
         "argDescs": {
             "helpOption": "Option.",
@@ -957,9 +957,9 @@
         "partials": {
             "congratulations": "🎉 ¡Felicidades! 🎉",
             "yesOrNo": [
-                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}",
                 "",
-                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
             ],
             "italicizedDefaults": "Las configuraciones en *Itálica* son las predeterminadas.",
             "timeInTimeZone": "En **{{TIME_ZONE}}** son ahora las **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",

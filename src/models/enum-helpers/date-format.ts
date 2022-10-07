@@ -18,7 +18,7 @@ export class DateFormat {
                 return Lang.getCom('dateFormat.monthDay');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('dateFormat.monthDayDisplay', langCode);
+                return Lang.getRef('dateFormat.monthDay', langCode);
             },
             littleEndian: false,
         },
@@ -27,7 +27,7 @@ export class DateFormat {
                 return Lang.getCom('dateFormat.dayMonth');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('dateFormat.dayMonthDisplay', langCode);
+                return Lang.getRef('dateFormat.dayMonth', langCode);
             },
             littleEndian: true,
         },

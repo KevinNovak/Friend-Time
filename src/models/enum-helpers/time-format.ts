@@ -18,7 +18,7 @@ export class TimeFormat {
                 return Lang.getCom('timeFormat.twelveHour');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('timeFormat.twelveHourDisplay', langCode);
+                return Lang.getRef('timeFormat.twelveHour', langCode);
             },
             format: 'h:mm a',
         },
@@ -27,7 +27,7 @@ export class TimeFormat {
                 return Lang.getCom('timeFormat.twentyFourHour');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('timeFormat.twentyFourHourDisplay', langCode);
+                return Lang.getRef('timeFormat.twentyFourHour', langCode);
             },
             format: 'HH:mm',
         },

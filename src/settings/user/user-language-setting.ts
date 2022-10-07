@@ -13,7 +13,7 @@ export class UserLanguageSetting implements Setting<UserData, Locale> {
     public default = Language.Default;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.languageDisplay', langCode);
+        return Lang.getRef('settings.language', langCode);
     }
 
     public value(userData: UserData): Locale {

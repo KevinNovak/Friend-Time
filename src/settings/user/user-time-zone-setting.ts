@@ -24,7 +24,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
     public default: string = null;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.timeZoneDisplay', langCode);
+        return Lang.getRef('settings.timeZone', langCode);
     }
 
     public value(userData: UserData): string {

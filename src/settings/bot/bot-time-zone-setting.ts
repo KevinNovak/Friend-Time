@@ -24,7 +24,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
     public default: string = null;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.timeZoneDisplay', langCode);
+        return Lang.getRef('settings.timeZone', langCode);
     }
 
     public value(botData: GuildBotData): string {

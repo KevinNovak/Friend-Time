@@ -13,7 +13,7 @@ export class GuildListSetting implements Setting<GuildData, boolean> {
     public default = true;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.listDisplay', langCode);
+        return Lang.getRef('settings.list', langCode);
     }
 
     public value(guildData: GuildData): boolean {

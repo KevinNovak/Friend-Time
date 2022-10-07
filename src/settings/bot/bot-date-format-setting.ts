@@ -14,7 +14,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     public default = DateFormatOption.MONTH_DAY;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.dateFormatDisplay', langCode);
+        return Lang.getRef('settings.dateFormat', langCode);
     }
 
     public value(botData: GuildBotData): DateFormatOption {

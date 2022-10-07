@@ -24,7 +24,7 @@ export class GuildTimeZoneSetting implements Setting<GuildData, string>, Confirm
     public default: string = null;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.timeZoneDisplay', langCode);
+        return Lang.getRef('settings.timeZone', langCode);
     }
 
     public value(guildData: GuildData): string {

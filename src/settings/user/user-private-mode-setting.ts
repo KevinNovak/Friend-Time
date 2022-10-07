@@ -13,7 +13,7 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
     public default = false;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.privateModeDisplay', langCode);
+        return Lang.getRef('settings.privateMode', langCode);
     }
 
     public value(userData: UserData): boolean {

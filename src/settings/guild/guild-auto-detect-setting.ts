@@ -13,7 +13,7 @@ export class GuildAutoDetectSetting implements Setting<GuildData, boolean> {
     public default = true;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.autoDetectDisplay', langCode);
+        return Lang.getRef('settings.autoDetect', langCode);
     }
 
     public value(guildData: GuildData): boolean {

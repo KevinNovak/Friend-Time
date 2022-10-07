@@ -13,7 +13,7 @@ export class GuildLanguageSetting implements Setting<GuildData, Locale> {
     public default = Language.Default;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.languageDisplay', langCode);
+        return Lang.getRef('settings.language', langCode);
     }
 
     public value(guildData: GuildData): Locale {

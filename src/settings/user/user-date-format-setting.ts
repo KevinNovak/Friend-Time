@@ -14,7 +14,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     public default = DateFormatOption.MONTH_DAY;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.dateFormatDisplay', langCode);
+        return Lang.getRef('settings.dateFormat', langCode);
     }
 
     public value(userData: UserData): DateFormatOption {

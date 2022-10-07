@@ -299,13 +299,13 @@
         },
         "promptEmbeds": {
             "autoDetectGuild": {
-                "title": "Server - {{REF:settings.autoDetectDisplay}}",
+                "title": "Server - {{REF:settings.autoDetect}}",
                 "description": [
                     "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. Tijden in de chat worden automatisch gedetecteerd.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Tijden in de chat worden automatisch gedetecteerd.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
                     "\u2800"
                 ],
                 "footer": {
@@ -313,7 +313,7 @@
                 }
             },
             "timeZoneGuild": {
-                "title": "Server - {{REF:settings.timeZoneDisplay}}",
+                "title": "Server - {{REF:settings.timeZone}}",
                 "description": [
                     "In welke tijdzone bevindt de server zich?",
                     "",
@@ -326,7 +326,7 @@
                 }
             },
             "timeZoneBot": {
-                "title": "Bot - {{REF:settings.timeZoneDisplay}}",
+                "title": "Bot - {{REF:settings.timeZone}}",
                 "description": [
                     "In welke tijdzone bevindt {{BOT}} zich?",
                     "",
@@ -339,7 +339,7 @@
                 }
             },
             "timeZoneSelf": {
-                "title": "Gebruiker - {{REF:settings.timeZoneDisplay}}",
+                "title": "Gebruiker - {{REF:settings.timeZone}}",
                 "description": [
                     "In welke tijdzone bevind je je?",
                     "",
@@ -352,7 +352,7 @@
                 }
             },
             "timeZoneUser": {
-                "title": "Gebruiker - {{REF:settings.timeZoneDisplay}}",
+                "title": "Gebruiker - {{REF:settings.timeZone}}",
                 "description": [
                     "In welke tijdzone bevindt {{USER}} zich?",
                     "",
@@ -417,13 +417,13 @@
                 }
             },
             "listGuild": {
-                "title": "Server - {{REF:settings.listDisplay}}",
+                "title": "Server - {{REF:settings.list}}",
                 "description": [
                     "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Er wordt geen lijst getoond.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Er wordt geen lijst getoond.",
                     "\u2800"
                 ],
                 "footer": {
@@ -431,7 +431,7 @@
                 }
             },
             "remindersGuild": {
-                "title": "Server - {{REF:settings.remindersDisplay}}",
+                "title": "Server - {{REF:settings.reminders}}",
                 "description": [
                     "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen?",
                     "",
@@ -443,7 +443,7 @@
                 }
             },
             "remindersUser": {
-                "title": "Gebruiker - {{REF:settings.remindersDisplay}}",
+                "title": "Gebruiker - {{REF:settings.reminders}}",
                 "description": [
                     "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen?",
                     "",
@@ -455,13 +455,13 @@
                 }
             },
             "dateFormatBot": {
-                "title": "Bot - {{REF:settings.dateFormatDisplay}}",
+                "title": "Bot - {{REF:settings.dateFormat}}",
                 "description": [
                     "Welk formaat gebruikt {{BOT}} het meest voor datums?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -469,13 +469,13 @@
                 }
             },
             "dateFormatUser": {
-                "title": "Gebruiker - {{REF:settings.dateFormatDisplay}}",
+                "title": "Gebruiker - {{REF:settings.dateFormat}}",
                 "description": [
                     "Welk formaat gebruik jij het meest voor datums?",
                     "",
-                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDayDisplay}}",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
                     "",
-                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonthDisplay}}",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -483,13 +483,13 @@
                 }
             },
             "timeFormatGuild": {
-                "title": "Server - {{REF:settings.timeFormatDisplay}}",
+                "title": "Server - {{REF:settings.timeFormat}}",
                 "description": [
                     "Welk formaat moet er gebruikt worden voor het verzenden van tijden in deze server?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -497,13 +497,13 @@
                 }
             },
             "timeFormatUser": {
-                "title": "Gebruiker - {{REF:settings.timeFormatDisplay}}",
+                "title": "Gebruiker - {{REF:settings.timeFormat}}",
                 "description": [
                     "Welk formaat heeft jouw voorkeur?",
                     "",
-                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHourDisplay}}",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
-                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHourDisplay}}",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
                     "\u2800"
                 ],
                 "footer": {
@@ -511,13 +511,13 @@
                 }
             },
             "privateModeUser": {
-                "title": "Gebruiker - {{REF:settings.privateModeDisplay}}",
+                "title": "Gebruiker - {{REF:settings.privateMode}}",
                 "description": [
                     "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}. {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}. Ik vind het goed om mijn gegevens te delen.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Ik vind het goed om mijn gegevens te delen.",
                     "\u2800"
                 ],
                 "footer": {
@@ -525,7 +525,7 @@
                 }
             },
             "languageGuild": {
-                "title": "Server - {{REF:settings.languageDisplay}}",
+                "title": "Server - {{REF:settings.language}}",
                 "description": [
                     "Welke taal wil je gebruiken in deze server?",
                     "",
@@ -538,7 +538,7 @@
                 }
             },
             "languageUser": {
-                "title": "Gebruiker - {{REF:settings.languageDisplay}}",
+                "title": "Gebruiker - {{REF:settings.language}}",
                 "description": [
                     "Welke taal wil je gebruiken?",
                     "",
@@ -879,26 +879,26 @@
             "timeZone": "Bekijk de tijd van een tijdzone."
         },
         "settings": {
-            "autoDetectDisplay": "Auto-detecteer",
-            "dateFormatDisplay": "Datumformaat",
-            "languageDisplay": "Taal",
-            "listDisplay": "Lijst",
-            "privateModeDisplay": "Privémodus",
-            "remindersDisplay": "Herinneringen",
-            "timeFormatDisplay": "Tijdsformaat",
-            "timeZoneDisplay": "Tijdzone"
+            "autoDetect": "Auto-detecteer",
+            "dateFormat": "Datumformaat",
+            "language": "Taal",
+            "list": "Lijst",
+            "privateMode": "Privémodus",
+            "reminders": "Herinneringen",
+            "timeFormat": "Tijdsformaat",
+            "timeZone": "Tijdzone"
         },
         "dateFormat": {
-            "monthDayDisplay": "Maand/Dag",
-            "dayMonthDisplay": "Dag/Maand"
+            "monthDay": "Maand/Dag",
+            "dayMonth": "Dag/Maand"
         },
         "timeFormat": {
-            "twelveHourDisplay": "12-uur",
-            "twentyFourHourDisplay": "24-uur"
+            "twelveHour": "12-uur",
+            "twentyFourHour": "24-uur"
         },
         "yesNo": {
-            "yesDisplay": "Ja",
-            "noDisplay": "Nee"
+            "yes": "Ja",
+            "no": "Nee"
         },
         "argDescs": {
             "helpOption": "Option.",
@@ -1006,9 +1006,9 @@
         "partials": {
             "congratulations": "🎉 Gefeliciteerd! 🎉",
             "yesOrNo": [
-                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yesDisplay}}",
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}",
                 "",
-                "`{{COM:yesNo.no}}` - {{REF:yesNo.noDisplay}}"
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
             ],
             "italicizedDefaults": "*Schuingedrukte* instellingen zijn standaarden.",
             "timeInTimeZone": "In **{{TIME_ZONE}}** is het op dit moment **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}** uur.",

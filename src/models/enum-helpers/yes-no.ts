@@ -17,7 +17,7 @@ export class YesNo {
                 return Lang.getCom('yesNo.yes');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('yesNo.yesDisplay', langCode);
+                return Lang.getRef('yesNo.yes', langCode);
             },
             value: true,
         },
@@ -26,7 +26,7 @@ export class YesNo {
                 return Lang.getCom('yesNo.no');
             },
             displayName(langCode: Locale): string {
-                return Lang.getRef('yesNo.noDisplay', langCode);
+                return Lang.getRef('yesNo.no', langCode);
             },
             value: false,
         },

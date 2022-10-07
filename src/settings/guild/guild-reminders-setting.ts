@@ -13,7 +13,7 @@ export class GuildRemindersSetting implements Setting<GuildData, boolean> {
     public default = true;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.remindersDisplay', langCode);
+        return Lang.getRef('settings.reminders', langCode);
     }
 
     public value(guildData: GuildData): boolean {

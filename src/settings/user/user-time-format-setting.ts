@@ -14,7 +14,7 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
     public default = TimeFormatOption.TWELVE_HOUR;
 
     public displayName(langCode: Locale): string {
-        return Lang.getRef('settings.timeFormatDisplay', langCode);
+        return Lang.getRef('settings.timeFormat', langCode);
     }
 
     public value(userData: UserData): TimeFormatOption {

@@ -988,6 +988,10 @@
             "translate": "Translate",
             "dev": "Dev"
         },
+        "boolean": {
+            "true": "True",
+            "false": "False"
+        },
         "other": {
             "na": "N.v.t.",
             "private": "Privé"

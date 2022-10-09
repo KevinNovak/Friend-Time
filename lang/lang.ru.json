@@ -934,6 +934,10 @@
             "translate": "Translate",
             "dev": "Dev"
         },
+        "boolean": {
+            "true": "True",
+            "false": "False"
+        },
         "other": {
             "na": "Н/Д",
             "private": "Приватно"

@@ -13,10 +13,12 @@ export class HelpCommand implements Command {
     public requireUserPerms: PermissionsString[] = [];
 
     public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
-        let option = intr.options.getString(Lang.getCom('arguments.option'));
+        let args = {
+            option: intr.options.getString(Lang.getCom('arguments.option')) as HelpOption,
+        };
 
         let embed: EmbedBuilder;
-        switch (option) {
+        switch (args.option) {
             case HelpOption.COMMANDS: {
                 embed = Lang.getEmbed('displayEmbeds.commands', data.lang);
                 break;

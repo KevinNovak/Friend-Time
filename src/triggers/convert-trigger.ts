@@ -125,7 +125,7 @@ export class ConvertTrigger implements Trigger {
                     timeResults.length === 1 ? 'lists.timeTextItem' : 'lists.timeTextWithPosItem',
                     guildLangCode,
                     {
-                        POSITION: (index + 1).toLocaleString(),
+                        POSITION: (index + 1).toLocaleString(data.lang),
                         TIME_TEXT: this.timeService.formatTimeText(result.text),
                     }
                 )
@@ -162,7 +162,7 @@ export class ConvertTrigger implements Trigger {
                             : 'lists.timeWithPosItem',
                         guildLangCode,
                         {
-                            POSITION: (index + 1).toLocaleString(),
+                            POSITION: (index + 1).toLocaleString(data.lang),
                             TIME_START: result.start,
                             TIME_END: result.end,
                         }

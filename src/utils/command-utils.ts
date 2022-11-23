@@ -2,6 +2,8 @@ import {
     CommandInteraction,
     GuildChannel,
     GuildMember,
+    MessageComponentInteraction,
+    ModalSubmitInteraction,
     PermissionFlagsBits,
     ThreadChannel,
 } from 'discord.js';
@@ -41,7 +43,7 @@ export class CommandUtils {
 
     public static async runChecks(
         command: Command,
-        intr: CommandInteraction,
+        intr: CommandInteraction | MessageComponentInteraction | ModalSubmitInteraction,
         data: EventData
     ): Promise<boolean> {
         if (command.cooldown) {

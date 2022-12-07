@@ -45,9 +45,9 @@ export class TimeZoneUtils {
                 .filter(timeZone => timeZone.name.toLowerCase() === search)
                 .forEach(timeZone => found.add(timeZone));
         if (found.size < limit)
-            this.timeZones.filter(timeZone =>
-                timeZone.group.some(name => name.toLowerCase() === search)
-            );
+            this.timeZones
+                .filter(timeZone => timeZone.group.some(name => name.toLowerCase() === search))
+                .forEach(timeZone => found.add(timeZone));
         // Starts with search term
         if (found.size < limit)
             this.timeZones

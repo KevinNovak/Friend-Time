@@ -41,6 +41,7 @@
         "restjson",
         "TypeORM",
         "tzdb",
+        "unescapes",
         "varchar"
     ],
     "typescript.preferences.importModuleSpecifierEnding": "js"

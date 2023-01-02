@@ -2,7 +2,7 @@
     "data": {
         "displayEmbeds": {
             "welcome": {
-                "title": "Obrigado por utilizar o {{COM:bot.name}}!",
+                "title": "Obrigado por usar o {{COM:bot.name}}!",
                 "description": ["{{REF:bot.description}}"],
                 "fields": [
                     {
@@ -16,7 +16,7 @@
                 ]
             },
             "commands": {
-                "title": "{{COM:bot.name}} - Commands",
+                "title": "{{COM:bot.name}} - Comandos",
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} de Usuário",
@@ -56,8 +56,8 @@
                 ]
             },
             "permissions": {
-                "title": "{{COM:bot.name}} - Permissions",
-                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "title": "{{COM:bot.name}} - Permissões",
+                "description": "Quer restingir comandos a certos cargos, usuários ou canais? Configure permissões sob a página **Integrações** nas Configs. do servidor (ou simplesmente clique com o botão direito no bot e selecione **Gerenciar integração**).",
                 "fields": [
                     {
                         "name": "{{REF:fields.links}}",
@@ -66,12 +66,12 @@
                 ]
             },
             "faq": {
-                "title": "{{COM:bot.name}} - FAQ",
+                "title": "{{COM:bot.name}} - Perguntas Frequentes",
                 "description": [
-                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "Perguntas frequentes sobre o {{COM:bot.name}}.",
                     "",
-                    "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                    "**Como eu restrinjo quem pode executar os comandos?**",
+                    "Permissões de comandos de barra podem ser configuradas nas Configs. do servidor. Veja \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" para mais informações."
                 ],
                 "fields": [
                     {
@@ -190,7 +190,7 @@
                 "description": "Hoje é **{{TIME}}** em **{{TIME_ZONE}}**."
             },
             "about": {
-                "title": "{{COM:bot.name}} - About",
+                "title": "{{COM:bot.name}} - Sobre",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     { "name": "Autor", "value": "{{REF:links.authorEmbed}}" },
@@ -262,7 +262,7 @@
             },
             "timeConversionDm": {
                 "description": [
-                    "{{USER}} em {{CHANNEL}} mencionou os seguintes horários:",
+                    "{{USER}} em {{CHANNEL}} mencionou as seguintes horas:",
                     "",
                     "{{TIME_ZONE_FROM}} ➡️ **{{TIME_ZONE_TO}}**",
                     "",
@@ -276,11 +276,11 @@
             },
             "timeZoneReminder": {
                 "description": [
-                    "Olá {{USER}}, parece que você [mencionou ou reagiu a um horário]({{MESSAGE_LINK}}), mas não tem nenhum fuso horário configurado ainda.",
+                    "Olá {{USER}}, parece que você [mencionou ou reagiu a um hora]({{MESSAGE_LINK}}), mas não tem nenhum fuso horário configurado ainda.",
                     "",
                     "Configure o seu fuso horário usando o comando `/{{COM:chatCommands.set}} {{COM:subCommands.me}}`!",
                     "",
-                    "Configurar seu fuso horário permite o {{COM:bot.name}} converter os horários nos chats do servidor para e do seu fuso horário, tornando mais fácil coordenar horários com outros."
+                    "Configurar seu fuso horário permite o {{COM:bot.name}} converter as horas nos chats do servidor para e do seu fuso horário, tornando mais fácil coordenar horas com outros."
                 ],
                 "footer": {
                     "text": "Se quiser desabilitar este lembrete, digite \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
@@ -292,11 +292,11 @@
             "autoDetectGuild": {
                 "title": "Servidor - {{REF:settings.autoDetect}}",
                 "description": [
-                    "Você gostaria que o {{COM:bot.name}} detectasse os fusos diretamente no chat?",
+                    "Você gostaria de que o {{COM:bot.name}} detectasse os fusos diretamente no chat?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Horários nos chats serão detectados automaticamente.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Horas nos chats serão detectados automaticamente.",
                     "",
-                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Horários nos chats **não** serão detectados automaticamente. O emoji 🕰️ tem de estar presente numa mensagem para um horário ser reconhecido e convertido.",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Horas nos chats **não** serão detectados automaticamente. O emoji 🕰️ tem de estar presente numa mensagem para um horário ser reconhecido e convertido.",
                     "\u2800"
                 ],
                 "footer": { "text": "{{REF:footers.collector}}" }
@@ -392,9 +392,9 @@
             "listGuild": {
                 "title": "Servidor - {{REF:settings.list}}",
                 "description": [
-                    "Gostaria que o {{COM:bot.name}} enviasse uma lista de horários convertidos no chat após um horário ser mencionado?",
+                    "Gostaria de que o {{COM:bot.name}} enviasse uma lista de horas convertidas no chat após uma hora ser mencionada?",
                     "",
-                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. O {{COM:bot.name}} vai converter os horários no chat para todos os fusos horários na lista do servidor (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Essa lista será enviada no mesmo canal da mensagem original.",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. O {{COM:bot.name}} vai converter as horas no chat para todos os fusos horários na lista do servidor (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Essa lista será enviada no mesmo canal da mensagem original.",
                     "",
                     "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Nenhuma lista será exibida.",
                     "\u2800"
@@ -448,7 +448,7 @@
             "timeFormatGuild": {
                 "title": "Servidor - {{REF:settings.timeFormat}}",
                 "description": [
-                    "Qual formato de hora deveria ser usado para horários enviados neste servidor?",
+                    "Qual formato de hora deveria ser usado para horas enviadas neste servidor?",
                     "",
                     "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
                     "",
@@ -507,7 +507,7 @@
                 "description": [
                     "{{SETTING_LIST}}",
                     "",
-                    "{{USER}}, por favor confirme, você gostaria de usar essas propriedades?",
+                    "{{USER}}, por favor, confirme: você gostaria de usar essas propriedades?",
                     "",
                     "{{REF:partials.yesOrNo}}",
                     "\u2800"
@@ -517,7 +517,7 @@
         },
         "resultEmbeds": {
             "collectorExpired": {
-                "description": "O tempo da configuração terminou. Favor tentar novamente.",
+                "description": "O tempo da configuração terminou. Por favor, tente novamente.",
                 "color": "{{COM:colors.warning}}"
             },
             "setupCompleted": {
@@ -669,7 +669,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "devOnly": {
-                "description": "This action can only be done by developers.",
+                "description": "Esta ação pode só ser feita por desenvolvedores.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
@@ -678,7 +678,7 @@
             },
             "missingClientPerms": {
                 "description": [
-                    "Eu não tenho todas as permissões necessárias para executar esse comando aqui! Por favor, verifique as permissões do servidor e do canal para ter certeza de que eu tenho as seguintes permissões.",
+                    "Não tenho todas as permissões necessárias para executar esse comando aí! Por favor, verifique as permissões do servidor e do canal para ter certeza de que tenho as seguintes permissões.",
                     "",
                     "Permissões necessárias: {{PERMISSIONS}}"
                 ],
@@ -766,11 +766,11 @@
                         "value": "{{ERROR_CODE}}"
                     },
                     {
-                        "name": "Server ID",
+                        "name": "ID do servidor",
                         "value": "{{GUILD_ID}}"
                     },
                     {
-                        "name": "Shard ID",
+                        "name": "ID da shard",
                         "value": "{{SHARD_ID}}"
                     },
                     {
@@ -785,7 +785,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "notImplemented": {
-                "description": "This feature has not been implemented yet!",
+                "description": "Este recurso não foi implementado ainda!",
                 "color": "{{COM:colors.warning}}"
             }
         },
@@ -798,7 +798,7 @@
             "translators": "KiddLankaster#2198, [Davi 6596#6596](https://github.com/Davi-the-Mudkip)"
         },
         "bot": {
-            "description": "O {{COM:bot.name}} ajuda o seu servidor a coordenar horários e eventos convertendo horários mencionados em chat entre fusos horários!"
+            "description": "O {{COM:bot.name}} ajuda o seu servidor a coordenar horas e eventos convertendo horas mencionadas no bate-papo entre fusos horários!"
         },
         "commandDescs": {
             "bot": "Gerencie as propriedades dos bots.",
@@ -806,7 +806,7 @@
             "botView": "Veja as propriedades de um bot.",
             "botEdit": "Mude uma propriedade de um bot.",
             "botRemove": "Remova um bot.",
-            "help": "Get help with commands, permissions, FAQ, etc.",
+            "help": "Obtenha ajuda com comandos, permissões, perguntas frequentes, etc.",
             "info": "Veja informações do bot.",
             "list": "Gerencie a lista dos fusos horários do servidor.",
             "listView": "Veja a lista dos fusos horários do servidor.",
@@ -852,8 +852,8 @@
             "no": "Não"
         },
         "argDescs": {
-            "helpOption": "Option.",
-            "infoOption": "Option."
+            "helpOption": "Opção.",
+            "infoOption": "Opção."
         },
         "lists": {
             "settingItem": [
@@ -887,61 +887,61 @@
             "collector": "Digite sua resposta (ou '{{COM:keywords.stop}}' para cancelar)."
         },
         "permissions": {
-            "AddReactions": "Add Reactions",
-            "Administrator": "Administrator",
-            "AttachFiles": "Attach Files",
-            "BanMembers": "Ban Members",
-            "ChangeNickname": "Change Nickname",
-            "Connect": "Connect",
-            "CreateInstantInvite": "Create Invite",
-            "CreatePrivateThreads": "Create Private Threads",
-            "CreatePublicThreads": "Create Public Threads",
-            "DeafenMembers": "Deafen Members",
-            "EmbedLinks": "Embed Links",
-            "KickMembers": "Kick Members",
-            "ManageChannels": "Manage Channel(s)",
-            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
-            "ManageEvents": "Manage Events",
-            "ManageGuild": "Manage Server",
-            "ManageMessages": "Manage Messages",
-            "ManageNicknames": "Manage Nicknames",
-            "ManageRoles": "Manage Roles / Permissions",
-            "ManageThreads": "Manage Threads / Posts",
-            "ManageWebhooks": "Manage Webhooks",
-            "MentionEveryone": "Mention Everyone, Here, and All Roles",
-            "ModerateMembers": "Timeout Members",
-            "MoveMembers": "Move Members",
-            "MuteMembers": "Mute Members",
-            "PrioritySpeaker": "Priority Speaker",
-            "ReadMessageHistory": "Read Message History",
-            "RequestToSpeak": "Request to Speak",
-            "SendMessages": "Send Messages / Create Posts",
-            "SendMessagesInThreads": "Send Messages in Threads / Posts",
-            "SendTTSMessages": "Send Text-to-Speech Messages",
-            "Speak": "Speak",
-            "Stream": "Video",
-            "UseApplicationCommands": "Use Application Commands",
-            "UseEmbeddedActivities": "Use Activities",
-            "UseExternalEmojis": "Use External Emoji",
-            "UseExternalStickers": "Use External Stickers",
-            "UseVAD": "Use Voice Activity",
-            "ViewAuditLog": "View Audit Log",
-            "ViewChannel": "View Channel(s)",
-            "ViewGuildInsights": "View Server Insights"
+            "AddReactions": "Adicionar reações",
+            "Administrator": "Administrador",
+            "AttachFiles": "Anexar aqruivos",
+            "BanMembers": "Banir membros",
+            "ChangeNickname": "Alterar apelido",
+            "Connect": "Conectar",
+            "CreateInstantInvite": "Criar convite",
+            "CreatePrivateThreads": "Criar tópicos privados",
+            "CreatePublicThreads": "Criar tópicos públicos",
+            "DeafenMembers": "Ensurdecer membros",
+            "EmbedLinks": "Inserir links",
+            "KickMembers": "Expulsar membros",
+            "ManageChannels": "Gerenciar canal(is)",
+            "ManageEmojisAndStickers": "Gerenciar emojis e figurinhas",
+            "ManageEvents": "Gerenciar eventos",
+            "ManageGuild": "Gerenciar servidor",
+            "ManageMessages": "Gerenciar mensagens",
+            "ManageNicknames": "Gerenciar apelidos",
+            "ManageRoles": "Gerenciar cargos / permissões",
+            "ManageThreads": "Gerenciar tópicos / postagens",
+            "ManageWebhooks": "Gerenciar webhooks",
+            "MentionEveryone": "Mencionar everyone, here e todos os cargos",
+            "ModerateMembers": "Membros de castigo",
+            "MoveMembers": "Mover membros",
+            "MuteMembers": "Silenciar memberos",
+            "PrioritySpeaker": "Voz prioritária",
+            "ReadMessageHistory": "Ver histórico de mensagens",
+            "RequestToSpeak": "Pedir para falar",
+            "SendMessages": "Enviar mensagens / Criar postagens",
+            "SendMessagesInThreads": "Enviar mensagens em tópicos / postagens",
+            "SendTTSMessages": "Enviar mensagens em Texto-para-voz",
+            "Speak": "Falar",
+            "Stream": "Vídeo",
+            "UseApplicationCommands": "Usar comandos de aplicativo",
+            "UseEmbeddedActivities": "Usar atividades",
+            "UseExternalEmojis": "Usar emojis externos",
+            "UseExternalStickers": "Usar figurinhas externas",
+            "UseVAD": "Usar detecção de voz",
+            "ViewAuditLog": "Ver o registro de auditoria",
+            "ViewChannel": "Ver canal(is)",
+            "ViewGuildInsights": "Ver Análises do Servidor"
         },
         "helpOptions": {
-            "commands": "Commands",
-            "permissions": "Permissions",
-            "faq": "FAQ"
+            "commands": "Comandos",
+            "permissions": "Permissões",
+            "faq": "Perguntas frequentes"
         },
         "infoOptions": {
-            "about": "About",
-            "translate": "Translate",
-            "dev": "Dev"
+            "about": "Sobre",
+            "translate": "Traduzir",
+            "dev": "Desenvolvedor"
         },
         "boolean": {
-            "true": "True",
-            "false": "False"
+            "true": "Verdadeiro",
+            "false": "Falso"
         },
         "other": {
             "na": "N/A",
@@ -966,7 +966,7 @@
                 "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
             ],
             "italicizedDefaults": "As propriedades em *itálico* estão configuradas nas opções padrões.",
-            "timeInTimeZone": "Em **{{TIME_ZONE}}** são **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
+            "timeInTimeZone": "Em **{{TIME_ZONE}}** é/são **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
             "findTimeZoneHelp": [
                 "Você pode achar fusos horários usando o __{{REF:links.mapEmbed}}__.",
                 "",

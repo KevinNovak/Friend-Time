@@ -1,5 +1,6 @@
 import { ApplicationCommand, Guild, Locale } from 'discord.js';
-import { DateTime, Duration } from 'luxon'; // TODO: Missing types
+import { filesize } from 'filesize';
+import { DateTime, Duration } from 'luxon';
 
 import { TimeFormatOption } from '../enums/index.js';
 import { TimeFormat } from '../models/enum-helpers/index.js';
@@ -71,5 +72,9 @@ export class FormatUtils {
                 ).filter(([_, value]) => !!value) // Remove units that are 0
             )
         ).toHuman({ maximumFractionDigits: 0 });
+    }
+
+    public static fileSize(bytes: number): string {
+        return filesize(bytes, { output: 'string', pad: true, round: 2 }).toString();
     }
 }

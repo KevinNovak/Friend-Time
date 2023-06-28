@@ -8,7 +8,7 @@ description: >-
 
 ## [Add to your Discord Server!](https://discord.com/oauth2/authorize?client_id=471091072546766849&scope=bot%20applications.commands&permissions=85056)
 
-[Documentation](https://novakevin.gitbook.io/friend-time/) \| [Support Server](https://discord.gg/GQcBR8e) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
+[Documentation](https://novakevin.gitbook.io/friend-time/) \| [Support Server](https://discord.gg/c9kQktCbsE) \| [Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EW389DYYSS4FC)
 
 ## Introduction
 

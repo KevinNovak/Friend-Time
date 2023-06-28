@@ -13,7 +13,7 @@ Type `/translate` to see what languages are available.
 ![](../../.gitbook/assets/image%20%2863%29%20%281%29.png)
 
 {% hint style="info" %}
- If you are interested in providing a translation, please contact the staff in our [support server](https://discord.gg/GQcBR8e).
+ If you are interested in providing a translation, please contact the staff in our [support server](https://discord.gg/c9kQktCbsE).
 {% endhint %}
 
 {% hint style="info" %}

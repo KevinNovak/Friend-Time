@@ -27,7 +27,7 @@ Friend Time requires that you have **Direct Messages enabled** in at least one s
 ![](.gitbook/assets/image%20%2845%29.png)
 
 {% hint style="info" %}
-If you don't want to enable the setting in your server, consider joining the [Support Server](https://discord.gg/GQcBR8e), and enabling direct messages there.
+If you don't want to enable the setting in your server, consider joining the [Support Server](https://discord.gg/c9kQktCbsE), and enabling direct messages there.
 {% endhint %}
 
 ## Why isn't the time zone list working?

@@ -1,6 +1,7 @@
 import { ParsedResult } from 'chrono-node';
 import { EmbedBuilder, Message } from 'discord.js';
 
+import { Trigger } from './index.js';
 import { GuildBotData } from '../database/entities/index.js';
 import { DateFormatOption } from '../enums/index.js';
 import { EventData } from '../models/internal-models.js';
@@ -19,7 +20,6 @@ import {
     UserTimeZoneSetting,
 } from '../settings/user/index.js';
 import { DataUtils, MessageUtils, PermissionUtils } from '../utils/index.js';
-import { Trigger } from './index.js';
 
 export class ConvertTrigger implements Trigger {
     public requireGuild = true;

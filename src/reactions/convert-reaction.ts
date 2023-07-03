@@ -1,5 +1,6 @@
 import { Message, MessageReaction, User } from 'discord.js';
 
+import { Reaction } from './index.js';
 import { GuildBotData } from '../database/entities/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang, ReminderService, TimeService } from '../services/index.js';
@@ -11,7 +12,6 @@ import {
     UserTimeZoneSetting,
 } from '../settings/user/index.js';
 import { DataUtils, FormatUtils, MessageUtils } from '../utils/index.js';
-import { Reaction } from './index.js';
 
 export class ConvertReaction implements Reaction {
     public emoji: string = Lang.getCom('emojis.convert');

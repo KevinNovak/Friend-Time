@@ -1,8 +1,8 @@
 import { Locale } from 'discord.js';
 import type { BaseEntity } from 'typeorm';
 
-import { Lang } from '../services/index.js';
 import { Setting } from './index.js';
+import { Lang } from '../services/index.js';
 
 export class SettingManager {
     constructor(public settings: Setting<BaseEntity, any>[]) {}

@@ -11,8 +11,8 @@ import {
     UpdateDateColumn,
 } from 'typeorm';
 
-import { TimeFormatOption } from '../../enums/index.js';
 import { GuildBotData, GuildListItemData } from './index.js';
+import { TimeFormatOption } from '../../enums/index.js';
 
 @Entity('guild')
 @Unique(['discordId'])

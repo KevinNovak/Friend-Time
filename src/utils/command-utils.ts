@@ -9,11 +9,11 @@ import {
 } from 'discord.js';
 import { createRequire } from 'node:module';
 
+import { FormatUtils, InteractionUtils } from './index.js';
 import { Command } from '../commands/index.js';
 import { Permission } from '../models/enum-helpers/index.js';
 import { EventData } from '../models/internal-models.js';
 import { Lang } from '../services/index.js';
-import { FormatUtils, InteractionUtils } from './index.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

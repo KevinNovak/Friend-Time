@@ -199,6 +199,7 @@
                         "value": [
                             "{{REF:links.sourceEmbed}}",
                             "{{REF:links.docsEmbed}}",
+                            "{{REF:links.termsEmbed}}",
                             "{{REF:links.voteEmbed}}",
                             "{{REF:links.donateEmbed}}",
                             "{{REF:links.supportEmbed}}",
@@ -956,6 +957,7 @@
             "sourceEmbed": "[Schau’ dir den Quellcode an]({{COM:links.source}})",
             "supportEmbed": "[Hilfeserver beitreten]({{COM:links.support}})",
             "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
+            "termsEmbed": "[View Terms of Service]({{COM:links.terms}})",
             "voteEmbed": "[Stimme für {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {

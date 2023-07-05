@@ -225,7 +225,7 @@
                 "title": "{{COM:bot.name}} - Vertalingen",
                 "description": "Dank aan onze vertalers die het mogelijk hebben gemaakt voor {{COM:bot.name}} om in de volgende talen gebruikt te worden. Als je interesse hebt in het aanleveren van een vertaling, neem dan alstublieft contact op met het beheerders-team in onze [support server]({{COM:links.support}})."
             },
-            "dev": {
+            "devInfo": {
                 "title": "{{COM:bot.name}} - Ontwikkelaarsinformatie",
                 "fields": [
                     {
@@ -856,6 +856,7 @@
             "botView": "Bekijk een instelling van de bot.",
             "botEdit": "Verander een instelling van de bot.",
             "botRemove": "Verwijder een bot.",
+            "dev": "Developer use only.",
             "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Bekijk informatie over de bot.",
             "list": "Beheer de lijst met tijdzones van de server.",
@@ -902,6 +903,7 @@
             "no": "Nee"
         },
         "argDescs": {
+            "devCommand": "Command.",
             "helpOption": "Option.",
             "infoOption": "Option."
         },
@@ -979,6 +981,9 @@
             "ViewChannel": "View Channel(s)",
             "ViewGuildInsights": "View Server Insights"
         },
+        "devCommandNames": {
+            "info": "info"
+        },
         "helpOptions": {
             "commands": "Commands",
             "permissions": "Permissions",
@@ -986,8 +991,7 @@
         },
         "infoOptions": {
             "about": "About",
-            "translate": "Translate",
-            "dev": "Dev"
+            "translate": "Translate"
         },
         "boolean": {
             "true": "True",

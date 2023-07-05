@@ -216,7 +216,7 @@
                 "title": "{{COM:bot.name}} - Traductions",
                 "description": "Nous remercions nos traducteurs pour avoir permis à {{COM:bot.name}} d'être utilisé dans différents langages. Si tu es intéressé par de la traduction, contacte nous sur [le serveur de support]({{COM:links.support}})."
             },
-            "dev": {
+            "devInfo": {
                 "title": "{{COM:bot.name}} - Information Développeurs",
                 "fields": [
                     {
@@ -807,6 +807,7 @@
             "botView": "Voir les paramètres d'un bot.",
             "botEdit": "Changer un paramètre d'un bot.",
             "botRemove": "Enlever un bot.",
+            "dev": "Developer use only.",
             "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Voir les informations du bot.",
             "list": "Changer la liste des fuseaux horaires du serveur.",
@@ -853,6 +854,7 @@
             "no": "Non"
         },
         "argDescs": {
+            "devCommand": "Command.",
             "helpOption": "Option.",
             "infoOption": "Option."
         },
@@ -930,6 +932,9 @@
             "ViewChannel": "View Channel(s)",
             "ViewGuildInsights": "View Server Insights"
         },
+        "devCommandNames": {
+            "info": "info"
+        },
         "helpOptions": {
             "commands": "Commands",
             "permissions": "Permissions",
@@ -937,8 +942,7 @@
         },
         "infoOptions": {
             "about": "About",
-            "translate": "Translate",
-            "dev": "Dev"
+            "translate": "Translate"
         },
         "boolean": {
             "true": "True",

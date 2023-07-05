@@ -5,6 +5,7 @@
     },
     "chatCommands": {
         "bot": "bot",
+        "dev": "dev",
         "help": "help",
         "info": "info",
         "list": "list",
@@ -29,6 +30,7 @@
         "zone": "zone"
     },
     "arguments": {
+        "command": "command",
         "option": "option",
         "user": "user",
         "bot": "bot",

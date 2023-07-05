@@ -1,4 +1,5 @@
 export { BotCommand } from './bot-command.js';
+export { DevCommand } from './dev-command.js';
 export { HelpCommand } from './help-command.js';
 export { InfoCommand } from './info-command.js';
 export { ListCommand } from './list-command.js';

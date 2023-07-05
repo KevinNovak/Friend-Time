@@ -5,6 +5,7 @@ import { createRequire } from 'node:module';
 import { Button } from './buttons/index.js';
 import {
     BotCommand,
+    DevCommand,
     HelpCommand,
     InfoCommand,
     ListCommand,
@@ -131,6 +132,7 @@ async function start(): Promise<void> {
     let commands: Command[] = [
         // Chat Commands
         new BotCommand(botSettingManager),
+        new DevCommand(),
         new HelpCommand(),
         new InfoCommand(),
         new ListCommand(),

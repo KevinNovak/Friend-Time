@@ -211,7 +211,7 @@
                 "title": "{{COM:bot.name}} - Перевод",
                 "description": "Спасибо переводчикам, благодаря которым {{COM:bot.name}} можно использовать на любом из следующих языков. Если вы желаете помочь с переведом бота на новый язык, пожалуйста, свяжитесь с сотрудниками на нашем [сервере поддержки]({{COM:links.support}})."
             },
-            "dev": {
+            "devInfo": {
                 "title": "{{COM:bot.name}} - Информация для разработчиков",
                 "fields": [
                     {
@@ -802,6 +802,7 @@
             "botView": "Просмотреть настройки бота.",
             "botEdit": "Изменить настройку бота.",
             "botRemove": "Очистить информацию о боте.",
+            "dev": "Developer use only.",
             "help": "Get help with commands, permissions, FAQ, etc.",
             "info": "Просмотреть информацию о боте.",
             "list": "Управлять списком часовых поясов сервера.",
@@ -848,6 +849,7 @@
             "no": "Нет"
         },
         "argDescs": {
+            "devCommand": "Command.",
             "helpOption": "Option.",
             "infoOption": "Option."
         },
@@ -925,6 +927,9 @@
             "ViewChannel": "View Channel(s)",
             "ViewGuildInsights": "View Server Insights"
         },
+        "devCommandNames": {
+            "info": "info"
+        },
         "helpOptions": {
             "commands": "Commands",
             "permissions": "Permissions",
@@ -932,8 +937,7 @@
         },
         "infoOptions": {
             "about": "About",
-            "translate": "Translate",
-            "dev": "Dev"
+            "translate": "Translate"
         },
         "boolean": {
             "true": "True",

@@ -16,7 +16,7 @@
                 ]
             },
             "commands": {
-                "title": "{{COM:bot.name}} - Commands",
+                "title": "{{COM:bot.name}} - Comandos",
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} de usuario",
@@ -33,7 +33,7 @@
                         ]
                     },
                     {
-                        "name": "{{REF:fields.commands}} de admin",
+                        "name": "{{REF:fields.commands}} de administrador",
                         "value": [
                             "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
                             "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
@@ -56,8 +56,8 @@
                 ]
             },
             "permissions": {
-                "title": "{{COM:bot.name}} - Permissions",
-                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "title": "{{COM:bot.name}} - Permisos",
+                "description": "¿Quieres restringir comandos para ciertos roles, usuarios, o canales? Configura los permisos en la página de **Integración** del bot, en las configuraciones del servidor (o simplemente haz clic derecho en el bot y selecciona **Gestionar la Integración**).",
                 "fields": [
                     {
                         "name": "{{REF:fields.links}}",
@@ -66,12 +66,12 @@
                 ]
             },
             "faq": {
-                "title": "{{COM:bot.name}} - FAQ",
+                "title": "{{COM:bot.name}} - Preguntas Frecuentes",
                 "description": [
-                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "Preguntas Frecuentes sobre {{COM:bot.name}}.",
                     "",
-                    "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                    "**¿Cómo puedo restringir quien puede correr los comandos?**",
+                    "Los permisos de los comandos de barra pueden ser configurados en las configuraciones del servidor. Lee \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" para más información."
                 ],
                 "fields": [
                     {
@@ -152,7 +152,7 @@
                         ]
                     }
                 ],
-                "footer": { "text": "Bot ID: {{BOT_ID}}" }
+                "footer": { "text": "ID Bot: {{BOT_ID}}" }
             },
             "settingSelf": {
                 "title": "Mis configuraciones",
@@ -190,7 +190,7 @@
                 "description": "Son las **{{TIME}}** en **{{TIME_ZONE}}**."
             },
             "about": {
-                "title": "{{COM:bot.name}} - About",
+                "title": "{{COM:bot.name}} - Sobre",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     { "name": "Autor", "value": "{{REF:links.authorEmbed}}" },
@@ -258,7 +258,7 @@
             "linkMap": {
                 "title": "Mapa de zonas horarias",
                 "description": [
-                    "{{REF:partials.findTimeZoneHelp}} Puedes copiar este nombre y usarlo donde {{COM:bot.name}} necesite una zona horaria."
+                    "{{REF:partials.findTimeZoneHelp}} Puedes copiar este nombre y usarlo donde {{COM:bot.name}} necesites una zona horaria."
                 ]
             },
             "timeConversionDm": {
@@ -670,7 +670,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "devOnly": {
-                "description": "This action can only be done by developers.",
+                "description": "Esta acción solo puede ser ejecutada por los desarrolladores.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
@@ -767,11 +767,11 @@
                         "value": "{{ERROR_CODE}}"
                     },
                     {
-                        "name": "Server ID",
+                        "name": "ID Servidor",
                         "value": "{{GUILD_ID}}"
                     },
                     {
-                        "name": "Shard ID",
+                        "name": "ID Shard",
                         "value": "{{SHARD_ID}}"
                     },
                     {
@@ -782,11 +782,11 @@
                 "color": "{{COM:colors.error}}"
             },
             "startupInProcess": {
-                "description": "Inicio de {{COM:bot.name}} en proceso, intente de nuevo más tarde.",
+                "description": "Inicio de {{COM:bot.name}} en proceso, intenta de nuevo más tarde.",
                 "color": "{{COM:colors.warning}}"
             },
             "notImplemented": {
-                "description": "This feature has not been implemented yet!",
+                "description": "¡Esta característica aún no ha sido implementada!",
                 "color": "{{COM:colors.warning}}"
             }
         },
@@ -807,8 +807,8 @@
             "botView": "Ver las configuraciones de un bot.",
             "botEdit": "Cambiar la configuración de un bot.",
             "botRemove": "Eliminar un bot.",
-            "dev": "Developer use only.",
-            "help": "Get help with commands, permissions, FAQ, etc.",
+            "dev": "Solo para desarrolladores.",
+            "help": "Obtén ayuda de los comandos, permisos, preguntas frecuentes, etc.",
             "info": "Ver la información del bot.",
             "list": "Administrar la lista de zonas horarias del servidor.",
             "listView": "Ver la lista de zonas horarias del servidor.",
@@ -854,9 +854,9 @@
             "no": "No"
         },
         "argDescs": {
-            "devCommand": "Command.",
-            "helpOption": "Option.",
-            "infoOption": "Option."
+            "devCommand": "Comando.",
+            "helpOption": "Opción.",
+            "infoOption": "Opción."
         },
         "lists": {
             "settingItem": [
@@ -890,63 +890,63 @@
             "collector": "Ingresa tu respuesta abajo (o '{{COM:keywords.stop}}' para cancelar)."
         },
         "permissions": {
-            "AddReactions": "Add Reactions",
-            "Administrator": "Administrator",
-            "AttachFiles": "Attach Files",
-            "BanMembers": "Ban Members",
-            "ChangeNickname": "Change Nickname",
-            "Connect": "Connect",
-            "CreateInstantInvite": "Create Invite",
-            "CreatePrivateThreads": "Create Private Threads",
-            "CreatePublicThreads": "Create Public Threads",
-            "DeafenMembers": "Deafen Members",
-            "EmbedLinks": "Embed Links",
-            "KickMembers": "Kick Members",
-            "ManageChannels": "Manage Channel(s)",
-            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
-            "ManageEvents": "Manage Events",
-            "ManageGuild": "Manage Server",
-            "ManageMessages": "Manage Messages",
-            "ManageNicknames": "Manage Nicknames",
-            "ManageRoles": "Manage Roles / Permissions",
-            "ManageThreads": "Manage Threads / Posts",
-            "ManageWebhooks": "Manage Webhooks",
-            "MentionEveryone": "Mention Everyone, Here, and All Roles",
-            "ModerateMembers": "Timeout Members",
-            "MoveMembers": "Move Members",
-            "MuteMembers": "Mute Members",
-            "PrioritySpeaker": "Priority Speaker",
-            "ReadMessageHistory": "Read Message History",
-            "RequestToSpeak": "Request to Speak",
-            "SendMessages": "Send Messages / Create Posts",
-            "SendMessagesInThreads": "Send Messages in Threads / Posts",
-            "SendTTSMessages": "Send Text-to-Speech Messages",
-            "Speak": "Speak",
+            "AddReactions": "Agregar Reacciones",
+            "Administrator": "Administrador",
+            "AttachFiles": "Anexar Archivos",
+            "BanMembers": "Banear Miembros",
+            "ChangeNickname": "Cambiar Apodo",
+            "Connect": "Conectar",
+            "CreateInstantInvite": "Crear Invitación",
+            "CreatePrivateThreads": "Crear Hilos Privados",
+            "CreatePublicThreads": "Crear Hilos Públicos",
+            "DeafenMembers": "Ensordecer Miembros",
+            "EmbedLinks": "Insertar Enlaces",
+            "KickMembers": "Expulsar Miembros",
+            "ManageChannels": "Gestionar Canal(es)",
+            "ManageEmojisAndStickers": "Gestionar Emojis y Stickers",
+            "ManageEvents": "Gestionar Eventos",
+            "ManageGuild": "Gestionar Servidor",
+            "ManageMessages": "Gestionar Mensajes",
+            "ManageNicknames": "Gestionar Apodos",
+            "ManageRoles": "Gestionar Roles / Permisos",
+            "ManageThreads": "Gestionar Hilos / Publicaciones",
+            "ManageWebhooks": "Gestionar Webhooks",
+            "MentionEveryone": "Mencionar Todos, Aquí, y Todos los Roles",
+            "ModerateMembers": "Castigar Miembros",
+            "MoveMembers": "Mueve Miembros",
+            "MuteMembers": "Silenciar Miembros",
+            "PrioritySpeaker": "Orador Prioritario",
+            "ReadMessageHistory": "Leer la Historia de Mensajes",
+            "RequestToSpeak": "Solicitar Hablar",
+            "SendMessages": "Enviar Mensajes / Crear Publicación",
+            "SendMessagesInThreads": "Enviar Mensajes en Hilos / Publicaciones",
+            "SendTTSMessages": "Enviar Mensajes de Texto-a-Voz",
+            "Speak": "Hablar",
             "Stream": "Video",
-            "UseApplicationCommands": "Use Application Commands",
-            "UseEmbeddedActivities": "Use Activities",
-            "UseExternalEmojis": "Use External Emoji",
-            "UseExternalStickers": "Use External Stickers",
-            "UseVAD": "Use Voice Activity",
-            "ViewAuditLog": "View Audit Log",
-            "ViewChannel": "View Channel(s)",
-            "ViewGuildInsights": "View Server Insights"
+            "UseApplicationCommands": "Usar Comandos de Aplicación",
+            "UseEmbeddedActivities": "Usar Actividades",
+            "UseExternalEmojis": "Usar Emoji Externo",
+            "UseExternalStickers": "Usar Stickers Externos",
+            "UseVAD": "Usar Actividad de Voz",
+            "ViewAuditLog": "Ver Bitácora de Auditoría",
+            "ViewChannel": "Ver Canal(es)",
+            "ViewGuildInsights": "Ver Análisis de Servidor"
         },
         "devCommandNames": {
             "info": "info"
         },
         "helpOptions": {
-            "commands": "Commands",
-            "permissions": "Permissions",
-            "faq": "FAQ"
+            "commands": "Comandos",
+            "permissions": "Permisos",
+            "faq": "Preguntas Frecuentes"
         },
         "infoOptions": {
-            "about": "About",
-            "translate": "Translate"
+            "about": "Acerca",
+            "translate": "Traducir"
         },
         "boolean": {
-            "true": "True",
-            "false": "False"
+            "true": "Verdadero",
+            "false": "Falso"
         },
         "other": {
             "na": "N/A",
@@ -955,13 +955,13 @@
         "links": {
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "docsEmbed": "[Ver Documentación]({{COM:links.docs}}/)",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "donateEmbed": "[Dona con PayPal]({{COM:links.donate}})",
             "inviteEmbed": "[¡Invitar {{COM:bot.name}} a un servidor!]({{COM:links.invite}})",
             "mapEmbed": "[Mapa de Zonas Horarias]({{COM:links.map}})",
             "sourceEmbed": "[Ver Código Fuente]({{COM:links.source}})",
             "supportEmbed": "[Únete al servidor de Soporte]({{COM:links.support}})",
             "templateEmbed": "[Plantilla de Typescript para Bots de Discord]({{COM:links.template}})",
-            "termsEmbed": "[View Terms of Service]({{COM:links.terms}})",
+            "termsEmbed": "[Ver Términos de Servicio]({{COM:links.terms}})",
             "voteEmbed": "[Votar por {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {

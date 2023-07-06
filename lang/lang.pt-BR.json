@@ -656,7 +656,7 @@
                 "description": [
                     "O {{COM:bot.name}} agora usa **Comandos de Barra**! Tente digitando `/{{COM:chatCommands.help}}`!",
                     "",
-                    "Se você não vê nenhum comando de barra listado para o {{COM:bot.name}}:",
+                    "Se você não vir nenhum comando de barra listado para o {{COM:bot.name}}:",
                     "",
                     "1. Verifique se você tem a permissão **Usar comandos de aplicativo** neste canal.",
                     "2. Tente [reconvidar o {{COM:bot.name}}]({{COM:links.invite}}).",
@@ -807,7 +807,7 @@
             "botView": "Veja as propriedades de um bot.",
             "botEdit": "Mude uma propriedade de um bot.",
             "botRemove": "Remova um bot.",
-            "dev": "Developer use only.",
+            "dev": "De uso exclusivo do desenvolvedor.",
             "help": "Obtenha ajuda com comandos, permissões, perguntas frequentes, etc.",
             "info": "Veja informações do bot.",
             "list": "Gerencie a lista dos fusos horários do servidor.",
@@ -942,7 +942,7 @@
         },
         "infoOptions": {
             "about": "Sobre",
-            "translate": "Traduzir"
+            "translate": "Traduza"
         },
         "boolean": {
             "true": "Verdadeiro",

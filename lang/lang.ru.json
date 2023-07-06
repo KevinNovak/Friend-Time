@@ -16,7 +16,7 @@
                 ]
             },
             "commands": {
-                "title": "{{COM:bot.name}} - Commands",
+                "title": "{{COM:bot.name}} - Команды",
                 "fields": [
                     {
                         "name": "{{REF:fields.commands}} для пользователей",
@@ -56,8 +56,8 @@
                 ]
             },
             "permissions": {
-                "title": "{{COM:bot.name}} - Permissions",
-                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "title": "{{COM:bot.name}} - Права доступа",
+                "description": "Хотите ограничить доступ к командам для тех или иных ролей, пользователей или каналов? Установите права в окне бота во вкладке **Интеграция** бота в настройках сервера (Или просто нажмите ПКМ на бота и выберите **Управление интеграцией**).",
                 "fields": [
                     {
                         "name": "{{REF:fields.links}}",
@@ -66,12 +66,12 @@
                 ]
             },
             "faq": {
-                "title": "{{COM:bot.name}} - FAQ",
+                "title": "{{COM:bot.name}} - ЧаВо",
                 "description": [
-                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "Частые вопросы о {{COM:bot.name}}.",
                     "",
-                    "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                    "**Как ограничить доступ к командам?**",
+                    "Права на использование слэш-команд могут быть установлены в настройках сервера. Чтобы узнать больше, используйтеSee \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\"."
                 ],
                 "fields": [
                     {
@@ -185,7 +185,7 @@
                 "description": "В часовом поясе **{{TIME_ZONE}}** сейчас **{{TIME}}**."
             },
             "about": {
-                "title": "{{COM:bot.name}} - About",
+                "title": "{{COM:bot.name}} - О боте",
                 "description": "{{REF:bot.description}}",
                 "fields": [
                     { "name": "Автор", "value": "{{REF:links.authorEmbed}}" },
@@ -226,7 +226,7 @@
                     {
                         "name": "Статистика",
                         "value": [
-                            "**Шардов (Shards)**: {{SHARD_COUNT}}",
+                            "**Шардов (shards)**: {{SHARD_COUNT}}",
                             "**Серверов**: {{SERVER_COUNT}} ({{SERVER_COUNT_PER_SHARD}}/шард)"
                         ]
                     },
@@ -272,7 +272,7 @@
             },
             "timeZoneReminder": {
                 "description": [
-                    "Привет, {{USER}}, кажется, вы [написали/поставили реакцию на сообщение с упоминанием временем]({{MESSAGE_LINK}}), но ещё не установили свой часовой пояс.",
+                    "Привет, {{USER}}, кажется, вы [поставили реакцию на/написали сообщение с упоминанием временем]({{MESSAGE_LINK}}), но ещё не установили свой часовой пояс.",
                     "",
                     "Выберите его при помощи команды `/{{COM:chatCommands.set}} {{COM:subCommands.me}}`!",
                     "",
@@ -647,25 +647,25 @@
         },
         "validationEmbeds": {
             "oldPrefixUsed": {
-                "title": "Обновление с слэш-командами",
+                "title": "Обновление со слэш-командами",
                 "description": [
-                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:chatCommands.help}}`!",
+                    "{{COM:bot.name}} теперь использует **слэш-команды**! Опробуйте их — напечатайте `/{{COM:chatCommands.help}}`!",
                     "",
-                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
+                    "Если вы не видите выпадающий список со слэш-командами {{COM:bot.name}}:",
                     "",
-                    "1. Check that you have the **Use Application Commands** permission in this channel.",
-                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
-                    "3. Join our [support server]({{COM:links.support}}) for help."
+                    "1. Проверьте, что у вас есть разрешение **Использовать команды приложения** в этом канале.",
+                    "2. Попробуйте кикнуть, а затем [заново пригласить {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Обратитесь на наш [сервер поддержки]({{COM:links.support}}) за помощью."
                 ],
                 "image": "{{COM:images.helpCommand}}",
                 "color": "{{COM:colors.warning}}"
             },
             "cooldownHit": {
-                "description": "You can only run this command {{AMOUNT}} time(s) every {{INTERVAL}}. Please wait before attempting this command again.",
+                "description": "Эту команду можно использовать только {{AMOUNT}} раз(а) в {{INTERVAL}}. Пожалуйста, подождите, прежде чем использовать её снова.",
                 "color": "{{COM:colors.warning}}"
             },
             "devOnly": {
-                "description": "This action can only be done by developers.",
+                "description": "Эту команду можно использовать только разработчикам.",
                 "color": "{{COM:colors.warning}}"
             },
             "serverOnlyCommand": {
@@ -674,9 +674,9 @@
             },
             "missingClientPerms": {
                 "description": [
-                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "У меня нет прав, чтобы активировать эту команду здесь! Пожалуйста, проверьте права доступа на сервере и в канале, и убедитесь, что у меня есть следующие права.",
                     "",
-                    "Required permissions: {{PERMISSIONS}}"
+                    "Необходимые права: {{PERMISSIONS}}"
                 ],
                 "color": "{{COM:colors.warning}}"
             },
@@ -762,11 +762,11 @@
                         "value": "{{ERROR_CODE}}"
                     },
                     {
-                        "name": "Server ID",
+                        "name": "ID сервера",
                         "value": "{{GUILD_ID}}"
                     },
                     {
-                        "name": "Shard ID",
+                        "name": "ID шарда (shard)",
                         "value": "{{SHARD_ID}}"
                     },
                     {
@@ -781,7 +781,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "notImplemented": {
-                "description": "This feature has not been implemented yet!",
+                "description": "Эта функция ещё не имплементирована!",
                 "color": "{{COM:colors.warning}}"
             }
         },
@@ -791,7 +791,7 @@
     },
     "refs": {
         "meta": {
-            "translators": "[Ajno#0239](https://vk.com/almazikfl)"
+            "translators": "[Ajno (ajno.)](https://vk.com/ajnoeo)"
         },
         "bot": {
             "description": "{{COM:bot.name}} поможет планировать события вашему серверу, конвертируя время, упомянутое в чате, в другие часовые пояса!"
@@ -802,8 +802,8 @@
             "botView": "Просмотреть настройки бота.",
             "botEdit": "Изменить настройку бота.",
             "botRemove": "Очистить информацию о боте.",
-            "dev": "Developer use only.",
-            "help": "Get help with commands, permissions, FAQ, etc.",
+            "dev": "Только для разработчиков.",
+            "help": "Просмотреть помощь о командах и правах, ЧаВо, и т.д.",
             "info": "Просмотреть информацию о боте.",
             "list": "Управлять списком часовых поясов сервера.",
             "listView": "Просмотреть список часовых поясов сервера.",
@@ -828,7 +828,7 @@
         },
         "settings": {
             "autoDetect": "Обнаруживать время",
-            "dateFormat": "Формат Даты",
+            "dateFormat": "Формат даты",
             "language": "Язык",
             "list": "Список",
             "privateMode": "Приватный режим",
@@ -885,59 +885,59 @@
             "collector": "Введите свой ответ (или «{{COM:keywords.stop}}» чтобы сбросить)."
         },
         "permissions": {
-            "AddReactions": "Add Reactions",
-            "Administrator": "Administrator",
-            "AttachFiles": "Attach Files",
-            "BanMembers": "Ban Members",
-            "ChangeNickname": "Change Nickname",
-            "Connect": "Connect",
-            "CreateInstantInvite": "Create Invite",
-            "CreatePrivateThreads": "Create Private Threads",
-            "CreatePublicThreads": "Create Public Threads",
-            "DeafenMembers": "Deafen Members",
-            "EmbedLinks": "Embed Links",
-            "KickMembers": "Kick Members",
-            "ManageChannels": "Manage Channel(s)",
-            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
-            "ManageEvents": "Manage Events",
-            "ManageGuild": "Manage Server",
-            "ManageMessages": "Manage Messages",
-            "ManageNicknames": "Manage Nicknames",
-            "ManageRoles": "Manage Roles / Permissions",
-            "ManageThreads": "Manage Threads / Posts",
-            "ManageWebhooks": "Manage Webhooks",
-            "MentionEveryone": "Mention Everyone, Here, and All Roles",
-            "ModerateMembers": "Timeout Members",
-            "MoveMembers": "Move Members",
-            "MuteMembers": "Mute Members",
-            "PrioritySpeaker": "Priority Speaker",
-            "ReadMessageHistory": "Read Message History",
-            "RequestToSpeak": "Request to Speak",
-            "SendMessages": "Send Messages / Create Posts",
-            "SendMessagesInThreads": "Send Messages in Threads / Posts",
-            "SendTTSMessages": "Send Text-to-Speech Messages",
-            "Speak": "Speak",
-            "Stream": "Video",
-            "UseApplicationCommands": "Use Application Commands",
-            "UseEmbeddedActivities": "Use Activities",
-            "UseExternalEmojis": "Use External Emoji",
-            "UseExternalStickers": "Use External Stickers",
-            "UseVAD": "Use Voice Activity",
-            "ViewAuditLog": "View Audit Log",
-            "ViewChannel": "View Channel(s)",
-            "ViewGuildInsights": "View Server Insights"
+            "AddReactions": "Добавлять реакции",
+            "Administrator": "Администратор",
+            "AttachFiles": "Прикреплять файлы",
+            "BanMembers": "Банить участников",
+            "ChangeNickname": "Изменять никнейм",
+            "Connect": "Подключаться",
+            "CreateInstantInvite": "Создание приглашения",
+            "CreatePrivateThreads": "Создание приватных веток",
+            "CreatePublicThreads": "Создание публичных веток",
+            "DeafenMembers": "Отключать участникам звук",
+            "EmbedLinks": "Встраивать ссылки",
+            "KickMembers": "Выгонять участников",
+            "ManageChannels": "Управлять каналами",
+            "ManageEmojisAndStickers": "Управлять выражениями",
+            "ManageEvents": "Управление событиями",
+            "ManageGuild": "Управлять сервером",
+            "ManageMessages": "Управлять сообщениями",
+            "ManageNicknames": "Управлять никнеймами",
+            "ManageRoles": "Управлять ролями",
+            "ManageThreads": "Управление ветками",
+            "ManageWebhooks": "Управлять вебхуками (webhooks)",
+            "MentionEveryone": "Упоминание @everyone, @here и всех ролей",
+            "ModerateMembers": "Отправлять участников подумать о своём поведении",
+            "MoveMembers": "Перемещать участников",
+            "MuteMembers": "Отключать участникам микрофон",
+            "PrioritySpeaker": "Приоритетный режим",
+            "ReadMessageHistory": "Читать историю сообщений",
+            "RequestToSpeak": "Попросить выступить",
+            "SendMessages": "Отправлять сообщения",
+            "SendMessagesInThreads": "Отправлять сообщения в ветках",
+            "SendTTSMessages": "Отправка сообщений text-to-speech",
+            "Speak": "Говорить",
+            "Stream": "Видео",
+            "UseApplicationCommands": "Использовать команды приложения",
+            "UseEmbeddedActivities": "Использовать активности",
+            "UseExternalEmojis": "Использовать внешние эмодзи",
+            "UseExternalStickers": "Использовать внешние стикеры",
+            "UseVAD": "Использовать режим активации по голосу",
+            "ViewAuditLog": "Просматривать журнал аудита",
+            "ViewChannel": "Просматривать каналы",
+            "ViewGuildInsights": "Просмотр аналитики сервера"
         },
         "devCommandNames": {
-            "info": "info"
+            "info": "инфо"
         },
         "helpOptions": {
-            "commands": "Commands",
-            "permissions": "Permissions",
-            "faq": "FAQ"
+            "commands": "Команды",
+            "permissions": "Разрешения",
+            "faq": "ЧаВо"
         },
         "infoOptions": {
-            "about": "About",
-            "translate": "Translate"
+            "about": "О боте",
+            "translate": "Перевод"
         },
         "boolean": {
             "true": "True",
@@ -950,13 +950,13 @@
         "links": {
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
             "docsEmbed": "[Перейти к документации]({{COM:links.docs}}/)",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "donateEmbed": "[Поддержать по PayPal]({{COM:links.donate}})",
             "inviteEmbed": "[Пригласить {{COM:bot.name}} на сервер]({{COM:links.invite}})",
             "mapEmbed": "[Карта часовых поясов]({{COM:links.map}})",
             "sourceEmbed": "[Просмотреть открытый код]({{COM:links.source}})",
             "supportEmbed": "[Присоединиться к серверу поддержки]({{COM:links.support}})",
             "templateEmbed": "[Шаблон для дискорд-ботов TypeScript]({{COM:links.template}})",
-            "termsEmbed": "[View Terms of Service]({{COM:links.terms}})",
+            "termsEmbed": "[Пользовательское соглашение]({{COM:links.terms}})",
             "voteEmbed": "[Проголосовать за {{COM:bot.name}}!]({{COM:links.vote}})"
         },
         "partials": {

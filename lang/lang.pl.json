@@ -56,8 +56,8 @@
                 ]
             },
             "permissions": {
-                "title": "{{COM:bot.name}} - Permissions",
-                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "title": "{{COM:bot.name}} - Uprawnienia",
+                "description": "Chciałbyś ograniczyć uprawnienia do komend do konkretnych ról, użytkowników lub kanałów? Ustaw uprawnienia bota w zakładce **Integracje** w Ustawieniach serwera ( możesz też kliknąć bota prawym przyciskiem myszy i wybrać **Zarządzaj integracją**).",
                 "fields": [
                     {
                         "name": "{{REF:fields.links}}",
@@ -68,10 +68,10 @@
             "faq": {
                 "title": "{{COM:bot.name}} - FAQ",
                 "description": [
-                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "Częste pytania na temat {{COM:bot.name}}.",
                     "",
-                    "**How do I restrict who can run the commands?**",
-                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                    "**Jak ograniczyć uprawnienia użytkowania komend dla konkretnych użytkowników?**",
+                    "Uprawnienia komend mogą być skonfigurowane w Ustawieniach serwera. Więcej informacji znajdziesz w \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" "
                 ],
                 "fields": [
                     {
@@ -214,7 +214,7 @@
             },
             "translate": {
                 "title": "{{COM:bot.name}} - Tłumaczenia",
-                "description": "Dziękujemy naszym tłumaczom, dzięki którym {{COM:bot.name}} jest dostępny w poniższych językach. Jeśli jesteś zainteresowany stworzeniem tłumaczenia, proszę o kontakt z nami na [naszym serwerze]({{COM:links.support}})."
+                "description": "Dziękujemy naszym tłumaczom, dzięki którym {{COM:bot.name}} jest dostępny w poniższych językach. Jeśli jesteś zainteresowany stworzeniem tłumaczenia, prosimy o kontakt z nami na [naszym serwerze]({{COM:links.support}})."
             },
             "devInfo": {
                 "title": "{{COM:bot.name}} - Informacje dla deweloperów",
@@ -786,7 +786,7 @@
                 "color": "{{COM:colors.warning}}"
             },
             "notImplemented": {
-                "description": "This feature has not been implemented yet!",
+                "description": "Ta funkcja nie została jeszcze zaimplementowana!",
                 "color": "{{COM:colors.warning}}"
             }
         },
@@ -854,9 +854,9 @@
             "no": "Nie"
         },
         "argDescs": {
-            "devCommand": "Command.",
-            "helpOption": "Option.",
-            "infoOption": "Option."
+            "devCommand": "Komenda.",
+            "helpOption": "Opcja.",
+            "infoOption": "Opcja."
         },
         "lists": {
             "settingItem": [
@@ -890,63 +890,63 @@
             "collector": "Wpisz swoją odpowiedź poniżej lub '{{COM:keywords.stop}}', aby anulować."
         },
         "permissions": {
-            "AddReactions": "Add Reactions",
+            "AddReactions": "Dodawanie reakcji",
             "Administrator": "Administrator",
-            "AttachFiles": "Attach Files",
-            "BanMembers": "Ban Members",
-            "ChangeNickname": "Change Nickname",
-            "Connect": "Connect",
-            "CreateInstantInvite": "Create Invite",
-            "CreatePrivateThreads": "Create Private Threads",
-            "CreatePublicThreads": "Create Public Threads",
-            "DeafenMembers": "Deafen Members",
-            "EmbedLinks": "Embed Links",
-            "KickMembers": "Kick Members",
-            "ManageChannels": "Manage Channel(s)",
-            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
-            "ManageEvents": "Manage Events",
-            "ManageGuild": "Manage Server",
-            "ManageMessages": "Manage Messages",
-            "ManageNicknames": "Manage Nicknames",
-            "ManageRoles": "Manage Roles / Permissions",
-            "ManageThreads": "Manage Threads / Posts",
-            "ManageWebhooks": "Manage Webhooks",
-            "MentionEveryone": "Mention Everyone, Here, and All Roles",
-            "ModerateMembers": "Timeout Members",
-            "MoveMembers": "Move Members",
-            "MuteMembers": "Mute Members",
-            "PrioritySpeaker": "Priority Speaker",
-            "ReadMessageHistory": "Read Message History",
-            "RequestToSpeak": "Request to Speak",
-            "SendMessages": "Send Messages / Create Posts",
-            "SendMessagesInThreads": "Send Messages in Threads / Posts",
-            "SendTTSMessages": "Send Text-to-Speech Messages",
-            "Speak": "Speak",
-            "Stream": "Video",
-            "UseApplicationCommands": "Use Application Commands",
-            "UseEmbeddedActivities": "Use Activities",
-            "UseExternalEmojis": "Use External Emoji",
-            "UseExternalStickers": "Use External Stickers",
-            "UseVAD": "Use Voice Activity",
-            "ViewAuditLog": "View Audit Log",
-            "ViewChannel": "View Channel(s)",
-            "ViewGuildInsights": "View Server Insights"
+            "AttachFiles": "Dołączanie plików",
+            "BanMembers": "Banowanie członków",
+            "ChangeNickname": "Zmiana pseudonimu",
+            "Connect": "Połącz",
+            "CreateInstantInvite": "Utwórz zaproszenie",
+            "CreatePrivateThreads": "Utwórz wątek prywany",
+            "CreatePublicThreads": "Utwórz wątek publiczny",
+            "DeafenMembers": "Wycisz członków",
+            "EmbedLinks": "Wstawianie linków",
+            "KickMembers": "Wyrzucanie członków",
+            "ManageChannels": "Zarządzanie kanałami",
+            "ManageEmojisAndStickers": "Zarządzanie emotikonami i naklejkami",
+            "ManageEvents": "Zarządzaj wydarzeniami",
+            "ManageGuild": "Zarządzanie serwerem",
+            "ManageMessages": "Zarządzanie wiadomościami",
+            "ManageNicknames": "Zarządanie pseudonimami",
+            "ManageRoles": "Zarządzanie rolami",
+            "ManageThreads": "Zarządzanie wątkami",
+            "ManageWebhooks": "Zarządzanie webhookami",
+            "MentionEveryone": "Zamieść wzmiankę @everyone, @here oraz wszystkie role",
+            "ModerateMembers": "Wyciszanie członków",
+            "MoveMembers": "Przenoszenie członków",
+            "MuteMembers": "Wyciszanie panelu dźwięku członków",
+            "PrioritySpeaker": "Priorytetowy rozmówca",
+            "ReadMessageHistory": "Czytanie historii czatu",
+            "RequestToSpeak": "Wyślij wiadomość głosową",
+            "SendMessages": "Wysyłanie wiadomości",
+            "SendMessagesInThreads": "Wysyłanie wiadomości w wątkach",
+            "SendTTSMessages": "Wysyłanie wiadomości TTS",
+            "Speak": "Mówienie",
+            "Stream": "Wideo",
+            "UseApplicationCommands": "Użyj komend aplikacji",
+            "UseEmbeddedActivities": "Użyj aktywności",
+            "UseExternalEmojis": "Używanie zewnętrznych emoji",
+            "UseExternalStickers": "Używanie zewnętrznych naklejek",
+            "UseVAD": "Użyj panelu dźwięku",
+            "ViewAuditLog": "Wyświetl dziennik kontroli",
+            "ViewChannel": "Wyświetl kanał(y)",
+            "ViewGuildInsights": "Wyświelt analizę serwera"
         },
         "devCommandNames": {
-            "info": "info"
+            "info": "Informacje"
         },
         "helpOptions": {
-            "commands": "Commands",
-            "permissions": "Permissions",
-            "faq": "FAQ"
+            "commands": "Komendy",
+            "permissions": "Uprawnienia",
+            "faq": "Częste pytania"
         },
         "infoOptions": {
-            "about": "About",
-            "translate": "Translate"
+            "about": "Więcej informacji",
+            "translate": "Tłumaczenia"
         },
         "boolean": {
-            "true": "True",
-            "false": "False"
+            "true": "Prawda",
+            "false": "Fałsz"
         },
         "other": {
             "na": "N/A",

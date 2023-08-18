@@ -90,11 +90,6 @@ export class Permission {
                 return Lang.getRef('permissions.ManageGuild', langCode);
             },
         },
-        ManageGuildExpressions: {
-            displayName(langCode: Locale): string {
-                return Lang.getRef('permissions.ManageGuildExpressions', langCode);
-            },
-        },
         ManageMessages: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.ManageMessages', langCode);
@@ -170,11 +165,6 @@ export class Permission {
                 return Lang.getRef('permissions.SendTTSMessages', langCode);
             },
         },
-        SendVoiceMessages: {
-            displayName(langCode: Locale): string {
-                return Lang.getRef('permissions.SendVoiceMessages', langCode);
-            },
-        },
         Speak: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.Speak', langCode);
@@ -200,19 +190,9 @@ export class Permission {
                 return Lang.getRef('permissions.UseExternalEmojis', langCode);
             },
         },
-        UseExternalSounds: {
-            displayName(langCode: Locale): string {
-                return Lang.getRef('permissions.UseExternalSounds', langCode);
-            },
-        },
         UseExternalStickers: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.UseExternalStickers', langCode);
-            },
-        },
-        UseSoundboard: {
-            displayName(langCode: Locale): string {
-                return Lang.getRef('permissions.UseSoundboard', langCode);
             },
         },
         UseVAD: {
@@ -228,11 +208,6 @@ export class Permission {
         ViewChannel: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.ViewChannel', langCode);
-            },
-        },
-        ViewCreatorMonetizationAnalytics: {
-            displayName(langCode: Locale): string {
-                return Lang.getRef('permissions.ViewCreatorMonetizationAnalytics', langCode);
             },
         },
         ViewGuildInsights: {

@@ -37,20 +37,20 @@ export class EventDataService {
             userData?.language && Language.Enabled.includes(userData.language)
                 ? userData.language
                 : guildData?.language && Language.Enabled.includes(guildData.language)
-                ? guildData.language
-                : options.guild?.preferredLocale &&
-                  Language.Enabled.includes(options.guild.preferredLocale)
-                ? options.guild.preferredLocale
-                : Language.Default;
+                  ? guildData.language
+                  : options.guild?.preferredLocale &&
+                      Language.Enabled.includes(options.guild.preferredLocale)
+                    ? options.guild.preferredLocale
+                    : Language.Default;
 
         // Guild language
         let langGuild =
             guildData?.language && Language.Enabled.includes(guildData.language)
                 ? guildData.language
                 : options.guild?.preferredLocale &&
-                  Language.Enabled.includes(options.guild.preferredLocale)
-                ? options.guild.preferredLocale
-                : Language.Default;
+                    Language.Enabled.includes(options.guild.preferredLocale)
+                  ? options.guild.preferredLocale
+                  : Language.Default;
 
         return new EventData(lang, langGuild, userData, guildData);
     }

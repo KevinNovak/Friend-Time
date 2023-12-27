@@ -158,8 +158,8 @@ export class ConvertTrigger implements Trigger {
                                 ? 'lists.timeWithEndItem'
                                 : 'lists.timeItem'
                             : result.end
-                            ? 'lists.timeWithPosAndEndItem'
-                            : 'lists.timeWithPosItem',
+                              ? 'lists.timeWithPosAndEndItem'
+                              : 'lists.timeWithPosItem',
                         guildLangCode,
                         {
                             POSITION: (index + 1).toLocaleString(data.lang),

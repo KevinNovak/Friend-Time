@@ -34,8 +34,9 @@ export class UpdateServerCountJob implements Job {
         let url = Lang.getCom('links.stream');
 
         await this.shardManager.broadcastEval(
-            (client: CustomClient, context) => {
-                return client.setPresence(context.type, context.name, context.url);
+            (client, context) => {
+                let customClient = client as CustomClient;
+                return customClient.setPresence(context.type, context.name, context.url);
             },
             { context: { type, name, url } }
         );

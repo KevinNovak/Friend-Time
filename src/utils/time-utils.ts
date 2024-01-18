@@ -2,7 +2,7 @@ import { DateTime } from 'luxon';
 
 export class TimeUtils {
     public static now(zone?: string): DateTime {
-        let now = DateTime.utc();
+        let now: DateTime = DateTime.utc();
         if (zone) {
             now = now.setZone(zone);
         }

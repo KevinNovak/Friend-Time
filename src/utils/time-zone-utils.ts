@@ -1,12 +1,6 @@
 import { RawTimeZone, rawTimeZones } from '@vvo/tzdb';
-import { createRequire } from 'node:module';
 
 import { TimeUtils } from './index.js';
-
-const require = createRequire(import.meta.url);
-let TimeZoneCorrections: {
-    [timeZone: string]: string;
-} = require('../../config/time-zone-corrections.json');
 
 export class TimeZoneUtils {
     private static timeZones = TimeZoneUtils.buildTimeZoneList();
@@ -18,16 +12,6 @@ export class TimeZoneUtils {
                 return now.isValid;
             })
             .sort((a, b) => (a.name > b.name ? 1 : -1));
-
-        let timeZoneCorrections = Object.entries(TimeZoneCorrections);
-        for (let timeZone of timeZones) {
-            for (let name of timeZone.group) {
-                let additionalNames = timeZoneCorrections
-                    .filter(entry => entry[1] === name)
-                    .map(entry => entry[0]);
-                timeZone.group = [...new Set([...timeZone.group, ...additionalNames])];
-            }
-        }
 
         return timeZones;
     }

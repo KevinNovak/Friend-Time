@@ -6,7 +6,7 @@ description: View the zone map.
 
 ## Summary
 
-The `/map` command is used to view the [Time Zone Map](https://kevinnovak.github.io/Time-Zone-Picker/).
+The `/map` command is used to view the [Time Zone Map](https://zones.arilyn.cc/).
 
 ## View the Time Zone Map
 
@@ -14,7 +14,7 @@ The `/map` command is used to view the [Time Zone Map](https://kevinnovak.github
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
-**2.** Click the [Time Zone Map](https://kevinnovak.github.io/Time-Zone-Picker/) link to open the map.
+**2.** Click the [Time Zone Map](https://zones.arilyn.cc/) link to open the map.
 
 ![](../../.gitbook/assets/image%20%2819%29.png)
 

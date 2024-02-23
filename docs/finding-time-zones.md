@@ -6,7 +6,7 @@ description: How to find time zones.
 
 ## Using the Time Zone Map
 
-One way to find time zones is by using the [Time Zone Map](https://kevinnovak.github.io/Time-Zone-Picker/):
+One way to find time zones is by using the [Time Zone Map](https://zones.arilyn.cc/):
 
 ![](.gitbook/assets/image%20%2838%29.png)
 

@@ -67,12 +67,12 @@
         "@types/node-fetch": "3.0.2",
         "@types/node-schedule": "2.1.5",
         "@types/remove-markdown": "0.3.4",
-        "@typescript-eslint/eslint-plugin": "^6.16.0",
-        "@typescript-eslint/parser": "^6.16.0",
-        "eslint": "^8.56.0",
-        "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-unicorn": "^50.0.1",
-        "prettier": "^3.1.1",
-        "typescript": "^5.3.3"
+        "@typescript-eslint/eslint-plugin": "^8.7.0",
+        "@typescript-eslint/parser": "^8.7.0",
+        "eslint": "^8.57.1",
+        "eslint-plugin-import": "^2.30.0",
+        "eslint-plugin-unicorn": "^55.0.0",
+        "prettier": "^3.3.3",
+        "typescript": "^5.6.2"
     }
 }

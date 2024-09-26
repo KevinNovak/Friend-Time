@@ -43,7 +43,7 @@
         "discord.js": "14.14.1",
         "discord.js-collector-utils": "1.9.1",
         "discord.js-rate-limiter": "1.3.2",
-        "express": "4.18.2",
+        "express": "4.21.0",
         "express-promise-router": "4.1.1",
         "filesize": "10.1.0",
         "linguini": "1.3.1",

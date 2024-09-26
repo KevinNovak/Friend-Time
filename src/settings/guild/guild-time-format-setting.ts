@@ -22,7 +22,7 @@ export class GuildTimeFormatSetting implements Setting<GuildData, TimeFormatOpti
     }
 
     public valueOrDefault(guildData?: GuildData): TimeFormatOption {
-        return guildData ? this.value(guildData) ?? this.default : this.default;
+        return guildData ? (this.value(guildData) ?? this.default) : this.default;
     }
 
     public apply(guildData: GuildData, value: TimeFormatOption): void {

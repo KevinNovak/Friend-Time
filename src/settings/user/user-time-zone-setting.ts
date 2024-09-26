@@ -32,7 +32,7 @@ export class UserTimeZoneSetting implements Setting<UserData, string>, Confirmat
     }
 
     public valueOrDefault(userData?: UserData): string {
-        return userData ? this.value(userData) ?? this.default : this.default;
+        return userData ? (this.value(userData) ?? this.default) : this.default;
     }
 
     public apply(userData: UserData, value: string): void {

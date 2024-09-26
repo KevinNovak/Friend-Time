@@ -22,7 +22,7 @@ export class UserDateFormatSetting implements Setting<UserData, DateFormatOption
     }
 
     public valueOrDefault(userData?: UserData): DateFormatOption {
-        return userData ? this.value(userData) ?? this.default : this.default;
+        return userData ? (this.value(userData) ?? this.default) : this.default;
     }
 
     public apply(userData: UserData, value: DateFormatOption): void {

@@ -21,7 +21,7 @@ export class UserLanguageSetting implements Setting<UserData, Locale> {
     }
 
     public valueOrDefault(userData?: UserData): Locale {
-        return userData ? this.value(userData) ?? this.default : this.default;
+        return userData ? (this.value(userData) ?? this.default) : this.default;
     }
 
     public apply(userData: UserData, value: Locale): void {

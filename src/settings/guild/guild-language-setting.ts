@@ -21,7 +21,7 @@ export class GuildLanguageSetting implements Setting<GuildData, Locale> {
     }
 
     public valueOrDefault(guildData?: GuildData): Locale {
-        return guildData ? this.value(guildData) ?? this.default : this.default;
+        return guildData ? (this.value(guildData) ?? this.default) : this.default;
     }
 
     public apply(guildData: GuildData, value: Locale): void {

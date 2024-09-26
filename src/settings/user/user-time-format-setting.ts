@@ -22,7 +22,7 @@ export class UserTimeFormatSetting implements Setting<UserData, TimeFormatOption
     }
 
     public valueOrDefault(userData?: UserData): TimeFormatOption {
-        return userData ? this.value(userData) ?? this.default : this.default;
+        return userData ? (this.value(userData) ?? this.default) : this.default;
     }
 
     public apply(userData: UserData, value: TimeFormatOption): void {

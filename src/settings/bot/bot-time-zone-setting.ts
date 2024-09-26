@@ -32,7 +32,7 @@ export class BotTimeZoneSetting implements Setting<GuildBotData, string>, Confir
     }
 
     public valueOrDefault(botData?: GuildBotData): string {
-        return botData ? this.value(botData) ?? this.default : this.default;
+        return botData ? (this.value(botData) ?? this.default) : this.default;
     }
 
     public apply(botData: GuildBotData, value: string): void {

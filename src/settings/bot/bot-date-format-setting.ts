@@ -22,7 +22,7 @@ export class BotDateFormatSetting implements Setting<GuildBotData, DateFormatOpt
     }
 
     public valueOrDefault(botData?: GuildBotData): DateFormatOption {
-        return botData ? this.value(botData) ?? this.default : this.default;
+        return botData ? (this.value(botData) ?? this.default) : this.default;
     }
 
     public apply(botData: GuildBotData, value: DateFormatOption): void {

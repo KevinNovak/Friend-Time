@@ -21,7 +21,7 @@ export class UserPrivateModeSetting implements Setting<UserData, boolean> {
     }
 
     public valueOrDefault(userData?: UserData): boolean {
-        return userData ? this.value(userData) ?? this.default : this.default;
+        return userData ? (this.value(userData) ?? this.default) : this.default;
     }
 
     public apply(userData: UserData, value: boolean): void {

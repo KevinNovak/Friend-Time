@@ -7,6 +7,7 @@ import {
     Message,
     MessageEditOptions,
     MessageReaction,
+    PartialGroupDMChannel,
     StartThreadOptions,
     TextBasedChannel,
     ThreadChannel,
@@ -40,6 +41,7 @@ export class MessageUtils {
         target: User | TextBasedChannel,
         content: string | EmbedBuilder | BaseMessageOptions
     ): Promise<Message> {
+        if (target instanceof PartialGroupDMChannel) return;
         try {
             let options: BaseMessageOptions =
                 typeof content === 'string'

@@ -40,6 +40,16 @@ export class Permission {
                 return Lang.getRef('permissions.Connect', langCode);
             },
         },
+        CreateEvents: {
+            displayName(langCode: Locale): string {
+                return Lang.getRef('permissions.CreateEvents', langCode);
+            },
+        },
+        CreateGuildExpressions: {
+            displayName(langCode: Locale): string {
+                return Lang.getRef('permissions.CreateGuildExpressions', langCode);
+            },
+        },
         CreateInstantInvite: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.CreateInstantInvite', langCode);
@@ -165,6 +175,11 @@ export class Permission {
                 return Lang.getRef('permissions.SendMessagesInThreads', langCode);
             },
         },
+        SendPolls: {
+            displayName(langCode: Locale): string {
+                return Lang.getRef('permissions.SendPolls', langCode);
+            },
+        },
         SendTTSMessages: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.SendTTSMessages', langCode);
@@ -193,6 +208,11 @@ export class Permission {
         UseEmbeddedActivities: {
             displayName(langCode: Locale): string {
                 return Lang.getRef('permissions.UseEmbeddedActivities', langCode);
+            },
+        },
+        UseExternalApps: {
+            displayName(langCode: Locale): string {
+                return Lang.getRef('permissions.UseExternalApps', langCode);
             },
         },
         UseExternalEmojis: {

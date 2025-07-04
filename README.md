@@ -27,17 +27,17 @@ By also reacting, you will be private messaged with the time converted to your t
 
 ## Features
 
--   Automatically reacts with a [**clock emoji**](https://friend-time.arilyn.cc/time-conversions#1-convert-to-your-time-zone) \(️️🕰️\) to times mentioned in chat.
-    -   Clicking the clock emoji **converts the time** to your time zone.
-    -   Sent in a direct message.
--   A [**time zone list**](https://friend-time.arilyn.cc/time-conversions#2-convert-to-list-of-time-zones) where you can set up to 10 time zones to always convert to.
-    -   Sent in the server channel.
--   **Reminders** for users to set their time zones.
-    -   Servers and users can disable this reminder if desired.
--   Set [**time zones for other users**](https://friend-time.arilyn.cc/commands/user-commands/set#setup-for-another-user) or even [**bots**](https://friend-time.arilyn.cc/commands/user-commands/set#setup-for-a-bot)!
--   A [**private mode**](https://friend-time.arilyn.cc/settings/user-settings/private-mode) for users who don't want to expose their location.
--   Customize the **appearance of times** \(12 or 24 hour\).
--   Support for **multiple languages**.
+- Automatically reacts with a [**clock emoji**](https://friend-time.arilyn.cc/time-conversions#1-convert-to-your-time-zone) \(️️🕰️\) to times mentioned in chat.
+    - Clicking the clock emoji **converts the time** to your time zone.
+    - Sent in a direct message.
+- A [**time zone list**](https://friend-time.arilyn.cc/time-conversions#2-convert-to-list-of-time-zones) where you can set up to 10 time zones to always convert to.
+    - Sent in the server channel.
+- **Reminders** for users to set their time zones.
+    - Servers and users can disable this reminder if desired.
+- Set [**time zones for other users**](https://friend-time.arilyn.cc/commands/user-commands/set#setup-for-another-user) or even [**bots**](https://friend-time.arilyn.cc/commands/user-commands/set#setup-for-a-bot)!
+- A [**private mode**](https://friend-time.arilyn.cc/settings/user-settings/private-mode) for users who don't want to expose their location.
+- Customize the **appearance of times** \(12 or 24 hour\).
+- Support for **multiple languages**.
 
 ## Documentation
 

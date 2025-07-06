@@ -21,15 +21,15 @@ export class EventDataService {
     ): Promise<EventData> {
         let userData: UserData;
         if (options.user) {
-            userData = await UserData.findOne({ discordId: options.user.id });
+            userData = await UserData.findOne({ where: { discordId: options.user.id } });
         }
 
         let guildData: GuildData;
         if (options.guild) {
-            guildData = await GuildData.findOne(
-                { discordId: options.guild.id },
-                { relations: ['bots', 'listItems'] }
-            );
+            guildData = await GuildData.findOne({
+                where: { discordId: options.guild.id },
+                relations: { bots: true, listItems: true },
+            });
         }
 
         // Event language

@@ -55,7 +55,7 @@
         "pm2": "^6.0.8",
         "reflect-metadata": "^0.2.2",
         "remove-markdown": "0.6.2",
-        "typeorm": "0.2.45",
+        "typeorm": "0.3.25",
         "typeorm-naming-strategies": "4.1.0",
         "url-regex-safe": "4.0.0"
     },

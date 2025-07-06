@@ -153,7 +153,7 @@ export class SetCommand implements Command {
                 }
 
                 // Setup for member
-                let userData = await UserData.findOne({ discordId: member.id });
+                let userData = await UserData.findOne({ where: { discordId: member.id } });
                 if (!userData) {
                     userData = new UserData();
                     userData.discordId = member.id;

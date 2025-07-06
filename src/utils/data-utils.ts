@@ -15,7 +15,7 @@ export class DataUtils {
         if (user.bot) {
             return guildData?.bots.find(botData => botData.discordId === user.id);
         } else {
-            return await UserData.findOne({ discordId: user.id });
+            return await UserData.findOne({ where: { discordId: user.id } });
         }
     }
 

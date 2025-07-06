@@ -36,7 +36,7 @@
     },
     "dependencies": {
         "@discordjs/rest": "2.5.1",
-        "@vvo/tzdb": "6.124.0",
+        "@vvo/tzdb": "6.176.0",
         "chrono-node": "2.2.7",
         "class-transformer": "0.5.1",
         "class-validator": "0.14.2",

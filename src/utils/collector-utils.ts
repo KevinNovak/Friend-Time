@@ -1,9 +1,9 @@
 import {
+    AnySelectMenuInteraction,
     ButtonInteraction,
     Message,
     ModalBuilder,
     ModalSubmitInteraction,
-    SelectMenuInteraction,
     TextBasedChannel,
     User,
 } from 'discord.js';
@@ -56,7 +56,7 @@ export class CollectorUtils {
         retriever: SelectMenuRetriever<T>,
         expireFunc?: ExpireFunction
     ): Promise<{
-        intr: SelectMenuInteraction;
+        intr: AnySelectMenuInteraction;
         value: T;
     }> {
         return DjsCollectorUtils.collectBySelectMenu(msg, retriever, {

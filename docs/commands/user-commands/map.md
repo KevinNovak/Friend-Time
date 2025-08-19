@@ -6,7 +6,7 @@ description: View the zone map.
 
 ## Summary
 
-The `/map` command is used to view the [Time Zone Map](https://zones.arilyn.cc/).
+The `/map` command is used to view the [Time Zone Map](https://zones.arilyn.cc/?utm_source=friend-time&utm_medium=docs).
 
 ## View the Time Zone Map
 
@@ -14,7 +14,7 @@ The `/map` command is used to view the [Time Zone Map](https://zones.arilyn.cc/)
 
 ![](../../.gitbook/assets/image%20%2820%29.png)
 
-**2.** Click the [Time Zone Map](https://zones.arilyn.cc/) link to open the map.
+**2.** Click the [Time Zone Map](https://zones.arilyn.cc/?utm_source=friend-time&utm_medium=docs) link to open the map.
 
 ![](../../.gitbook/assets/image%20%2819%29.png)
 
